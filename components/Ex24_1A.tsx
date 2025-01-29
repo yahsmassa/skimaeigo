@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { QuestionSelect } from "@/components/QuestionSelect";
 import { Saiten2 } from "@/components/Saiten2";
 import { Answers, SubQuestion } from "@/lib/types";
-import { exPageFormat, exQuestionFormat } from "@/lib/util";
+import { exPageFormat, exQuestionFormat, exPageHeader } from "@/lib/util";
 
 type Activity = {
   title: string;
@@ -100,7 +100,7 @@ export default function Ex24_1A() {
   const correctAnswerArray = [4, 1];
   return (
     <div className={exPageFormat}>
-      <div className="mb-4">
+      <div className={exPageHeader}>
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第１問 A"}</h1>
           <span className="text-gray-600">(配点 {4})</span>

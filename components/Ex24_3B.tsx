@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { exPageFormat, cn } from "@/lib/util";
+import { exPageFormat, cn, exPageHeader } from "@/lib/util";
 import { Saiten2 } from "./Saiten2";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
@@ -126,7 +126,7 @@ const Ex24_3B = () => {
   return (
     <div className={cn(exPageFormat)}>
       {/* 問題番号とシチュエーション */}
-      <div className="mb-6">
+      <div className={exPageHeader}>
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
           <span className="text-gray-600">(配点 {9})</span>
@@ -209,8 +209,8 @@ const Ex24_3B = () => {
 
         <div className="my-8">
           <p className="mb-4 flex flex-wrap">
-            問2 From the tour, Yuzu did <span className="underline">not</span>{" "}
-            learn about the
+            問2 From the tour, Yuzu did&nbsp;{" "}
+            <span className="underline">not</span>&nbsp; learn about the
             <div className="mt-1 sm:-mt-8 mx-1">{renderSelect("22", 4)}</div>
             of the south sea island.
           </p>

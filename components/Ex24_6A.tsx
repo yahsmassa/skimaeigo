@@ -1,4 +1,4 @@
-import { cn, exPageFormat } from "@/lib/util";
+import { cn, exPageFormat, exPageHeader } from "@/lib/util";
 import React, { useState } from "react";
 import { Saiten2 } from "./Saiten2";
 import { Answers } from "@/lib/types";
@@ -48,7 +48,7 @@ const Ex24_6A = () => {
   );
   return (
     <div className={exPageFormat}>
-      <div className="mb-6">
+      <div className={exPageHeader}>
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">第６問 A</h1>
           <span className="text-gray-600">(配点 {10})</span>
@@ -151,7 +151,7 @@ const Ex24_6A = () => {
             we are not mentally focused and thinking about time, changing to a
             more engaging activity, such as reading a book, will help ease our
             boredom and speed up the time. The next occasion that you hear
-            &quotTime flies when you&apos;re having fun,&quot you will be
+            &quot;Time flies when you&apos;re having fun,&quot;you will be
             reminded of this.
           </p>
         </div>

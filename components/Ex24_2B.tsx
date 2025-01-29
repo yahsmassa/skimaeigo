@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Answers } from "@/lib/types";
 import { QuestionSelect } from "@/components/QuestionSelect";
 import { Saiten2 } from "./Saiten2";
-import { exPageFormat, exQuestionFormat, cn } from "@/lib/util";
+import { exPageFormat, exQuestionFormat, cn, exPageHeader } from "@/lib/util";
 
 const Ex24_2B = () => {
   const [showResults, setShowResults] = useState(false);
@@ -86,7 +86,7 @@ const Ex24_2B = () => {
   return (
     <div className={cn(exPageFormat)}>
       {/* 問題番号とシチュエーション */}
-      <div className="mb-6">
+      <div className={exPageHeader}>
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第２問 B"}</h1>
           <span className="text-gray-600">(配点 {10})</span>
