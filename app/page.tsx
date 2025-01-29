@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { cn } from "@/lib/util";
 import Ex24_1A from "@/components/Ex24_1A";
 import Ex24_1B from "@/components/Ex24_1B";
 import Ex24_2A from "@/components/Ex24_2A";
