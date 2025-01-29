@@ -11,7 +11,7 @@ const Ex24_6A = () => {
     <div className={exPageFormat}>
       <div className="mb-6">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">&quot;第６問 A&quot;</h1>
+          <h1 className="text-lg font-bold">第６問 A</h1>
           <span className="text-gray-600">(配点 {10})</span>
         </div>
         <Saiten2
@@ -209,10 +209,9 @@ const Ex24_6A = () => {
       <div className="space-y-8 mt-8">
         <div>
           <p className="mb-4">
-            問 1 Choose the best options for &quot;
-            <span className="border border-gray-800 px-2">39</span>&quot; and
-            &quot;
-            <span className="border border-gray-800 px-2">40</span>&quot;.
+            問 1 Choose the best options for
+            <span className="border border-gray-800 px-2">39</span> and
+            <span className="border border-gray-800 px-2">40</span>
           </p>
           <ol className="list-none space-y-2">
             <li className="flex items-start">

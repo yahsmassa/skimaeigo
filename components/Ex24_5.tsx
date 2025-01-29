@@ -132,7 +132,7 @@ const Ex24_5 = () => {
       </div>
 
       {/* Story container */}
-      <div className="border border-gray-300 p-8">
+      <div className="border border-gray-300 p-2 sm:p-8">
         {/* Story title */}
         <h1 className="text-center text-xl mb-6">Maki&apos;s Kitchen</h1>
 
@@ -369,8 +369,8 @@ const Ex24_5 = () => {
       {/* 画像部分 */}
       <div className="flex justify-center my-4">
         <Image
-          src="/images/ex24-5-1.jpg"
-          alt="ex24-5-1"
+          src="/images/Ex24-5-1.jpg"
+          alt="Ex24-5-1"
           width={800}
           height={600}
           className="w-full"
