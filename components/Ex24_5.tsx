@@ -1,7 +1,7 @@
 "use client";
 
 import { Answers } from "@/lib/types";
-import { exPageFormat } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import React, { useState } from "react";
 import { Saiten2 } from "./Saiten2";
 import Image from "next/image";
@@ -84,15 +84,31 @@ const Ex24_5 = () => {
     }));
   };
 
-  const renderSelect = (number: string, count: number) => (
+  const correctAnswerArray = [4, 5, 1, 2, 2, 1, 2, 3, 2];
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
     <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div className="font-medium mb-0.5 mr-2">[{number}]</div>
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
       <select
         value={answers[`question${number}`] || ""}
         onChange={(e) => handleChange(number, e.target.value)}
-        className="w-16 sm:w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
       >
-        <option value="">-</option>
+        <option value="">選択</option>
         {Array.from({ length: count }, (_, index) => (
           <option key={index + 1} value={String(index + 1)}>
             {index + 1}
@@ -112,7 +128,7 @@ const Ex24_5 = () => {
         <Saiten2
           points={15}
           startQuestionNumber={30}
-          correctAnswerArray={[4, 5, 1, 2, 2, 1, 2, 3, 2]}
+          correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
           showResults={showResults}
@@ -383,28 +399,38 @@ const Ex24_5 = () => {
             <div className="flex flex-wrap items-baseline mb-4">
               <span className="font-medium mr-2">問{question.id}</span>
               <span>{question.text}</span>
-              {question.numberBox && renderSelect(question.numberBox, 4)}
+              {/* 30,31,32,33 は 0,1,2,3 に対応 */}
+              {question.boxes && (
+                <div className="flex flex-wrap items-center justify-start mb-4 max-w-[1000px] overflow-x-auto">
+                  {question.boxes.map((box, index) => (
+                    <React.Fragment key={index}>
+                      {renderSelect(box, 6, index)}
+                      {index < question.boxes.length - 1 && (
+                        <span className="mx-1">→</span>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              )}
+              {/* // 34,37,38 */}
+              {question.numberBox &&
+                question.numberBox === "34" &&
+                renderSelect("34", 4, 4)}
+              {question.numberBox &&
+                question.numberBox === "37" &&
+                renderSelect("37", 4, 7)}
+              {question.numberBox &&
+                question.numberBox === "38" &&
+                renderSelect("38", 4, 8)}
               {question.numberBoxes?.map((num, index) => (
+                // 35,36 は 5,6 に対応
                 <React.Fragment key={index}>
-                  {renderSelect(num, 5)}
+                  {renderSelect(num, 5, 5 + index)}
                   {index === 0 && <span className="mx-1">and</span>}
                 </React.Fragment>
               ))}
               <span>.</span>
             </div>
-
-            {question.boxes && (
-              <div className="flex flex-wrap items-center justify-start mb-4 max-w-[1000px] overflow-x-auto">
-                {question.boxes.map((box, index) => (
-                  <React.Fragment key={index}>
-                    {renderSelect(box, 6)}
-                    {index < question.boxes.length - 1 && (
-                      <span className="mx-1">→</span>
-                    )}
-                  </React.Fragment>
-                ))}
-              </div>
-            )}
 
             <div className="space-y-2 pl-6">
               {question.options.map((option, index) => (

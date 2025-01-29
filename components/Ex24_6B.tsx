@@ -5,10 +5,11 @@ import React, { useState } from "react";
 import { Saiten2 } from "./Saiten2";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
-
+import { cn } from "@/lib/util";
 const Ex24_6B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const correctAnswerArray = [4, 4, 2, 3, 3, 5];
 
   const handleChange = (questionNumber: string, value: string) => {
     setAnswers((prev) => ({
@@ -17,15 +18,29 @@ const Ex24_6B = () => {
     }));
   };
 
-  const renderSelect = (number: string, count: number) => (
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
     <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div className="font-medium mb-0.5 mr-2">[{number}]</div>
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
       <select
         value={answers[`question${number}`] || ""}
         onChange={(e) => handleChange(number, e.target.value)}
         className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
       >
-        <option value="">-</option>
+        <option value="">選択</option>
         {Array.from({ length: count }, (_, index) => (
           <option key={index + 1} value={String(index + 1)}>
             {index + 1}
@@ -230,7 +245,7 @@ const Ex24_6B = () => {
                 <span>
                   What is the first characteristic of wasabi on Slide 2?
                 </span>
-                {renderSelect("44", 4)}
+                {renderSelect("44", 4, 0)}
               </div>
               <div className="mt-4 space-y-2">
                 <div className="flex gap-2">
@@ -268,7 +283,7 @@ const Ex24_6B = () => {
                 <span>
                   Which is an <u>error</u> you found on Slide 3?
                 </span>
-                {renderSelect("45", 5)}
+                {renderSelect("45", 5, 1)}
               </div>
               <div className="mt-4 space-y-2">
                 <div className="flex gap-2">
@@ -312,9 +327,9 @@ const Ex24_6B = () => {
                 Choose two options for Slide 4. (The order does not matter.)
               </div>
               <div className="flex items-center gap-2 mt-2">
-                {renderSelect("46", 5)}
+                {renderSelect("46", 5, 2)}
                 <span>・</span>
-                {renderSelect("47", 5)}
+                {renderSelect("47", 5, 3)}
               </div>
               <div className="mt-4 space-y-2">
                 <div className="flex gap-2">
@@ -357,7 +372,7 @@ const Ex24_6B = () => {
                 <span>
                   What can be inferred about tolerance for spices for Slide 5?
                 </span>
-                {renderSelect("48", 4)}
+                {renderSelect("48", 4, 4)}
               </div>
               <div className="mt-4 space-y-3">
                 <div className="flex gap-2">
@@ -405,7 +420,7 @@ const Ex24_6B = () => {
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <span>Choose the most appropriate remark for Slide 6.</span>
-                {renderSelect("49", 5)}
+                {renderSelect("49", 5, 5)}
               </div>
               <div className="mt-4 space-y-3">
                 <div className="flex gap-2">

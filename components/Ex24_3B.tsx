@@ -79,15 +79,29 @@ const Ex24_3B = () => {
     }));
   };
 
-  const renderSelect = (number: string) => (
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, index: number) => (
     <div className="flex flex-col items-center">
-      <div className="font-medium mb-0.5">[{number}]</div>
+      <div
+        className={cn(
+          "font-medium mb-0.5",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
       <select
         value={answers[`question${number}`] || ""}
         onChange={(e) => handleChange(number, e.target.value)}
         className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
       >
-        <option value="">-</option>
+        <option value="">選択</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -174,13 +188,13 @@ const Ex24_3B = () => {
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-2">
-            {renderSelect("18")}
+            {renderSelect("18", 0)}
             <div className="mx-1 mt-8">→</div>
-            {renderSelect("19")}
+            {renderSelect("19", 1)}
             <div className="mx-1 mt-8">→</div>
-            {renderSelect("20")}
+            {renderSelect("20", 2)}
             <div className="mx-1 mt-8">→</div>
-            {renderSelect("21")}
+            {renderSelect("21", 3)}
           </div>
         </div>
 
@@ -197,7 +211,7 @@ const Ex24_3B = () => {
           <p className="mb-4 flex flex-wrap">
             問2 From the tour, Yuzu did <span className="underline">not</span>{" "}
             learn about the
-            <div className="mt-1 sm:-mt-8 mx-1">{renderSelect("22")}</div>
+            <div className="mt-1 sm:-mt-8 mx-1">{renderSelect("22", 4)}</div>
             of the south sea island.
           </p>
 
@@ -214,7 +228,7 @@ const Ex24_3B = () => {
         <div className="mb-6">
           <p className="mb-4 flex flex-wrap">
             問3 On the way home, Yuzu looked up and most likely saw
-            <span className="mt-1 sm:-mt-8 mx-1">{renderSelect("23")}</span>
+            <span className="mt-1 sm:-mt-8 mx-1">{renderSelect("23", 5)}</span>
             in the night sky.
           </p>
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { exPageFormat } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import { Saiten2 } from "./Saiten2";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
@@ -402,15 +402,29 @@ const Ex24_4 = () => {
     }));
   };
 
-  const renderSelect = (number: string, count: number) => (
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
     <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div className="font-medium mb-0.5 mr-2">[{number}]</div>
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
       <select
         value={answers[`question${number}`] || ""}
         onChange={(e) => handleChange(number, e.target.value)}
         className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
       >
-        <option value="">-</option>
+        <option value="">選択</option>
         {Array.from({ length: count }, (_, index) => (
           <option key={index + 1} value={String(index + 1)}>
             {index + 1}
@@ -419,7 +433,7 @@ const Ex24_4 = () => {
       </select>
     </div>
   );
-
+  const correctAnswerArray = [3, 4, 4, 5, 4, 3];
   return (
     <div className={exPageFormat}>
       <div className="mb-6">
@@ -430,7 +444,7 @@ const Ex24_4 = () => {
         <Saiten2
           points={12}
           startQuestionNumber={24}
-          correctAnswerArray={[3, 4, 4, 5, 4, 3]}
+          correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
           showResults={showResults}
@@ -586,7 +600,7 @@ const Ex24_4 = () => {
       {/* ここから解答欄 */}
       <div className="max-w-3xl p-4 space-y-8">
         {/* <div className="max-w-3xl mx-auto p-4 space-y-8"> */}
-        {questionsData.questions.map((question) => (
+        {questionsData.questions.map((question, index) => (
           <div key={question.id} className="space-y-4">
             {/* <div className="flex flex-wrap items-baseline"> */}
             <div className="flex flex-wrap items-baseline">
@@ -599,10 +613,17 @@ const Ex24_4 = () => {
                   </strong>
                 )}
               </span>
-              {question.numberBox && renderSelect(question.numberBox || "", 5)}
+              {/* 24,25,26,29 は 0,1,2,5 に対応 */}
+              {question.numberBox &&
+                renderSelect(
+                  question.numberBox || "",
+                  5,
+                  question.numberBox === "29" ? 5 : index
+                )}
+              {/* 27,28 は 3,4 に対応 */}
               {question.numberBoxes?.map((num, index) => (
                 <React.Fragment key={index}>
-                  {renderSelect(num || "", 5)}
+                  {renderSelect(num || "", 5, index + 3)}
                   {index === 0 && <span className="mx-1">and</span>}
                 </React.Fragment>
               ))}
