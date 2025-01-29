@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { cn } from "@/lib/util";
 import Ex24_1A from "@/components/Ex24_1A";
 import Ex24_1B from "@/components/Ex24_1B";
 import Ex24_2A from "@/components/Ex24_2A";
@@ -35,12 +36,13 @@ export default function Home() {
   const selected = components.find((comp) => comp.id === selectedComponent);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
+    <div className="mt-10 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
+      <main className="gap-8 row-start-2 items-center sm:items-start">
         <select
           value={selectedComponent}
           onChange={handleChange}
-          className="p-2 border rounded"
+          className="ml-5 p-2 border rounded"
         >
           {components.map((comp) => (
             <option key={comp.id} value={comp.id}>

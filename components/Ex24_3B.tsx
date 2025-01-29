@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { exPageFormat } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Saiten2 } from "./Saiten2";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
@@ -110,7 +110,7 @@ const Ex24_3B = () => {
   ];
 
   return (
-    <div className={exPageFormat}>
+    <div className={cn(exPageFormat)}>
       {/* 問題番号とシチュエーション */}
       <div className="mb-6">
         <div className="flex items-center space-x-4 mb-2">
@@ -129,11 +129,11 @@ const Ex24_3B = () => {
       </div>
 
       {/* 記事本体 */}
-      <div className="mb-4 px-4">
+      <div className="mb-4 px-2 sm:px-4">
         <p className="text-base">{questionData.situation}</p>
       </div>
 
-      <div className="bg-white rounded-lg shadow-lg mb-8 p-6">
+      <div className="bg-white rounded-lg shadow-lg mb-8 p-4 sm:p-6 mx-2 sm:mx-0">
         <h3 className="text-xl font-bold text-center mb-4">
           {questionData.passage.title}
         </h3>
@@ -165,7 +165,7 @@ const Ex24_3B = () => {
       </div>
 
       {/* 設問部分 */}
-      <div className="max-w-2xl mx-auto p-4">
+      <div className="w-full max-w-2xl mx-auto px-2 sm:px-4">
         <div className="mb-6">
           <p className="mb-4">
             問1 Yuzu&apos;s article also included student comments (⓪~④)
@@ -173,34 +173,35 @@ const Ex24_3B = () => {
             order in which the events happened.
           </p>
 
-          <div className="flex justify-center items-center">
+          <div className="flex flex-wrap justify-center items-center gap-2">
             {renderSelect("18")}
-            <div className="mx-2 mt-8 ">→</div>
+            <div className="mx-1 mt-8">→</div>
             {renderSelect("19")}
-            <div className="mx-2 mt-8">→</div>
+            <div className="mx-1 mt-8">→</div>
             {renderSelect("20")}
-            <div className="mx-2 mt-8">→</div>
+            <div className="mx-1 mt-8">→</div>
             {renderSelect("21")}
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-2">
           {Object.entries(comments).map(([key, text], index) => (
-            <div key={key} className="p-4 border rounded-lg bg-white">
+            <div key={key} className="p-3 border rounded-lg bg-white">
               <div className="text-sm mb-1">{"①②③④"[index]}</div>
               <div className="text-sm">{text}</div>
             </div>
           ))}
         </div>
-        <div className="my-10">
-          <p className="mb-4 flex">
+
+        <div className="my-8">
+          <p className="mb-4 flex flex-wrap">
             問2 From the tour, Yuzu did <span className="underline">not</span>{" "}
             learn about the
-            <div className="-mt-8 mx-1">{renderSelect("22")}</div>
+            <div className="mt-1 sm:-mt-8 mx-1">{renderSelect("22")}</div>
             of the south sea island.
           </p>
 
-          <div className="space-y-2">
+          <div className="space-y-1">
             {q2Options.map((option, index) => (
               <div key={option.number} className="flex items-start">
                 <span className="mr-2">{"①②③④"[index]}</span>
@@ -210,14 +211,14 @@ const Ex24_3B = () => {
           </div>
         </div>
 
-        <div className="mb-8">
-          <p className="mb-4 flex flex-row">
+        <div className="mb-6">
+          <p className="mb-4 flex flex-wrap">
             問3 On the way home, Yuzu looked up and most likely saw
-            <span className="-mt-8 mx-1">{renderSelect("23")}</span>
+            <span className="mt-1 sm:-mt-8 mx-1">{renderSelect("23")}</span>
             in the night sky.
           </p>
 
-          <div className="space-y-2">
+          <div className="space-y-1">
             {q3Options.map((option, index) => (
               <div key={option.number} className="flex items-start">
                 <span className="mr-2">{"①②③④"[index]}</span>

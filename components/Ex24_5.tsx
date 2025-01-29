@@ -90,7 +90,7 @@ const Ex24_5 = () => {
       <select
         value={answers[`question${number}`] || ""}
         onChange={(e) => handleChange(number, e.target.value)}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+        className="w-16 sm:w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
       >
         <option value="">-</option>
         {Array.from({ length: count }, (_, index) => (
@@ -376,11 +376,11 @@ const Ex24_5 = () => {
           className="w-full"
         />
       </div>
-      {/* 回答部分       */}
-      <div className="max-w-3xl mx-auto p-4">
+      {/* 回答部分 */}
+      <div className="w-full px-4 mx-auto p-4">
         {questionsData.questions.map((question, qIndex) => (
           <div key={qIndex} className="mb-8">
-            <div className="flex items-baseline mb-4">
+            <div className="flex flex-wrap items-baseline mb-4">
               <span className="font-medium mr-2">問{question.id}</span>
               <span>{question.text}</span>
               {question.numberBox && renderSelect(question.numberBox, 4)}
@@ -394,7 +394,7 @@ const Ex24_5 = () => {
             </div>
 
             {question.boxes && (
-              <div className="flex items-center justify-start mb-4">
+              <div className="flex flex-wrap items-center justify-start mb-4 max-w-[1000px] overflow-x-auto">
                 {question.boxes.map((box, index) => (
                   <React.Fragment key={index}>
                     {renderSelect(box, 6)}
