@@ -108,7 +108,7 @@ const Ex24_3B = () => {
     { number: "3", text: "the full moon" },
     { number: "4", text: "the Milky Way" },
   ];
-
+  const correctAnswerArray = [1, 2, 3, 4, 3, 2];
   return (
     <div className={cn(exPageFormat)}>
       {/* 問題番号とシチュエーション */}
@@ -120,7 +120,7 @@ const Ex24_3B = () => {
         <Saiten2
           points={6}
           startQuestionNumber={18}
-          correctAnswerArray={[1, 2, 3, 4, 3, 2]}
+          correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
           showResults={showResults}

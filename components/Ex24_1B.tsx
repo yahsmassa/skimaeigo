@@ -47,7 +47,7 @@ const Ex24_1B = () => {
       answer: 1,
     },
   ];
-
+  const correctAnswerArray = [4, 3, 1];
   return (
     <div className={exPageFormat}>
       <div className="mb-4">
@@ -58,7 +58,7 @@ const Ex24_1B = () => {
         <Saiten2
           points={6}
           startQuestionNumber={3}
-          correctAnswerArray={[4, 3, 1]}
+          correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
           showResults={showResults}
@@ -172,13 +172,13 @@ const Ex24_1B = () => {
               <p>問{question.number}</p>
               <p>{question.prompt}</p>
               <QuestionSelect
+                index={index}
                 questionNumber={index + 3}
+                correctAnswerArray={correctAnswerArray}
                 limit={question.options.length}
                 answers={answers}
                 setAnswers={setAnswers}
-                questionKey={`question${index + 3}` as keyof Answers}
                 showResults={showResults}
-                subQuestions={subQuestions}
               />
             </div>
             <ol className="list-none space-y-2 ml-6">

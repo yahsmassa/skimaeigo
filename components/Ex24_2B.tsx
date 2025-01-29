@@ -81,6 +81,8 @@ const Ex24_2B = () => {
     ],
   };
 
+  const correctAnswerArray = [1, 1, 1, 3, 2];
+
   return (
     <div className={cn(exPageFormat)}>
       {/* 問題番号とシチュエーション */}
@@ -92,7 +94,7 @@ const Ex24_2B = () => {
         <Saiten2
           points={10}
           startQuestionNumber={11}
-          correctAnswerArray={[1, 1, 1, 3, 2]}
+          correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
           showResults={showResults}
@@ -128,11 +130,12 @@ const Ex24_2B = () => {
               <p>問{question.number}</p>
               <p>{question.prompt}</p>
               <QuestionSelect
+                index={index}
                 questionNumber={index + 11}
+                correctAnswerArray={correctAnswerArray}
                 limit={question.options.length}
                 answers={answers}
                 setAnswers={setAnswers}
-                questionKey={`question${index + 11}` as keyof Answers}
                 showResults={showResults}
               />
             </div>

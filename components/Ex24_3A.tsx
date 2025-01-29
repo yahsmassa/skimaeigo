@@ -169,7 +169,7 @@ const Ex24_3A: React.FC = () => {
       answer: 1,
     },
   ];
-
+  const correctAnswerArray = [2, 2];
   // }
   return (
     <div className={exPageFormat}>
@@ -182,7 +182,7 @@ const Ex24_3A: React.FC = () => {
         <Saiten2
           points={4}
           startQuestionNumber={16}
-          correctAnswerArray={[2, 2]}
+          correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
           showResults={showResults}
@@ -219,13 +219,13 @@ const Ex24_3A: React.FC = () => {
               <p className="w-12">問{question.number}</p>
               <p className="text-left">{question.prompt}</p>
               <QuestionSelect
+                index={index}
                 questionNumber={index + 16}
+                correctAnswerArray={correctAnswerArray}
                 limit={question.options.length}
                 answers={answers}
                 setAnswers={setAnswers}
-                questionKey={`question${index + 16}` as keyof Answers}
                 showResults={showResults} // 追加
-                subQuestions={[question]} // 追加
               />
             </div>
             {index === 1 ? (

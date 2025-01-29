@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SkimaEigo",
-  description: "隙間時間でやる英語問題集",
+  title: "スキマ英語",
+  description: "スキマ時間で共通試験問題を攻略",
 };
 
 export default function RootLayout({

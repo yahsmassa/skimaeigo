@@ -1,28 +1,29 @@
 "use client";
 
-import { Answers, SubQuestion } from "@/lib/types";
+import { Answers } from "@/lib/types";
 
 interface QuestionSelectProps {
+  index: number;
   questionNumber: number;
   limit: number;
   answers: Answers;
   setAnswers: (answers: Answers | ((prev: Answers) => Answers)) => void;
-  questionKey: keyof Answers;
+  correctAnswerArray: number[];
   showResults?: boolean;
-  subQuestions?: SubQuestion[];
 }
 
 export function QuestionSelect({
+  index,
   questionNumber,
   limit,
   answers,
   setAnswers,
-  questionKey,
+  correctAnswerArray,
   showResults = false,
-  subQuestions = [],
 }: QuestionSelectProps) {
-  const value = answers[questionKey] || "";
-
+  const questionKey = `question${questionNumber}` as keyof Answers;
+  const AnswerValue = answers[questionKey] || "";
+  const correctAnswer = correctAnswerArray[index];
   const handleChange = (newValue: string) => {
     setAnswers((prev: Answers) => ({
       ...prev,
@@ -31,8 +32,7 @@ export function QuestionSelect({
   };
 
   const isCorrect =
-    showResults &&
-    answers[questionKey] === String(subQuestions[questionNumber - 1]?.answer);
+    showResults && answers[questionKey] === String(correctAnswer);
 
   return (
     <div className="flex items-center space-x-2">
@@ -40,7 +40,7 @@ export function QuestionSelect({
         {questionNumber}
       </label>
       <select
-        value={value || ""}
+        value={AnswerValue || ""}
         onChange={(e) => handleChange(e.target.value)}
         className="border border-gray-300 rounded  px-2  w-20 text-center"
       >
@@ -58,6 +58,10 @@ export function QuestionSelect({
           {isCorrect ? "○" : "×"}
         </span>
       )}
+      {/* <p>
+        {" "}
+        {questionNumber} {questionKey} {answers[questionKey]} {correctAnswer}
+      </p> */}
     </div>
   );
 }
