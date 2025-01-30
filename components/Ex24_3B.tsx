@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { exPageFormat, cn, exPageHeader } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Saiten2 } from "./Saiten2";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
@@ -126,7 +126,7 @@ const Ex24_3B = () => {
   return (
     <div className={cn(exPageFormat)}>
       {/* 問題番号とシチュエーション */}
-      <div className={exPageHeader}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
           <span className="text-gray-600">(配点 {9})</span>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { cn, exPageFormat, exPageHeader } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import { Saiten2 } from "./Saiten2";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
@@ -436,7 +436,7 @@ const Ex24_4 = () => {
   const correctAnswerArray = [3, 4, 4, 5, 4, 3];
   return (
     <div className={exPageFormat}>
-      <div className={exPageHeader}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {12})</span>

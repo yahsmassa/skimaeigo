@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { QuestionSelect } from "@/components/QuestionSelect";
 import { Saiten2 } from "@/components/Saiten2";
 import { Answers } from "@/lib/types";
-import { cn, exPageFormat, exPageHeader, exQuestionFormat } from "@/lib/util";
+import { cn, exPageFormat, exQuestionFormat } from "@/lib/util";
 import Image from "next/image";
 
 const Ex24_2A = () => {
@@ -100,7 +100,7 @@ const Ex24_2A = () => {
   return (
     <div className={exPageFormat}>
       {/* 問題番号とシチュエーション */}
-      <div className={exPageHeader}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第２問 A"}</h1>
           <span className="text-gray-600">(配点 {10})</span>

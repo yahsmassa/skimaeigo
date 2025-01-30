@@ -1,7 +1,7 @@
 "use client";
 
 import { Answers } from "@/lib/types";
-import { cn, exPageFormat, exPageHeader } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import React, { useState } from "react";
 import { Saiten2 } from "./Saiten2";
 import Image from "next/image";
@@ -120,7 +120,7 @@ const Ex24_5 = () => {
 
   return (
     <div className={exPageFormat}>
-      <div className={exPageHeader}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第５問"}</h1>
           <span className="text-gray-600">(配点 {15})</span>
