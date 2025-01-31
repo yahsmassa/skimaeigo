@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Ex24_1A from "@/components/Ex24_1A";
 import Ex24_1B from "@/components/Ex24_1B";
 import Ex24_2A from "@/components/Ex24_2A";
@@ -33,6 +33,21 @@ export default function Home() {
   };
 
   const selected = components.find((comp) => comp.id === selectedComponent);
+
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(() => {
+            console.log("ServiceWorker registration successful");
+          })
+          .catch((err) => {
+            console.log("ServiceWorker registration failed: ", err);
+          });
+      });
+    }
+  }, []);
 
   return (
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
