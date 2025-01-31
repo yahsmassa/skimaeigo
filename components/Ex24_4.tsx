@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { cn, exPageFormat } from "@/lib/util";
-import { Saiten2 } from "./Saiten2";
+import { Saiten } from "./Saiten";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
 
@@ -441,7 +441,7 @@ const Ex24_4 = () => {
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten2
+        <Saiten
           points={12}
           startQuestionNumber={24}
           correctAnswerArray={correctAnswerArray}

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { QuestionSelect } from "@/components/QuestionSelect";
-import { Saiten2 } from "@/components/Saiten2";
+import { Saiten } from "@/components/Saiten";
 import { Answers, SubQuestion } from "@/lib/types";
 import { exPageFormat, exQuestionFormat } from "@/lib/util";
 
@@ -105,7 +105,7 @@ export default function Ex24_1A() {
           <h1 className="text-lg font-bold">{"第１問 A"}</h1>
           <span className="text-gray-600">(配点 {4})</span>
         </div>
-        <Saiten2
+        <Saiten
           points={4}
           startQuestionNumber={1}
           correctAnswerArray={correctAnswerArray}

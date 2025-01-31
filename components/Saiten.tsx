@@ -1,11 +1,12 @@
 "use client";
 
-import { Answers, SubQuestion } from "@/lib/types";
+import { Answers } from "@/lib/types";
 import React, { useState } from "react";
 import { ExTimer } from "@/components/ExTimer";
 
 type SaitenProps = {
-  subQuestions: SubQuestion[];
+  startQuestionNumber: number;
+  correctAnswerArray: number[];
   showResults: boolean;
   points: number;
   answers: Answers;
@@ -14,7 +15,8 @@ type SaitenProps = {
 };
 
 export function Saiten({
-  subQuestions,
+  startQuestionNumber,
+  correctAnswerArray,
   showResults,
   setShowResults,
   points,
@@ -24,23 +26,24 @@ export function Saiten({
   const [score, setScore] = useState<number | null>(null);
   const handleGrading = () => {
     let correctCount = 0;
-    subQuestions.forEach((question, index) => {
+    correctAnswerArray.forEach((correctAnswer, index) => {
       const userAnswer = parseInt(
-        answers[`question${index + 1}` as keyof Answers] || "0"
+        answers[`question${index + startQuestionNumber}` as keyof Answers] ||
+          "0"
       );
-      if (userAnswer === question.answer) {
+      if (userAnswer === correctAnswer) {
         correctCount++;
       }
     });
 
-    const totalScore = (correctCount / subQuestions.length) * points;
+    const totalScore = (correctCount / correctAnswerArray.length) * points;
     setScore(totalScore);
     setShowResults(true);
   };
 
   const handleClear = () => {
-    const clearedAnswers = subQuestions.reduce((acc, _, index) => {
-      acc[`question${index + 1}`] = "";
+    const clearedAnswers = correctAnswerArray.reduce((acc, _, index) => {
+      acc[`question${index + startQuestionNumber}`] = "";
       return acc;
     }, {} as Answers);
     setAnswers(clearedAnswers);

@@ -3,7 +3,7 @@
 import { Answers } from "@/lib/types";
 import { cn, exPageFormat } from "@/lib/util";
 import React, { useState } from "react";
-import { Saiten2 } from "./Saiten2";
+import { Saiten } from "./Saiten";
 import Image from "next/image";
 
 const Ex24_5 = () => {
@@ -125,7 +125,7 @@ const Ex24_5 = () => {
           <h1 className="text-lg font-bold">{"第５問"}</h1>
           <span className="text-gray-600">(配点 {15})</span>
         </div>
-        <Saiten2
+        <Saiten
           points={15}
           startQuestionNumber={30}
           correctAnswerArray={correctAnswerArray}

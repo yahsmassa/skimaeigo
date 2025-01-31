@@ -7,7 +7,7 @@ import {
   exPageFormat,
   exQuestionFormat,
 } from "@/lib/util";
-import { Saiten2 } from "./Saiten2";
+import { Saiten } from "./Saiten";
 import { Answers } from "@/lib/types";
 import { QuestionSelect } from "./QuestionSelect";
 import Image from "next/image";
@@ -179,7 +179,7 @@ const Ex24_3A: React.FC = () => {
           <h1 className="text-lg font-bold">{"第３問 A"}</h1>
           <span className="text-gray-600">(配点 {6})</span>
         </div>
-        <Saiten2
+        <Saiten
           points={4}
           startQuestionNumber={16}
           correctAnswerArray={correctAnswerArray}
