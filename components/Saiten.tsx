@@ -60,13 +60,13 @@ export function Saiten({
       <div className="flex items-center space-x-2">
         <button
           onClick={handleGrading}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold h-8 py-1 px-3 rounded text-sm w-[60px]"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold h-8 py-1 px-3 rounded text-sm w-[60px] mb-3"
         >
           採点
         </button>
         <button
           onClick={handleClear}
-          className="bg-gray-500 hover:bg-gray-700 text-white  h-8 py-1 px-2 rounded text-base"
+          className="bg-gray-500 hover:bg-gray-700 text-white  h-8 py-1 px-2 rounded text-base mb-3"
         >
           Reset
         </button>
