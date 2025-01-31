@@ -38,17 +38,20 @@ export default function Home() {
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
     <div className="mt-10 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
       <main className="gap-8 row-start-2 items-center sm:items-start">
-        <select
-          value={selectedComponent}
-          onChange={handleChange}
-          className="ml-5 p-2 border rounded"
-        >
-          {components.map((comp) => (
-            <option key={comp.id} value={comp.id}>
-              {comp.label}
-            </option>
-          ))}
-        </select>
+        <div className="flex items-center">
+          <h1 className=" text-2xl font-bold ">共通テスト 英語</h1>
+          <select
+            value={selectedComponent}
+            onChange={handleChange}
+            className="ml-5 p-2 border rounded"
+          >
+            {components.map((comp) => (
+              <option key={comp.id} value={comp.id}>
+                {comp.label}
+              </option>
+            ))}
+          </select>
+        </div>
 
         {selected && selected.component}
       </main>

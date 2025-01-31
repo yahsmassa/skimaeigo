@@ -14,8 +14,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "共通試験",
-  description: "共通試験をどこでも体験、やって初めてわかる勉強法",
+  title: "共通テスト",
+  description:
+    "電車のなかや公園のベンチ、どこにいても共通テストがとける！スキマ時間学習に最適！",
 };
 
 export default function RootLayout({
