@@ -1,6 +1,37 @@
 "use client";
 
 import { useState, useEffect } from "react";
+
+import Ex21_1A from "@/components/Ex21_1A";
+import Ex21_1B from "@/components/Ex21_1B";
+import Ex21_2A from "@/components/Ex21_2A";
+import Ex21_2B from "@/components/Ex21_2B";
+import Ex21_3A from "@/components/Ex21_3A";
+import Ex21_3B from "@/components/Ex21_3B";
+import Ex21_4 from "@/components/Ex21_4";
+import Ex21_5 from "@/components/Ex21_5";
+import Ex21_6A from "@/components/Ex21_6A";
+import Ex21_6B from "@/components/Ex21_6B";
+import Ex22_1A from "@/components/Ex22_1A";
+import Ex22_1B from "@/components/Ex22_1B";
+import Ex22_2A from "@/components/Ex22_2A";
+import Ex22_2B from "@/components/Ex22_2B";
+import Ex22_3A from "@/components/Ex22_3A";
+import Ex22_3B from "@/components/Ex22_3B";
+import Ex22_4 from "@/components/Ex22_4";
+import Ex22_5 from "@/components/Ex22_5";
+import Ex22_6A from "@/components/Ex22_6A";
+import Ex22_6B from "@/components/Ex22_6B";
+import Ex23_1A from "@/components/Ex23_1A";
+import Ex23_1B from "@/components/Ex23_1B";
+import Ex23_2A from "@/components/Ex23_2A";
+import Ex23_2B from "@/components/Ex23_2B";
+import Ex23_3A from "@/components/Ex23_3A";
+import Ex23_3B from "@/components/Ex23_3B";
+import Ex23_4 from "@/components/Ex23_4";
+import Ex23_5 from "@/components/Ex23_5";
+import Ex23_6A from "@/components/Ex23_6A";
+import Ex23_6B from "@/components/Ex23_6B";
 import Ex24_1A from "@/components/Ex24_1A";
 import Ex24_1B from "@/components/Ex24_1B";
 import Ex24_2A from "@/components/Ex24_2A";
@@ -11,8 +42,54 @@ import Ex24_4 from "@/components/Ex24_4";
 import Ex24_5 from "@/components/Ex24_5";
 import Ex24_6A from "@/components/Ex24_6A";
 import Ex24_6B from "@/components/Ex24_6B";
+import Ex25_1 from "@/components/Ex25_1";
+import Ex25_2 from "@/components/Ex25_2";
+import Ex25_3 from "@/components/Ex25_3";
+import Ex25_4 from "@/components/Ex25_4";
+import Ex25_5 from "@/components/Ex25_5";
+import Ex25_6 from "@/components/Ex25_6";
+import Ex25_7 from "@/components/Ex25_7";
+import Ex25_8 from "@/components/Ex25_8";
 
 const components = [
+  { id: "Ex21_1A", label: "2021年 問1 A", component: <Ex21_1A /> },
+  { id: "Ex21_1B", label: "2021年 問1 B", component: <Ex21_1B /> },
+  { id: "Ex21_2A", label: "2021年 問2 A", component: <Ex21_2A /> },
+  { id: "Ex21_2B", label: "2021年 問2 B", component: <Ex21_2B /> },
+  { id: "Ex21_3A", label: "2021年 問3 A", component: <Ex21_3A /> },
+  { id: "Ex21_3B", label: "2021年 問3 B", component: <Ex21_3B /> },
+  { id: "Ex21_4", label: "2021年 問4", component: <Ex21_4 /> },
+  { id: "Ex21_5", label: "2021年 問5", component: <Ex21_5 /> },
+  { id: "Ex21_6A", label: "2021年 問6 A", component: <Ex21_6A /> },
+  { id: "Ex21_6B", label: "2021年 問6 B", component: <Ex21_6B /> },
+  { id: "Ex22_1A", label: "2022年 問1 A", component: <Ex22_1A /> },
+  { id: "Ex22_1B", label: "2022年 問1 B", component: <Ex22_1B /> },
+  { id: "Ex22_2A", label: "2022年 問2 A", component: <Ex22_2A /> },
+  { id: "Ex22_2B", label: "2022年 問2 B", component: <Ex22_2B /> },
+  { id: "Ex22_3A", label: "2022年 問3 A", component: <Ex22_3A /> },
+  { id: "Ex22_3B", label: "2022年 問3 B", component: <Ex22_3B /> },
+  { id: "Ex22_4", label: "2022年 問4", component: <Ex22_4 /> },
+  { id: "Ex22_5", label: "2022年 問5", component: <Ex22_5 /> },
+  { id: "Ex22_6A", label: "2022年 問6 A", component: <Ex22_6A /> },
+  { id: "Ex22_6B", label: "2022年 問6 B", component: <Ex22_6B /> },
+  { id: "Ex23_1A", label: "2023年 問1 A", component: <Ex23_1A /> },
+  { id: "Ex23_1B", label: "2023年 問1 B", component: <Ex23_1B /> },
+  { id: "Ex23_2A", label: "2023年 問2 A", component: <Ex23_2A /> },
+  { id: "Ex23_2B", label: "2023年 問2 B", component: <Ex23_2B /> },
+  { id: "Ex23_3A", label: "2023年 問3 A", component: <Ex23_3A /> },
+  { id: "Ex23_3B", label: "2023年 問3 B", component: <Ex23_3B /> },
+  { id: "Ex23_4", label: "2023年 問4", component: <Ex23_4 /> },
+  { id: "Ex23_5", label: "2023年 問5", component: <Ex23_5 /> },
+  { id: "Ex23_6A", label: "2023年 問6 A", component: <Ex23_6A /> },
+  { id: "Ex23_6B", label: "2023年 問6 B", component: <Ex23_6B /> },
+  { id: "Ex25_1", label: "2025年 問1", component: <Ex25_1 /> },
+  { id: "Ex25_2", label: "2025年 問2", component: <Ex25_2 /> },
+  { id: "Ex25_3", label: "2025年 問3", component: <Ex25_3 /> },
+  { id: "Ex25_4", label: "2025年 問4", component: <Ex25_4 /> },
+  { id: "Ex25_5", label: "2025年 問5", component: <Ex25_5 /> },
+  { id: "Ex25_6", label: "2025年 問6", component: <Ex25_6 /> },
+  { id: "Ex25_7", label: "2025年 問7", component: <Ex25_7 /> },
+  { id: "Ex25_8", label: "2025年 問8", component: <Ex25_8 /> },
   { id: "Ex24_1A", label: "2024年 問1 A", component: <Ex24_1A /> },
   { id: "Ex24_1B", label: "2024年 問1 B", component: <Ex24_1B /> },
   { id: "Ex24_2A", label: "2024年 問2 A", component: <Ex24_2A /> },
@@ -25,10 +102,82 @@ const components = [
   { id: "Ex24_6B", label: "2024年 問6 B", component: <Ex24_6B /> },
 ];
 
-export default function Home() {
-  const [selectedComponent, setSelectedComponent] = useState(components[0].id);
+type Year = "2021" | "2022" | "2023" | "2024" | "2025";
+type Problem = { id: string; label: string };
+type GroupedComponents = Record<Year, Problem[]>;
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+const groupedComponents: GroupedComponents = {
+  "2021": [
+    { id: "Ex21_1A", label: "問1 A" },
+    { id: "Ex21_1B", label: "問1 B" },
+    { id: "Ex21_2A", label: "問2 A" },
+    { id: "Ex21_2B", label: "問2 B" },
+    { id: "Ex21_3A", label: "問3 A" },
+    { id: "Ex21_3B", label: "問3 B" },
+    { id: "Ex21_4", label: "問4" },
+    { id: "Ex21_5", label: "問5" },
+    { id: "Ex21_6A", label: "問6 A" },
+    { id: "Ex21_6B", label: "問6 B" },
+  ],
+  "2022": [
+    { id: "Ex22_1A", label: "問1 A" },
+    { id: "Ex22_1B", label: "問1 B" },
+    { id: "Ex22_2A", label: "問2 A" },
+    { id: "Ex22_2B", label: "問2 B" },
+    { id: "Ex22_3A", label: "問3 A" },
+    { id: "Ex22_3B", label: "問3 B" },
+    { id: "Ex22_4", label: "問4" },
+    { id: "Ex22_5", label: "問5" },
+    { id: "Ex22_6A", label: "問6 A" },
+    { id: "Ex22_6B", label: "問6 B" },
+  ],
+  "2023": [
+    { id: "Ex23_1A", label: "問1 A" },
+    { id: "Ex23_1B", label: "問1 B" },
+    { id: "Ex23_2A", label: "問2 A" },
+    { id: "Ex23_2B", label: "問2 B" },
+    { id: "Ex23_3A", label: "問3 A" },
+    { id: "Ex23_3B", label: "問3 B" },
+    { id: "Ex23_4", label: "問4" },
+    { id: "Ex23_5", label: "問5" },
+    { id: "Ex23_6A", label: "問6 A" },
+    { id: "Ex23_6B", label: "問6 B" },
+  ],
+  "2024": [
+    { id: "Ex24_1A", label: "問1 A" },
+    { id: "Ex24_1B", label: "問1 B" },
+    { id: "Ex24_2A", label: "問2 A" },
+    { id: "Ex24_2B", label: "問2 B" },
+    { id: "Ex24_3A", label: "問3 A" },
+    { id: "Ex24_3B", label: "問3 B" },
+    { id: "Ex24_4", label: "問4" },
+    { id: "Ex24_5", label: "問5" },
+    { id: "Ex24_6A", label: "問6 A" },
+    { id: "Ex24_6B", label: "問6 B" },
+  ],
+  "2025": [
+    { id: "Ex25_1", label: "問1" },
+    { id: "Ex25_2", label: "問2" },
+    { id: "Ex25_3", label: "問3" },
+    { id: "Ex25_4", label: "問4" },
+    { id: "Ex25_5", label: "問5" },
+    { id: "Ex25_6", label: "問6" },
+    { id: "Ex25_7", label: "問7" },
+    { id: "Ex25_8", label: "問8" },
+  ],
+};
+
+export default function Home() {
+  const [selectedYear, setSelectedYear] = useState<Year>("2021");
+  const [selectedComponent, setSelectedComponent] = useState("Ex21_1A");
+
+  const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const year = e.target.value as Year;
+    setSelectedYear(year);
+    setSelectedComponent(groupedComponents[year][0].id);
+  };
+
+  const handleProblemChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedComponent(e.target.value);
   };
 
@@ -50,19 +199,31 @@ export default function Home() {
   }, []);
 
   return (
-    // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
-    <div className="mt-10 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
+    <div className="mt-7 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
       <main className="gap-8 row-start-2 items-center sm:items-start">
         <div className="flex items-center">
-          <h1 className=" text-2xl font-bold ">共通テスト 英語</h1>
+          <h1 className="ml-2 text-xl font-bold ">共通テスト 英語</h1>
           <select
-            value={selectedComponent}
-            onChange={handleChange}
+            value={selectedYear}
+            onChange={handleYearChange}
             className="ml-5 p-2 border rounded"
           >
-            {components.map((comp) => (
-              <option key={comp.id} value={comp.id}>
-                {comp.label}
+            {(Object.keys(groupedComponents) as Year[])
+              .reverse()
+              .map((year) => (
+                <option key={year} value={year}>
+                  {year}年
+                </option>
+              ))}
+          </select>
+          <select
+            value={selectedComponent}
+            onChange={handleProblemChange}
+            className="ml-2 p-2 border rounded"
+          >
+            {groupedComponents[selectedYear].map((problem) => (
+              <option key={problem.id} value={problem.id}>
+                {problem.label}
               </option>
             ))}
           </select>

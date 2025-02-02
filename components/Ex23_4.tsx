@@ -1,0 +1,327 @@
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { exPageFormat } from "@/lib/util";
+import { Answers } from "@/lib/types";
+import Image from "next/image";
+
+const Ex23_4 = () => {
+  const correctAnswerArray = [4, 2, 4];
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  return (
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {6})</span>
+        </div>
+        <Saiten
+          points={6}
+          startQuestionNumber={1}
+          correctAnswerArray={correctAnswerArray}
+          answers={answers}
+          setAnswers={setAnswers}
+          showResults={showResults}
+          setShowResults={setShowResults}
+        />
+      </div>{" "}
+      {/* Context */}
+      <div className="mb-8">
+        <p className="text-gray-700 leading-relaxed">
+          Your teacher has asked you to read two articles about effective ways
+          to study. You will discuss what you learned in your next class.
+        </p>
+      </div>
+      {/* Article Content */}
+      <div className="space-y-6">
+        {/* Title and Author */}
+        <div className="text-center mb-8">
+          <h1 className="text-xl mb-2">
+            How to Study Effectively: Contextual Learning
+          </h1>
+          <p className="mb-2">Tim Oxford</p>
+          <p className="italic">
+            Science Teacher, Stone City Junior High School
+          </p>
+        </div>
+
+        {/* Main Content */}
+        <div className="space-y-4">
+          <p>
+            As a science teacher, I am always concerned about how to help
+            students who struggle to learn. Recently, I found that their main
+            way of learning was to study new information repeatedly until they
+            could recall it all. For example, when they studied for a test, they
+            would use a workbook like the example below and repeatedly say the
+            terms that go in the blanks: &quot;Obsidian is igneous, dark, and
+            glassy. Obsidian is igneous, dark, and glassy....&quot; These
+            students would feel as if they had learned the information, but
+            would quickly forget it and get low scores on the test. Also, this
+            sort of repetitive learning is dull and demotivating.
+          </p>
+
+          <p>
+            To help them learn, I tried applying &quot;contextual
+            learning.&quot; In this kind of learning, new knowledge is
+            constructed through students&apos; own experiences. For my science
+            class, students learned the properties of different kinds of rocks.
+            Rather than having them memorize the terms from a workbook, I
+            brought a big box of various rocks to the class. Students examined
+            the rocks and identified their names based on the characteristics
+            they observed.
+          </p>
+
+          <div className="flex flex-col md:flex-row justify-between items-start">
+            <div className="w-full md:w-2/3">
+              <p className="mb-4">
+                Thanks to this experience, I think these students will always be
+                able to describe the properties of the rocks they studied. One
+                issue, however, is that we don&apos;t always have the time to do
+                contextual learning, so students will still study by doing
+                drills. I don&apos;t think this is the best way. I&apos;m still
+                searching for ways to improve their learning.
+              </p>
+            </div>
+            {/* Rock Properties Table as Image */}
+            <div className="w-full md:w-1/3 mt-4 md:mt-0">
+              <Image
+                src="/images/Ex23-4-1.jpg"
+                alt="Rock properties table showing: Rock name: Obsidian, Rock type: igneous, Coloring: dark, Texture: glassy, and a picture of the rock"
+                className="w-[70%] md:w-full mx-auto"
+                width={200}
+                height={250}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Second Article */}
+      <div className="mt-12 space-y-6">
+        {/* Title and Author */}
+        <div className="text-center mb-8">
+          <h1 className="text-xl mb-2">
+            How to Make Repetitive Learning Effective
+          </h1>
+          <p className="mb-2">Cheng Lee</p>
+          <p className="italic">Professor, Stone City University</p>
+        </div>
+
+        {/* Main Content */}
+        <div className="space-y-4">
+          <p>
+            Mr. Oxford&apos;s thoughts on contextual learning were insightful. I
+            agree that it can be beneficial. Repetition, though, can also work
+            well. However, the repetitive learning strategy he discussed, which
+            is called &quot;massed learning,&quot; is not effective. There is
+            another kind of repetitive learning called &quot;spaced
+            learning,&quot; in which students memorize new information and then
+            review it over longer intervals.
+          </p>
+
+          <p>
+            The interval between studying is the key difference. In Mr.
+            Oxford&apos;s example, his students probably used their workbooks to
+            study over a short period of time. In this case, they might have
+            paid less attention to the content as they continued to review it.
+            The reason for this is that the content was no longer new and could
+            easily be ignored. In contrast, when the intervals are longer, the
+            students&apos; memory of the content is weaker. Therefore, they pay
+            more attention because they have to make a greater effort to recall
+            what they had learned before. For example, if students study with
+            their workbooks, wait three days, and then study again, they are
+            likely to learn the material better.
+          </p>
+
+          <div className="flex flex-col md:flex-row justify-between items-start">
+            <div className="w-full md:w-2/3">
+              <p className="mb-4">
+                Previous research has provided evidence for the advantages of
+                spaced learning. In one experiment, students in Groups A and B
+                tried to memorize the names of 50 animals. Both groups studied
+                four times, but Group A studied at one-day intervals while Group
+                B studied at one-week intervals. As the figure to the right
+                shows, 28 days after the last learning session, the average
+                ratio of recalled names on a test was higher for the spaced
+                learning group.
+              </p>
+
+              <p>
+                I understand that students often need to learn a lot of
+                information in a short period of time, and long intervals
+                between studying might not be practical. You should understand,
+                though, that massed learning might not be good for long-term
+                recall.
+              </p>
+            </div>
+
+            {/* Graph */}
+            <div className="w-full md:w-1/3 mt-4 md:mt-0">
+              <Image
+                src="/images/Ex23-4-2.jpg"
+                alt="Bar graph showing The Average Ratio of Recalled Names: Group A around 55%, Group B around 90%"
+                className="border border-gray-800 p-2"
+                width={250}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Questions Section */}
+      <div className="mt-12 space-y-12">
+        {/* Question 1 */}
+        <div>
+          <div className="flex items-center mb-4">
+            <span className="font-serif mr-2">問 1</span>
+            <span>Oxford believes that</span>
+            <div className="border border-gray-800 mx-2 px-3 py-1">24</div>
+            <span>.</span>
+          </div>
+          <ol className="list-none space-y-2">
+            {[
+              "continuous drilling is boring",
+              "reading an explanation of terms is helpful",
+              "students are not interested in science",
+              "studying with a workbook leads to success",
+            ].map((answer, index) => (
+              <li key={index} className="flex items-start">
+                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
+                  {index + 1}
+                </span>
+                {answer}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* Question 2 */}
+        <div>
+          <div className="flex items-start mb-4">
+            <span className="font-serif mr-2">問 2</span>
+            <div className="flex-1">
+              <span>In the study discussed by Lee, students took a test</span>
+              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
+                25
+              </div>
+              <span>after their final session.</span>
+            </div>
+          </div>
+          <ol className="list-none space-y-2">
+            {["four weeks", "immediately", "one day", "one week"].map(
+              (answer, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
+                    {index + 1}
+                  </span>
+                  {answer}
+                </li>
+              )
+            )}
+          </ol>
+        </div>
+
+        {/* Question 3 */}
+        <div>
+          <div className="flex items-start mb-4">
+            <span className="font-serif mr-2">問 3</span>
+            <div className="flex-1">
+              <span>
+                Lee introduces spaced learning, which involves studying at
+              </span>
+              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
+                26
+              </div>
+              <span>intervals, in order to overcome the disadvantages of</span>
+              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
+                27
+              </div>
+              <span>
+                learning that Oxford discussed. (Choose the best one for each
+                box from options ①～⑥.)
+              </span>
+            </div>
+          </div>
+          <ol className="list-none space-y-2">
+            {[
+              "contextual",
+              "extended",
+              "fixed",
+              "irregular",
+              "massed",
+              "practical",
+            ].map((answer, index) => (
+              <li key={index} className="flex items-start">
+                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
+                  {index + 1}
+                </span>
+                {answer}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* Question 4 */}
+        <div>
+          <div className="flex items-start mb-4">
+            <span className="font-serif mr-2">問 4</span>
+            <div className="flex-1">
+              <span>Both writers agree that</span>
+              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
+                28
+              </div>
+              <span>is helpful for remembering new information.</span>
+            </div>
+          </div>
+          <ol className="list-none space-y-2">
+            {[
+              "experiential learning",
+              "having proper rest",
+              "long-term attention",
+              "studying with workbooks",
+            ].map((answer, index) => (
+              <li key={index} className="flex items-start">
+                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
+                  {index + 1}
+                </span>
+                {answer}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* Question 5 */}
+        <div>
+          <div className="flex items-start mb-4">
+            <span className="font-serif mr-2">問 5</span>
+            <div className="flex-1">
+              <span>
+                Which additional information would be the best to further
+                support Lee&apos;s argument for spaced learning?
+              </span>
+              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
+                29
+              </div>
+            </div>
+          </div>
+          <ol className="list-none space-y-2">
+            {[
+              "The main factor that makes a science class attractive",
+              "The most effective length of intervals for spaced learning",
+              "Whether students&apos; workbooks include visuals or not",
+              "Why Oxford&apos;s students could not memorize information well",
+            ].map((answer, index) => (
+              <li key={index} className="flex items-start">
+                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
+                  {index + 1}
+                </span>
+                {answer}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Ex23_4;
