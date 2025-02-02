@@ -168,8 +168,8 @@ const groupedComponents: GroupedComponents = {
 };
 
 export default function Home() {
-  const [selectedYear, setSelectedYear] = useState<Year>("2021");
-  const [selectedComponent, setSelectedComponent] = useState("Ex21_1A");
+  const [selectedYear, setSelectedYear] = useState<Year>("2025");
+  const [selectedComponent, setSelectedComponent] = useState("Ex25_1");
 
   const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const year = e.target.value as Year;
