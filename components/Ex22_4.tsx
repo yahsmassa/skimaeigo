@@ -1,24 +1,64 @@
+"use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 const Ex22_4 = () => {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [3, 3, 2, 1, 2, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
 
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <span className="text-gray-600">(配点 {16})</span>
         </div>
         <Saiten
-          points={6}
-          startQuestionNumber={1}
+          points={16}
+          startQuestionNumber={24}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -153,8 +193,7 @@ const Ex22_4 = () => {
               <span className="text-base">
                 Len recommends buying used goods because
               </span>
-              <div className="border border-black px-4 py-1">24</div>
-              <span>.</span>
+              {renderSelect("24", 4, 0)}.
             </div>
             <div className="mt-4 space-y-2">
               <div className="flex items-start space-x-4">
@@ -191,8 +230,7 @@ const Ex22_4 = () => {
           <div className="flex-1">
             <div className="flex items-center space-x-2">
               <span className="text-base">Cindy suggests buying</span>
-              <div className="border border-black px-4 py-1">25</div>
-              <span>.</span>
+              {renderSelect("25", 4, 1)}.<span>.</span>
             </div>
             <div className="mt-4 space-y-2">
               <div className="flex items-start space-x-4">
@@ -233,8 +271,7 @@ const Ex22_4 = () => {
               <span className="text-base">
                 Both Len and Cindy recommend that you
               </span>
-              <div className="border border-black px-4 py-1">26</div>
-              <span>.</span>
+              {renderSelect("26", 4, 2)}.
             </div>
             <div className="mt-4 space-y-2">
               <div className="flex items-start space-x-4">
@@ -274,8 +311,7 @@ const Ex22_4 = () => {
                 If you want to buy new appliances at the best possible prices,
                 you should
               </span>
-              <div className="border border-black px-4 py-1">27</div>
-              <span>.</span>
+              {renderSelect("27", 4, 3)}.
             </div>
             <div className="mt-4 space-y-2">
               <div className="flex items-start space-x-4">
@@ -315,12 +351,12 @@ const Ex22_4 = () => {
                 <span className="text-base">
                   You have decided to buy a microwave from
                 </span>
-                <div className="border border-black px-4 py-1">28</div>
+                {renderSelect("28", 4, 4)}.
                 <span>
                   because it is the cheapest. You have also decided to buy a
                   television from
                 </span>
-                <div className="border border-black px-4 py-1">29</div>
+                {renderSelect("29", 4, 5)}.
                 <span>
                   because it is the cheapest with a five-year warranty.
                 </span>

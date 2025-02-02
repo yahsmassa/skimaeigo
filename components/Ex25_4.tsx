@@ -1,12 +1,53 @@
+"use client";
+
 import React, { useState } from "react";
+import { cn, exPageFormat } from "@/lib/util";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 const Ex25_4 = () => {
   const correctAnswerArray = [1, 3, 1, 3];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -16,7 +57,7 @@ const Ex25_4 = () => {
         </div>
         <Saiten
           points={12}
-          startQuestionNumber={1}
+          startQuestionNumber={14}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -135,9 +176,9 @@ const Ex25_4 = () => {
       <div className="text-right mt-4 text-gray-600"></div>
       <div className="space-y-8">
         <div>
-          <p className="mb-4">
+          <p className="mb-4 flex gap-1">
             問 1 Based on Comment (1), which is the best word to add?{" "}
-            <span className="border border-gray-300 px-3 py-1">14</span>
+            {renderSelect("14", 4, 0)}
           </p>
           <div className="pl-8 space-y-2">
             <p>① However</p>
@@ -148,9 +189,9 @@ const Ex25_4 = () => {
         </div>
 
         <div>
-          <p className="mb-4">
+          <p className="mb-4 flex gap-1">
             問 2 Based on Comment (2), which is the best sentence to add?{" "}
-            <span className="border border-gray-300 px-3 py-1">15</span>
+            {renderSelect("15", 4, 1)}
           </p>
           <div className="pl-8 space-y-2">
             <p>① Limit the time you spend having conversations with people.</p>
@@ -163,10 +204,9 @@ const Ex25_4 = () => {
         </div>
 
         <div>
-          <p className="mb-4">
+          <p className="mb-4 flex gap-1">
             問 3 Based on Comment (3), which is the best phrase to replace the
-            underlined part?{" "}
-            <span className="border border-gray-300 px-3 py-1">16</span>
+            underlined part? {renderSelect("16", 4, 2)}
           </p>
           <div className="pl-8 space-y-2">
             <p>① you can be satisfied at work and in your personal life</p>
@@ -177,10 +217,9 @@ const Ex25_4 = () => {
         </div>
 
         <div>
-          <p className="mb-4">
+          <p className="mb-4 flex gap-1">
             問 4 Based on Comment (4), which is the best phrase to replace the
-            underlined part?{" "}
-            <span className="border border-gray-300 px-3 py-1">17</span>
+            underlined part? {renderSelect("17", 4, 3)}
           </p>
           <div className="pl-8 space-y-2">
             <p>① plan your daily activities as soon as you wake up</p>

@@ -1,24 +1,63 @@
+"use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 const Ex21_6A = () => {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [4, 3, 4, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
 
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <h1 className="text-lg font-bold">{"第６問 A"}</h1>
+          <span className="text-gray-600">(配点 {12})</span>
         </div>
         <Saiten
-          points={6}
-          startQuestionNumber={1}
+          points={12}
+          startQuestionNumber={39}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -174,10 +213,10 @@ const Ex21_6A = () => {
       <div className="space-y-8 mt-8">
         {/* Question 1 */}
         <div>
-          <div className="flex items-center mb-4">
-            <span className="mr-2 font-bold">問 1</span>
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問 1</span>
             <span>Choose the best option for</span>
-            <div className="border border-gray-300 px-2 mx-2">39</div>
+            {renderSelect("39", 4, 0)}
             <span>on your poster.</span>
           </div>
           <div className="space-y-2 pl-8">
@@ -210,10 +249,10 @@ const Ex21_6A = () => {
 
         {/* Question 2 */}
         <div>
-          <div className="flex items-center mb-4">
-            <span className="mr-2 font-bold">問 2</span>
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問 2</span>
             <span>Choose the best option for</span>
-            <div className="border border-gray-300 px-2 mx-2">40</div>
+            {renderSelect("40", 4, 1)}
             <span>on your poster.</span>
           </div>
           <div className="space-y-2 pl-8">
@@ -246,10 +285,10 @@ const Ex21_6A = () => {
 
         {/* Question 3 */}
         <div>
-          <div className="flex items-center mb-4">
-            <span className="mr-2 font-bold">問 3</span>
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問 3</span>
             <span>Choose the best option for</span>
-            <div className="border border-gray-300 px-2 mx-2">41</div>
+            {renderSelect("41", 4, 2)}
             <span>on your poster.</span>
           </div>
           <div className="space-y-2 pl-8">
@@ -282,10 +321,10 @@ const Ex21_6A = () => {
 
         {/* Question 4 */}
         <div>
-          <div className="flex items-center mb-4">
-            <span className="mr-2 font-bold">問 4</span>
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問 4</span>
             <span>Choose the best option for</span>
-            <div className="border border-gray-300 px-2 mx-2">42</div>
+            {renderSelect("42", 4, 3)}
             <span>on your poster.</span>
           </div>
           <div className="space-y-2 pl-8">

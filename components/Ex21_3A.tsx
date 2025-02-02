@@ -1,14 +1,53 @@
+"use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 export default function Ex21_3A() {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [3, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
 
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -18,7 +57,7 @@ export default function Ex21_3A() {
         </div>
         <Saiten
           points={6}
-          startQuestionNumber={1}
+          startQuestionNumber={16}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -102,13 +141,12 @@ export default function Ex21_3A() {
       {/* Questions */}
       <div className="space-y-8">
         {/* Question 1 */}
-        <div className="space-y-4">
-          <p className="flex gap-2">
-            <span className="font-serif">問 1</span>
+        <div className="space-y-2">
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問 1</span>
             <span>From Alex&apos;s answer, you learn that Alex</span>
-            <span className="border border-gray-400 px-2">16</span>
-            <span>.</span>
-          </p>
+            {renderSelect("16", 4, 0)}.
+          </div>
 
           <div className="space-y-2 pl-8">
             <p>① appreciates the convenient location of the hotel</p>
@@ -121,16 +159,15 @@ export default function Ex21_3A() {
         </div>
 
         {/* Question 2 */}
-        <div className="space-y-4">
-          <p className="space-y-2">
-            <span className="font-serif">問 2</span>
+        <div className="space-y-2">
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問 2</span>
             <span>
-              {" "}
               You are departing on public transport from the airport at 2.00 pm
-              on 15 March 2021. What is the fastest way to get to the hotel?{" "}
+              on 15 March 2021. What is the fastest way to get to the hotel?
             </span>
-            <span className="border border-gray-400 px-2">17</span>
-          </p>
+            {renderSelect("17", 4, 1)}
+          </div>
 
           <div className="space-y-2 pl-8">
             <p>① By express bus and city bus</p>

@@ -1,24 +1,63 @@
+"use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 const Ex22_2B = () => {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [2, 4, 2, 4, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
 
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 A"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <h1 className="text-lg font-bold">{"第２問 B"}</h1>
+          <span className="text-gray-600">(配点 {10})</span>
         </div>
         <Saiten
-          points={6}
-          startQuestionNumber={1}
+          points={10}
+          startQuestionNumber={11}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -107,13 +146,13 @@ const Ex22_2B = () => {
       <div className="mt-8 space-y-8">
         {/* Question 1 */}
         <div>
-          <p className="mb-4 flex items-start">
-            <span className="mr-2">問 1</span>
+          <div className="mb-4 flex flex-wrap items-center">
+            <span className="flex-nowrap mr-2">問 1</span>
             In terms of the ratios for homes with pets, which shows the
             countries&apos; ranking from{" "}
             <span className="underline">highest to lowest</span>?
-            <span className="ml-2 border border-black px-2">11</span>
-          </p>
+            {renderSelect("11", 6, 0)}
+          </div>
 
           <div className="space-y-2 pl-8">
             <p>① Australia — the UK — the US</p>
@@ -127,11 +166,14 @@ const Ex22_2B = () => {
 
         {/* Question 2 */}
         <div>
-          <p className="mb-4 flex items-start">
-            <span className="mr-2">問 2</span>
-            According to David&apos;s report, one advantage of having pets is
-            that<span className="ml-2 border border-black px-2">12</span>.
-          </p>
+          <div className="mb-4 flex flex-wrap items-center">
+            <span className="flex-nowrap mr-2">問 2</span>
+            <span>
+              According to David&apos;s report, one advantage of having pets is
+              that
+            </span>
+            {renderSelect("12", 4, 1)}.
+          </div>
 
           <div className="space-y-2 pl-8">
             <p>① you can save money</p>
@@ -143,11 +185,13 @@ const Ex22_2B = () => {
 
         {/* Question 3 */}
         <div>
-          <p className="mb-4 flex items-start">
-            <span className="mr-2">問 3</span>
-            The statement that best reflects one finding from the survey is
-            <span className="ml-2 border border-black px-2">13</span>
-          </p>
+          <div className="mb-4 flex flex-wrap items-center">
+            <span className="flex-nowrap mr-2">問 3</span>
+            <span>
+              The statement that best reflects one finding from the survey is
+            </span>
+            {renderSelect("13", 4, 2)}.
+          </div>
 
           <div className="space-y-2 pl-8">
             <p>
@@ -163,13 +207,13 @@ const Ex22_2B = () => {
 
         {/* Question 4 */}
         <div>
-          <div className="mb-4 flex items-start">
-            <span className="mr-2">問 4</span>
-            <div>
+          <div className="mb-4 flex flex-wrap items-center">
+            <span className="flex-nowrap mr-2">問 4</span>
+            <span>
               Which best summarises David&apos;s opinions about having pets in
               Japan?
-              <span className="ml-2 border border-black px-2">14</span>
-            </div>
+            </span>
+            {renderSelect("14", 4, 3)}.
           </div>
 
           <div className="space-y-2 pl-8">
@@ -182,12 +226,10 @@ const Ex22_2B = () => {
 
         {/* Question 5 */}
         <div>
-          <div className="mb-4 flex items-start">
-            <span className="mr-2">問 5</span>
-            <div>
-              Which is the most suitable title for the article?
-              <span className="ml-2 border border-black px-2">15</span>
-            </div>
+          <div className="mb-4 flex flex-wrap items-center">
+            <span className="flex-nowrap mr-2">問 5</span>
+            <span>Which is the most suitable title for the article?</span>
+            {renderSelect("15", 4, 4)}.
           </div>
 
           <div className="space-y-2 pl-8">

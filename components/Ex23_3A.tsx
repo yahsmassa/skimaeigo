@@ -1,13 +1,53 @@
+"use client";
+
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
 
 const Ex23_3A = () => {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [2, 3];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -17,7 +57,7 @@ const Ex23_3A = () => {
         </div>
         <Saiten
           points={6}
-          startQuestionNumber={1}
+          startQuestionNumber={16}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -86,13 +126,13 @@ const Ex23_3A = () => {
       <div className="mt-12 space-y-12">
         {/* Question 1 */}
         <div>
-          <div className="flex items-center mb-4">
-            <span className=" mr-2 w-12">問 1</span>
+          <div className="flex items-center mb-4 flex-wrap">
+            <span className="flex-nowrap mr-2">問 1</span>
             <span>
               If you take Kaitlyn&apos;s advice, how should you fill your
               backpack?
             </span>
-            <div className="border border-gray-800 ml-2 px-3 py-1">16</div>
+            {renderSelect("16", 4, 0)}.
           </div>
           <div className="mb-6">
             <Image
@@ -108,9 +148,9 @@ const Ex23_3A = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className=" mr-2">問 2</span>
+            <span className="flex-nowrap mr-2">問 2</span>
             <span>According to Kaitlyn,</span>
-            <div className="border border-gray-800 mx-2 px-3 py-1">17</div>
+            {renderSelect("17", 4, 1)}.
             <span>is the best method to stay warm all night.</span>
           </div>
           <ol className="list-none space-y-2">

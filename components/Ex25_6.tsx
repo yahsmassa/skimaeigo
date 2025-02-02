@@ -1,12 +1,51 @@
+"use client";
+
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import { Answers } from "@/lib/types";
-
 const Ex25_6 = () => {
   const correctAnswerArray = [5, 4, 2, 1, 4, 3, 3, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -16,7 +55,7 @@ const Ex25_6 = () => {
         </div>
         <Saiten
           points={12}
-          startQuestionNumber={1}
+          startQuestionNumber={24}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -216,22 +255,22 @@ const Ex25_6 = () => {
       <div className="mt-8 space-y-8">
         {/* Question 1 */}
         <div className="space-y-4">
-          <div className="flex gap-2">
-            <span>問 1</span>
+          <div className="flex gap-2 items-center flex-wrap">
+            <span className="whitespace-nowrap">問 1</span>
             <div>
               Choose <span className="underline">four</span> out of the five
               descriptions (①〜⑤) and put them in the order they occurred.
             </div>
           </div>
 
-          <div className="flex items-center gap-2 my-4 ml-8">
-            <div className="border border-gray-400 px-3 py-1">24</div>
+          <div className="flex items-center gap-2 my-4 ml-8 flex-wrap">
+            {renderSelect("24", 4, 0)}
             <span>→</span>
-            <div className="border border-gray-400 px-3 py-1">25</div>
+            {renderSelect("25", 4, 1)}
             <span>→</span>
-            <div className="border border-gray-400 px-3 py-1">26</div>
+            {renderSelect("26", 4, 2)}
             <span>→</span>
-            <div className="border border-gray-400 px-3 py-1">27</div>
+            {renderSelect("27", 4, 3)}
           </div>
 
           <div className="space-y-2 ml-8">
@@ -245,12 +284,12 @@ const Ex25_6 = () => {
 
         {/* Question 2 */}
         <div className="space-y-4">
-          <div className="flex gap-2">
-            <span>問 2</span>
+          <div className="flex gap-2 items-center flex-wrap">
+            <span className="whitespace-nowrap">問 2</span>
             <div>
               Choose the correct combination of Melody&apos;s superpowers.
             </div>
-            <div className="border border-gray-400 px-3 py-1">28</div>
+            {renderSelect("28", 4, 4)}
           </div>
 
           <div className="space-y-2 ml-8">
@@ -272,15 +311,10 @@ const Ex25_6 = () => {
 
         {/* Question 3 */}
         <div className="space-y-4">
-          <div className="flex gap-2">
-            <span>問 3</span>
-            <div>
-              Choose the best option for{" "}
-              <span className="border border-gray-400 px-3 py-1 inline-block">
-                29
-              </span>
-              .
-            </div>
+          <div className="flex gap-2 items-center flex-wrap">
+            <span className="whitespace-nowrap">問 3</span>
+            <span>Choose the best option for </span>
+            {renderSelect("29", 4, 5)}.
           </div>
 
           <div className="space-y-2 ml-8">
@@ -293,19 +327,13 @@ const Ex25_6 = () => {
 
         {/* Question 4 */}
         <div className="space-y-4">
-          <div className="flex gap-2">
-            <span>問 4</span>
-            <div>
-              Choose the best options for{" "}
-              <span className="border border-gray-400 px-3 py-1 inline-block">
-                30
-              </span>{" "}
-              and
-              <span className="border border-gray-400 px-3 py-1 inline-block ml-1">
-                31
-              </span>
-              . (The order does not matter.)
-            </div>
+          <div className="flex gap-2 items-center flex-wrap">
+            <span className="whitespace-nowrap">問 4</span>
+            <span>Choose the best options for </span>
+            {renderSelect("30", 4, 6)}
+            <span>and</span>
+            {renderSelect("31", 4, 7)}
+            <span>. (The order does not matter.)</span>
           </div>
 
           <div className="space-y-2 ml-8">

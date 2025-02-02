@@ -1,24 +1,63 @@
+"use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 const Ex21_5 = () => {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [3, 4, 4, 3, 5, 1, 1, 3, 1];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
 
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第５問"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <span className="text-gray-600">(配点 {15})</span>
         </div>
         <Saiten
-          points={6}
-          startQuestionNumber={1}
+          points={15}
+          startQuestionNumber={30}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -129,10 +168,10 @@ const Ex21_5 = () => {
       {/* 問セクション */}
       {/* Question 1 */}
       <div className="space-y-4">
-        <div className="flex items-center gap-4">
-          <span className="font-bold">問 1</span>
+        <div className="flex items-center flex-wrap gap-2 mb-4">
+          <span className="flex-nowrap mr-2">問 1</span>
           <span>Which is the best title for your presentation?</span>
-          <div className="border border-black px-4 py-1">30</div>
+          {renderSelect("30", 4, 0)}
         </div>
 
         <div className="space-y-2 pl-8">
@@ -157,13 +196,13 @@ const Ex21_5 = () => {
 
       {/* Question 2 */}
       <div className="space-y-4">
-        <div className="flex items-center gap-4">
-          <span className="font-bold">問 2</span>
+        <div className="flex items-center flex-wrap gap-2 mb-4">
+          <span className="flex-nowrap mr-2">問 2</span>
           <span>
             Which is the best combination for the{" "}
-            <span className="italic">Who&apos;s Who?</span> slide?
+            <span className="italic font-bold">Who&apos;s Who?</span> slide?
           </span>
-          <div className="border border-black px-4 py-1">31</div>
+          {renderSelect("31", 4, 1)}
         </div>
 
         <div className="grid grid-cols-2 gap-8 pl-8">
@@ -203,19 +242,16 @@ const Ex21_5 = () => {
 
       {/* Question 3 */}
       <div className="space-y-4">
-        <div className="flex items-start gap-4">
-          <span className="font-bold">問 3</span>
-          <div>
-            <div>
-              Choose the four events in the order they happened to complete the
-            </div>
-            <div className="flex items-center gap-2">
-              <span>Pre-fame Storyline slide.</span>
-              <div className="border border-black px-4 py-1">32</div>
-              <span>~</span>
-              <div className="border border-black px-4 py-1">35</div>
-            </div>
-          </div>
+        <div className="flex items-center flex-wrap gap-2 mb-4">
+          <span className="flex-nowrap mr-2">問 3</span>
+          <span>
+            Choose the four events in the order they happened to complete the
+          </span>
+          <span className="italic font-bold">Pre-fame Storyline</span> slide.
+          {renderSelect("32", 5, 2)}
+          {renderSelect("33", 5, 3)}
+          {renderSelect("34", 5, 4)}
+          {renderSelect("35", 5, 5)}
         </div>
 
         <div className="space-y-2 pl-8">
@@ -245,21 +281,16 @@ const Ex21_5 = () => {
       </div>
       {/* Question 4 */}
       <div className="space-y-4">
-        <div className="flex items-start gap-4">
-          <span className="font-bold">問 4</span>
-          <div>
-            <div className="flex items-center gap-2">
-              <span>Choose the two best items for the</span>
-              <span className="italic">Aston&apos;s Abilities</span>
-              <span>slide. (The order</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span>does not matter.)</span>
-              <div className="border border-black px-4 py-1">36</div>
-              <span>・</span>
-              <div className="border border-black px-4 py-1">37</div>
-            </div>
-          </div>
+        <div className="flex items-center flex-wrap gap-2 mb-4">
+          <span className="flex-nowrap mr-2">問 4</span>
+          <span>
+            Choose the two best items for the &nbsp;
+            <span className="italic font-bold">
+              Aston&apos;s Abilities
+            </span>{" "}
+            &nbsp;slide. (The order does not matter.)
+          </span>
+          {renderSelect("36", 5, 6)}・{renderSelect("37", 5, 7)}
         </div>
 
         <div className="space-y-2 pl-8">
@@ -288,12 +319,14 @@ const Ex21_5 = () => {
 
       {/* Question 5 */}
       <div className="space-y-4">
-        <div className="flex items-center gap-4">
-          <span className="font-bold">問 5</span>
-          <span>Complete the</span>
-          <span className="italic">Aston Now</span>
-          <span>slide with the most appropriate item.</span>
-          <div className="border border-black px-4 py-1">38</div>
+        <div className="flex items-center flex-wrap gap-2 mb-4">
+          <span className="flex-nowrap mr-2">問 5</span>
+          <span>
+            Complete the &nbsp;
+            <span className="italic font-bold">Aston Now</span> &nbsp;slide with
+            the most appropriate item.
+          </span>
+          {renderSelect("38", 5, 8)}
         </div>
 
         <div className="space-y-2 pl-8">

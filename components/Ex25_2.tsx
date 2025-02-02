@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useState } from "react";
+import { cn, exPageFormat } from "@/lib/util";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
 
@@ -8,6 +10,44 @@ export default function Ex25_2() {
   const correctAnswerArray = [2, 4, 4, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -17,7 +57,7 @@ export default function Ex25_2() {
         </div>
         <Saiten
           points={12}
-          startQuestionNumber={1}
+          startQuestionNumber={4}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -104,12 +144,10 @@ export default function Ex25_2() {
         <div>
           <div className="flex gap-2 mb-4">
             <span className="font-bold">問 1</span>
-            <p>
+            <span className="flex gap-1">
               Which of the following did all the guest speakers agree on?{" "}
-              <span className="inline-block w-8 h-6 border border-black text-center">
-                4
-              </span>
-            </p>
+              {renderSelect("4", 4, 0)}.
+            </span>
           </div>
           <div className="pl-8 space-y-2">
             <div className="flex gap-2">
@@ -145,12 +183,8 @@ export default function Ex25_2() {
         <div>
           <div className="mb-4">
             <span className="font-bold">問 2</span>
-            <span className="ml-2">
-              Flying vehicles will most likely{" "}
-              <span className="inline-block w-8 h-6 border border-black text-center mx-1">
-                5
-              </span>
-              .
+            <span className="ml-2 flex gap-1">
+              Flying vehicles will most likely {renderSelect("5", 4, 1)}.
             </span>
           </div>
           <div className="pl-8 space-y-2">
@@ -185,13 +219,10 @@ export default function Ex25_2() {
         <div>
           <div className="mb-4">
             <span className="font-bold">問 3</span>
-            <span className="ml-2">
+            <span className="ml-2 flex gap-1">
               One guest speaker&apos;s{" "}
               <span className="border-b border-black">opinion</span> is that{" "}
-              <span className="inline-block w-8 h-6 border border-black text-center mx-1">
-                6
-              </span>
-              .
+              {renderSelect("6", 4, 2)}.
             </span>
           </div>
           <div className="pl-8 space-y-2">
@@ -226,11 +257,9 @@ export default function Ex25_2() {
         <div>
           <div className="mb-4">
             <span className="font-bold">問 4</span>
-            <span className="ml-2">
+            <span className="ml-2 flex gap-1">
               Which of the following is mentioned in the blog?{" "}
-              <span className="inline-block w-8 h-6 border border-black text-center mx-1">
-                7
-              </span>
+              {renderSelect("7", 4, 3)}.
             </span>
           </div>
           <div className="pl-8 space-y-2">

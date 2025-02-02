@@ -1,13 +1,52 @@
+"use client";
+
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 const Ex21_2B = () => {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [4, 4, 2, 2, 1];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
 
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -17,7 +56,7 @@ const Ex21_2B = () => {
         </div>
         <Saiten
           points={6}
-          startQuestionNumber={1}
+          startQuestionNumber={11}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -125,14 +164,13 @@ const Ex21_2B = () => {
 
       {/* Questions Section */}
 
-      <div className="space-y-4">
-        <div className="flex items-start">
-          <span className="mr-2">問1</span>
+      <div className="space-y-4 mt-5">
+        <div className="space-y-2">
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問1</span>
+            <span>Ken thinks the new policy</span> {renderSelect("11", 4, 0)}
+          </div>
           <div>
-            <p>
-              Ken thinks the new policy{" "}
-              <span className="border border-gray-400 px-2 mx-1">11</span>.
-            </p>
             <ol className="list-none pl-6 space-y-1">
               <li>① can make students study more</li>
               <li>② may improve school safety</li>
@@ -142,14 +180,16 @@ const Ex21_2B = () => {
           </div>
         </div>
 
-        <div className="flex items-start">
-          <span className="mr-2">問2</span>
-          <div>
-            <p>
+        <div className="space-y-2">
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問2</span>
+            <span>
               One <span className="underline">fact</span> stated in Ken&apos;s
               forum post is that{" "}
-              <span className="border border-gray-400 px-2 mx-1">12</span>.
-            </p>
+            </span>
+            {renderSelect("12", 4, 1)}
+          </div>
+          <div>
             <ol className="list-none pl-6 space-y-1">
               <li>① more discussion is needed about the policy</li>
               <li>
@@ -161,13 +201,13 @@ const Ex21_2B = () => {
           </div>
         </div>
 
-        <div className="flex items-start">
-          <span className="mr-2">問3</span>
+        <div className="space-y-2">
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問3</span>
+            <span>Who thinks the aim of the policy is to save energy? </span>
+            {renderSelect("13", 4, 2)}
+          </div>
           <div>
-            <p>
-              Who thinks the aim of the policy is to save energy?{" "}
-              <span className="border border-gray-400 px-2 mx-1">13</span>
-            </p>
             <ol className="list-none pl-6 space-y-1">
               <li>① Dr Berger</li>
               <li>② Ken</li>
@@ -177,14 +217,14 @@ const Ex21_2B = () => {
           </div>
         </div>
 
-        <div className="flex items-start">
-          <span className="mr-2">問4</span>
+        <div className="space-y-2">
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問4</span>
+            <span> Dr Berger is basing his new policy on the </span>
+            <span className="underline">fact</span>
+            {renderSelect("14", 4, 3)}
+          </div>
           <div>
-            <p>
-              Dr Berger is basing his new policy on the{" "}
-              <span className="underline">fact</span> that{" "}
-              <span className="border border-gray-400 px-2 mx-1">14</span>.
-            </p>
             <ol className="list-none pl-6 space-y-1">
               <li>① going home early is important</li>
               <li>② safety in the city has decreased</li>
@@ -194,13 +234,15 @@ const Ex21_2B = () => {
           </div>
         </div>
 
-        <div className="flex items-start">
-          <span className="mr-2">問5</span>
-          <div>
-            <p>
+        <div className="space-y-2">
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問5</span>
+            <span>
               What would you research to help Ken oppose the new policy?{" "}
-              <span className="border border-gray-400 px-2 mx-1">15</span>
-            </p>
+            </span>
+            {renderSelect("15", 4, 4)}
+          </div>
+          <div>
             <ol className="list-none pl-6 space-y-1">
               <li>① The crime rate and its relation to the local area</li>
               <li>② The energy budget and electricity costs of the school</li>

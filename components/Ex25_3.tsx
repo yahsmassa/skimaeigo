@@ -1,12 +1,53 @@
+"use client";
+
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 const TheContest = () => {
   const correctAnswerArray = [3, 5, 4, 3, 1, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -16,7 +57,7 @@ const TheContest = () => {
         </div>
         <Saiten
           points={9}
-          startQuestionNumber={1}
+          startQuestionNumber={8}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -86,9 +127,8 @@ const TheContest = () => {
 
       <div className="space-y-8">
         <div>
-          <p className="mb-4">
-            問 1 Which person is telling the story?{" "}
-            <span className="border border-gray-300 px-4 py-1">8</span>
+          <p className="mb-4 flex gap-1">
+            問 1 Which person is telling the story? {renderSelect("8", 4, 0)}.
           </p>
           <div className="pl-8 space-y-2">
             <p>① Kei</p>
@@ -104,13 +144,13 @@ const TheContest = () => {
             options (①～⑤) and put them in the order they happened.
           </p>
           <div className="flex items-center mb-4">
-            <div className="border border-gray-300 px-4 py-1">9</div>
+            {renderSelect("9", 5, 1)}
             <span className="mx-2">→</span>
-            <div className="border border-gray-300 px-4 py-1">10</div>
+            {renderSelect("10", 5, 2)}
             <span className="mx-2">→</span>
-            <div className="border border-gray-300 px-4 py-1">11</div>
+            {renderSelect("11", 5, 3)}
             <span className="mx-2">→</span>
-            <div className="border border-gray-300 px-4 py-1">12</div>
+            {renderSelect("12", 5, 4)}
           </div>
           <div className="pl-8 space-y-2">
             <p>① The band changed its attitude.</p>
@@ -122,9 +162,9 @@ const TheContest = () => {
         </div>
 
         <div>
-          <p className="mb-4">
+          <p className="mb-4 flex gap-1">
             問 3 How did the band most likely feel after the competition?{" "}
-            <span className="border border-gray-300 px-4 py-1">13</span>
+            {renderSelect("13", 4, 5)}
           </p>
           <div className="pl-8 space-y-2">
             <p>① Awful</p>

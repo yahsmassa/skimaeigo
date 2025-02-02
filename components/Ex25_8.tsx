@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
 
@@ -8,6 +10,45 @@ const Ex25_8 = () => {
   const correctAnswerArray = [1, 1, 3, 4, 2, 4, 1];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -17,7 +58,7 @@ const Ex25_8 = () => {
         </div>
         <Saiten
           points={17}
-          startQuestionNumber={1}
+          startQuestionNumber={38}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -138,14 +179,12 @@ const Ex25_8 = () => {
       <div className="mt-8 space-y-8">
         {/* Question 1 */}
         <div className="space-y-4">
-          <div className="flex gap-2">
-            <span>問 1</span>
-            <div className="flex gap-2">
-              <span>
-                Which of the following best expresses Meilin&apos;s opinion?
-              </span>
-              <div className="border border-gray-400 px-3 py-1">38</div>
-            </div>
+          <div className="flex gap-2 items-center flex-wrap">
+            <span className="whitespace-nowrap">問 1</span>
+            <span>
+              Which of the following best expresses Meilin&apos;s opinion?
+            </span>
+            {renderSelect("38", 4, 0)}
           </div>
 
           <div className="space-y-2 ml-8">
@@ -158,15 +197,13 @@ const Ex25_8 = () => {
 
         {/* Question 2 */}
         <div className="space-y-4">
-          <div className="flex gap-2">
-            <span>問 2</span>
-            <div className="flex gap-2">
-              <span>
-                Both Christine and Victor mention that space exploration
-              </span>
-              <div className="border border-gray-400 px-3 py-1">39</div>
-              <span>.</span>
-            </div>
+          <div className="flex gap-2 items-center flex-wrap">
+            <span className="whitespace-nowrap">問 2</span>
+            <span>
+              Both Christine and Victor mention that space exploration
+            </span>
+            {renderSelect("39", 4, 1)}
+            <span>.</span>
           </div>
 
           <div className="space-y-4 ml-8">
@@ -235,13 +272,9 @@ const Ex25_8 = () => {
 
             {/* Options for 40 and 41 */}
             <div className="space-y-2">
-              <p>
-                Options for{" "}
-                <span className="border border-gray-400 px-2">40</span> and
-                <span className="border border-gray-400 px-2 ml-1">
-                  41
-                </span>{" "}
-                (the order does not matter):
+              <p className="flex items-center gap-2 flex-wrap">
+                Options for {renderSelect("40", 5, 2)}. and
+                {renderSelect("41", 5, 3)}. (the order does not matter):
               </p>
               <div className="ml-4 space-y-2">
                 <div>① Apu&apos;</div>
@@ -254,9 +287,8 @@ const Ex25_8 = () => {
 
             {/* Options for 42 */}
             <div className="space-y-2">
-              <p>
-                Options for{" "}
-                <span className="border border-gray-400 px-2">42</span>:
+              <p className="flex items-center gap-2 flex-wrap">
+                Options for {renderSelect("42", 4, 4)}.
               </p>
               <div className="ml-4 space-y-3">
                 <div>
@@ -373,6 +405,128 @@ const Ex25_8 = () => {
             height={600}
             className="w-full max-w-xl mx-auto"
           />
+        </div>
+      </div>
+      <div className="text-base space-y-8 p-6">
+        {/* Question 4 */}
+        <div className="space-y-4">
+          <div className="flex items-start gap-2 flex-wrap">
+            <span className="whitespace-nowrap">問 4</span>
+            <span>
+              Based on Source A, which of the following is the most appropriate
+              for REASON 2?
+            </span>
+            {renderSelect("43", 4, 5)}.
+          </div>
+
+          <div className="space-y-4 ml-6">
+            <div className="flex gap-2">
+              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
+                1
+              </span>
+              <div>
+                CO₂ emissions produced by spacecraft are huge and are damaging
+                outer space.
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
+                2
+              </span>
+              <div>
+                It is difficult to update spacecraft with new engines that emit
+                fewer harmful gases.
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
+                3
+              </span>
+              <div>
+                Space debris poses risks to humans due to potential collision
+                with airplanes.
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
+                4
+              </span>
+              <div>
+                Space exploration is polluting the environment of both the Earth
+                and the thermosphere.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Question 5 */}
+        <div className="space-y-4">
+          <div className="flex items-start gap-2">
+            <div className="flex-nowrap">問 5</div>
+            <div className="flex-1">
+              <div>
+                For REASON 3, you have decided to write{" "}
+                <i>
+                  The cost of space exploration is high and the money could be
+                  used instead to solve major world problems
+                </i>
+                .
+              </div>
+              <div className="flex flex-wrap items-center">
+                Based on Source B, which option best supports this statement?
+                {renderSelect("44", 4, 6)}.
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4 ml-6">
+            <div className="flex gap-2">
+              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
+                1
+              </span>
+              <div>
+                The amount of money that governments around the world spend on
+                space exploration could not only reduce hunger but also make
+                primary education available in developing countries.
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
+                2
+              </span>
+              <div>
+                The data show that it costs less to ensure clean water for
+                people in developing countries than for governments around the
+                world to explore space.
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
+                3
+              </span>
+              <div>
+                With less than half the money that governments spend on space
+                exploration, it would be possible to address the problem of
+                educational inequality in the developing world.
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
+                4
+              </span>
+              <div>
+                With the money currently invested in space exploration, we could
+                provide sufficient food, basic education, and enough clean water
+                in developing countries.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
 
@@ -8,6 +10,45 @@ export default function Ex25_1() {
   const correctAnswerArray = [4, 2, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -119,12 +160,9 @@ export default function Ex25_1() {
           <div>
             <div className="flex gap-2 mb-4">
               <span className="font-bold">問 1</span>
-              <p>
+              <p className="flex gap-1">
                 The customers most likely to benefit from this pamphlet are{" "}
-                <span className="inline-block w-8 h-6 border border-black text-center">
-                  1
-                </span>
-                .
+                {renderSelect("1", 4, 0)}.
               </p>
             </div>
             <div className="pl-8 space-y-2">
@@ -161,13 +199,10 @@ export default function Ex25_1() {
           <div>
             <div className="mb-4">
               <span className="font-bold">問 2</span>
-              <span className="ml-2">
+              <span className="ml-2 flex gap-1">
                 When arranging decorations to keep your fish in good health, it
                 is a good idea to
-                <span className="inline-block w-8 h-6 border border-black text-center mx-1">
-                  2
-                </span>
-                .
+                {renderSelect("2", 4, 1)} .
               </span>
             </div>
             <div className="pl-8 space-y-2">
@@ -200,12 +235,10 @@ export default function Ex25_1() {
             <div className="mt-4">
               <div className="mb-4">
                 <span className="font-bold">問 3</span>
-                <span className="ml-2">
+                <span className="ml-2 flex gap-1">
                   According to the pamphlet, which picture best shows how to
                   decorate for fish from slow-moving water?
-                  <span className="inline-block w-8 h-6 border border-black text-center mx-1">
-                    3
-                  </span>
+                  {renderSelect("3", 4, 1)}.
                 </span>
               </div>
               {/* Four aquarium illustrations */}

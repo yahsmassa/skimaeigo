@@ -1,24 +1,64 @@
+"use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 const Ex22_3B = () => {
   const correctAnswerArray = [4, 2, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
 
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <span className="text-gray-600">(配点 {9})</span>
         </div>
         <Saiten
-          points={6}
-          startQuestionNumber={1}
+          points={9}
+          startQuestionNumber={18}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -111,17 +151,22 @@ const Ex22_3B = () => {
       {/* Questions section */}
       <div className="mt-8 space-y-8">
         <div>
-          <p className="mb-4">
-            問 1 Put the following events (①～④) into the order they happened.
-          </p>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="border px-2">18</div>
-            <span>→</span>
-            <div className="border px-2">19</div>
-            <span>→</span>
-            <div className="border px-2">20</div>
-            <span>→</span>
-            <div className="border px-2">21</div>
+          <div className="mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="flex-nowrap mr-2">問 1 </span>
+              <span>
+                Put the following events (①～④) into the order they happened.
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              {renderSelect("18", 4, 0)}
+              <span>→</span>
+              {renderSelect("19", 4, 1)}
+              <span>→</span>
+              {renderSelect("20", 4, 2)}
+              <span>→</span>
+              {renderSelect("21", 4, 3)}
+            </div>
           </div>
           <ol className="list-none space-y-2">
             <li>
@@ -134,10 +179,16 @@ const Ex22_3B = () => {
         </div>
 
         <div>
-          <p className="mb-4">
-            問 2 What was the reason for being behind schedule when they
-            completed Scafell Pike? <span className="border px-2 ml-2">22</span>
-          </p>
+          <div className="mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="flex-nowrap mr-2">問 2 </span>
+              <span>
+                What was the reason for being behind schedule when they
+                completed Scafell Pike?
+              </span>
+            </div>
+            {renderSelect("22", 4, 4)}
+          </div>
           <ol className="list-none space-y-2">
             <li>
               ① It took longer than planned to reach the top of Ben Nevis.
@@ -149,10 +200,13 @@ const Ex22_3B = () => {
         </div>
 
         <div>
-          <p className="mb-4">
-            From this story, you learnt that the writer{" "}
-            <span className="border px-2 ml-2">23</span>.
-          </p>
+          <div className="mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="flex-nowrap mr-2">問 3 </span>
+              <span>From this story, you learnt that the writer </span>
+              {renderSelect("23", 4, 5)}.
+            </div>
+          </div>
           <ol className="list-none space-y-2">
             <li>① didn&apos;t feel a sense of satisfaction</li>
             <li>② reached the top of all three mountains</li>

@@ -1,23 +1,63 @@
+"use client";
+
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
 
 const Ex23_4 = () => {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [1, 1, 2, 5, 1, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <span className="text-gray-600">(配点 {16})</span>
         </div>
         <Saiten
-          points={6}
-          startQuestionNumber={1}
+          points={16}
+          startQuestionNumber={24}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -171,11 +211,10 @@ const Ex23_4 = () => {
       <div className="mt-12 space-y-12">
         {/* Question 1 */}
         <div>
-          <div className="flex items-center mb-4">
-            <span className="font-serif mr-2">問 1</span>
+          <div className="flex items-center mb-4 flex-wrap">
+            <span className="flex-nowrap mr-2">問 1</span>
             <span>Oxford believes that</span>
-            <div className="border border-gray-800 mx-2 px-3 py-1">24</div>
-            <span>.</span>
+            {renderSelect("24", 4, 0)}.
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -196,15 +235,10 @@ const Ex23_4 = () => {
 
         {/* Question 2 */}
         <div>
-          <div className="flex items-start mb-4">
-            <span className="font-serif mr-2">問 2</span>
-            <div className="flex-1">
-              <span>In the study discussed by Lee, students took a test</span>
-              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
-                25
-              </div>
-              <span>after their final session.</span>
-            </div>
+          <div className="flex items-center mb-4 flex-wrap">
+            <span className="flex-nowrap mr-2">問 2</span>
+            <span>In the study discussed by Lee, students took a test</span>
+            {renderSelect("25", 4, 1)}.
           </div>
           <ol className="list-none space-y-2">
             {["four weeks", "immediately", "one day", "one week"].map(
@@ -222,24 +256,18 @@ const Ex23_4 = () => {
 
         {/* Question 3 */}
         <div>
-          <div className="flex items-start mb-4">
-            <span className="font-serif mr-2">問 3</span>
-            <div className="flex-1">
-              <span>
-                Lee introduces spaced learning, which involves studying at
-              </span>
-              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
-                26
-              </div>
-              <span>intervals, in order to overcome the disadvantages of</span>
-              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
-                27
-              </div>
-              <span>
-                learning that Oxford discussed. (Choose the best one for each
-                box from options ①～⑥.)
-              </span>
-            </div>
+          <div className="flex items-center mb-4 flex-wrap">
+            <span className="flex-nowrap mr-2">問 3</span>
+            <span>
+              Lee introduces spaced learning, which involves studying at
+            </span>
+            {renderSelect("26", 6, 2)}.
+            <span>intervals, in order to overcome the disadvantages of</span>
+            {renderSelect("27", 6, 3)}.
+            <span>
+              learning that Oxford discussed. (Choose the best one for each box
+              from options ①～⑥.)
+            </span>
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -262,15 +290,11 @@ const Ex23_4 = () => {
 
         {/* Question 4 */}
         <div>
-          <div className="flex items-start mb-4">
-            <span className="font-serif mr-2">問 4</span>
-            <div className="flex-1">
-              <span>Both writers agree that</span>
-              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
-                28
-              </div>
-              <span>is helpful for remembering new information.</span>
-            </div>
+          <div className="flex items-center mb-4 flex-wrap">
+            <span className="flex-nowrap mr-2">問 4</span>
+            <span>Both writers agree that</span>
+            {renderSelect("28", 4, 4)}.
+            <span>is helpful for remembering new information.</span>
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -291,17 +315,13 @@ const Ex23_4 = () => {
 
         {/* Question 5 */}
         <div>
-          <div className="flex items-start mb-4">
-            <span className="font-serif mr-2">問 5</span>
-            <div className="flex-1">
-              <span>
-                Which additional information would be the best to further
-                support Lee&apos;s argument for spaced learning?
-              </span>
-              <div className="border border-gray-800 inline-block mx-2 px-3 py-1">
-                29
-              </div>
-            </div>
+          <div className="flex items-center mb-4 flex-wrap">
+            <span className="flex-nowrap mr-2">問 5</span>
+            <span>
+              Which additional information would be the best to further support
+              Lee&apos;s argument for spaced learning?
+            </span>
+            {renderSelect("29", 4, 5)}.
           </div>
           <ol className="list-none space-y-2">
             {[

@@ -1,24 +1,63 @@
+"use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { exPageFormat, cn } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 export default function Ex21_4() {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [1, 5, 2, 2, 2, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
 
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <span className="text-gray-600">(配点 {16})</span>
         </div>
         <Saiten
-          points={6}
-          startQuestionNumber={1}
+          points={16}
+          startQuestionNumber={24}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -237,16 +276,18 @@ export default function Ex21_4() {
       {/* Questions Section */}
       <div className="mt-8">
         <div className="mb-8">
-          <p className="flex items-center mb-4">
-            <span className="mr-2">問 1</span>
-            The guests from the sister school will arrive on the number
-            <span className="mx-2 border border-black px-2">24</span>
-            train and catch the number
-            <span className="mx-2 border border-black px-2">25</span>
-            train back to their hotel.
-          </p>
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="flex-nowrap mr-2">問 1</span>
+            <span>
+              The guests from the sister school will arrive on the number
+            </span>
+            {renderSelect("24", 6, 0)}
+            <span> train and catch the number</span>
+            {renderSelect("25", 6, 1)}
+            <span> train back to their hotel.</span>
+          </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4 mt-4">
             <div>① 109</div>
             <div>② 110</div>
             <div>③ 111</div>
@@ -257,11 +298,11 @@ export default function Ex21_4() {
         </div>
 
         <div className="mb-8">
-          <p className="flex items-center mb-4">
-            <span className="mr-2">問 2</span>
-            Which best completes the draft schedule?
-            <span className="mx-2 border border-black px-2">26</span>
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="flex-nowrap mr-2">問 2</span>
+            <span>Which best completes the draft schedule?</span>
+            {renderSelect("26", 4, 2)}
+          </div>
 
           <div className="grid grid-cols-2 gap-4 mb-4">
             <div>A : The aquarium</div>
@@ -287,12 +328,13 @@ export default function Ex21_4() {
         </div>
 
         {/* Question 3 */}
-        <div className="mt-8">
-          <p className="flex items-center mb-4">
-            <span className="mr-2">問 3</span>
-            Unless it rains, the guests will eat lunch in the
-            <span className="mx-2 border border-black px-2">27</span>.
-          </p>
+        <div>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="flex-nowrap mr-2">問 3</span>
+            <span>Unless it rains, the guests will eat lunch in the</span>
+            {renderSelect("27", 4, 3)}
+            <span>.</span>
+          </div>
 
           <div className="ml-8">
             <p>① botanical garden</p>
@@ -303,13 +345,15 @@ export default function Ex21_4() {
         </div>
 
         {/* Question 4 */}
-        <div className="mt-8">
-          <p className="flex items-center mb-4">
-            <span className="mr-2">問 4</span>
-            The guests will <span className="underline">not</span> get around
-            <span className="mx-2 border border-black px-2">28</span>
-            on that day.
-          </p>
+        <div>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="flex-nowrap mr-2">問 4</span>
+            <span>
+              The guests will <span className="underline">not</span> get around
+            </span>
+            {renderSelect("28", 4, 4)}
+            <span> on that day.</span>
+          </div>
 
           <div className="ml-8">
             <p>① by bus</p>
@@ -321,12 +365,14 @@ export default function Ex21_4() {
 
         {/* Question 5 */}
         <div className="mt-8">
-          <p className="flex items-center mb-4">
-            <span className="mr-2">問 5</span>
-            As a third option, which would be the most suitable for your
-            program?
-            <span className="mx-2 border border-black px-2">29</span>
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="flex-nowrap mr-2">問 5</span>
+            <span>
+              As a third option, which would be the most suitable for your
+              program?
+            </span>
+            {renderSelect("29", 4, 5)}
+          </div>
 
           <div className="ml-8">
             <p>① Hibari Amusement Park</p>

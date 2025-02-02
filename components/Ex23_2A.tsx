@@ -1,13 +1,53 @@
+"use client";
+
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
+import { cn, exPageFormat } from "@/lib/util";
 import { Answers } from "@/lib/types";
 import Image from "next/image";
 
 const Ex23_2A = () => {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [2, 2, 2, 4, 1];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const handleChange = (questionNumber: string, value: string) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [`question${questionNumber}`]: value,
+    }));
+  };
+
+  const isCorrect = (questionNumber: string, index: number) => {
+    return (
+      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
+    );
+  };
+
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+      <div
+        className={cn(
+          "font-medium mb-0.5 mr-2",
+          showResults &&
+            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+        )}
+      >
+        [{number}]
+      </div>
+      <select
+        value={answers[`question${number}`] || ""}
+        onChange={(e) => handleChange(number, e.target.value)}
+        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+      >
+        <option value="">選択</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -17,7 +57,7 @@ const Ex23_2A = () => {
         </div>
         <Saiten
           points={6}
-          startQuestionNumber={1}
+          startQuestionNumber={6}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
           setAnswers={setAnswers}
@@ -130,16 +170,15 @@ const Ex23_2A = () => {
           ))}
         </ul>
       </div>
-      <div className="text-center text-gray-500 mt-4">— 8 —</div>
       {/* Question 1 */}
-      <div>
+      <div className="mt-7">
         <div className="flex items-center mb-4">
           <span className=" mr-2 w-14">問 1</span>
           <span>
             According to the maker&apos;s statements, which best describes the
             new shoes?
           </span>
-          <div className="border border-gray-800 ml-2 px-3 py-1">6</div>
+          {renderSelect("6", 4, 0)}.
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -164,7 +203,7 @@ const Ex23_2A = () => {
           <span>
             Which benefit offered by the shoes is most likely to appeal to you?
           </span>
-          <div className="border border-gray-800 ml-2 px-3 py-1">7</div>
+          {renderSelect("7", 4, 1)}.
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -189,8 +228,7 @@ const Ex23_2A = () => {
           <span>
             One <u>opinion</u> stated by a customer is that
           </span>
-          <div className="border border-gray-800 ml-2 px-3 py-1">8</div>
-          <span>.</span>
+          {renderSelect("8", 4, 2)}.<span>.</span>
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -211,16 +249,12 @@ const Ex23_2A = () => {
       {/* Question 4 */}
       <div>
         <div className="flex items-start mb-4 mt-3 flex-wrap">
-          <span className=" mr-2 w-8">問 4</span>
-          <div className="flex-1">
-            <span>
-              One customer&apos;s comment mentions using audio devices. Which
-              benefit is this comment based on?
-            </span>
-            <div className="border border-gray-800 inline-block ml-2 px-3 py-1">
-              9
-            </div>
-          </div>
+          <span className="flex-none mr-2 w-8">問 4</span>
+          <span>
+            One customer&apos;s comment mentions using audio devices. Which
+            benefit is this comment based on?
+          </span>
+          {renderSelect("9", 4, 3)}.
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -241,10 +275,9 @@ const Ex23_2A = () => {
       {/* Question 5 */}
       <div>
         <div className="flex items-center mb-4 mt-3 flex-wrap">
-          <span className=" mr-2 w-8">問 5</span>
+          <span className="flex-nowrap mr-2">問 5</span>
           <span>According to one customer&apos;s opinion,</span>
-          <div className="border border-gray-800 mx-2 px-3 py-1">10</div>
-          <span>is recommended.</span>
+          {renderSelect("10", 4, 4)}.<span>is recommended.</span>
         </div>
         <ol className="list-none space-y-2">
           {[
