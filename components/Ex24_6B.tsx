@@ -276,7 +276,7 @@ const Ex24_6B = () => {
 
           <div className="">
             <div className="flex items-center flex-wrap gap-2">
-              <span className="flex-nowrap mr-2">問 2</span>
+              <span className="whitespace-nowrap mr-2">問 2</span>
               <span>
                 Which is an <u>error</u> you found on Slide 3?
               </span>

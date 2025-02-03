@@ -138,7 +138,7 @@ const Ex21_3B = () => {
         {/* Question 1 */}
         <div>
           <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <p>
               Put the following events (①～④) into the order in which they
               happened.
@@ -163,7 +163,7 @@ const Ex21_3B = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               From Sarah&apos;s message, you learn that the Sakura International
               Centre
@@ -181,7 +181,7 @@ const Ex21_3B = () => {
         {/* Question 3 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               You have decided to help with the campaign after reading
               Sarah&apos;s message. What should you do first?

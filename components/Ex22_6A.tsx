@@ -273,7 +273,7 @@ const Ex22_6A = () => {
       </div>
       <div className="mt-5 mb-8">
         <div className="flex items-center flex-wrap gap-2 mb-4">
-          <span className="flex-nowrap mr-2">問 1</span>
+          <span className="whitespace-nowrap mr-2">問 1</span>
           <span>Choose the best option for</span> {renderSelect("39", 4, 0)}.
         </div>
         <div className="ml-4 space-y-2">
@@ -286,7 +286,7 @@ const Ex22_6A = () => {
       <div className="mt-8 space-y-8">
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>Choose the best option for</span> {renderSelect("40", 4, 1)}.
           </div>
           <div className="ml-4 space-y-3">
@@ -311,7 +311,7 @@ const Ex22_6A = () => {
 
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>Choose the best option for</span> {renderSelect("41", 4, 2)}.
           </div>
           <div className="ml-4 space-y-3">
@@ -336,7 +336,7 @@ const Ex22_6A = () => {
 
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>Choose the best options for</span> {renderSelect("42", 6, 3)}{" "}
             and {renderSelect("43", 6, 4)}.
           </div>

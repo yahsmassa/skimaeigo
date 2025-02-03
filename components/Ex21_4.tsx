@@ -277,7 +277,7 @@ export default function Ex21_4() {
       <div className="mt-8">
         <div className="mb-8">
           <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               The guests from the sister school will arrive on the number
             </span>
@@ -299,7 +299,7 @@ export default function Ex21_4() {
 
         <div className="mb-8">
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>Which best completes the draft schedule?</span>
             {renderSelect("26", 4, 2)}
           </div>
@@ -330,7 +330,7 @@ export default function Ex21_4() {
         {/* Question 3 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>Unless it rains, the guests will eat lunch in the</span>
             {renderSelect("27", 4, 3)}
             <span>.</span>
@@ -347,7 +347,7 @@ export default function Ex21_4() {
         {/* Question 4 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>
               The guests will <span className="underline">not</span> get around
             </span>
@@ -366,7 +366,7 @@ export default function Ex21_4() {
         {/* Question 5 */}
         <div className="mt-8">
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2">問 5</span>
             <span>
               As a third option, which would be the most suitable for your
               program?

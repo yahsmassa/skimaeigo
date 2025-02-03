@@ -213,8 +213,8 @@ const Ex21_6A = () => {
       <div className="space-y-8 mt-8">
         {/* Question 1 */}
         <div>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 1</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Choose the best option for</span>
             {renderSelect("39", 4, 0)}
             <span>on your poster.</span>
@@ -249,8 +249,8 @@ const Ex21_6A = () => {
 
         {/* Question 2 */}
         <div>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 2</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>Choose the best option for</span>
             {renderSelect("40", 4, 1)}
             <span>on your poster.</span>
@@ -285,8 +285,8 @@ const Ex21_6A = () => {
 
         {/* Question 3 */}
         <div>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 3</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>Choose the best option for</span>
             {renderSelect("41", 4, 2)}
             <span>on your poster.</span>
@@ -321,8 +321,8 @@ const Ex21_6A = () => {
 
         {/* Question 4 */}
         <div>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 4</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>Choose the best option for</span>
             {renderSelect("42", 4, 3)}
             <span>on your poster.</span>

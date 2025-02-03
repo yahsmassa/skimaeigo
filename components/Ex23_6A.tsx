@@ -272,7 +272,7 @@ const Ex23_6A = () => {
       <div className="mt-12 space-y-8">
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Choose the best option for </span>
             {renderSelect("39", 4, 0)}.
           </div>
@@ -318,7 +318,7 @@ const Ex23_6A = () => {
 
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>Choose the best option for </span>
             {renderSelect("40", 4, 1)}.
           </div>
@@ -359,7 +359,7 @@ const Ex23_6A = () => {
 
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2 ">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>Choose the best options for</span> {renderSelect("41", 6, 2)}{" "}
             and {renderSelect("42", 6, 3)}.
             <span> (The order does not matter.)</span>
@@ -406,7 +406,7 @@ const Ex23_6A = () => {
 
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="flex-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>Choose the best option for </span>
             {renderSelect("43", 4, 4)}.
           </div>

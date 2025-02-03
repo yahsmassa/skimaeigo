@@ -176,10 +176,13 @@ const Ex25_4 = () => {
       <div className="text-right mt-4 text-gray-600"></div>
       <div className="space-y-8">
         <div>
-          <p className="mb-4 flex gap-1">
-            問 1 Based on Comment (1), which is the best word to add?{" "}
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="flex gap-1">
+              Based on Comment (1), which is the best word to add?{" "}
+            </span>
             {renderSelect("14", 4, 0)}
-          </p>
+          </div>
           <div className="pl-8 space-y-2">
             <p>① However</p>
             <p>② Moreover</p>
@@ -189,10 +192,13 @@ const Ex25_4 = () => {
         </div>
 
         <div>
-          <p className="mb-4 flex gap-1">
-            問 2 Based on Comment (2), which is the best sentence to add?{" "}
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="flex gap-1">
+              Based on Comment (2), which is the best sentence to add?{" "}
+            </span>
             {renderSelect("15", 4, 1)}
-          </p>
+          </div>
           <div className="pl-8 space-y-2">
             <p>① Limit the time you spend having conversations with people.</p>
             <p>② Send messages with your phone just once or twice a day.</p>
@@ -204,10 +210,14 @@ const Ex25_4 = () => {
         </div>
 
         <div>
-          <p className="mb-4 flex gap-1">
-            問 3 Based on Comment (3), which is the best phrase to replace the
-            underlined part? {renderSelect("16", 4, 2)}
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="flex gap-1">
+              Based on Comment (3), which is the best phrase to replace the
+              underlined part?{" "}
+            </span>
+            {renderSelect("16", 4, 2)}
+          </div>
           <div className="pl-8 space-y-2">
             <p>① you can be satisfied at work and in your personal life</p>
             <p>② you can complete tasks in a short period of time</p>
@@ -217,10 +227,14 @@ const Ex25_4 = () => {
         </div>
 
         <div>
-          <p className="mb-4 flex gap-1">
-            問 4 Based on Comment (4), which is the best phrase to replace the
-            underlined part? {renderSelect("17", 4, 3)}
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="flex gap-1">
+              Based on Comment (4), which is the best phrase to replace the
+              underlined part?{" "}
+            </span>
+            {renderSelect("17", 4, 3)}
+          </div>
           <div className="pl-8 space-y-2">
             <p>① plan your daily activities as soon as you wake up</p>
             <p>② recall the bad things that happened in your life</p>

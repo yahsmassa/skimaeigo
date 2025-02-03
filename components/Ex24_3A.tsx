@@ -215,9 +215,11 @@ const Ex24_3A: React.FC = () => {
       <div className={cn(exQuestionFormat, "mt-6")}>
         {questions.map((question, index) => (
           <div key={index} className="mb-4">
-            <div className="flex flex-row items-center space-x-2 mb-3">
-              <p className="w-12">問{question.number}</p>
-              <p className="text-left">{question.prompt}</p>
+            <div className="flex items-center flex-wrap gap-2 mb-2">
+              <span className="whitespace-nowrap mr-2">
+                問{question.number}
+              </span>
+              <span className="text-left">{question.prompt}</span>
               <QuestionSelect
                 index={index}
                 questionNumber={index + 16}

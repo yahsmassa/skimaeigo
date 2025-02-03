@@ -172,8 +172,8 @@ const Ex23_2A = () => {
       </div>
       {/* Question 1 */}
       <div className="mt-7">
-        <div className="flex items-center mb-4">
-          <span className=" mr-2 w-14">問 1</span>
+        <div className="flex items-center flex-wrap mb-4 gap-2">
+          <span className="whitespace-nowrap mr-1">問 1</span>
           <span>
             According to the maker&apos;s statements, which best describes the
             new shoes?
@@ -197,9 +197,9 @@ const Ex23_2A = () => {
         </ol>
       </div>
       {/* Question 2 */}
-      <div>
-        <div className="flex items-center mb-4 mt-3 flex-wrap">
-          <span className=" mr-2 w-9">問 2</span>
+      <div className="my-4">
+        <div className="flex items-center flex-wrap mb-4 gap-2">
+          <span className="whitespace-nowrap mr-1">問 2</span>
           <span>
             Which benefit offered by the shoes is most likely to appeal to you?
           </span>
@@ -223,12 +223,12 @@ const Ex23_2A = () => {
       </div>
       {/* Question 3 */}
       <div>
-        <div className="flex items-center mb-4 mt-3 flex-wrap">
-          <span className=" mr-2 w-9">問 3</span>
+        <div className="flex items-center flex-wrap mb-4 gap-2">
+          <span className="whitespace-nowrap mr-2">問 3</span>
           <span>
             One <u>opinion</u> stated by a customer is that
           </span>
-          {renderSelect("8", 4, 2)}.<span>.</span>
+          {renderSelect("8", 4, 2)}.
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -248,8 +248,8 @@ const Ex23_2A = () => {
       </div>
       {/* Question 4 */}
       <div>
-        <div className="flex items-start mb-4 mt-3 flex-wrap">
-          <span className="flex-none mr-2 w-8">問 4</span>
+        <div className="flex items-start mb-4 mt-3 flex-wrap gap-2">
+          <span className="whitespace-nowrap mr-2">問 4</span>
           <span>
             One customer&apos;s comment mentions using audio devices. Which
             benefit is this comment based on?
@@ -275,9 +275,10 @@ const Ex23_2A = () => {
       {/* Question 5 */}
       <div>
         <div className="flex items-center mb-4 mt-3 flex-wrap">
-          <span className="flex-nowrap mr-2">問 5</span>
+          <span className="whitespace-nowrap mr-2">問 5</span>
           <span>According to one customer&apos;s opinion,</span>
-          {renderSelect("10", 4, 4)}.<span>is recommended.</span>
+          {renderSelect("10", 4, 4)}
+          <span>is recommended.</span>
         </div>
         <ol className="list-none space-y-2">
           {[

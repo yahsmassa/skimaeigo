@@ -143,7 +143,7 @@ export default function Ex21_3A() {
         {/* Question 1 */}
         <div className="space-y-2">
           <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>From Alex&apos;s answer, you learn that Alex</span>
             {renderSelect("16", 4, 0)}.
           </div>
@@ -161,7 +161,7 @@ export default function Ex21_3A() {
         {/* Question 2 */}
         <div className="space-y-2">
           <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               You are departing on public transport from the airport at 2.00 pm
               on 15 March 2021. What is the fastest way to get to the hotel?

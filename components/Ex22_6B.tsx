@@ -306,7 +306,7 @@ const Ex22_6B = () => {
         {/* Question 1 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               Under the first poster heading, your group wants to introduce the
               plastic recycling symbols as explained in the passage. Which of
@@ -337,7 +337,7 @@ const Ex22_6B = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               You have been asked to write descriptions of Type 2 and Type 3
               plastics. Choose the best options for
@@ -383,7 +383,7 @@ const Ex22_6B = () => {
         {/* Question 3 */}
         <div className="mt-8">
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               You are making statements about some plastics which share common
               properties. According to the article, which two of the following

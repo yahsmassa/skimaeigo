@@ -173,7 +173,7 @@ const Ex22_1A = () => {
         {/* Question 1 */}
         <div className="space-y-4">
           <div className="flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             Both <i>cupuaçu</i> and <i>buriti</i> can be used to make{" "}
             {renderSelect("1", 4, 0)}.
           </div>
@@ -188,7 +188,7 @@ const Ex22_1A = () => {
         {/* Question 2 */}
         <div className="space-y-4">
           <div className="flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               If you want to make a sour cake, the best fruit to use is{" "}
             </span>

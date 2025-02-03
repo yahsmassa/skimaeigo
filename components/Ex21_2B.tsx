@@ -167,7 +167,7 @@ const Ex21_2B = () => {
       <div className="space-y-4 mt-5">
         <div className="space-y-2">
           <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問1</span>
+            <span className="whitespace-nowrap mr-2">問1</span>
             <span>Ken thinks the new policy</span> {renderSelect("11", 4, 0)}
           </div>
           <div>
@@ -182,7 +182,7 @@ const Ex21_2B = () => {
 
         <div className="space-y-2">
           <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問2</span>
+            <span className="whitespace-nowrap mr-2">問2</span>
             <span>
               One <span className="underline">fact</span> stated in Ken&apos;s
               forum post is that{" "}
@@ -203,7 +203,7 @@ const Ex21_2B = () => {
 
         <div className="space-y-2">
           <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問3</span>
+            <span className="whitespace-nowrap mr-2">問3</span>
             <span>Who thinks the aim of the policy is to save energy? </span>
             {renderSelect("13", 4, 2)}
           </div>
@@ -219,7 +219,7 @@ const Ex21_2B = () => {
 
         <div className="space-y-2">
           <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問4</span>
+            <span className="whitespace-nowrap mr-2">問4</span>
             <span> Dr Berger is basing his new policy on the </span>
             <span className="underline">fact</span>
             {renderSelect("14", 4, 3)}
@@ -236,7 +236,7 @@ const Ex21_2B = () => {
 
         <div className="space-y-2">
           <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問5</span>
+            <span className="whitespace-nowrap mr-2">問5</span>
             <span>
               What would you research to help Ken oppose the new policy?{" "}
             </span>

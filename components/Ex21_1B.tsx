@@ -163,7 +163,7 @@ const Ex21_1B = () => {
         {/* Question 1 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>A New Member&apos;s Pack</span>
             {renderSelect("3", 4, 0)}.
           </div>
@@ -178,7 +178,7 @@ const Ex21_1B = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>What will you get if you become a new Pacer member?</span>
             {renderSelect("4", 4, 1)}.
           </div>
@@ -193,7 +193,7 @@ const Ex21_1B = () => {
         {/* Question 3 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>After being a fan club member for one year, you can</span>
             {renderSelect("5", 4, 2)}.
           </div>

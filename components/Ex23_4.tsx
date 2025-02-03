@@ -212,7 +212,7 @@ const Ex23_4 = () => {
         {/* Question 1 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Oxford believes that</span>
             {renderSelect("24", 4, 0)}.
           </div>
@@ -236,7 +236,7 @@ const Ex23_4 = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>In the study discussed by Lee, students took a test</span>
             {renderSelect("25", 4, 1)}.
           </div>
@@ -257,13 +257,13 @@ const Ex23_4 = () => {
         {/* Question 3 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               Lee introduces spaced learning, which involves studying at
             </span>
-            {renderSelect("26", 6, 2)}.
+            {renderSelect("26", 6, 2)}
             <span>intervals, in order to overcome the disadvantages of</span>
-            {renderSelect("27", 6, 3)}.
+            {renderSelect("27", 6, 3)}
             <span>
               learning that Oxford discussed. (Choose the best one for each box
               from options ①～⑥.)
@@ -291,7 +291,7 @@ const Ex23_4 = () => {
         {/* Question 4 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>Both writers agree that</span>
             {renderSelect("28", 4, 4)}.
             <span>is helpful for remembering new information.</span>
@@ -316,7 +316,7 @@ const Ex23_4 = () => {
         {/* Question 5 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2">問 5</span>
             <span>
               Which additional information would be the best to further support
               Lee&apos;s argument for spaced learning?

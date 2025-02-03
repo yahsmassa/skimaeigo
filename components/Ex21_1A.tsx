@@ -121,7 +121,7 @@ const Ex21_1A = () => {
         {/* Question 1 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>What was Julie&apos;s request?</span>
             {renderSelect("1", 4, 0)}.
           </div>
@@ -136,7 +136,7 @@ const Ex21_1A = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>How will you reply to Julie&apos;s second text message?</span>
             {renderSelect("2", 4, 1)}.
           </div>

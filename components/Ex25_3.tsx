@@ -127,9 +127,11 @@ const TheContest = () => {
 
       <div className="space-y-8">
         <div>
-          <p className="mb-4 flex gap-1">
-            問 1 Which person is telling the story? {renderSelect("8", 4, 0)}.
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span>Which person is telling the story? </span>
+            {renderSelect("8", 4, 0)}.
+          </div>
           <div className="pl-8 space-y-2">
             <p>① Kei</p>
             <p>② Ren</p>
@@ -139,10 +141,13 @@ const TheContest = () => {
         </div>
 
         <div>
-          <p className="mb-4">
-            問 2 Choose <span className="underline">four</span> out of the five
-            options (①～⑤) and put them in the order they happened.
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span>
+              Choose <span className="underline">four</span> out of the five
+              options (①～⑤) and put them in the order they happened.
+            </span>
+          </div>
           <div className="flex items-center flex-wrap mb-4">
             {renderSelect("9", 5, 1)}
             <span className="mx-2">→</span>
@@ -162,10 +167,13 @@ const TheContest = () => {
         </div>
 
         <div>
-          <p className="mb-4 flex gap-1">
-            問 3 How did the band most likely feel after the competition?{" "}
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span>
+              How did the band most likely feel after the competition?{" "}
+            </span>
             {renderSelect("13", 4, 5)}
-          </p>
+          </div>
           <div className="pl-8 space-y-2">
             <p>① Awful</p>
             <p>② Embarrassed</p>

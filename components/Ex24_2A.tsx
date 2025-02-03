@@ -178,9 +178,11 @@ const Ex24_2A = () => {
       <div className={cn(exQuestionFormat, "mt-6")}>
         {questionData.questions.map((question, index) => (
           <div key={index} className="mb-4">
-            <div className="flex items-center space-x-2 mb-2">
-              <p>問{question.number}</p>
-              <p>{question.prompt}</p>
+            <div className="flex items-center flex-wrap gap-2 mb-2">
+              <span className="whitespace-nowrap mr-2">
+                問{question.number}
+              </span>
+              <span>{question.prompt}</span>
               <QuestionSelect
                 index={index}
                 questionNumber={index + 6}

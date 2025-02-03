@@ -153,7 +153,7 @@ const Ex22_3B = () => {
         <div>
           <div className="mb-4">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="flex-nowrap mr-2">問 1 </span>
+              <span className="whitespace-nowrap mr-2">問 1 </span>
               <span>
                 Put the following events (①～④) into the order they happened.
               </span>
@@ -181,7 +181,7 @@ const Ex22_3B = () => {
         <div>
           <div className="mb-4">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="flex-nowrap mr-2">問 2 </span>
+              <span className="whitespace-nowrap mr-2">問 2 </span>
               <span>
                 What was the reason for being behind schedule when they
                 completed Scafell Pike?
@@ -202,7 +202,7 @@ const Ex22_3B = () => {
         <div>
           <div className="mb-4">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="flex-nowrap mr-2">問 3 </span>
+              <span className="whitespace-nowrap mr-2">問 3 </span>
               <span>From this story, you learnt that the writer </span>
               {renderSelect("23", 4, 5)}.
             </div>

@@ -176,7 +176,7 @@ const Ex23_1A = () => {
       <div className="mt-8 space-y-8">
         <div>
           <div className="flex flex-wrap items-center mb-4 gap-2">
-            <div className="flex items-center">
+            <div className="flex items-center flex-wrap">
               <span className="mr-2 whitespace-nowrap">問 1</span>
               <span>What are you told to do after reading the handout?</span>
               {renderSelect("1", 4, 0)}.
@@ -201,7 +201,7 @@ const Ex23_1A = () => {
 
         <div>
           <div className="flex flex-wrap items-center mb-4 gap-2">
-            <div className="flex items-center">
+            <div className="flex items-center flex-wrap">
               <span className="mr-2 whitespace-nowrap">問 2</span>
               <span>Which is true about both performances?</span>
             </div>

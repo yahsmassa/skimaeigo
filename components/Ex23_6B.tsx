@@ -185,7 +185,7 @@ const Ex23_6B = () => {
       {/* Question 1 */}
       <div className="mb-8 mt-7">
         <div className="flex flex-wrap items-center mb-4">
-          <span className="flex-nowrap mr-2">問 1</span>
+          <span className="whitespace-nowrap mr-2">問 1</span>
           <span>
             Which of the following should you{" "}
             <span className="underline">not</span> include for
@@ -212,7 +212,7 @@ const Ex23_6B = () => {
       {/* Question 2 */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center mb-4">
-          <span className="flex-nowrap mr-2">問 2</span>
+          <span className="whitespace-nowrap mr-2">問 2</span>
           <span>
             For the <span className="font-bold">Secrets to Survival</span>{" "}
             slide, select two features of the tardigrade which best help it
@@ -242,7 +242,7 @@ const Ex23_6B = () => {
       {/* Question 3 */}
       <div>
         <div className="flex flex-wrap items-center mb-4">
-          <span className="flex-nowrap mr-2">問 3</span>
+          <span className="whitespace-nowrap mr-2">問 3</span>
           <span>
             Complete the missing labels on the illustration of a tardigrade for
             the <span className="font-bold">Digestive Systems</span> slide.
@@ -324,7 +324,7 @@ const Ex23_6B = () => {
       {/* Question 4 */}
       <div className="mb-8 mt-8">
         <div className="flex flex-wrap items-center mb-4">
-          <span className="flex-nowrap mr-2">問 4</span>
+          <span className="whitespace-nowrap mr-2">問 4</span>
           <span>Which is the best statement for the final slide?</span>
           {renderSelect("48", 5, 4)}
         </div>
@@ -347,7 +347,7 @@ const Ex23_6B = () => {
       {/* Question 5 */}
       <div className="mt-8">
         <div className="flex flex-wrap items-center mb-4">
-          <span className="flex-nowrap mr-2">問 5</span>
+          <span className="whitespace-nowrap mr-2">問 5</span>
           <span>
             What can be inferred about sending tardigrades into space?
           </span>

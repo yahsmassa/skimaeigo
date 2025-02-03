@@ -169,7 +169,7 @@ const Ex21_5 = () => {
       {/* Question 1 */}
       <div className="space-y-4">
         <div className="flex items-center flex-wrap gap-2 mb-4">
-          <span className="flex-nowrap mr-2">問 1</span>
+          <span className="whitespace-nowrap mr-2">問 1</span>
           <span>Which is the best title for your presentation?</span>
           {renderSelect("30", 4, 0)}
         </div>
@@ -197,7 +197,7 @@ const Ex21_5 = () => {
       {/* Question 2 */}
       <div className="space-y-4">
         <div className="flex items-center flex-wrap gap-2 mb-4">
-          <span className="flex-nowrap mr-2">問 2</span>
+          <span className="whitespace-nowrap mr-2">問 2</span>
           <span>
             Which is the best combination for the{" "}
             <span className="italic font-bold">Who&apos;s Who?</span> slide?
@@ -243,7 +243,7 @@ const Ex21_5 = () => {
       {/* Question 3 */}
       <div className="space-y-4">
         <div className="flex items-center flex-wrap gap-2 mb-4">
-          <span className="flex-nowrap mr-2">問 3</span>
+          <span className="whitespace-nowrap mr-2">問 3</span>
           <span>
             Choose the four events in the order they happened to complete the
           </span>
@@ -282,7 +282,7 @@ const Ex21_5 = () => {
       {/* Question 4 */}
       <div className="space-y-4">
         <div className="flex items-center flex-wrap gap-2 mb-4">
-          <span className="flex-nowrap mr-2">問 4</span>
+          <span className="whitespace-nowrap mr-2">問 4</span>
           <span>
             Choose the two best items for the &nbsp;
             <span className="italic font-bold">
@@ -320,7 +320,7 @@ const Ex21_5 = () => {
       {/* Question 5 */}
       <div className="space-y-4">
         <div className="flex items-center flex-wrap gap-2 mb-4">
-          <span className="flex-nowrap mr-2">問 5</span>
+          <span className="whitespace-nowrap mr-2">問 5</span>
           <span>
             Complete the &nbsp;
             <span className="italic font-bold">Aston Now</span> &nbsp;slide with

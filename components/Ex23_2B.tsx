@@ -138,7 +138,7 @@ const Ex23_2B = () => {
         {/* Question 1 */}
         <div>
           <div className="flex items-center mb-4 mt-3 flex-wrap">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               The aim of the Commuting Challenge was to help students to
             </span>
@@ -164,11 +164,11 @@ const Ex23_2B = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-center mb-4 mt-3 flex-wrap">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               One <u>fact</u> about the Commuting Challenge is that
             </span>
-            {renderSelect("12", 4, 1)}.<span>.</span>
+            {renderSelect("12", 4, 1)}.
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -190,7 +190,7 @@ const Ex23_2B = () => {
         {/* Question 3 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>From the feedback,</span>
             {renderSelect("13", 4, 2)}.
             <span>were activities reported by participants.</span>
@@ -223,12 +223,12 @@ const Ex23_2B = () => {
         {/* Question 4 */}
         <div>
           <div className="flex items-center mb-4  flex-wrap">
-            <span className="flex-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>
               One of the participants&apos; opinions about the Commuting
               Challenge is that
             </span>
-            {renderSelect("14", 4, 3)}.<span>.</span>
+            {renderSelect("14", 4, 3)}.
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -250,7 +250,7 @@ const Ex23_2B = () => {
         {/* Question 5 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2">問 5</span>
             <span>The author&apos;s question is answered by</span>
             {renderSelect("15", 4, 4)}.
           </div>

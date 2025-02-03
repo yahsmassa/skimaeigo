@@ -130,8 +130,10 @@ const Ex21_2A = () => {
                 Band names
               </th>
               <th className="p-2 border-r border-black">
-                Performance
-                <br />
+                <div className="flex flex-wrap justify-center">
+                  <span className="">Perfo</span>
+                  <span className="">rmance</span>
+                </div>
                 (5.0)
               </th>
               <th className="p-2 border-r border-black">
@@ -227,8 +229,8 @@ const Ex21_2A = () => {
 
       <div className="space-y-6">
         <div className="space-y-2">
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 1</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               Based on the judges&apos; final average scores, which band sang
               the best?
@@ -244,8 +246,8 @@ const Ex21_2A = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 2</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>Which judge gave both positive and critical comments?</span>
             {renderSelect("7", 4, 1)}
           </div>
@@ -258,8 +260,8 @@ const Ex21_2A = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 3</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               One <span className="underline">fact</span> from the judges&apos;
               individual comments is that
@@ -275,8 +277,8 @@ const Ex21_2A = () => {
         </div>
 
         <div className="space-y-2">
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 4</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>
               One <span className="underline">opinion</span> from the
               judges&apos; comments and shared evaluation is that
@@ -294,8 +296,8 @@ const Ex21_2A = () => {
         </div>
 
         <div className="space-y-4">
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 5</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 5</span>
             <span>
               Which of the following is the final ranking based on the
               judges&apos; shared evaluation?

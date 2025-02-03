@@ -295,7 +295,7 @@ const Ex22_5 = () => {
         {/* Question 1 */}
         <div className="mb-8">
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Which is the best subtitle for your presentation?</span>
             {renderSelect("30", 4, 0)}.
           </div>
@@ -330,7 +330,7 @@ const Ex22_5 = () => {
         {/* Question 2 */}
         <div className="mb-8">
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span className="ml-2">Choose the best two options for </span>
             {renderSelect("31", 5, 1)}.<span> and </span>
             {renderSelect("32", 5, 2)}.<span> to complete </span>
@@ -375,7 +375,7 @@ const Ex22_5 = () => {
         {/* Question 3 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span className="ml-2">Choose </span>
             <span className="underline">four</span>
             <span> out of the five events (</span>
@@ -386,10 +386,13 @@ const Ex22_5 = () => {
             <span className="underline">Sequence of Key Events</span>.
           </div>
           <div className="flex items-center flex-wrap gap-2 mb-4 ml-8">
-            {renderSelect("33", 5, 3)}.<span>→</span>
-            {renderSelect("34", 5, 4)}.<span>→</span>
-            {renderSelect("35", 5, 5)}.<span>→</span>
-            {renderSelect("36", 5, 6)}.
+            {renderSelect("33", 5, 3)}
+            <span>→</span>
+            {renderSelect("34", 5, 4)}
+            <span>→</span>
+            {renderSelect("35", 5, 5)}
+            <span>→</span>
+            {renderSelect("36", 5, 6)}
           </div>
           <div className="ml-8 space-y-2">
             <p>
@@ -428,9 +431,10 @@ const Ex22_5 = () => {
         {/* Question 4 */}
         <div className="mb-8 mt-7">
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>Choose the best option for</span>
-            {renderSelect("37", 4, 7)}.<span>to complete</span>
+            {renderSelect("37", 4, 7)}
+            <span>to complete</span>
             <span className="underline ml-1">Outcome</span>.
           </div>
           <div className="ml-8 space-y-2">
@@ -464,9 +468,10 @@ const Ex22_5 = () => {
         {/* Question 5 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2">問 5</span>
             <span className="ml-2">Choose the best option for</span>
-            {renderSelect("38", 4, 8)}.<span>to complete</span>
+            {renderSelect("38", 4, 8)}
+            <span>to complete</span>
             <span className="underline ml-1">Achievements and Recognition</span>
             .
           </div>

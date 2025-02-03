@@ -186,209 +186,191 @@ const Ex22_4 = () => {
       {/* Questions section */}
       <div className="space-y-8 mt-8">
         {/* Question 1 */}
-        <div className="flex items-start space-x-2">
-          <span className="text-base">問 1</span>
-          <div className="flex-1">
-            <div className="flex items-center space-x-2">
-              <span className="text-base">
-                Len recommends buying used goods because
+        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
+          <div className="flex items-center flex-wrap space-x-2">
+            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span>Len recommends buying used goods because</span>
+            {renderSelect("24", 4, 0)}.
+          </div>
+          <div className="mt-4 space-y-2">
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                1
               </span>
-              {renderSelect("24", 4, 0)}.
+              <span>it will help the university</span>
             </div>
-            <div className="mt-4 space-y-2">
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  1
-                </span>
-                <span>it will help the university</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  2
-                </span>
-                <span>most of the items are good for the environment</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  3
-                </span>
-                <span>they are affordable for students</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  4
-                </span>
-                <span>you can find what you need in a hurry</span>
-              </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                2
+              </span>
+              <span>most of the items are good for the environment</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                3
+              </span>
+              <span>they are affordable for students</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                4
+              </span>
+              <span>you can find what you need in a hurry</span>
             </div>
           </div>
         </div>
 
         {/* Question 2 */}
-        <div className="flex items-start space-x-2">
-          <span className="text-base">問 2</span>
-          <div className="flex-1">
-            <div className="flex items-center space-x-2">
-              <span className="text-base">Cindy suggests buying</span>
-              {renderSelect("25", 4, 1)}.<span>.</span>
+        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
+          <div className="flex items-center space-x-2 flex-wrap">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="text-base">Cindy suggests buying</span>
+            {renderSelect("25", 4, 1)}.
+          </div>
+          <div className="mt-4 space-y-2">
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                1
+              </span>
+              <span>from a single big chain store because it saves time</span>
             </div>
-            <div className="mt-4 space-y-2">
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  1
-                </span>
-                <span>from a single big chain store because it saves time</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  2
-                </span>
-                <span>from the website because it offers the best prices</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  3
-                </span>
-                <span>new items that have warranties for replacement</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  4
-                </span>
-                <span>
-                  used items because they are much cheaper than new items
-                </span>
-              </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                2
+              </span>
+              <span>from the website because it offers the best prices</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                3
+              </span>
+              <span>new items that have warranties for replacement</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                4
+              </span>
+              <span>
+                used items because they are much cheaper than new items
+              </span>
             </div>
           </div>
         </div>
 
         {/* Question 3 */}
-        <div className="flex items-start space-x-2">
-          <span className="text-base">問 3</span>
-          <div className="flex-1">
-            <div className="flex items-center space-x-2">
-              <span className="text-base">
-                Both Len and Cindy recommend that you
+        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
+          <span className="whitespace-nowrap mr-2">問 3</span>
+          <div className="flex items-center flex-wrap space-x-2">
+            <span className="text-base">
+              Both Len and Cindy recommend that you
+            </span>
+            {renderSelect("26", 4, 2)}.
+          </div>
+          <div className="mt-4 space-y-2">
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                1
               </span>
-              {renderSelect("26", 4, 2)}.
+              <span>buy from the store near your university</span>
             </div>
-            <div className="mt-4 space-y-2">
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  1
-                </span>
-                <span>buy from the store near your university</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  2
-                </span>
-                <span>buy your appliances as soon as you can</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  3
-                </span>
-                <span>choose a shop offering a student discount</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  4
-                </span>
-                <span>choose the items with warranties</span>
-              </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                2
+              </span>
+              <span>buy your appliances as soon as you can</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                3
+              </span>
+              <span>choose a shop offering a student discount</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                4
+              </span>
+              <span>choose the items with warranties</span>
             </div>
           </div>
         </div>
 
         {/* Question 4 */}
-        <div className="flex items-start space-x-2">
-          <span className="text-base">問 4</span>
-          <div className="flex-1">
-            <div className="flex items-center space-x-2">
-              <span className="text-base">
-                If you want to buy new appliances at the best possible prices,
-                you should
+        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
+          <div className="flex items-center flex-wrap space-x-2">
+            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="text-base">
+              If you want to buy new appliances at the best possible prices, you
+              should
+            </span>
+            {renderSelect("27", 4, 3)}.
+          </div>
+          <div className="mt-4 space-y-2">
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                1
               </span>
-              {renderSelect("27", 4, 3)}.
+              <span>access the URL in Cindy&apos;s post</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                2
+              </span>
+              <span>access the URL in Len&apos;s post</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                3
+              </span>
+              <span>contact one big chain store</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                4
+              </span>
+              <span>contact shops close to the campus</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Question 5 */}
+        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
+          <div className="flex items-center flex-wrap gap-2">
+            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span>You have decided to buy a microwave from</span>
+            {renderSelect("28", 4, 4)}.
+            <span>
+              because it is the cheapest. You have also decided to buy a
+              television from
+            </span>
+            {renderSelect("29", 4, 5)}.
+            <span>because it is the cheapest with a five-year warranty.</span>
+            <div className="text-base">
+              (Choose one for each box from options 1~4.)
             </div>
             <div className="mt-4 space-y-2">
               <div className="flex items-start space-x-4">
                 <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                   1
                 </span>
-                <span>access the URL in Cindy&apos;s post</span>
+                <span>Cut Price</span>
               </div>
               <div className="flex items-start space-x-4">
                 <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                   2
                 </span>
-                <span>access the URL in Len&apos;s post</span>
+                <span>Great Buy</span>
               </div>
               <div className="flex items-start space-x-4">
                 <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                   3
                 </span>
-                <span>contact one big chain store</span>
+                <span>Second Hand</span>
               </div>
               <div className="flex items-start space-x-4">
                 <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                   4
                 </span>
-                <span>contact shops close to the campus</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Question 5 */}
-        <div className="flex items-start space-x-2">
-          <span className="text-base">問 5</span>
-          <div className="flex-1">
-            <div className="space-y-4">
-              <div className="flex items-center flex-wrap gap-2">
-                <span className="text-base">
-                  You have decided to buy a microwave from
-                </span>
-                {renderSelect("28", 4, 4)}.
-                <span>
-                  because it is the cheapest. You have also decided to buy a
-                  television from
-                </span>
-                {renderSelect("29", 4, 5)}.
-                <span>
-                  because it is the cheapest with a five-year warranty.
-                </span>
-              </div>
-              <div className="text-base">
-                (Choose one for each box from options 1~4.)
-              </div>
-              <div className="mt-4 space-y-2">
-                <div className="flex items-start space-x-4">
-                  <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                    1
-                  </span>
-                  <span>Cut Price</span>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                    2
-                  </span>
-                  <span>Great Buy</span>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                    3
-                  </span>
-                  <span>Second Hand</span>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                    4
-                  </span>
-                  <span>Value Saver</span>
-                </div>
+                <span>Value Saver</span>
               </div>
             </div>
           </div>

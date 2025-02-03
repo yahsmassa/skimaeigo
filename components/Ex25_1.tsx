@@ -158,12 +158,12 @@ export default function Ex25_1() {
         <div className="mt-8 space-y-6">
           {/* Question 1 */}
           <div>
-            <div className="flex gap-2 mb-4">
-              <span className="font-bold">問 1</span>
-              <p className="flex gap-1">
+            <div className="flex items-center flex-wrap gap-2 mb-4">
+              <span className="whitespace-nowrap mr-2">問 1</span>
+              <span>
                 The customers most likely to benefit from this pamphlet are{" "}
-                {renderSelect("1", 4, 0)}.
-              </p>
+              </span>
+              {renderSelect("1", 4, 0)}.
             </div>
             <div className="pl-8 space-y-2">
               <div className="flex gap-2">
@@ -197,13 +197,13 @@ export default function Ex25_1() {
 
           {/* Question 2 */}
           <div>
-            <div className="mb-4">
-              <span className="font-bold">問 2</span>
-              <span className="ml-2 flex gap-1">
+            <div className="flex items-center flex-wrap gap-2 mb-4">
+              <span className="whitespace-nowrap mr-2">問 2</span>
+              <span className="flex gap-1">
                 When arranging decorations to keep your fish in good health, it
                 is a good idea to
-                {renderSelect("2", 4, 1)} .
               </span>
+              {renderSelect("2", 4, 1)} .
             </div>
             <div className="pl-8 space-y-2">
               <div className="flex gap-2">
@@ -233,13 +233,13 @@ export default function Ex25_1() {
             </div>
             {/* Question 3 */}
             <div className="mt-4">
-              <div className="mb-4">
-                <span className="font-bold">問 3</span>
-                <span className="ml-2 flex gap-1">
+              <div className="flex items-center flex-wrap gap-2 mb-4">
+                <span className="whitespace-nowrap mr-2">問 3</span>
+                <span className="flex gap-1">
                   According to the pamphlet, which picture best shows how to
                   decorate for fish from slow-moving water?
-                  {renderSelect("3", 4, 1)}.
                 </span>
+                {renderSelect("3", 4, 1)}.
               </div>
               {/* Four aquarium illustrations */}
               <div className="w-full mx-auto md:w-full">

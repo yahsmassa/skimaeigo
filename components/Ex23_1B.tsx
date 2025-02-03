@@ -182,10 +182,10 @@ const Ex23_1B = () => {
       <div className="space-y-8">
         {/* Question 1 */}
         <div>
-          <div className="flex items-center mb-4">
-            <span className="font-serif mr-2">問 1</span>
+          <div className="flex items-center flex-wrap mb-4 gap-2">
+            <span className="whitespace-nowrap mr-1">問 1</span>
             <span>All GIS instructors have</span>
-            {renderSelect("3", 4, 0)}.<span>.</span>
+            {renderSelect("3", 4, 0)}.
           </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">
@@ -217,10 +217,10 @@ const Ex23_1B = () => {
 
         {/* Question 2 */}
         <div>
-          <div className="flex items-center mb-4">
-            <span className="font-serif mr-2 w-10">問 2</span>
+          <div className="flex items-center flex-wrap mb-4 gap-2">
+            <span className="whitespace-nowrap mr-1">問 2</span>
             <span>On the last day of the camp, campers will</span>
-            {renderSelect("4", 4, 1)}.<span>.</span>
+            {renderSelect("4", 4, 1)}.
           </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">
@@ -252,8 +252,8 @@ const Ex23_1B = () => {
 
         {/* Question 3 */}
         <div>
-          <div className="flex items-center mb-4">
-            <span className="font-serif mr-2 w-12">問 3</span>
+          <div className="flex items-center flex-wrap mb-4 gap-2">
+            <span className="whitespace-nowrap mr-1">問 3</span>
             <span>
               What will happen after submitting your camp application?
             </span>

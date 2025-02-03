@@ -138,7 +138,7 @@ const Ex22_3A = () => {
       <div className=" space-y-8">
         <div>
           <div className="flex flex-wrap items-center mb-4">
-            <span className="flex-nowrap mr-2">問 1</span>{" "}
+            <span className="whitespace-nowrap mr-2">問 1</span>{" "}
             <span>In Emily&apos;s blog, you read that she </span>
             {renderSelect("16", 4, 0)}.
           </div>
@@ -154,7 +154,7 @@ const Ex22_3A = () => {
 
         <div>
           <div className="flex flex-wrap items-center mb-4">
-            <span className="flex-nowrap mr-2">問 2</span>{" "}
+            <span className="whitespace-nowrap mr-2">問 2</span>{" "}
             <span>Emily was most likely </span>
             {renderSelect("17", 4, 0)}.
             <span className="ml-2">

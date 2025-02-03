@@ -152,9 +152,9 @@ export default function Ex24_1A() {
       <div className={exQuestionFormat}>
         {questionData.subQuestions.map((question, index) => (
           <div key={index} className="mb-4">
-            <div className="flex items-center space-x-2 mb-2">
-              <p>{question.number}</p>
-              <p>{question.prompt}</p>
+            <div className="flex items-center flex-wrap  gap-2 mb-2">
+              <span className="whitespace-nowrap mr-2">{question.number}</span>
+              <span>{question.prompt}</span>
               <QuestionSelect
                 index={index}
                 questionNumber={index + 1}

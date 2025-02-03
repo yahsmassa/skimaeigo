@@ -186,7 +186,7 @@ const Ex22_1B = () => {
         {/* Question 1 */}
         <div className="space-y-4">
           <div className="flex items-start space-x-2">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>You can enter this contest between </span>
             {renderSelect("3", 4, 0)} .
           </div>
@@ -221,7 +221,7 @@ const Ex22_1B = () => {
         {/* Question 2 */}
         <div className="space-y-4">
           <div className="flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               When submitting your idea for the baby giraffe&apos;s name, you
               must
@@ -259,7 +259,7 @@ const Ex22_1B = () => {
         {/* Question 3 */}
         <div className="space-y-4">
           <div className="flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               If the name you submitted is included among the five finalists,
               you will

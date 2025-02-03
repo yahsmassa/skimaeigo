@@ -189,7 +189,7 @@ const Ex22_2A = () => {
         {/* Question 1 */}
         <div>
           <div className="flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             {renderSelect("6", 5, 0)}
             <span>are two things you can do at the library.</span>
           </div>
@@ -214,7 +214,7 @@ const Ex22_2A = () => {
         {/* Question 2 */}
         <div>
           <div className="flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               You are at the main entrance of the library and want to go to the
               orientation. You need to
@@ -233,7 +233,7 @@ const Ex22_2A = () => {
         {/* Question 3 */}
         <div>
           <div className="flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             {renderSelect("8", 4, 2)}
             <span>near the main entrance to the library.</span>
           </div>
@@ -248,7 +248,7 @@ const Ex22_2A = () => {
         {/* Question 4 */}
         <div>
           <div className="flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>
               If you borrowed three books on 2 August and returned them on 10
               August, you could
@@ -267,7 +267,7 @@ const Ex22_2A = () => {
         {/* Question 5 */}
         <div className="mt-8">
           <div className="flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2">問 5</span>
             <span>
               One <span className="underline">fact</span> stated by a previous
               student is that

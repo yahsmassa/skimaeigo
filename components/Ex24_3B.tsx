@@ -85,11 +85,35 @@ const Ex24_3B = () => {
     );
   };
 
-  const renderSelect = (number: string, index: number) => (
-    <div className="flex flex-col items-center">
+  // const renderSelect = (number: string, index: number) => (
+  //   <div className="flex flex-col items-center">
+  //     <div
+  //       className={cn(
+  //         "font-medium mb-0.5",
+  //         showResults &&
+  //           (isCorrect(number, index) ? "text-green-500" : "text-red-500")
+  //       )}
+  //     >
+  //       [{number}]
+  //     </div>
+  //     <select
+  //       value={answers[`question${number}`] || ""}
+  //       onChange={(e) => handleChange(number, e.target.value)}
+  //       className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
+  //     >
+  //       <option value="">選択</option>
+  //       <option value="1">1</option>
+  //       <option value="2">2</option>
+  //       <option value="3">3</option>
+  //       <option value="4">4</option>
+  //     </select>
+  //   </div>
+  // );
+  const renderSelect = (number: string, count: number, index: number) => (
+    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
       <div
         className={cn(
-          "font-medium mb-0.5",
+          "font-medium mb-0.5 mr-2",
           showResults &&
             (isCorrect(number, index) ? "text-green-500" : "text-red-500")
         )}
@@ -102,13 +126,15 @@ const Ex24_3B = () => {
         className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
       >
         <option value="">選択</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+        {Array.from({ length: count }, (_, index) => (
+          <option key={index + 1} value={String(index + 1)}>
+            {index + 1}
+          </option>
+        ))}
       </select>
     </div>
   );
+
   const q2Options = [
     { number: "1", text: "marine ecosystem" },
     { number: "2", text: "night-time sky" },
@@ -181,20 +207,20 @@ const Ex24_3B = () => {
       {/* 設問部分 */}
       <div className="w-full max-w-2xl mx-auto px-2 sm:px-4">
         <div className="mb-6">
-          <p className="mb-4">
-            問1 Yuzu&apos;s article also included student comments (⓪~④)
-            describing the events in the virtual tour. Put the comments in the
-            order in which the events happened.
-          </p>
-
-          <div className="flex flex-wrap justify-center items-center gap-2">
-            {renderSelect("18", 0)}
-            <div className="mx-1 mt-8">→</div>
-            {renderSelect("19", 1)}
-            <div className="mx-1 mt-8">→</div>
-            {renderSelect("20", 2)}
-            <div className="mx-1 mt-8">→</div>
-            {renderSelect("21", 3)}
+          <div className="flex items-center flex-wrap gap-2 mb-2">
+            <span className="whitespace-nowrap mr-2">問1</span>
+            <span>
+              Yuzu&apos;s article also included student comments (⓪~④)
+              describing the events in the virtual tour. Put the comments in the
+              order in which the events happened.
+            </span>
+            {renderSelect("18", 4, 0)}
+            <div className="mx-1">→</div>
+            {renderSelect("19", 4, 1)}
+            <div className="mx-1">→</div>
+            {renderSelect("20", 4, 2)}
+            <div className="mx-1">→</div>
+            {renderSelect("21", 4, 3)}
           </div>
         </div>
 
@@ -208,12 +234,15 @@ const Ex24_3B = () => {
         </div>
 
         <div className="my-8">
-          <p className="mb-4 flex flex-wrap">
-            問2 From the tour, Yuzu did&nbsp;{" "}
-            <span className="underline">not</span>&nbsp; learn about the
-            <div className="mt-1 sm:-mt-8 mx-1">{renderSelect("22", 4)}</div>
-            of the south sea island.
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-2">
+            <span className="whitespace-nowrap mr-2">問2</span>
+            <span>
+              From the tour, Yuzu did&nbsp;{" "}
+              <span className="underline">not</span>&nbsp; learn about the
+            </span>
+            {renderSelect("22", 4, 4)}
+            <span>of the south sea island.</span>
+          </div>
 
           <div className="space-y-1">
             {q2Options.map((option, index) => (
@@ -226,11 +255,12 @@ const Ex24_3B = () => {
         </div>
 
         <div className="mb-6">
-          <p className="mb-4 flex flex-wrap">
-            問3 On the way home, Yuzu looked up and most likely saw
-            <span className="mt-1 sm:-mt-8 mx-1">{renderSelect("23", 5)}</span>
-            in the night sky.
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-2">
+            <span className="whitespace-nowrap mr-2">問3</span>
+            <span>On the way home, Yuzu looked up and most likely saw</span>
+            {renderSelect("23", 4, 5)}
+            <span>in the night sky.</span>
+          </div>
 
           <div className="space-y-1">
             {q3Options.map((option, index) => (

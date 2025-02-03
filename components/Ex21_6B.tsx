@@ -147,8 +147,8 @@ const Ex21_6B = () => {
       <div className="mt-8">
         {/* Question 1 */}
         <div className="mb-8">
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="flex-nowrap mr-2">問 1</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               You learn that modern science has changed the world of sweeteners
               by
@@ -182,7 +182,7 @@ const Ex21_6B = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               You are summarizing the information you have just studied. How
               should the table be finished?
@@ -299,7 +299,7 @@ const Ex21_6B = () => {
         {/* Question 3 */}
         <div className="mb-8">
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               According to the article you read, which of the following are
               true?
@@ -345,7 +345,7 @@ const Ex21_6B = () => {
         {/* Question 4 */}
         <div>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>
               To describe the author&apos;s position, which of the following is
               most appropriate?

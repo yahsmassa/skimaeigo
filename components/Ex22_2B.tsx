@@ -147,7 +147,7 @@ const Ex22_2B = () => {
         {/* Question 1 */}
         <div>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             In terms of the ratios for homes with pets, which shows the
             countries&apos; ranking from{" "}
             <span className="underline">highest to lowest</span>?
@@ -167,7 +167,7 @@ const Ex22_2B = () => {
         {/* Question 2 */}
         <div>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               According to David&apos;s report, one advantage of having pets is
               that
@@ -186,7 +186,7 @@ const Ex22_2B = () => {
         {/* Question 3 */}
         <div>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               The statement that best reflects one finding from the survey is
             </span>
@@ -208,7 +208,7 @@ const Ex22_2B = () => {
         {/* Question 4 */}
         <div>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>
               Which best summarises David&apos;s opinions about having pets in
               Japan?
@@ -227,7 +227,7 @@ const Ex22_2B = () => {
         {/* Question 5 */}
         <div>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="flex-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2">問 5</span>
             <span>Which is the most suitable title for the article?</span>
             {renderSelect("15", 4, 4)}.
           </div>

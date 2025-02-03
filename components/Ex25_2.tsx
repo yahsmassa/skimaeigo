@@ -142,12 +142,12 @@ export default function Ex25_2() {
       <div className="mt-8 space-y-6">
         {/* Question 1 */}
         <div>
-          <div className="flex gap-2 mb-4">
-            <span className="font-bold">問 1</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span className="flex gap-1">
               Which of the following did all the guest speakers agree on?{" "}
-              {renderSelect("4", 4, 0)}.
             </span>
+            {renderSelect("4", 4, 0)}.
           </div>
           <div className="pl-8 space-y-2">
             <div className="flex gap-2">
@@ -181,11 +181,10 @@ export default function Ex25_2() {
 
         {/* Question 2 */}
         <div>
-          <div className="mb-4">
-            <span className="font-bold">問 2</span>
-            <span className="ml-2 flex gap-1">
-              Flying vehicles will most likely {renderSelect("5", 4, 1)}.
-            </span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="flex gap-1">Flying vehicles will most likely</span>
+            {renderSelect("5", 4, 1)}.
           </div>
           <div className="pl-8 space-y-2">
             <div className="flex gap-2">
@@ -217,13 +216,13 @@ export default function Ex25_2() {
 
         {/* Question 3 */}
         <div>
-          <div className="mb-4">
-            <span className="font-bold">問 3</span>
-            <span className="ml-2 flex gap-1">
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="flex gap-1">
               One guest speaker&apos;s{" "}
               <span className="border-b border-black">opinion</span> is that{" "}
-              {renderSelect("6", 4, 2)}.
             </span>
+            {renderSelect("6", 4, 2)}.
           </div>
           <div className="pl-8 space-y-2">
             <div className="flex gap-2">
@@ -255,12 +254,12 @@ export default function Ex25_2() {
 
         {/* Question 4 */}
         <div>
-          <div className="mb-4">
-            <span className="font-bold">問 4</span>
-            <span className="ml-2 flex gap-1">
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="flex gap-1">
               Which of the following is mentioned in the blog?{" "}
-              {renderSelect("7", 4, 3)}.
             </span>
+            {renderSelect("7", 4, 3)}.
           </div>
           <div className="pl-8 space-y-2">
             <div className="flex gap-2">

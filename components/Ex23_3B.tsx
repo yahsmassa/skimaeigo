@@ -150,7 +150,7 @@ const Ex23_3B = () => {
         {/* Question 1 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               Put the following events (①～④) into the order in which they
               happened.
@@ -182,7 +182,7 @@ const Ex23_3B = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-start mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               If you follow the father&apos;s advice to create your own
               &quot;adventure room,&quot; you should
@@ -209,7 +209,7 @@ const Ex23_3B = () => {
         {/* Question 3 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>From this story, you understand that the father</span>
             {renderSelect("23", 4, 5)}.
           </div>
@@ -230,7 +230,6 @@ const Ex23_3B = () => {
           </ol>
         </div>
       </div>
-      <div className="text-center text-gray-500 mt-8">— 17 —</div>
     </div>
   );
 };

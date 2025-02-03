@@ -465,7 +465,7 @@ const Ex25_8 = () => {
         {/* Question 5 */}
         <div className="space-y-4">
           <div className="flex items-start gap-2">
-            <div className="flex-nowrap">問 5</div>
+            <div className="whitespace-nowrap">問 5</div>
             <div className="flex-1">
               <div>
                 For REASON 3, you have decided to write{" "}

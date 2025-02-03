@@ -127,7 +127,7 @@ const Ex23_3A = () => {
         {/* Question 1 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               If you take Kaitlyn&apos;s advice, how should you fill your
               backpack?
@@ -148,9 +148,9 @@ const Ex23_3A = () => {
         {/* Question 2 */}
         <div>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="flex-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>According to Kaitlyn,</span>
-            {renderSelect("17", 4, 1)}.
+            {renderSelect("17", 4, 1)}
             <span>is the best method to stay warm all night.</span>
           </div>
           <ol className="list-none space-y-2">
