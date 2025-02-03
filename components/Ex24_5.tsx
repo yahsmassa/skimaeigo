@@ -393,7 +393,7 @@ const Ex24_5 = () => {
         />
       </div>
       {/* 回答部分 */}
-      <div className="w-full px-4 mx-auto p-4">
+      <div className="w-full px-0 sm:px-4 mx-auto p-4">
         {questionsData.questions.map((question, qIndex) => (
           <div key={qIndex} className="mb-8">
             <div className="flex flex-wrap items-baseline mb-4">
@@ -401,7 +401,7 @@ const Ex24_5 = () => {
               <span>{question.text}</span>
               {/* 30,31,32,33 は 0,1,2,3 に対応 */}
               {question.boxes && (
-                <div className="flex flex-wrap items-center justify-start mb-4 max-w-[1000px] overflow-x-auto">
+                <div className="flex flex-wrap gap-2 items-center justify-start mb-4 max-w-[1000px] overflow-x-auto">
                   {question.boxes.map((box, index) => (
                     <React.Fragment key={index}>
                       {renderSelect(box, 5, index)}

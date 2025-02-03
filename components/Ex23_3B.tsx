@@ -156,11 +156,14 @@ const Ex23_3B = () => {
               happened.
             </span>
           </div>
-          <div className="flex items-center justify-start mb-4 ml-4 flex-wrap">
-            {renderSelect("18", 4, 0)}.<span className="mx-2">→</span>
-            {renderSelect("19", 4, 1)}.<span className="mx-2">→</span>
-            {renderSelect("20", 4, 2)}.<span className="mx-2">→</span>
-            {renderSelect("21", 4, 3)}.
+          <div className="flex items-center gap-2 justify-start mb-4 ml-1 flex-wrap">
+            {renderSelect("18", 4, 0)}
+            <span className="mx-2">→</span>
+            {renderSelect("19", 4, 1)}
+            <span className="mx-2">→</span>
+            {renderSelect("20", 4, 2)}
+            <span className="mx-2">→</span>
+            {renderSelect("21", 4, 3)}
           </div>
           <ol className="list-none space-y-2 ml-4">
             {[
@@ -181,7 +184,7 @@ const Ex23_3B = () => {
 
         {/* Question 2 */}
         <div>
-          <div className="flex items-start mb-4 flex-wrap">
+          <div className="flex items-start gap-2 mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               If you follow the father&apos;s advice to create your own
@@ -208,7 +211,7 @@ const Ex23_3B = () => {
 
         {/* Question 3 */}
         <div>
-          <div className="flex items-center mb-4 flex-wrap">
+          <div className="flex items-center mb-4 flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span>From this story, you understand that the father</span>
             {renderSelect("23", 4, 5)}.

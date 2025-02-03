@@ -148,7 +148,7 @@ const TheContest = () => {
               options (①～⑤) and put them in the order they happened.
             </span>
           </div>
-          <div className="flex items-center flex-wrap mb-4">
+          <div className="flex items-center gap-2 flex-wrap mb-4">
             {renderSelect("9", 5, 1)}
             <span className="mx-2">→</span>
             {renderSelect("10", 5, 2)}
