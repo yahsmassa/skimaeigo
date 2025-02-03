@@ -143,7 +143,7 @@ const TheContest = () => {
             問 2 Choose <span className="underline">four</span> out of the five
             options (①～⑤) and put them in the order they happened.
           </p>
-          <div className="flex items-center mb-4">
+          <div className="flex items-center flex-wrap mb-4">
             {renderSelect("9", 5, 1)}
             <span className="mx-2">→</span>
             {renderSelect("10", 5, 2)}

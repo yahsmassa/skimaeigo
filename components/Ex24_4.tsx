@@ -439,10 +439,10 @@ const Ex24_4 = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <span className="text-gray-600">(配点 {16})</span>
         </div>
         <Saiten
-          points={12}
+          points={16}
           startQuestionNumber={24}
           correctAnswerArray={correctAnswerArray}
           answers={answers}
@@ -617,13 +617,15 @@ const Ex24_4 = () => {
               {question.numberBox &&
                 renderSelect(
                   question.numberBox || "",
-                  5,
+                  question.numberBox === "24" || question.numberBox === "25"
+                    ? 4
+                    : 5,
                   question.numberBox === "29" ? 5 : index
                 )}
               {/* 27,28 は 3,4 に対応 */}
               {question.numberBoxes?.map((num, index) => (
                 <React.Fragment key={index}>
-                  {renderSelect(num || "", 5, index + 3)}
+                  {renderSelect(num || "", num === "28" ? 6 : 5, index + 3)}
                   {index === 0 && <span className="mx-1">and</span>}
                 </React.Fragment>
               ))}

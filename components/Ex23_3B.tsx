@@ -7,7 +7,7 @@ import { Answers } from "@/lib/types";
 import Image from "next/image";
 
 const Ex23_3B = () => {
-  const correctAnswerArray = [4, 2, 2, 1, 3, 2];
+  const correctAnswerArray = [3, 4, 2, 1, 3, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
   const handleChange = (questionNumber: string, value: string) => {
@@ -53,10 +53,10 @@ const Ex23_3B = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <span className="text-gray-600">(配点 {9})</span>
         </div>
         <Saiten
-          points={6}
+          points={9}
           startQuestionNumber={18}
           correctAnswerArray={correctAnswerArray}
           answers={answers}

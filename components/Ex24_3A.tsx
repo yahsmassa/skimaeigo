@@ -180,7 +180,7 @@ const Ex24_3A: React.FC = () => {
           <span className="text-gray-600">(配点 {6})</span>
         </div>
         <Saiten
-          points={4}
+          points={6}
           startQuestionNumber={16}
           correctAnswerArray={correctAnswerArray}
           answers={answers}

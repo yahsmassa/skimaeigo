@@ -300,9 +300,9 @@ const Ex25_7 = () => {
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 3</span>
             <span>Choose the best options for </span>
-            {renderSelect("34", 4, 2)}
+            {renderSelect("34", 5, 2)}
             <span>and </span>
-            {renderSelect("35", 4, 3)}. (The order does not matter.)
+            {renderSelect("35", 5, 3)}. (The order does not matter.)
           </div>
           <div className="space-y-2 ml-8">
             <div>① which burn up energy rapidly tend to sleep more often</div>

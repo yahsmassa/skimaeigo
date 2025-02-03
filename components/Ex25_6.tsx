@@ -330,9 +330,9 @@ const Ex25_6 = () => {
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 4</span>
             <span>Choose the best options for </span>
-            {renderSelect("30", 4, 6)}
+            {renderSelect("30", 5, 6)}
             <span>and</span>
-            {renderSelect("31", 4, 7)}
+            {renderSelect("31", 5, 7)}
             <span>. (The order does not matter.)</span>
           </div>
 

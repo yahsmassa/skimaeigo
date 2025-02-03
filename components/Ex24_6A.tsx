@@ -6,7 +6,7 @@ import { Answers } from "@/lib/types";
 const Ex24_6A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const correctAnswerArray = [4, 4, 2, 3, 3, 5];
+  const correctAnswerArray = [6, 2, 1, 3, 1];
 
   const handleChange = (questionNumber: string, value: string) => {
     setAnswers((prev) => ({
@@ -51,10 +51,10 @@ const Ex24_6A = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">第６問 A</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <span className="text-gray-600">(配点 {12})</span>
         </div>
         <Saiten
-          points={10}
+          points={12}
           startQuestionNumber={39}
           correctAnswerArray={[6, 2, 1, 3, 1]}
           answers={answers}
@@ -247,12 +247,11 @@ const Ex24_6A = () => {
       {/* 回答 */}
       <div className="space-y-8 mt-8">
         <div>
-          <p className="mb-4 flex">
-            問 1 Choose the best options for
-            <span className="px-1">{renderSelect("39", 6, 0)}</span>
-            and
-            <span className="px-1">{renderSelect("40", 6, 1)}</span>
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="flex-none mr-2">問 1</span>{" "}
+            <span>Choose the best options for</span>
+            {renderSelect("39", 6, 0)} and{renderSelect("40", 6, 1)}
+          </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">
               <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
@@ -294,10 +293,11 @@ const Ex24_6A = () => {
         </div>
 
         <div>
-          <p className="mb-4 flex">
-            問 2 Choose the best option for{" "}
-            <span className="px-1">{renderSelect("41", 4, 2)}</span>
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="flex-none mr-2">問 2</span>
+            <span>Choose the best option for</span>
+            {renderSelect("41", 4, 2)}
+          </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">
               <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
@@ -339,10 +339,11 @@ const Ex24_6A = () => {
         </div>
 
         <div>
-          <p className="mb-4 flex">
-            問 3 Choose the best option for{" "}
-            <span className="px-1">{renderSelect("42", 6, 3)}</span>
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="flex-none mr-2">問 3</span>
+            <span>Choose the best option for</span>
+            {renderSelect("42", 6, 3)}
+          </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">
               <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
@@ -372,10 +373,11 @@ const Ex24_6A = () => {
         </div>
 
         <div>
-          <p className="mb-4 flex">
-            問 4 Choose the best option for{" "}
-            <span className="px-1">{renderSelect("43", 4, 4)}</span>
-          </p>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="flex-none mr-2">問 4</span>
+            <span>Choose the best option for</span>
+            {renderSelect("43", 4, 4)}
+          </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">
               <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">

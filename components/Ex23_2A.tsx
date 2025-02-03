@@ -53,10 +53,10 @@ const Ex23_2A = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第２問 A"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <span className="text-gray-600">(配点 {10})</span>
         </div>
         <Saiten
-          points={6}
+          points={10}
           startQuestionNumber={6}
           correctAnswerArray={correctAnswerArray}
           answers={answers}

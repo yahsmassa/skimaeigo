@@ -132,7 +132,7 @@ const Ex24_3B = () => {
           <span className="text-gray-600">(配点 {9})</span>
         </div>
         <Saiten
-          points={6}
+          points={9}
           startQuestionNumber={18}
           correctAnswerArray={correctAnswerArray}
           answers={answers}

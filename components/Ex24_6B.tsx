@@ -238,236 +238,223 @@ const Ex24_6B = () => {
         </div>
 
         <div className="space-y-8 ">
-          <div className="flex items-start gap-2">
-            <span className="font-sans">問 1</span>
-            <div className="flex-1">
-              <div className="flex items-center gap-2">
-                <span>
-                  What is the first characteristic of wasabi on Slide 2?
+          <div className="">
+            <div className="flex items-center flex-wrap gap-2">
+              <span className="flex-none mr-2">問 1</span>
+              <span>
+                What is the first characteristic of wasabi on Slide 2?
+              </span>
+              {renderSelect("44", 4, 0)}
+            </div>
+            <div className="mt-4 space-y-2 ml-6">
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  1
                 </span>
-                {renderSelect("44", 4, 0)}
+                <span>burning taste</span>
               </div>
-              <div className="mt-4 space-y-2">
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    1
-                  </span>
-                  <span>burning taste</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    2
-                  </span>
-                  <span>fire-like sensation</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    3
-                  </span>
-                  <span>lasting feeling</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    4
-                  </span>
-                  <span>light compounds</span>
-                </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  2
+                </span>
+                <span>fire-like sensation</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  3
+                </span>
+                <span>lasting feeling</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  4
+                </span>
+                <span>light compounds</span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-start gap-2">
-            <span className="font-sans">問 2</span>
-            <div className="flex-1">
-              <div className="flex items-center gap-2">
-                <span>
-                  Which is an <u>error</u> you found on Slide 3?
+          <div className="">
+            <div className="flex items-center flex-wrap gap-2">
+              <span className="flex-nowrap mr-2">問 2</span>
+              <span>
+                Which is an <u>error</u> you found on Slide 3?
+              </span>
+              {renderSelect("45", 5, 1)}
+            </div>
+            <div className="mt-4 space-y-2 ml-6">
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  1
                 </span>
-                {renderSelect("45", 5, 1)}
+                <span>A</span>
               </div>
-              <div className="mt-4 space-y-2">
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    1
-                  </span>
-                  <span>A</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    2
-                  </span>
-                  <span>B</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    3
-                  </span>
-                  <span>C</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    4
-                  </span>
-                  <span>D</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    5
-                  </span>
-                  <span>E</span>
-                </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  2
+                </span>
+                <span>B</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  3
+                </span>
+                <span>C</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  4
+                </span>
+                <span>D</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  5
+                </span>
+                <span>E</span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-start gap-2">
-            <span className="font-sans">問 3</span>
-            <div className="flex-1">
-              <div>
+          <div className="">
+            <div className="flex items-center flex-wrap gap-2 mt-2">
+              <span className="flex-none mr-2">問 3</span>
+              <span>
                 Choose two options for Slide 4. (The order does not matter.)
+              </span>
+              {renderSelect("46", 5, 2)}・{renderSelect("47", 5, 3)}
+            </div>
+            <div className="mt-4 space-y-2 ml-6">
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  1
+                </span>
+                <span>you might activate harmful bacteria.</span>
               </div>
-              <div className="flex items-center gap-2 mt-2">
-                {renderSelect("46", 5, 2)}
-                <span>・</span>
-                {renderSelect("47", 5, 3)}
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  2
+                </span>
+                <span>you might experience stomach pain.</span>
               </div>
-              <div className="mt-4 space-y-2">
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    1
-                  </span>
-                  <span>you might activate harmful bacteria.</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    2
-                  </span>
-                  <span>you might experience stomach pain.</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    3
-                  </span>
-                  <span>you might lose feeling in your hands.</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    4
-                  </span>
-                  <span>your fingers might feel like they are on fire.</span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    5
-                  </span>
-                  <span>your nose might start hurting.</span>
-                </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  3
+                </span>
+                <span>you might lose feeling in your hands.</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  4
+                </span>
+                <span>your fingers might feel like they are on fire.</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  5
+                </span>
+                <span>your nose might start hurting.</span>
               </div>
             </div>
           </div>
-          <div className="flex items-start gap-2">
-            <span className="font-sans">問 4</span>
-            <div className="flex-1">
-              <div className="flex items-center gap-2">
-                <span>
-                  What can be inferred about tolerance for spices for Slide 5?
+          <div className="">
+            <div className="flex items-center flex-wrap gap-2">
+              <span className="flex-none mr-2">問 4</span>
+              <span>
+                What can be inferred about tolerance for spices for Slide 5?
+              </span>
+              {renderSelect("48", 4, 4)}
+            </div>
+            <div className="mt-4 space-y-3 ml-6">
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  1
                 </span>
-                {renderSelect("48", 4, 4)}
+                <span>
+                  People with a high tolerance to chili peppers pay attention to
+                  the spices used in their food.
+                </span>
               </div>
-              <div className="mt-4 space-y-3">
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    1
-                  </span>
-                  <span>
-                    People with a high tolerance to chili peppers pay attention
-                    to the spices used in their food.
-                  </span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    2
-                  </span>
-                  <span>
-                    People with a high tolerance to wasabi are scared of chili
-                    peppers&apos; negative effects.
-                  </span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    3
-                  </span>
-                  <span>
-                    People with a low tolerance to chili peppers can get used to
-                    their heat.
-                  </span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    4
-                  </span>
-                  <span>
-                    People with a low tolerance to wasabi cannot endure high SHU
-                    levels.
-                  </span>
-                </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  2
+                </span>
+                <span>
+                  People with a high tolerance to wasabi are scared of chili
+                  peppers&apos; negative effects.
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  3
+                </span>
+                <span>
+                  People with a low tolerance to chili peppers can get used to
+                  their heat.
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  4
+                </span>
+                <span>
+                  People with a low tolerance to wasabi cannot endure high SHU
+                  levels.
+                </span>
               </div>
             </div>
           </div>
 
-          <div className="flex items-start gap-2">
-            <span className="font-sans">問 5</span>
-            <div className="flex-1">
-              <div className="flex items-center gap-2">
-                <span>Choose the most appropriate remark for Slide 6.</span>
-                {renderSelect("49", 5, 5)}
+          <div className="">
+            <div className="flex items-center flex-wrap gap-2">
+              <span className="flex-none mr-2">問 5</span>
+              <span>Choose the most appropriate remark for Slide 6.</span>
+              {renderSelect("49", 5, 5)}
+            </div>
+            <div className="mt-4 space-y-3 ml-6">
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  1
+                </span>
+                <span>
+                  Don&apos;t be afraid. Eating spicy foods will boost your
+                  confidence.
+                </span>
               </div>
-              <div className="mt-4 space-y-3">
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    1
-                  </span>
-                  <span>
-                    Don&apos;t be afraid. Eating spicy foods will boost your
-                    confidence.
-                  </span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    2
-                  </span>
-                  <span>
-                    Next time you eat chili chicken, remember its punch only
-                    stays for a second.
-                  </span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    3
-                  </span>
-                  <span>
-                    Personality plays a big role in our spice preference, so
-                    don&apos;t worry.
-                  </span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    4
-                  </span>
-                  <span>
-                    Unfortunately, there are no cures for a low wasabi
-                    tolerance.
-                  </span>
-                </div>
-                <div className="flex gap-2">
-                  <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                    5
-                  </span>
-                  <span>
-                    When someone offers you some spicy food, remember it has
-                    some benefits.
-                  </span>
-                </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  2
+                </span>
+                <span>
+                  Next time you eat chili chicken, remember its punch only stays
+                  for a second.
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  3
+                </span>
+                <span>
+                  Personality plays a big role in our spice preference, so
+                  don&apos;t worry.
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  4
+                </span>
+                <span>
+                  Unfortunately, there are no cures for a low wasabi tolerance.
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
+                  5
+                </span>
+                <span>
+                  When someone offers you some spicy food, remember it has some
+                  benefits.
+                </span>
               </div>
             </div>
           </div>

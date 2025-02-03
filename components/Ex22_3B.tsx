@@ -7,7 +7,7 @@ import { exPageFormat, cn } from "@/lib/util";
 import { Answers } from "@/lib/types";
 
 const Ex22_3B = () => {
-  const correctAnswerArray = [4, 2, 4];
+  const correctAnswerArray = [1, 4, 3, 2, 2, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
   const handleChange = (questionNumber: string, value: string) => {

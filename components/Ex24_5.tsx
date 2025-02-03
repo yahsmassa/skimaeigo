@@ -404,7 +404,7 @@ const Ex24_5 = () => {
                 <div className="flex flex-wrap items-center justify-start mb-4 max-w-[1000px] overflow-x-auto">
                   {question.boxes.map((box, index) => (
                     <React.Fragment key={index}>
-                      {renderSelect(box, 6, index)}
+                      {renderSelect(box, 5, index)}
                       {index < question.boxes.length - 1 && (
                         <span className="mx-1">→</span>
                       )}

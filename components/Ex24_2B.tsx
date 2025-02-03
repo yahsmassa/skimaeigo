@@ -142,7 +142,7 @@ const Ex24_2B = () => {
             <ol className="list-none space-y-2 ml-6">
               {question.options.map((option, optIndex) => (
                 <li key={optIndex} className="flex items-start space-x-2">
-                  <span className="w-6 text-right">{"①②③④"[optIndex]}</span>
+                  <span className="w-6 text-right">{"①②③④⑤"[optIndex]}</span>
                   <span>{option}</span>
                 </li>
               ))}
