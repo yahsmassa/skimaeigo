@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* SweetAlert２のカスタムCSS */
+.swal2-modal {
+    font-size: 13px; /* 全体のフォントサイズを小さくする */
+}
+
+.swal2-title {
+font-size: 16px; /* タイトルのフォントサイズを小さくする */
+}
+
+/* 警告アイコンのサイズを変更する */
+.swal2-icon.swal2-warning {
+font-size: 14px; /* サイズを大きくする */
+/* `font-size` を小さくすることで、アイコンを小さくすることもできます。 */
+}
+
+.swal2-html-container {
+    text-align: left !important;
+  }

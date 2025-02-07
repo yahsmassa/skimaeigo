@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import { type ClassValue, clsx } from "clsx";
 import React from "react";
-
+import { type QandA, type Answers } from "./types";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -37,5 +37,45 @@ export const CardContent: React.FC<CardProps> = ({
 }) => (
   <div className={"p-6 pt-0 " + (className || "")} {...props}>
     {children}
+  </div>
+);
+
+export const qaFormat = (qa: QandA[], questionId: string) => {
+  return qa.find((q) => q.questionId === questionId)?.isCorrect
+    ? "bg-green-100 p-2 rounded-lg"
+    : "bg-red-100 p-2 rounded-lg";
+};
+
+export const handleChange = (
+  questionNumber: string,
+  value: number,
+  setAnswers: React.Dispatch<React.SetStateAction<Answers>>
+) => {
+  setAnswers((prev) => ({
+    ...prev,
+    [questionNumber]: value,
+  }));
+};
+
+export const renderSelect = (
+  number: string,
+  count: number,
+  answers: Answers,
+  setAnswers: React.Dispatch<React.SetStateAction<Answers>>
+) => (
+  <div className="mx-2 flex flex-row items-center whitespace-nowrap">
+    <div className={cn("font-medium mb-0.5 mr-2")}>[{number}]</div>
+    <select
+      value={answers[number] || ""}
+      onChange={(e) => handleChange(number, Number(e.target.value), setAnswers)}
+      className="w-20 h-8 border border-gray-300 rounded-md text-base text-center"
+    >
+      <option value="">選択</option>
+      {Array.from({ length: count }, (_, index) => (
+        <option key={index + 1} value={index + 1}>
+          {index + 1}
+        </option>
+      ))}
+    </select>
   </div>
 );

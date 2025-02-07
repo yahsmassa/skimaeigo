@@ -1,52 +1,89 @@
 "use client";
-
+import Image from "next/image";
 import React, { useState } from "react";
-import { cn, exPageFormat } from "@/lib/util";
-import { Saiten } from "@/components/Saiten";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex25_4 = () => {
-  const correctAnswerArray = [1, 3, 1, 3];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: string) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return (
-      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
-    );
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, e.target.value)}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "4-1",
+      qa: [
+        {
+          questionNumber: "14",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[14] (1)の前後の文",
+        "One key point of the slow life is to own fewer belongings. This makes it easier to concentrate on everyday activities. (1) Many people today tend to buy more than they can consume.",
+        "（スローライフの重要なポイントの1つは，持ち物を少なくすることです。これにより，日常の活動に集中しやすくなります。(1) 今日，多くの人が必要以上に物を買いすぎる傾向があります。）の内容から，「持ち物を少なくすべき」という内容と，「物を買いすぎる」という内容が対立的であると判断する。したがって，①「しかしながら」が正解。",
+      ],
+    },
+    {
+      questionId: "4-2",
+      qa: [
+        {
+          questionNumber: "15",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[15] (2)を含む段落 ",
+        "Another recommendation is to think about your communication style and manner in your public and private life. Sadly, one study has found that around 90% of people check smartphones during face-to-face conversations, which may appear impolite and affect relationships negatively.",
+        "（もう1つの提案は，公的生活や私生活における自分のコミュニケーションのスタイルや態度について考えることです。残念ながら，ある調査によると，人々の約90%が対面での会話中にスマートフォンを確認しており，これは失礼に見える可能性があり，人間関係に悪影響を及ぼすことがあります。）の内容から，対面状況での人間関係を重視すべきという主張がなされていることがわかる。したがって，③「話している相手に注意を集中するようにする」が正解。",
+      ],
+    },
+    {
+      questionId: "4-3",
+      qa: [
+        {
+          questionNumber: "16",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[16] 最終段落冒頭に &quot;In summary&quot;（要約すると）と書かれていることから，下線部(3)が本文のどの内容をまとめて言い換えているかを考える。第2段落以降の言い換えは最終段落の第3文以降に書かれているため，この第1文・第2文は第1段落の言い換えである可能性が高い。よって，第1段落第3文-第4文 ",
+        "Instead, you can slow down and notice things that are truly meaningful to you. By taking your time and being completely focused on these things, you can improve the quality of your work and life.",
+        "（代わりに，立ち止まって自分にとって本当に意味のあることに気づくことができます。時間をかけ，それらに完全に集中することで，仕事や生活の質を向上させることができます）という内容を言い換えたものにする。したがって，①「仕事と私生活の両方で満足感を得ることができる」が正解。",
+      ],
+    },
+    {
+      questionId: "4-4",
+      qa: [
+        {
+          questionNumber: "17",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[17] 下線部(4)は第4段落",
+        "The final aspect of slow living is to take 10 to 15 minutes to reflect on your day. Try to recollect people and events that were significant. By mentally highlighting them, you can find fulfillment in daily tasks.",
+        "（スローライフの最後の要素は，1日の振り返りに10〜15分をかけることです。その日特に重要だった人や出来事を思い出してみてください。それらを心の中で強調することで，日々のタスクに充実感を見出すことができます）の言い換えであると考えられる。したがって，③「その日の思い出深い出来事を振り返る」が正解。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   return (
     <div className={exPageFormat}>
@@ -55,14 +92,13 @@ const Ex25_4 = () => {
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten
-          points={12}
-          startQuestionNumber={14}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       <div className="mb-8 text-gray-800">
@@ -173,15 +209,15 @@ const Ex25_4 = () => {
         </table>
       </div>
 
-      <div className="text-right mt-4 text-gray-600"></div>
-      <div className="space-y-8">
-        <div>
+      <div className="space-y-4 mt-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span className="flex gap-1">
               Based on Comment (1), which is the best word to add?{" "}
             </span>
-            {renderSelect("14", 4, 0)}
+            {renderSelect("14", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4-1" />}
           </div>
           <div className="pl-8 space-y-2">
             <p>① However</p>
@@ -191,13 +227,14 @@ const Ex25_4 = () => {
           </div>
         </div>
 
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span className="flex gap-1">
               Based on Comment (2), which is the best sentence to add?{" "}
             </span>
-            {renderSelect("15", 4, 1)}
+            {renderSelect("15", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4-2" />}
           </div>
           <div className="pl-8 space-y-2">
             <p>① Limit the time you spend having conversations with people.</p>
@@ -209,14 +246,15 @@ const Ex25_4 = () => {
           </div>
         </div>
 
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span className="flex gap-1">
               Based on Comment (3), which is the best phrase to replace the
               underlined part?{" "}
             </span>
-            {renderSelect("16", 4, 2)}
+            {renderSelect("16", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4-3" />}
           </div>
           <div className="pl-8 space-y-2">
             <p>① you can be satisfied at work and in your personal life</p>
@@ -226,14 +264,15 @@ const Ex25_4 = () => {
           </div>
         </div>
 
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 4</span>
             <span className="flex gap-1">
               Based on Comment (4), which is the best phrase to replace the
               underlined part?{" "}
             </span>
-            {renderSelect("17", 4, 3)}
+            {renderSelect("17", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4-4" />}
           </div>
           <div className="pl-8 space-y-2">
             <p>① plan your daily activities as soon as you wake up</p>

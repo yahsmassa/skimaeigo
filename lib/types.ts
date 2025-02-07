@@ -9,5 +9,23 @@ export type SubQuestion = {
 };
 
 export type Answers = {
-  [key: string]: string;
+  [key: string]: number;
+};
+
+// 問題１の問１＝＞ 1-1
+export type QandA = {
+  questionId: string;
+  qa: {
+    questionNumber: string;
+    answer: number;
+  }[];
+  rightAnswerString: string;
+  answerString: string;
+  points: number;
+  explanation?: string[];
+  isCorrect?: boolean;
+  isOrderFree?: boolean;
+  isSeparate?: boolean;
+  isTwoOne?: boolean;
+  specificPatern?: string;
 };

@@ -27,10 +27,8 @@ export function Saiten({
   const handleGrading = () => {
     let correctCount = 0;
     correctAnswerArray.forEach((correctAnswer, index) => {
-      const userAnswer = parseInt(
-        answers[`question${index + startQuestionNumber}` as keyof Answers] ||
-          "0"
-      );
+      const userAnswer =
+        answers[`question${index + startQuestionNumber}` as keyof Answers] || 0;
       if (userAnswer === correctAnswer) {
         correctCount++;
       }
@@ -43,12 +41,19 @@ export function Saiten({
 
   const handleClear = () => {
     const clearedAnswers = correctAnswerArray.reduce((acc, _, index) => {
-      acc[`question${index + startQuestionNumber}`] = "";
+      acc[`question${index + startQuestionNumber}`] = 0;
       return acc;
     }, {} as Answers);
     setAnswers(clearedAnswers);
     setShowResults(false);
     setScore(null);
+  };
+
+  const handleAnswer = (questionNumber: string, answer: number) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [questionNumber]: answer,
+    }));
   };
 
   return (

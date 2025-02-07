@@ -1,69 +1,84 @@
 "use client";
-
-import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat } from "@/lib/util";
-import { Answers } from "@/lib/types";
 import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 export default function Ex25_1() {
-  const correctAnswerArray = [4, 2, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "1-1",
+      qa: [
+        {
+          questionNumber: "1",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[1] Beginners!（初心者の皆さん！）という呼びかけの見出しから，④「水槽について情報を必要としている初心者」が正解。",
+      ],
+    },
+    {
+      questionId: "1-2",
+      qa: [
+        {
+          questionNumber: "2",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[2] 2. Select decorationsの第1文 &quot;Natural and artificial decorations are necessary to keep fish in good health and should cover 50–70% of the area.",
+        "（自然の装飾品と人工の装飾品は魚を健康に保つために必要であり，水槽内の50〜70％の面積を覆うべきです）と，",
+        "3. Position decorationsの第1文-第2文 &quot;Fish need room to move. Leave space around the edges of the tank.",
+        "（魚には動き回るためのスペースが必要です。水槽の端の周りに空間を残しましょう）から，②「適切な空間を確保する」が正解。",
+      ],
+    },
+    {
+      questionId: "1-3",
+      qa: [
+        {
+          questionNumber: "3",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[3] 2. Select decorationsの第3文 &quot;Those from slow-moving or shallow water prefer soft objects like plants.",
+        "（ゆっくり泳ぐ魚や浅い水域の魚には，植物のような柔らかいものが好まれます）という記述から，柔らかい植物を含む絵を選ぶ。また，3. Position decorationsの第3文 &quot;Place tall decorations and plants at the back, and put short ones at the front.&quot;（背の高い装飾品や植物は後ろに置き，背の低いものは前に置いてください）から，④が正解。①は背の高さが逆になっている。②は柔らかい植物がない。③は装飾品の背の高さが前から順に高くなっているのではなく，左右から中心に向け，さらに後に向けて高くなっている。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const handleChange = (questionNumber: string, value: string) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return (
-      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
-    );
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, e.target.value)}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第１問"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <span className="text-gray-600">(配点 6)</span>
         </div>
-        <Saiten
-          points={6}
-          startQuestionNumber={1}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       <h1 className="text-center text-2xl mb-2">Beginners!</h1>
@@ -157,13 +172,14 @@ export default function Ex25_1() {
         {/* Questions Section */}
         <div className="mt-8 space-y-6">
           {/* Question 1 */}
-          <div>
+          <div className={cn("space-y-4", showResults && qaFormat(qa, "1-1"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
               <span className="whitespace-nowrap mr-2">問 1</span>
               <span>
                 The customers most likely to benefit from this pamphlet are{" "}
               </span>
-              {renderSelect("1", 4, 0)}.
+              {renderSelect("1", 4, answers, setAnswers)}.
+              {showResults && <Explain qa={qa} questionId="1-1" />}
             </div>
             <div className="pl-8 space-y-2">
               <div className="flex gap-2">
@@ -196,14 +212,15 @@ export default function Ex25_1() {
           </div>
 
           {/* Question 2 */}
-          <div>
+          <div className={cn("space-y-4", showResults && qaFormat(qa, "1-2"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
               <span className="whitespace-nowrap mr-2">問 2</span>
               <span className="flex gap-1">
                 When arranging decorations to keep your fish in good health, it
                 is a good idea to
               </span>
-              {renderSelect("2", 4, 1)} .
+              {renderSelect("2", 4, answers, setAnswers)}.
+              {showResults && <Explain qa={qa} questionId="1-2" />}
             </div>
             <div className="pl-8 space-y-2">
               <div className="flex gap-2">
@@ -231,26 +248,27 @@ export default function Ex25_1() {
                 <p>wash decorations briefly and roughly</p>
               </div>
             </div>
-            {/* Question 3 */}
-            <div className="mt-4">
-              <div className="flex items-center flex-wrap gap-2 mb-4">
-                <span className="whitespace-nowrap mr-2">問 3</span>
-                <span className="flex gap-1">
-                  According to the pamphlet, which picture best shows how to
-                  decorate for fish from slow-moving water?
-                </span>
-                {renderSelect("3", 4, 1)}.
-              </div>
-              {/* Four aquarium illustrations */}
-              <div className="w-full mx-auto md:w-full">
-                <Image
-                  src="/images/Ex25-1-4.jpg"
-                  alt="Four aquarium decoration examples"
-                  width={800}
-                  height={600}
-                  className="w-full"
-                />
-              </div>
+          </div>
+          {/* Question 3 */}
+          <div className={cn("space-y-4", showResults && qaFormat(qa, "1-3"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-4">
+              <span className="whitespace-nowrap mr-2">問 3</span>
+              <span className="flex gap-1">
+                According to the pamphlet, which picture best shows how to
+                decorate for fish from slow-moving water?
+              </span>
+              {renderSelect("3", 4, answers, setAnswers)}.
+              {showResults && <Explain qa={qa} questionId="1-3" />}
+            </div>
+            {/* Four aquarium illustrations */}
+            <div className="w-full mx-auto md:w-full">
+              <Image
+                src="/images/Ex25-1-4.jpg"
+                alt="Four aquarium decoration examples"
+                width={800}
+                height={600}
+                className="w-full"
+              />
             </div>
           </div>
         </div>

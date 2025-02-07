@@ -18,9 +18,12 @@ export function AnswerRight({
 }: AnswerRightProps) {
   if (!showResults) return null;
 
+  const answerKey = `question${questionNumber}` as keyof Answers;
+  const userAnswer = answers[answerKey];
+
   const isCorrect =
-    parseInt(answers[`question${questionNumber}` as keyof Answers] || "0") ===
-    subQuestions[questionNumber - 1].answer;
+    userAnswer !== undefined &&
+    parseInt(userAnswer.toString()) === subQuestions[questionNumber - 1].answer;
 
   return (
     <span className={isCorrect ? "text-green-500" : "text-red-500"}>

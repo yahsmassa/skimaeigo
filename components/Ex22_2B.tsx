@@ -10,7 +10,7 @@ const Ex22_2B = () => {
   const correctAnswerArray = [2, 4, 2, 4, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: string) => {
+  const handleChange = (questionNumber: string, value: number) => {
     setAnswers((prev) => ({
       ...prev,
       [`question${questionNumber}`]: value,
@@ -18,9 +18,7 @@ const Ex22_2B = () => {
   };
 
   const isCorrect = (questionNumber: string, index: number) => {
-    return (
-      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
-    );
+    return answers[`question${questionNumber}`] === correctAnswerArray[index];
   };
 
   const renderSelect = (number: string, count: number, index: number) => (
@@ -36,7 +34,7 @@ const Ex22_2B = () => {
       </div>
       <select
         value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, e.target.value)}
+        onChange={(e) => handleChange(number, Number(e.target.value))}
         className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
       >
         <option value="">選択</option>

@@ -1,51 +1,103 @@
 "use client";
-
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+
 const Ex25_6 = () => {
-  const correctAnswerArray = [5, 4, 2, 1, 4, 3, 3, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: string) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
+  const question: QandA[] = [
+    {
+      questionId: "6-1",
+      qa: [
+        {
+          questionNumber: "24",
+          answer: 0,
+        },
+        {
+          questionNumber: "25",
+          answer: 0,
+        },
+        {
+          questionNumber: "26",
+          answer: 0,
+        },
+        {
+          questionNumber: "27",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "5421",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "① 彼は再びヒーローになる。→第1段落第1文-第2文 &quot;Everyone knows me as Bluebird, the world-famous superhero. Before, I was only a superhero in name, but now, I deserve my title.&quot;（誰もが私のことを世界的に有名なスーパーヒーロー，ブルーバードとして知っています。以前は名前だけのスーパーヒーローでしたが，今ではその称号にふさわしい存在です）と，最終段落 &quot;After reading the note, I understood who Melody was. Since then, working together, Melody and I have made the perfect team.&quot;（メモを読んで，メロディが誰なのか理解しました。それ以来，メロディと私は一緒に働き，完璧なチームを作り上げています）に該当する。",
+        "② 彼はパフォーマーである。→第3段落第1文-第2文 &quot;One day, we were filming The Lives of Heroes, a reality show about our everyday good deeds. The reality, however, was that we were actors; we pretended that we were helping the world.&quot;（ある日，私たちは日常の善行を描くリアリティ番組「ザ・ライブズ・オブ・ヒーローズ」の撮影をしていました。しかし現実は，私たちは俳優であり，世界を助けるふりをしていただけでした）に該当する。",
+        "③ 彼はプロの作家である。→本文に書かれていない。",
+        "④ 彼はスーパー・パークレンジャーである。→第8段落第1文-第3文 &quot;I decided to put my powers to use by rescuing hikers. I could fly and see for miles; I could locate or aid a troubled hiker faster than any park ranger. I became known as the Amazing Park Ranger Boy. &quot;（私は自分の能力を活用してハイカーを救助することを決意しました。私は空を飛び，数マイル先を見ることができ，どんなレンジャーよりも早く困っているハイカーを見つけて助けることができました。その実績から「素晴らしい公園レンジャーボーイ」として知られるようになりました。その後，チームヒーローにスカウトされ，「ブルーバード」という名前を与えられ，より大きなことを成し遂げるよう期待されました）に該当する。",
+        "⑤ 彼は普通の少年である。→第7段落第1文-第3文 &quot;I grew up in Allegany State Park in New York State. My parents were both park rangers; they patrolled the park and helped hikers in trouble. When I was 12, I discovered my superpowers.&quot;（私はニューヨーク州のアレガニー州立公園で育ちました。私の両親はどちらもレンジャーで，公園を巡回し，困っているハイカーを助けていました。12歳のとき，私は自分の超能力に気付きました）から，12歳までは普通の少年だったと判断する。 ・本文では，冒頭で「誰もが私のことを世界的に有名なスーパーヒーロー，ブルーバードとして知っています。以前は名前だけのスーパーヒーローでしたが，今ではその称号にふさわしい存在です」と述べ，過去と現在を対比していることがわかる。本文の内容を時系列に整理すると次のようになる。",
+      ],
+    },
+    {
+      questionId: "6-2",
+      qa: [
+        {
+          questionNumber: "28",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[28] メロディーの能力については，第5段落第3文 &quot;She could teleport to any place on earth in less than a second, so her unexpected appearances were always full of surprise.&quot;（彼女は1秒以内に地球上のどこにでもテレポートできる能力を持っており，その予期せぬ登場はいつも驚きをもたらしました）がFの「瞬時に異なる場所に移動する」に該当し，同段落第4文 &quot;She said, &quot;Whiskers thinks that you can&apos;t be trusted. I&apos;ll try to convince him.&quot;（女はこう言いました。「ウィスカーズは君が信用できないと思っているわ。私が説得してみる。」）がCの「動物や人々の心を読む」に該当する。また，続く第5文&quot;Melody, who could recreate any sound, produced a cat&apos;s meow and Whiskers appeared.&quot;（メロディはどんな音でも再現できる能力を持っており，猫の鳴き声を出しました。するとウィスカーズが現れました）がBの「音を完全に模倣する」に該当し，第6段落第3文 &quot;Suddenly, a voice popped into my head, &quot;You do look foolish trying to be a celebrity.&quot;（突然，頭の中に声が響きました。「セレブを気取っていると本当に愚かに見えるよ。」）がEの「テレパシーで人々と話す」に該当する。したがって，④が正解。",
+      ],
+    },
+    {
+      questionId: "6-3",
+      qa: [
+        {
+          questionNumber: "29",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[29] 第7段落第10文-第12文 &quot;I learned my parents had been told to send her to a special facility for extraordinary children, because her powers could help humanity. &quot;Someday, when the time is right, you&apos;ll meet her. I know now that we should never have let her go. We won&apos;t let that happen to you,&quot; said my mother.&quot;（両親は，姉が人類を助けるためにその能力を活用できる特別な施設に送られるべきだと言われたのだと教えてくれました。「いつか適切な時期が来たら，彼女に会えるわ。私たちは彼女を手放すべきではなかったと今では思っている。あなたのことは絶対にそうしないわ。」と母は言いました）の内容から，③「あなたを私たちと一緒にいさせる」が正解。",
+      ],
+    },
+    {
+      questionId: "6-4",
+      qa: [
+        {
+          questionNumber: "30",
+          answer: 0,
+        },
+        {
+          questionNumber: "31",
+          answer: 0,
+        },
+      ],
+      isOrderFree: true,
+      rightAnswerString: "34",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[30]・[31] 本文で言及されていない内容を選ぶ。したがって，③「メロディが超能力に気づいた経緯」と，④「メロディがチームヒーローに加わった理由」が正解となる。なお，⑤の「ブルーバードとメロディの関係」については，直接言及してはいないものの，第7段落で述べられていた「超能力を持つ姉がいること」という内容と，最終段落のメモの内容（「家族経営を始めましょう。「REAL HEROES」の共同創設者として私と一緒に」）から，メロディがブルーバードの姉であることが推測できるため，誤りである。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return (
-      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
-    );
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, e.target.value)}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -53,14 +105,13 @@ const Ex25_6 = () => {
           <h1 className="text-lg font-bold">{"第６問"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten
-          points={12}
-          startQuestionNumber={24}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Introduction text */}
@@ -254,23 +305,27 @@ const Ex25_6 = () => {
       {/* Questions section */}
       <div className="mt-8 space-y-8">
         {/* Question 1 */}
-        <div className="space-y-4">
-          <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 1</span>
-            <div>
-              Choose <span className="underline">four</span> out of the five
-              descriptions (①〜⑤) and put them in the order they occurred.
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
+          <div className="flex gap-2 items-center flex-wrap justify-between">
+            <div className="flex gap-2 items-center">
+              <span className="whitespace-nowrap">問 1</span>
+              <div>
+                Choose <span className="underline">four</span> out of the five
+                descriptions (①〜⑤) and put them in the order they occurred.
+                &nbsp; &nbsp;
+                {showResults && <Explain qa={qa} questionId="6-1" />}
+              </div>
             </div>
           </div>
 
           <div className="flex items-center gap-2 my-4 ml-8 flex-wrap">
-            {renderSelect("24", 4, 0)}
+            {renderSelect("24", 5, answers, setAnswers)}
             <span>→</span>
-            {renderSelect("25", 4, 1)}
+            {renderSelect("25", 5, answers, setAnswers)}
             <span>→</span>
-            {renderSelect("26", 4, 2)}
+            {renderSelect("26", 5, answers, setAnswers)}
             <span>→</span>
-            {renderSelect("27", 4, 3)}
+            {renderSelect("27", 5, answers, setAnswers)}
           </div>
 
           <div className="space-y-2 ml-8">
@@ -283,13 +338,14 @@ const Ex25_6 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 2</span>
             <div>
               Choose the correct combination of Melody&apos;s superpowers.
             </div>
-            {renderSelect("28", 4, 4)}
+            {renderSelect("28", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-2" />}
           </div>
 
           <div className="space-y-2 ml-8">
@@ -310,11 +366,12 @@ const Ex25_6 = () => {
         </div>
 
         {/* Question 3 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 3</span>
             <span>Choose the best option for </span>
-            {renderSelect("29", 4, 5)}.
+            {renderSelect("29", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="6-3" />}
           </div>
 
           <div className="space-y-2 ml-8">
@@ -326,14 +383,15 @@ const Ex25_6 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 4</span>
             <span>Choose the best options for </span>
-            {renderSelect("30", 5, 6)}
+            {renderSelect("30", 5, answers, setAnswers)}
             <span>and</span>
-            {renderSelect("31", 5, 7)}
+            {renderSelect("31", 5, answers, setAnswers)}
             <span>. (The order does not matter.)</span>
+            {showResults && <Explain qa={qa} questionId="6-4" />}
           </div>
 
           <div className="space-y-2 ml-8">

@@ -1,54 +1,115 @@
 "use client";
 
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat } from "@/lib/util";
-import { Answers } from "@/lib/types";
 import Image from "next/image";
+import { Saiten } from "@/components/Saiten";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex25_7 = () => {
-  const correctAnswerArray = [1, 4, 1, 4, 1, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: string) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return (
-      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
-    );
-  };
+  const question: QandA[] = [
+    {
+      questionId: "7-1",
+      qa: [
+        {
+          questionNumber: "32",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "A. 体温を変化させる→本文に書かれていない。したがって，①が正解。",
+        "B. 全体的な健康を維持する→第2段落第1文 &quot;Sleep is essential for animals&apos; physical and mental health, and for their bodies to function efficiently.&quot;（睡眠は，動物の身体的および精神的な健康，そして効率的な身体機能のために不可欠です）",
+        "C. 動物の身体をリフレッシュさせる→第2段落第3文 &quot;Sleep also gives the brain neurons a chance to reset, and the body becomes energized.&quot;（睡眠は脳のニューロンにリセットの機会を与え，身体にエネルギーを与えます）",
+        "D. 脳のニューロンをリセットする→第2段落第3文 &quot;Sleep also gives the brain neurons a chance to reset, and the body becomes energized.&quot;（睡眠は脳のニューロンにリセットの機会を与え，身体にエネルギーを与えます）",
+      ],
+    },
+    {
+      questionId: "7-2",
+      qa: [
+        {
+          questionNumber: "33",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[33] the biphasic sleepの特徴は，第3段落第4文 &quot;Some birds, insects, and mammals utilize a kind of biphasic sleep, where the animal has two waking and sleeping times, with one sleep being long and the other like a nap.&quot;（一部の鳥，昆虫，哺乳類は二相性睡眠を利用しており，これは1日の中で2回の覚醒と睡眠があり，1回は長く，もう1回は昼寝のような短い睡眠となっています）に書かれている。したがって，長い睡眠と短い睡眠が描かれている④が正解。",
+      ],
+    },
+    {
+      questionId: "7-3",
+      qa: [
+        {
+          questionNumber: "34",
+          answer: 0,
+        },
+        {
+          questionNumber: "35",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "14",
+      isOrderFree: true,
+      answerString: "",
+      isCorrect: false,
+      points: 4,
+      explanation: [
+        "[34]・[35] 睡眠のパターンに影響する条件については，第4段落と第5段落に書かれている。各選択肢の意味と該当箇所は以下の通り。",
+        "① エネルギーを急速に消費する動物は，より頻繁に眠る傾向がある→第4段落第2文 &quot;Smaller animals such as squirrels or mice tend to use up their energy by moving quickly and frequently. This results in the need to sleep more often but for shorter periods of time.&quot;（リスやネズミのような小動物は，素早く頻繁に動き回るためエネルギーを多く消費します。そのため，短時間ですがより頻繁に眠る必要があります）に一致する。",
+        "② 食べ物を探し続ける動物は，より長い睡眠が必要である→第4段落第5文 &quot;Large herbivores like wild horses, on the other hand, sleep less than meat-eating animals because their plant-based diet has relatively few calories, resulting in the need to spend most of their time searching for food.&quot;（一方，草食動物のウマのような大型動物は，植物性の食事がカロリーが少ないため，ほとんどの時間を食べ物を探すことに費やす必要があり，睡眠時間が少なくなります）に反する。",
+        "③ カロリーが少ない食事を摂る動物は，より簡単に眠れる→第4段落第5文 ",
+        "④ 食事が胃を満たす動物は，通常より長く眠る→第4段落第4文 &quot;Lions are carnivorous and have longer sleeping times because their food sources satisfy their hunger for longer periods.&quot;（ライオンは肉食動物で，食物が長時間の満腹感を与えるため，より長い睡眠時間を確保できます）に一致する。",
+        "⑤ アクセスが難しい巣を持つ動物は，通常より短く眠る→第5段落第2文-第5文 &quot;Animals that can create safe spaces tend to enjoy longer periods of sleep, but those that might need to stay alert sleep less. Apes sleep on platforms, high above the jungle floor, which keep them away from attackers. Some smaller animals such as rabbits create shelters by digging into the ground where it is difficult for predators to find them. As a result, they feel safer and sleep longer.&quot;（安全な場所を作れる動物は長時間眠る傾向がありますが，警戒し続ける必要がある動物は睡眠時間が短くなります。類人猿はジャングルの地面から高いところにあるプラットフォームで眠り，そのおかげで彼らは捕食者から遠ざかっていられます。ウサギのような小型動物は，地中に穴を掘って隠れ家を作り，捕食者に見つかりにくい場所で眠ります。その結果，より安全に感じ，長く眠ることができます）に反する。",
+      ],
+    },
+    {
+      questionId: "7-4",
+      qa: [
+        {
+          questionNumber: "36",
+          answer: 0,
+        },
+      ],
+      isOrderFree: true,
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[36] Unihemispheric sleepについては第6段落第2文から最終文 &quot;A pattern that may be less easily noticed in our daily lives is called unihemispheric sleep. In this type of sleep, some animals traveling in a group keep one eye open. While one side of the animal’s brain sleeps, the other side stays awake and alert to its surroundings. In this way, the animal can experience the reviving effects of sleep while also watching out for threats. This unihemispheric sleep occurs in some bird species when they are flying long distances in groups. Birds flying at the outer edge of the group use this type of sleep to help protect the other members that sleep with both eyes closed.&quot;（私たちの日常生活ではあまり気づかれにくいパターンとして，片半球睡眠と呼ばれるものがあります。このタイプの睡眠では，群れで移動している一部の動物が片目を開けたまま眠ります。動物の脳の片方が眠っている間，もう片方が目覚めていて周囲に警戒し続けます。この方法で，動物は睡眠の回復効果を得ながら，脅威を監視することができます。この片半球睡眠は，群れで長距離を飛ぶ鳥の一部で見られます。群れの外側を飛ぶ鳥はこの睡眠を利用して，両目を閉じて眠る他のメンバーを保護します）に書かれている。したがって，①「飛行中に部分的に眠り，部分的に目覚めている」が正解。",
+      ],
+    },
+    {
+      questionId: "7-5",
+      qa: [
+        {
+          questionNumber: "37",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[37] 第7段落の内容をもとに，この段落にタイトルをつける問題。第7段落第1文 &quot;Besides the types of sleep explained above, there are patterns that can be considered to be sleep-like activities.&quot;（上記で説明した睡眠タイプに加えて，睡眠に似た活動とみなされるパターンもあります）について，クマの島民や，クラゲのリラクゼーションの具体例が挙げられている，したがって，④「睡眠に類似した状態」が正解。",
+      ],
+    },
+  ];
 
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, e.target.value)}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -56,14 +117,13 @@ const Ex25_7 = () => {
           <h1 className="text-lg font-bold">{"第７問"}</h1>
           <span className="text-gray-600">(配点 {16})</span>
         </div>
-        <Saiten
-          points={16}
-          startQuestionNumber={32}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Introduction text */}
@@ -256,7 +316,7 @@ const Ex25_7 = () => {
       {/* Questions section */}
       <div className="mt-8 space-y-8">
         {/* Question 1 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "7-1"))}>
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 1</span>
             <span>
@@ -264,7 +324,8 @@ const Ex25_7 = () => {
               error in your presentation outline. Which of the following should
               you <span className="underline">remove</span>?
             </span>
-            {renderSelect("32", 4, 0)}
+            {renderSelect("32", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="7-1" />}
           </div>
           <div className="space-y-2 ml-8">
             <div>① A</div>
@@ -275,14 +336,15 @@ const Ex25_7 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "7-2"))}>
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 2</span>
             <span>
               You want to use a figure for the biphasic sleep pattern mentioned
               in the article. Choose the best option for{" "}
             </span>
-            {renderSelect("33", 4, 1)}.
+            {renderSelect("33", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="7-2" />}
           </div>
           <div className="ml-8">
             <Image
@@ -296,13 +358,15 @@ const Ex25_7 = () => {
         </div>
 
         {/* Question 3 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "7-3"))}>
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 3</span>
             <span>Choose the best options for </span>
-            {renderSelect("34", 5, 2)}
+            {renderSelect("34", 5, answers, setAnswers)}
             <span>and </span>
-            {renderSelect("35", 5, 3)}. (The order does not matter.)
+            {renderSelect("35", 5, answers, setAnswers)}. (The order does not
+            matter.)
+            {showResults && <Explain qa={qa} questionId="7-3" />}
           </div>
           <div className="space-y-2 ml-8">
             <div>① which burn up energy rapidly tend to sleep more often</div>
@@ -318,11 +382,12 @@ const Ex25_7 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "7-4"))}>
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 4</span>
             <span>Choose the best option for </span>
-            {renderSelect("36", 4, 4)}.
+            {renderSelect("36", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="7-4" />}
           </div>
           <div className="space-y-2 ml-8">
             <div>
@@ -340,11 +405,12 @@ const Ex25_7 = () => {
         </div>
 
         {/* Question 5 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "7-5"))}>
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 5</span>
             <span>Choose the best heading for </span>
-            {renderSelect("37", 4, 5)}.
+            {renderSelect("37", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="7-5" />}
           </div>
           <div className="space-y-2 ml-8">
             <div>① Common Patterns of Sleep</div>

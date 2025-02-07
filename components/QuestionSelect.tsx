@@ -24,15 +24,14 @@ export function QuestionSelect({
   const questionKey = `question${questionNumber}` as keyof Answers;
   const AnswerValue = answers[questionKey] || "";
   const correctAnswer = correctAnswerArray[index];
-  const handleChange = (newValue: string) => {
+  const handleChange = (newValue: number) => {
     setAnswers((prev: Answers) => ({
       ...prev,
       [questionKey]: newValue,
     }));
   };
 
-  const isCorrect =
-    showResults && answers[questionKey] === String(correctAnswer);
+  const isCorrect = showResults && answers[questionKey] === correctAnswer;
 
   return (
     <div className="flex items-center space-x-2">
@@ -41,7 +40,7 @@ export function QuestionSelect({
       </label>
       <select
         value={AnswerValue || ""}
-        onChange={(e) => handleChange(e.target.value)}
+        onChange={(e) => handleChange(Number(e.target.value))}
         className="border border-gray-300 rounded  px-2  w-20 text-center"
       >
         <option value="">選択</option>

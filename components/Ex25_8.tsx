@@ -1,53 +1,116 @@
 "use client";
-
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 import Image from "next/image";
-
 const Ex25_8 = () => {
-  const correctAnswerArray = [1, 1, 3, 4, 2, 4, 1];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: string) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return (
-      answers[`question${questionNumber}`] === String(correctAnswerArray[index])
-    );
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, e.target.value)}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "8-1",
+      qa: [
+        {
+          questionNumber: "38",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "①「宇宙船によるCO₂排出量は膨大で，宇宙空間に悪影響を及ぼしている」 →資料A第3文-第5文 ",
+        "It is estimated that one spacecraft launch emits 200–300 tons of CO₂ and other harmful gases into the Earth&apos;s atmosphere. More and more spacecraft are being sent into space, which is damaging for the Earth. The contribution to the greenhouse effect of these craft’s CO₂ emissions is causing the Earth’s temperature to rise.",
+        "「宇宙船1機の打ち上げで，約200～300トンのCO₂やその他の有害ガスが地球の大気中に放出されると推定されています。ますます多くの宇宙船が打ち上げられることで，地球に悪影響を及ぼしています。これらの宇宙船のCO₂排出量が温室効果に寄与し，地球の気温上昇を引き起こしています」に反する（宇宙空間に悪影響を及ぼしているのではなく，地球に悪影響を及ぼしている）。",
+      ],
+    },
+    {
+      questionId: "8-2",
+      qa: [
+        {
+          questionNumber: "39",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "②「有害なガスの排出を抑えた新しいエンジンで宇宙船を更新するのは難しい」 →このような記述はない。",
+      ],
+    },
+    {
+      questionId: "8-3",
+      qa: [
+        {
+          questionNumber: "40",
+          answer: 0,
+        },
+        {
+          questionNumber: "41",
+          answer: 0,
+        },
+        {
+          questionNumber: "42",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "342",
+      answerString: "",
+      isTwoOne: true,
+      isCorrect: false,
+      points: 4,
+      explanation: [
+        "③「宇宙ゴミは飛行機との衝突の可能性により人間にリスクをもたらす」 →資料Ａ第7文-第9文 ",
+        "The quantity of space debris, the junked parts of spacecraft or artificial satellites, is on the rise. NASA estimates that, in the thermosphere, there are currently around 23,000 pieces of space debris which are larger than a softball and travel at speeds of up to 28,000 km/h. This poses a risk to future spaceflight, and may even be a potential obstacle to astronomical observation.",
+        "（宇宙船や人工衛星の廃棄部品である宇宙ゴミの量が増加しています。NASAによれば，現在熱圏にはソフトボールより大きく，秒速28,000kmの速度で移動する宇宙ゴミが約23,000個存在していると推定されています。これは，将来の宇宙飛行にリスクをもたらし，天文観測においても潜在的な障害となる可能性があります）に反する（飛行機との衝突の可能性については言及されていない）。",
+      ],
+    },
+    {
+      questionId: "8-4",
+      qa: [
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      isOrderFree: true,
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "④「宇宙探査は地球と熱圏の両方の環境を汚染している」 →第3文から第5文で，温室効果ガスを排出することで地球に害を与えていることが書かれている。また，第6文 ",
+        "Second, space exploration is damaging the thermosphere (the space environment close to the Earth).",
+        "（次に，宇宙探査は熱圏（地球に近い宇宙環境）を損なっています）と述べられている。したがって，④が正解。",
+      ],
+    },
+    {
+      questionId: "8-5",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      isOrderFree: true,
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[44] グラフの数値を計算する必要がある。正解は①「世界中の政府が宇宙探査に費やすお金は，飢餓を減らすだけでなく，途上国で初等教育を利用可能にすることもできる」で，グラフによると宇宙探査に費やす金額は $103 billionだが，飢餓を減らす（relieving hunger）には$40 billion，途上国で初等教育を利用可能にする（supplying basic education）には$54 billionが必要なので，$103 billion > $94 billion（$40 billion + $50 billion）となり，この選択肢だけがグラフの数値に合致していることになる。他の選択肢については以下の通り。",
+        "②「データによれば，途上国の人々に清潔な水を確保する費用は，世界中の政府が宇宙探査を行う費用よりも少ない」 →150 < 103なので誤り。",
+        "③「政府が宇宙探査に費やす費用の半分以下で，発展途上国における教育格差の問題に対処することが可能である」 →103×0.5＝51.5で，54に満たないので誤り。",
+        "④「現在宇宙探査に投資されているお金で，発展途上国に十分な食糧，基礎教育，清潔な水を提供することができる」 →150 + 54 + 40 > 103なので誤り。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   return (
     <div className={exPageFormat}>
@@ -56,14 +119,13 @@ const Ex25_8 = () => {
           <h1 className="text-lg font-bold">{"第８問"}</h1>
           <span className="text-gray-600">(配点 {17})</span>
         </div>
-        <Saiten
-          points={17}
-          startQuestionNumber={38}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Introduction and Steps */}
@@ -176,7 +238,7 @@ const Ex25_8 = () => {
       </div>
 
       {/* Questions Section */}
-      <div className="mt-8 space-y-8">
+      <div className={cn("space-y-4 mt-6", showResults && qaFormat(qa, "8-1"))}>
         {/* Question 1 */}
         <div className="space-y-4">
           <div className="flex gap-2 items-center flex-wrap">
@@ -184,7 +246,8 @@ const Ex25_8 = () => {
             <span>
               Which of the following best expresses Meilin&apos;s opinion?
             </span>
-            {renderSelect("38", 4, 0)}
+            {renderSelect("38", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="8-1" />}
           </div>
 
           <div className="space-y-2 ml-8">
@@ -194,15 +257,18 @@ const Ex25_8 = () => {
             <div>④ Trust is treasure.</div>
           </div>
         </div>
+      </div>
 
-        {/* Question 2 */}
+      {/* Question 2 */}
+      <div className={cn("space-y-4 mt-6", showResults && qaFormat(qa, "8-2"))}>
         <div className="space-y-4">
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap">問 2</span>
             <span>
               Both Christine and Victor mention that space exploration
             </span>
-            {renderSelect("39", 4, 1)}
+            {renderSelect("39", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="8-2" />}
             <span>.</span>
           </div>
 
@@ -232,7 +298,7 @@ const Ex25_8 = () => {
         <p className="font-medium">▶ [Step 2] Take a position</p>
 
         <div className="space-y-6">
-          <div className="space-y-4">
+          <div className={cn("space-y-4", showResults && qaFormat(qa, "8-3"))}>
             <div>
               <span>問 3</span>
               <span className="ml-2">
@@ -272,10 +338,13 @@ const Ex25_8 = () => {
 
             {/* Options for 40 and 41 */}
             <div className="space-y-2">
+              {showResults && <Explain qa={qa} questionId="8-3" />}
               <p className="flex items-center gap-2 flex-wrap">
-                Options for {renderSelect("40", 5, 2)}. and
-                {renderSelect("41", 5, 3)}. (the order does not matter):
+                Options for {renderSelect("40", 5, answers, setAnswers)} and
+                {renderSelect("41", 5, answers, setAnswers)} (the order does not
+                matter):
               </p>
+
               <div className="ml-4 space-y-2">
                 <div>① Apu&apos;</div>
                 <div>② Christine&apos;</div>
@@ -288,7 +357,7 @@ const Ex25_8 = () => {
             {/* Options for 42 */}
             <div className="space-y-2">
               <p className="flex items-center gap-2 flex-wrap">
-                Options for {renderSelect("42", 4, 4)}.
+                Options for {renderSelect("42", 4, answers, setAnswers)}.
               </p>
               <div className="ml-4 space-y-3">
                 <div>
@@ -409,14 +478,15 @@ const Ex25_8 = () => {
       </div>
       <div className="text-base space-y-8 p-6">
         {/* Question 4 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "8-4"))}>
           <div className="flex items-start gap-2 flex-wrap">
             <span className="whitespace-nowrap">問 4</span>
             <span>
               Based on Source A, which of the following is the most appropriate
               for REASON 2?
             </span>
-            {renderSelect("43", 4, 5)}.
+            {renderSelect("43", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="8-4" />}
           </div>
 
           <div className="space-y-4 ml-6">
@@ -463,7 +533,7 @@ const Ex25_8 = () => {
         </div>
 
         {/* Question 5 */}
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "8-5"))}>
           <div className="flex items-start gap-2">
             <div className="whitespace-nowrap">問 5</div>
             <div className="flex-1">
@@ -477,7 +547,8 @@ const Ex25_8 = () => {
               </div>
               <div className="flex flex-wrap items-center">
                 Based on Source B, which option best supports this statement?
-                {renderSelect("44", 4, 6)}.
+                {renderSelect("44", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="8-5" />}
               </div>
             </div>
           </div>
