@@ -35,7 +35,11 @@ const Ex23_3B = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "問1 ③→④→②→①：第2段落3文目 &quot;I rearranged ... the scene.&quot;（私は居間の家具を並べ替え，その場面を設定するために，持っていた古い絵を何枚かとランプをいくつか付け加えました）という内容から，[18]に③が入る。 ",
+        "本文の family room が選択肢では living room に言い換えられている。第4段落7文目 &quot;To get into ... children wear costumes.&quot;（雰囲気に溶け込むため，それから私は子どもたちに衣装を着せました）という内容から，[19]に④が入る。 ",
+        "さらに，同じ段落の9文目 &quot;After that, ... the first clue.&quot;（その後，子どもたちは最初の手掛かりを探し始めました）という内容から，[20]に②が入る。最後に，第5段落2文目（For the final task...）～4文目（Neither of my kids ...）の内容から，[21]に①が入る。",
+      ],
     },
     {
       questionId: "3B-2",
@@ -49,7 +53,9 @@ const Ex23_3B = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "③：第4段落6文目 &quot;Remember that ... final goal.&quot;（パズルは最終のゴールに近いところで徐々に難しくなるようにすべきだということを覚えておいてください）という内容から，③「チャレンジを徐々に難しくする」が正解。",
+      ],
     },
     {
       questionId: "3B-3",
@@ -63,7 +69,9 @@ const Ex23_3B = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "②：本文の内容を要約した選択肢を選ぶ問題。本文では父親が自分の子どもの好きなものや苦手なものを考慮して仕掛けを作っているため，②「特に自分の子どものために経験を作った」が正解。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

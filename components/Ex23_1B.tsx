@@ -24,7 +24,11 @@ const Ex23_1B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "③：3つの情報をまとめる問題。FOREST の2文目 &quot;Your instructors have taught English ... in several countries.&quot;（あなたのインストラクターは20年以上の間いくつかの国で英語を教えてきました）， ",
+        "MOUNTAIN の2文目 &quot;Instructors for this course have worked at theater schools in New York City.&quot;（このコースのインストラクターはニューヨーク市の演劇学校で働いてきました）， ",
+        "SKY の2文目 &quot;Your instructors have been to many countries to coach debate teams&quot;（あなたのインストラクターは多くの国々を訪れてディベートチームをコーチしてきました）から，③「他の国々で働いた」が正解。",
+      ],
     },
     {
       questionId: "1B-2",
@@ -38,7 +42,11 @@ const Ex23_1B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "④：3つの情報をまとめる問題。FOREST の4文目 &quot;On the final day ... all the other campers listen.&quot;（キャンプの最終日に，あなたは他の全てのキャンパーが聴く中，スピーチコンテストに参加します）， ",
+        "MOUNTAIN の4文目 &quot;You&apos;ll perform your skit ... on AUgust 14.&quot;（8月14日に全てのキャンパーが楽しめるようにあなたは自分のスキットを演じます）， ",
+        "SKY の4文目 &quot;You&apos;ll do a short debate ... on the last day.&quot;（あなたは最終日に他の全てのキャンパーの前で短いディベートを行います）から，④「キャンプで学んだことを見せる」が正解。",
+      ],
     },
     {
       questionId: "1B-3",
@@ -52,7 +60,9 @@ const Ex23_1B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "③：Step 2 の &quot;We'll contact you ... your course preference&quot;（あなたの英語の能力を査定し，あなたのコースの選択について尋ねるために面接を設定するため連絡します）から，③「あなたの英語のレベルがチェックされる」が正解。 ",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

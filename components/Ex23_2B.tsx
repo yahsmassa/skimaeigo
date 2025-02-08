@@ -22,7 +22,10 @@ const Ex23_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "④：第1段落4文目 We started this activity to help students use their commuting time more effectively.",
+        "（私たちがこの活動を始めたのは，生徒たちが自分たちの通学時間をより効率的に使う手助けをするためです）という内容から，④「彼らの時間をより上手に使う」が正解。",
+      ],
     },
     {
       questionId: "2B-2",
@@ -36,7 +39,10 @@ const Ex23_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "①：第1段落6文目 A total of 300 students participated: ... only 15 first-years participated.",
+        "（合計300人の生徒が参加した。…1年生は15人しか参加しなかった）という内容から，①「参加者の10%にも満たない生徒が1年生だった」が正解。",
+      ],
     },
     {
       questionId: "2B-3",
@@ -50,7 +56,11 @@ const Ex23_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "①：Feedback from participants の HS の1文目 Thanks to this project, I got ... vocabulary test.",
+        "（このプロジェクトのおかげで，私は英語の語彙テストで史上最高の点数を取りました）という内容が B: learning language（言語を学習する）に，JHの1文目 I kept a study log（私は勉強記録をつけていました）という内容が",
+        " A: keeping study records（学習記録をつける）に言い換えられている。よって，①が正解。",
+      ],
     },
     {
       questionId: "2B-4",
@@ -64,7 +74,11 @@ const Ex23_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "①：Feedback from participants の KF の1文目～3文目 &quot;My friend was sad ... to take part.&quot;（私の友達は参加できなかったので悲しんでいました。彼女は近くに住んでいて，学校まで歩いているのです。参加する他の方法があるべきではなかったでしょうか）から， ",
+        "①「学校まで歩いていく生徒を含むこともできたであろうに」が正解。could have included は仮定法過去完了で，実際にはできなかったことに対して残念であった気持ちを表している。なお，④の watching videos for fun helped time pass quickly ",
+        "（娯楽のためにビデオを見ると，時間が速く過ぎる手助けになった）については MN の &quot;I spent most of the time ... classes better.&quot;（私はバスでビデオを見て時間の大半を費やし，そのおかげで授業をよりよく理解できました）という内容から，ビデオは娯楽のためではなく勉強のために見ていたと判断できるため，誤りだと言える。",
+      ],
     },
     {
       questionId: "2B-5",
@@ -78,7 +92,10 @@ const Ex23_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "②：「筆者の疑問」とは，第1段落8文目 How come so few first-years participated?",
+        "（なぜそんなに参加した1年生が少なかったのか？）のこと。これに対する説明と考えられるのは JH の2文目  For some reason ... about this challenge.",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

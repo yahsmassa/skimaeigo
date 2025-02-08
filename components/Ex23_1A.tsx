@@ -23,7 +23,9 @@ const Ex23_1A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "問1 ①：下部の &quot;Fill in the form below and hand it in to your teacher today.&quot;（下の書式に記入して，今日，教師に提出しなさい）から，①「下部を完成させて提出する」が正解。",
+      ],
     },
     {
       questionId: "1A-2",
@@ -37,7 +39,10 @@ const Ex23_1A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "④：2つの情報の共通点を把握する問題。Palace Theater の2つ目の項目 &quot;Actors available to talk in the lobby after the performance&quot;（役者と公演の後ロビーで話せます）と，",
+        "The Guitar Queen の2つ目の項目 &quot;Opportunity to greet the cast in their costumes before the show starts&quot;（ショーが始まる前に衣装を着たキャストとあいさつをする機会があります）から，④「劇場で演者に会える」が正解。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

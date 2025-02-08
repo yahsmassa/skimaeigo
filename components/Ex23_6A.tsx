@@ -30,7 +30,9 @@ const Ex23_6A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "③：第1段落8文目 &quot;One person's trash ... person's treasure.&quot;（一人の人間のごみが別の人の宝物になりうる）という内容から，③「一人の人間にとって重要ではないものが他の誰かにとって価値があるかもしれない」が正解。",
+      ],
     },
     {
       questionId: "6A-2",
@@ -44,7 +46,9 @@ const Ex23_6A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "④：第2段落4文目&quot;Researchers in .. this behavior.&quot;（この分野の研究者は，およそ3分の1の大人がこの行動を維持するということに一般的に同意している）という内容から，④「およそ30%の人々が大人になっても収集を続けている」が正解。",
+      ],
     },
     {
       questionId: "6A-3",
@@ -63,7 +67,10 @@ const Ex23_6A = () => {
       isOrderFree: true,
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "[41] ④・[42] ⑥：第3段落7文目 &quot;Some save greeting cards ... and so on.&quot;（友達や家族からのグリーティングカード，特別なイベントでもらったドライフラワー，浜辺で過ごした日の貝殻などを貯めている人もいる）という内容から，④「大切なイベントを思い出させるもの」が正解。 ",
+        "また，第4段落4文目後半 &quot;while others ... an investment&quot;（一方で，特に投資としてものを集める人もいる）という内容から，⑥「何らかの種類の利益を求める」が正解。5文目（While it is ... worth a lot.）ではその内容が具体的に説明されている。",
+      ],
     },
     {
       questionId: "6A-4",
@@ -77,7 +84,9 @@ const Ex23_6A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "①：第6段落3文目 &quot;As technology can ... 30 years ago.&quot;（テクノロジーが物理的制約を取り除けるので，30年前には想像もできなかったであろう膨大な音楽や美術のデジタルライブラリーを今では個人が所有できる）という内容から，①「収集はおそらく大きさや形が変わり続けるであろう」が正解だと判断する。 ",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

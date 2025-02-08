@@ -23,7 +23,9 @@ const Ex23_3A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "②：第1段落3文目（The first thing ... balance the backpack.）～6文目（Most good backpacks ... small easy-to reach items.）の内容，特に，5文目の &quot;That means putting ... at the top.&quot;（それが意味しているのは，寝袋を底に，食べ物，調理器具，テントを真ん中に，そして服を上部に置くということです）から，②が正解。",
+      ],
     },
     {
       questionId: "3A-2",
@@ -37,7 +39,10 @@ const Ex23_3A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "③：第2段落4文目 Then, my friend ... the empty space.",
+        "（そうしたら，私の友達が，外側の服を外してそれを寝袋の中に詰め込み，空いている空間を埋めるように言いました）という内容から，③「寝袋の隙間を埋める」が正解。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

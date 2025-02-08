@@ -24,7 +24,11 @@ const Ex23_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "②：Special Features の内容をまとめ，言い換えた選択肢を選ぶ問題。Special Features の1文目 &quot;Smart Support shoes have ... the iSupport application.&quot;",
+        "（スマートサポートシューズには，アイサポートアプリにつないだ時に足のかたちを分析するナノチップが入っている），2文目 &quot;Download the app ... smartwatch.&quot;（アプリをスマートフォン，パソコン，タブレットおよび／あるいはスマートウォッチにダウンロードしてください）という内容から，②「ハイテクの日常用シューズ」が正解。",
+        "「日常用（everyday）」については，冒頭の説明文1文目 &quot;You wantr to buy ... get sore feet.&quot;（あなたは良い靴を1足買いたがっている。というのも学校まで長距離を歩いて足が痛くなることがよくあるからだ）という内容と，Customers' Comments の4つ目 &quot;I wear mine all year round&quot;（私は一年中自分の靴を履いている）という内容から，この靴が日常的に履くためのものだと判断できる。",
+      ],
     },
     {
       questionId: "2A-2",
@@ -38,7 +42,10 @@ const Ex23_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "②：本文の内容から推測して適切な選択肢を選ぶ問題。冒頭の説明文1文目 &quot;You want to buy ... get sore feet.&quot;（あなたは良い靴を1足買いたがっている。というのも学校まで長距離を歩いて足が痛くなることがよくあるからだ）という内容と， ",
+        "Special Features の4文目 &quot;The inside of the shoe ... personalised foot support.&quot;（靴の内側が自動的に自動的に調整し，正しく，個人に合った足のサポートを提供します）という内容から，②「個人に合った足のサポートをしてくれる」が正解。",
+      ],
     },
     {
       questionId: "2A-3",
@@ -52,7 +59,9 @@ const Ex23_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "②：本文の内容から推測して適切な言いかえを選ぶ問題。Customers&apos; Comments の7つ目の2文目 &quot;The app&apos;s basic features are easy to use, but I wouldn&apos;t pay for the optional advanced ones.&quot;（このアプリの基本的な機能は使いやすいが，私はオプションの上級版の機能にお金を払うことはないだろう）から，②「アプリの無料の機能はユーザーフレンドリーである」が正解。「上級版の機能にお金を払う」という内容から，基本的な機能は無料で使える，と推測することが求められている。",
+      ],
     },
     {
       questionId: "2A-4",
@@ -66,7 +75,9 @@ const Ex23_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "問4 ④：Advantages の Route Options に &quot;View your live location ... to read directions.&quot;（自分のディバイスで現在の位置を見るか，イヤフォンで方向が自動的に音声で流れるようにさせるか，スマートウォッチを使って方向を知るようにしてください）という内容から，④の Route Options が正解。設問の audio devices が本文では earphones となっていることに気付く必要がある。 ",
+      ],
     },
     {
       questionId: "2A-5",
@@ -80,7 +91,9 @@ const Ex23_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "問5 ①：Customers&apos; Comments の3つ目 &quot;I love my pair now, but it took several days to get used to them&quot;（私は自分の靴が今大好きですが，それに慣れるのに数日かかりました）から，①「靴に慣れるのに時間を割くこと」が正解。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
