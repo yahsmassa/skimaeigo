@@ -23,7 +23,9 @@ const Ex22_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "②：ペットを飼っている家庭の割合が高い順から低い順に3つの国（オーストラリア，イギリス，アメリカ）を並べる問題。冒頭の段落の &quot;The UK is known as a nation of animal-lovers; two in five UK homes have pets. This is lower than in the US, where more than half of homes have pets. However, Australia has the highest percentage of homes with pets!&quot;（イギリスは動物好きな人の国として知られており，イギリスの家庭の5軒に2軒はペットを飼っています。これは，半数以上の家庭でペットを飼っているアメリカよりも低い数字です。しかし，ペットを飼っている家庭の割合が最も高いのはオーストラリアです！）という記述から，② Australia － the US － the UK が正解。",
+      ],
     },
     {
       questionId: "2B-2",
@@ -37,7 +39,9 @@ const Ex22_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "④：David のレポートによると，ペットを飼うことの利点の一つは何かという問題。点線の囲みの中の &quot;Pet owners mention the following advantages of living with pets&quot;（ペットの飼い主たちは，ペットと一緒に暮らすことの次のような利点を挙げている）という項目の1つ目に &quot;The love, happiness, and friendship pets give&quot;（ペットが与えてくれる愛，幸福，友情）とあることと，3つ目に &quot;The happy times pets bring&quot;（ペットがもたらす幸せな時間）とあることから，④ your life can be more enjoyable（暮らしがより楽しくなる）が正解。①～③のような記述はいずれもない。",
+      ],
     },
     {
       questionId: "2B-3",
@@ -51,7 +55,9 @@ const Ex22_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "②：調査から分かったことを最もよく反映している発言はどれかを選ばせる問題。ペットを飼う利点の3つ目の項目 &quot;Most owners spend 3-4 hours with their &apos;fur babies&apos; every day&quot;（ほとんどの飼い主は毎日3～4時間，「毛皮の赤ちゃん」と過ごしている）という内容を言い換えた，② &apos;I spend about three hours with my pet every day.&apos;（私は毎日，ペットと3時間くらい過ごしている）が正解。&apos;fur babies&apos; がペットのことを指していると把握できたかどうかが問われている。①・③・④に該当するような内容は本文にはない。",
+      ],
     },
     {
       questionId: "2B-4",
@@ -65,7 +71,9 @@ const Ex22_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "④：日本でペットを飼うことについて，David の意見を要約したものはどれかを選ぶ問題。最終段落の &quot;On the other hand, since coming to Japan, I have seen other problems such as space, time, and cost. Still, I know people here who are content living in small flats with pets.&quot;（一方で，日本に来てから，スペースや時間，コストなど別の問題も見えてきました。それでも，狭いアパートでペットと暮らすことに満足している人たちを知っています。）という内容から，④の Some people are happy to keep pets inside their homes.（屋内でペットを飼って幸せな人もいる）が正解。",
+      ],
     },
     {
       questionId: "2B-5",
@@ -79,7 +87,9 @@ const Ex22_2B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "②：本文のタイトルを選ぶ問題。メインとなる内容は，調査結果を踏まえたペットを飼うことの利点（と一つの問題点）についてなので，② What Does Keeping Pets Give Us?（ペットを飼うことが私たちに何を与えるか）が正解。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

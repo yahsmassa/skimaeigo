@@ -22,7 +22,9 @@ const Ex22_6A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "③：diurnal という単語の定義を聞く問題。この単語を知っているかどうかではなく，前後からこの単語の意味を推測できるかどうかが問われていることに注意。第1パラグラフ最終文の &quot;Creatures active during the day are &quot;diurnal&quot; and those emerging at night are &quot;nocturnal.&quot; &quot;（日中に活発な生き物が diurnal で，夜に現れる生き物が nocturnal である） から，「日中に活発であること」となる③が正解。",
+      ],
     },
     {
       questionId: "6A-2",
@@ -36,7 +38,9 @@ const Ex22_6A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "③：本文の The Main Points の一つを埋める問題。第6パラグラフ第1文・第2文の &quot;Can people change? While the results are not all in, studies of young adults seem to say no, we are hard-wired.&quot;（人は変われるのでしょうか？ すべての結果が出ているわけではありませんが，若年層を対象とした研究ではどうやら「いいえ，私たちはしっかり固定されていて変わりにくいのです」と言われているようです）から，③ it might be hard for us to change what time of day we perform best（私たちが一日の中の何時に最もうまく機能するかを変えるのは難しいかもしれない）が正解。",
+      ],
     },
     {
       questionId: "6A-3",
@@ -51,7 +55,10 @@ const Ex22_6A = () => {
       isOrderFree: true,
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "①：中国の時間の区分だけでなく，ユダヤ教やキリスト教について言及されているのは何のためかを答える問題。",
+        "第4パラグラフ第1文 &quot;Does everyone follow the system of beginning days in the morning?&quot;（全ての人が，一日を朝に始めるという制度に従っているのか）という問いかけがなされ，第2文でユダヤ教徒，第3文でキリスト教徒，第4文から第6文で中国の時間区分について述べてたうえで，第7文で &quot;In other words, ancient customs support how owls view time.&quot;’（言い換えれば，古代の慣習は，フクロウ［夜型の人］の時間の見方を支持しているのだ）とまとめている。よって，① explain that certain societies have long believed that a day begins at night（ある社会は，一日が夜に始まると長い間信じてきたことを説明する）が正解。",
+      ],
     },
     {
       questionId: "6A-4",
@@ -69,7 +76,13 @@ const Ex22_6A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "[42] ⑥・[43] ③：Interesting Details の空所[42]と[43]を埋める問題。[42]では体内時計をセットする要素について，[43]では[42]が知能と何の違いを説明するかについて問われている。",
+        "[42]については，第3パラグラフ第2文で，&quot;One theory suggests preference for day or night has to do with time of birth.&quot;（一つの理論が示すところによると，昼を好むか夜を好むかは生まれた時間に関係しているという）と述べているので，⑥ time of birth が正解。",
+        "[43]については，第5パラグラフ前半で知能の話をして，後半（7文目以降）で以下のように述べている。",
+        "Not only can schoolwork be a challenge, but they may miss daytime career opportunities and are more likely to enjoy the bad habits of &quot;nightlife,&quot; playing at night while larks sleep. Nightlife tends to be expensive. A University of Barcelona study suggests larks are precise, seek perfection, and feel little stress. Owls seek new adventures and exciting leisure activities, yet they often have trouble relaxing. （［フクロウ（＝夜型人間）にとっては］学業が大変になりうるだけでなく，彼らは昼間の就職の機会を逃し，ヒバリ［＝朝型人間］が寝ている間に「ナイトライフ」，つまり夜遊びをする悪習を楽しむ可能性が高くなるのです。夜遊びはお金がかかる傾向があります。バルセロナ大学の研究によると，ヒバリは几帳面で，完璧さを求め，ストレスをほとんど感じません。フクロウは新しい冒険や刺激的なレジャー活動を求めますが，リラックスすることが苦手な場合が多いのです。）",
+        "よって，③ behavior（行動）が正解となる。なお，[43]の主語が[42]だとすると，time of birth may be the explanation for differences in intelligence and behavior となるため，やや違和感を覚えるが，「生まれた時間によって，朝型／夜型が決まるとすれば，それがその後の知能や行動にも影響する」と解釈せよ，ということだと考えられる。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

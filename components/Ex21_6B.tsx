@@ -23,7 +23,10 @@ const Ex21_6B = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解③「数多くの選択肢（ここでは人工甘味料のこと）を与えることで」",
+        "解説 &quot;Scientific discoveries, however, have changed the world of sweeteners.&quot;という文は第１パラグラフの４行目にすぐに見つかるが、by ~ing「～することで」に対応する箇所は探しづらい。これは、この第１パラグラフの最終文、&quot;scientists have developed a wide variety of artificial sweeteners.&quot;「科学者たちは様々な種類の人工甘味料を開発してきた」から判断する。単なるsweeteners「甘味料」には、コーンシロップ(HFCS)など天然のものも含まれるが、そこにartificial sweeteners「人工甘味料」が導入されるようになった、ということである。他の選択肢は、①「新しい、より甘みのある白糖を発見した」、②「アメリカ人のエネルギー摂取を測定する」、④「多くの自然環境から新たに開発された植物を用いる」であり、いずれも記述はない。",
+      ],
     },
     {
       questionId: "6B-2",
@@ -37,7 +40,10 @@ const Ex21_6B = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解③ (A)Sucralose－(B)Stevia－(C)Ace-K, Aspartame－(D)HFCS",
+        "解説 第４パラグラフを参照しながら、砂糖に比べて何倍の糖度かを読み取り、並べる。Ace-K, Aspartameは砂糖の200倍の糖度、Steviaは砂糖の300倍の糖度、SucraloseはSteviaの２倍の糖度である。HFCS（コーンシロップ）の糖度は第１パラグラフで言及されていて、砂糖の1.2倍である。",
+      ],
     },
     {
       questionId: "6B-3",
@@ -56,7 +62,10 @@ const Ex21_6B = () => {
       isOrderFree: true,
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解③「植物から代替甘味料を取り出すのは可能である」 ⑤「xylitolやsorbitolのような甘味料はすぐに消化されない」",
+        "解説 第１パラグラフに、&quot;We can now extract sugars from many other plants.&quot;「他にも多くの植物から砂糖を抽出することは可能である」と書かれているので、選択肢③「植物から代替甘味料を取り出すのは可能である」が選ばれる。ここでの「代替甘味料」とは、いわゆるサトウキビ以外の植物から取れる砂糖のことであり、必ずしも人工甘味料ではない。また、第５パラグラフの終盤に、&quot;Unfortunately, theses (xylitol, sorbitolを指す) move through the body extremely slowly, ~.&quot;「これらキシリトールやソルビトールは非常にゆっくりと身体を通過する」とあるが、これは「消化しにくさ」を意味しているものなので、⑤「xylitolやsorbitolのような甘味料はすぐに消化されない」が選ばれる。それ以外の選択肢は、①「代替甘味料は体重増加を引き起こすことが分かった」、②「アメリカ人は代替甘味料からエネルギーの14.6%を摂取している」（第２パラグラフ一文目、&quot;14.6% of the average American’s energy intake is from &quot;added sugar,&quot;「平均的なアメリカ人のエネルギー摂取の14.6%は「加糖」によるもの」とあり、合致していない）、④「ほとんどの人工甘味料は料理に使いやすい」であり、いずれも記述はない。",
+      ],
     },
     {
       questionId: "6B-4",
@@ -70,7 +79,10 @@ const Ex21_6B = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解④「自分たちに合った甘味料を選ぶことに目を向けるべきだと筆者は提案している」",
+        "解説 最終パラグラフの最終文に、 &quot;Individuals need to weigh the options and then choose the sweeteners that best suit their needs and circumstances.&quot;「各個人が選択肢を比較し、自分のニーズや状況に最適な甘味料を選ぶ必要がある」と書かれているので、④「自分たちに合った甘味料を選ぶことに目を向けるべきだと筆者は提案している」と合致する。他の選択肢は、①「飲み物やデザートに人工甘味料を使用することに筆者は反対している」、②「人工甘味料は従来の甘味料にうまく取って代ったと思っている」、③「将来的にはもっと甘い商品を開発することが重要だと筆者は述べている」であり、いずれも記述はない。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

@@ -23,7 +23,9 @@ const Ex22_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "①：プレゼンテーションのサブタイトルを選ぶ問題。これは本文の要約を選ぶ問題だと言える。本文を読み，Sequence of Key Events と Outcome の部分に相当する内容を埋めると，ファーンズワースが RCA という企業と特許権を巡って争った話をしていることがわかる（実は，問3の時系列整序問題の選択肢を読んだだけでもそのことがわかってしまう）。よって，① A Young Inventor Against a Giant Company（ある巨大会社と戦った一人の若き発明家）が正解。",
+      ],
     },
     {
       questionId: "5-2",
@@ -42,7 +44,11 @@ const Ex22_5 = () => {
       isOrderFree: true,
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "[31] ④・[32] ⑤：ファーンズワースの幼少期について正しいものを2つ選ぶ問題。",
+        "第2パラグラフ最終文 &quot;He would often repair the old generator and even changed his mother&apos;s hand-powered washing machine into an electricity-powered one.&quot;（彼はよく古い発電機を修理し，母親の手回し洗濯機を電気で動くものに替えたことさえあった）から，④ fixed and improved household equipment for his family（家族のために，家庭の機械を修理したり改良した）が正解。",
+        "さらに，第3パラグラフ第2文 &quot;Suddenly, it occurred to him that it might be possible to create an electronic image on a screen using parallel lines, just like the rows in the field.&quot;（ふと，畑の畝のように平行な線を使って，スクリーンに電子画像を作ることができるのではないかと思いついた）から，⑤ got the idea for an electronic television system while working in a field（畑作業をしながら電子テレビ装置のアイディアを思いついた）も正解。",
+      ],
     },
     {
       questionId: "5-3",
@@ -68,7 +74,15 @@ const Ex22_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "[33] ②→[34] ⑤→[35] ④→[36] ①：出来事を時系列に並べ替える問題。4つの空所に対して選択肢が5つあるため，余分な選択肢も判別する必要がある。なお，今回の英文ではそれぞれの出来事に西暦が書かれているので，選択肢にその年をメモしながら読み解くと良い。",
+        "① Farnsworth rejected RCA&apos;s offer. （ファンズワースはRCAの申し出を拒否した。） → 第5パラグラフ第4文・第5文の &quot;Yet, in 1931, they offered Farnsworth a large sum of money to sell them his patent as his system was superior to that of Zworykin&apos;s. He refused this offer, which started a patent war between Farnsworth and RCA.&quot;（しかし，1931年，彼らはファンズワースに，彼のシステムの方がズウォリキンのシステムより優れているから彼の特許を自分たちに売ってくれと大金を差し出した。彼はこの申し出を断ったが，それによりファンズワースとRCA社の間で特許戦争が始まった）から，①は1931年であるとわかる。",
+        "② Farnsworth shared his idea with his high school teacher. （ファンズワースは自分のアイデアを高校の先生と共有した。） →第3パラグラフ第3文 &quot;In 1922, during the spring semester of his first year at high school, he presented this idea to his chemistry teacher, Justin Tolman, and asked for advice about his concept of an electronic television system.&quot;（1922年，高校1年の春学期，彼は化学の教師だったジャスティン・トルマンにこのアイデアを披露し，電子テレビ装置の構想について助言を求めた）から，②は1922年であるとわかる。",
+        "③ RCA won the first stage of the battle. （RCA 社が戦いの第一ステージに勝った。） →第6パラグラフ第1文・第2文に &quot;The company took legal action against Farnsworth, claiming that Zworykin&apos;s 1923 patent had priority even though he had never made a working version of his system. Farnsworth lost the first two rounds of the court case.&quot;（その会社はファーンズワースに対して法的手段に訴え，ズウォリキンが1923年に取得した特許の方が，たとえまだ一度も装置を実用化していなくても，優先権を持つとした。ファンズワースは，この裁判の最初の2ラウンドで敗訴した）とあるものの，これは[36]の後にある RCA took Farnsworth to court の内容であって，[36]より前の内容ではないので，③の選択肢はどこにも入らないとわかる。",
+        "④ The US government gave Farnsworth the patent. （合衆国政府がファンズワースに特許を与えた。） →第4パラグラフ第3文 &quot;The US government gave him a patent for this system in 1930.（合衆国政府は，1930年にこの装置の特許を彼に与えた） から，④は1930年であるとわかる。",
+        "⑤ Zworykin was granted a patent for his television system. （ズウォリキンがテレビシステムの特許を認められた。） →第5パラグラフ第3文 &quot;They recruited Vladimir Zworykin, who had already worked on an electronic television system and had earned a patent as early as 1923.&quot;（彼らはウラジミール・ズウォリキンを採用した。彼はすでに電子テレビ装置を開発し，1923年という早い時期に特許を取得していたのであった）という内容から，⑤は1923年であることがわかる。",
+        "よって，[33]が②（1922年），[34]が⑤（1923年），[35]が④（1930年），[36]が①（1931年）となる。",
+      ],
     },
     {
       questionId: "5-4",
@@ -82,7 +96,9 @@ const Ex22_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "③：Outcome の部分の空所に入れるものを選ぶ問題。ファーンズワースがRCA社との特許権を巡る戦いに勝てたのは何のおかげかが問われている。第6パラグラフ第3文 &quot;However, in the final round, the teacher who had copied Farnsworth&apos;s blackboard drawings gave evidence that Farnsworth did have the idea of an electronic television system at least a year before Zworykin&apos;s patent was issued. In 1934, a judge approved Farnsworth&apos;s patent claim on the strength of handwritten notes made by his old high school teacher, Tolman.&quot;（しかし，最終ラウンドでは，ファンズワースの黒板の絵を写していた教師が，ズウォリキンの特許が出された少なくとも1年前にファンズワースが電子テレビ装置のアイディアを持っていたという証明を提出した。1934年，裁判官は，ファンズワースの特許請求を認めたのは，彼の高校時代の恩師トルマン先生の手書きのメモを根拠にしてのことであった）から，③ the sketches his teacher had kept for many years（彼の教師が何年間も保管していたスケッチ）が正解。",
+      ],
     },
     {
       questionId: "5-5",
@@ -97,7 +113,9 @@ const Ex22_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "③：Achievements and Recognition の空所に入れるものを選ぶ問題。第7パラグラフ第3文・第4文 &quot;In an interview after his death, Farnsworth&apos;s wife Pem recalled Neil Armstrong&apos;s moon landing being broadcast. Watching the television with her, Farnsworth had said, &quot;Pem, this has made it all worthwhile.&quot;（ファンズワースの妻ペムは，彼の死後のインタビューで，ニール・アームストロングの月面着陸が放送されていたことを思い出していた。妻と一緒にテレビを見ていたファンズワースは，「ペム，これですべてが報われたよ」と言っていた）から，③ His invention enabled us to watch historic events live.（彼の発明品のおかげで私たちは歴史的な出来事を生で見ることができるようになった）が正解。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

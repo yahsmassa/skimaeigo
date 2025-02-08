@@ -22,7 +22,9 @@ const Ex22_4 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "③：Len の第1パラグラフ第7文前半の &quot;Most of them are priced very reasonably&quot;（品物の大半は手ごろな価格である）という内容から，③ they are affordable for students が正解。② most of the items are good for the environment（その品物のほとんどは環境に良い）と迷う問題だが，Len の第2パラグラフ第1文では &quot;Purchasing used goods is eco-friendly&quot;（中古品を買うことは環境に優しい）と書かれており，品物そのものが環境に良いと言っているわけではないので誤りと考えられる。",
+      ],
     },
     {
       questionId: "4-2",
@@ -36,7 +38,9 @@ const Ex22_4 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "③：Cindy が勧める購入方法を選ぶ問題。Cindy の第2パラグラフ第1文 &quot;You&apos;re going to be here for four years, so buy your goods new!&quot;（個々に4年間いるのですから，品物は新品で買いましょう！）という内容と，同じパラグラフの第3文・第4文 &quot;However, some of them stopped working after just one month, and they did not have warranties. I had to replace them quickly and could not shop around, so I just bought everything from one big chain store.&quot;（［中古品を買ったら］しかし，中にはたった1ヶ月経っただけで動かなくなったものもあり，保証書もありませんでした。私は急いで買い替えなければならず，ありこち買い物をして回ることもできなかったので，ある一つの大手チェーン店ですべて買い揃えたのです）という内容から，③ new items that have warranties for replacement（交換用の保証書のついた新品）が正解。② from the website because it offers the best prices（最善の価格を提供してくれるから，このウェブサイトから）と迷う問題だが，Cindy が紹介しているウェブサイトでは複数の販売サイトの価格を「比較」しているだけで，そのサイトから直接購入するわけではないので誤りである。",
+      ],
     },
     {
       questionId: "4-3",
@@ -50,7 +54,9 @@ const Ex22_4 = () => {
       answerString: "",
       isCorrect: false,
       points: 4,
-      explanation: [],
+      explanation: [
+        "②：Len と Cindy の両方が勧めているのは何かを問う問題。Len の第1パラグラフの最後にある &quot;but stock is limited, so hurry!&quot;（でも，在庫は限られているので，急いで！）という内容と，Cindy の最終文にある &quot;Things go fast! Don&apos;t wait or you&apos;ll miss out!&quot;（品物はすぐになくなります！ 待っていてはいけません。さもないと買えなくなりますよ！）という内容から，② buy your appliances as soon as you can（電化製品をできるだけ早く買う）が正解。",
+      ],
     },
     {
       questionId: "4-4",
@@ -64,7 +70,9 @@ const Ex22_4 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "①：新品の電化製品をできるだけ最善の価格で買いたい場合，どうすればいいかを問う問題。新品の購入については Cindy の紹介した save4unistu.com というサイトを使うことで価格を比較できるので，①が正解。",
+      ],
     },
     {
       questionId: "4-5",
@@ -83,7 +91,11 @@ const Ex22_4 = () => {
       isSeparate: true,
       isCorrect: false,
       points: 4,
-      explanation: [],
+      explanation: [
+        "[28] ②・[29] ④：[28]では電子レンジを最も安く買う方法が，[29]では5年保証のついたテレビを最も安く買う方法が，それぞれ求められている。",
+        "電子レンジについては，Len の紹介した中古品店では $85 だが，Cindy の第4パラグラフ第5文によれば，&quot;Great Buy provides one-year warranties on all household goods, and students with proof of enrollment at a school get 10% off the prices listed on the table above.&quot;（Great Buy は，すべての家庭用品に1年間の保証を提供し，学校の在籍証明がある学生は，上の表にある価格から10％の割引が適用されます）とあるため，$90 の 10% 割引で $81 となる。よって，② Great Buy が正解。",
+        "5年保証のついたテレビについては，Cindy の第4パラグラフ第3文・第4文 &quot;Value Saver provides one-year warranties on all household goods for free. If the item is over $300, the warranty is extended by four years.&quot;（Value Saver は，すべての家庭用製品に1年間の保証を無償で提供します。300ドル以上の品物であれば，保証期間は4年延長されます）から，Value Saver のテレビは $305 で5年保証となる。Great Buy は先に述べたように1年保証はあるが，5年保証については言及されていない。Cut Price については，同じパラグラフの最終2文で &quot;Warranties at Cut Price are not provided for free. You have to pay $10 per item for a five-year warranty.&quot;（Cut Price の保証は無料ではありません。5年保証は品物1点につき10ドルを支払う必要があります）とあるため，$300＋$10＝$310 となり，Value Saver より高くなる。よって，④ Value Saver が正解。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

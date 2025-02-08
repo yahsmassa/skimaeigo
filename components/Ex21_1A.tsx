@@ -23,7 +23,7 @@ const Ex21_1A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: ["正解①「USBメモリーを持ってきてほしい」"],
     },
     {
       questionId: "1A-2",
@@ -37,7 +37,7 @@ const Ex21_1A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: ["正解②「それを聞いて嬉しい」"],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

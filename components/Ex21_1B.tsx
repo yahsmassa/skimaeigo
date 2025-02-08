@@ -24,7 +24,9 @@ const Ex21_1B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "正解④「届くのに約７日間かかる」 本文に、will arrive a week or soとあるので、そこから判断できる。",
+      ],
     },
     {
       questionId: "1B-2",
@@ -38,7 +40,9 @@ const Ex21_1B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "正解④「ビデオメッセージとオンラインマガジンへのアクセス」 表を参照すれば、１行目と２行目に書いてある。それ以外の特典は、SpeerやZoomerに含まれる。",
+      ],
     },
     {
       questionId: "1B-3",
@@ -52,7 +56,12 @@ const Ex21_1B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "正解③「半額で会員を更新できる」 ☆の３つ目に、you can either renew or upgrade at a 50% discountとあるので、そこから判断できる。 ",
+        "①「$50でZoomerになれる」・・・半額でアップグレードできるので、$50もかからない。",
+        "②「$4で新規会員特典を得られる」・・・$4なのは配送料",
+        "④「無料で会員をアップグレードできる」・・・アップグレードには半額になるが無料ではない。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

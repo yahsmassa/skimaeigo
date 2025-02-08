@@ -23,7 +23,9 @@ const Ex22_1A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "①：4つの果物のうちcupuacu と buriti の2つについて，どのようなものに用いられることができるかを問う問題。cupuacu と buriti の説明から共通する要素を探すことが求められている。cakes と書かれているので①が正解。 ",
+      ],
     },
     {
       questionId: "1A-2",
@@ -37,7 +39,9 @@ const Ex22_1A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "③：「酸味のあるケーキを作りたい場合，使うべき最善の果物はどれか」を問う問題。sour という単語が含まれているのは jabuticaba と pitanga だが，pitanga は only for jams and jellies となっていて，jabuticaba は After they get sour, use them for making jams, jellies, and cakes. とあるので③が正解。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

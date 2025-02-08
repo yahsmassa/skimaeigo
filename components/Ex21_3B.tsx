@@ -35,7 +35,10 @@ const Ex21_3B = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解④「キャンペーンのリーダー（Katy）が市長に助けを求めた」→②「Sarahはセンターに寄付した」→①「Sarahはセンターのイベントに参加した」→③「SarahはKatyに提案した」",
+        "解説・・・老朽化で改修が必要なSakura International Centreのために、Katyは市長に支援を求めたが断られたため、資金援助のキャンペーンを始めた。その話を聞いたSarahは寄付をした（a few month agoのこと）。その後、Sarahはセンターでの講演に参加したり募金活動をした（Last monthのこと）が、思うように資金が集まらなかったので、SarahはKatyに、学校の生徒に対してボランティアを募集しようというアイデアを話した。というのが、おおまかな流れである。時を表す副詞や時制（過去形と過去完了形）に注目すると良い。",
+      ],
     },
     {
       questionId: "3B-2",
@@ -49,7 +52,10 @@ const Ex21_3B = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解②「友情を育む機会を与えてくれる」",
+        "解説・・・第２パラグラフに、&quot;It provides valuable opportunities for Japanese and Foreign residents to get to know each other.&quot;「日本人と外国人がお互いを知り合えるような貴重な機会を与えてくれる」とあるので、そこから判断できる。①「外国人のための金銭的支援」や③「地域社会のためにニュースレターを発行する」や④「英国に交換留学生を送る」はどれも言及がない。",
+      ],
     },
     {
       questionId: "3B-3",
@@ -63,7 +69,10 @@ const Ex21_3B = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解②「更なる情報を知るためにSarahに連絡する」",
+        "解説・・・最終パラグラフに、&quot;Please email me today!&quot;とあるので、そこから判断できる。この場合のtodayは「今日」というよりも、「メッセージを読んだ当日に」という意味合いなので「すぐに」ということ。それくらい緊急だと分かる判断できる。④「新しい資金援助キャンペーンを始める」は「新しい」という個所が不適格である。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

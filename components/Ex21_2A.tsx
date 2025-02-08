@@ -72,7 +72,9 @@ const Ex21_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "正解②Mountain Pear 解説・・・Judges’ final average scoresにおいて、Singingの項目が最も高く、4.9である。",
+      ],
     },
     {
       questionId: "2A-2",
@@ -86,7 +88,10 @@ const Ex21_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "正解②Ms Leigh ",
+        "解説・・・Ms Leighのみ、Mountain PearとGreen Forestに対して、 &quot;~ have great voices, but they were not exciting on stage.&quot;や&quot;~performed a fantastic new song, but I think they need to practice more.&quot;というコメントをしている。",
+      ],
     },
     {
       questionId: "2A-3",
@@ -100,7 +105,10 @@ const Ex21_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "正解①「審査員は皆、Green Forestの曲を褒めた」",
+        "解説・・・「褒めた」というのは事実である。他の選択肢はどれも、「もっと練習する必要がある」「上手に歌える」「将来性がある」といった各審査員の主観的な「意見」である。",
+      ],
     },
     {
       questionId: "2A-4",
@@ -114,7 +122,10 @@ const Ex21_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "正解③「Silent Hillは観客と一体感があった」",
+        "解説・・・「一体感があったかどうか」はMr Hobbsの感想であり主観的な「意見」である。他は、「総合得点が同じだった」「独創性に関するMs Wellsの提案は同意された」「審査員のコメントに従って順位を決めた」は、客観的な「事実」である。",
+      ],
     },
     {
       questionId: "2A-5",
@@ -128,7 +139,10 @@ const Ex21_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "正解⑤ Silent Hill – Green Forest – Mountain Pear",
+        "解説・・・&quot;Performance is the most important quality&quot;と&quot;song originality should be more important than good singing&quot;から、Performance＞song originality＞singingという優先順位だと判断する。あとは、それに従って、各バンドのスコアを比較すると、演奏の最高評価(4.9)がSilent Hill、曲の独創性の最高評価(5.0)がGreen Forest、歌唱の最高評価(4.7)がMountain Pearとなる。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

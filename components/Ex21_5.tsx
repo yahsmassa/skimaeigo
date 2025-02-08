@@ -23,7 +23,10 @@ const Ex21_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解③「馬のように振る舞う雄牛のAstonを紹介しよう」",
+        "解説 全体を読み概要が理解できていれば選ぶことは容易。雄牛のAstonがメインである。また、第３パラグラフの中盤（2ページ目の上から2行目）に、&quot;He responded to Sabine’s voice just like a horse.&quot;「彼はSabineの声にまるで馬のように応える」 とあるので、そこからも判断できる。",
+      ],
     },
     {
       questionId: "5-2",
@@ -37,7 +40,10 @@ const Ex21_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解④ ＊Main figures（主な登場人物・動物）・・・Aston, Sabine, the pony ＊Minor figures（脇の登場人物・動物）・・・Aston’s mother, the farmer",
+        "解説 Main figuresの意味（「主な登場人物・動物」）とMinor figuresの意味（「脇の登場人物・動物」）が分からなかった受験生もいたと思うが、選択肢から「MainとMinorに分類する」という出題意図を読み取れると良い。これも全体のストーリー、特に登場人物および動物を識別して理解できていれば問題ないだろう。ちなみに、309はAstonと同じ雄牛であり、the ponyの名前はLeonである。 ",
+      ],
     },
     {
       questionId: "5-3",
@@ -63,7 +69,10 @@ const Ex21_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解④「Sabineが近くの農場に働きに行く」－③「Sabineは309とその母牛を買う」－⑤「Sabineは309を散歩に連れ出す」－①「Astonはジャンプを覚える」",
+        "解説 第１パラグラフに、&quot;she spent hours watching cows on a nearby milk farm.&quot;「彼女(Sabine)は近所の農場で何時間も牛を見て過ごした」と書かれている。また、第２パラグラフに、&quot;The farmer agreed, and she bought them.&quot;「農夫は合意し、彼女(Sabine)はその親子（309とその母牛）を買った」とあり、その直後の文に、&quot;Sabine then started taking 309 for walks to town.&quot;「その後、Sabineは309を街への散歩に連れ出し始めた」と書かれている。そして、第３パラグラフ中盤以降に、&quot;it took him just 18 months to learn how to leap over one-meter-high horse jumps ~.&quot;「Astonが１メートルの高さのホースジャンプを超えるのにたった18カ月しかからなかった」と書かれている。",
+      ],
     },
     {
       questionId: "5-4",
@@ -82,7 +91,10 @@ const Ex21_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解①「自ら自分のミスを修正する」③「背中に人を乗せたままジャンプする」",
+        "解説 どちらも第３パラグラフに書かれている。①「自ら自分のミスを修正する」は、&quot;He also noticed his faults and correct them without any help from Sabine.&quot;という個所に一致している。③「背中に人を乗せたままジャンプする」は、&quot;~ to leap over one-meter-high horse jumps with Sabine on his back.という個所に一致している。それ以外の選択肢は、②「ポニーと並んでジャンプする」、④「馬よりも早く技を覚える」、⑤「写真のためにポーズを取る」であり、いずれも記述はない。",
+      ],
     },
     {
       questionId: "5-5",
@@ -96,7 +108,10 @@ const Ex21_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [],
+      explanation: [
+        "正解①「ファンが増えている」",
+        "解説 第６パラグラフに、&quot;now, Aston is a major attraction with a growing number of online followers.&quot;「今や、Astonは大きな注目を集め、オンライン上のフォロワーがますます増えている」とある。「online followersイコールfans」と読み取れば、この箇所と一致しているのが分かると思う。それ以外の選択肢は、②「Sabineを金持ちにした」、③「有名になり人々をもう怖がらせない」、④「馬用のトレーラーで一年多くの夜を過ごす」であり、いずれも記述はない。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

@@ -24,7 +24,9 @@ const Ex22_1B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "②：コンテストの応募期間を問う問題。How to Enter の2つ目の項目にある日付をそのまま選ぶだけ。",
+      ],
     },
     {
       questionId: "1B-2",
@@ -38,7 +40,9 @@ const Ex22_1B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "②：名前のアイディアを応募する際にしなくてはならないことを選ぶ問題。How to Enter の4つ目の項目にある Each submission fee is 5$.（応募料金は1通5ドル）という表現から，②の pay the submission fee（応募料を支払う）が正解。",
+      ],
     },
     {
       questionId: "1B-3",
@@ -52,7 +56,9 @@ const Ex22_1B = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [],
+      explanation: [
+        "①：自分が応募した名前が5名のファイナリストに選ばれた場合，どうなるかを選ぶ問題。Prizes の1文目にある &quot;All five contest finalists will receive free one-day zoo passes valid until the end of July.&quot;（最終選考に残った5名全員に，7月末まで有効な動物園の1日フリーパスが贈られます）から，①の get free entry to the zoo for a day（動物園に1日無料で入場できる）が正解。",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
