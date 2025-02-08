@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { Answers, SubQuestion } from "@/lib/types";
-import { QuestionSelect } from "@/components/QuestionSelect";
-import { Saiten } from "./Saiten";
+import { QandA, Answers, SubQuestion } from "@/lib/types";
 import { exPageFormat, exQuestionFormat, cn } from "@/lib/util";
 import Image from "next/image";
+import { Saiten2 } from "@/components/Saiten2";
+import { qaFormat, renderSelect } from "@/lib/util";
+import { Explain } from "@/components/Explain";
 
 const Ex24_1B = () => {
   const [showResults, setShowResults] = useState(false);
@@ -47,7 +48,66 @@ const Ex24_1B = () => {
       answer: 1,
     },
   ];
-  const correctAnswerArray = [4, 3, 1];
+  const question: QandA[] = [
+    {
+      questionId: "1B-1",
+      qa: [
+        {
+          questionNumber: "3",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[3] The Arts Tour の2文目と3文目の &quot;We will begin in the Art Gallery where there are many paintings from Europe and the US. After lunch, enjoy a concert across the street at the Bruton Concert Hall before walking a short distance to the Artists' Avenue.&quot;",
+        "（まずは，欧米の絵画が数多く展示されているアートギャラリーから始めます。昼食後は，通りを挟んだ向かいにあるブルトン・コンサートホールでコンサートを楽しんだ後，少し歩いてアーティスト・アベニューへ）から，④「アートギャラリーとコンサートホールのある芸術エリア」が正解。",
+      ],
+    },
+    {
+      questionId: "1B-2",
+      qa: [
+        {
+          questionNumber: "4",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[4] 3種類のツアーの共通点を導き出す問題。The History Tour では，第2文の",
+        "Opposite the church is the early-20th-century Mayor's House. There will be a tour of the house and its beautiful garden.",
+        "教会の向かいには，20世紀初頭の市長の家があります。この邸宅と美しい庭のツアーが行われます）と書かれている。The Arts Tour では，最終文で",
+        "Watch artists at work in their studios and afterwards wander around the park, finding sculptures among the trees.",
+        "（アーティストたちがアトリエで制作している様子を見学した後は，公園内を散策し，木々の間にある彫刻を見つけましょう）と書かれている。そして，",
+        "The Sports Tour では，第1文で First thing in the morning, you can watch the Yentonville Lions football team training at their open-air facility in the suburbs.",
+        "朝一には，郊外の屋外施設でイェントンビル・ライオンズのフットボール・チームの練習を見学できる）と書かれていて，第3文で",
+        "Spend some time in its exhibition hall to learn about the arena's unique design.",
+        "その展示ホールで，アリーナのユニークなデザインについて学んでみよう）と書かれている。これらのことから，どのツアーにも屋内外での活動が含まれているため，③の「屋内と屋外の両方で時間を過ごす」が正解。",
+      ],
+    },
+    {
+      questionId: "1B-3",
+      qa: [
+        {
+          questionNumber: "5",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[5] ①のホッケーアリーナは「昨年の秋」，②の「市長の家」は「20世紀初頭」，③のピースパークは「第二次大戦直後」，④の「彫刻公園」は「数年前」なので，最も新しいのは①となる。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -55,14 +115,13 @@ const Ex24_1B = () => {
           <h1 className="text-lg font-bold">{"第１問 B"}</h1>
           <span className="text-gray-600">(配点 {6})</span>
         </div>
-        <Saiten
-          points={6}
-          startQuestionNumber={3}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
 
@@ -167,21 +226,22 @@ const Ex24_1B = () => {
       {/* Questions */}
       <div className={cn(exQuestionFormat, "mt-6")}>
         {subQuestions.map((question, index) => (
-          <div key={index} className="mb-4">
+          <div
+            key={index}
+            className={cn(
+              "mb-4",
+              showResults && qaFormat(qa, "1B-" + (index + 1))
+            )}
+          >
             <div className="flex items-center flex-wrap gap-2 mb-2">
               <span className="whitespace-nowrap mr-2">
                 問{question.number}
               </span>
               <span>{question.prompt}</span>
-              <QuestionSelect
-                index={index}
-                questionNumber={index + 3}
-                correctAnswerArray={correctAnswerArray}
-                limit={question.options.length}
-                answers={answers}
-                setAnswers={setAnswers}
-                showResults={showResults}
-              />
+              {renderSelect(String(index + 3), 4, answers, setAnswers)}
+              {showResults && (
+                <Explain qa={qa} questionId={"1B-" + String(index + 1)} />
+              )}
             </div>
             <ol className="list-none space-y-2 ml-6">
               {question.options.map((option, optIndex) => (

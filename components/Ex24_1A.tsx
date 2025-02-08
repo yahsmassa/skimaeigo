@@ -1,10 +1,16 @@
 "use client";
-
+import Image from "next/image";
 import React, { useState } from "react";
-import { QuestionSelect } from "@/components/QuestionSelect";
-import { Saiten } from "@/components/Saiten";
-import { Answers, SubQuestion } from "@/lib/types";
-import { exPageFormat, exQuestionFormat } from "@/lib/util";
+import { Saiten2 } from "@/components/Saiten2";
+import {
+  exQuestionFormat,
+  cn,
+  exPageFormat,
+  qaFormat,
+  renderSelect,
+} from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 type Activity = {
   title: string;
@@ -19,6 +25,14 @@ type EventDetails = {
   entranceFee: string;
   description: string;
 };
+
+type SubQuestion = {
+  number: string;
+  prompt: string;
+  options: string[];
+  answer: number;
+};
+
 type Scenario = {
   context: string;
   eventDetails: EventDetails;
@@ -36,6 +50,41 @@ export type QuestionData = {
 export default function Ex24_1A() {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "1A-1",
+      qa: [
+        {
+          questionNumber: "1",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[1] 本文第1段落第2文の &quot;TELS students don&apos;t need to pay the entrance fee.&quot;（TELSの生徒は入場料金をし貼らす必要はない）から，④「TELSの生徒である証拠を示す」が正解。",
+      ],
+    },
+    {
+      questionId: "1A-2",
+      qa: [
+        {
+          questionNumber: "2",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[2] イベント解説の2つ目の●の最後の文 &quot;Learn how people from these cultures use facial expressions and their hands to communicate.&quot;（こうした文化の人々がどのようにして表情や手を用いて意思を伝えるかを学ぶ）から，①「様々な文化のジェスチャーについて学ぶ」が正解。 ",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   const questionData: QuestionData = {
     questionNumber: "第1問",
@@ -97,7 +146,7 @@ export default function Ex24_1A() {
       },
     ],
   };
-  const correctAnswerArray = [4, 1];
+
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -105,14 +154,13 @@ export default function Ex24_1A() {
           <h1 className="text-lg font-bold">{"第１問 A"}</h1>
           <span className="text-gray-600">(配点 {4})</span>
         </div>
-        <Saiten
-          points={4}
-          startQuestionNumber={1}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
 
@@ -151,22 +199,28 @@ export default function Ex24_1A() {
 
       <div className={exQuestionFormat}>
         {questionData.subQuestions.map((question, index) => (
-          <div key={index} className="mb-4">
+          <div
+            key={index}
+            className={cn(
+              "mb-4",
+              showResults && qaFormat(qa, "1A-" + (index + 1))
+            )}
+          >
             <div className="flex items-center flex-wrap  gap-2 mb-2">
               <span className="whitespace-nowrap mr-2">{question.number}</span>
               <span>{question.prompt}</span>
-              <QuestionSelect
-                index={index}
-                questionNumber={index + 1}
-                correctAnswerArray={correctAnswerArray}
-                limit={question.options.length}
-                answers={answers}
-                setAnswers={setAnswers}
-                showResults={showResults} // 追加
-              />
+              {renderSelect(
+                question.number.replace("問 ", ""),
+                4,
+                answers,
+                setAnswers
+              )}
+              {showResults && (
+                <Explain qa={qa} questionId={"1A-" + String(index + 1)} />
+              )}
             </div>
             <ol className="list-none space-y-2 ml-6">
-              {question.options.map((option, optIndex) => (
+              {question.options.map((option: string, optIndex: number) => (
                 <li key={optIndex} className="flex items-start space-x-2">
                   <span className="w-6 text-right">{"①②③④"[optIndex]}</span>
                   <span>{option}</span>

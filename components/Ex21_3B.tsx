@@ -1,50 +1,72 @@
 "use client";
 
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
 
 const Ex21_3B = () => {
-  const correctAnswerArray = [4, 2, 1, 3, 2, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "3B-1",
+      qa: [
+        {
+          questionNumber: "18",
+          answer: 0,
+        },
+        {
+          questionNumber: "19",
+          answer: 0,
+        },
+        {
+          questionNumber: "20",
+          answer: 0,
+        },
+        {
+          questionNumber: "21",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4213",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "3B-2",
+      qa: [
+        {
+          questionNumber: "22",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "3B-3",
+      qa: [
+        {
+          questionNumber: "23",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -52,14 +74,13 @@ const Ex21_3B = () => {
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
           <span className="text-gray-600">(配点 {9})</span>
         </div>
-        <Saiten
-          points={9}
-          startQuestionNumber={18}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Part 1: Newsletter */}
@@ -134,39 +155,43 @@ const Ex21_3B = () => {
       {/* Part 2: Questions */}
       <div className="space-y-8 mt-7">
         {/* Question 1 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-1"))}>
           <div className="flex items-center flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問 1</span>
-            <p>
-              Put the following events (①～④) into the order in which they
-              happened.
-            </p>
-          </div>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            {[18, 19, 20, 21].map((num, index) => (
-              <React.Fragment key={num}>
-                {renderSelect(String(num), 4, index)}
-                {index < 3 && <span>→</span>}
-              </React.Fragment>
-            ))}
-          </div>
-          <div className="space-y-2 ml-4">
-            <p>① Sarah attended a centre event.</p>
-            <p>② Sarah donated money to the centre.</p>
-            <p>③ Sarah made a suggestion to Katy.</p>
-            <p>④ The campaigners asked the mayor for help.</p>
+            <div className="flex items-center flex-wrap gap-2">
+              <span className="whitespace-nowrap mr-2">問 1</span>
+              <p>
+                Put the following events (①～④) into the order in which they
+                happened.
+              </p>
+            </div>
+            <div className="flex items-center flex-wrap gap-2 mb-4">
+              {[18, 19, 20, 21].map((num, index) => (
+                <React.Fragment key={num}>
+                  {renderSelect(String(num), 4, answers, setAnswers)}
+                  {index < 3 && <span>→</span>}
+                </React.Fragment>
+              ))}
+              {showResults && <Explain qa={qa} questionId="3B-1" />}
+            </div>
+            <div className="space-y-2 ml-4">
+              <p>① Sarah attended a centre event.</p>
+              <p>② Sarah donated money to the centre.</p>
+              <p>③ Sarah made a suggestion to Katy.</p>
+              <p>④ The campaigners asked the mayor for help.</p>
+            </div>
           </div>
         </div>
 
         {/* Question 2 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               From Sarah&apos;s message, you learn that the Sakura International
               Centre
             </span>
-            {renderSelect("22", 4, 4)}
+            {renderSelect("22", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="3B-2" />}
           </div>
           <div className="space-y-2 ml-4">
             <p>① gives financial aid to international residents</p>
@@ -177,14 +202,15 @@ const Ex21_3B = () => {
         </div>
 
         {/* Question 3 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               You have decided to help with the campaign after reading
               Sarah&apos;s message. What should you do first?
             </span>
-            {renderSelect("23", 4, 5)}
+            {renderSelect("23", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="3B-3" />}
           </div>
           <div className="space-y-2 ml-4">
             <p>① Advertise the events at the centre.</p>

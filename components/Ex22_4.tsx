@@ -1,51 +1,92 @@
 "use client";
-
 import Image from "next/image";
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex22_4 = () => {
-  const correctAnswerArray = [3, 3, 2, 1, 2, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "4-1",
+      qa: [
+        {
+          questionNumber: "24",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "4-2",
+      qa: [
+        {
+          questionNumber: "25",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "4-3",
+      qa: [
+        {
+          questionNumber: "26",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 4,
+      explanation: [],
+    },
+    {
+      questionId: "4-4",
+      qa: [
+        {
+          questionNumber: "27",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "4-5",
+      qa: [
+        {
+          questionNumber: "28",
+          answer: 0,
+        },
+        {
+          questionNumber: "29",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "24",
+      answerString: "",
+      isSeparate: true,
+      isCorrect: false,
+      points: 4,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   return (
     <div className={exPageFormat}>
@@ -54,14 +95,13 @@ const Ex22_4 = () => {
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {16})</span>
         </div>
-        <Saiten
-          points={16}
-          startQuestionNumber={24}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Context text */}
@@ -184,11 +224,12 @@ const Ex22_4 = () => {
       {/* Questions section */}
       <div className="space-y-8 mt-8">
         {/* Question 1 */}
-        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-1"))}>
           <div className="flex items-center flex-wrap space-x-2">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Len recommends buying used goods because</span>
-            {renderSelect("24", 4, 0)}.
+            {renderSelect("24", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="4-1" />}
           </div>
           <div className="mt-4 space-y-2">
             <div className="flex items-start space-x-4">
@@ -219,11 +260,12 @@ const Ex22_4 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span className="text-base">Cindy suggests buying</span>
-            {renderSelect("25", 4, 1)}.
+            {renderSelect("25", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="4-2" />}
           </div>
           <div className="mt-4 space-y-2">
             <div className="flex items-start space-x-4">
@@ -256,13 +298,14 @@ const Ex22_4 = () => {
         </div>
 
         {/* Question 3 */}
-        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
-          <span className="whitespace-nowrap mr-2">問 3</span>
-          <div className="flex items-center flex-wrap space-x-2">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-3"))}>
+          <div className="flex items-center space-x-2 flex-wrap">
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span className="text-base">
               Both Len and Cindy recommend that you
             </span>
-            {renderSelect("26", 4, 2)}.
+            {renderSelect("26", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="4-3" />}
           </div>
           <div className="mt-4 space-y-2">
             <div className="flex items-start space-x-4">
@@ -293,14 +336,15 @@ const Ex22_4 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
-          <div className="flex items-center flex-wrap space-x-2">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-4"))}>
+          <div className="flex items-center space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 4</span>
             <span className="text-base">
               If you want to buy new appliances at the best possible prices, you
               should
             </span>
-            {renderSelect("27", 4, 3)}.
+            {renderSelect("27", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="4-4" />}
           </div>
           <div className="mt-4 space-y-2">
             <div className="flex items-start space-x-4">
@@ -331,50 +375,52 @@ const Ex22_4 = () => {
         </div>
 
         {/* Question 5 */}
-        <div className="flex items-start space-x-2 mb-4 flex-wrap gap-2">
-          <div className="flex items-center flex-wrap gap-2">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-5"))}>
+          <div className="flex items-center space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 5</span>
             <span>You have decided to buy a microwave from</span>
-            {renderSelect("28", 4, 4)}.
+            {renderSelect("28", 4, answers, setAnswers)}.
             <span>
               because it is the cheapest. You have also decided to buy a
               television from
             </span>
-            {renderSelect("29", 4, 5)}.
+            {renderSelect("29", 4, answers, setAnswers)}.
             <span>because it is the cheapest with a five-year warranty.</span>
             <div className="text-base">
               (Choose one for each box from options 1~4.)
             </div>
-            <div className="mt-4 space-y-2">
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  1
-                </span>
-                <span>Cut Price</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  2
-                </span>
-                <span>Great Buy</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  3
-                </span>
-                <span>Second Hand</span>
-              </div>
-              <div className="flex items-start space-x-4">
-                <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                  4
-                </span>
-                <span>Value Saver</span>
-              </div>
+            {showResults && <Explain qa={qa} questionId="4-5" />}
+          </div>
+          <div className="mt-4 space-y-2">
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                1
+              </span>
+              <span>Cut Price</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                2
+              </span>
+              <span>Great Buy</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                3
+              </span>
+              <span>Second Hand</span>
+            </div>
+            <div className="flex items-start space-x-4">
+              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                4
+              </span>
+              <span>Value Saver</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 

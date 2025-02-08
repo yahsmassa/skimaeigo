@@ -1,12 +1,108 @@
+"use client";
+
 import React, { useState } from "react";
-import { cn, exPageFormat } from "@/lib/util";
-import { Saiten } from "./Saiten";
-import { Answers } from "@/lib/types";
 import Image from "next/image";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex24_4 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4-1",
+      qa: [
+        {
+          questionNumber: "24",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[24] 記事（article）の第1段落第2文 「SIN, which stands for Stimulation, Individualization, and Naturalness, is a framework that might be helpful to consider when designing classrooms.」",
+        "（SINとはStimulation（刺激），Individualization（個性化），Naturalness（自然さ）の頭文字をとったもので，教室をデザインする際に参考になるフレームワークである）から，③「教室の環境を計画する際に従うべきモデル」が正解。",
+      ],
+    },
+    {
+      questionId: "4-2",
+      qa: [
+        {
+          questionNumber: "25",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[25] 記事の第2段落第6文 「In addition, it can be visually distracting to have too many things displayed on walls.」",
+        "（さらに，壁にたくさんのものが掲示されていると，視覚的に気が散ってしまう可能性がある）から，④「掲示されるものを減らす」が正解。",
+      ],
+    },
+    {
+      questionId: "4-3",
+      qa: [
+        {
+          questionNumber: "26",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 4,
+      explanation: [
+        "[26] （※NOT問題）Naturalnessについて解説している第4段落では，光と温度の話しかなされていないため，④「ソファを壁の近くに置く」が正解。",
+      ],
+    },
+    {
+      questionId: "4-4",
+      qa: [
+        {
+          questionNumber: "27",
+          answer: 0,
+        },
+        {
+          questionNumber: "28",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "54",
+      answerString: "",
+      isSeparate: true,
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[27] グラフの解答数が最も多い Sleeping という項目から，[27]は⑤「～で昼寝をする」が正解。また，寝てしまうことについてのコメントはS4の第2文 「Everyone likes the sofas ― they are so comfortable that we often use the room for sleeping!」",
+        "（ソファはみんな気に入っていて，寝心地がいいので，よく寝るときに使っています！）に述べられているので，[28]は④が正解。",
+      ],
+    },
+    {
+      questionId: "4-5",
+      qa: [
+        {
+          questionNumber: "29",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[29] S3のコメントの第2文 「Also, lots of members speak Japanese, even though it's an English club.」",
+        "（また，英語のクラブなのに，日本語を話すメンバーが多い）から，③が正解。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   const articleData = {
     title: "What Makes a Good Classroom?",
     author: {
@@ -395,43 +491,6 @@ const Ex24_4 = () => {
     );
   };
 
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-  const correctAnswerArray = [3, 4, 4, 5, 4, 3];
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -439,14 +498,13 @@ const Ex24_4 = () => {
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {16})</span>
         </div>
-        <Saiten
-          points={16}
-          startQuestionNumber={24}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* What Makes a Good Classroom? */}
@@ -599,9 +657,14 @@ const Ex24_4 = () => {
       <div className="max-w-3xl p-4 space-y-8">
         {/* <div className="max-w-3xl mx-auto p-4 space-y-8"> */}
         {questionsData.questions.map((question, index) => (
-          <div key={question.id} className="space-y-4">
-            {/* <div className="flex flex-wrap items-baseline"> */}
-            <div className="flex flex-wrap items-baseline">
+          <div
+            key={index}
+            className={cn(
+              "mb-4",
+              showResults && qaFormat(qa, "4-" + question.id)
+            )}
+          >
+            <div className="flex flex-wrap items-baseline mb-4">
               <span className="font-medium mr-2 w-7">問{question.id}</span>
               <span>
                 {question.text}
@@ -618,16 +681,27 @@ const Ex24_4 = () => {
                   question.numberBox === "24" || question.numberBox === "25"
                     ? 4
                     : 5,
-                  question.numberBox === "29" ? 5 : index
+                  answers,
+                  setAnswers
                 )}
+              {question.numberBox && showResults && (
+                <Explain qa={qa} questionId={"4-" + question.id} />
+              )}
               {/* 27,28 は 3,4 に対応 */}
               {question.numberBoxes?.map((num, index) => (
                 <React.Fragment key={index}>
-                  {renderSelect(num || "", num === "28" ? 6 : 5, index + 3)}
+                  {renderSelect(
+                    num || "",
+                    num === "28" ? 6 : 5,
+                    answers,
+                    setAnswers
+                  )}
                   {index === 0 && <span className="mx-1">and</span>}
                 </React.Fragment>
               ))}
-              <span>.</span>
+              {question.numberBoxes && showResults && (
+                <Explain qa={qa} questionId={"4-" + question.id} />
+              )}
             </div>
 
             {question.subgroups ? (

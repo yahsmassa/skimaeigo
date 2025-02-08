@@ -1,51 +1,107 @@
 "use client";
-
 import Image from "next/image";
+import { Paperclip } from "lucide-react";
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex22_5 = () => {
-  const correctAnswerArray = [1, 4, 5, 2, 5, 4, 1, 3, 3];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
+  const question: QandA[] = [
+    {
+      questionId: "5-1",
+      qa: [
+        {
+          questionNumber: "30",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "5-2",
+      qa: [
+        {
+          questionNumber: "31",
+          answer: 0,
+        },
+        {
+          questionNumber: "32",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "45",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "5-3",
+      qa: [
+        {
+          questionNumber: "33",
+          answer: 0,
+        },
+        {
+          questionNumber: "34",
+          answer: 0,
+        },
+        {
+          questionNumber: "35",
+          answer: 0,
+        },
+        {
+          questionNumber: "36",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2541",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "5-4",
+      qa: [
+        {
+          questionNumber: "37",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "5-5",
+      qa: [
+        {
+          questionNumber: "38",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      isOrderFree: true,
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -53,14 +109,13 @@ const Ex22_5 = () => {
           <h1 className="text-lg font-bold">{"第５問"}</h1>
           <span className="text-gray-600">(配点 {15})</span>
         </div>
-        <Saiten
-          points={15}
-          startQuestionNumber={30}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Introduction text */}
@@ -291,11 +346,12 @@ const Ex22_5 = () => {
       {/* Questions section */}
       <div className="mt-8">
         {/* Question 1 */}
-        <div className="mb-8">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Which is the best subtitle for your presentation?</span>
-            {renderSelect("30", 4, 0)}.
+            {renderSelect("30", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="5-1" />}
           </div>
           <div className="ml-8 space-y-2">
             <p>
@@ -326,14 +382,18 @@ const Ex22_5 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className="mb-8">
+        <div
+          className={cn("space-y-4 mt-5", showResults && qaFormat(qa, "5-2"))}
+        >
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span className="ml-2">Choose the best two options for </span>
-            {renderSelect("31", 5, 1)}.<span> and </span>
-            {renderSelect("32", 5, 2)}.<span> to complete </span>
+            {renderSelect("31", 5, answers, setAnswers)}.<span> and </span>
+            {renderSelect("32", 5, answers, setAnswers)}.
+            <span> to complete </span>
             <span className="underline">Early Days</span>.
             <span className="ml-2">(The order does not matter.)</span>
+            {showResults && <Explain qa={qa} questionId="5-2" />}
           </div>
           <div className="ml-8 space-y-2">
             <p>
@@ -371,26 +431,26 @@ const Ex22_5 = () => {
         </div>
 
         {/* Question 3 */}
-        <div>
+        <div
+          className={cn("space-y-4 mt-5", showResults && qaFormat(qa, "5-3"))}
+        >
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span className="ml-2">Choose </span>
             <span className="underline">four</span>
-            <span> out of the five events (</span>
-            <span>1</span>
-            <span>～</span>
-            <span>5</span>
-            <span>) in the order they happened to complete </span>
+            <span>out of the five events (1～5) in the order they </span>
+            <span>happened to complete </span>
             <span className="underline">Sequence of Key Events</span>.
           </div>
-          <div className="flex items-center flex-wrap gap-2 mb-4 ml-8">
-            {renderSelect("33", 5, 3)}
+          <div className="flex items-center flex-wrap gap-1 mb-4 ml-8">
+            {renderSelect("33", 5, answers, setAnswers)}
             <span>→</span>
-            {renderSelect("34", 5, 4)}
+            {renderSelect("34", 5, answers, setAnswers)}
             <span>→</span>
-            {renderSelect("35", 5, 5)}
+            {renderSelect("35", 5, answers, setAnswers)}
             <span>→</span>
-            {renderSelect("36", 5, 6)}
+            {renderSelect("36", 5, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-3" />}
           </div>
           <div className="ml-8 space-y-2">
             <p>
@@ -427,13 +487,16 @@ const Ex22_5 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className="mb-8 mt-7">
+        <div
+          className={cn("space-y-4 mt-7", showResults && qaFormat(qa, "5-4"))}
+        >
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 4</span>
             <span>Choose the best option for</span>
-            {renderSelect("37", 4, 7)}
+            {renderSelect("37", 4, answers, setAnswers)}
             <span>to complete</span>
             <span className="underline ml-1">Outcome</span>.
+            {showResults && <Explain qa={qa} questionId="5-4" />}
           </div>
           <div className="ml-8 space-y-2">
             <p>
@@ -464,14 +527,16 @@ const Ex22_5 = () => {
         </div>
 
         {/* Question 5 */}
-        <div>
+        <div
+          className={cn("space-y-4 mt-7", showResults && qaFormat(qa, "5-5"))}
+        >
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 5</span>
             <span className="ml-2">Choose the best option for</span>
-            {renderSelect("38", 4, 8)}
+            {renderSelect("38", 4, answers, setAnswers)}
             <span>to complete</span>
             <span className="underline ml-1">Achievements and Recognition</span>
-            .
+            .{showResults && <Explain qa={qa} questionId="5-5" />}
           </div>
           <div className="ml-8 space-y-2">
             <p>

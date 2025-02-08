@@ -2,9 +2,11 @@
 
 import { Card } from "@/lib/util";
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+
 import Image from "next/image";
 
 const Ex23_6A = () => {
@@ -12,45 +14,74 @@ const Ex23_6A = () => {
     <div className="w-2 h-2 rounded-full border border-gray-300" />
   );
 
-  const correctAnswerArray = [3, 4, 4, 6, 1];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
+  const question: QandA[] = [
+    {
+      questionId: "6A-1",
+      qa: [
+        {
+          questionNumber: "39",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6A-2",
+      qa: [
+        {
+          questionNumber: "40",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6A-3",
+      qa: [
+        {
+          questionNumber: "41",
+          answer: 0,
+        },
+        {
+          questionNumber: "42",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "46",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6A-4",
+      qa: [
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -58,14 +89,13 @@ const Ex23_6A = () => {
           <h1 className="text-lg font-bold">{"第６問 A"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten
-          points={12}
-          startQuestionNumber={39}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>{" "}
       {/* Question Label */}
@@ -267,12 +297,15 @@ const Ex23_6A = () => {
         </Card>
       </div>
       {/* Multiple Choice Questions */}
-      <div className="mt-12 space-y-8">
+      <div
+        className={cn("mt-12 space-y-8", showResults && qaFormat(qa, "6A-1"))}
+      >
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Choose the best option for </span>
-            {renderSelect("39", 4, 0)}.
+            {renderSelect("39", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="6A-1" />}
           </div>
           <div className="ml-8 space-y-3">
             <div className="flex gap-4">
@@ -318,7 +351,8 @@ const Ex23_6A = () => {
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>Choose the best option for </span>
-            {renderSelect("40", 4, 1)}.
+            {renderSelect("40", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="6A-2" />}
           </div>
           <div className="ml-8 space-y-3">
             <div className="flex gap-4">
@@ -355,12 +389,14 @@ const Ex23_6A = () => {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex flex-wrap items-center gap-2 ">
             <span className="whitespace-nowrap mr-2">問 3</span>
-            <span>Choose the best options for</span> {renderSelect("41", 6, 2)}{" "}
-            and {renderSelect("42", 6, 3)}.
+            <span>Choose the best options for</span>{" "}
+            {renderSelect("41", 6, answers, setAnswers)} and{" "}
+            {renderSelect("42", 6, answers, setAnswers)}.
             <span> (The order does not matter.)</span>
+            {showResults && <Explain qa={qa} questionId="6A-3" />}
           </div>
           <div className="ml-8 space-y-3">
             <div className="flex gap-4">
@@ -402,11 +438,12 @@ const Ex23_6A = () => {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-4"))}>
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2">問 4</span>
             <span>Choose the best option for </span>
-            {renderSelect("43", 4, 4)}.
+            {renderSelect("43", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="6A-4" />}
           </div>
           <div className="ml-8 space-y-3">
             <div className="flex gap-4">

@@ -1,50 +1,89 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex22_2A = () => {
-  const correctAnswerArray = [5, 3, 1, 3, 1];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "2A-1",
+      qa: [
+        {
+          questionNumber: "6",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "5",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+    {
+      questionId: "2A-2",
+      qa: [
+        {
+          questionNumber: "7",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+    {
+      questionId: "2A-3",
+      qa: [
+        {
+          questionNumber: "8",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+    {
+      questionId: "2A-4",
+      qa: [
+        {
+          questionNumber: "9",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+    {
+      questionId: "2A-5",
+      qa: [
+        {
+          questionNumber: "10",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -52,14 +91,13 @@ const Ex22_2A = () => {
           <h1 className="text-lg font-bold">{"第２問 A"}</h1>
           <span className="text-gray-600">(配点 {10})</span>
         </div>
-        <Saiten
-          points={10}
-          startQuestionNumber={6}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Context Header */}
@@ -183,105 +221,120 @@ const Ex22_2A = () => {
       </div>
 
       {/* Quiz Questions */}
-      <div className="mt-8 space-y-8">
+      <div
+        className={cn("mt-8 space-y-8", showResults && qaFormat(qa, "2A-1"))}
+      >
         {/* Question 1 */}
-        <div>
+        <div className="space-y-4">
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2">問 1</span>
-            {renderSelect("6", 5, 0)}
-            <span>are two things you can do at the library.</span>
-          </div>
-
-          <div className="space-y-2 mb-4 ml-4">
-            <p>A : bring in coffee from the coffee shop</p>
-            <p>B : save seats for others in the Study Area</p>
-            <p>C : use the photocopiers on the second floor</p>
-            <p>D : use your ID to make photocopies</p>
-            <p>E : use your laptop in the Study Area</p>
-          </div>
-
-          <div className="ml-4 space-y-2">
-            <p>① A and B</p>
-            <p>② A and C</p>
-            <p>③ B and E</p>
-            <p>④ C and D</p>
-            <p>⑤ D and E</p>
+            {renderSelect("6", 5, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="2A-1" />}
           </div>
         </div>
 
-        {/* Question 2 */}
-        <div>
-          <div className="flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 2</span>
-            <span>
-              You are at the main entrance of the library and want to go to the
-              orientation. You need to
-            </span>
-            {renderSelect("7", 4, 1)}.
-          </div>
-
-          <div className="ml-4 space-y-2">
-            <p>① go down one floor</p>
-            <p>② go up one floor</p>
-            <p>③ go up two floors</p>
-            <p>④ stay on the same floor</p>
-          </div>
+        <div className="space-y-2 mb-4 ml-4">
+          <p>A : bring in coffee from the coffee shop</p>
+          <p>B : save seats for others in the Study Area</p>
+          <p>C : use the photocopiers on the second floor</p>
+          <p>D : use your ID to make photocopies</p>
+          <p>E : use your laptop in the Study Area</p>
         </div>
 
-        {/* Question 3 */}
-        <div>
-          <div className="flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 3</span>
-            {renderSelect("8", 4, 2)}
-            <span>near the main entrance to the library.</span>
-          </div>
-
-          <div className="ml-4 space-y-2">
-            <p>① The Computer Workstations are</p>
-            <p>② The Reading Room is</p>
-            <p>③ The Study Area is</p>
-            <p>④ The TVs are</p>
-          </div>
+        <div className="ml-4 space-y-2">
+          <p>① A and B</p>
+          <p>② A and C</p>
+          <p>③ B and E</p>
+          <p>④ C and D</p>
+          <p>⑤ D and E</p>
         </div>
-        {/* Question 4 */}
-        <div>
-          <div className="flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 4</span>
-            <span>
-              If you borrowed three books on 2 August and returned them on 10
-              August, you could
-            </span>
-            {renderSelect("9", 4, 3)}.
-          </div>
+      </div>
 
-          <div className="ml-4 space-y-2">
-            <p>① borrow eight more books on 10 August</p>
-            <p>② borrow seven more books on 10 August</p>
-            <p>③ not borrow any more books before 13 August</p>
-            <p>④ not borrow any more books before 17 August</p>
-          </div>
+      {/* Question 2 */}
+      <div
+        className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-2"))}
+      >
+        <div className="flex flex-wrap items-center">
+          <span className="whitespace-nowrap mr-2">問 2</span>
+          <span>
+            You are at the main entrance of the library and want to go to the
+            orientation. You need to
+          </span>
+          {renderSelect("7", 4, answers, setAnswers)}.
+          {showResults && <Explain qa={qa} questionId="2A-2" />}
         </div>
 
-        {/* Question 5 */}
-        <div className="mt-8">
-          <div className="flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 5</span>
-            <span>
-              One <span className="underline">fact</span> stated by a previous
-              student is that
-            </span>
-            {renderSelect("10", 4, 4)}.
-          </div>
+        <div className="ml-4 space-y-2">
+          <p>① go down one floor</p>
+          <p>② go up one floor</p>
+          <p>③ go up two floors</p>
+          <p>④ stay on the same floor</p>
+        </div>
+      </div>
 
-          <div className="ml-4 space-y-2">
-            <p>① headphones or earphones are necessary when watching videos</p>
-            <p>② the library is open until 9 pm</p>
-            <p>③ the library orientation handouts are wonderful</p>
-            <p>④ the Study Area is often empty</p>
-          </div>
+      {/* Question 3 */}
+      <div
+        className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-3"))}
+      >
+        <div className="flex flex-wrap items-center">
+          <span className="whitespace-nowrap mr-2">問 3</span>
+          {renderSelect("8", 4, answers, setAnswers)}.
+          <span>near the main entrance to the library.</span>
+          {showResults && <Explain qa={qa} questionId="2A-3" />}
+        </div>
+
+        <div className="ml-4 space-y-2">
+          <p>① The Computer Workstations are</p>
+          <p>② The Reading Room is</p>
+          <p>③ The Study Area is</p>
+          <p>④ The TVs are</p>
+        </div>
+      </div>
+      {/* Question 4 */}
+      <div
+        className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-4"))}
+      >
+        <div className="flex flex-wrap items-center">
+          <span className="whitespace-nowrap mr-2">問 4</span>
+          <span>
+            If you borrowed three books on 2 August and returned them on 10
+            August, you could
+          </span>
+          {renderSelect("9", 4, answers, setAnswers)}.
+          {showResults && <Explain qa={qa} questionId="2A-4" />}
+        </div>
+
+        <div className="ml-4 space-y-2">
+          <p>① borrow eight more books on 10 August</p>
+          <p>② borrow seven more books on 10 August</p>
+          <p>③ not borrow any more books before 13 August</p>
+          <p>④ not borrow any more books before 17 August</p>
+        </div>
+      </div>
+
+      {/* Question 5 */}
+      <div
+        className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-5"))}
+      >
+        <div className="flex flex-wrap items-center">
+          <span className="whitespace-nowrap mr-2">問 5</span>
+          <span>
+            One <span className="underline">fact</span> stated by a previous
+            student is that
+          </span>
+          {renderSelect("10", 4, answers, setAnswers)}.
+          {showResults && <Explain qa={qa} questionId="2A-5" />}
+        </div>
+
+        <div className="ml-4 space-y-2">
+          <p>① headphones or earphones are necessary when watching videos</p>
+          <p>② the library is open until 9 pm</p>
+          <p>③ the library orientation handouts are wonderful</p>
+          <p>④ the Study Area is often empty</p>
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 

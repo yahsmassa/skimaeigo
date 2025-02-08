@@ -1,14 +1,85 @@
 "use client";
 
 import React, { useState } from "react";
-import { exPageFormat, cn } from "@/lib/util";
-import { Saiten } from "./Saiten";
-import { Answers } from "@/lib/types";
 import Image from "next/image";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex24_3B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+
+  const question: QandA[] = [
+    {
+      questionId: "3B-1",
+      qa: [
+        {
+          questionNumber: "18",
+          answer: 0,
+        },
+        {
+          questionNumber: "19",
+          answer: 0,
+        },
+        {
+          questionNumber: "20",
+          answer: 0,
+        },
+        {
+          questionNumber: "21",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1234",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[18]-[21] 本文第1段落第2文 &quot;The winter weather had been terrible, so we were excited to see the tropical scenery of the volcanic island projected on the screen.&quot;（冬の天候は最悪だったので，スクリーンに映し出される火山島のトロピカルな風景に興奮した）と，第2段落第2文 &quot;We &quot;got into the car,&quot; ",
+        "which our teacher, Mr Leach, sometimes stopped so we could look out of the window and get a better sense of the rainforest.&quot; （私たちは「車に乗り込み」，私たちの先生であるリーチ先生がときどき車を止めて，窓から熱帯雨林を眺めることができた）という内容へのコメントに該当するのが，①「その島はどれほど危険なのだろうと思った。私はジャングルの中で美しい鳥たちや巨大な蛇を見た」である。第3段落では第1文で「海に潜り，海洋生物の多様性について学んだ」と書かれており，さらに第4文～第 ",
+        "7文 &quot;Then he showed us an image of the ocean 10 years ago. The reef we&apos;d seen on camera was dynamic, but in the photo it was even more full of life. It looked so different after only 10 years! Mr Leach told us human activity was affecting the ocean and it could be totally ruined if we didn&apos;t act now. &quot; ",
+        "（するとリーチ先生は，10年前の海の画像を見せてくれた。カメラで見たサンゴ礁もダイナミックだったが，その写真では，サンゴ礁はさらに生命力に溢れていた。たった10年で，こんなにも違って見えるものなんだ！リーチ先生は，人間の活動が海に影響を及ぼしており，私たちが今すぐ行動を起こさなければ，海は完全にダメになってしまうかもしれないと話した）という内容から，これについてのコメントに該当するのが，②「以前ははるかに多くの生物がいたことに本当に驚いた。私たちは美しい海を守らねばなりません！」である。第4段落第2文 &quot;We put up tents in the gymnasium and created a temporary planetarium on the ceiling using a projector.&quot;（私たちは体育館にテントを張り，プロジェクターを使って天井に仮設のプラネタリウムを作った）という内容へのコメントに該当するのが，③「体育館の中にキャンプ場を設定するのはちょっと変な感じだったけれど，とても面白かった！屋外より良かった。だって，虫に刺されなかったのだから」である。 ",
+        "第4段落第3文～最終文 &quot;We were fascinated by the sky full of constellations, shooting stars, and the Milky Way. Someone pointed out one of the brightest lights and asked Mr Leach if it was Venus, a planet close to Earth. He nodded and explained that humans have created so much artificial light that hardly anything is visible in our city&apos;s night sky.&quot; ",
+        "（私たちは満天の星座，流れ星，天の川に魅了された。誰かが最も明るい光のひとつを指さして，リーチ先生にそれが地球に最も近い惑星である金星なのかと尋ねた。彼はうなずき，人間が人工的な光をたくさん作り出したため，私たちの都市の夜空にはほとんど何も見えないのだと説明した）という内容へのコメントに該当するのが，④「私たちは宇宙ショーの間，言葉を失った。そして，たとえそこにあっても私たちは物事に気づかないのだということに気がついた」である。よって，[18] ①→[19] ②→[20] ③→[21] ④が正解。",
+      ],
+    },
+    {
+      questionId: "3B-2",
+      qa: [
+        {
+          questionNumber: "22",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[22] （※NOT問題）本文では南の島の季節ごとの天候については述べられていないので，③「季節ごとの天候」が正解。",
+      ],
+    },
+    {
+      questionId: "3B-3",
+      qa: [
+        {
+          questionNumber: "23",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[23] （※推測問題）最終段落第1文～第2文 「On my way home after school, the weather had improved and the sky was now cloudless. I looked up at the moonless sky and realised what Mr Leach had told us was true.」",
+        "（放課後の帰り道，天気は回復し，雲ひとつない空になった。私は月のない空を見上げて，リーチ先生が話してくれたことが本当だと気づいた）と，第4段落最終文の「人間が人工的な光をたくさん作り出したため，私たちの都市の夜空にはほとんど何も見えないのだと説明した」という内容から，②「わずかな数の星」が正解。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   const questionData = {
     id: "2024-3B",
@@ -72,67 +143,6 @@ const Ex24_3B = () => {
     "4": "We were lost for words during the space show and realised we often don't notice things even though they're there.",
   };
 
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  // const renderSelect = (number: string, index: number) => (
-  //   <div className="flex flex-col items-center">
-  //     <div
-  //       className={cn(
-  //         "font-medium mb-0.5",
-  //         showResults &&
-  //           (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-  //       )}
-  //     >
-  //       [{number}]
-  //     </div>
-  //     <select
-  //       value={answers[`question${number}`] || ""}
-  //       onChange={(e) => handleChange(number, Number(e.target.value))}
-  //       className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-  //     >
-  //       <option value="">選択</option>
-  //       <option value="1">1</option>
-  //       <option value="2">2</option>
-  //       <option value="3">3</option>
-  //       <option value="4">4</option>
-  //     </select>
-  //   </div>
-  // );
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-
   const q2Options = [
     { number: "1", text: "marine ecosystem" },
     { number: "2", text: "night-time sky" },
@@ -155,14 +165,13 @@ const Ex24_3B = () => {
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
           <span className="text-gray-600">(配点 {9})</span>
         </div>
-        <Saiten
-          points={9}
-          startQuestionNumber={18}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
 
@@ -204,7 +213,7 @@ const Ex24_3B = () => {
 
       {/* 設問部分 */}
       <div className="w-full max-w-2xl mx-auto px-2 sm:px-4">
-        <div className="mb-6">
+        <div className={cn("mb-6", showResults && qaFormat(qa, "3B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2">問1</span>
             <span>
@@ -212,13 +221,14 @@ const Ex24_3B = () => {
               describing the events in the virtual tour. Put the comments in the
               order in which the events happened.
             </span>
-            {renderSelect("18", 4, 0)}
+            {renderSelect("18", 4, answers, setAnswers)}
             <div className="mx-1">→</div>
-            {renderSelect("19", 4, 1)}
+            {renderSelect("19", 4, answers, setAnswers)}
             <div className="mx-1">→</div>
-            {renderSelect("20", 4, 2)}
+            {renderSelect("20", 4, answers, setAnswers)}
             <div className="mx-1">→</div>
-            {renderSelect("21", 4, 3)}
+            {renderSelect("21", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId={"3B-1"} />}
           </div>
         </div>
 
@@ -231,15 +241,16 @@ const Ex24_3B = () => {
           ))}
         </div>
 
-        <div className="my-8">
+        <div className={cn("my-8", showResults && qaFormat(qa, "3B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2">問2</span>
             <span>
               From the tour, Yuzu did&nbsp;{" "}
               <span className="underline">not</span>&nbsp; learn about the
             </span>
-            {renderSelect("22", 4, 4)}
+            {renderSelect("22", 4, answers, setAnswers)}
             <span>of the south sea island.</span>
+            {showResults && <Explain qa={qa} questionId={"3B-2"} />}
           </div>
 
           <div className="space-y-1">
@@ -252,12 +263,13 @@ const Ex24_3B = () => {
           </div>
         </div>
 
-        <div className="mb-6">
+        <div className={cn("mb-6", showResults && qaFormat(qa, "3B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2">問3</span>
             <span>On the way home, Yuzu looked up and most likely saw</span>
-            {renderSelect("23", 4, 5)}
+            {renderSelect("23", 4, answers, setAnswers)}
             <span>in the night sky.</span>
+            {showResults && <Explain qa={qa} questionId={"3B-3"} />}
           </div>
 
           <div className="space-y-1">

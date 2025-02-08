@@ -1,52 +1,47 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
 
 const Ex22_3A = () => {
-  const correctAnswerArray = [1, 1];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "3A-1",
+      qa: [
+        {
+          questionNumber: "16",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "3A-2",
+      qa: [
+        {
+          questionNumber: "17",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -54,14 +49,13 @@ const Ex22_3A = () => {
           <h1 className="text-lg font-bold">{"第３問 A"}</h1>
           <span className="text-gray-600">(配点 {6})</span>
         </div>
-        <Saiten
-          points={6}
-          startQuestionNumber={16}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       <div className="mb-6 font-serif">
@@ -134,11 +128,12 @@ const Ex22_3A = () => {
       />
 
       <div className=" space-y-8">
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-1"))}>
           <div className="flex flex-wrap items-center mb-4">
             <span className="whitespace-nowrap mr-2">問 1</span>{" "}
             <span>In Emily&apos;s blog, you read that she </span>
-            {renderSelect("16", 4, 0)}.
+            {renderSelect("16", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="3A-1" />}
           </div>
           <div className="space-y-2 ml-8">
             <p>① enjoyed Japanese traditional music</p>
@@ -150,11 +145,12 @@ const Ex22_3A = () => {
           </div>
         </div>
 
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-2"))}>
           <div className="flex flex-wrap items-center mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>{" "}
             <span>Emily was most likely </span>
-            {renderSelect("17", 4, 0)}.
+            {renderSelect("17", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="3A-2" />}
             <span className="ml-2">
               when she was listening to the <i>rakugo</i> comedy.
             </span>

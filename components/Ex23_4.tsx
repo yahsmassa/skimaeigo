@@ -1,51 +1,93 @@
 "use client";
-
-import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat } from "@/lib/util";
-import { Answers } from "@/lib/types";
 import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex23_4 = () => {
-  const correctAnswerArray = [1, 1, 2, 5, 1, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
+  const question: QandA[] = [
+    {
+      questionId: "4-1",
+      qa: [
+        {
+          questionNumber: "24",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "4-2",
+      qa: [
+        {
+          questionNumber: "25",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "4-3",
+      qa: [
+        {
+          questionNumber: "26",
+          answer: 0,
+        },
+        {
+          questionNumber: "27",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "25",
+      answerString: "",
+      isCorrect: false,
+      isSeparate: true,
+      points: 4,
+      explanation: [],
+    },
+    {
+      questionId: "4-4",
+      qa: [
+        {
+          questionNumber: "28",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "4-5",
+      qa: [
+        {
+          questionNumber: "29",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -53,14 +95,13 @@ const Ex23_4 = () => {
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {16})</span>
         </div>
-        <Saiten
-          points={16}
-          startQuestionNumber={24}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>{" "}
       {/* Context */}
@@ -208,11 +249,12 @@ const Ex23_4 = () => {
       {/* Questions Section */}
       <div className="mt-12 space-y-12">
         {/* Question 1 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-1"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Oxford believes that</span>
-            {renderSelect("24", 4, 0)}.
+            {renderSelect("24", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="4-1" />}
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -232,11 +274,12 @@ const Ex23_4 = () => {
         </div>
 
         {/* Question 2 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>In the study discussed by Lee, students took a test</span>
-            {renderSelect("25", 4, 1)}.
+            {renderSelect("25", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="4-2" />}
           </div>
           <ol className="list-none space-y-2">
             {["four weeks", "immediately", "one day", "one week"].map(
@@ -253,19 +296,20 @@ const Ex23_4 = () => {
         </div>
 
         {/* Question 3 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-3"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               Lee introduces spaced learning, which involves studying at
             </span>
-            {renderSelect("26", 6, 2)}
+            {renderSelect("26", 6, answers, setAnswers)}
             <span>intervals, in order to overcome the disadvantages of</span>
-            {renderSelect("27", 6, 3)}
+            {renderSelect("27", 6, answers, setAnswers)}
             <span>
               learning that Oxford discussed. (Choose the best one for each box
               from options ①～⑥.)
             </span>
+            {showResults && <Explain qa={qa} questionId="4-3" />}
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -287,12 +331,13 @@ const Ex23_4 = () => {
         </div>
 
         {/* Question 4 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-4"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 4</span>
             <span>Both writers agree that</span>
-            {renderSelect("28", 4, 4)}.
+            {renderSelect("28", 4, answers, setAnswers)}.
             <span>is helpful for remembering new information.</span>
+            {showResults && <Explain qa={qa} questionId="4-4" />}
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -312,14 +357,15 @@ const Ex23_4 = () => {
         </div>
 
         {/* Question 5 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-5"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 5</span>
             <span>
               Which additional information would be the best to further support
               Lee&apos;s argument for spaced learning?
             </span>
-            {renderSelect("29", 4, 5)}.
+            {renderSelect("29", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="4-5" />}
           </div>
           <ol className="list-none space-y-2">
             {[

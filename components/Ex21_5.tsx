@@ -1,51 +1,106 @@
 "use client";
-
 import Image from "next/image";
+import { Paperclip } from "lucide-react";
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex21_5 = () => {
-  const correctAnswerArray = [3, 4, 4, 3, 5, 1, 1, 3, 1];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
+  const question: QandA[] = [
+    {
+      questionId: "5-1",
+      qa: [
+        {
+          questionNumber: "30",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "5-2",
+      qa: [
+        {
+          questionNumber: "31",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "5-3",
+      qa: [
+        {
+          questionNumber: "32",
+          answer: 0,
+        },
+        {
+          questionNumber: "33",
+          answer: 0,
+        },
+        {
+          questionNumber: "34",
+          answer: 0,
+        },
+        {
+          questionNumber: "35",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4351",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "5-4",
+      qa: [
+        {
+          questionNumber: "36",
+          answer: 0,
+        },
+        {
+          questionNumber: "37",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "13",
+      isOrderFree: true,
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "5-5",
+      qa: [
+        {
+          questionNumber: "38",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -53,14 +108,13 @@ const Ex21_5 = () => {
           <h1 className="text-lg font-bold">{"第５問"}</h1>
           <span className="text-gray-600">(配点 {15})</span>
         </div>
-        <Saiten
-          points={15}
-          startQuestionNumber={30}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Instructions paragraph */}
@@ -165,11 +219,12 @@ const Ex21_5 = () => {
       </div>
       {/* 問セクション */}
       {/* Question 1 */}
-      <div className="space-y-4">
+      <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
         <div className="flex items-center flex-wrap gap-2 mb-4">
           <span className="whitespace-nowrap mr-2">問 1</span>
           <span>Which is the best title for your presentation?</span>
-          {renderSelect("30", 4, 0)}
+          {renderSelect("30", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="5-1" />}
         </div>
 
         <div className="space-y-2 pl-8">
@@ -193,14 +248,15 @@ const Ex21_5 = () => {
       </div>
 
       {/* Question 2 */}
-      <div className="space-y-4">
+      <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-2"))}>
         <div className="flex items-center flex-wrap gap-2 mb-4">
           <span className="whitespace-nowrap mr-2">問 2</span>
           <span>
             Which is the best combination for the{" "}
             <span className="italic font-bold">Who&apos;s Who?</span> slide?
           </span>
-          {renderSelect("31", 4, 1)}
+          {renderSelect("31", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="5-2" />}
         </div>
 
         <div className="grid grid-cols-2 gap-8 pl-8">
@@ -239,17 +295,18 @@ const Ex21_5 = () => {
       </div>
 
       {/* Question 3 */}
-      <div className="space-y-4">
+      <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-3"))}>
         <div className="flex items-center flex-wrap gap-2 mb-4">
           <span className="whitespace-nowrap mr-2">問 3</span>
           <span>
             Choose the four events in the order they happened to complete the
           </span>
           <span className="italic font-bold">Pre-fame Storyline</span> slide.
-          {renderSelect("32", 5, 2)}
-          {renderSelect("33", 5, 3)}
-          {renderSelect("34", 5, 4)}
-          {renderSelect("35", 5, 5)}
+          {renderSelect("32", 5, answers, setAnswers)}
+          {renderSelect("33", 5, answers, setAnswers)}
+          {renderSelect("34", 5, answers, setAnswers)}
+          {renderSelect("35", 5, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="5-3" />}
         </div>
 
         <div className="space-y-2 pl-8">
@@ -278,7 +335,7 @@ const Ex21_5 = () => {
         </div>
       </div>
       {/* Question 4 */}
-      <div className="space-y-4">
+      <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-4"))}>
         <div className="flex items-center flex-wrap gap-2 mb-4">
           <span className="whitespace-nowrap mr-2">問 4</span>
           <span>
@@ -288,7 +345,9 @@ const Ex21_5 = () => {
             </span>{" "}
             &nbsp;slide. (The order does not matter.)
           </span>
-          {renderSelect("36", 5, 6)}・{renderSelect("37", 5, 7)}
+          {renderSelect("36", 5, answers, setAnswers)}
+          {renderSelect("37", 5, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="5-4" />}
         </div>
 
         <div className="space-y-2 pl-8">
@@ -316,7 +375,7 @@ const Ex21_5 = () => {
       </div>
 
       {/* Question 5 */}
-      <div className="space-y-4">
+      <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-5"))}>
         <div className="flex items-center flex-wrap gap-2 mb-4">
           <span className="whitespace-nowrap mr-2">問 5</span>
           <span>
@@ -324,7 +383,8 @@ const Ex21_5 = () => {
             <span className="italic font-bold">Aston Now</span> &nbsp;slide with
             the most appropriate item.
           </span>
-          {renderSelect("38", 5, 8)}
+          {renderSelect("38", 5, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="5-5" />}
         </div>
 
         <div className="space-y-2 pl-8">

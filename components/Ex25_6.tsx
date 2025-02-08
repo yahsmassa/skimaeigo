@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
 import { Saiten2 } from "@/components/Saiten2";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";

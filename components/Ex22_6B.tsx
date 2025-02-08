@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import Image from "next/image";
+import { Saiten2 } from "@/components/Saiten2";
+import { Explain } from "@/components/Explain";
 
 const RecyclingSymbol = ({ number }: { number: string }) => (
   <div className="relative w-12 h-12">
@@ -25,45 +26,64 @@ const RecyclingSymbol = ({ number }: { number: string }) => (
 );
 
 const Ex22_6B = () => {
-  const correctAnswerArray = [2, 2, 1, 3, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
+  const question: QandA[] = [
+    {
+      questionId: "6B-1",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6B-2",
+      qa: [
+        {
+          questionNumber: "45",
+          answer: 0,
+        },
+        {
+          questionNumber: "46",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "21",
+      answerString: "",
+      isSeparate: true,
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6B-3",
+      qa: [
+        {
+          questionNumber: "47",
+          answer: 0,
+        },
+        {
+          questionNumber: "48",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "34",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -71,14 +91,13 @@ const Ex22_6B = () => {
           <h1 className="text-lg font-bold">{"第６問 B"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten
-          points={12}
-          startQuestionNumber={44}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Instructions */}
@@ -302,7 +321,7 @@ const Ex22_6B = () => {
       {/* Questions Section - Outside the poster */}
       <div className="space-y-8 p-6">
         {/* Question 1 */}
-        <div>
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
@@ -310,7 +329,8 @@ const Ex22_6B = () => {
               plastic recycling symbols as explained in the passage. Which of
               the following is the most appropriate?
             </span>
-            {renderSelect("44", 4, 0)}
+            {renderSelect("44", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6B-1" />}
           </div>
           <div className="space-y-2 pl-8">
             <div>
@@ -333,14 +353,16 @@ const Ex22_6B = () => {
         </div>
 
         {/* Question 2 */}
-        <div>
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               You have been asked to write descriptions of Type 2 and Type 3
               plastics. Choose the best options for
             </span>
-            {renderSelect("45", 4, 1)} and {renderSelect("46", 4, 2)}.
+            {renderSelect("45", 4, answers, setAnswers)} and{" "}
+            {renderSelect("46", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="6B-2" />}
           </div>
 
           {/* Type 2 Options */}
@@ -379,7 +401,7 @@ const Ex22_6B = () => {
         </div>
 
         {/* Question 3 */}
-        <div className="mt-8">
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
@@ -387,7 +409,9 @@ const Ex22_6B = () => {
               properties. According to the article, which two of the following
               are appropriate? (The order does not matter.)
             </span>
-            {renderSelect("47", 4, 3)}・{renderSelect("48", 4, 4)}.
+            {renderSelect("47", 4, answers, setAnswers)}・
+            {renderSelect("48", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="6B-3" />}
           </div>
           <div className="space-y-2 pl-8">
             <div>

@@ -1,51 +1,73 @@
 "use client";
 
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 import Image from "next/image";
 
 const Ex23_3B = () => {
-  const correctAnswerArray = [3, 4, 2, 1, 3, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
+  const question: QandA[] = [
+    {
+      questionId: "3B-1",
+      qa: [
+        {
+          questionNumber: "18",
+          answer: 0,
+        },
+        {
+          questionNumber: "19",
+          answer: 0,
+        },
+        {
+          questionNumber: "20",
+          answer: 0,
+        },
+        {
+          questionNumber: "21",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3421",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "3B-2",
+      qa: [
+        {
+          questionNumber: "22",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "3B-3",
+      qa: [
+        {
+          questionNumber: "23",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -53,14 +75,13 @@ const Ex23_3B = () => {
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
           <span className="text-gray-600">(配点 {9})</span>
         </div>
-        <Saiten
-          points={9}
-          startQuestionNumber={18}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>{" "}
       {/* Context */}
@@ -146,22 +167,21 @@ const Ex23_3B = () => {
       {/* Questions Section */}
       <div className="mt-8 space-y-12">
         {/* Question 1 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-1"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               Put the following events (①～④) into the order in which they
               happened.
             </span>
-          </div>
-          <div className="flex items-center gap-2 justify-start mb-4 ml-1 flex-wrap">
-            {renderSelect("18", 4, 0)}
+            {renderSelect("18", 4, answers, setAnswers)}
             <span className="mx-2">→</span>
-            {renderSelect("19", 4, 1)}
+            {renderSelect("19", 4, answers, setAnswers)}
             <span className="mx-2">→</span>
-            {renderSelect("20", 4, 2)}
+            {renderSelect("20", 4, answers, setAnswers)}
             <span className="mx-2">→</span>
-            {renderSelect("21", 4, 3)}
+            {renderSelect("21", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="3B-1" />}
           </div>
           <ol className="list-none space-y-2 ml-4">
             {[
@@ -181,14 +201,15 @@ const Ex23_3B = () => {
         </div>
 
         {/* Question 2 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-2"))}>
           <div className="flex items-start gap-2 mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               If you follow the father&apos;s advice to create your own
               &quot;adventure room,&quot; you should
             </span>
-            {renderSelect("22", 4, 4)}.
+            {renderSelect("22", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="3B-2" />}
           </div>
           <ol className="list-none space-y-2 ml-4">
             {[
@@ -208,11 +229,12 @@ const Ex23_3B = () => {
         </div>
 
         {/* Question 3 */}
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-3"))}>
           <div className="flex items-center mb-4 flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span>From this story, you understand that the father</span>
-            {renderSelect("23", 4, 5)}.
+            {renderSelect("23", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="3B-3" />}
           </div>
           <ol className="list-none space-y-2 ml-4">
             {[

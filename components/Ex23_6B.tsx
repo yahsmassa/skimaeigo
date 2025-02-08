@@ -1,51 +1,94 @@
 "use client";
 
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
 import Image from "next/image";
+import { Saiten2 } from "@/components/Saiten2";
+import { Explain } from "@/components/Explain";
 
 const Ex23_6B = () => {
-  const correctAnswerArray = [4, 1, 5, 3, 4, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "6B-1",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6B-2",
+      qa: [
+        {
+          questionNumber: "45",
+          answer: 0,
+        },
+        {
+          questionNumber: "46",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "15",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6B-3",
+      qa: [
+        {
+          questionNumber: "47",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6B-4",
+      qa: [
+        {
+          questionNumber: "48",
+          answer: 0,
+        },
+      ],
+      isOrderFree: true,
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6B-5",
+      qa: [
+        {
+          questionNumber: "49",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   return (
     <div className={exPageFormat}>
@@ -54,14 +97,13 @@ const Ex23_6B = () => {
           <h1 className="text-lg font-bold">{"第６問 B"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten
-          points={12}
-          startQuestionNumber={44}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>{" "}
       <div className="space-y-6">
@@ -181,14 +223,15 @@ const Ex23_6B = () => {
         </div>
       </div>
       {/* Question 1 */}
-      <div className="mb-8 mt-7">
+      <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-1"))}>
         <div className="flex flex-wrap items-center mb-4">
           <span className="whitespace-nowrap mr-2">問 1</span>
           <span>
             Which of the following should you{" "}
             <span className="underline">not</span> include for
           </span>
-          {renderSelect("44", 5, 0)}.<span>?</span>
+          {renderSelect("44", 5, answers, setAnswers)}.<span>?</span>
+          {showResults && <Explain qa={qa} questionId="6B-1" />}
         </div>
         <div className="space-y-2 ml-8">
           {[
@@ -208,7 +251,7 @@ const Ex23_6B = () => {
         </div>
       </div>
       {/* Question 2 */}
-      <div className="mb-8">
+      <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-2"))}>
         <div className="flex flex-wrap items-center mb-4">
           <span className="whitespace-nowrap mr-2">問 2</span>
           <span>
@@ -216,9 +259,10 @@ const Ex23_6B = () => {
             slide, select two features of the tardigrade which best help it
             survive. (The order does not matter.)
           </span>
-          {renderSelect("45", 5, 1)}
+          {renderSelect("45", 5, answers, setAnswers)}
           <span>・</span>
-          {renderSelect("46", 5, 2)}
+          {renderSelect("46", 5, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="6B-2" />}
         </div>
         <div className="space-y-2 ml-8">
           {[
@@ -238,14 +282,15 @@ const Ex23_6B = () => {
         </div>
       </div>
       {/* Question 3 */}
-      <div>
+      <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-3"))}>
         <div className="flex flex-wrap items-center mb-4">
           <span className="whitespace-nowrap mr-2">問 3</span>
           <span>
             Complete the missing labels on the illustration of a tardigrade for
             the <span className="font-bold">Digestive Systems</span> slide.
           </span>
-          {renderSelect("47", 5, 3)}
+          {renderSelect("47", 5, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="6B-3" />}
         </div>
         <div className="space-y-2 ml-8">
           {[1, 2, 3, 4, 5].map((num) => (
@@ -320,11 +365,11 @@ const Ex23_6B = () => {
         </div>
       </div>
       {/* Question 4 */}
-      <div className="mb-8 mt-8">
+      <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-4"))}>
         <div className="flex flex-wrap items-center mb-4">
           <span className="whitespace-nowrap mr-2">問 4</span>
           <span>Which is the best statement for the final slide?</span>
-          {renderSelect("48", 5, 4)}
+          {renderSelect("48", 5, answers, setAnswers)}
         </div>
         <div className="space-y-4 ml-8">
           {[
@@ -343,13 +388,14 @@ const Ex23_6B = () => {
         </div>
       </div>
       {/* Question 5 */}
-      <div className="mt-8">
+      <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-5"))}>
         <div className="flex flex-wrap items-center mb-4">
           <span className="whitespace-nowrap mr-2">問 5</span>
           <span>
             What can be inferred about sending tardigrades into space?
           </span>
-          {renderSelect("49", 5, 5)}
+          {renderSelect("49", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="6B-5" />}
         </div>
         <div className="space-y-4 ml-8">
           {[

@@ -1,14 +1,126 @@
 "use client";
 
-import { Answers } from "@/lib/types";
-import { cn, exPageFormat } from "@/lib/util";
 import React, { useState } from "react";
 import { Saiten } from "./Saiten";
 import Image from "next/image";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex24_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "5-1",
+      qa: [
+        {
+          questionNumber: "30",
+          answer: 0,
+        },
+        {
+          questionNumber: "31",
+          answer: 0,
+        },
+        {
+          questionNumber: "32",
+          answer: 0,
+        },
+        {
+          questionNumber: "33",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4512",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[30] ④→[31] ⑤→[32] ①→[33] ②が正解となる。 ",
+        "[30] 第1場第2文で &quot;Maki had joined her family business at the age of 19 when her father became ill.&quot;（マキは19歳のとき，父親が病気になったので家業に入った）と述べている。→④「マキが家業で働き始める」 ",
+        "[31] 第3場の後半で &quot;Maki&apos;s encouragement inspired Takuya.&quot;（マキの励ましがタクヤに刺激を与えた）とある。第3場では，第2段落で卒業してからちょうど1年後にタクヤが俳優になる夢に破れてカワナカ町に戻り，マキに電話をかけたと述べている。第3場の第2段落第3文 &quot;He was surprised to learn that Maki had abandoned her plan to attend university because she had to manage her family&apos;s restaurant.&quot;（マキが家業のレストランを経営せざるを得なくなって大学に通う計画をあきらめてしまっていたと知って彼は驚いた）とあることから，④の後に，⑤「タクヤが自分のビジネスを始める刺激を受ける」が続くことになる。 ",
+        "[32]・[33] 第4場の第4段落最終文 &quot;Since then, she had steadily climbed her way up the company ladder until she had been named vice-president of Beautella this year.&quot;（それ以来，彼女は着実に出世し，今年，ボーテラの副社長に任命された）で，カスミが会社の副社長になったことが述べられている。さらに，第4場の最終段落で &quot;&quot;I wouldn&apos;t be vice-president now without Maki,&quot; she thought, &quot;she helped me when I was struggling, but I was too absorbed with my work in Ishijima to give her support when she had to quit her preparatory school.&quot; Glancing back to the article, she decided to call Takuya.&quot;（「マキがいなかったら，私は今，副社長になってはいない」と彼女は思った。「私が悩んでいたときに彼女は助けてくれたのに，私はイシジマでの仕事に夢中で，彼女が予備校を辞めなければならなくなったときにサポートしてあげられなかった。」その記事をちらりと見返し。彼女は拓也に電話することにした」とあるので，①「カスミが会社の副社長になる」の後に，②「カスミがタクヤに連絡する」が続くことになる。",
+      ],
+    },
+    {
+      questionId: "5-2",
+      qa: [
+        {
+          questionNumber: "34",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[34] 第3場のタクヤの &quot;Thanks. Hey, you weren&apos;t at our 20th high school reunion last month.&quot;（ありがとう。そういえば，先月の20回目の同窓会には来なかったよね）という発話と，それに続くマキの ",
+        "&quot;No, I couldn&apos;t make it. I can&apos;t believe it&apos;s been 20 years since we graduated.&quot;（そう，行けなかったの。卒業してから20年も経ったなんて信じられないよ）という発話から， ",
+        "高校を18歳で卒業し，その20年後が現代であることがわかる（第1場の内容から，マキが家業を継いだのが19歳だとわかるので，仮にそこから数えたとしても40歳にはなっていない）。したがって，②「30代後半」が正解。",
+      ],
+    },
+    {
+      questionId: "5-3",
+      qa: [
+        {
+          questionNumber: "35",
+          answer: 0,
+        },
+        {
+          questionNumber: "36",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "12",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[35]・[36] 第3場の後半で &quot;Maki had a sign in her restaurant saying, &quot;We proudly serve Takuya&apos;s Coffee,&quot; and this publicity helped the coffee gain popularity in Kawanaka.&quot;（マキは，「私たちはタクヤの珈琲を自信をもってお出ししています」という看板を店内に掲げ，この宣伝はタクヤの珈琲がカワナカで評判になる手助けとなった）とあるので，[35]は①「その製品を人々に知られるようにした」が正解。 ",
+        "第4場の第3文～第6文 &quot;One day, Maki had an idea, &quot;Doesn&apos;t Beautella do make-up workshops?  I think you are more suited for that. You can show people how to use the make-up.  They&apos;ll love the way they look and buy lots of cosmetics!&quot;&quot;（ある日，マキはひらめいた。「ボーテラはメイクのワークショップはやらないの？あなたはそっちの方が向いていると思うの。あなたはメイクの仕方を教えることができる。みんな自分の見た目を気に入って，化粧品をたくさん買ってくれるわよ！」）と， ",
+        "続く第4段落第1文と第2文 &quot;Kasumi&apos;s company agreed to let her do workshops, and they were a hit!  Kasumi&apos;s sales were so good that eight months out of high school, she had been promoted, moving to the big city of Ishijima.&quot;（カスミの会社は彼女にワークショップをさせることに同意し，それがヒットした！カスミの売り上げはとても好調で，高校を卒業して8ヶ月後には昇進し，大都会イシジマに引っ越してた）から，[36]は②「成功するビジネスのアイディアを提案した」が正解。",
+      ],
+    },
+    {
+      questionId: "5-4",
+      qa: [
+        {
+          questionNumber: "37",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "第4場のタクヤとカスミの以下のやり取りから，彼らが恩人であるマキに感謝の気持ちが伝えられていないことを悔やんでいることがうかがえる。したがって，[37]は③「自分たちの友人にもっと価値を置かなかったことを悔やんでいる」が正解。",
+        "&quot;Maki wasn&apos;t at the reunion.  I haven&apos;t seen her in ages,&quot; said Takuya. （「同窓会にマキはいなかった。ぼくは何年も彼女に会ってないよ」と拓也は言った。） ",
+        "&quot;Same here. It&apos;s a pity.  Where would we be without her?&quot; asked Kasumi.  The conversation became silent, as they wordlessly communicated their guilt. （「同じよ。残念だわ。彼女がいなかったら，私たちはどうなっているんだろう？」とカスミは尋ねた。二人は無言で罪悪感を伝え合い，会話は静かになった。）",
+      ],
+    },
+    {
+      questionId: "5-5",
+      qa: [
+        {
+          questionNumber: "38",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "第6場の以下のやり取りから，[38]は②「彼女自身の才能を認識する」が正解。",
+        "&quot;No. The opposite. You understand people incredibly well. You can identify others&apos; strengths and show them how to make use of them. We&apos;re proof of this. You made us aware of our gifts,&quot; said Takuya. &quot;The irony is that you couldn&apos;t do the same for yourself,&quot; added Kasumi.",
+        "いや，その逆だよ。君は信じられないほど人のことをちゃんと理解している。他人の長所を見極め，それを活かす方法を教えることができる。ぼくたちがその証拠だよ。君はぼくたちに自分の才能を気づかせてくれた」とタクヤは言った。 「皮肉なことに，あなた自身には同じことができなかったのね」とカスミが付け加えた。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   const questionsData = {
     questions: [
@@ -77,44 +189,6 @@ const Ex24_5 = () => {
       },
     ],
   };
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const correctAnswerArray = [4, 5, 1, 2, 2, 1, 2, 3, 2];
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
 
   return (
     <div className={exPageFormat}>
@@ -123,14 +197,13 @@ const Ex24_5 = () => {
           <h1 className="text-lg font-bold">{"第５問"}</h1>
           <span className="text-gray-600">(配点 {15})</span>
         </div>
-        <Saiten
-          points={15}
-          startQuestionNumber={30}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Introduction text - double spaced */}
@@ -393,16 +466,22 @@ const Ex24_5 = () => {
       {/* 回答部分 */}
       <div className="w-full px-0 sm:px-4 mx-auto p-4">
         {questionsData.questions.map((question, qIndex) => (
-          <div key={qIndex} className="mb-8">
+          <div
+            key={qIndex}
+            className={cn(
+              "mb-8",
+              showResults && qaFormat(qa, "5-" + (qIndex + 1))
+            )}
+          >
             <div className="flex flex-wrap items-baseline mb-4">
               <span className="font-medium mr-2">問{question.id}</span>
               <span>{question.text}</span>
               {/* 30,31,32,33 は 0,1,2,3 に対応 */}
               {question.boxes && (
-                <div className="flex flex-wrap gap-2 items-center justify-start mb-4 max-w-[1000px] overflow-x-auto">
+                <div className="flex flex-wrap gap-1 items-center justify-start mb-4 max-w-[1000px] overflow-x-auto">
                   {question.boxes.map((box, index) => (
                     <React.Fragment key={index}>
-                      {renderSelect(box, 5, index)}
+                      {renderSelect(box, 5, answers, setAnswers)}
                       {index < question.boxes.length - 1 && (
                         <span className="mx-1">→</span>
                       )}
@@ -413,21 +492,23 @@ const Ex24_5 = () => {
               {/* // 34,37,38 */}
               {question.numberBox &&
                 question.numberBox === "34" &&
-                renderSelect("34", 4, 4)}
+                renderSelect("34", 4, answers, setAnswers)}
               {question.numberBox &&
                 question.numberBox === "37" &&
-                renderSelect("37", 4, 7)}
+                renderSelect("37", 4, answers, setAnswers)}
               {question.numberBox &&
                 question.numberBox === "38" &&
-                renderSelect("38", 4, 8)}
+                renderSelect("38", 4, answers, setAnswers)}
               {question.numberBoxes?.map((num, index) => (
-                // 35,36 は 5,6 に対応
+                // 35,36
                 <React.Fragment key={index}>
-                  {renderSelect(num, 5, 5 + index)}
+                  {renderSelect(num, 5, answers, setAnswers)}
                   {index === 0 && <span className="mx-1">and</span>}
                 </React.Fragment>
               ))}
-              <span>.</span>
+              {showResults && (
+                <Explain qa={qa} questionId={"5-" + question.id} />
+              )}
             </div>
 
             <div className="space-y-2 pl-6">

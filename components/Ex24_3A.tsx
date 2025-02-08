@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import {
   Card,
@@ -7,10 +8,11 @@ import {
   exPageFormat,
   exQuestionFormat,
 } from "@/lib/util";
-import { Saiten } from "./Saiten";
-import { Answers } from "@/lib/types";
-import { QuestionSelect } from "./QuestionSelect";
 import Image from "next/image";
+import { Saiten2 } from "@/components/Saiten2";
+import { qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 export interface HeaderText {
   title: string;
@@ -169,8 +171,49 @@ const Ex24_3A: React.FC = () => {
       answer: 1,
     },
   ];
-  const correctAnswerArray = [2, 2];
-  // }
+  const question: QandA[] = [
+    {
+      questionId: "3A-1",
+      qa: [
+        {
+          questionNumber: "16",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[16] 本文第6文～第11文 「But, on the way to the last target, the statue of a famous samurai from the city, we got lost. Time was running out and my feet were hurting from walking for over two hours. We stopped a man with a pet monkey for help, but neither our Japanese nor his English were good enough. After he&apos;d explained the way using gestures, we realised we wouldn&apos;t have enough time to get there and would have to give up. We took a photo with him and said goodbye. When we got back to Sakura City Hall, we were surprised to hear that the winning team had completed 19 checkpoints.」 ",
+        "（しかし，最後の目標である有名な侍の像に向かう途中で私たちは道に迷った。時間切れになりつつあり，2時間以上歩いたので私の足は痛くなった。ペットの猿を連れた男性を呼び止めて助けを求めたが，私たちの日本語も彼の英語も十分上手ではなかった。彼が身振り手振りを交えて道を説明してくれた後，私たちは，そこにたどり着くには時間が足りず，あきらめるしかないと悟った。私たちは彼と写真を撮って別れた。私たちがサクラ市役所に到着した時，勝利したチームは19のチェックポイントを回ったと聞いて私たちは驚いた）という内容と， ",
+        "本文最終文の 「It reminds me of the man&apos;s warmth and kindness: our own &quot;gold medal.&quot;」（それが私に思い出させてくれるのは，その男性の暖かさと優しさだ。",
+        "それが私たち自身の「金メダル」だ）という内容から，その写真には猿を連れた男性が写っており，かつ，市役所に着いたのは男性と別れた後であることから，②が正解だとわかる。",
+      ],
+    },
+    {
+      questionId: "3A-2",
+      qa: [
+        {
+          questionNumber: "17",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[17] （※推測問題）本文第11文から，自分のチームは勝利していないことがわかるため，①の「金メダルをつけている写真を見たい」は誤り。同じく第11文から，19チーム回ったのは自分たちではなく別のチームのことだとわかるので，",
+        "③「3時間で19のチェックポイントに着いたの？」も誤り。④を選んだ受験生もいたかもしれないが，ルールの下から二つ目に &quot;No mobile phones&quot;（携帯電話は無し）とあるので，④の「あなたの写真は素晴らしい！電話をアップグレードしたの？」も誤りである。 ",
+        "よって，消去法で②「あなたはベストを尽くしたよ。日本に戻ってもう一度挑戦して！」が正解となる。なお，筆者が日本にいないことについては，冒頭の説明文 ",
+        "Susan, your English ALT's sister, visited your class last month. Now back in the UK, she wrote on her blog about an event she took part in.",
+        "（あなたの英語のALTの妹であるスーザンは先月あなたのクラスを訪れた。今はイギリスに戻ったが，彼女はブログに自分が参加したイベントについて書いた）とあることが根拠となる。このように，設問の前書きの部分にもヒントが書かれていることがあるので，注意すること。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
     <div className={exPageFormat}>
       {/* 問題番号とシチュエーション */}
@@ -179,14 +222,13 @@ const Ex24_3A: React.FC = () => {
           <h1 className="text-lg font-bold">{"第３問 A"}</h1>
           <span className="text-gray-600">(配点 {6})</span>
         </div>
-        <Saiten
-          points={6}
-          startQuestionNumber={16}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       <div className="mb-4">
@@ -214,21 +256,22 @@ const Ex24_3A: React.FC = () => {
       {/* Questions */}
       <div className={cn(exQuestionFormat, "mt-6")}>
         {questions.map((question, index) => (
-          <div key={index} className="mb-4">
+          <div
+            key={index}
+            className={cn(
+              "mb-4",
+              showResults && qaFormat(qa, "3A-" + (index + 1))
+            )}
+          >
             <div className="flex items-center flex-wrap gap-2 mb-2">
               <span className="whitespace-nowrap mr-2">
                 問{question.number}
               </span>
               <span className="text-left">{question.prompt}</span>
-              <QuestionSelect
-                index={index}
-                questionNumber={index + 16}
-                correctAnswerArray={correctAnswerArray}
-                limit={question.options.length}
-                answers={answers}
-                setAnswers={setAnswers}
-                showResults={showResults} // 追加
-              />
+              {renderSelect(String(index + 16), 4, answers, setAnswers)}
+              {showResults && (
+                <Explain qa={qa} questionId={"3A-" + String(index + 1)} />
+              )}
             </div>
             {index === 1 ? (
               <ol className="list-none space-y-2 ml-6">

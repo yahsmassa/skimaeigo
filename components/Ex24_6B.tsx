@@ -1,52 +1,118 @@
 "use client";
 
-import { exPageFormat } from "@/lib/util";
 import React, { useState } from "react";
 import { Saiten } from "./Saiten";
-import { Answers } from "@/lib/types";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
 import Image from "next/image";
-import { cn } from "@/lib/util";
+import { Saiten2 } from "@/components/Saiten2";
+import { Explain } from "@/components/Explain";
+
 const Ex24_6B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const correctAnswerArray = [4, 4, 2, 3, 3, 5];
 
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "6B-1",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[44] 第3段落の最後の2文 The reason some people cannot tolerate chili spice but can eat foods flavored with wasabi is that the spice compounds in it are low in density. The compounds in wasabi vaporize easily, delivering a blast of spiciness to our nose when we eat it.",
+        "（唐辛子のスパイスには耐えられないが，ワサビ味の食品なら食べられるという人がいる理由は，ワサビに含まれるスパイス化合物の濃度が低いからである。ワサビに含まれる化合物は気化しやすく，食べたときに鼻に抜けるような辛さをもたらす）の内容から，④「軽い化合物」が正解。",
+      ],
+    },
+    {
+      questionId: "6B-2",
+      qa: [
+        {
+          questionNumber: "45",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[45] （※NOT問題） Aの「痛みを減らす」については第4段落第3文 &quot;Strangely, capsaicin can also make pain go away.&quot;（不思議なことに，カプサイシンは痛みを消すこともできる）に一致している。Bの「あなたにより多くのエネルギーを与える」は，第5段落第3文 &quot;This is because spicy foods increase the heart rate, send more energy to the muscles, and convert fat into energy.&quot;（これは，辛い食べ物が心拍数を上げ，筋肉により多くのエネルギーを送り，脂肪をエネルギーに変えるからである）に一致する。",
+        "Cの「新陳代謝を加速させる」は，第5段落第1文 &quot;Another benefit of eating chili peppers is that they accelerate the metabolism.&quot;（唐辛子を食べることのもう一つの利点は，新陳代謝を促進することである）に一致する。Eの「食中毒を減らす」は，第6段落第1文 &quot;It is also believed that chili peppers are connected with food safety, which might lead to a healthier life.&quot;（また，唐辛子は食品の安全性とも関係があり， ",
+        "より健康的な生活につながるかもしれないと考えられている）と，第3文～第4文 &quot;Studies have shown that capsaicin and other chemicals found in chili peppers have antibacterial properties that can slow down or even stop microorganism growth. As a result, food lasts longer and there are fewer food-borne illnesses. &quot;（唐辛子に含まれるカプサイシンやその他の化学物質には抗菌作用があり，微生物の繁殖を遅らせたり，止めたりすることさえできるという研究結果がある。その結果，食べ物がより長持ちし，食中毒が少なくなる）に一致する。しかし，Dの「ストレスを感じさせなくなる」という内容は利点には述べられていない。したがって，④が正解。",
+      ],
+    },
+    {
+      questionId: "6B-3",
+      qa: [
+        {
+          questionNumber: "46",
+          answer: 0,
+        },
+        {
+          questionNumber: "47",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "23",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[46]・[47] 第7段落第3文 &quot;People who have eaten several of the world&apos;s hottest chilis in a short time have reported experiencing upset stomachs, diarrhea, numb hands, and symptoms similar to a heart attack.&quot;（世界一辛い唐辛子を短時間に何本も食べた人は，胃の不調，下痢，手のしびれ，心臓発作に似た症状を経験したと報告している）の内容から，",
+        "②「胃の痛みを経験するかもしれない」と，③「手の感触を失うかもしれない」が正解。④の「指が火が付いたように感じられるかもしれない」は，第7段落第4文 &quot;Ghost peppers, which contain one million SHUs, can even burn a person&apos;s skin if they are touched.&quot; ",
+        "（100万SHUを含むゴースト・ペッパーは，触ると皮膚が火傷することさえある）のことと考えられるが，設問では「あまりにも強力な唐辛子を短時間に食べた時」に起きることを選ぶように求められているいるため，これは誤りである。",
+      ],
+    },
+    {
+      questionId: "6B-4",
+      qa: [
+        {
+          questionNumber: "48",
+          answer: 0,
+        },
+      ],
+      isOrderFree: true,
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "48] （※推測問題）スパイスへの耐性について，本文の内容を基に推測する問題。 ",
+        "第4段落第4文 &quot;Scientists found that TRPV1 ceases to be turned on after long-term exposure to chili peppers, temporarily easing painful sensations.&quot;（科学者たちは，唐辛子に長期間さらされるとTRPV1がオンにならなくなり，一時的に痛覚が和らぐことを発見した）という内容と，第6段落第5文 &quot;This may explain why people in hot climates have a tendency to use more chili peppers, and therefore, be more tolerant of spicier foods due to repeated exposure.&quot; ",
+        "（こういうわけで，暑い気候に住む人々は唐辛子を多く使う傾向があり，したがって，何度も唐辛子に触れる傾向があるため，より辛い食べ物に対してより耐性があるのかもしれない）という内容から，③「唐辛子への耐性が低い人でも，その辛さに慣れることができる」が正解。④「ワサビへの耐性が低い人は高いSHUに耐えることができない」も紛らわしく，実際，第3段落第3文では &quot;However, people have compared the level of spice in it to chilis with around 1,000 SHUs, which is on the lower end of the scale.&quot; ",
+        "（しかし，人々はワサビの中のスパイスのレベルを，約1,000SHUの唐辛子に例えてきた）と述べられてはいるものの，あくまでも「1,000SHUにたとえる」と述べているだけであって，実際にワサビへの耐性が低い人が高いSHUに耐えられるかどうかについては言及していないため，誤りだと考えられる。",
+      ],
+    },
+    {
+      questionId: "6B-5",
+      qa: [
+        {
+          questionNumber: "49",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "5",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[49] （※推測問題）締めの一言を選ぶ問題。本文は，第1段落で唐辛子とワサビの違いについて問題提起を行い，それを説明するために第2段落で化学的な仕組みを説明し，続く第3段落ではワサビが唐辛子と異なる理由が述べられている。第4段落から第6段落では唐辛子の利点が述べられており，第7段落ではSHUの高い唐辛子を大量に摂取した時の問題点が述べられており，それを踏まえて最後の第8段落では，辛いものは食べても安全だが量には注意しようとまとめている。したがって，8つの段落中，3つの段落を費やして唐辛子の利点を述べていることからも，⑤「誰かがあなたに辛い食べ物を勧めた時，それには何らかの利点があるということを思い出そう」が正解。これ以外の選択肢の意味と誤りの根拠は以下の通りである。 ",
+        "① Don&apos;t be afraid. Eating spicy foods will boost your confidence. 「恐れてはいけない。辛い食べ物を食べると自信が増す」 →このような内容は本文に含まれていない。 ",
+        "② Next time you eat chili chicken, remember its punch only stays for a second. 「次にチリチキンを食べるときには，そのパンチが一瞬しか残らないことを覚えておこう」 →最終段落の第1文で「辛いものを食べた後に感じる不快感が数時間以内に消える」とは書かれているが，「一瞬しか残らない」とは述べていない。 ",
+        "③ Personality plays a big role in our spice preference, so don&apos;t worry. 「個性（性格）はスパイスの好みで大きな役割を果たす。だから心配しないで」 →人の個性（性格）とスパイスの関係については本文で言及されていない。 ",
+        "④ Unfortunately, there are no cures for a low wasabi tolerance. 「残念ながら，ワサビの低い耐性には治療法は存在しない」 →ワサビの耐性に関する治療法の話は本文でなされていない。 ",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   return (
     <div className={exPageFormat}>
@@ -55,14 +121,13 @@ const Ex24_6B = () => {
           <h1 className="text-lg font-bold">{"第６問 B"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten
-          points={12}
-          startQuestionNumber={44}
-          correctAnswerArray={[4, 4, 2, 3, 3, 5]}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       <div className="mb-4">
@@ -236,13 +301,14 @@ const Ex24_6B = () => {
         </div>
 
         <div className="space-y-8 ">
-          <div className="">
+          <div className={cn(showResults && qaFormat(qa, "6B-1"))}>
             <div className="flex items-center flex-wrap gap-2">
               <span className="flex-none mr-2">問 1</span>
               <span>
                 What is the first characteristic of wasabi on Slide 2?
               </span>
-              {renderSelect("44", 4, 0)}
+              {renderSelect("44", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId={"6B-1"} />}
             </div>
             <div className="mt-4 space-y-2 ml-6">
               <div className="flex gap-2">
@@ -272,13 +338,14 @@ const Ex24_6B = () => {
             </div>
           </div>
 
-          <div className="">
+          <div className={cn(showResults && qaFormat(qa, "6B-2"))}>
             <div className="flex items-center flex-wrap gap-2">
               <span className="whitespace-nowrap mr-2">問 2</span>
               <span>
                 Which is an <u>error</u> you found on Slide 3?
               </span>
-              {renderSelect("45", 5, 1)}
+              {renderSelect("45", 5, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId={"6B-2"} />}
             </div>
             <div className="mt-4 space-y-2 ml-6">
               <div className="flex gap-2">
@@ -314,13 +381,15 @@ const Ex24_6B = () => {
             </div>
           </div>
 
-          <div className="">
+          <div className={cn(showResults && qaFormat(qa, "6B-3"))}>
             <div className="flex items-center flex-wrap gap-2 mt-2">
               <span className="flex-none mr-2">問 3</span>
               <span>
                 Choose two options for Slide 4. (The order does not matter.)
               </span>
-              {renderSelect("46", 5, 2)}・{renderSelect("47", 5, 3)}
+              {renderSelect("46", 5, answers, setAnswers)}・
+              {renderSelect("47", 5, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId={"6B-3"} />}
             </div>
             <div className="mt-4 space-y-2 ml-6">
               <div className="flex gap-2">
@@ -355,13 +424,14 @@ const Ex24_6B = () => {
               </div>
             </div>
           </div>
-          <div className="">
+          <div className={cn(showResults && qaFormat(qa, "6B-4"))}>
             <div className="flex items-center flex-wrap gap-2">
               <span className="flex-none mr-2">問 4</span>
               <span>
                 What can be inferred about tolerance for spices for Slide 5?
               </span>
-              {renderSelect("48", 4, 4)}
+              {renderSelect("48", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId={"6B-4"} />}
             </div>
             <div className="mt-4 space-y-3 ml-6">
               <div className="flex gap-2">
@@ -403,11 +473,12 @@ const Ex24_6B = () => {
             </div>
           </div>
 
-          <div className="">
+          <div className={cn(showResults && qaFormat(qa, "6B-5"))}>
             <div className="flex items-center flex-wrap gap-2">
               <span className="flex-none mr-2">問 5</span>
               <span>Choose the most appropriate remark for Slide 6.</span>
-              {renderSelect("49", 5, 5)}
+              {renderSelect("49", 5, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId={"6B-5"} />}
             </div>
             <div className="mt-4 space-y-3 ml-6">
               <div className="flex gap-2">

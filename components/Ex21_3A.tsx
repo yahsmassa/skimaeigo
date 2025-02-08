@@ -1,51 +1,46 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
 
 export default function Ex21_3A() {
-  const correctAnswerArray = [3, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "3A-1",
+      qa: [
+        {
+          questionNumber: "16",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "3A-2",
+      qa: [
+        {
+          questionNumber: "17",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -53,14 +48,13 @@ export default function Ex21_3A() {
           <h1 className="text-lg font-bold">{"第３問 A"}</h1>
           <span className="text-gray-600">(配点 {6})</span>
         </div>
-        <Saiten
-          points={6}
-          startQuestionNumber={16}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Section A Header */}
@@ -139,11 +133,12 @@ export default function Ex21_3A() {
       {/* Questions */}
       <div className="space-y-8">
         {/* Question 1 */}
-        <div className="space-y-2">
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "3A-1"))}>
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>From Alex&apos;s answer, you learn that Alex</span>
-            {renderSelect("16", 4, 0)}.
+            {renderSelect("16", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="3A-1" />}
           </div>
 
           <div className="space-y-2 pl-8">
@@ -157,14 +152,15 @@ export default function Ex21_3A() {
         </div>
 
         {/* Question 2 */}
-        <div className="space-y-2">
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "3A-2"))}>
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               You are departing on public transport from the airport at 2.00 pm
               on 15 March 2021. What is the fastest way to get to the hotel?
             </span>
-            {renderSelect("17", 4, 1)}
+            {renderSelect("17", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="3A-2" />}
           </div>
 
           <div className="space-y-2 pl-8">

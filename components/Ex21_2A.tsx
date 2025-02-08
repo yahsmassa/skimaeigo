@@ -1,10 +1,12 @@
 "use client";
 
-import { Card, cn } from "@/lib/util";
+import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { exPageFormat } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { Card, cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex21_2A = () => {
   const scores = [
@@ -55,45 +57,82 @@ const Ex21_2A = () => {
         "Green Forest have a new song. I loved it! I think it could be a big hit!",
     },
   ];
-  const correctAnswerArray = [2, 2, 1, 3, 5];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
+  const question: QandA[] = [
+    {
+      questionId: "2A-1",
+      qa: [
+        {
+          questionNumber: "6",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+    {
+      questionId: "2A-2",
+      qa: [
+        {
+          questionNumber: "7",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+    {
+      questionId: "2A-3",
+      qa: [
+        {
+          questionNumber: "8",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+    {
+      questionId: "2A-4",
+      qa: [
+        {
+          questionNumber: "9",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+    {
+      questionId: "2A-5",
+      qa: [
+        {
+          questionNumber: "10",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "5",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -101,14 +140,13 @@ const Ex21_2A = () => {
           <h1 className="text-lg font-bold">{"第２問 A"}</h1>
           <span className="text-gray-600">(配点 {10})</span>
         </div>
-        <Saiten
-          points={10}
-          startQuestionNumber={6}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       <div className="text-sm mb-6">
@@ -226,14 +264,15 @@ const Ex21_2A = () => {
       </Card>
 
       <div className="space-y-6">
-        <div className="space-y-2">
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               Based on the judges&apos; final average scores, which band sang
               the best?
             </span>
-            {renderSelect("6", 4, 0)}
+            {renderSelect("6", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="2A-1" />}
           </div>
           <div className="pl-8 space-y-1">
             <div>① Green Forest</div>
@@ -243,11 +282,12 @@ const Ex21_2A = () => {
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>Which judge gave both positive and critical comments?</span>
-            {renderSelect("7", 4, 1)}
+            {renderSelect("7", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="2A-2" />}
           </div>
           <div className="pl-8 space-y-1">
             <div>① Mr Hobbs</div>
@@ -257,14 +297,15 @@ const Ex21_2A = () => {
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               One <span className="underline">fact</span> from the judges&apos;
               individual comments is that
             </span>
-            {renderSelect("8", 4, 2)}.
+            {renderSelect("8", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="2A-3" />}
           </div>
           <div className="pl-8 space-y-1">
             <div>① all the judges praised Green Forest&apos;s song</div>
@@ -274,14 +315,15 @@ const Ex21_2A = () => {
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 4</span>
             <span>
               One <span className="underline">opinion</span> from the
               judges&apos; comments and shared evaluation is that
             </span>
-            {renderSelect("9", 4, 3)}.
+            {renderSelect("9", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="2A-4" />}
           </div>
           <div className="pl-8 space-y-1">
             <div>① each evaluated band received the same total score</div>
@@ -293,14 +335,15 @@ const Ex21_2A = () => {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 5</span>
             <span>
               Which of the following is the final ranking based on the
               judges&apos; shared evaluation?
             </span>
-            {renderSelect("10", 6, 4)}
+            {renderSelect("10", 6, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="2A-5" />}
           </div>
           <div className="pl-8">
             <table className="w-full max-w-xl">

@@ -1,50 +1,80 @@
 "use client";
 
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import Image from "next/image";
+import { Saiten2 } from "@/components/Saiten2";
+import { Explain } from "@/components/Explain";
 
 const Ex21_6B = () => {
-  const correctAnswerArray = [3, 3, 3, 5, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
+  const question: QandA[] = [
+    {
+      questionId: "6B-1",
+      qa: [
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6B-2",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6B-3",
+      qa: [
+        {
+          questionNumber: "45",
+          answer: 0,
+        },
+        {
+          questionNumber: "46",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "35",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6B-4",
+      qa: [
+        {
+          questionNumber: "47",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -52,14 +82,13 @@ const Ex21_6B = () => {
           <h1 className="text-lg font-bold">{"第６問 B"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten
-          points={12}
-          startQuestionNumber={43}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Question label */}
@@ -144,15 +173,16 @@ const Ex21_6B = () => {
       {/* Questions Section */}
       <div className="mt-8">
         {/* Question 1 */}
-        <div className="mb-8">
+        <div className={cn("mb-8", showResults && qaFormat(qa, "6B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               You learn that modern science has changed the world of sweeteners
               by
             </span>
-            {renderSelect("43", 4, 0)}
+            {renderSelect("43", 4, answers, setAnswers)}
             <span>.</span>
+            {showResults && <Explain qa={qa} questionId="6B-1" />}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -178,14 +208,15 @@ const Ex21_6B = () => {
         </div>
 
         {/* Question 2 */}
-        <div>
+        <div className={cn("mb-8", showResults && qaFormat(qa, "6B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               You are summarizing the information you have just studied. How
               should the table be finished?
             </span>
-            {renderSelect("44", 4, 1)}
+            {renderSelect("44", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6B-2" />}
           </div>
 
           {/* Table */}
@@ -295,7 +326,7 @@ const Ex21_6B = () => {
         </div>
 
         {/* Question 3 */}
-        <div className="mb-8">
+        <div className={cn("mb-8", showResults && qaFormat(qa, "6B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
@@ -303,9 +334,10 @@ const Ex21_6B = () => {
               true?
             </span>
             <span>(Choose two options. The order does not matter.)</span>
-            {renderSelect("45", 5, 2)}
+            {renderSelect("45", 5, answers, setAnswers)}
             <span>・</span>
-            {renderSelect("46", 5, 3)}
+            {renderSelect("46", 5, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6B-3" />}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -341,14 +373,15 @@ const Ex21_6B = () => {
         </div>
 
         {/* Question 4 */}
-        <div>
+        <div className={cn("mb-8", showResults && qaFormat(qa, "6B-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 4</span>
             <span>
               To describe the author&apos;s position, which of the following is
               most appropriate?
             </span>
-            {renderSelect("47", 4, 4)}
+            {renderSelect("47", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6B-4" />}
           </div>
 
           <div className="ml-8 space-y-2">

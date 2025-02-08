@@ -1,50 +1,78 @@
 "use client";
 
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex22_6A = () => {
-  const correctAnswerArray = [3, 3, 1, 6, 3];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "6A-1",
+      qa: [
+        {
+          questionNumber: "39",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6A-2",
+      qa: [
+        {
+          questionNumber: "40",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6A-3",
+      qa: [
+        {
+          questionNumber: "41",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "6A-4",
+      qa: [
+        {
+          questionNumber: "42",
+          answer: 0,
+        },
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "63",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   return (
     <div className={exPageFormat}>
@@ -53,14 +81,13 @@ const Ex22_6A = () => {
           <h1 className="text-lg font-bold">{"第６問 A"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten
-          points={12}
-          startQuestionNumber={39}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Question Header */}
@@ -269,10 +296,12 @@ const Ex22_6A = () => {
           </div>
         </div>
       </div>
-      <div className="mt-5 mb-8">
+      <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6A-1"))}>
         <div className="flex items-center flex-wrap gap-2 mb-4">
           <span className="whitespace-nowrap mr-2">問 1</span>
-          <span>Choose the best option for</span> {renderSelect("39", 4, 0)}.
+          <span>Choose the best option for</span>{" "}
+          {renderSelect("39", 4, answers, setAnswers)}.
+          {showResults && <Explain qa={qa} questionId="6A-1" />}
         </div>
         <div className="ml-4 space-y-2">
           <p>① achieves goals quickly</p>
@@ -282,10 +311,12 @@ const Ex22_6A = () => {
         </div>
       </div>
       <div className="mt-8 space-y-8">
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>
-            <span>Choose the best option for</span> {renderSelect("40", 4, 1)}.
+            <span>Choose the best option for</span>{" "}
+            {renderSelect("40", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="6A-2" />}
           </div>
           <div className="ml-4 space-y-3">
             <p>
@@ -307,10 +338,12 @@ const Ex22_6A = () => {
           </div>
         </div>
 
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 3</span>
-            <span>Choose the best option for</span> {renderSelect("41", 4, 2)}.
+            <span>Choose the best option for</span>{" "}
+            {renderSelect("41", 4, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="6A-3" />}
           </div>
           <div className="ml-4 space-y-3">
             <p>
@@ -332,11 +365,13 @@ const Ex22_6A = () => {
           </div>
         </div>
 
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 4</span>
-            <span>Choose the best options for</span> {renderSelect("42", 6, 3)}{" "}
-            and {renderSelect("43", 6, 4)}.
+            <span>Choose the best options for</span>{" "}
+            {renderSelect("42", 6, answers, setAnswers)} and{" "}
+            {renderSelect("43", 6, answers, setAnswers)}.
+            {showResults && <Explain qa={qa} questionId="6A-4" />}
           </div>
           <div className="ml-4 space-y-2">
             <p>① amount of sleep</p>

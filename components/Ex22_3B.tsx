@@ -1,51 +1,72 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { exPageFormat, cn } from "@/lib/util";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
 
 const Ex22_3B = () => {
-  const correctAnswerArray = [1, 4, 3, 2, 2, 2];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
-
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  const question: QandA[] = [
+    {
+      questionId: "3B-1",
+      qa: [
+        {
+          questionNumber: "18",
+          answer: 0,
+        },
+        {
+          questionNumber: "19",
+          answer: 0,
+        },
+        {
+          questionNumber: "20",
+          answer: 0,
+        },
+        {
+          questionNumber: "21",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1432",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "3B-2",
+      qa: [
+        {
+          questionNumber: "22",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+    {
+      questionId: "3B-3",
+      qa: [
+        {
+          questionNumber: "23",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   return (
     <div className={exPageFormat}>
@@ -54,14 +75,13 @@ const Ex22_3B = () => {
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
           <span className="text-gray-600">(配点 {9})</span>
         </div>
-        <Saiten
-          points={9}
-          startQuestionNumber={18}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       {/* Section B indicator */}
@@ -148,7 +168,7 @@ const Ex22_3B = () => {
 
       {/* Questions section */}
       <div className="mt-8 space-y-8">
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-1"))}>
           <div className="mb-4">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="whitespace-nowrap mr-2">問 1 </span>
@@ -157,13 +177,14 @@ const Ex22_3B = () => {
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              {renderSelect("18", 4, 0)}
+              {renderSelect("18", 4, answers, setAnswers)}
               <span>→</span>
-              {renderSelect("19", 4, 1)}
+              {renderSelect("19", 4, answers, setAnswers)}
               <span>→</span>
-              {renderSelect("20", 4, 2)}
+              {renderSelect("20", 4, answers, setAnswers)}
               <span>→</span>
-              {renderSelect("21", 4, 3)}
+              {renderSelect("21", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="3B-1" />}
             </div>
           </div>
           <ol className="list-none space-y-2">
@@ -176,7 +197,7 @@ const Ex22_3B = () => {
           </ol>
         </div>
 
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-2"))}>
           <div className="mb-4">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="whitespace-nowrap mr-2">問 2 </span>
@@ -185,7 +206,8 @@ const Ex22_3B = () => {
                 completed Scafell Pike?
               </span>
             </div>
-            {renderSelect("22", 4, 4)}
+            {renderSelect("22", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="3B-2" />}
           </div>
           <ol className="list-none space-y-2">
             <li>
@@ -197,12 +219,13 @@ const Ex22_3B = () => {
           </ol>
         </div>
 
-        <div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-3"))}>
           <div className="mb-4">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="whitespace-nowrap mr-2">問 3 </span>
               <span>From this story, you learnt that the writer </span>
-              {renderSelect("23", 4, 5)}.
+              {renderSelect("23", 4, answers, setAnswers)}.
+              {showResults && <Explain qa={qa} questionId="3B-3" />}
             </div>
           </div>
           <ol className="list-none space-y-2">

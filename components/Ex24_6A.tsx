@@ -1,49 +1,92 @@
-import { cn, exPageFormat } from "@/lib/util";
+"use client";
+
 import React, { useState } from "react";
-import { Saiten } from "./Saiten";
-import { Answers } from "@/lib/types";
+import { Saiten2 } from "@/components/Saiten2";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex24_6A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const correctAnswerArray = [6, 2, 1, 3, 1];
 
-  const handleChange = (questionNumber: string, value: number) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [`question${questionNumber}`]: value,
-    }));
-  };
+  const question: QandA[] = [
+    {
+      questionId: "6A-1",
+      qa: [
+        {
+          questionNumber: "39",
+          answer: 0,
+        },
+        {
+          questionNumber: "40",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "62",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[39] 第1段落では，哲学者のアンリ・ベルクソンによる時間の区分（時計時間と心理的時間）が述べられていることから，⑥「時間の種類」が正解。",
+        "[40] 第4段落では，感情面での状態が時間意識に与える影響について述べられていることから，②「私たちの感情の影響」が正解。",
+      ],
+    },
+    {
+      questionId: "6A-2",
+      qa: [
+        {
+          questionNumber: "41",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[41] 第5段落第6文～第7文 &quot;Daily routines are shaken up when drastic changes occur, such as changing jobs or relocating to a new city. In such cases, the passage of time for those people is similar to that for children.&quot;「転職や新しい街への転居など，劇的な変化が起きると，日常の決まりきった状態は大きく揺れ動く。そのような場合，その人たちの時間の流れは子どものそれと似ている」と述べられている。 ",
+        "ここでいう「子どもの時間の感じ方」については，この段落の2文目 &quot;Children constantly encounter new information and have new experiences, which makes each day memorable and seem longer when recalled.&quot;（子どもたちは常に新しい情報に出会い，新しい経験をする。それによって，毎日が記憶に残り，思い出したときにより長く感じられる）と述べられている。 ",
+        "これは，子どもにとって時間が進むのがゆっくりに感じられることを示している。よって，①「どの年齢でも大きなライフスタイルの変化がおそらく時間をゆっくりと進ませる」が正解。",
+      ],
+    },
+    {
+      questionId: "6A-3",
+      qa: [
+        {
+          questionNumber: "42",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[42] （※推測問題）retrospective timing（追想的時間）については，第2段落第4文 「To answer, they used a mental process called retrospective timing, which is estimating time based on the information retrieved from memory.」 ",
+        "（答えるために，記憶から取り出された情報に基づいて時間を推定する，追想的タイミングと呼ばれる精神的プロセスが用いられた）の内容を参照する。したがって，③「今日，何時間働いたかを振り返る」が正解。",
+      ],
+    },
+    {
+      questionId: "6A-4",
+      qa: [
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: [
+        "[43] （※推測問題）prospective timing（予期的時間）については，第3段落第1文～第3文 &quot;Another process to measure psychological time is called prospective timing. It is used when you are actively keeping track of time while doing something. Instead of using the amount of information recalled, the level of attention given to time while doing the activity is used.&quot;",
+        "（心理的時間を測定するもう一つのプロセスは，予期的時間と呼ばれる。これは，何かをしながら積極的に時間を記録しているときに使われる。想起された情報量を使う代わりに，活動をしている間の時間に対する注意の度合いが使われる。）の内容を参照する。したがって，①「これまでどのくらいの時間ジョギングし続けてきたかを推測する」が正解。なお，①の選択肢では you&apos;ve been jogging という現在完了進行形が用いられていることに注意しよう。これは，過去から行ってきた動作がまだ継続していることを表すため，ジョギングをしている人がまだ走り続けながらその時間について考えているということを示しており，「何かをしながら積極的に時間を記録しているとき」に相当すると考えられる。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-  const isCorrect = (questionNumber: string, index: number) => {
-    return answers[`question${questionNumber}`] === correctAnswerArray[index];
-  };
-
-  const renderSelect = (number: string, count: number, index: number) => (
-    <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-      <div
-        className={cn(
-          "font-medium mb-0.5 mr-2",
-          showResults &&
-            (isCorrect(number, index) ? "text-green-500" : "text-red-500")
-        )}
-      >
-        [{number}]
-      </div>
-      <select
-        value={answers[`question${number}`] || ""}
-        onChange={(e) => handleChange(number, Number(e.target.value))}
-        className="w-20 h-8 border border-gray-300 rounded-md text-center text-sm"
-      >
-        <option value="">選択</option>
-        {Array.from({ length: count }, (_, index) => (
-          <option key={index + 1} value={String(index + 1)}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
@@ -51,14 +94,13 @@ const Ex24_6A = () => {
           <h1 className="text-lg font-bold">第６問 A</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
-        <Saiten
-          points={12}
-          startQuestionNumber={39}
-          correctAnswerArray={[6, 2, 1, 3, 1]}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
       <div className="mb-6">
@@ -244,11 +286,13 @@ const Ex24_6A = () => {
       </div>
       {/* 回答 */}
       <div className="space-y-8 mt-8">
-        <div>
+        <div className={cn(showResults && qaFormat(qa, "6A-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2">問 1</span>{" "}
             <span>Choose the best options for</span>
-            {renderSelect("39", 6, 0)} and{renderSelect("40", 6, 1)}
+            {renderSelect("39", 6, answers, setAnswers)} and
+            {renderSelect("40", 6, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId={"6A-1"} />}
           </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">
@@ -290,11 +334,12 @@ const Ex24_6A = () => {
           </ol>
         </div>
 
-        <div>
+        <div className={cn(showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2">問 2</span>
             <span>Choose the best option for</span>
-            {renderSelect("41", 4, 2)}
+            {renderSelect("41", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId={"6A-2"} />}
           </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">
@@ -336,11 +381,12 @@ const Ex24_6A = () => {
           </ol>
         </div>
 
-        <div>
+        <div className={cn(showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2">問 3</span>
             <span>Choose the best option for</span>
-            {renderSelect("42", 6, 3)}
+            {renderSelect("42", 6, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId={"6A-3"} />}
           </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">
@@ -370,11 +416,12 @@ const Ex24_6A = () => {
           </ol>
         </div>
 
-        <div>
+        <div className={cn(showResults && qaFormat(qa, "6A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2">問 4</span>
             <span>Choose the best option for</span>
-            {renderSelect("43", 4, 4)}
+            {renderSelect("43", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId={"6A-4"} />}
           </div>
           <ol className="list-none space-y-2">
             <li className="flex items-start">

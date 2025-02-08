@@ -1,10 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { Answers } from "@/lib/types";
-import { QuestionSelect } from "@/components/QuestionSelect";
-import { Saiten } from "./Saiten";
-import { exPageFormat, exQuestionFormat, cn } from "@/lib/util";
+import { Saiten2 } from "@/components/Saiten2";
+import {
+  exQuestionFormat,
+  cn,
+  exPageFormat,
+  qaFormat,
+  renderSelect,
+} from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex24_2B = () => {
   const [showResults, setShowResults] = useState(false);
@@ -80,8 +86,98 @@ const Ex24_2B = () => {
       },
     ],
   };
-
-  const correctAnswerArray = [1, 1, 1, 3, 2];
+  const question: QandA[] = [
+    {
+      questionId: "2B-1",
+      qa: [
+        {
+          questionNumber: "11",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[11] 第3段落第2文  The plan provides 24-hour medical support through a smartphone app and telephone service.",
+        "（このプランは24時間のスマホのアプリと電話サービスを通して医療サポートを提供している）から，①「最も高いプランでは24時間の医療アシスタンスが利用できる」が正解。",
+        "→24-hour を day and night と言い換えていることに注意。",
+      ],
+    },
+    {
+      questionId: "2B-2",
+      qa: [
+        {
+          questionNumber: "12",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[12] （※NOT問題）一番安いプランについては，第5段落に書かれているが，メールでのサポートについては挙げられていないので，①「メールによるサポート」が正解。",
+      ],
+    },
+    {
+      questionId: "2B-3",
+      qa: [
+        {
+          questionNumber: "13",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[13] 第2段落第3文の  They accept any form of payment, usually on a monthly basis.",
+        "（どのような支払方法にも対応しており，通常は月単位で支払う）から， Aの「月払いを認めている」が正しい。また，第2段落第2文の ",
+        "I signed up online in less than 15 minutes and was immediately covered.",
+        "（私は15分もかからずにオンラインで登録し，すぐにカバーされた）から，Dの「インターネットでの登録システムを提供している」も正しい。よって，①が正解。",
+      ],
+    },
+    {
+      questionId: "2B-4",
+      qa: [
+        {
+          questionNumber: "14",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[14] 第4段落最終文 However, it was nice to get the optional 15 % discount because I paid for six months of coverage in advance.",
+        "（しかし，6か月分の保険料を前払いしたため，オプションで15％の割引を受けられたのはよかった）から，③「コスト削減のオプションは魅力的だった」が正解。",
+      ],
+    },
+    {
+      questionId: "2B-5",
+      qa: [
+        {
+          questionNumber: "15",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: [
+        "[15] 第1段落では旅の準備について述べており，最終文で  Also, you should purchase travel insurance.",
+        "（また，旅行保険を購入すべきだ）と述べている。さらに，最終段落では友人がけがをしたけれど保険のおかげですべてカバーできたというエピソードを述べたうえで，最終文で ",
+        "I realized how important insurance is ― you know that you will be supported when you are in trouble.",
+        "（保険がいかに重要かに気づいた。困ったときにサポートしてくれるとわかっているのだから）と述べていることから，②「彼女は旅行の準備が大切だと思っている」が正解。",
+      ],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
   return (
     <div className={cn(exPageFormat)}>
@@ -91,14 +187,13 @@ const Ex24_2B = () => {
           <h1 className="text-lg font-bold">{"第２問 B"}</h1>
           <span className="text-gray-600">(配点 {10})</span>
         </div>
-        <Saiten
-          points={10}
-          startQuestionNumber={11}
-          correctAnswerArray={correctAnswerArray}
-          answers={answers}
-          setAnswers={setAnswers}
+        <Saiten2
+          qa={qa}
+          setQA={setQA}
           showResults={showResults}
           setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       </div>
 
@@ -125,21 +220,22 @@ const Ex24_2B = () => {
       {/* 設問 */}
       <div className={cn(exQuestionFormat, "mt-6")}>
         {questionData.questions.map((question, index) => (
-          <div key={index} className="mb-4">
+          <div
+            key={index}
+            className={cn(
+              "mb-4",
+              showResults && qaFormat(qa, "2B-" + (index + 1))
+            )}
+          >
             <div className="flex items-center flex-wrap gap-2 mb-2">
               <span className="whitespace-nowrap mr-2">
                 問{question.number}
               </span>
               <span>{question.prompt}</span>
-              <QuestionSelect
-                index={index}
-                questionNumber={index + 11}
-                correctAnswerArray={correctAnswerArray}
-                limit={question.options.length}
-                answers={answers}
-                setAnswers={setAnswers}
-                showResults={showResults}
-              />
+              {renderSelect(String(index + 11), 4, answers, setAnswers)}
+              {showResults && (
+                <Explain qa={qa} questionId={"2B-" + String(index + 1)} />
+              )}
             </div>
             <ol className="list-none space-y-2 ml-6">
               {question.options.map((option, optIndex) => (
