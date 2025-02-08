@@ -402,6 +402,7 @@ const Ex25_5 = () => {
             {renderSelect("20", 6, answers, setAnswers)}
             <span>)</span>
             <span>based on the morning and afternoon themes?</span>
+            {showResults && <Explain qa={qa} questionId="5-2" />}
           </div>
           <div className="space-y-2 pl-8">
             <div className="flex gap-2">
