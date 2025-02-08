@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Saiten2 } from "@/components/Saiten2";
+import { Saiten } from "@/components/Saiten";
 import {
   exQuestionFormat,
   cn,
@@ -187,7 +187,7 @@ const Ex24_2B = () => {
           <h1 className="text-lg font-bold">{"第２問 B"}</h1>
           <span className="text-gray-600">(配点 {10})</span>
         </div>
-        <Saiten2
+        <Saiten
           qa={qa}
           setQA={setQA}
           showResults={showResults}

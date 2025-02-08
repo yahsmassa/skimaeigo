@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { Saiten2 } from "@/components/Saiten2";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
@@ -73,7 +72,7 @@ const Ex21_1B = () => {
           <h1 className="text-lg font-bold">{"第１問 B"}</h1>
           <span className="text-gray-600">(配点 {6})</span>
         </div>
-        <Saiten2
+        <Saiten
           qa={qa}
           setQA={setQA}
           showResults={showResults}
