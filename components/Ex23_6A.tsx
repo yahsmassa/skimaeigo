@@ -313,7 +313,7 @@ const Ex23_6A = () => {
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Choose the best option for </span>
-            {renderSelect("39", 4, answers, setAnswers)}.
+            {renderSelect("39", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6A-1" />}
           </div>
           <div className="ml-8 space-y-3">
@@ -360,7 +360,7 @@ const Ex23_6A = () => {
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span>Choose the best option for </span>
-            {renderSelect("40", 4, answers, setAnswers)}.
+            {renderSelect("40", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6A-2" />}
           </div>
           <div className="ml-8 space-y-3">
@@ -403,7 +403,7 @@ const Ex23_6A = () => {
             <span className="whitespace-nowrap mr-2">問 3</span>
             <span>Choose the best options for</span>{" "}
             {renderSelect("41", 6, answers, setAnswers)} and{" "}
-            {renderSelect("42", 6, answers, setAnswers)}.
+            {renderSelect("42", 6, answers, setAnswers)}
             <span> (The order does not matter.)</span>
             {showResults && <Explain qa={qa} questionId="6A-3" />}
           </div>
@@ -451,7 +451,7 @@ const Ex23_6A = () => {
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2">問 4</span>
             <span>Choose the best option for </span>
-            {renderSelect("43", 4, answers, setAnswers)}.
+            {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6A-4" />}
           </div>
           <div className="ml-8 space-y-3">

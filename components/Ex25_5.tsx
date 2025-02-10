@@ -472,6 +472,15 @@ const Ex25_5 = () => {
             {renderSelect("22", 6, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-4" />}
           </div>
+          <div className="ml-3">
+            <Image
+              src="/images/Ex25-5-1.jpg"
+              alt=""
+              width={800}
+              height={600}
+              className="w-full max-w-2xl"
+            />
+          </div>
         </div>
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-5"))}>

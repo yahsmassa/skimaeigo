@@ -186,7 +186,7 @@ const Ex22_3B = () => {
                 Put the following events (①～④) into the order they happened.
               </span>
             </div>
-            <div className="flex flex-wrap items-center gap-2 mb-4">
+            <div className="flex flex-wrap items-center gap-1 mb-4">
               {renderSelect("18", 4, answers, setAnswers)}
               <span>→</span>
               {renderSelect("19", 4, answers, setAnswers)}
@@ -215,9 +215,9 @@ const Ex22_3B = () => {
                 What was the reason for being behind schedule when they
                 completed Scafell Pike?
               </span>
+              {renderSelect("22", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="3B-2" />}
             </div>
-            {renderSelect("22", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="3B-2" />}
           </div>
           <ol className="list-none space-y-2">
             <li>

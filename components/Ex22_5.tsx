@@ -144,7 +144,7 @@ const Ex22_5 = () => {
       </p>
 
       {/* Main article container */}
-      <div className="border border-gray-300 p-6">
+      <div className="border border-gray-300 p-3 text-base">
         {/* First paragraph - full width */}
         <p className="mb-4">
           Who invented television? It is not an easy question to answer. In the
@@ -368,7 +368,7 @@ const Ex22_5 = () => {
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 1</span>
             <span>Which is the best subtitle for your presentation?</span>
-            {renderSelect("30", 4, answers, setAnswers)}.
+            {renderSelect("30", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-1" />}
           </div>
           <div className="ml-8 space-y-2">
@@ -406,12 +406,13 @@ const Ex22_5 = () => {
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>
             <span className="ml-2">Choose the best two options for </span>
-            {renderSelect("31", 5, answers, setAnswers)}.<span> and </span>
-            {renderSelect("32", 5, answers, setAnswers)}.
+            {renderSelect("31", 5, answers, setAnswers)}
+            <span> and </span>
+            {renderSelect("32", 5, answers, setAnswers)}
             <span> to complete </span>
-            <span className="underline">Early Days</span>.
-            <span className="ml-2">(The order does not matter.)</span>
+            <span className="underline">Early Days</span>
             {showResults && <Explain qa={qa} questionId="5-2" />}
+            <span className="ml-2">(The order does not matter)</span>
           </div>
           <div className="ml-8 space-y-2">
             <p>
@@ -454,13 +455,15 @@ const Ex22_5 = () => {
         >
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 3</span>
-            <span className="ml-2">Choose </span>
-            <span className="underline">four</span>
-            <span>out of the five events (1～5) in the order they </span>
-            <span>happened to complete </span>
-            <span className="underline">Sequence of Key Events</span>.
+            <span>
+              <span className="ml-2">Choose </span>
+              <span className="underline">four</span>
+              out of the five events (1～5) in the order they happened to
+              complete <span className="underline">Sequence of Key Events</span>
+              .
+            </span>
           </div>
-          <div className="flex items-center flex-wrap gap-1 mb-4 ml-8">
+          <div className="flex items-start flex-wrap gap-1 mb-4">
             {renderSelect("33", 5, answers, setAnswers)}
             <span>→</span>
             {renderSelect("34", 5, answers, setAnswers)}

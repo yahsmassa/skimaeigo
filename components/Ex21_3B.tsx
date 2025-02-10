@@ -173,7 +173,7 @@ const Ex21_3B = () => {
                 happened.
               </p>
             </div>
-            <div className="flex items-center flex-wrap gap-2 mb-4">
+            <div className="flex items-center flex-wrap gap-1 mb-4">
               {[18, 19, 20, 21].map((num, index) => (
                 <React.Fragment key={num}>
                   {renderSelect(String(num), 4, answers, setAnswers)}
@@ -182,12 +182,12 @@ const Ex21_3B = () => {
               ))}
               {showResults && <Explain qa={qa} questionId="3B-1" />}
             </div>
-            <div className="space-y-2 ml-4">
-              <p>① Sarah attended a centre event.</p>
-              <p>② Sarah donated money to the centre.</p>
-              <p>③ Sarah made a suggestion to Katy.</p>
-              <p>④ The campaigners asked the mayor for help.</p>
-            </div>
+          </div>
+          <div className="space-y-2 ml-4">
+            <p>① Sarah attended a centre event.</p>
+            <p>② Sarah donated money to the centre.</p>
+            <p>③ Sarah made a suggestion to Katy.</p>
+            <p>④ The campaigners asked the mayor for help.</p>
           </div>
         </div>
 
