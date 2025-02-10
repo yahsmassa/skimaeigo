@@ -187,38 +187,49 @@ const translateSentence = async () => {
   if (!selectedText) {
     Swal.fire({
       title: "エラー",
-      text: "翻訳する英文が選択されていません",
+      text: "英文が選択されていません",
       icon: "error",
       confirmButtonText: "OK",
     });
     return;
   }
-  if (selectedText) {
+
+  // ローディング表示
+  Swal.fire({
+    title: "翻訳中...",
+    text: "Requesting...",
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+  });
+
+  try {
     const prompt =
-      "あなたは優秀な英語教師です、以下のテキストを日本語に翻訳してください  " +
+      "あなたは優秀な英語教師です、以下の英文を日本語に翻訳してください  " +
       selectedText;
-    try {
-      const response = await fetch("/api/translate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ prompt }),
-      });
-      const data = await response.json();
-      Swal.fire({
-        title: "翻訳結果",
-        text: data.translatedText,
-        confirmButtonText: "OK",
-      });
-    } catch (error) {
-      Swal.fire({
-        title: "エラー",
-        text: "翻訳に失敗しました",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-    }
+    const response = await fetch("/api/translate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ prompt }),
+    });
+    const data = await response.json();
+
+    // 翻訳結果を表示
+    Swal.fire({
+      title: "翻訳結果",
+      text: data.translatedText,
+      confirmButtonText: "OK",
+    });
+  } catch (error) {
+    Swal.fire({
+      title: "エラー",
+      text: "翻訳に失敗しました",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
   }
 };
 
@@ -271,11 +282,16 @@ export default function Home() {
         e.preventDefault();
         readSentence();
       }
-      // Ctrl + T で翻訳
-      if (e.ctrlKey && e.key === "t") {
-        e.preventDefault(); // ブラウザのデフォルト動作を防ぐ
+      // Ctrl + t で翻訳
+      const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+
+      if (
+        (isMac && e.ctrlKey && e.key === "t") ||
+        (!isMac && e.ctrlKey && e.shiftKey && e.key === "T")
+      ) {
+        e.preventDefault();
         translateSentence();
-        return; // 他のイベントハンドラとの競合を防ぐ
+        return;
       }
     };
 
