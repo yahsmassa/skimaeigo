@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
+import { translateTextGemini, translateTextDeepseek } from "@/lib/serverAction";
 
 import Ex21_1A from "@/components/Ex21_1A";
 import Ex21_1B from "@/components/Ex21_1B";
@@ -170,16 +171,42 @@ const groupedComponents: GroupedComponents = {
 
 const readSentence = () => {
   const selectedText = window.getSelection()?.toString();
-  if (selectedText) {
+  if (!selectedText) return;
+
+  // 音声リストが利用可能になるのを待つ
+  const waitForVoices = () => {
+    return new Promise<void>((resolve) => {
+      const voices = speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        resolve();
+      } else {
+        speechSynthesis.onvoiceschanged = () => {
+          resolve();∂
+        };
+      }
+    });
+  };
+
+  waitForVoices().then(() => {
     const utterance = new SpeechSynthesisUtterance(selectedText);
     utterance.lang = "en-US";
+
+    // Safari用に音声を明示的に選択
     const voices = speechSynthesis.getVoices();
-    const englishVoice = voices.find((voice) => voice.lang === "en-US");
+    const englishVoice = voices.find(
+      (voice) => voice.lang === "en-US" && voice.name.includes("Samantha") // Safariのデフォルト音声
+    );
+
     if (englishVoice) {
       utterance.voice = englishVoice;
     }
+
+    // 速度やピッチを調整（必要に応じて）
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+
     speechSynthesis.speak(utterance);
-  }
+  });
 };
 
 const translateSentence = async () => {
@@ -206,22 +233,17 @@ const translateSentence = async () => {
 
   try {
     const prompt =
-      "あなたは優秀な英語教師です、以下の英文を日本語に翻訳してください  " +
+      "あなたは優秀な英語教師です、以下の英文を日本語に翻訳し、その後、改行して熟語・慣用句が含まれていたら、箇条書きで指摘してください  " +
       selectedText;
-    const response = await fetch("/api/translate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ prompt }),
-    });
-    const data = await response.json();
-
-    // 翻訳結果を表示
+    const result = await translateTextGemini(prompt);
+    // const result = (await translateTextDeepseek(prompt)) || "";
+    const formattedResult = result.replace(/\n/g, "<br/>"); // 改行を<br/>に変換
+    // console.log("formattedResult", formattedResult);
     Swal.fire({
-      title: "翻訳結果",
-      text: data.translatedText,
+      title: "解説",
+      html: formattedResult,
       confirmButtonText: "OK",
+      width: "500px",
     });
   } catch (error) {
     Swal.fire({
