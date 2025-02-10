@@ -287,7 +287,7 @@ export default function Home() {
 
       if (
         (isMac && e.ctrlKey && e.key === "t") ||
-        (!isMac && e.ctrlKey && e.shiftKey && e.key === "T")
+        (!isMac && e.ctrlKey && e.key === "q")
       ) {
         e.preventDefault();
         translateSentence();
