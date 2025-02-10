@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 import Ex21_1A from "@/components/Ex21_1A";
 import Ex21_1B from "@/components/Ex21_1B";
@@ -167,6 +168,60 @@ const groupedComponents: GroupedComponents = {
   ],
 };
 
+const readSentence = () => {
+  const selectedText = window.getSelection()?.toString();
+  if (selectedText) {
+    const utterance = new SpeechSynthesisUtterance(selectedText);
+    utterance.lang = "en-US";
+    const voices = speechSynthesis.getVoices();
+    const englishVoice = voices.find((voice) => voice.lang === "en-US");
+    if (englishVoice) {
+      utterance.voice = englishVoice;
+    }
+    speechSynthesis.speak(utterance);
+  }
+};
+
+const translateSentence = async () => {
+  const selectedText = window.getSelection()?.toString();
+  if (!selectedText) {
+    Swal.fire({
+      title: "エラー",
+      text: "翻訳する英文が選択されていません",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+  if (selectedText) {
+    const prompt =
+      "あなたは優秀な英語教師です、以下のテキストを日本語に翻訳してください  " +
+      selectedText;
+    try {
+      const response = await fetch("/api/translate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
+      });
+      const data = await response.json();
+      Swal.fire({
+        title: "翻訳結果",
+        text: data.translatedText,
+        confirmButtonText: "OK",
+      });
+    } catch (error) {
+      Swal.fire({
+        title: "エラー",
+        text: "翻訳に失敗しました",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    }
+  }
+};
+
 export default function Home() {
   const [selectedYear, setSelectedYear] = useState<Year>("2025");
   const [selectedComponent, setSelectedComponent] = useState("Ex25_1");
@@ -196,6 +251,38 @@ export default function Home() {
           });
       });
     }
+  }, []);
+
+  useEffect(() => {
+    // 音声リストが利用可能になるのを待つ
+    const loadVoices = () => {
+      const voices = speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        // 音声が利用可能
+      }
+    };
+
+    speechSynthesis.onvoiceschanged = loadVoices;
+    loadVoices();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ctrl + R で音声読み上げ
+      if (e.ctrlKey && e.key === "r") {
+        e.preventDefault();
+        readSentence();
+      }
+      // Ctrl + T で翻訳
+      if (e.ctrlKey && e.key === "t") {
+        e.preventDefault(); // ブラウザのデフォルト動作を防ぐ
+        translateSentence();
+        return; // 他のイベントハンドラとの競合を防ぐ
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   return (
