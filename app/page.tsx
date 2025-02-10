@@ -181,7 +181,7 @@ const readSentence = () => {
         resolve();
       } else {
         speechSynthesis.onvoiceschanged = () => {
-          resolve();∂
+          resolve();
         };
       }
     });
