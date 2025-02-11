@@ -94,7 +94,7 @@ export function Saiten({
         <ExTimer />
       </div>
 
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center mt-2 space-x-2">
         <button
           onClick={handleQA}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold h-8 py-1 px-3 rounded text-sm w-[60px] mb-3"
