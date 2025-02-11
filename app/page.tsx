@@ -262,7 +262,19 @@ export default function Home() {
   const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const year = e.target.value as Year;
     setSelectedYear(year);
-    setSelectedComponent(groupedComponents[year][0].id);
+
+    // 現在の問番号を取得（例："Ex25_5" → "5"）
+    const currentProblemNumber = selectedComponent.split("_")[1];
+
+    // 新しい年の問題リストから同じ問番号のものを探す
+    const sameProblem = groupedComponents[year].find(
+      (problem) => problem.id.split("_")[1] === currentProblemNumber
+    );
+
+    // 同じ問番号があればそれを選択、なければ最初の問題を選択
+    setSelectedComponent(
+      sameProblem ? sameProblem.id : groupedComponents[year][0].id
+    );
   };
 
   const handleProblemChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -325,9 +337,9 @@ export default function Home() {
 
   return (
     <div className="mt-7 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
-      <main className="gap-8 row-start-2 items-center sm:items-start">
-        <div className="flex items-center">
-          <h1 className="ml-2 text-xl font-bold ">共通テスト 英語</h1>
+      <div className="sticky top-0 bg-white z-50 py-3 shadow-sm">
+        <div className="flex items-center container mx-auto px-4">
+          <h1 className="ml-2 text-xl font-bold">共通テスト 英語</h1>
           <select
             value={selectedYear}
             onChange={handleYearChange}
@@ -353,7 +365,8 @@ export default function Home() {
             ))}
           </select>
         </div>
-
+      </div>
+      <main className="gap-8 row-start-2 items-center sm:items-start">
         {selected && selected.component}
       </main>
     </div>
