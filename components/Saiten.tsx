@@ -89,8 +89,8 @@ export function Saiten({
   };
 
   return (
-    <div className="flex flex-wrap mt-4">
-      <div className="mb-2 mr-8">
+    <div className="flex flex-wrap">
+      <div className="mb-2 mr-8 mt-2">
         <ExTimer />
       </div>
 
