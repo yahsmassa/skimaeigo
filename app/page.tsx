@@ -337,7 +337,7 @@ export default function Home() {
 
   return (
     <div className="mt-7 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
-      <div className="sticky top-0 bg-white z-50 py-3 shadow-sm">
+      <div className="sticky top-0 bg-white z-50 py-2 shadow-sm">
         <div className="flex items-center container mx-auto px-4">
           <h1 className="ml-2 text-xl font-bold">共通テスト 英語</h1>
           <select
