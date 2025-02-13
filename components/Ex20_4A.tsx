@@ -9,14 +9,14 @@ const Ex20_4A = () => {
       </div>
 
       <div className="mb-6">
-        <div className="mb-4">
-          <span className="mr-2">A</span>
-          次の文章はある説明文の一部である。この文章を読み、下の問い(問1～4)の
-          <div className="flex items-center my-2">
-            <div className="border border-black px-4 py-1 mx-2">33</div>～
-            <div className="border border-black px-4 py-1 mx-2">36</div>
+        <div className="mb-8">
+          <p className="mb-4 gap-1 leading-relaxed">
+            A
+            次の文章はある説明文の一部である。この文章を読み、下の問い(問1～4)の
+            <div className="inline-block px-4 border border-black">33</div>～
+            <div className="inline-block px-4 border border-black">36</div>
             に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
-          </div>
+          </p>
         </div>
 
         <div className="space-y-4 leading-relaxed">

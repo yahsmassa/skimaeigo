@@ -1,231 +1,251 @@
-"use client";
-
+import React from "react";
 import Image from "next/image";
-import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
-import { Answers, QandA } from "@/lib/types";
-import { Explain } from "@/components/Explain";
-
-const Ex21_1B = () => {
-  const [showResults, setShowResults] = useState(false);
-  const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1B-1",
-      qa: [
-        {
-          questionNumber: "3",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解④「届くのに約７日間かかる」 本文に、will arrive a week or soとあるので、そこから判断できる。",
-      ],
-    },
-    {
-      questionId: "1B-2",
-      qa: [
-        {
-          questionNumber: "4",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解④「ビデオメッセージとオンラインマガジンへのアクセス」 表を参照すれば、１行目と２行目に書いてある。それ以外の特典は、SpeerやZoomerに含まれる。",
-      ],
-    },
-    {
-      questionId: "1B-3",
-      qa: [
-        {
-          questionNumber: "5",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解③「半額で会員を更新できる」 ☆の３つ目に、you can either renew or upgrade at a 50% discountとあるので、そこから判断できる。 ",
-        "①「$50でZoomerになれる」・・・半額でアップグレードできるので、$50もかからない。",
-        "②「$4で新規会員特典を得られる」・・・$4なのは配送料",
-        "④「無料で会員をアップグレードできる」・・・アップグレードには半額になるが無料ではない。",
-      ],
-    },
-  ];
-  const [qa, setQA] = useState<QandA[]>(question);
-
+const Ex18_4B = () => {
   return (
-    <div className={exPageFormat}>
-      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
-        </div>
-        <Saiten
-          qa={qa}
-          setQA={setQA}
-          showResults={showResults}
-          setShowResults={setShowResults}
-          answers={answers}
-          setAnswers={setAnswers}
-        />
+    <div className="p-6 max-w-3xl">
+      {/* Section B Header */}
+      <div className="mb-6 flex items-center">
+        <span className="font-bold mr-2">B</span>
+        <p className="text-sm">
+          次のページの料理教室に関する広告を読み、次の問い(問1～4)の
+          <span className="mx-1 border border-black px-2">37</span>～
+          <span className="mx-1 border border-black px-2">40</span>
+          に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つず
+          つ選べ。
+        </p>
       </div>
-      {/* Header section "B" */}
+
+      {/* Question 1 */}
       <div className="mb-6">
-        <p className="text-lg">
-          <span className="font-bold">B</span> Your favorite musician will have
-          a concert tour in Japan, and you are thinking of joining the fan club.
-          You visit the official fan club website.
-        </p>
+        <div className="flex items-center mb-2">
+          <span className="font-bold mr-2 whitespace-nowrap">問 1</span>
+          <span>
+            What inspired Ralph Bearison to start Papa Bear Cooking School?
+          </span>
+          <span className="mx-2 border border-black px-2">37</span>
+        </div>
+        <ol className="list-none pl-4">
+          <li className="mb-1">
+            ① He knew his family and friends were jealous of his cooking skills.
+          </li>
+          <li className="mb-1">
+            ② He knew that fathers were not interested enough in cooking.
+          </li>
+          <li className="mb-1">
+            ③ He wanted to give fathers opportunities to become professional
+            cooks.
+          </li>
+          <li className="mb-1">
+            ④ He wanted to teach fathers to cook quick, delicious, and healthy
+            meals.
+          </li>
+        </ol>
       </div>
 
-      {/* Fan Club Content */}
-      <div className="border border-gray-300 p-6 space-y-4">
-        <h1 className="text-xl font-bold">TYLER QUICK FAN CLUB</h1>
-
-        <p className="mb-4">
-          Being a member of the{" "}
-          <span className="font-bold">TYLER QUICK (TQ)</span> fan club is so
-          much fun! You can keep up with the latest news, and take part in many
-          exciting fan club member events. All new members will receive our New
-          Member&apos;s Pack. It contains a membership card, a free signed
-          poster, and a copy of <span className="font-bold">TQ</span>&apos;s
-          third album <span className="font-bold italic">Speeding Up</span>. The
-          New Member&apos;s Pack will be delivered to your home, and will arrive
-          a week or so after you join the fan club.
-        </p>
-
-        <p className="mb-4">
-          <span className="font-bold">TQ</span> is loved all around the world.
-          You can join from any country, and you can use the membership card for
-          one year. The <span className="font-bold">TQ</span> fan club has three
-          types of membership: Pacer, Speeder, and Zoomer.
-        </p>
-
-        <p className="mb-4">Please choose from the membership options below.</p>
-
-        {/* Membership table as image */}
-        <Image
-          src="/images/Ex21-1B-1.webp"
-          alt="Membership options table showing different tiers: Pacer ($20), Speeder ($40), and Zoomer ($60) with their respective benefits"
-          className="w-full max-w-2xl mx-auto"
-          width={800}
-          height={400}
-          priority
-        />
+      {/* Question 2 */}
+      <div className="mb-6">
+        <div className="mb-2">
+          <span className="font-bold mr-2 whitespace-nowrap">問 2</span>
+          <span>
+            Tony is going to participate in the French Course and use the
+            discount coupon provided. He will also buy an apron-and-towel set
+            from the school. How much will he pay in total?
+          </span>
+          <span className="mx-2 border border-black px-2">38</span>
+        </div>
+        <div className="flex gap-8 pl-4">
+          <span>① $270</span>
+          <span>② $275</span>
+          <span>③ $285</span>
+          <span>④ $300</span>
+        </div>
       </div>
-      {/* Header Box */}
-      <div className="border border-gray-400 p-4 relative">
-        <div className="absolute left-4 top-4">
-          {/* Starburst SVG */}
-          <svg viewBox="0 0 100 100" className="w-24 h-24">
-            <path
-              d="M50 0 L65 35 L100 50 L65 65 L50 100 L35 65 L0 50 L35 35 Z"
-              fill="#e5e7eb"
+
+      {/* Question 3 */}
+      <div className="mb-6">
+        <div className="mb-2">
+          <span className="font-bold mr-2 whitespace-nowrap">問 3</span>
+          <span>
+            Ed hopes to expand the variety of food he can cook for his family.
+            He has no free time on weekends or mornings. Which cooking course
+            would he most likely take?
+          </span>
+          <span className="mx-2 border border-black px-2">39</span>
+        </div>
+        <ol className="list-none pl-4">
+          <li className="mb-1">① Chinese</li>
+          <li className="mb-1">② Italian</li>
+          <li className="mb-1">③ Japanese</li>
+          <li className="mb-1">④ Sunday Family Breakfast</li>
+        </ol>
+      </div>
+
+      {/* Question 4 */}
+      <div className="mb-6">
+        <div className="mb-2">
+          <span className="font-bold mr-2 whitespace-nowrap">問 4</span>
+          <span>The advertisement suggests that</span>
+          <span className="mx-2 border border-black px-2">40</span>
+          <span>.</span>
+        </div>
+        <ol className="list-none pl-4">
+          <li className="mb-1">
+            ① 12-year-old children can participate in the Sunday course at no
+            cost
+          </li>
+          <li className="mb-1">
+            ② Cooking Courses for Fathers will last longer than three months
+          </li>
+          <li className="mb-1">
+            ③ Papa Bear Cooking School requires students to bring ingredients to
+            classes
+          </li>
+          <li className="mb-1">
+            ④ students at Papa Bear Cooking School can eat the food they cook
+          </li>
+        </ol>
+      </div>
+
+      {/* Advertisement Content */}
+      <div className="mt-8 border-t pt-8">
+        <div className="flex justify-between items-center mb-4">
+          <div className="flex-1"></div>
+          <div className="text-center flex-1">
+            <h1 className="text-base font-bold mb-2">
+              Papa Bear Cooking School:
+            </h1>
+            <h2 className="text-base font-bold">Cooking Courses for Fathers</h2>
+          </div>
+          <div className="flex-1 flex justify-end">
+            <Image
+              src="/images/Ex18-4B-1.webp"
+              alt="Frying pan illustration"
+              className="w-[120px]"
+              width={120}
+              height={120}
+              priority
             />
-            <text
-              x="50"
-              y="45"
-              textAnchor="middle"
-              className="text-sm"
-              fill="black"
-            >
-              Check
-            </text>
-            <text
-              x="50"
-              y="60"
-              textAnchor="middle"
-              className="text-sm"
-              fill="black"
-            >
-              it out!
-            </text>
-          </svg>
+          </div>
         </div>
 
-        <div className="ml-28 space-y-2">
-          <p>
-            ✧Join before May 10 and receive a $10 discount on your membership
-            fee!
+        <div className="mb-6">
+          <p className="mb-4">
+            Papa Bear Cooking School was established in 1992 by Ralph Bearison.
+            He recognized that many fathers liked to cook but often didn&apos;t
+            have enough time to prepare meals. He hoped to share his interest in
+            cooking meals in a short time that would taste good and be good for
+            their families. At Papa Bear Cooking School, you can learn to create
+            a variety of meals under the guidance of professional cooks, making
+            you the envy of your family and friends. The following cooking
+            courses start in the first week of May.
           </p>
-          <p>✧There is a $4 delivery fee for every New Member&apos;s Pack.</p>
-          <p>
-            ✧At the end of your 1st year, you can either renew or upgrade at a
-            50% discount.
+
+          <table className="w-full border-collapse border mb-4">
+            <thead>
+              <tr>
+                <th className="border p-2">Cooking Course</th>
+                <th className="border p-2">Day</th>
+                <th className="border p-2">Time</th>
+                <th className="border p-2">Course Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border p-2">Italian</td>
+                <td className="border p-2">Tuesday</td>
+                <td className="border p-2 text-center">10:00 – 12:00</td>
+                <td className="border p-2 text-center">$150</td>
+              </tr>
+              <tr>
+                <td className="border p-2">French</td>
+                <td className="border p-2">Wednesday</td>
+                <td className="border p-2 text-center">9:00 – 12:00</td>
+                <td className="border p-2 text-center">$250</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Japanese</td>
+                <td className="border p-2">Thursday</td>
+                <td className="border p-2 text-center">15:00 – 18:00</td>
+                <td className="border p-2 text-center">$250</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Chinese</td>
+                <td className="border p-2">Saturday</td>
+                <td className="border p-2 text-center">17:00 – 19:00</td>
+                <td className="border p-2 text-center">$200</td>
+              </tr>
+              <tr>
+                <td className="border p-2">Sunday Family Breakfast*</td>
+                <td className="border p-2">Sunday</td>
+                <td className="border p-2 text-center">8:00 – 10:00</td>
+                <td className="border p-2 text-center">$150</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p className="text-sm mb-4">
+            *Children aged 10 to 15 are welcome to join their fathers in the
+            Sunday Family Breakfast Course for $100 per child.
           </p>
         </div>
 
-        <p className="mt-4">
-          Whether you are a Pacer, a Speeder, or a Zoomer, you will love being a
-          member of the TQ fan club. For more information, or to join, click{" "}
-          <span className="underline">here</span>.
-        </p>
-      </div>
-
-      {/* Questions */}
-      <div className="space-y-6 mt-7">
-        {/* Question 1 */}
-        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
-            <span>A New Member&apos;s Pack</span>
-            {renderSelect("3", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-1" />}
+        <div className="flex justify-between items-start mb-6">
+          <div>
+            <ul className="list-none mb-4">
+              <li className="mb-2">➢ All courses are 10 weeks long.</li>
+              <li className="mb-2">➢ Fees include all ingredients.</li>
+              <li className="mb-2">
+                ➢ Cooking knives, silverware, such as forks and spoons, and
+                plates will be provided by the school.
+              </li>
+            </ul>
           </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① includes TQ&apos;s first album</li>
-            <li>② is delivered on May 10</li>
-            <li>③ requires a $10 delivery fee</li>
-            <li>④ takes about seven days to arrive</li>
-          </ol>
+          <Image
+            src="/images/Ex18-4B-2.webp"
+            alt="Plate and utensils illustration"
+            className="w-[110px]"
+            width={110}
+            height={110}
+            priority
+          />
         </div>
 
-        {/* Question 2 */}
-        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-2"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
-            <span>What will you get if you become a new Pacer member?</span>
-            {renderSelect("4", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-2" />}
-          </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① Discount concert tickets and a calendar</li>
-            <li>② Regular emails and signing event invitations</li>
-            <li>③ Tour information and postcards every month</li>
-            <li>④ Video messages and access to online magazines</li>
-          </ol>
+        <div className="mb-6">
+          <h3 className="font-bold mb-2">What to Bring</h3>
+          <ul className="list-none">
+            <li className="mb-2">
+              ➢ An apron and towels (You can rent an apron-and-towel set for $6
+              per week or purchase a new set at our store for $50.)
+            </li>
+            <li className="mb-2">➢ An empty stomach!</li>
+          </ul>
         </div>
 
-        {/* Question 3 */}
-        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-3"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
-            <span>After being a fan club member for one year, you can</span>
-            {renderSelect("5", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-3" />}
-          </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① become a Zoomer for a $50 fee</li>
-            <li>② get a New Member&apos;s Pack for $4</li>
-            <li>③ renew your membership at half price</li>
-            <li>④ upgrade your membership for free</li>
-          </ol>
+        <div className="flex justify-between items-center">
+          <p>
+            Check out our Papa Bear Cooking School website for details of our
+            facilities and other cooking courses.
+          </p>
+          <Image
+            src="/images/Ex18-4B-3.webp"
+            alt="Papa Bear Cooking School discount coupon"
+            className="w-[110px]"
+            width={110}
+            height={110}
+            priority
+          />
+
+          {/* <div className="border-2 border-dashed p-4 text-center">
+            <div className="mb-2">✂</div>
+            <div className="font-bold">10% Off</div>
+            <div className="font-bold">Course Fee</div>
+            <div className="font-bold">Papa Bear</div>
+            <div className="font-bold">Cooking School</div>
+          </div> */}
         </div>
       </div>
     </div>
   );
 };
 
-export default Ex21_1B;
+export default Ex18_4B;

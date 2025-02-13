@@ -1,231 +1,236 @@
-"use client";
-
+import React from "react";
 import Image from "next/image";
-import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
-import { Answers, QandA } from "@/lib/types";
-import { Explain } from "@/components/Explain";
-
-const Ex21_1B = () => {
-  const [showResults, setShowResults] = useState(false);
-  const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1B-1",
-      qa: [
-        {
-          questionNumber: "3",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解④「届くのに約７日間かかる」 本文に、will arrive a week or soとあるので、そこから判断できる。",
-      ],
-    },
-    {
-      questionId: "1B-2",
-      qa: [
-        {
-          questionNumber: "4",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解④「ビデオメッセージとオンラインマガジンへのアクセス」 表を参照すれば、１行目と２行目に書いてある。それ以外の特典は、SpeerやZoomerに含まれる。",
-      ],
-    },
-    {
-      questionId: "1B-3",
-      qa: [
-        {
-          questionNumber: "5",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解③「半額で会員を更新できる」 ☆の３つ目に、you can either renew or upgrade at a 50% discountとあるので、そこから判断できる。 ",
-        "①「$50でZoomerになれる」・・・半額でアップグレードできるので、$50もかからない。",
-        "②「$4で新規会員特典を得られる」・・・$4なのは配送料",
-        "④「無料で会員をアップグレードできる」・・・アップグレードには半額になるが無料ではない。",
-      ],
-    },
-  ];
-  const [qa, setQA] = useState<QandA[]>(question);
-
+const Ex17_4B = () => {
   return (
-    <div className={exPageFormat}>
-      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
-        </div>
-        <Saiten
-          qa={qa}
-          setQA={setQA}
-          showResults={showResults}
-          setShowResults={setShowResults}
-          answers={answers}
-          setAnswers={setAnswers}
-        />
-      </div>
-      {/* Header section "B" */}
-      <div className="mb-6">
-        <p className="text-lg">
-          <span className="font-bold">B</span> Your favorite musician will have
-          a concert tour in Japan, and you are thinking of joining the fan club.
-          You visit the official fan club website.
-        </p>
-      </div>
-
-      {/* Fan Club Content */}
-      <div className="border border-gray-300 p-6 space-y-4">
-        <h1 className="text-xl font-bold">TYLER QUICK FAN CLUB</h1>
-
-        <p className="mb-4">
-          Being a member of the{" "}
-          <span className="font-bold">TYLER QUICK (TQ)</span> fan club is so
-          much fun! You can keep up with the latest news, and take part in many
-          exciting fan club member events. All new members will receive our New
-          Member&apos;s Pack. It contains a membership card, a free signed
-          poster, and a copy of <span className="font-bold">TQ</span>&apos;s
-          third album <span className="font-bold italic">Speeding Up</span>. The
-          New Member&apos;s Pack will be delivered to your home, and will arrive
-          a week or so after you join the fan club.
-        </p>
-
-        <p className="mb-4">
-          <span className="font-bold">TQ</span> is loved all around the world.
-          You can join from any country, and you can use the membership card for
-          one year. The <span className="font-bold">TQ</span> fan club has three
-          types of membership: Pacer, Speeder, and Zoomer.
-        </p>
-
-        <p className="mb-4">Please choose from the membership options below.</p>
-
-        {/* Membership table as image */}
-        <Image
-          src="/images/Ex21-1B-1.webp"
-          alt="Membership options table showing different tiers: Pacer ($20), Speeder ($40), and Zoomer ($60) with their respective benefits"
-          className="w-full max-w-2xl mx-auto"
-          width={800}
-          height={400}
-          priority
-        />
-      </div>
-      {/* Header Box */}
-      <div className="border border-gray-400 p-4 relative">
-        <div className="absolute left-4 top-4">
-          {/* Starburst SVG */}
-          <svg viewBox="0 0 100 100" className="w-24 h-24">
-            <path
-              d="M50 0 L65 35 L100 50 L65 65 L50 100 L35 65 L0 50 L35 35 Z"
-              fill="#e5e7eb"
-            />
-            <text
-              x="50"
-              y="45"
-              textAnchor="middle"
-              className="text-sm"
-              fill="black"
-            >
-              Check
-            </text>
-            <text
-              x="50"
-              y="60"
-              textAnchor="middle"
-              className="text-sm"
-              fill="black"
-            >
-              it out!
-            </text>
-          </svg>
-        </div>
-
-        <div className="ml-28 space-y-2">
-          <p>
-            ✧Join before May 10 and receive a $10 discount on your membership
-            fee!
-          </p>
-          <p>✧There is a $4 delivery fee for every New Member&apos;s Pack.</p>
-          <p>
-            ✧At the end of your 1st year, you can either renew or upgrade at a
-            50% discount.
+    <div className="p-8 ">
+      {/* Part 1: Exam Questions */}
+      <div className="mb-12">
+        <div className="mb-8">
+          <p className="mb-4">
+            <span className="font-bold">B</span>{" "}
+            次のページのビデオ制作コンテストに関するウェブサイトを読み、次の問い
+            (問1～3)の <span className="border border-black px-2 mx-1">39</span>{" "}
+            ～ <span className="border border-black px-2 mx-1">41</span>{" "}
+            に入れるのに最も適当なものを、それぞれ下の
+            ①～④のうちから一つずつ選べ。
           </p>
         </div>
 
-        <p className="mt-4">
-          Whether you are a Pacer, a Speeder, or a Zoomer, you will love being a
-          member of the TQ fan club. For more information, or to join, click{" "}
-          <span className="underline">here</span>.
-        </p>
+        <div className="space-y-8">
+          <div>
+            <p className="mb-4">
+              <span className="font-bold">問 1</span> The purpose of the IAYP
+              Video Clip Competition is to provide{" "}
+              <span className="border border-black px-2">39</span>.
+            </p>
+            <div className="pl-8 space-y-2">
+              <p>① a place to meet new friends of the same age</p>
+              <p>② an airplane ticket to Australia to create a video clip</p>
+              <p>③ instructions to create a video clip on a computer</p>
+              <p>④ opportunities for young people to exhibit their works</p>
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-4">
+              <span className="font-bold">問 2</span> Members of a high school
+              baseball team will submit a four-minute video clip about their
+              bonds with players from a sister school abroad. Under which
+              category should the video clip be entered?{" "}
+              <span className="border border-black px-2">40</span>
+            </p>
+            <div className="pl-8 space-y-2">
+              <p>① Category A</p>
+              <p>② Category B</p>
+              <p>③ Category C</p>
+              <p>④ Category D</p>
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-4">
+              <span className="font-bold">問 3</span> Which of the following
+              meets the submission requirements for this competition?{" "}
+              <span className="border border-black px-2">41</span>
+            </p>
+            <div className="pl-8 space-y-2">
+              <p>
+                ① A nine-minute mystery drama featuring a young Japanese
+                detective
+              </p>
+              <p>
+                ② A six-minute video clip showing students practicing for a
+                rugby game
+              </p>
+              <p>
+                ③ A three-minute video clip that won third prize at a local film
+                festival
+              </p>
+              <p>
+                ④ A three-minute video clip uploaded to this website on October
+                30, 2017
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Questions */}
-      <div className="space-y-6 mt-7">
-        {/* Question 1 */}
-        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
-            <span>A New Member&apos;s Pack</span>
-            {renderSelect("3", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-1" />}
-          </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① includes TQ&apos;s first album</li>
-            <li>② is delivered on May 10</li>
-            <li>③ requires a $10 delivery fee</li>
-            <li>④ takes about seven days to arrive</li>
-          </ol>
+      {/* Part 2: Website Content */}
+      <div className="max-w-4xl mx-auto">
+        {/* Header Image */}
+        <div className="mb-4 flex justify-center">
+          <Image
+            src="/images/Ex17-4B-1.webp"
+            alt="Video Clip Competition: Call for Entries"
+            className="w-[70%]"
+            width={780}
+            height={176}
+            priority
+          />
         </div>
 
-        {/* Question 2 */}
-        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-2"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
-            <span>What will you get if you become a new Pacer member?</span>
-            {renderSelect("4", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-2" />}
-          </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① Discount concert tickets and a calendar</li>
-            <li>② Regular emails and signing event invitations</li>
-            <li>③ Tour information and postcards every month</li>
-            <li>④ Video messages and access to online magazines</li>
-          </ol>
+        {/* Introduction */}
+        <div className="mb-8 space-y-4">
+          <p>
+            The International Association of Young Producers (IAYP) is proud to
+            open its annual Video Clip Competition again this year. This is a
+            great way to share your creations with a wide audience. Anyone aged
+            25 and under can participate. The IAYP invites submissions in the
+            following four categories:
+          </p>
         </div>
 
-        {/* Question 3 */}
-        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-3"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
-            <span>After being a fan club member for one year, you can</span>
-            {renderSelect("5", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-3" />}
+        {/* Categories Table */}
+        <div className="mb-8 overflow-x-auto">
+          <table className="w-full border-collapse border border-black">
+            <thead>
+              <tr>
+                <th className="border border-black p-2 text-left"></th>
+                <th className="border border-black p-2 text-center">Theme</th>
+                <th className="border border-black p-2 text-center">
+                  Maximum length
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-black p-2">Category A</td>
+                <td className="border border-black p-2">
+                  A topic related to a team sport
+                </td>
+                <td className="border border-black p-2 text-center">
+                  3 minutes
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-black p-2">Category B</td>
+                <td className="border border-black p-2">
+                  An idea connected to friendship
+                </td>
+                <td className="border border-black p-2 text-center">
+                  5 minutes
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-black p-2">Category C</td>
+                <td className="border border-black p-2">
+                  A social problem based on a true story
+                </td>
+                <td className="border border-black p-2 text-center">
+                  5 minutes
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-black p-2">Category D</td>
+                <td className="border border-black p-2">
+                  A mystery with a dramatic ending
+                </td>
+                <td className="border border-black p-2 text-center">
+                  7 minutes
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Deadline and Prize Info */}
+        <div className="mb-8 space-y-4">
+          <p>
+            The deadline is{" "}
+            <u>11:59 pm, October 31, 2017 (Japan Standard Time)</u>. The three
+            best clips in each category will be selected by a committee of
+            famous video creators and posted on this website in December. One
+            overall grand champion will be awarded a ticket to the next IAYP
+            Conference in Sydney, Australia. So, don&apos;t miss this chance!
+            Get out your video camera and start filming!
+          </p>
+        </div>
+
+        {/* Steps */}
+        <div className="mb-8">
+          <h2 className="font-bold mb-4">Follow these steps:</h2>
+          <ul className="list-none space-y-2">
+            <li className="flex items-start">
+              <span className="mr-2">▶</span>
+              <span>
+                Shoot a video and edit it on a computer to an appropriate length
+                for the category you choose.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="mr-2">▶</span>
+              <span>
+                Click <span className="border border-black px-1">here</span> to
+                enter your details and upload your video clip.
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Rules */}
+        <div className="mb-8">
+          <div className="md:relative">
+            <div className="md:pr-[260px]">
+              <h2 className="font-bold mb-4">Rules and conditions:</h2>
+              <ul className="list-none space-y-2">
+                <li className="flex items-start">
+                  <span className="mr-2">▶</span>
+                  <span>
+                    Each person or group can choose only one category.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">▶</span>
+                  <span>
+                    Only clips sent before the deadline will be accepted.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">▶</span>
+                  <span>
+                    Clips must be original and submitted to a competition for
+                    the first time.
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Woman with Camera Image */}
+            <div className="mt-4 md:mt-0 md:absolute md:top-0 md:right-0">
+              <Image
+                src="/images/Ex17-4B-2.webp"
+                alt="Woman with video camera"
+                className="w-[100px] md:w-full"
+                width={240}
+                height={283}
+                priority
+              />
+            </div>
           </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① become a Zoomer for a $50 fee</li>
-            <li>② get a New Member&apos;s Pack for $4</li>
-            <li>③ renew your membership at half price</li>
-            <li>④ upgrade your membership for free</li>
-          </ol>
         </div>
       </div>
     </div>
   );
 };
 
-export default Ex21_1B;
+export default Ex17_4B;

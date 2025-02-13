@@ -1,231 +1,236 @@
-"use client";
+import React from "react";
 
-import Image from "next/image";
-import React, { useState } from "react";
-import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
-import { Answers, QandA } from "@/lib/types";
-import { Explain } from "@/components/Explain";
-
-const Ex21_1B = () => {
-  const [showResults, setShowResults] = useState(false);
-  const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1B-1",
-      qa: [
-        {
-          questionNumber: "3",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解④「届くのに約７日間かかる」 本文に、will arrive a week or soとあるので、そこから判断できる。",
-      ],
-    },
-    {
-      questionId: "1B-2",
-      qa: [
-        {
-          questionNumber: "4",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解④「ビデオメッセージとオンラインマガジンへのアクセス」 表を参照すれば、１行目と２行目に書いてある。それ以外の特典は、SpeerやZoomerに含まれる。",
-      ],
-    },
-    {
-      questionId: "1B-3",
-      qa: [
-        {
-          questionNumber: "5",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解③「半額で会員を更新できる」 ☆の３つ目に、you can either renew or upgrade at a 50% discountとあるので、そこから判断できる。 ",
-        "①「$50でZoomerになれる」・・・半額でアップグレードできるので、$50もかからない。",
-        "②「$4で新規会員特典を得られる」・・・$4なのは配送料",
-        "④「無料で会員をアップグレードできる」・・・アップグレードには半額になるが無料ではない。",
-      ],
-    },
-  ];
-  const [qa, setQA] = useState<QandA[]>(question);
-
+const Ex19_4B = () => {
   return (
-    <div className={exPageFormat}>
-      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
-        </div>
-        <Saiten
-          qa={qa}
-          setQA={setQA}
-          showResults={showResults}
-          setShowResults={setShowResults}
-          answers={answers}
-          setAnswers={setAnswers}
-        />
-      </div>
-      {/* Header section "B" */}
-      <div className="mb-6">
-        <p className="text-lg">
-          <span className="font-bold">B</span> Your favorite musician will have
-          a concert tour in Japan, and you are thinking of joining the fan club.
-          You visit the official fan club website.
-        </p>
-      </div>
-
-      {/* Fan Club Content */}
-      <div className="border border-gray-300 p-6 space-y-4">
-        <h1 className="text-xl font-bold">TYLER QUICK FAN CLUB</h1>
-
-        <p className="mb-4">
-          Being a member of the{" "}
-          <span className="font-bold">TYLER QUICK (TQ)</span> fan club is so
-          much fun! You can keep up with the latest news, and take part in many
-          exciting fan club member events. All new members will receive our New
-          Member&apos;s Pack. It contains a membership card, a free signed
-          poster, and a copy of <span className="font-bold">TQ</span>&apos;s
-          third album <span className="font-bold italic">Speeding Up</span>. The
-          New Member&apos;s Pack will be delivered to your home, and will arrive
-          a week or so after you join the fan club.
-        </p>
-
-        <p className="mb-4">
-          <span className="font-bold">TQ</span> is loved all around the world.
-          You can join from any country, and you can use the membership card for
-          one year. The <span className="font-bold">TQ</span> fan club has three
-          types of membership: Pacer, Speeder, and Zoomer.
-        </p>
-
-        <p className="mb-4">Please choose from the membership options below.</p>
-
-        {/* Membership table as image */}
-        <Image
-          src="/images/Ex21-1B-1.webp"
-          alt="Membership options table showing different tiers: Pacer ($20), Speeder ($40), and Zoomer ($60) with their respective benefits"
-          className="w-full max-w-2xl mx-auto"
-          width={800}
-          height={400}
-          priority
-        />
-      </div>
-      {/* Header Box */}
-      <div className="border border-gray-400 p-4 relative">
-        <div className="absolute left-4 top-4">
-          {/* Starburst SVG */}
-          <svg viewBox="0 0 100 100" className="w-24 h-24">
-            <path
-              d="M50 0 L65 35 L100 50 L65 65 L50 100 L35 65 L0 50 L35 35 Z"
-              fill="#e5e7eb"
-            />
-            <text
-              x="50"
-              y="45"
-              textAnchor="middle"
-              className="text-sm"
-              fill="black"
-            >
-              Check
-            </text>
-            <text
-              x="50"
-              y="60"
-              textAnchor="middle"
-              className="text-sm"
-              fill="black"
-            >
-              it out!
-            </text>
-          </svg>
-        </div>
-
-        <div className="ml-28 space-y-2">
-          <p>
-            ✧Join before May 10 and receive a $10 discount on your membership
-            fee!
-          </p>
-          <p>✧There is a $4 delivery fee for every New Member&apos;s Pack.</p>
-          <p>
-            ✧At the end of your 1st year, you can either renew or upgrade at a
-            50% discount.
+    <div className="p-8  text-black">
+      <div className="mb-24">
+        {/* Quiz Questions */}
+        <div className="mb-6">
+          <p className="mb-4">
+            <span className="font-bold mr-2">B</span>
+            次のページの、ある地域の城に関する案内を読み、次の問い(問1～4)の
+            <span className="mx-2 border border-black px-2">37</span>～
+            <span className="border border-black px-2">40</span>
+            に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
           </p>
         </div>
 
-        <p className="mt-4">
-          Whether you are a Pacer, a Speeder, or a Zoomer, you will love being a
-          member of the TQ fan club. For more information, or to join, click{" "}
-          <span className="underline">here</span>.
-        </p>
+        {/* Version 1 */}
+        <div className="mb-6">
+          <p className="mb-2">
+            <span className="font-bold mr-2">問1</span>
+            What is a common characteristic of all four castles?
+            <span className="ml-2 border border-black px-2">37</span>
+          </p>
+          <ol className="list-none pl-8">
+            <li>① Amount of damage</li>
+            <li>② Displays of pictures and weapons</li>
+            <li>③ Histories of more than 500 years</li>
+            <li>④ Purposes of construction</li>
+          </ol>
+        </div>
+
+        {/* Version 2 */}
+        <div className="mb-6">
+          <p className="mb-2">
+            <span className="font-bold mr-2">問2</span>
+            Three guitar club members from Grandlefolk University want to give a
+          </p>
+          <p className="ml-8 mb-2">
+            concert one afternoon in April. Which castle are they most likely to
+            choose?
+            <span className="ml-2 border border-black px-2">38</span>
+          </p>
+          <ol className="list-none pl-8">
+            <li>① Crestvale Castle</li>
+            <li>② Holmsted Castle</li>
+            <li>③ King&apos;s Castle</li>
+            <li>④ Rosebush Castle</li>
+          </ol>
+        </div>
+
+        {/* Version 3 */}
+        <div className="mb-6">
+          <p className="mb-2">
+            <span className="font-bold mr-2">問3</span>
+            Teachers at one school want to take their students to Grandlefolk
+            one
+          </p>
+          <p className="ml-8 mb-2">
+            Saturday in May. The purpose is to expand the students&apos;
+            knowledge of the
+          </p>
+          <p className="ml-8 mb-2">
+            area&apos;s history by visiting castles and listening to
+            explanations from the castle
+          </p>
+          <p className="ml-8 mb-2">
+            staff. Which two castles are the teachers most likely to select?
+            <span className="ml-2 border border-black px-2">39</span>
+          </p>
+          <ol className="list-none pl-8">
+            <li>① Crestvale Castle and Holmsted Castle</li>
+            <li>② Crestvale Castle and King&apos;s Castle</li>
+            <li>③ Rosebush Castle and Holmsted Castle</li>
+            <li>④ Rosebush Castle and King&apos;s Castle</li>
+          </ol>
+        </div>
+
+        {/* Version 4 */}
+        <div className="mb-6">
+          <p className="mb-2">
+            <span className="font-bold mr-2">問4</span>A mother, father, and
+            their two children, ages 4 and 8, will visit one of the
+          </p>
+          <p className="ml-8 mb-2">
+            castles in Grandlefolk for one day in September and want to see fine
+            arts.
+          </p>
+          <p className="ml-8 mb-2">
+            How much will it cost?
+            <span className="ml-2 border border-black px-2">40</span>
+          </p>
+          <ol className="list-none pl-8">
+            <li>① €14</li>
+            <li>② €17</li>
+            <li>③ €20</li>
+            <li>④ €25</li>
+          </ol>
+        </div>
       </div>
 
-      {/* Questions */}
-      <div className="space-y-6 mt-7">
-        {/* Question 1 */}
-        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
-            <span>A New Member&apos;s Pack</span>
-            {renderSelect("3", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-1" />}
-          </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① includes TQ&apos;s first album</li>
-            <li>② is delivered on May 10</li>
-            <li>③ requires a $10 delivery fee</li>
-            <li>④ takes about seven days to arrive</li>
-          </ol>
+      {/* Castle Information Section */}
+      <div>
+        <h2 className="text-center text-xl mb-8">Castles in Grandlefolk</h2>
+
+        {/* Crestvale Castle */}
+        <div className="mb-8">
+          <h3 className="font-bold mb-2 border-b border-black inline-block">
+            Crestvale Castle
+          </h3>
+          <p className="mb-4">
+            This ruined 13th-century castle, built to defend the northern border
+            of Grandlefolk, is currently being studied by researchers. During
+            the open season, except on Sundays, guides explain what the research
+            is revealing about local history.
+          </p>
         </div>
 
-        {/* Question 2 */}
-        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-2"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
-            <span>What will you get if you become a new Pacer member?</span>
-            {renderSelect("4", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-2" />}
-          </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① Discount concert tickets and a calendar</li>
-            <li>② Regular emails and signing event invitations</li>
-            <li>③ Tour information and postcards every month</li>
-            <li>④ Video messages and access to online magazines</li>
-          </ol>
+        {/* Holmsted Castle */}
+        <div className="mb-8">
+          <h3 className="font-bold mb-2 border-b border-black inline-block">
+            Holmsted Castle
+          </h3>
+          <p className="mb-4">
+            Holmsted Castle, built in the 12th century to protect the southern
+            border area, fell into ruin in the 16th century. At the entrance,
+            signboards explain its history. This castle&apos;s open spaces are
+            suitable for performances.
+          </p>
         </div>
 
-        {/* Question 3 */}
-        <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-3"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
-            <span>After being a fan club member for one year, you can</span>
-            {renderSelect("5", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-3" />}
-          </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① become a Zoomer for a $50 fee</li>
-            <li>② get a New Member&apos;s Pack for $4</li>
-            <li>③ renew your membership at half price</li>
-            <li>④ upgrade your membership for free</li>
-          </ol>
+        {/* King's Castle */}
+        <div className="mb-8">
+          <h3 className="font-bold mb-2 border-b border-black inline-block">
+            King&apos;s Castle
+          </h3>
+          <p className="mb-4">
+            Dating back to the 11th century, King&apos;s Castle is one of the
+            grandest in the country. Its large collection of paintings and
+            furniture provide a look at the area&apos;s past. Guides are
+            available every day.
+          </p>
         </div>
+
+        {/* Rosebush Castle */}
+        <div className="mb-8">
+          <h3 className="font-bold mb-2 border-b border-black inline-block">
+            Rosebush Castle
+          </h3>
+          <p className="mb-4">
+            Though called a castle, this perfectly preserved 15th-century
+            building was constructed purely as a family home. From Mondays to
+            Fridays, guides tell the story of the family&apos;s history and
+            explain their collection of modern sculptures. Some of its rooms are
+            available for public events.
+          </p>
+        </div>
+
+        {/* Admission Table */}
+        <table className="w-full border-collapse border border-gray-800 mt-8">
+          <thead>
+            <tr>
+              <th className="border border-gray-800 p-2"></th>
+              <th
+                className="border border-gray-800 p-2 text-center"
+                colSpan={2}
+              >
+                Opening Times
+              </th>
+              <th
+                className="border border-gray-800 p-2 text-center"
+                colSpan={2}
+              >
+                Daily Admission
+              </th>
+            </tr>
+            <tr>
+              <th className="border border-gray-800 p-2"></th>
+              <th className="border border-gray-800 p-2">Months</th>
+              <th className="border border-gray-800 p-2">Hours</th>
+              <th className="border border-gray-800 p-2">Adults</th>
+              <th className="border border-gray-800 p-2">
+                Children
+                <br />
+                (5-16 years old)*
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border border-gray-800 p-2">Crestvale Castle</td>
+              <td className="border border-gray-800 p-2">April - October</td>
+              <td className="border border-gray-800 p-2 text-center">
+                10:00 - 16:00
+              </td>
+              <td className="border border-gray-800 p-2 text-center">€3</td>
+              <td className="border border-gray-800 p-2 text-center">€1</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-800 p-2">Holmsted Castle</td>
+              <td className="border border-gray-800 p-2">April - September</td>
+              <td className="border border-gray-800 p-2 text-center">
+                10:00 - 17:00
+              </td>
+              <td className="border border-gray-800 p-2 text-center">€5</td>
+              <td className="border border-gray-800 p-2 text-center">€2</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-800 p-2">King&apos;s Castle</td>
+              <td className="border border-gray-800 p-2">April - November</td>
+              <td className="border border-gray-800 p-2 text-center">
+                10:00 - 18:00
+              </td>
+              <td className="border border-gray-800 p-2 text-center">€7</td>
+              <td className="border border-gray-800 p-2 text-center">€3</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-800 p-2">Rosebush Castle</td>
+              <td className="border border-gray-800 p-2">April - July</td>
+              <td className="border border-gray-800 p-2 text-center">
+                9:00 - 12:00
+              </td>
+              <td className="border border-gray-800 p-2 text-center">€10</td>
+              <td className="border border-gray-800 p-2 text-center">€5</td>
+            </tr>
+          </tbody>
+        </table>
+        <p className="mt-2 text-sm">
+          *Children under 5 years old are admitted free of charge.
+        </p>
       </div>
     </div>
   );
 };
 
-export default Ex21_1B;
+export default Ex19_4B;
