@@ -1,10 +1,109 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import { Paperclip } from "lucide-react";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex16_5 = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "5-1",
+      qa: [
+        {
+          questionNumber: "42",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-2",
+      qa: [
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-3",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-4",
+      qa: [
+        {
+          questionNumber: "45",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      isOrderFree: true,
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-5",
+      qa: [
+        {
+          questionNumber: "46",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-4xl mx-auto p-6 ">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第５問"}</h1>
+          <span className="text-gray-600">(配点 {30})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
+      {/* Question Header */}
       <div className="mb-6">
-        <p className="text-lg">
+        <p>
           次の物語を読み、下の問い(問1～5)の
           <span className="inline-block mx-2 border border-black px-4">42</span>
           ～
@@ -105,13 +204,16 @@ const Ex16_5 = () => {
           all the difference in my life.&quot;
         </p>
       </div>
+      <div className="mt-12 space-y-8">
+        {/* Question 1 */}
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span>At the beginning of the story, Uncle John was</span>
+            {renderSelect("42", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-1" />}
+          </div>
 
-      <div className="mt-8 space-y-8">
-        <div>
-          <p className="flex items-center gap-2">
-            問 1 At the beginning of the story, Uncle John was{" "}
-            <span className="inline-block border border-black px-3">42</span>.
-          </p>
           <div className="ml-8 mt-4 space-y-2">
             <p>
               ① cooking for{" "}
@@ -123,11 +225,17 @@ const Ex16_5 = () => {
           </div>
         </div>
 
-        <div>
-          <p className="flex items-center gap-2">
-            問 2 Uncle John&apos;s father began working in the city because{" "}
-            <span className="inline-block border border-black px-3">43</span>.
-          </p>
+        {/* Question 2 */}
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span>
+              Uncle John&apos;s father began working in the city because
+            </span>
+            {renderSelect("43", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-2" />}
+          </div>
+
           <div className="ml-8 mt-4 space-y-2">
             <p>① he was tired of living in the countryside</p>
             <p>② it was easier to spend time with his family</p>
@@ -136,12 +244,17 @@ const Ex16_5 = () => {
           </div>
         </div>
 
-        <div>
-          <p className="flex items-center gap-2">
-            問 3 Why were Uncle John&apos;s parents and teachers worried about
-            his future?
-            <span className="inline-block border border-black px-3">44</span>
-          </p>
+        {/* Question 3 */}
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span>
+              Why were Uncle John&apos;s parents and teachers worried about his
+              future?
+            </span>
+            {renderSelect("44", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-3" />}
+          </div>
           <div className="ml-8 mt-4 space-y-2">
             <p>① He just wanted to rest at home.</p>
             <p>② He lost interest in studying.</p>
@@ -150,11 +263,13 @@ const Ex16_5 = () => {
           </div>
         </div>
 
-        <div>
-          <p className="flex items-center gap-2">
-            問 4 What helped to change Uncle John&apos;s life the most?{" "}
-            <span className="inline-block border border-black px-3">45</span>
-          </p>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span>What helped to change Uncle John&apos;s life the most?</span>
+            {renderSelect("45", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-4" />}
+          </div>
           <div className="ml-8 mt-4 space-y-2">
             <p>① Eating an award-winning dinner with his friends</p>
             <p>
@@ -166,11 +281,13 @@ const Ex16_5 = () => {
           </div>
         </div>
 
-        <div>
-          <p className="flex items-center gap-2">
-            問 5 What does Uncle John find most rewarding?{" "}
-            <span className="inline-block border border-black px-3">46</span>
-          </p>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-5"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span>What does Uncle John find most rewarding?</span>
+            {renderSelect("46", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-5" />}
+          </div>
           <div className="ml-8 mt-4 space-y-2">
             <p>① Developing unique four-course dinners for famous people</p>
             <p>② Having meaningful relationships with people close to him</p>

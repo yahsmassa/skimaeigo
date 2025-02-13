@@ -1,28 +1,125 @@
-import React from "react";
-import { exPageFormat } from "@/lib/util";
+"use client";
+import Image from "next/image";
+import { Paperclip } from "lucide-react";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+
 const Ex20_5 = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "5-1",
+      qa: [
+        {
+          questionNumber: "41",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-2",
+      qa: [
+        {
+          questionNumber: "42",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-3",
+      qa: [
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-4",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      isOrderFree: true,
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-5",
+      qa: [
+        {
+          questionNumber: "45",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-3xl mx-auto p-8">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第５問"}</h1>
+          <span className="text-gray-600">(配点 {30})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Question Header */}
-      <div className="flex items-center gap-2 mb-1">
-        <h2 className="text-lg ">第5問</h2>
+      <div className="flex items-center gap-2 mb-5">
         <div className="flex items-center flex-wrap gap-1 ">
           次の文章を読み、下の問い(問1～5)の
-          <div className="inline-flex border border-black px-4 py-1 mx-1">
+          <div className="inline-flex border border-black w-11 justify-center  py-1 mx-1">
             41
           </div>
           ～
-          <div className="inline-flex border border-black px-4 py-1 mx-1">
+          <div className="inline-flex border border-black w-11 justify-center  py-1 mx-1">
             45
           </div>
           に入れるのに
+          <span>
+            最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
+          </span>
         </div>
       </div>
 
       {/* Instructions */}
-      <div className="mb-8 ml-8 ">
-        最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。(配点 30)
-      </div>
 
       {/* Reading Passage */}
       <div
@@ -130,35 +227,35 @@ const Ex20_5 = () => {
       {/* Questions Section */}
       <div className="mt-12 space-y-8 ">
         {/* Question 1 */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span>問 1</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>The author kept returning to the mountain because</span>
-            <div className="inline-flex border border-black px-4 py-1">41</div>
-            <span>.</span>
+            {renderSelect("41", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-1" />}
           </div>
 
           <div className="ml-8 space-y-2">
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ①
               </span>
               <span>she felt an urge she couldn't explain</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ②
               </span>
               <span>she planned to meet the elderly man</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ③
               </span>
               <span>she thought she could practice magic</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ④
               </span>
               <span>she wanted to find out about the bear</span>
@@ -167,41 +264,38 @@ const Ex20_5 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className="space-y-4">
-          <div className="flex items-start gap-2">
-            <span>問 2</span>
-            <div>
-              <div>
-                Which of the following happened first on the author's most
-                recent trip?
-              </div>
-              <div className="inline-flex border border-black px-4 py-1 mt-2">
-                42
-              </div>
-            </div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span>
+              Which of the following happened first on the author's most recent
+              trip?
+            </span>
+            {renderSelect("42", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-2" />}
           </div>
 
           <div className="ml-8 space-y-2">
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ①
               </span>
               <span>She arrived at a large open area.</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ②
               </span>
               <span>She climbed to the mountaintop.</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ③
               </span>
               <span>She saw a bear running away.</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ④
               </span>
               <span>She was assisted by an old man.</span>
@@ -210,37 +304,38 @@ const Ex20_5 = () => {
         </div>
 
         {/* Question 3 */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span>問 3</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               What similarity between the author's dog and the old man was
               talked about?
             </span>
-            <div className="inline-flex border border-black px-4 py-1">43</div>
+            {renderSelect("43", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-3" />}
           </div>
 
           <div className="ml-8 space-y-2">
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ①
               </span>
               <span>They experienced workplace injuries.</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ②
               </span>
               <span>They recently lost close family friends.</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ③
               </span>
               <span>They were acquaintances of the author.</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ④
               </span>
               <span>They worked to help protect the public.</span>
@@ -249,41 +344,40 @@ const Ex20_5 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span>問 4</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 4</span>
             <span>
               Which of the following is closest to the meaning of the underlined
               phrase
             </span>
-          </div>
-          <div className="flex items-center gap-2 ml-8">
             <span className="border-b border-black">rang in the air</span>
             <span>as used in the text?</span>
-            <div className="inline-flex border border-black px-4 py-1">44</div>
+            {renderSelect("44", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-4" />}
           </div>
 
           <div className="ml-8 space-y-2">
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ①
               </span>
               <span>brought happiness</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ②
               </span>
               <span>left an impression</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ③
               </span>
               <span>made a loud noise</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ④
               </span>
               <span>seemed offensive</span>
@@ -292,44 +386,40 @@ const Ex20_5 = () => {
         </div>
 
         {/* Question 5 */}
-        <div className="space-y-4 mt-8">
-          <div className="flex items-start gap-2">
-            <span>問 5</span>
-            <div>
-              <div>
-                How did the author's feelings change over the course of the last
-                hiking
-              </div>
-              <div className="flex items-center gap-2">
-                <span>experience?</span>
-                <div className="inline-flex border border-black px-4 py-1">
-                  45
-                </div>
-              </div>
-            </div>
+        <div
+          className={cn("space-y-4 mt-8", showResults && qaFormat(qa, "5-5"))}
+        >
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span>
+              How did the author's feelings change over the course of the last
+              hiking experience?
+            </span>
+            {renderSelect("45", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-5" />}
           </div>
 
           <div className="ml-8 space-y-2">
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ①
               </span>
               <span>She was depressed and then became sadder.</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ②
               </span>
               <span>She was determined and then became comforted.</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ③
               </span>
               <span>She was hopeful but then became homesick.</span>
             </div>
             <div className="flex gap-4">
-              <span className="inline-flex items-center justify-center w-6 h-6 border border-black rounded-full">
+              <span className="inline-flex items-center justify-center w-6 h-6">
                 ④
               </span>
               <span>She was miserable but then became entertained.</span>

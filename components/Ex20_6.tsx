@@ -1,13 +1,138 @@
-import React from "react";
+"use client";
+
+import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex20_6 = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "6-1",
+      qa: [
+        {
+          questionNumber: "46",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-2",
+      qa: [
+        {
+          questionNumber: "47",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-3",
+      qa: [
+        {
+          questionNumber: "48",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-4",
+      qa: [
+        {
+          questionNumber: "49",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-5",
+      qa: [
+        {
+          questionNumber: "50",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-6",
+      qa: [
+        {
+          questionNumber: "51",
+          answer: 0,
+        },
+        {
+          questionNumber: "52",
+          answer: 0,
+        },
+        {
+          questionNumber: "53",
+          answer: 0,
+        },
+        {
+          questionNumber: "54",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2431",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-4xl mx-auto p-8">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第６問"}</h1>
+          <span className="text-gray-600">(配点 {36})</span>
+        </div>
+
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
+
       {/* Question Header */}
       <div className="mb-6">
         <p className="text-lg mb-4">
-          次の文章を読み、下の問い(A・B)に答えよ。なお、文章の左にある(1)～(6)はパラグラフ(段落)の番号を表している。(配点
-          36)
+          次の文章を読み、下の問い(A・B)に答えよ。なお、文章の左にある(1)～(6)はパラグラフ(段落)の番号を表している。
         </p>
       </div>
 
@@ -123,14 +248,15 @@ const Ex20_6 = () => {
         </div>
 
         {/* Question 1 */}
-        <div className="space-y-4">
-          <div className="flex items-center">
-            <span className="font-bold mr-4">問1</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="font-bold mr-4 whitespace-nowrap">問1</span>
             <span>
               According to paragraph (2), what was the first vending machine
               capable of doing?
             </span>
-            <span className="mx-2 border border-black px-4 py-1">46</span>
+            {renderSelect("46", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-1" />}
           </div>
           <div className="pl-8 space-y-2">
             <p>① Allowing people to acquire a fixed amount of liquid from it</p>
@@ -143,14 +269,15 @@ const Ex20_6 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className="space-y-4">
-          <div className="flex items-center">
-            <span className="font-bold mr-4">問2</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="font-bold mr-4 whitespace-nowrap">問2</span>
             <span>
               According to paragraph (3), which of the following statements
               about vending machines is true?
             </span>
-            <span className="mx-2 border border-black px-4 py-1">47</span>
+            {renderSelect("47", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-2" />}
           </div>
           <div className="pl-8 space-y-2">
             <p>
@@ -171,16 +298,17 @@ const Ex20_6 = () => {
         </div>
 
         {/* Question 3 */}
-        <div className="space-y-4">
-          <div className="flex items-center">
-            <span className="font-bold mr-4">問3</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="font-bold mr-4 whitespace-nowrap">問3</span>
             <span>
               Which of the following is closest to the meaning of the underlined
               word{" "}
             </span>
             <span className="underline">counterfeit</span>
             <span> in paragraph (4)?</span>
-            <span className="mx-2 border border-black px-4 py-1">48</span>
+            {renderSelect("48", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-3" />}
           </div>
           <div className="pl-8 space-y-2">
             <p>① accept illegal exchanges</p>
@@ -191,16 +319,15 @@ const Ex20_6 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className="space-y-4">
-          <div className="flex items-start">
-            <span className="font-bold mr-4">問4</span>
-            <div>
-              <p className="mb-2">
-                According to paragraph (5), what is true about vending machines
-                in Japan?
-              </p>
-              <span className="border border-black px-4 py-1">49</span>
-            </div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
+          <div className="flex items-start flex-wrap gap-2 mb-4">
+            <span className="font-bold mr-4 whitespace-nowrap">問4</span>
+            <span className="mb-2">
+              According to paragraph (5), what is true about vending machines in
+              Japan?
+            </span>
+            {renderSelect("49", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-4" />}
           </div>
           <div className="pl-8 space-y-2">
             <p>① Foreign tourists hesitate to make purchases from them.</p>
@@ -211,11 +338,12 @@ const Ex20_6 = () => {
         </div>
 
         {/* Question 5 */}
-        <div className="space-y-4">
-          <div className="flex items-center">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-5"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="font-bold mr-4">問5</span>
             <span>What would be the best title for this passage?</span>
-            <span className="mx-2 border border-black px-4 py-1">50</span>
+            {renderSelect("50", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-5" />}
           </div>
           <div className="pl-8 space-y-2">
             <p>
@@ -236,7 +364,7 @@ const Ex20_6 = () => {
       </div>
 
       {/* Section B */}
-      <div className="mt-12 space-y-6">
+      <div className={cn("space-y-4 mt-6", showResults && qaFormat(qa, "6-6"))}>
         {/* Section B Header */}
         <div className="mb-6">
           <p className="flex items-center flex-wrap">
@@ -246,7 +374,15 @@ const Ex20_6 = () => {
           <p className="flex items-center my-2 flex-wrap">
             <span className="border border-black px-4 py-1">51</span>～
             <span className="border border-black px-4 py-1">54</span>
-            に入れるのに最も適当なものを、下の①～④のうちから一つずつ選び、表を完成させよ。ただし、同じものを繰り返し選んではいけない。
+            に入れるのに最も適当なものを、下の①～④のうちから一つずつ選び、表を完成させよ。
+            ただし、同じものを繰り返し選んではいけない。
+            <span className="flex flex-wrap gap-2 mt-1">
+              {renderSelect("51", 4, answers, setAnswers)}
+              {renderSelect("52", 4, answers, setAnswers)}
+              {renderSelect("53", 4, answers, setAnswers)}
+              {renderSelect("54", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="6-6" />}
+            </span>
           </p>
         </div>
 

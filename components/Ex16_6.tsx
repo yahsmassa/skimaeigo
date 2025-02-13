@@ -1,8 +1,133 @@
-import React from "react";
+"use client";
+
+import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex16_6 = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "6-1",
+      qa: [
+        {
+          questionNumber: "47",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-2",
+      qa: [
+        {
+          questionNumber: "48",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-3",
+      qa: [
+        {
+          questionNumber: "49",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-4",
+      qa: [
+        {
+          questionNumber: "50",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-5",
+      qa: [
+        {
+          questionNumber: "51",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-6",
+      qa: [
+        {
+          questionNumber: "52",
+          answer: 0,
+        },
+        {
+          questionNumber: "53",
+          answer: 0,
+        },
+        {
+          questionNumber: "54",
+          answer: 0,
+        },
+        {
+          questionNumber: "55",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3142",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-4xl mx-auto p-8">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第６問"}</h1>
+          <span className="text-gray-600">(配点 {36})</span>
+        </div>
+
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Question Header */}
       <div className="mb-8">
         <p className="text-lg mb-4">
@@ -127,13 +252,12 @@ const Ex16_6 = () => {
         </div>
 
         {/* Question 1 */}
-        <div className="ml-4 space-y-4">
-          <div className="flex items-center">
-            <div className="mr-2">問１</div>
-            <div className="mr-2">
-              Which of these statements is true according to paragraph (2)?
-            </div>
-            <span className="border border-black px-4">47</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="mr-2 whitespace-nowrap">問1</span>
+            <p>Which of these statements is true according to paragraph (2)?</p>
+            {renderSelect("47", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-1" />}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -145,20 +269,19 @@ const Ex16_6 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className="ml-4 space-y-4">
-          <div className="flex items-start">
-            <div className="mr-2">問２</div>
-            <div>
-              <div className="flex items-center">
-                <span>
-                  In paragraph (3), what is another way of asking the question{" "}
-                </span>
-                <span className="mx-1 underline">
-                  &quot;But what about opera singers?&quot;
-                </span>
-                <span className="border border-black px-4 ml-2">48</span>
-              </div>
-            </div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="mr-2 whitespace-nowrap">問2</span>
+            <p>
+              <span>
+                In paragraph (3), what is another way of asking the question{" "}
+              </span>
+              <span className="mx-1 underline">
+                &quot;But what about opera singers?&quot;
+              </span>
+            </p>
+            {renderSelect("48", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-2" />}
           </div>
           <div className="ml-8 space-y-2">
             <div>① How do opera singers prepare?</div>
@@ -169,13 +292,12 @@ const Ex16_6 = () => {
         </div>
 
         {/* Question 3 */}
-        <div className="ml-4 space-y-4">
-          <div className="flex items-center">
-            <div className="mr-2">問３</div>
-            <div className="mr-2">
-              According to paragraphs (3) and (4), which statement is true?
-            </div>
-            <span className="border border-black px-4">49</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="mr-2 whitespace-nowrap">問3</span>
+            <p>According to paragraphs (3) and (4), which statement is true?</p>
+            {renderSelect("49", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-3" />}
           </div>
           <div className="ml-8 space-y-2">
             <div>① Opera singers are financially unstable.</div>
@@ -186,18 +308,15 @@ const Ex16_6 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className="ml-4 space-y-4">
-          <div className="flex items-start">
-            <div className="mr-2">問４</div>
-            <div>
-              <div className="flex items-center">
-                <span>
-                  Which statement best expresses the author's opinion in
-                  paragraph (5)?
-                </span>
-                <span className="border border-black px-4 ml-2">50</span>
-              </div>
-            </div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="mr-2 whitespace-nowrap">問4</span>
+            <span>
+              Which statement best expresses the author's opinion in paragraph
+              (5)?
+            </span>
+            {renderSelect("50", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-4" />}
           </div>
           <div className="ml-8 space-y-2">
             <div>① Audiences know best how opera should be performed.</div>
@@ -212,13 +331,12 @@ const Ex16_6 = () => {
         </div>
 
         {/* Question 5 */}
-        <div className="ml-4 space-y-4">
-          <div className="flex items-center">
-            <div className="mr-2">問５</div>
-            <div className="mr-2">
-              What would be the best title for this passage?
-            </div>
-            <span className="border border-black px-4">51</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-5"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="mr-2 whitespace-nowrap">問5</span>
+            <p>What would be the best title for this passage?</p>
+            {renderSelect("51", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-5" />}
           </div>
           <div className="ml-8 space-y-2">
             <div>① How to Make Money in Opera</div>
@@ -230,20 +348,25 @@ const Ex16_6 = () => {
       </div>
 
       {/* Section B */}
-      <div className="mt-12 space-y-6">
-        <div className="flex items-start">
-          <div className="font-bold mr-2">B</div>
-          <div>
-            次の表は、本文のパラグラフ（段落）ごとの内容をまとめたものである。
-            <div className="flex items-center my-2">
-              <span className="border border-black px-4">52</span>
-              <span className="mx-2">～</span>
-              <span className="border border-black px-4">55</span>
-              <span className="ml-2">
-                に入れるのに最も適当なものを、下の①～④のうちから一つずつ選び、表を完成させよ。ただし、同じものを繰り返し選んではいけない。
-              </span>
-            </div>
-          </div>
+      <div className={cn("space-y-4 mt-8", showResults && qaFormat(qa, "6-6"))}>
+        <div className="mb-6">
+          <p className="flex items-center flex-wrap">
+            <span className="font-bold mr-4">B</span>
+            次の表は、本文のパラグラフ(段落)の構成と内容をまとめたものである。
+          </p>
+
+          <p className="leading-relaxed">
+            <span className="border border-black px-2 py-1">52</span> ～{" "}
+            <span className="border border-black px-2 py-1">55</span>{" "}
+            に入れるのに最も適当なものを、下の①～④のうちから一つずつ選び、表を完成させよ。ただし、同じものを繰り返し選んではいけない。
+            <span className="flex flex-wrap gap-2 mt-1">
+              {renderSelect("52", 4, answers, setAnswers)}
+              {renderSelect("53", 4, answers, setAnswers)}
+              {renderSelect("54", 4, answers, setAnswers)}
+              {renderSelect("55", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="6-6" />}
+            </span>
+          </p>
         </div>
 
         {/* Table */}

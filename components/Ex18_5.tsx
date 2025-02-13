@@ -1,18 +1,115 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import { Paperclip } from "lucide-react";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex18_5 = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "5-1",
+      qa: [
+        {
+          questionNumber: "41",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-2",
+      qa: [
+        {
+          questionNumber: "42",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-3",
+      qa: [
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-4",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      isOrderFree: true,
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-5",
+      qa: [
+        {
+          questionNumber: "45",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-4xl mx-auto p-8 ">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第５問"}</h1>
+          <span className="text-gray-600">(配点 {30})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Question Header */}
       <div className="mb-8">
-        <p className="text-lg">
+        <p className="text-base">
           次の日誌の抜粋を読み、下の問い(問1～5)の
           <span className="inline-block mx-2 border border-black px-4">41</span>
           ～
           <span className="inline-block mx-2 border border-black px-4">45</span>
           に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
         </p>
-        <p className="mt-2">(配点 30)</p>
       </div>
 
       {/* Title */}
@@ -140,13 +237,12 @@ const Ex18_5 = () => {
       {/* Questions Section */}
       <div className="mt-12 space-y-12">
         {/* Question 1 */}
-        <div>
-          <div className="flex items-center gap-4 mb-6">
-            <span className="text-lg">問 1</span>
-            <span className="text-lg">
-              What was the purpose of the explorers&apos; journey?
-            </span>
-            <span className="border border-black px-4 py-1">41</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span>What was the purpose of the explorers&apos; journey?</span>
+            {renderSelect("41", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-1" />}
           </div>
 
           <div className="pl-8 space-y-4">
@@ -178,17 +274,15 @@ const Ex18_5 = () => {
         </div>
 
         {/* Question 2 */}
-        <div>
-          <div className="flex items-start gap-4 mb-6">
-            <span className="text-lg">問 2</span>
-            <div className="flex-1">
-              <span className="text-lg">
-                When the explorers were observing the planet from space, they
-                imagined that the intelligent creatures on it would
-              </span>
-              <span className="border border-black px-4 py-1 ml-2">42</span>
-              <span className="text-lg">.</span>
-            </div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span>
+              When the explorers were observing the planet from space, they
+              imagined that the intelligent creatures on it would
+            </span>
+            {renderSelect("42", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-2" />}
           </div>
 
           <div className="pl-8 space-y-4">
@@ -220,21 +314,16 @@ const Ex18_5 = () => {
         </div>
 
         {/* Question 3 */}
-        <div>
-          <div className="flex items-start gap-4 mb-6">
-            <span className="text-lg">問 3</span>
-            <div className="flex-1">
-              <span className="text-lg">The word </span>
-              <span className="text-lg border-b-2 border-black">
-                reservations
-              </span>
-              <span className="text-lg">
-                {" "}
-                as used in DAY 9 is closest in meaning to
-              </span>
-              <span className="border border-black px-4 py-1 ml-2">43</span>
-              <span className="text-lg">.</span>
-            </div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span>
+              The word{" "}
+              <span className="border-b-2 border-black">reservations</span> as
+              used in DAY 9 is closest in meaning to
+            </span>
+            {renderSelect("43", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-3" />}.
           </div>
 
           <div className="pl-8 space-y-4">
@@ -266,13 +355,14 @@ const Ex18_5 = () => {
         </div>
 
         {/* Question 4 */}
-        <div>
-          <div className="flex items-center gap-4 mb-6">
-            <span className="text-lg">問 4</span>
-            <span className="text-lg">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span>
               Which of the following best describes the author of the journal?
             </span>
-            <span className="border border-black px-4 py-1">44</span>
+            {renderSelect("44", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-4" />}
           </div>
 
           <div className="pl-8 space-y-4">
@@ -304,17 +394,15 @@ const Ex18_5 = () => {
         </div>
 
         {/* Question 5 */}
-        <div>
-          <div className="flex items-start gap-4 mb-6">
-            <span className="text-lg">問 5</span>
-            <div className="flex-1">
-              <span className="text-lg">
-                The explorers incorrectly assumed that all intelligent creatures
-                would
-              </span>
-              <span className="border border-black px-4 py-1 mx-2">45</span>
-              <span className="text-lg">.</span>
-            </div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-5"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span>
+              The explorers incorrectly assumed that all intelligent creatures
+              would
+            </span>
+            {renderSelect("45", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-5" />}.
           </div>
 
           <div className="pl-8 space-y-4">

@@ -1,8 +1,133 @@
-import React from "react";
+"use client";
+
+import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex17_6 = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "6-1",
+      qa: [
+        {
+          questionNumber: "47",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-2",
+      qa: [
+        {
+          questionNumber: "48",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-3",
+      qa: [
+        {
+          questionNumber: "49",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isOrderFree: true,
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-4",
+      qa: [
+        {
+          questionNumber: "50",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-5",
+      qa: [
+        {
+          questionNumber: "51",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "6-6",
+      qa: [
+        {
+          questionNumber: "52",
+          answer: 0,
+        },
+        {
+          questionNumber: "53",
+          answer: 0,
+        },
+        {
+          questionNumber: "54",
+          answer: 0,
+        },
+        {
+          questionNumber: "55",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4231",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-4xl mx-auto p-8">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第６問"}</h1>
+          <span className="text-gray-600">(配点 {36})</span>
+        </div>
+
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Question Header */}
       <div className="mb-6">
         <p className="text-lg mb-4">
@@ -136,16 +261,15 @@ const Ex17_6 = () => {
           </p>
 
           {/* Question 1 */}
-          <div className="ml-4 space-y-4">
-            <div className="flex items-start">
-              <span className="mr-4">問1</span>
-              <div className="flex-grow">
-                <p>
-                  According to paragraph (1), what do psychologists say about
-                  friendships?
-                </p>
-                <span className="border border-black px-4 py-1">47</span>
-              </div>
+          <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-4">
+              <span className="mr-2 whitespace-nowrap">問1</span>
+              <p>
+                According to paragraph (1), what do psychologists say about
+                friendships?
+              </p>
+              {renderSelect("47", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="6-1" />}
             </div>
             <div className="ml-8 space-y-2">
               <p>① They are frequently compared to one&apos;s possessions.</p>
@@ -158,17 +282,16 @@ const Ex17_6 = () => {
           </div>
 
           {/* Question 2 */}
-          <div className="ml-4 space-y-4 mt-8">
-            <div className="flex items-start">
-              <span className="mr-4">問2</span>
-              <div className="flex-grow">
-                <p>
-                  Which of the following is closest to the meaning of{" "}
-                  <span className="underline">swallow our pride</span> in
-                  paragraph (2)?
-                </p>
-                <span className="border border-black px-4 py-1">48</span>
-              </div>
+          <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-4">
+              <span className="mr-2 whitespace-nowrap">問2</span>
+              <p>
+                Which of the following is closest to the meaning of{" "}
+                <span className="underline">swallow our pride</span> in
+                paragraph (2)?
+              </p>
+              {renderSelect("48", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="6-2" />}
             </div>
             <div className="ml-8 space-y-2">
               <p>① Give our thanks to someone</p>
@@ -179,16 +302,14 @@ const Ex17_6 = () => {
           </div>
 
           {/* Question 3 */}
-          <div className="ml-4 space-y-4 mt-8">
-            <div className="flex items-start">
-              <span className="mr-4">問3</span>
-              <div className="flex-grow">
-                <p>
-                  According to paragraph (5), research found it is important to
-                </p>
-                <span className="border border-black px-4 py-1">49</span>
-                <span>.</span>
-              </div>
+          <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-4">
+              <span className="mr-2 whitespace-nowrap">問3</span>
+              <p>
+                According to paragraph (5), research found it is important to
+              </p>
+              {renderSelect("49", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="6-3" />}
             </div>
             <div className="ml-8 space-y-2">
               <p>① hesitate to express one&apos;s true feelings</p>
@@ -199,16 +320,15 @@ const Ex17_6 = () => {
           </div>
 
           {/* Question 4 */}
-          <div className="ml-4 space-y-4 mt-8">
-            <div className="flex items-start">
-              <span className="mr-4">問4</span>
-              <div className="flex-grow">
-                <p>
-                  According to paragraph (6), what is difficult about
-                  maintaining friendships?
-                </p>
-                <span className="border border-black px-4 py-1">50</span>
-              </div>
+          <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-4">
+              <span className="mr-2 whitespace-nowrap">問4</span>
+              <p>
+                According to paragraph (6), what is difficult about maintaining
+                friendships?
+              </p>
+              {renderSelect("50", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="6-4" />}
             </div>
             <div className="ml-8 space-y-2">
               <p>① Finding new and interesting friends</p>
@@ -219,13 +339,12 @@ const Ex17_6 = () => {
           </div>
 
           {/* Question 5 */}
-          <div className="ml-4 space-y-4 mt-8">
-            <div className="flex items-start">
-              <span className="mr-4">問5</span>
-              <div className="flex-grow">
-                <p>What would be the best title for this passage?</p>
-                <span className="border border-black px-4 py-1">51</span>
-              </div>
+          <div className={cn("space-y-4", showResults && qaFormat(qa, "6-5"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-4">
+              <span className="mr-2 whitespace-nowrap">問5</span>
+              <p>What would be the best title for this passage?</p>
+              {renderSelect("51", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="6-5" />}
             </div>
             <div className="ml-8 space-y-2">
               <p>① Advice for Friendships That Will Last</p>
@@ -237,15 +356,24 @@ const Ex17_6 = () => {
         </div>
 
         {/* Section B */}
-        <div className="mt-12 space-y-6">
-          <div className="space-y-4">
-            <p className="text-lg">
-              B 次の表は、本文のパラグラフ(段落)ごとの内容をまとめたものである。
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-6"))}>
+          <div className="mb-6">
+            <p className="flex items-center flex-wrap">
+              <span className="font-bold mr-4">B</span>
+              次の表は、本文のパラグラフ(段落)の構成と内容をまとめたものである。
             </p>
-            <p className="text-lg">
-              <span className="border border-black px-4 py-1">52</span> ～{" "}
-              <span className="border border-black px-4 py-1">55</span>{" "}
+
+            <p className="leading-relaxed">
+              <span className="border border-black px-2 py-1">52</span> ～{" "}
+              <span className="border border-black px-2 py-1">55</span>{" "}
               に入れるのに最も適当なものを、下の①～④のうちから一つずつ選び、表を完成させよ。ただし、同じものを繰り返し選んではいけない。
+              <span className="flex flex-wrap gap-2 mt-1">
+                {renderSelect("52", 4, answers, setAnswers)}
+                {renderSelect("53", 4, answers, setAnswers)}
+                {renderSelect("54", 4, answers, setAnswers)}
+                {renderSelect("55", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="6-6" />}
+              </span>
             </p>
           </div>
 

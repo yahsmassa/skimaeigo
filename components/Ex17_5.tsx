@@ -1,21 +1,115 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import { Paperclip } from "lucide-react";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex17_5 = () => {
-  return (
-    <div className="p-8 font-serif">
-      {/* Question Header */}
-      <div className="flex items-center gap-2 mb-1">
-        <div className="flex items-center gap-1">
-          次の物語を読み、下の問い(問1～5)の
-          <div className="border border-black px-4 py-1 mx-1">42</div>～
-          <div className="border border-black px-4 py-1 mx-1">46</div>
-          に入れるのに
-        </div>
-      </div>
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "5-1",
+      qa: [
+        {
+          questionNumber: "42",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-2",
+      qa: [
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-3",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-4",
+      qa: [
+        {
+          questionNumber: "45",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      isOrderFree: true,
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-5",
+      qa: [
+        {
+          questionNumber: "46",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
 
-      {/* Instruction Text */}
-      <div className="mb-8 ml-8">
-        最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。(配点 30)
+  return (
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第５問"}</h1>
+          <span className="text-gray-600">(配点 {30})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
+      {/* Question Header */}
+      <div className="mb-8">
+        <p className="text-base leading-relaxed">
+          次の物語を読み、下の問い(問1～5)の
+          <span className="inline-block mx-2 border border-black px-4">42</span>
+          ～
+          <span className="inline-block mx-2 border border-black px-4">46</span>
+          に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
+        </p>
       </div>
 
       {/* Story Content */}
@@ -129,14 +223,14 @@ const Ex17_5 = () => {
       {/* Questions Section */}
       <div className="mt-12 space-y-8">
         {/* Question 1 */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">問 1</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               When Yuji realized that he had turned into a cat, he first felt
             </span>
-            <div className="border border-black px-4 py-1">42</div>
-            <span>.</span>
+            {renderSelect("42", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-1" />}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -148,14 +242,14 @@ const Ex17_5 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">問 2</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>
               When Yuji&apos;s mother spoke to him, he was annoyed because
             </span>
-            <div className="border border-black px-4 py-1">43</div>
-            <span>.</span>
+            {renderSelect("43", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-2" />}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -167,16 +261,16 @@ const Ex17_5 = () => {
         </div>
 
         {/* Question 3 */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">問 3</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
             <span>
               The cat thought,{" "}
               <span className="underline">"I don&apos;t like this guy,"</span>{" "}
               because Yuji
             </span>
-            <div className="border border-black px-4 py-1">44</div>
-            <span>.</span>
+            {renderSelect("44", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-3" />}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -192,19 +286,15 @@ const Ex17_5 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className="space-y-4">
-          <div className="flex items-baseline gap-2">
-            <span className="font-bold">問 4</span>
-            <div>
-              <span>
-                At the end of the story, Yuji did not pick up his smartphone
-                because he
-              </span>
-              <div className="border border-black px-4 py-1 inline-block ml-2">
-                45
-              </div>
-              <span>.</span>
-            </div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span>
+              At the end of the story, Yuji did not pick up his smartphone
+              because he
+            </span>
+            {renderSelect("45", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-4" />}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -216,11 +306,12 @@ const Ex17_5 = () => {
         </div>
 
         {/* Question 5 */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <span className="font-bold">問 5</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-5"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 5</span>
             <span>What is the theme of this story?</span>
-            <div className="border border-black px-4 py-1">46</div>
+            {renderSelect("46", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-5" />}
           </div>
 
           <div className="ml-8 space-y-2">

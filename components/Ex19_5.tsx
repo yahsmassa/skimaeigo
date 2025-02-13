@@ -1,8 +1,107 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import { Paperclip } from "lucide-react";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex19_5 = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "5-1",
+      qa: [
+        {
+          questionNumber: "41",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-2",
+      qa: [
+        {
+          questionNumber: "42",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-3",
+      qa: [
+        {
+          questionNumber: "43",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-4",
+      qa: [
+        {
+          questionNumber: "44",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      isOrderFree: true,
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+    {
+      questionId: "5-5",
+      qa: [
+        {
+          questionNumber: "45",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-4xl mx-auto p-8 ">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第５問"}</h1>
+          <span className="text-gray-600">(配点 {30})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
+
       {/* Question Header */}
       <div className="flex items-center gap-4 mb-6">
         <p className="text-base leading-relaxed">
@@ -106,16 +205,14 @@ const Ex19_5 = () => {
       {/* Questions Section */}
       <div className="mt-8 space-y-8">
         {/* Question 1 */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="font-bold">問1</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 1</span>
             <span>
               Christine originally said she would do the gardening because she
             </span>
-            <span className="inline-flex items-center justify-center border border-black w-12 h-8">
-              41
-            </span>
-            <span>.</span>
+            {renderSelect("41", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-1" />}
           </div>
           <div className="space-y-2 ml-8">
             <p>① knew it was important to her father</p>
@@ -126,13 +223,12 @@ const Ex19_5 = () => {
         </div>
 
         {/* Question 2 */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="font-bold">問2</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 2</span>
             <span>Which of the following was a problem in the garden?</span>
-            <span className="inline-flex items-center justify-center border border-black w-12 h-8">
-              42
-            </span>
+            {renderSelect("42", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-2" />}
           </div>
           <div className="space-y-2 ml-8">
             <p>① Animals often dug in the garden.</p>
@@ -143,19 +239,15 @@ const Ex19_5 = () => {
         </div>
 
         {/* Question 3 */}
-        <div>
-          <div className="flex items-start gap-2 mb-4">
-            <span className="font-bold">問3</span>
-            <div className="flex-1">
-              <span>
-                Christine could secretly make the salad from store-bought
-                vegetables because
-              </span>
-              <span className="inline-flex items-center justify-center border border-black w-12 h-8 mx-2">
-                43
-              </span>
-              <span>.</span>
-            </div>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span>
+              Christine could secretly make the salad from store-bought
+              vegetables because
+            </span>
+            {renderSelect("43", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-3" />}
           </div>
           <div className="space-y-2 ml-8">
             <p>① her father couldn&apos;t see the garden&apos;s progress</p>
@@ -166,20 +258,17 @@ const Ex19_5 = () => {
         </div>
 
         {/* Question 4 */}
-        <div>
-          <div className="flex items-start gap-2 mb-4">
-            <span className="font-bold">問4</span>
-            <div className="flex-1">
-              <span>
-                Which of the following is closest to the meaning of the
-                underlined word{" "}
-              </span>
-              <span className="underline">bug-free</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span>Which of the following is closest to the meaning of the</span>
+            <span>
+              Which of the following is closest to the meaning of the underlined
+              word <span className="underline">bug-free</span>
               <span>?</span>
-              <span className="inline-flex items-center justify-center border border-black w-12 h-8 mx-2">
-                44
-              </span>
-            </div>
+            </span>
+            {renderSelect("44", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-4" />}
           </div>
           <div className="space-y-2 ml-8">
             <p>① All bugs have been killed.</p>
@@ -190,15 +279,14 @@ const Ex19_5 = () => {
         </div>
 
         {/* Question 5 */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="font-bold">問5</span>
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-5"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2">問 5</span>
             <span>
               What did Christine learn through her experience of gardening?
             </span>
-            <span className="inline-flex items-center justify-center border border-black w-12 h-8">
-              45
-            </span>
+            {renderSelect("45", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="5-5" />}
           </div>
           <div className="space-y-2 ml-8">
             <p>① Always prepare for a rainy day.</p>
