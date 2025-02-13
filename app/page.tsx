@@ -3,7 +3,16 @@
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import { translateTextGemini, translateTextDeepseek } from "@/lib/serverAction";
-
+import Ex16_5 from "@/components/Ex16_5";
+import Ex16_6 from "@/components/Ex16_6";
+import Ex17_5 from "@/components/Ex17_5";
+import Ex17_6 from "@/components/Ex17_6";
+import Ex18_5 from "@/components/Ex18_5";
+import Ex18_6 from "@/components/Ex18_6";
+import Ex19_5 from "@/components/Ex19_5";
+import Ex19_6 from "@/components/Ex19_6";
+import Ex20_5 from "@/components/Ex20_5";
+import Ex20_6 from "@/components/Ex20_6";
 import Ex21_1A from "@/components/Ex21_1A";
 import Ex21_1B from "@/components/Ex21_1B";
 import Ex21_2A from "@/components/Ex21_2A";
@@ -54,6 +63,16 @@ import Ex25_7 from "@/components/Ex25_7";
 import Ex25_8 from "@/components/Ex25_8";
 
 const components = [
+  { id: "Ex16_5", label: "2016年 問5", component: <Ex16_5 /> },
+  { id: "Ex16_6", label: "2016年 問6", component: <Ex16_6 /> },
+  { id: "Ex17_5", label: "2017年 問5", component: <Ex17_5 /> },
+  { id: "Ex17_6", label: "2017年 問6", component: <Ex17_6 /> },
+  { id: "Ex18_5", label: "2018年 問5", component: <Ex18_5 /> },
+  { id: "Ex18_6", label: "2018年 問6", component: <Ex18_6 /> },
+  { id: "Ex19_5", label: "2019年 問5", component: <Ex19_5 /> },
+  { id: "Ex19_6", label: "2019年 問6", component: <Ex19_6 /> },
+  { id: "Ex20_5", label: "2020年 問5", component: <Ex20_5 /> },
+  { id: "Ex20_6", label: "2020年 問6", component: <Ex20_6 /> },
   { id: "Ex21_1A", label: "2021年 問1 A", component: <Ex21_1A /> },
   { id: "Ex21_1B", label: "2021年 問1 B", component: <Ex21_1B /> },
   { id: "Ex21_2A", label: "2021年 問2 A", component: <Ex21_2A /> },
@@ -104,11 +123,41 @@ const components = [
   { id: "Ex24_6B", label: "2024年 問6 B", component: <Ex24_6B /> },
 ];
 
-type Year = "2021" | "2022" | "2023" | "2024" | "2025";
+type Year =
+  | "2016"
+  | "2017"
+  | "2018"
+  | "2019"
+  | "2020"
+  | "2021"
+  | "2022"
+  | "2023"
+  | "2024"
+  | "2025";
 type Problem = { id: string; label: string };
 type GroupedComponents = Record<Year, Problem[]>;
 
 const groupedComponents: GroupedComponents = {
+  "2016": [
+    { id: "Ex16_5", label: "問5" },
+    { id: "Ex16_6", label: "問6" },
+  ],
+  "2017": [
+    { id: "Ex17_5", label: "問5" },
+    { id: "Ex17_6", label: "問6" },
+  ],
+  "2018": [
+    { id: "Ex18_5", label: "問5" },
+    { id: "Ex18_6", label: "問6" },
+  ],
+  "2019": [
+    { id: "Ex19_5", label: "問5" },
+    { id: "Ex19_6", label: "問6" },
+  ],
+  "2020": [
+    { id: "Ex20_5", label: "問5" },
+    { id: "Ex20_6", label: "問6" },
+  ],
   "2021": [
     { id: "Ex21_1A", label: "問1 A" },
     { id: "Ex21_1B", label: "問1 B" },
