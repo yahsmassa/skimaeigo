@@ -254,41 +254,14 @@ export default function Home() {
   const [selectedYear, setSelectedYear] = useState<Year>("2025");
   const [selectedComponent, setSelectedComponent] = useState("Ex25_1");
   const [isSelected, setIsSelected] = useState(false);
-  const [buttonPosition, setButtonPosition] = useState({ top: 0, left: 0 });
-  const [showButton, setShowButton] = useState(false);
   const [selection, setSelection] = useState("");
 
   const handleSelection = useCallback(() => {
     const selectedText = window.getSelection()?.toString() || "";
     if (selectedText) {
       setSelection(selectedText);
-
-      // 選択範囲の位置を取得
-      const range = window.getSelection()?.getRangeAt(0);
-      const rect = range?.getBoundingClientRect();
-
-      if (rect) {
-        setButtonPosition({
-          top: rect.bottom + window.scrollY + 10,
-          left: rect.left + window.scrollX + 10,
-        });
-        setShowButton(true);
-      }
-    } else {
-      setShowButton(false);
     }
   }, []);
-  // タッチデバイスでの選択維持
-  const handleTouchStart = (e: React.TouchEvent) => {
-    e.stopPropagation();
-  };
-  // モバイルでの選択解除を防ぐ
-  const handleButtonClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    // 選択を維持するため、すぐにプログラムを実行
-    translateSentence(selection);
-    // ここに実際のプログラム処理を追加
-  };
 
   useEffect(() => {
     document.addEventListener("selectionchange", handleSelection);
@@ -415,27 +388,12 @@ export default function Home() {
               </option>
             ))}
           </select>
-          {!isMobile && (
-            <ReadTranslate isSelected={isSelected} selectedText={selection} />
-          )}
+          <ReadTranslate isSelected={isSelected} selectedText={selection} />
         </div>
       </div>
       <main className="gap-8 row-start-2 items-center sm:items-start">
         {selected && selected.component}
       </main>
-      {showButton && isMobile && (
-        <button
-          className="fixed bg-blue-500 text-white px-4 py-2 rounded shadow"
-          style={{
-            top: `${buttonPosition.top}px`,
-            left: `${buttonPosition.left}px`,
-          }}
-          onTouchStart={handleTouchStart}
-          onClick={handleButtonClick}
-        >
-          翻訳
-        </button>
-      )}
     </div>
   );
 }
