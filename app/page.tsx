@@ -349,17 +349,21 @@ export default function Home() {
 
   const handleTranslate = useCallback(() => {
     if (isMobile) {
-      // モバイルの場合、選択範囲を保持するために現在の選択を保存
-      const selection = window.getSelection();
-      const range = selection?.getRangeAt(0);
+      // 現在の選択範囲を保存
+      const currentSelection = window.getSelection();
+      if (!currentSelection || currentSelection.rangeCount === 0) return;
 
-      translateSentence(selection?.toString() || "");
+      const selectedText = currentSelection.toString();
+      const range = currentSelection.getRangeAt(0).cloneRange();
 
-      // 翻訳後に選択範囲を復元
-      if (range) {
-        selection?.removeAllRanges();
-        selection?.addRange(range);
-      }
+      // 翻訳を実行
+      translateSentence(selectedText);
+
+      // 少し遅延を入れて選択範囲を復元
+      setTimeout(() => {
+        currentSelection.removeAllRanges();
+        currentSelection.addRange(range);
+      }, 100);
     } else {
       translateSentence(selection);
     }
