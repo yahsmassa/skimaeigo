@@ -7,24 +7,11 @@ type props = {
 };
 
 export function ReadTranslate({ isSelected }: props) {
-  const handleTouchStart = (e: React.TouchEvent) => {
-    e.stopPropagation();
-  };
-  const handleTranslateClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    translateSentence();
-  };
-  const handleReadClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    readSentence();
-  };
-
   return (
     <div className="flex items-center ">
       <button
-        onClick={handleReadClick}
+        onClick={readSentence}
         disabled={!isSelected}
-        onTouchStart={handleTouchStart}
         className={cn(
           "ml-2 px-2 py-1  text-white rounded  w-[60px]",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
@@ -33,9 +20,8 @@ export function ReadTranslate({ isSelected }: props) {
         Read
       </button>
       <button
-        onClick={handleTranslateClick}
+        onClick={translateSentence}
         disabled={!isSelected}
-        onTouchStart={handleTouchStart}
         className={cn(
           "ml-2 px-2 py-1  text-white rounded  w-[60px]",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
