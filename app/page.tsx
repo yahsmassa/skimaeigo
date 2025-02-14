@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Swal from "sweetalert2";
-import { translateTextGemini, translateTextDeepseek } from "@/lib/serverAction";
+import { translateSentence, readSentence } from "@/lib/util";
+import { ReadTranslate } from "@/components/ReadTranslate";
+
 import Ex16_4A from "@/components/Ex16_4A";
 import Ex16_4B from "@/components/Ex16_4B";
 import Ex17_4A from "@/components/Ex17_4A";
@@ -248,95 +249,10 @@ const groupedComponents: GroupedComponents = {
   ],
 };
 
-const readSentence = () => {
-  const selectedText = window.getSelection()?.toString();
-  if (!selectedText) return;
-
-  // 音声リストが利用可能になるのを待つ
-  const waitForVoices = () => {
-    return new Promise<void>((resolve) => {
-      const voices = speechSynthesis.getVoices();
-      if (voices.length > 0) {
-        resolve();
-      } else {
-        speechSynthesis.onvoiceschanged = () => {
-          resolve();
-        };
-      }
-    });
-  };
-
-  waitForVoices().then(() => {
-    const utterance = new SpeechSynthesisUtterance(selectedText);
-    utterance.lang = "en-US";
-
-    // Safari用に音声を明示的に選択
-    const voices = speechSynthesis.getVoices();
-    const englishVoice = voices.find(
-      (voice) => voice.lang === "en-US" && voice.name.includes("Samantha") // Safariのデフォルト音声
-    );
-
-    if (englishVoice) {
-      utterance.voice = englishVoice;
-    }
-
-    // 速度やピッチを調整（必要に応じて）
-    utterance.rate = 1.0;
-    utterance.pitch = 1.0;
-
-    speechSynthesis.speak(utterance);
-  });
-};
-
-const translateSentence = async () => {
-  const selectedText = window.getSelection()?.toString();
-  if (!selectedText) {
-    Swal.fire({
-      title: "エラー",
-      text: "英文が選択されていません",
-      icon: "error",
-      confirmButtonText: "OK",
-    });
-    return;
-  }
-
-  // ローディング表示
-  Swal.fire({
-    title: "翻訳中...",
-    text: "Requesting...",
-    allowOutsideClick: false,
-    didOpen: () => {
-      Swal.showLoading();
-    },
-  });
-
-  try {
-    const prompt =
-      "あなたは優秀な英語教師です、以下の英文を日本語に翻訳し、その後、改行して熟語・慣用句が含まれていたら、箇条書きで指摘してください  " +
-      selectedText;
-    const result = await translateTextGemini(prompt);
-    // const result = (await translateTextDeepseek(prompt)) || "";
-    const formattedResult = result.replace(/\n/g, "<br/>"); // 改行を<br/>に変換
-    // console.log("formattedResult", formattedResult);
-    Swal.fire({
-      title: "解説",
-      html: formattedResult,
-      confirmButtonText: "OK",
-      width: "500px",
-    });
-  } catch (error) {
-    Swal.fire({
-      title: "エラー",
-      text: "翻訳に失敗しました",
-      icon: "error",
-      confirmButtonText: "OK",
-    });
-  }
-};
-
 export default function Home() {
   const [selectedYear, setSelectedYear] = useState<Year>("2025");
   const [selectedComponent, setSelectedComponent] = useState("Ex25_1");
+  const [isSelected, setIsSelected] = useState(false);
 
   const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const year = e.target.value as Year;
@@ -414,11 +330,24 @@ export default function Home() {
     };
   }, []);
 
+  // テキストが選択されているかどうかを判断
+  useEffect(() => {
+    const handleSelection = () => {
+      const selection = window.getSelection();
+      setIsSelected(!!selection && selection.toString().length > 0);
+    };
+
+    document.addEventListener("selectionchange", handleSelection);
+    return () => {
+      document.removeEventListener("selectionchange", handleSelection);
+    };
+  }, []);
+
   return (
     <div className="mt-7 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
+      <h1 className="ml-2 text-xl font-bold">共通テスト 英語</h1>
       <div className="sticky top-0 bg-white z-50 py-2 shadow-sm">
         <div className="flex items-center container mx-auto px-4">
-          <h1 className="ml-2 text-xl font-bold">共通テスト 英語</h1>
           <select
             value={selectedYear}
             onChange={handleYearChange}
@@ -443,6 +372,7 @@ export default function Home() {
               </option>
             ))}
           </select>
+          <ReadTranslate isSelected={isSelected} />
         </div>
       </div>
       <main className="gap-8 row-start-2 items-center sm:items-start">

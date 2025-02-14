@@ -1,6 +1,8 @@
 import { twMerge } from "tailwind-merge";
 import { type ClassValue, clsx } from "clsx";
 import React from "react";
+import Swal from "sweetalert2";
+import { translateTextGemini, translateTextDeepseek } from "@/lib/serverAction";
 import { type QandA, type Answers } from "./types";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -81,3 +83,89 @@ export const renderSelect = (
     </select>
   </div>
 );
+
+export const translateSentence = async () => {
+  const selectedText = window.getSelection()?.toString();
+  if (!selectedText) {
+    Swal.fire({
+      title: "エラー",
+      text: "英文が選択されていません",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
+  // ローディング表示
+  Swal.fire({
+    title: "翻訳中...",
+    text: "Requesting...",
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+  });
+
+  try {
+    const prompt =
+      "あなたは優秀な英語教師です、以下の英文を日本語に翻訳し、その後、改行して熟語・慣用句が含まれていたら、箇条書きで指摘してください  " +
+      selectedText;
+    const result = await translateTextGemini(prompt);
+    // const result = (await translateTextDeepseek(prompt)) || "";
+    const formattedResult = result.replace(/\n/g, "<br/>"); // 改行を<br/>に変換
+    // console.log("formattedResult", formattedResult);
+    Swal.fire({
+      title: "解説",
+      html: formattedResult,
+      confirmButtonText: "OK",
+      width: "500px",
+    });
+  } catch (error) {
+    Swal.fire({
+      title: "エラー",
+      text: "翻訳に失敗しました",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+  }
+};
+
+export const readSentence = () => {
+  const selectedText = window.getSelection()?.toString();
+  if (!selectedText) return;
+
+  // 音声リストが利用可能になるのを待つ
+  const waitForVoices = () => {
+    return new Promise<void>((resolve) => {
+      const voices = speechSynthesis.getVoices();
+      if (voices.length > 0) {
+        resolve();
+      } else {
+        speechSynthesis.onvoiceschanged = () => {
+          resolve();
+        };
+      }
+    });
+  };
+
+  waitForVoices().then(() => {
+    const utterance = new SpeechSynthesisUtterance(selectedText);
+    utterance.lang = "en-US";
+
+    // Safari用に音声を明示的に選択
+    const voices = speechSynthesis.getVoices();
+    const englishVoice = voices.find(
+      (voice) => voice.lang === "en-US" && voice.name.includes("Samantha") // Safariのデフォルト音声
+    );
+
+    if (englishVoice) {
+      utterance.voice = englishVoice;
+    }
+
+    // 速度やピッチを調整（必要に応じて）
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+
+    speechSynthesis.speak(utterance);
+  });
+};
