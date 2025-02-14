@@ -258,6 +258,7 @@ export default function Home() {
 
   const handleSelection = useCallback(() => {
     const selectedText = window.getSelection()?.toString() || "";
+    setIsSelected(!!selectedText && selectedText.length > 0);
     if (selectedText) {
       setSelection(selectedText);
     }
@@ -343,19 +344,6 @@ export default function Home() {
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
-  // テキストが選択されているかどうかを判断
-  useEffect(() => {
-    const handleSelection = () => {
-      const selection = window.getSelection();
-      setIsSelected(!!selection && selection.toString().length > 0);
-    };
-
-    document.addEventListener("selectionchange", handleSelection);
-    return () => {
-      document.removeEventListener("selectionchange", handleSelection);
     };
   }, []);
 
