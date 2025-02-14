@@ -7,27 +7,41 @@ type props = {
 };
 
 export function ReadTranslate({ isSelected }: props) {
+  const handleTouchStart = (e: React.TouchEvent) => {
+    e.stopPropagation();
+  };
+  const handleTranslateClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    translateSentence();
+  };
+  const handleReadClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    readSentence();
+  };
+
   return (
     <div className="flex items-center ">
       <button
-        onClick={translateSentence}
+        onClick={handleReadClick}
         disabled={!isSelected}
+        onTouchStart={handleTouchStart}
+        className={cn(
+          "ml-2 px-2 py-1  text-white rounded  w-[60px]",
+          isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
+        )}
+      >
+        Read
+      </button>
+      <button
+        onClick={handleTranslateClick}
+        disabled={!isSelected}
+        onTouchStart={handleTouchStart}
         className={cn(
           "ml-2 px-2 py-1  text-white rounded  w-[60px]",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
         翻訳
-      </button>
-      <button
-        onClick={readSentence}
-        disabled={!isSelected}
-        className={cn(
-          "ml-2 px-2 py-1  text-white rounded  w-[60px]",
-          isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
-        )}
-      >
-        読み
       </button>
     </div>
   );
