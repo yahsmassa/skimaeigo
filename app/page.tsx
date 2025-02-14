@@ -347,28 +347,6 @@ export default function Home() {
     };
   }, []);
 
-  const handleTranslate = useCallback(() => {
-    if (isMobile) {
-      // 現在の選択範囲を保存
-      const currentSelection = window.getSelection();
-      if (!currentSelection || currentSelection.rangeCount === 0) return;
-
-      const selectedText = currentSelection.toString();
-      const range = currentSelection.getRangeAt(0).cloneRange();
-
-      // 翻訳を実行
-      translateSentence(selectedText);
-
-      // 少し遅延を入れて選択範囲を復元
-      setTimeout(() => {
-        currentSelection.removeAllRanges();
-        currentSelection.addRange(range);
-      }, 100);
-    } else {
-      translateSentence(selection);
-    }
-  }, [selection]);
-
   return (
     <div className="mt-7 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
       <h1 className="ml-2 text-xl font-bold">共通テスト 英語</h1>
@@ -398,11 +376,7 @@ export default function Home() {
               </option>
             ))}
           </select>
-          <ReadTranslate
-            isSelected={isSelected}
-            selectedText={selection}
-            onTranslate={handleTranslate}
-          />
+          <ReadTranslate isSelected={isSelected} selectedText={selection} />
         </div>
       </div>
       <main className="gap-8 row-start-2 items-center sm:items-start">
