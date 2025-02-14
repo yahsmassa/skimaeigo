@@ -286,8 +286,7 @@ export default function Home() {
   const handleButtonClick = (e: React.MouseEvent) => {
     e.preventDefault();
     // 選択を維持するため、すぐにプログラムを実行
-    console.log("Selected text:", selection);
-    translateSentence();
+    translateSentence(selection);
     // ここに実際のプログラム処理を追加
   };
 
@@ -353,7 +352,7 @@ export default function Home() {
       // Ctrl + R で音声読み上げ
       if (e.ctrlKey && e.key === "r") {
         e.preventDefault();
-        readSentence();
+        readSentence(selection);
       }
       // Ctrl + t で翻訳
       const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
@@ -363,7 +362,7 @@ export default function Home() {
         (!isMac && e.ctrlKey && e.key === "q")
       ) {
         e.preventDefault();
-        translateSentence();
+        translateSentence(selection);
         return;
       }
     };
@@ -416,7 +415,9 @@ export default function Home() {
               </option>
             ))}
           </select>
-          {!isMobile && <ReadTranslate isSelected={isSelected} />}
+          {!isMobile && (
+            <ReadTranslate isSelected={isSelected} selectedText={selection} />
+          )}
         </div>
       </div>
       <main className="gap-8 row-start-2 items-center sm:items-start">

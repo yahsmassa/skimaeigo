@@ -84,8 +84,7 @@ export const renderSelect = (
   </div>
 );
 
-export const translateSentence = async () => {
-  const selectedText = window.getSelection()?.toString();
+export const translateSentence = async (selectedText: string) => {
   if (!selectedText) {
     Swal.fire({
       title: "エラー",
@@ -130,8 +129,7 @@ export const translateSentence = async () => {
   }
 };
 
-export const readSentence = () => {
-  const selectedText = window.getSelection()?.toString();
+export const readSentence = (selectedText: string) => {
   if (!selectedText) return;
 
   // 音声リストが利用可能になるのを待つ
