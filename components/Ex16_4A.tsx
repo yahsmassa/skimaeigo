@@ -1,9 +1,90 @@
-import React from "react";
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex16_4A = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4A-1",
+      qa: [
+        {
+          questionNumber: "35",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-2",
+      qa: [
+        {
+          questionNumber: "36",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-3",
+      qa: [
+        {
+          questionNumber: "37",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-4",
+      qa: [
+        {
+          questionNumber: "38",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-4xl mx-auto p-8 ">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {16})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       {/* Question Header */}
       <div className="mb-6">
         <p className="text-lg">
@@ -11,7 +92,6 @@ const Ex16_4A = () => {
           次の問い(A・B)に答えよ。(配点 35)
         </p>
       </div>
-
       {/* Section A */}
       <div className="mb-6">
         <p className="mb-4">
@@ -128,110 +208,124 @@ const Ex16_4A = () => {
         </div>
 
         {/* Question Section */}
-        <div className="mt-8">
-          <p className="mb-6">
-            問 1 In Figure 1, which of the following do (A), (B), (C), and (D)
-            refer to?
-            <span className="ml-4 border border-black px-4">35</span>
-          </p>
-
-          <div className="space-y-4 pl-8">
-            <div className="flex space-x-16">
-              <p>① (A) Australia</p>
-              <p>(B) Chile</p>
-              <p>(C) Mexico</p>
-              <p>(D) South Africa</p>
+        <div>
+          <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-3">
+              <span className="whitespace-nowrap mr-2">問 1</span>
+              <span>
+                In Figure 1, which of the following do (A), (B), (C), and (D)
+                refer to?
+              </span>
+              {renderSelect("35", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="4A-1" />}
             </div>
-            <div className="flex space-x-16">
-              <p>② (A) Australia</p>
-              <p>(B) Mexico</p>
-              <p>(C) South Africa</p>
-              <p>(D) Chile</p>
-            </div>
-            <div className="flex space-x-16">
-              <p>③ (A) South Africa</p>
-              <p>(B) Chile</p>
-              <p>(C) Australia</p>
-              <p>(D) Mexico</p>
-            </div>
-            <div className="flex space-x-16">
-              <p>④ (A) South Africa</p>
-              <p>(B) Mexico</p>
-              <p>(C) Australia</p>
-              <p>(D) Chile</p>
+            <div className="space-y-4 pl-8">
+              <div className="flex space-x-16">
+                <p>① (A) Australia</p>
+                <p>(B) Chile</p>
+                <p>(C) Mexico</p>
+                <p>(D) South Africa</p>
+              </div>
+              <div className="flex space-x-16">
+                <p>② (A) Australia</p>
+                <p>(B) Mexico</p>
+                <p>(C) South Africa</p>
+                <p>(D) Chile</p>
+              </div>
+              <div className="flex space-x-16">
+                <p>③ (A) South Africa</p>
+                <p>(B) Chile</p>
+                <p>(C) Australia</p>
+                <p>(D) Mexico</p>
+              </div>
+              <div className="flex space-x-16">
+                <p>④ (A) South Africa</p>
+                <p>(B) Mexico</p>
+                <p>(C) Australia</p>
+                <p>(D) Chile</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Question 2 */}
-        <div className="mt-12">
-          <p className="mb-6">
-            問 2 According to the passage, which of the following correctly
-            describes one difference between navel oranges and Valencia oranges?
-            <span className="ml-4 border border-black px-4">36</span>
-          </p>
-
-          <div className="space-y-4 pl-8">
-            <p>① Navel oranges contain fewer seeds than Valencia oranges do.</p>
-            <p>② Navel oranges contain more juice than Valencia oranges do.</p>
-            <p>
-              ③ Valencia oranges are more popular than navel oranges in the
-              winter.
-            </p>
-            <p>
-              ④ Valencia oranges are more suitable for eating fresh than navel
-              oranges.
-            </p>
+          {/* Question 2 */}
+          <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-3">
+              <span className="whitespace-nowrap mr-2">問 2</span>
+              <span>
+                According to the passage, which of the following correctly
+                describes one difference between navel oranges and Valencia
+                oranges?
+              </span>
+              {renderSelect("36", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="4A-2" />}
+            </div>
+            <div className="space-y-4 pl-8">
+              <p>
+                ① Navel oranges contain fewer seeds than Valencia oranges do.
+              </p>
+              <p>
+                ② Navel oranges contain more juice than Valencia oranges do.
+              </p>
+              <p>
+                ③ Valencia oranges are more popular than navel oranges in the
+                winter.
+              </p>
+              <p>
+                ④ Valencia oranges are more suitable for eating fresh than navel
+                oranges.
+              </p>
+            </div>
           </div>
-        </div>
-
-        {/* Question 3 */}
-        <div className="mt-12">
-          <p className="mb-6">
-            問 3 What is the main purpose of this passage?
-            <span className="ml-4 border border-black px-4">37</span>
-          </p>
-
-          <div className="space-y-4 pl-8">
-            <p>
-              ① To account for the seasonal changes in the US production of
-              oranges
-            </p>
-            <p>
-              ② To explain the differences between navel oranges and Valencia
-              oranges
-            </p>
-            <p>
-              ③ To illustrate the relation between US production and imports of
-              oranges
-            </p>
-            <p>
-              ④ To improve the quality of the navel oranges produced in the US
-            </p>
+          {/* Question 3 */}
+          <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-3">
+              <span className="whitespace-nowrap mr-2">問 3</span>
+              <span>What is the main purpose of this passage?</span>
+              {renderSelect("37", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="4A-3" />}
+            </div>
+            <div className="space-y-4 pl-8">
+              <p>
+                ① To account for the seasonal changes in the US production of
+                oranges
+              </p>
+              <p>
+                ② To explain the differences between navel oranges and Valencia
+                oranges
+              </p>
+              <p>
+                ③ To illustrate the relation between US production and imports
+                of oranges
+              </p>
+              <p>
+                ④ To improve the quality of the navel oranges produced in the US
+              </p>
+            </div>
           </div>
-        </div>
-
-        {/* Question 4 */}
-        <div className="mt-12">
-          <p className="mb-6">
-            問 4 What topic is most likely to follow the last paragraph?
-            <span className="ml-4 border border-black px-4">38</span>
-          </p>
-
-          <div className="space-y-4 pl-8">
-            <p>
-              ① Export rates of other fruits from the US to the Southern
-              Hemisphere
-            </p>
-            <p>
-              ② Statistics showing the seasonal changes in imports of other
-              fruits
-            </p>
-            <p>
-              ③ The shipping methods of navel oranges from the Southern
-              Hemisphere
-            </p>
-            <p>④ The variety of fruits commonly grown in the US and Mexico</p>
+          {/* Question 4 */}
+          <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-3">
+              <span className="whitespace-nowrap mr-2">問 4</span>
+              <span>
+                What topic is most likely to follow the last paragraph?
+              </span>
+              {renderSelect("38", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="4A-4" />}
+            </div>
+            <div className="space-y-4 pl-8">
+              <p>
+                ① Export rates of other fruits from the US to the Southern
+                Hemisphere
+              </p>
+              <p>
+                ② Statistics showing the seasonal changes in imports of other
+                fruits
+              </p>
+              <p>
+                ③ The shipping methods of navel oranges from the Southern
+                Hemisphere
+              </p>
+              <p>④ The variety of fruits commonly grown in the US and Mexico</p>
+            </div>
           </div>
         </div>
       </div>

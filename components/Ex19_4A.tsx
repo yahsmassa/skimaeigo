@@ -1,15 +1,96 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex19_4A = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4A-1",
+      qa: [
+        {
+          questionNumber: "33",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-2",
+      qa: [
+        {
+          questionNumber: "34",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-3",
+      qa: [
+        {
+          questionNumber: "35",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-4",
+      qa: [
+        {
+          questionNumber: "36",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="p-8  max-w-4xl">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {16})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       {/* Question Number and Points */}
       <div className="mb-6">
         <h2 className="text-lg mb-4">
           第4問 次の問い(A・B)に答えよ。(配点 40)
         </h2>
       </div>
-
       {/* Section A */}
       <div className="mb-8">
         <p className="mb-4 gap-1 leading-relaxed">
@@ -20,7 +101,6 @@ const Ex19_4A = () => {
           に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
         </p>
       </div>
-
       {/* Main Text */}
       <div className="space-y-4 text-base leading-relaxed">
         <p>
@@ -59,7 +139,6 @@ const Ex19_4A = () => {
           even though they do not grow there naturally.
         </p>
       </div>
-
       {/* Table 1 */}
       <div className="my-8">
         <h3 className="mb-2">Table 1</h3>
@@ -102,7 +181,6 @@ const Ex19_4A = () => {
           </table>
         </div>
       </div>
-
       {/* Additional Text */}
       <div className="space-y-4 text-base leading-relaxed">
         <p>
@@ -129,17 +207,20 @@ const Ex19_4A = () => {
           の一部を参考に作成)
         </p>
       </div>
-
       {/* Questions Section */}
       <div className="mt-8 space-y-8">
         {/* Question 1 */}
-        <div>
-          <p className="mb-4">
-            問１ For the category &quot;Apples&quot; in this research, a
-            painting with two whole apples and one apple cut in half would be
-            labeled as{" "}
-            <span className="inline-block px-4 border border-black">33</span>.
-          </p>
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span>
+              For the category &quot;Apples&quot; in this research, a painting
+              with two whole apples and one apple cut in half would be labeled
+              as{" "}
+            </span>
+            {renderSelect("33", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4A-1" />}
+          </div>
           <div className="space-y-2 ml-8">
             <p>① 0</p>
             <p>② 1</p>
@@ -149,11 +230,13 @@ const Ex19_4A = () => {
         </div>
 
         {/* Question 2 */}
-        <div>
-          <p className="mb-4">
-            問２ According to Table 1, the paintings from{" "}
-            <span className="inline-block px-4 border border-black">34</span>.
-          </p>
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span>According to Table 1, the paintings from </span>
+            {renderSelect("34", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4A-2" />}
+          </div>
           <div className="space-y-2 ml-8">
             <p>
               ① France included apples at a lower percentage than the German
@@ -175,11 +258,13 @@ const Ex19_4A = () => {
         </div>
 
         {/* Question 3 */}
-        <div>
-          <p className="mb-4">
-            問３ According to the passage and Table 1,{" "}
-            <span className="inline-block px-4 border border-black">35</span>.
-          </p>
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span>According to the passage and Table 1, </span>
+            {renderSelect("35", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4A-3" />}
+          </div>
           <div className="space-y-2 ml-8">
             <p>
               ① chicken frequently appeared in the American paintings because
@@ -201,11 +286,13 @@ const Ex19_4A = () => {
         </div>
 
         {/* Question 4 */}
-        <div>
-          <p className="mb-4">
-            問４ According to the passage, foods in these paintings can{" "}
-            <span className="inline-block px-4 border border-black">36</span>.
-          </p>
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span>According to the passage, foods in these paintings can </span>
+            {renderSelect("36", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4A-4" />}
+          </div>
           <div className="space-y-2 ml-8">
             <p>① demonstrate the painters&apos; knowledge of history</p>
             <p>

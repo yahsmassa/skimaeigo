@@ -1,10 +1,91 @@
-import React from "react";
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+
 const Ex20_4A = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4A-1",
+      qa: [
+        {
+          questionNumber: "33",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-2",
+      qa: [
+        {
+          questionNumber: "34",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-3",
+      qa: [
+        {
+          questionNumber: "35",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-4",
+      qa: [
+        {
+          questionNumber: "36",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="p-8 ">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {16})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       <div className="mb-6">
-        <span className="text-xl">第4問</span>
         <span className="ml-4">次の問い(A・B)に答えよ。(配点 40)</span>
       </div>
 
@@ -81,16 +162,15 @@ const Ex20_4A = () => {
       </div>
 
       {/* Question Section */}
-      <div className="mt-8">
-        <div className="flex items-baseline mb-4">
-          <span className="mr-4">問1</span>
+      {/* Question 1 */}
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 1</span>
           <span>
             What is the total score achieved by the five throws in this figure?
           </span>
-        </div>
-
-        <div className="border border-black inline-block px-6 py-1 mb-8">
-          33
+          {renderSelect("33", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4A-1" />}
         </div>
 
         <div className="flex">
@@ -134,13 +214,14 @@ const Ex20_4A = () => {
       </div>
 
       {/* Question 2 */}
-      <div className="mt-12">
-        <div className="flex items-baseline mb-4">
-          <span className="mr-4">問2</span>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 2</span>
           <span>
             Which of the following statements is true about the experiment?
           </span>
-          <div className="border border-black px-6 py-1 ml-4">34</div>
+          {renderSelect("34", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4A-2" />}
         </div>
 
         <div className="space-y-6">
@@ -184,13 +265,14 @@ const Ex20_4A = () => {
       </div>
 
       {/* Question 3 */}
-      <div className="mt-12">
-        <div className="flex items-baseline mb-4">
-          <span className="mr-4">問3</span>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 3</span>
           <span>
             Which of the following statements is true about the results?
           </span>
-          <div className="border border-black px-6 py-1 ml-4">35</div>
+          {renderSelect("35", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4A-3" />}
         </div>
 
         <div className="space-y-6">
@@ -234,11 +316,12 @@ const Ex20_4A = () => {
       </div>
 
       {/* Question 4 */}
-      <div className="mt-12 mb-8">
-        <div className="flex items-baseline mb-4">
-          <span className="mr-4">問4</span>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 4</span>
           <span>What will most likely be discussed next in this report?</span>
-          <div className="border border-black px-6 py-1 ml-4">36</div>
+          {renderSelect("36", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4A-4" />}
         </div>
 
         <div className="space-y-6">

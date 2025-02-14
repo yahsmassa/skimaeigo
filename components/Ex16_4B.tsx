@@ -1,8 +1,76 @@
-import React from "react";
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+
 const Ex16_4B = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4B-1",
+      qa: [
+        {
+          questionNumber: "39",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-2",
+      qa: [
+        {
+          questionNumber: "40",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-3",
+      qa: [
+        {
+          questionNumber: "41",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="p-8 max-w-3xl">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {15})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Original test questions section */}
       <div className="mb-8">
         <div className="flex items-center mb-4">
@@ -19,16 +87,16 @@ const Ex16_4B = () => {
 
         <div className="space-y-8">
           {/* Question 1 */}
-          <div>
-            <div className="flex items-start mb-4">
-              <span className="font-bold mr-2 whitespace-nowrap">問1</span>
+          <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-3">
+              <span className="whitespace-nowrap mr-2">問 1</span>
+
               <div>
                 Kazuko, a 19-year-old shop assistant, wants to participate in a
                 museum activity but is only free on weekday evenings. Which
                 activity will she most likely choose?
-                <span className="inline-block border border-black px-2 ml-2">
-                  39
-                </span>
+                {renderSelect("39", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4B-1" />}
               </div>
             </div>
             <div className="pl-8 space-y-2">
@@ -40,17 +108,16 @@ const Ex16_4B = () => {
           </div>
 
           {/* Question 2 */}
-          <div>
-            <div className="flex items-start mb-4">
-              <span className="font-bold mr-2 whitespace-nowrap">問2</span>
+          <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-3">
+              <span className="whitespace-nowrap mr-2">問 2</span>
               <div>
                 A retired couple and their 6-year-old grandchild wish to
                 participate together in a weekday afternoon activity. Which
                 activity will they most likely choose and how much will they pay
                 in total?
-                <span className="inline-block border border-black px-2 ml-2">
-                  40
-                </span>
+                {renderSelect("40", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4B-2" />}
               </div>
             </div>
             <div className="pl-8 space-y-2">
@@ -62,15 +129,14 @@ const Ex16_4B = () => {
           </div>
 
           {/* Question 3 */}
-          <div>
-            <div className="flex items-start mb-4">
-              <span className="font-bold mr-2 whitespace-nowrap">問3</span>
-              <div>
+          <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
+            <div className="flex items-center flex-wrap gap-2 mb-3">
+              <span className="whitespace-nowrap mr-2">問 3</span>
+              <span>
                 Which of the following is true according to the website?
-                <span className="inline-block border border-black px-2 ml-2">
-                  41
-                </span>
-              </div>
+              </span>
+              {renderSelect("41", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="4B-3" />}
             </div>
             <div className="pl-8 space-y-2">
               <div>

@@ -1,11 +1,93 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex20_4B = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4B-1",
+      qa: [
+        {
+          questionNumber: "37",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-2",
+      qa: [
+        {
+          questionNumber: "38",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-3",
+      qa: [
+        {
+          questionNumber: "39",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-4",
+      qa: [
+        {
+          questionNumber: "40",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="p-6 font-serif">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {20})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Section B Header */}
       <div className="mb-6">
-        <p className="text-lg">
+        <p className="leading-relaxed">
           <span className="font-bold mr-2">B</span>
           次のページにあるフリーマーケットの出店申請の説明を読み、次の問い(問
           1～4)の
@@ -16,13 +98,16 @@ const Ex20_4B = () => {
       </div>
 
       {/* Question 1 */}
-      <div className="mb-6">
-        <p className="mb-4">
-          <span className="font-bold mr-2">問 1</span>
-          Fran will sell her handmade jewelry on both days. She needs only a
-          small space. How much will it cost?
-          <span className="mx-2 border border-black px-3 py-1">37</span>
-        </p>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 1</span>
+          <span>
+            Fran will sell her handmade jewelry on both days. She needs only a
+            small space. How much will it cost?
+          </span>
+          {renderSelect("37", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4B-1" />}
+        </div>
         <div className="flex gap-8 ml-6">
           <p>① $14</p>
           <p>② $16</p>
@@ -32,13 +117,17 @@ const Ex20_4B = () => {
       </div>
 
       {/* Question 2 */}
-      <div className="mb-6">
-        <p className="mb-4">
-          <span className="font-bold mr-2">問 2</span>
-          Pat wants to sell some big household items, including a refrigerator,
-          so she needs an outdoor space. What offer can she take advantage of?
-          <span className="mx-2 border border-black px-3 py-1">38</span>
-        </p>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 2</span>
+          <span>
+            Pat wants to sell some big household items, including a
+            refrigerator, so she needs an outdoor space. What offer can she take
+            advantage of?
+          </span>
+          {renderSelect("38", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4B-2" />}
+        </div>
         <div className="flex flex-col gap-2 ml-6">
           <p>① Free assistance in setting up her tent</p>
           <p>② Full cash refund due to cancelation</p>
@@ -48,13 +137,16 @@ const Ex20_4B = () => {
       </div>
 
       {/* Question 3 */}
-      <div className="mb-6">
-        <p className="mb-4">
-          <span className="font-bold mr-2">問 3</span>
-          Mark makes herbal soaps and candles. He has chosen an indoor space.
-          Which of the following will he be allowed to do?
-          <span className="mx-2 border border-black px-3 py-1">39</span>
-        </p>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 3</span>
+          <span>
+            Mark makes herbal soaps and candles. He has chosen an indoor space.
+            Which of the following will he be allowed to do?
+          </span>
+          {renderSelect("39", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4B-3" />}
+        </div>
         <div className="flex flex-col gap-2 ml-6">
           <p>① Choose a space close to the sink to get water easily</p>
           <p>② Have a bowl of water for customers to try his soaps</p>
@@ -64,12 +156,13 @@ const Ex20_4B = () => {
       </div>
 
       {/* Question 4 */}
-      <div className="mb-6">
-        <p className="mb-4">
-          <span className="font-bold mr-2">問 4</span>
-          Which of the following is true about this flea market?
-          <span className="mx-2 border border-black px-3 py-1">40</span>
-        </p>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4B-4"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 4</span>
+          <span>Which of the following is true about this flea market?</span>
+          {renderSelect("40", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4B-4" />}
+        </div>
         <div className="flex flex-col gap-2 ml-6">
           <p>① People are discouraged from selling items they created.</p>
           <p>② People can throw away anything in the same trash can.</p>

@@ -1,14 +1,95 @@
-import React from "react";
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+
 const Ex17_4A = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4A-1",
+      qa: [
+        {
+          questionNumber: "35",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-2",
+      qa: [
+        {
+          questionNumber: "36",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-3",
+      qa: [
+        {
+          questionNumber: "37",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-4",
+      qa: [
+        {
+          questionNumber: "38",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {16})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       {/* Question Header */}
       <div className="flex items-center gap-4 mb-6">
-        <h2 className="text-lg font-bold">第4問</h2>
+        <h2 className=" font-bold">第4問</h2>
         <p>次の問い（A・B）に答えよ。（配点 35）</p>
       </div>
-
       {/* Section A */}
       <div className="space-y-4">
         <div className="mb-6">
@@ -16,8 +97,8 @@ const Ex17_4A = () => {
             A
             次の文章はある説明文の一部である。この文章と図を読み、下の問い（問1～4）の
             <span className="inline-flex gap-2">
-              <span className="border border-black px-4 py-1">35</span>～
-              <span className="border border-black px-4 py-1">38</span>
+              <div className="border border-black px-4 py-1 mx-1">35</div>～
+              <div className="border border-black px-4 py-1 mx-1">38</div>
             </span>
             に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
           </p>
@@ -118,12 +199,17 @@ const Ex17_4A = () => {
 
           {/* Questions Section */}
           <div className="mt-8 space-y-6">
-            <div className="space-y-4">
-              <p className="flex items-center gap-2">
-                問1 According to the passage, what is the difference between
-                Multi-court and Solid Surface?
-                <span className="border border-black px-4 py-1">35</span>
-              </p>
+            {/* Question 1 */}
+            <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
+              <div className="flex items-center flex-wrap gap-2 mb-3">
+                <span className="whitespace-nowrap mr-2">問 1</span>
+                <span>
+                  According to the passage, what is the difference between
+                  Multi-court and Solid Surface?
+                </span>
+                {renderSelect("35", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4A-1" />}
+              </div>
 
               <div className="space-y-4 pl-8">
                 <p>
@@ -149,12 +235,16 @@ const Ex17_4A = () => {
             </div>
 
             {/* Question 2 */}
-            <div className="space-y-4 mt-8">
-              <p className="flex items-center gap-2">
-                問2 In Figure 1, which of the following do (A), (B), (C), and
-                (D) refer to?
-                <span className="border border-black px-4 py-1">36</span>
-              </p>
+            <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
+              <div className="flex items-center flex-wrap gap-2 mb-3">
+                <span className="whitespace-nowrap mr-2">問 2</span>
+                <span>
+                  In Figure 1, which of the following do (A), (B), (C), and (D)
+                  refer to?
+                </span>
+                {renderSelect("36", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4A-2" />}
+              </div>
 
               <div className="space-y-4 pl-8">
                 <p>
@@ -175,11 +265,13 @@ const Ex17_4A = () => {
             </div>
 
             {/* Question 3 */}
-            <div className="space-y-4 mt-8">
-              <p className="flex items-center gap-2">
-                問3 The main purpose of this passage is to
-                <span className="border border-black px-4 py-1">37</span>.
-              </p>
+            <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
+              <div className="flex items-center flex-wrap gap-2 mb-3">
+                <span className="whitespace-nowrap mr-2">問 3</span>
+                <span>The main purpose of this passage is to</span>
+                {renderSelect("37", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4A-3" />}
+              </div>
 
               <div className="space-y-4 pl-8">
                 <p>
@@ -202,11 +294,15 @@ const Ex17_4A = () => {
             </div>
 
             {/* Question 4 */}
-            <div className="space-y-4 mt-8">
-              <p className="flex items-center gap-2">
-                問4 What topic is most likely to follow the last paragraph?
-                <span className="border border-black px-4 py-1">38</span>
-              </p>
+            <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
+              <div className="flex items-center flex-wrap gap-2 mb-3">
+                <span className="whitespace-nowrap mr-2">問 4</span>
+                <span>
+                  What topic is most likely to follow the last paragraph?
+                </span>
+                {renderSelect("38", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4A-4" />}
+              </div>
 
               <div className="space-y-4 pl-8">
                 <p>

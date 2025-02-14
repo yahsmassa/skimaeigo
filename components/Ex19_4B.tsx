@@ -1,8 +1,90 @@
-import React from "react";
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
 
 const Ex19_4B = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4B-1",
+      qa: [
+        {
+          questionNumber: "37",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-2",
+      qa: [
+        {
+          questionNumber: "38",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-3",
+      qa: [
+        {
+          questionNumber: "39",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-4",
+      qa: [
+        {
+          questionNumber: "40",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="p-8  text-black">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {20})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       <div className="mb-24">
         {/* Quiz Questions */}
         <div className="mb-6">
@@ -15,13 +97,14 @@ const Ex19_4B = () => {
           </p>
         </div>
 
-        {/* Version 1 */}
-        <div className="mb-6">
-          <p className="mb-2">
-            <span className="font-bold mr-2">問1</span>
-            What is a common characteristic of all four castles?
-            <span className="ml-2 border border-black px-2">37</span>
-          </p>
+        {/* Question 1 */}
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span>What is a common characteristic of all four castles?</span>
+            {renderSelect("37", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4B-1" />}
+          </div>
           <ol className="list-none pl-8">
             <li>① Amount of damage</li>
             <li>② Displays of pictures and weapons</li>
@@ -30,17 +113,18 @@ const Ex19_4B = () => {
           </ol>
         </div>
 
-        {/* Version 2 */}
-        <div className="mb-6">
-          <p className="mb-2">
-            <span className="font-bold mr-2">問2</span>
-            Three guitar club members from Grandlefolk University want to give a
-          </p>
-          <p className="ml-8 mb-2">
-            concert one afternoon in April. Which castle are they most likely to
-            choose?
-            <span className="ml-2 border border-black px-2">38</span>
-          </p>
+        {/* Question 2 */}
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span>
+              Three guitar club members from Grandlefolk University want to give
+              a concert one afternoon in April. Which castle are they most
+              likely to choose?
+            </span>
+            {renderSelect("38", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4B-2" />}
+          </div>
           <ol className="list-none pl-8">
             <li>① Crestvale Castle</li>
             <li>② Holmsted Castle</li>
@@ -49,25 +133,21 @@ const Ex19_4B = () => {
           </ol>
         </div>
 
-        {/* Version 3 */}
-        <div className="mb-6">
-          <p className="mb-2">
-            <span className="font-bold mr-2">問3</span>
-            Teachers at one school want to take their students to Grandlefolk
-            one
-          </p>
-          <p className="ml-8 mb-2">
-            Saturday in May. The purpose is to expand the students&apos;
-            knowledge of the
-          </p>
-          <p className="ml-8 mb-2">
-            area&apos;s history by visiting castles and listening to
-            explanations from the castle
-          </p>
-          <p className="ml-8 mb-2">
-            staff. Which two castles are the teachers most likely to select?
-            <span className="ml-2 border border-black px-2">39</span>
-          </p>
+        {/* Question 3 */}
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span>
+              Teachers at one school want to take their students to Grandlefolk
+              one Saturday in May. The purpose is to expand the students&apos;
+              knowledge of the area&apos;s history by visiting castles and
+              listening to explanations from the castle staff. Which two castles
+              are the teachers most likely to select?
+            </span>
+            {renderSelect("39", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4B-3" />}
+          </div>
+
           <ol className="list-none pl-8">
             <li>① Crestvale Castle and Holmsted Castle</li>
             <li>② Crestvale Castle and King&apos;s Castle</li>
@@ -76,20 +156,18 @@ const Ex19_4B = () => {
           </ol>
         </div>
 
-        {/* Version 4 */}
-        <div className="mb-6">
-          <p className="mb-2">
-            <span className="font-bold mr-2">問4</span>A mother, father, and
-            their two children, ages 4 and 8, will visit one of the
-          </p>
-          <p className="ml-8 mb-2">
-            castles in Grandlefolk for one day in September and want to see fine
-            arts.
-          </p>
-          <p className="ml-8 mb-2">
-            How much will it cost?
-            <span className="ml-2 border border-black px-2">40</span>
-          </p>
+        {/* Question 4 */}
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4B-4"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span>
+              A mother, father, and their two children, ages 4 and 8, will visit
+              one of the castles in Grandlefolk for one day in September and
+              want to see fine arts. How much will it cost?
+            </span>
+            {renderSelect("40", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4B-4" />}
+          </div>
           <ol className="list-none pl-8">
             <li>① €14</li>
             <li>② €17</li>

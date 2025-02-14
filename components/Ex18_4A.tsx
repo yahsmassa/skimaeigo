@@ -1,14 +1,95 @@
-import React from "react";
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+
 const Ex18_4A = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4A-1",
+      qa: [
+        {
+          questionNumber: "33",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-2",
+      qa: [
+        {
+          questionNumber: "34",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-3",
+      qa: [
+        {
+          questionNumber: "35",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4A-4",
+      qa: [
+        {
+          questionNumber: "36",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-white">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {16})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       {/* 問題番号とポイント */}
       <div className="mb-6 text-lg">
         <span className="font-bold">第4問</span>
         <span className="ml-4">次の問い(A・B)に答えよ。(配点 40)</span>
       </div>
-
       {/* A問題の説明部分 */}
       <div className="mb-6">
         <div className="font-bold mb-2">A</div>
@@ -21,7 +102,6 @@ const Ex18_4A = () => {
           に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
         </div>
       </div>
-
       {/* 英文部分 */}
       <div className="space-y-4 leading-relaxed">
         <p>
@@ -99,17 +179,15 @@ const Ex18_4A = () => {
           {/* 設問部分 */}
           <div className="mt-12 space-y-8">
             {/* 問1 */}
-            <div>
-              <div className="flex items-start mb-4">
-                <span className="font-bold mr-4 whitespace-nowrap">問1</span>
-                <div>
+            <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
+              <div className="flex items-center flex-wrap gap-2 mb-3">
+                <span className="whitespace-nowrap mr-2">問 1</span>
+                <span>
                   The passage mentions that it is difficult to understand which
                   colors consumers like better because
-                  <span className="inline-flex items-center mx-2">
-                    <div className="border border-black px-4 py-1">33</div>
-                  </span>
-                  .
-                </div>
+                </span>
+                {renderSelect("33", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4A-1" />}.
               </div>
               <div className="ml-8 space-y-2">
                 <div>
@@ -126,16 +204,15 @@ const Ex18_4A = () => {
             </div>
 
             {/* 問2 */}
-            <div>
-              <div className="flex items-start mb-4">
-                <span className="font-bold mr-4 whitespace-nowrap">問2</span>
-                <div>
+            <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
+              <div className="flex items-center flex-wrap gap-2 mb-3">
+                <span className="whitespace-nowrap mr-2">問 2</span>
+                <span>
                   In Figure 1, which of the following do (A), (B), (C), and (D)
                   refer to?
-                  <span className="inline-flex items-center ml-2">
-                    <div className="border border-black px-4 py-1">34</div>
-                  </span>
-                </div>
+                </span>
+                {renderSelect("34", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4A-2" />}
               </div>
               <div className="ml-8 space-y-2">
                 <div>
@@ -154,16 +231,15 @@ const Ex18_4A = () => {
             </div>
 
             {/* 問3 */}
-            <div>
-              <div className="flex items-start mb-4">
-                <span className="font-bold mr-4 whitespace-nowrap">問3</span>
-                <div>
+            <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
+              <div className="flex items-center flex-wrap gap-2 mb-3">
+                <span className="whitespace-nowrap mr-2">問 3</span>
+                <span>
                   Which of the following statements is correct according to the
                   passage?
-                  <span className="inline-flex items-center ml-2">
-                    <div className="border border-black px-4 py-1">35</div>
-                  </span>
-                </div>
+                </span>
+                {renderSelect("35", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4A-3" />}
               </div>
               <div className="ml-8 space-y-2">
                 <div>
@@ -186,15 +262,14 @@ const Ex18_4A = () => {
             </div>
 
             {/* 問4 */}
-            <div>
-              <div className="flex items-start mb-4">
-                <span className="font-bold mr-4 whitespace-nowrap">問4</span>
-                <div>
+            <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
+              <div className="flex items-center flex-wrap gap-2 mb-3">
+                <span className="whitespace-nowrap mr-2">問 4</span>
+                <span>
                   What topic is most likely to follow the last paragraph?
-                  <span className="inline-flex items-center ml-2">
-                    <div className="border border-black px-4 py-1">36</div>
-                  </span>
-                </div>
+                </span>
+                {renderSelect("36", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="4A-4" />}
               </div>
               <div className="ml-8 space-y-2">
                 <div>

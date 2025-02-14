@@ -1,8 +1,90 @@
-import React from "react";
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+
 const Ex18_4B = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4B-1",
+      qa: [
+        {
+          questionNumber: "37",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-2",
+      qa: [
+        {
+          questionNumber: "38",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-3",
+      qa: [
+        {
+          questionNumber: "39",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-4",
+      qa: [
+        {
+          questionNumber: "40",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="p-6 max-w-3xl">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {20})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Section B Header */}
       <div className="mb-6 flex items-center">
         <span className="font-bold mr-2">B</span>
@@ -16,13 +98,14 @@ const Ex18_4B = () => {
       </div>
 
       {/* Question 1 */}
-      <div className="mb-6">
-        <div className="flex items-center mb-2">
-          <span className="font-bold mr-2 whitespace-nowrap">問 1</span>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 1</span>
           <span>
             What inspired Ralph Bearison to start Papa Bear Cooking School?
           </span>
-          <span className="mx-2 border border-black px-2">37</span>
+          {renderSelect("37", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4B-1" />}
         </div>
         <ol className="list-none pl-4">
           <li className="mb-1">
@@ -43,15 +126,16 @@ const Ex18_4B = () => {
       </div>
 
       {/* Question 2 */}
-      <div className="mb-6">
-        <div className="mb-2">
-          <span className="font-bold mr-2 whitespace-nowrap">問 2</span>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 2</span>
           <span>
             Tony is going to participate in the French Course and use the
             discount coupon provided. He will also buy an apron-and-towel set
             from the school. How much will he pay in total?
           </span>
-          <span className="mx-2 border border-black px-2">38</span>
+          {renderSelect("38", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4B-2" />}
         </div>
         <div className="flex gap-8 pl-4">
           <span>① $270</span>
@@ -62,15 +146,16 @@ const Ex18_4B = () => {
       </div>
 
       {/* Question 3 */}
-      <div className="mb-6">
-        <div className="mb-2">
-          <span className="font-bold mr-2 whitespace-nowrap">問 3</span>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 3</span>
           <span>
             Ed hopes to expand the variety of food he can cook for his family.
             He has no free time on weekends or mornings. Which cooking course
             would he most likely take?
           </span>
-          <span className="mx-2 border border-black px-2">39</span>
+          {renderSelect("39", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4B-3" />}
         </div>
         <ol className="list-none pl-4">
           <li className="mb-1">① Chinese</li>
@@ -81,12 +166,12 @@ const Ex18_4B = () => {
       </div>
 
       {/* Question 4 */}
-      <div className="mb-6">
-        <div className="mb-2">
-          <span className="font-bold mr-2 whitespace-nowrap">問 4</span>
+      <div className={cn("mb-8", showResults && qaFormat(qa, "4B-4"))}>
+        <div className="flex items-center flex-wrap gap-2 mb-3">
+          <span className="whitespace-nowrap mr-2">問 4</span>
           <span>The advertisement suggests that</span>
-          <span className="mx-2 border border-black px-2">40</span>
-          <span>.</span>
+          {renderSelect("40", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="4B-4" />}
         </div>
         <ol className="list-none pl-4">
           <li className="mb-1">
@@ -107,7 +192,7 @@ const Ex18_4B = () => {
       </div>
 
       {/* Advertisement Content */}
-      <div className="mt-8 border-t pt-8">
+      <div className="mt-10 border-t pt-8">
         <div className="flex justify-between items-center mb-4">
           <div className="flex-1"></div>
           <div className="text-center flex-1">

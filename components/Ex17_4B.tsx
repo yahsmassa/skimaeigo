@@ -1,8 +1,76 @@
-import React from "react";
+"use client";
 import Image from "next/image";
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+
 const Ex17_4B = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "4B-1",
+      qa: [
+        {
+          questionNumber: "39",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-2",
+      qa: [
+        {
+          questionNumber: "40",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+    {
+      questionId: "4B-3",
+      qa: [
+        {
+          questionNumber: "41",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
+
   return (
-    <div className="p-8 ">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <span className="text-gray-600">(配点 {15})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Part 1: Exam Questions */}
       <div className="mb-12">
         <div className="mb-8">
@@ -16,13 +84,14 @@ const Ex17_4B = () => {
           </p>
         </div>
 
-        <div className="space-y-8">
-          <div>
-            <p className="mb-4">
-              <span className="font-bold">問 1</span> The purpose of the IAYP
-              Video Clip Competition is to provide{" "}
-              <span className="border border-black px-2">39</span>.
-            </p>
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span>
+              The purpose of the IAYP Video Clip Competition is to provide{" "}
+            </span>
+            {renderSelect("39", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4B-1" />}
             <div className="pl-8 space-y-2">
               <p>① a place to meet new friends of the same age</p>
               <p>② an airplane ticket to Australia to create a video clip</p>
@@ -30,47 +99,53 @@ const Ex17_4B = () => {
               <p>④ opportunities for young people to exhibit their works</p>
             </div>
           </div>
+        </div>
 
-          <div>
-            <p className="mb-4">
-              <span className="font-bold">問 2</span> Members of a high school
-              baseball team will submit a four-minute video clip about their
-              bonds with players from a sister school abroad. Under which
-              category should the video clip be entered?{" "}
-              <span className="border border-black px-2">40</span>
-            </p>
-            <div className="pl-8 space-y-2">
-              <p>① Category A</p>
-              <p>② Category B</p>
-              <p>③ Category C</p>
-              <p>④ Category D</p>
-            </div>
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span>
+              Members of a high school baseball team will submit a four-minute
+              video clip about their bonds with players from a sister school
+              abroad. Under which category should the video clip be entered?{" "}
+            </span>
+            {renderSelect("40", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4B-2" />}
           </div>
+          <div className="pl-8 space-y-2">
+            <p>① Category A</p>
+            <p>② Category B</p>
+            <p>③ Category C</p>
+            <p>④ Category D</p>
+          </div>
+        </div>
 
-          <div>
-            <p className="mb-4">
-              <span className="font-bold">問 3</span> Which of the following
-              meets the submission requirements for this competition?{" "}
-              <span className="border border-black px-2">41</span>
+        <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
+          <div className="flex items-center flex-wrap gap-2 mb-3">
+            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span>
+              Which of the following meets the submission requirements for this
+              competition?{" "}
+            </span>
+            {renderSelect("41", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="4B-3" />}
+          </div>
+          <div className="pl-8 space-y-2">
+            <p>
+              ① A nine-minute mystery drama featuring a young Japanese detective
             </p>
-            <div className="pl-8 space-y-2">
-              <p>
-                ① A nine-minute mystery drama featuring a young Japanese
-                detective
-              </p>
-              <p>
-                ② A six-minute video clip showing students practicing for a
-                rugby game
-              </p>
-              <p>
-                ③ A three-minute video clip that won third prize at a local film
-                festival
-              </p>
-              <p>
-                ④ A three-minute video clip uploaded to this website on October
-                30, 2017
-              </p>
-            </div>
+            <p>
+              ② A six-minute video clip showing students practicing for a rugby
+              game
+            </p>
+            <p>
+              ③ A three-minute video clip that won third prize at a local film
+              festival
+            </p>
+            <p>
+              ④ A three-minute video clip uploaded to this website on October
+              30, 2017
+            </p>
           </div>
         </div>
       </div>

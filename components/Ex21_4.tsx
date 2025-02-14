@@ -330,6 +330,7 @@ export default function Ex21_4() {
 
       {/* Questions Section */}
       <div className="mt-8">
+        {/* Question 1 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-1"))}>
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2">問 1</span>
@@ -352,7 +353,7 @@ export default function Ex21_4() {
             <div>⑥ 240</div>
           </div>
         </div>
-
+        {/* Question 2 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2">問 2</span>
