@@ -5,9 +5,14 @@ import { translateSentence, readSentence } from "@/lib/util";
 type props = {
   isSelected: boolean;
   selectedText: string;
+  onTranslate: () => void;
 };
 
-export function ReadTranslate({ isSelected, selectedText }: props) {
+export function ReadTranslate({
+  isSelected,
+  selectedText,
+  onTranslate,
+}: props) {
   return (
     <div className="flex items-center ">
       <button
@@ -21,7 +26,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         Read
       </button>
       <button
-        onClick={() => translateSentence(selectedText)}
+        onClick={onTranslate}
         disabled={!isSelected}
         className={cn(
           "ml-2 px-2 py-1  text-white rounded  w-[60px]",

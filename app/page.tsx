@@ -347,6 +347,24 @@ export default function Home() {
     };
   }, []);
 
+  const handleTranslate = useCallback(() => {
+    if (isMobile) {
+      // モバイルの場合、選択範囲を保持するために現在の選択を保存
+      const selection = window.getSelection();
+      const range = selection?.getRangeAt(0);
+
+      translateSentence(selection?.toString() || "");
+
+      // 翻訳後に選択範囲を復元
+      if (range) {
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+      }
+    } else {
+      translateSentence(selection);
+    }
+  }, [selection]);
+
   return (
     <div className="mt-7 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
       <h1 className="ml-2 text-xl font-bold">共通テスト 英語</h1>
@@ -376,7 +394,11 @@ export default function Home() {
               </option>
             ))}
           </select>
-          <ReadTranslate isSelected={isSelected} selectedText={selection} />
+          <ReadTranslate
+            isSelected={isSelected}
+            selectedText={selection}
+            onTranslate={handleTranslate}
+          />
         </div>
       </div>
       <main className="gap-8 row-start-2 items-center sm:items-start">
