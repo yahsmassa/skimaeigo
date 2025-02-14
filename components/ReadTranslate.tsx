@@ -22,7 +22,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         Read
       </button>
       <button
-        onMouseDown={(e) => e.preventDefault()}
+        // onMouseDown={(e) => e.preventDefault()}
         onClick={() => translateSentence(selectedText)}
         disabled={!isSelected}
         className={cn(
