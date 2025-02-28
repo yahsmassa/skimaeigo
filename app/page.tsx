@@ -312,6 +312,7 @@ export default function Home() {
 
   useEffect(() => {
     // 音声リストが利用可能になるのを待つ
+
     const loadVoices = () => {
       const voices = speechSynthesis.getVoices();
       if (voices.length > 0) {
@@ -322,22 +323,23 @@ export default function Home() {
     speechSynthesis.onvoiceschanged = loadVoices;
     loadVoices();
 
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = async (e: KeyboardEvent) => {
       // Ctrl + R で音声読み上げ
       if (e.ctrlKey && e.key === "r") {
         e.preventDefault();
+        console.log("read selection", selection);
         readSentence(selection);
       }
       // Ctrl + t で翻訳
-      const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+      const isMac = navigator.userAgent.toUpperCase().indexOf("MAC") >= 0;
+      console.log("isMac", isMac);
 
       if (
         (isMac && e.ctrlKey && e.key === "t") ||
         (!isMac && e.ctrlKey && e.key === "q")
       ) {
         e.preventDefault();
-        translateSentence(selection);
-        return;
+        await translateSentence(selection);
       }
     };
 
@@ -345,7 +347,7 @@ export default function Home() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [selection]);
 
   return (
     <div className="mt-7 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
