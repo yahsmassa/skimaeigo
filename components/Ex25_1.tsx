@@ -112,7 +112,7 @@ export default function Ex25_1() {
                 alt="Fish and bottom material illustration"
                 width={128}
                 height={128}
-                className="w-full"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function Ex25_1() {
                 alt="Natural and artificial decorations"
                 width={192}
                 height={192}
-                className="w-full"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -163,7 +163,7 @@ export default function Ex25_1() {
                 alt="Tank decoration positions"
                 width={192}
                 height={192}
-                className="w-full"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -267,7 +267,7 @@ export default function Ex25_1() {
                 alt="Four aquarium decoration examples"
                 width={800}
                 height={600}
-                className="w-full"
+                className="w-full h-auto"
               />
             </div>
           </div>

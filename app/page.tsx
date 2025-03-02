@@ -1,389 +1,768 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { translateSentence, readSentence } from "@/lib/util";
-import { ReadTranslate } from "@/components/ReadTranslate";
-import { isMobile } from "react-device-detect";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useAtom } from "jotai";
+import { userAtom } from "@/atoms/userAtom";
+import Link from "next/link";
 
-import Ex16_4A from "@/components/Ex16_4A";
-import Ex16_4B from "@/components/Ex16_4B";
-import Ex17_4A from "@/components/Ex17_4A";
-import Ex17_4B from "@/components/Ex17_4B";
-import Ex18_4A from "@/components/Ex18_4A";
-import Ex18_4B from "@/components/Ex18_4B";
-import Ex19_4A from "@/components/Ex19_4A";
-import Ex19_4B from "@/components/Ex19_4B";
-import Ex20_4A from "@/components/Ex20_4A";
-import Ex20_4B from "@/components/Ex20_4B";
-import Ex16_5 from "@/components/Ex16_5";
-import Ex16_6 from "@/components/Ex16_6";
-import Ex17_5 from "@/components/Ex17_5";
-import Ex17_6 from "@/components/Ex17_6";
-import Ex18_5 from "@/components/Ex18_5";
-import Ex18_6 from "@/components/Ex18_6";
-import Ex19_5 from "@/components/Ex19_5";
-import Ex19_6 from "@/components/Ex19_6";
-import Ex20_5 from "@/components/Ex20_5";
-import Ex20_6 from "@/components/Ex20_6";
-import Ex21_1A from "@/components/Ex21_1A";
-import Ex21_1B from "@/components/Ex21_1B";
-import Ex21_2A from "@/components/Ex21_2A";
-import Ex21_2B from "@/components/Ex21_2B";
-import Ex21_3A from "@/components/Ex21_3A";
-import Ex21_3B from "@/components/Ex21_3B";
-import Ex21_4 from "@/components/Ex21_4";
-import Ex21_5 from "@/components/Ex21_5";
-import Ex21_6A from "@/components/Ex21_6A";
-import Ex21_6B from "@/components/Ex21_6B";
-import Ex22_1A from "@/components/Ex22_1A";
-import Ex22_1B from "@/components/Ex22_1B";
-import Ex22_2A from "@/components/Ex22_2A";
-import Ex22_2B from "@/components/Ex22_2B";
-import Ex22_3A from "@/components/Ex22_3A";
-import Ex22_3B from "@/components/Ex22_3B";
-import Ex22_4 from "@/components/Ex22_4";
-import Ex22_5 from "@/components/Ex22_5";
-import Ex22_6A from "@/components/Ex22_6A";
-import Ex22_6B from "@/components/Ex22_6B";
-import Ex23_1A from "@/components/Ex23_1A";
-import Ex23_1B from "@/components/Ex23_1B";
-import Ex23_2A from "@/components/Ex23_2A";
-import Ex23_2B from "@/components/Ex23_2B";
-import Ex23_3A from "@/components/Ex23_3A";
-import Ex23_3B from "@/components/Ex23_3B";
-import Ex23_4 from "@/components/Ex23_4";
-import Ex23_5 from "@/components/Ex23_5";
-import Ex23_6A from "@/components/Ex23_6A";
-import Ex23_6B from "@/components/Ex23_6B";
-import Ex24_1A from "@/components/Ex24_1A";
-import Ex24_1B from "@/components/Ex24_1B";
-import Ex24_2A from "@/components/Ex24_2A";
-import Ex24_2B from "@/components/Ex24_2B";
-import Ex24_3A from "@/components/Ex24_3A";
-import Ex24_3B from "@/components/Ex24_3B";
-import Ex24_4 from "@/components/Ex24_4";
-import Ex24_5 from "@/components/Ex24_5";
-import Ex24_6A from "@/components/Ex24_6A";
-import Ex24_6B from "@/components/Ex24_6B";
-import Ex25_1 from "@/components/Ex25_1";
-import Ex25_2 from "@/components/Ex25_2";
-import Ex25_3 from "@/components/Ex25_3";
-import Ex25_4 from "@/components/Ex25_4";
-import Ex25_5 from "@/components/Ex25_5";
-import Ex25_6 from "@/components/Ex25_6";
-import Ex25_7 from "@/components/Ex25_7";
-import Ex25_8 from "@/components/Ex25_8";
-
-const components = [
-  { id: "Ex16_4A", label: "2016年 問4 A", component: <Ex16_4A /> },
-  { id: "Ex16_4B", label: "2016年 問4 B", component: <Ex16_4B /> },
-  { id: "Ex16_5", label: "2016年 問5", component: <Ex16_5 /> },
-  { id: "Ex16_6", label: "2016年 問6", component: <Ex16_6 /> },
-  { id: "Ex17_4A", label: "2017年 問4 A", component: <Ex17_4A /> },
-  { id: "Ex17_4B", label: "2017年 問4 B", component: <Ex17_4B /> },
-  { id: "Ex17_5", label: "2017年 問5", component: <Ex17_5 /> },
-  { id: "Ex17_6", label: "2017年 問6", component: <Ex17_6 /> },
-  { id: "Ex18_4A", label: "2018年 問4 A", component: <Ex18_4A /> },
-  { id: "Ex18_4B", label: "2018年 問4 B", component: <Ex18_4B /> },
-  { id: "Ex18_5", label: "2018年 問5", component: <Ex18_5 /> },
-  { id: "Ex18_6", label: "2018年 問6", component: <Ex18_6 /> },
-  { id: "Ex19_4A", label: "2019年 問4 A", component: <Ex19_4A /> },
-  { id: "Ex19_4B", label: "2019年 問4 B", component: <Ex19_4B /> },
-  { id: "Ex19_5", label: "2019年 問5", component: <Ex19_5 /> },
-  { id: "Ex19_6", label: "2019年 問6", component: <Ex19_6 /> },
-  { id: "Ex20_4A", label: "2020年 問4 A", component: <Ex20_4A /> },
-  { id: "Ex20_4B", label: "2020年 問4 B", component: <Ex20_4B /> },
-  { id: "Ex20_5", label: "2020年 問5", component: <Ex20_5 /> },
-  { id: "Ex20_6", label: "2020年 問6", component: <Ex20_6 /> },
-  { id: "Ex21_1A", label: "2021年 問1 A", component: <Ex21_1A /> },
-  { id: "Ex21_1B", label: "2021年 問1 B", component: <Ex21_1B /> },
-  { id: "Ex21_2A", label: "2021年 問2 A", component: <Ex21_2A /> },
-  { id: "Ex21_2B", label: "2021年 問2 B", component: <Ex21_2B /> },
-  { id: "Ex21_3A", label: "2021年 問3 A", component: <Ex21_3A /> },
-  { id: "Ex21_3B", label: "2021年 問3 B", component: <Ex21_3B /> },
-  { id: "Ex21_4", label: "2021年 問4", component: <Ex21_4 /> },
-  { id: "Ex21_5", label: "2021年 問5", component: <Ex21_5 /> },
-  { id: "Ex21_6A", label: "2021年 問6 A", component: <Ex21_6A /> },
-  { id: "Ex21_6B", label: "2021年 問6 B", component: <Ex21_6B /> },
-  { id: "Ex22_1A", label: "2022年 問1 A", component: <Ex22_1A /> },
-  { id: "Ex22_1B", label: "2022年 問1 B", component: <Ex22_1B /> },
-  { id: "Ex22_2A", label: "2022年 問2 A", component: <Ex22_2A /> },
-  { id: "Ex22_2B", label: "2022年 問2 B", component: <Ex22_2B /> },
-  { id: "Ex22_3A", label: "2022年 問3 A", component: <Ex22_3A /> },
-  { id: "Ex22_3B", label: "2022年 問3 B", component: <Ex22_3B /> },
-  { id: "Ex22_4", label: "2022年 問4", component: <Ex22_4 /> },
-  { id: "Ex22_5", label: "2022年 問5", component: <Ex22_5 /> },
-  { id: "Ex22_6A", label: "2022年 問6 A", component: <Ex22_6A /> },
-  { id: "Ex22_6B", label: "2022年 問6 B", component: <Ex22_6B /> },
-  { id: "Ex23_1A", label: "2023年 問1 A", component: <Ex23_1A /> },
-  { id: "Ex23_1B", label: "2023年 問1 B", component: <Ex23_1B /> },
-  { id: "Ex23_2A", label: "2023年 問2 A", component: <Ex23_2A /> },
-  { id: "Ex23_2B", label: "2023年 問2 B", component: <Ex23_2B /> },
-  { id: "Ex23_3A", label: "2023年 問3 A", component: <Ex23_3A /> },
-  { id: "Ex23_3B", label: "2023年 問3 B", component: <Ex23_3B /> },
-  { id: "Ex23_4", label: "2023年 問4", component: <Ex23_4 /> },
-  { id: "Ex23_5", label: "2023年 問5", component: <Ex23_5 /> },
-  { id: "Ex23_6A", label: "2023年 問6 A", component: <Ex23_6A /> },
-  { id: "Ex23_6B", label: "2023年 問6 B", component: <Ex23_6B /> },
-  { id: "Ex25_1", label: "2025年 問1", component: <Ex25_1 /> },
-  { id: "Ex25_2", label: "2025年 問2", component: <Ex25_2 /> },
-  { id: "Ex25_3", label: "2025年 問3", component: <Ex25_3 /> },
-  { id: "Ex25_4", label: "2025年 問4", component: <Ex25_4 /> },
-  { id: "Ex25_5", label: "2025年 問5", component: <Ex25_5 /> },
-  { id: "Ex25_6", label: "2025年 問6", component: <Ex25_6 /> },
-  { id: "Ex25_7", label: "2025年 問7", component: <Ex25_7 /> },
-  { id: "Ex25_8", label: "2025年 問8", component: <Ex25_8 /> },
-  { id: "Ex24_1A", label: "2024年 問1 A", component: <Ex24_1A /> },
-  { id: "Ex24_1B", label: "2024年 問1 B", component: <Ex24_1B /> },
-  { id: "Ex24_2A", label: "2024年 問2 A", component: <Ex24_2A /> },
-  { id: "Ex24_2B", label: "2024年 問2 B", component: <Ex24_2B /> },
-  { id: "Ex24_3A", label: "2024年 問3 A", component: <Ex24_3A /> },
-  { id: "Ex24_3B", label: "2024年 問3 B", component: <Ex24_3B /> },
-  { id: "Ex24_4", label: "2024年 問4", component: <Ex24_4 /> },
-  { id: "Ex24_5", label: "2024年 問5", component: <Ex24_5 /> },
-  { id: "Ex24_6A", label: "2024年 問6 A", component: <Ex24_6A /> },
-  { id: "Ex24_6B", label: "2024年 問6 B", component: <Ex24_6B /> },
-];
-
-type Year =
-  | "2016"
-  | "2017"
-  | "2018"
-  | "2019"
-  | "2020"
-  | "2021"
-  | "2022"
-  | "2023"
-  | "2024"
-  | "2025";
-type Problem = { id: string; label: string };
-type GroupedComponents = Record<Year, Problem[]>;
-
-const groupedComponents: GroupedComponents = {
-  "2016": [
-    { id: "Ex16_4A", label: "問4 A" },
-    { id: "Ex16_4B", label: "問4 B" },
-    { id: "Ex16_5", label: "問5" },
-    { id: "Ex16_6", label: "問6" },
-  ],
-  "2017": [
-    { id: "Ex17_4A", label: "問4 A" },
-    { id: "Ex17_4B", label: "問4 B" },
-    { id: "Ex17_5", label: "問5" },
-    { id: "Ex17_6", label: "問6" },
-  ],
-  "2018": [
-    { id: "Ex18_4A", label: "問4 A" },
-    { id: "Ex18_4B", label: "問4 B" },
-    { id: "Ex18_5", label: "問5" },
-    { id: "Ex18_6", label: "問6" },
-  ],
-  "2019": [
-    { id: "Ex19_4A", label: "問4 A" },
-    { id: "Ex19_4B", label: "問4 B" },
-    { id: "Ex19_5", label: "問5" },
-    { id: "Ex19_6", label: "問6" },
-  ],
-  "2020": [
-    { id: "Ex20_4A", label: "問4 A" },
-    { id: "Ex20_4B", label: "問4 B" },
-    { id: "Ex20_5", label: "問5" },
-    { id: "Ex20_6", label: "問6" },
-  ],
-  "2021": [
-    { id: "Ex21_1A", label: "問1 A" },
-    { id: "Ex21_1B", label: "問1 B" },
-    { id: "Ex21_2A", label: "問2 A" },
-    { id: "Ex21_2B", label: "問2 B" },
-    { id: "Ex21_3A", label: "問3 A" },
-    { id: "Ex21_3B", label: "問3 B" },
-    { id: "Ex21_4", label: "問4" },
-    { id: "Ex21_5", label: "問5" },
-    { id: "Ex21_6A", label: "問6 A" },
-    { id: "Ex21_6B", label: "問6 B" },
-  ],
-  "2022": [
-    { id: "Ex22_1A", label: "問1 A" },
-    { id: "Ex22_1B", label: "問1 B" },
-    { id: "Ex22_2A", label: "問2 A" },
-    { id: "Ex22_2B", label: "問2 B" },
-    { id: "Ex22_3A", label: "問3 A" },
-    { id: "Ex22_3B", label: "問3 B" },
-    { id: "Ex22_4", label: "問4" },
-    { id: "Ex22_5", label: "問5" },
-    { id: "Ex22_6A", label: "問6 A" },
-    { id: "Ex22_6B", label: "問6 B" },
-  ],
-  "2023": [
-    { id: "Ex23_1A", label: "問1 A" },
-    { id: "Ex23_1B", label: "問1 B" },
-    { id: "Ex23_2A", label: "問2 A" },
-    { id: "Ex23_2B", label: "問2 B" },
-    { id: "Ex23_3A", label: "問3 A" },
-    { id: "Ex23_3B", label: "問3 B" },
-    { id: "Ex23_4", label: "問4" },
-    { id: "Ex23_5", label: "問5" },
-    { id: "Ex23_6A", label: "問6 A" },
-    { id: "Ex23_6B", label: "問6 B" },
-  ],
-  "2024": [
-    { id: "Ex24_1A", label: "問1 A" },
-    { id: "Ex24_1B", label: "問1 B" },
-    { id: "Ex24_2A", label: "問2 A" },
-    { id: "Ex24_2B", label: "問2 B" },
-    { id: "Ex24_3A", label: "問3 A" },
-    { id: "Ex24_3B", label: "問3 B" },
-    { id: "Ex24_4", label: "問4" },
-    { id: "Ex24_5", label: "問5" },
-    { id: "Ex24_6A", label: "問6 A" },
-    { id: "Ex24_6B", label: "問6 B" },
-  ],
-  "2025": [
-    { id: "Ex25_1", label: "問1" },
-    { id: "Ex25_2", label: "問2" },
-    { id: "Ex25_3", label: "問3" },
-    { id: "Ex25_4", label: "問4" },
-    { id: "Ex25_5", label: "問5" },
-    { id: "Ex25_6", label: "問6" },
-    { id: "Ex25_7", label: "問7" },
-    { id: "Ex25_8", label: "問8" },
-  ],
-};
+import {
+  ChevronDown,
+  Clock,
+  Check,
+  Smartphone,
+  Tablet,
+  Laptop,
+  Headphones,
+  CreditCard,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Home() {
-  const [selectedYear, setSelectedYear] = useState<Year>("2025");
-  const [selectedComponent, setSelectedComponent] = useState("Ex25_1");
-  const [isSelected, setIsSelected] = useState(false);
-  const [selection, setSelection] = useState("");
+  const router = useRouter();
+  const [user] = useAtom(userAtom);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleSelection = useCallback(() => {
-    const selectedText = window.getSelection()?.toString() || "";
-    setIsSelected(!!selectedText && selectedText.length > 0);
-    if (selectedText) {
-      setSelection(selectedText);
+  useEffect(() => {
+    // ログインしている場合はダッシュボードにリダイレクト
+    if (user) {
+      router.push("/dashboard");
     }
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener("selectionchange", handleSelection);
-    return () => {
-      document.removeEventListener("selectionchange", handleSelection);
-    };
-  }, [handleSelection]);
-
-  const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const year = e.target.value as Year;
-    setSelectedYear(year);
-
-    // 現在の問番号を取得（例："Ex25_5" → "5"）
-    const currentProblemNumber = selectedComponent.split("_")[1];
-
-    // 新しい年の問題リストから同じ問番号のものを探す
-    const sameProblem = groupedComponents[year].find(
-      (problem) => problem.id.split("_")[1] === currentProblemNumber
-    );
-
-    // 同じ問番号があればそれを選択、なければ最初の問題を選択
-    setSelectedComponent(
-      sameProblem ? sameProblem.id : groupedComponents[year][0].id
-    );
-  };
-
-  const handleProblemChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedComponent(e.target.value);
-  };
-
-  const selected = components.find((comp) => comp.id === selectedComponent);
-
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("/sw.js")
-          .then(() => {
-            console.log("ServiceWorker registration successful");
-          })
-          .catch((err) => {
-            console.log("ServiceWorker registration failed: ", err);
-          });
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    // 音声リストが利用可能になるのを待つ
-
-    const loadVoices = () => {
-      const voices = speechSynthesis.getVoices();
-      if (voices.length > 0) {
-        // 音声が利用可能
-      }
-    };
-
-    speechSynthesis.onvoiceschanged = loadVoices;
-    loadVoices();
-
-    const handleKeyDown = async (e: KeyboardEvent) => {
-      // Ctrl + R で音声読み上げ
-      if (e.ctrlKey && e.key === "r") {
-        e.preventDefault();
-        console.log("read selection", selection);
-        readSentence(selection);
-      }
-      // Ctrl + t で翻訳
-      const isMac = navigator.userAgent.toUpperCase().indexOf("MAC") >= 0;
-      console.log("isMac", isMac);
-
-      if (
-        (isMac && e.ctrlKey && e.key === "t") ||
-        (!isMac && e.ctrlKey && e.key === "q")
-      ) {
-        e.preventDefault();
-        await translateSentence(selection);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selection]);
+  }, [user, router]);
 
   return (
-    <div className="mt-7 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
-      <h1 className="ml-2 text-xl font-bold">共通テスト 英語</h1>
-      <div className="sticky top-0 bg-white z-50 py-2 shadow-sm">
-        <div className="flex items-center container mx-auto px-4">
-          <select
-            value={selectedYear}
-            onChange={handleYearChange}
-            className="ml-5 p-2 border rounded"
-          >
-            {(Object.keys(groupedComponents) as Year[])
-              .reverse()
-              .map((year) => (
-                <option key={year} value={year}>
-                  {year}年
-                </option>
-              ))}
-          </select>
-          <select
-            value={selectedComponent}
-            onChange={handleProblemChange}
-            className="ml-2 p-2 border rounded"
-          >
-            {groupedComponents[selectedYear].map((problem) => (
-              <option key={problem.id} value={problem.id}>
-                {problem.label}
-              </option>
-            ))}
-          </select>
-          <ReadTranslate isSelected={isSelected} selectedText={selection} />
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800 font-sans">
+      {/* Navigation */}
+      <nav className="sticky top-0 bg-white shadow-md z-50">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          <div className="flex items-center">
+            <span className="text-blue-600 font-bold text-2xl">
+              共通テストアプリ
+            </span>
+          </div>
+
+          <div className="hidden md:flex space-x-8">
+            <a
+              href="#features"
+              className="hover:text-blue-600 transition-colors"
+            >
+              特徴
+            </a>
+            <a
+              href="#comparison"
+              className="hover:text-blue-600 transition-colors"
+            >
+              従来との違い
+            </a>
+            <a
+              href="#testimonials"
+              className="hover:text-blue-600 transition-colors"
+            >
+              お客様の声
+            </a>
+            <a
+              href="#pricing"
+              className="hover:text-blue-600 transition-colors"
+            >
+              料金
+            </a>
+          </div>
+
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="focus:outline-none"
+            >
+              <ChevronDown
+                size={24}
+                className={`transform transition-transform ${
+                  isMenuOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+          </div>
         </div>
-      </div>
-      <main className="gap-8 row-start-2 items-center sm:items-start">
-        {selected && selected.component}
-      </main>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white px-4 py-2 shadow-inner">
+            <div className="flex flex-col space-y-3">
+              <a
+                href="#features"
+                className="hover:text-blue-600 transition-colors py-2"
+              >
+                特徴
+              </a>
+              <a
+                href="#comparison"
+                className="hover:text-blue-600 transition-colors py-2"
+              >
+                従来との違い
+              </a>
+              <a
+                href="#testimonials"
+                className="hover:text-blue-600 transition-colors py-2"
+              >
+                お客様の声
+              </a>
+              <a
+                href="#pricing"
+                className="hover:text-blue-600 transition-colors py-2"
+              >
+                料金
+              </a>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <header className="bg-blue-600 text-white">
+        <div className="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 mb-8 md:mb-0">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              共通テストは、時間内に解くのが超難しい！
+            </h1>
+            <p className="text-xl md:text-2xl mb-8">
+              過去問に慣れて、時間内に解く練習をすることが大事です
+            </p>
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <a
+                href="#pricing"
+                className="bg-white text-blue-600 font-bold px-6 py-3 rounded-lg text-center hover:bg-blue-50 transition-colors"
+              >
+                今すぐ始める
+              </a>
+              <a
+                href="#features"
+                className="border-2 border-white text-white font-bold px-6 py-3 rounded-lg text-center hover:bg-white hover:text-blue-600 transition-colors"
+              >
+                詳細を見る
+              </a>
+            </div>
+          </div>
+          <div className="md:w-1/2 flex justify-center">
+            <div className="bg-white rounded-lg shadow-xl p-2 max-w-xs">
+              <img
+                src="/images/smaho.webp"
+                alt="アプリ画面イメージ"
+                className="rounded"
+              />
+            </div>
+            <div className="bg-white rounded-lg shadow-xl p-2 max-w-xs ml-2">
+              <img
+                src="/images/smaho2.webp"
+                alt="アプリ画面イメージ"
+                className="rounded"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Features Section */}
+      <section id="features" className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            アプリの特徴
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+              <div className="text-blue-600 mb-4">
+                <Clock size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3">
+                スキマ時間で共通テスト対策
+              </h3>
+              <p>
+                実戦では１問に費やせる時間は５分から１０分です。SNSをチェックする感覚で共通テストをピンポイントリアル体験。
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+              <div className="text-blue-600 mb-4">
+                <Check size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3">瞬時にアクセス・確認</h3>
+              <p>
+                問１、問２、という順番以外にも、各年の問５をまとめて解くなど、その都度、ランダムな選択で、瞬時に過去問題にアクセスできます。
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+              <div className="text-blue-600 mb-4">
+                <Clock size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3">タイマー機能</h3>
+              <p>
+                タイマーで時間を計測できるので、自分の解答スピードがわかります。時間内に解くことが重要なスキルです。
+              </p>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+              <div className="text-blue-600 mb-4">
+                <Headphones size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3">読み上げ・翻訳機能</h3>
+              <p>
+                選択した文章の読み上げ、翻訳・イディオム解説機能で深掘り学習、問題がそのまま教材になります。
+              </p>
+            </div>
+
+            {/* Feature 5 */}
+            <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+              <div className="text-blue-600 mb-4">
+                <Smartphone size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3">マルチデバイス対応</h3>
+              <p>
+                電車ではスマホ、カフェではタブレット、家ではPCで学習など、全てのデバイスに対応しています。
+              </p>
+            </div>
+
+            {/* Feature 6 */}
+            <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+              <div className="text-blue-600 mb-4">
+                <CreditCard size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3">お得な料金プラン</h3>
+              <p>
+                会員登録で２０２５年の試験は無料で使えます。有料会員になると、２０１６年からの１０年分の過去問題を全て使えます。有料会員は1000円、PayPayで支払いできます
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section id="comparison" className="py-16 md:py-24 bg-blue-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            従来のアプリとの違い
+          </h2>
+
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="grid md:grid-cols-2">
+              <div className="p-6 md:p-8 bg-blue-600 text-white">
+                <h3 className="text-2xl font-bold mb-6">従来のアプリ</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <span className="mr-2 mt-1">•</span>
+                    <span>年度単位での学習が基本</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 mt-1">•</span>
+                    <span>まとまった時間が必要</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 mt-1">•</span>
+                    <span>問題集・ノートなど文房具が必要</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 mt-1">•</span>
+                    <span>問題単位で使える機能がない</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 mt-1">•</span>
+                    <span>発音や翻訳は別途確認が必要</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 mt-1">•</span>
+                    <span>一人での学習がベース</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-6 md:p-8">
+                <h3 className="text-2xl font-bold mb-6 text-blue-600">
+                  私たちのアプリ
+                </h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <Check
+                      size={20}
+                      className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                    />
+                    <span>１問題単位で解く前提</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check
+                      size={20}
+                      className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                    />
+                    <span>スキマ時間を活用したSNS世代向け学習</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check
+                      size={20}
+                      className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                    />
+                    <span>スマホのみで完結、文房具不要</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check
+                      size={20}
+                      className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                    />
+                    <span>ボタンタップだけで全て完了</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check
+                      size={20}
+                      className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                    />
+                    <span>ピンポイント読み上げ・翻訳機能</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check
+                      size={20}
+                      className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                    />
+                    <span>画面共有でグループ学習が可能</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Device Compatibility */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            あらゆるデバイスで利用可能
+          </h2>
+
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+            <div className="flex flex-col items-center">
+              <Smartphone size={64} className="text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-2">スマートフォン</h3>
+              <p className="text-center max-w-xs">
+                電車や待ち時間など、どこでも手軽に学習できます
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <Tablet size={64} className="text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-2">タブレット</h3>
+              <p className="text-center max-w-xs">
+                カフェやリビングでじっくり学習できます
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <Laptop size={64} className="text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-2">パソコン</h3>
+              <p className="text-center max-w-xs">
+                自宅で集中して長時間の学習に最適です
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-16 md:py-24 bg-blue-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            お客様の声
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="flex items-center mb-4">
+                <img
+                  src="/images/man1.webp"
+                  alt="ユーザーアイコン"
+                  className="w-10 h-10 rounded-full mr-3"
+                />
+                <div>
+                  <p className="font-bold">高校2年生</p>
+                  <div className="flex text-yellow-400">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                  </div>
+                </div>
+              </div>
+              <p className="italic">
+                "友達と同じ画面みながら、一緒に勉強できるのが便利。お互いに解き方のコツを教え合えるのが良い！"
+              </p>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="flex items-center mb-4">
+                <img
+                  src="/images/man2.webp"
+                  alt="ユーザーアイコン"
+                  className="w-10 h-10 rounded-full mr-3"
+                />
+                <div>
+                  <p className="font-bold">高校3年生</p>
+                  <div className="flex text-yellow-400">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                  </div>
+                </div>
+              </div>
+              <p className="italic">
+                "この問題を１０分で解かなきゃいけないの？と早い段階で知れてよかった。時間配分の大事さを実感できた！"
+              </p>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="flex items-center mb-4">
+                <img
+                  src="/images/man3.webp"
+                  alt="ユーザーアイコン"
+                  className="w-10 h-10 rounded-full mr-3"
+                />
+                <div>
+                  <p className="font-bold">高校1年生</p>
+                  <div className="flex text-yellow-400">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                  </div>
+                </div>
+              </div>
+              <p className="italic">
+                "電車の中でも、しれっと目立たず勉強できるところが最高。毎日の通学時間が勉強時間に変わりました。"
+              </p>
+            </div>
+
+            {/* Testimonial 4 */}
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="flex items-center mb-4">
+                <img
+                  src="/images/girl2.webp"
+                  alt="ユーザーアイコン"
+                  className="w-10 h-10 rounded-full mr-3"
+                />
+                <div>
+                  <p className="font-bold">高校3年生</p>
+                  <div className="flex text-yellow-400">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                  </div>
+                </div>
+              </div>
+              <p className="italic">
+                "アプリで勉強できると思わなかったけど、タップで全部できて、とても便利。紙の問題集より使いやすい！"
+              </p>
+            </div>
+
+            {/* Testimonial 5 */}
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="flex items-center mb-4">
+                <img
+                  src="/images/girl1.webp"
+                  alt="ユーザーアイコン"
+                  className="w-10 h-10 rounded-full mr-3"
+                />
+                <div>
+                  <p className="font-bold">高校2年生</p>
+                  <div className="flex text-yellow-400">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                  </div>
+                </div>
+              </div>
+              <p className="italic">
+                "お風呂につかって、スマホで１問解いてます。毎日続けられるから、着実に力がついてきました。"
+              </p>
+            </div>
+
+            {/* Testimonial 6 */}
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <div className="flex items-center mb-4">
+                <img
+                  src="/images/teacher1.webp"
+                  alt="ユーザーアイコン"
+                  className="w-10 h-10 rounded-full mr-3"
+                />
+                <div>
+                  <p className="font-bold">英語教師</p>
+                  <div className="flex text-yellow-400">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                  </div>
+                </div>
+              </div>
+              <p className="italic">
+                "授業で使っています。私はPCで解説、生徒はタブレットで確認。授業の効率が格段に上がりました。"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            料金プラン
+          </h2>
+
+          <div className="flex flex-col lg:flex-row justify-center gap-8 max-w-5xl mx-auto">
+            {/* Free Plan */}
+            <div className="flex-1 bg-white rounded-lg p-8 shadow-md border-2 border-gray-200">
+              <h3 className="text-2xl font-bold mb-4 text-center">
+                無料プラン
+              </h3>
+              <p className="text-center text-gray-600 mb-6">
+                まずは試してみたい方向け
+              </p>
+
+              <div className="text-center mb-8">
+                <span className="text-4xl font-bold">¥0</span>
+              </div>
+
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>2025年の過去問題にアクセス</span>
+                </li>
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>基本的な機能を全て利用可能</span>
+                </li>
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>タイマー・採点・解説機能</span>
+                </li>
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>マルチデバイス対応</span>
+                </li>
+              </ul>
+
+              <Link
+                href="/signin"
+                className="block w-[90%] mx-auto text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                無料登録する
+              </Link>
+            </div>
+
+            {/* Premium Plan */}
+            <div className="flex-1 bg-blue-600 text-white rounded-lg p-8 shadow-xl relative">
+              <div className="absolute -top-4 right-4 bg-yellow-400 text-blue-900 px-4 py-1 rounded-full font-bold text-sm">
+                おすすめ
+              </div>
+
+              <h3 className="text-2xl font-bold mb-4 text-center">
+                有料プラン
+              </h3>
+              <p className="text-center text-blue-100 mb-6">
+                本格的に対策したい方向け
+              </p>
+
+              <div className="text-center mb-8">
+                <span className="text-4xl font-bold">¥1,000</span>
+                <span className="text-blue-200 ml-2">/ 年</span>
+              </div>
+
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>10年分の全過去問題</span>
+                </li>
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>無制限の問題アクセス</span>
+                </li>
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>詳細な解説とヒント</span>
+                </li>
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>選択範囲の読み上げ・翻訳機能</span>
+                </li>
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>14日間の返金保証</span>
+                </li>
+              </ul>
+
+              <Link
+                href="/signin"
+                className="block w-[90%] mx-auto text-center bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                有料会員になる
+              </Link>
+            </div>
+          </div>
+
+          <div className="text-center mt-8 text-gray-600">
+            <p>※有料プランの解約は１４日以内なら全額返金可能です</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 md:py-24 bg-blue-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            今すぐ始めて、共通テスト対策を効率化しよう
+          </h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            スキマ時間を活用して、毎日少しずつ。
+            <br />
+            時間内に解く力を身につけて、本番で実力を発揮しましょう。
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              href="/signin"
+              className="bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center"
+            >
+              無料で始める <ArrowRight size={20} className="ml-2" />
+            </Link>
+            <button className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
+              詳細を見る
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-12 ">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="ml-3">
+              <h3 className="text-xl font-bold mb-4">英語共通テスト練習</h3>
+              <p className="text-gray-400">
+                時間内に解く力を身につけるための最適なアプリ
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-4">リンク</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="#features"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    特徴
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#comparison"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    従来との違い
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#testimonials"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    お客様の声
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#pricing"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    料金
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-4">サポート</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="/kiyaku"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    利用規約
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/refund"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    返金ポリシー
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/policy"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    プライバシーポリシー
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+            <p>© 2025 英語共通テスト練習アプリ. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
