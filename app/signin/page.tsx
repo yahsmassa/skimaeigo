@@ -4,35 +4,33 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
 import { userAtom } from "@/atoms/userAtom";
+import { useAuth } from "@/components/AuthProvider";
+
 import {
   signInWithGoogle,
   signInWithApple,
   signInWithEmail,
   signUp,
-  User,
   resetPassword,
-  getCurrentUser,
 } from "@/lib/auth";
-import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
 export default function SignIn() {
   const router = useRouter();
   const [user, setUser] = useAtom(userAtom);
+  const { loading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
   const [error, setError] = useState("");
 
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       // ユーザーがログインしている場合、Dashboardにリダイレクト
-  //       router.push("/dashboard");
-  //     }
-  //   });
-  //   return () => unsubscribe();
-  // }, [router]);
+  // ユーザーがログインしていたらダッシュボードにリダイレクト
+  useEffect(() => {
+    if (!loading && user) {
+      router.push("/dashboard");
+    }
+  }, [loading, user, router]);
 
   const handleEmailSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,8 +38,6 @@ export default function SignIn() {
 
     try {
       const user = await signInWithEmail(email, password);
-      setUser(user);
-      router.push("/dashboard");
     } catch (error: any) {
       setError(error.message);
     }
@@ -53,8 +49,6 @@ export default function SignIn() {
 
     try {
       const user = await signUp(email, password);
-      // setUser(user);
-      // router.push("/dashboard");
     } catch (error: any) {
       setError(error.message);
     }
@@ -63,8 +57,6 @@ export default function SignIn() {
   const handleGoogleSignIn = async () => {
     try {
       const user = await signInWithGoogle();
-      setUser(user);
-      router.push("/dashboard");
     } catch (error: any) {
       setError(error.message);
     }
@@ -73,8 +65,6 @@ export default function SignIn() {
   const handleAppleSignIn = async () => {
     try {
       const user = await signInWithApple();
-      setUser(user);
-      router.push("/dashboard");
     } catch (error: any) {
       setError(error.message);
     }
@@ -94,34 +84,17 @@ export default function SignIn() {
     }
   };
 
-  const handleSignIn = async () => {
-    try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const idToken = await userCredential.user.getIdToken();
-
-      const response = await fetch("/api/auth", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ idToken }),
-      });
-
-      if (response.ok) {
-        router.push("/dashboard");
-      }
-    } catch (error) {
-      setError("ログインに失敗しました");
-    }
-  };
-
   const test = async () => {
     console.log(user);
   };
+  // ローディング中は何も表示しない
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        ローディング中...
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
@@ -181,13 +154,13 @@ export default function SignIn() {
             >
               {isSignUp ? "アカウント作成" : "ログイン"}
             </button>
-            <button
+            {/* <button
               type="submit"
               className="mt-3 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
               onClick={test}
             >
               TEST
-            </button>
+            </button> */}
           </div>
         </form>
 

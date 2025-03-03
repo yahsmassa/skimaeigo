@@ -37,7 +37,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center">
             <span className="text-blue-600 font-bold text-2xl">
-              共通テストアプリ
+              共通テスト対策アプリ
             </span>
           </div>
 
@@ -232,7 +232,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold mb-3">お得な料金プラン</h3>
               <p>
-                会員登録で２０２５年の試験は無料で使えます。有料会員になると、２０１６年からの１０年分の過去問題を全て使えます。有料会員は1000円、PayPayで支払いできます
+                会員登録で２０２５年の試験は無料で使えます。有料会員になると、２０１６年から１０年分の過去問題を全て使えます。有料会員は1000円、お支払いはPayPayで
               </p>
             </div>
           </div>
@@ -572,6 +572,13 @@ export default function Home() {
                   />
                   <span>マルチデバイス対応</span>
                 </li>
+                <li className="flex items-start">
+                  <Check
+                    size={20}
+                    className="text-green-500 mr-2 flex-shrink-0 mt-1"
+                  />
+                  <span>Google・Appleアカウントでログインできます</span>
+                </li>
               </ul>
 
               <Link
@@ -642,7 +649,7 @@ export default function Home() {
                 href="/signin"
                 className="block w-[90%] mx-auto text-center bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-blue-50 transition-colors"
               >
-                有料会員になる
+                無料登録したのち有料プランに入る
               </Link>
             </div>
           </div>
@@ -754,12 +761,20 @@ export default function Home() {
                     プライバシーポリシー
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="/tokushoho"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    特定商取引法に基づく表記
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
-            <p>© 2025 英語共通テスト練習アプリ. All rights reserved.</p>
+            <p>© 2025 英語共通テスト対策アプリ. All rights reserved.</p>
           </div>
         </div>
       </footer>

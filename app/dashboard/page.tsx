@@ -8,9 +8,10 @@ import { useAtom } from "jotai";
 import { userAtom } from "@/atoms/userAtom";
 import { signOut, getCurrentUser, User } from "@/lib/auth";
 import { initiatePayment } from "@/lib/payment";
+import { useAuth } from "@/components/AuthProvider";
 import { isMobile } from "react-device-detect";
 import { components, groupedComponents, Year } from "@/lib/utilExam";
-
+import { cn } from "@/lib/util";
 export default function Home() {
   const [selectedYear, setSelectedYear] = useState<Year>("2025");
   const [selectedComponent, setSelectedComponent] = useState("Ex25_1");
@@ -18,86 +19,14 @@ export default function Home() {
   const [selection, setSelection] = useState("");
   const router = useRouter();
   const [user, setUser] = useAtom(userAtom);
-
-  const handleSelection = useCallback(() => {
-    const selectedText = window.getSelection()?.toString() || "";
-    setIsSelected(!!selectedText && selectedText.length > 0);
-    if (selectedText) {
-      setSelection(selectedText);
-    }
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener("selectionchange", handleSelection);
-    return () => {
-      document.removeEventListener("selectionchange", handleSelection);
-    };
-  }, [handleSelection]);
+  const { loading } = useAuth();
 
   // ユーザーがログインしている場合、メインページにリダイレクト
   useEffect(() => {
     if (!user) {
       router.push("/signin");
     }
-  }, [user, router]);
-
-  const handleSignOut = async () => {
-    try {
-      // サインアウト処理
-      await signOut();
-      setUser(null);
-      // 最後にリダイレクト
-      // router.push("/signin");
-    } catch (error) {
-      console.error("サインアウトエラー:", error);
-      // エラーをより詳細に表示
-      console.error("エラーの詳細:", JSON.stringify(error, null, 2));
-      // エラー後も安全にリダイレクト
-      router.push("/signin");
-    }
-  };
-
-  const handleUpgrade = async () => {
-    if (!user) return;
-
-    try {
-      // PayPayの支払い処理を開始
-      await initiatePayment(user.uid);
-    } catch (error) {
-      console.error("支払い処理中にエラーが発生しました", error);
-    }
-  };
-
-  // ローディング状態の表示
-  if (!user) {
-    return <div>ローディング中...</div>;
-  }
-
-  // 以下のコードは、userが存在する場合のみ実行される
-  const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const year = e.target.value as Year;
-    setSelectedYear(year);
-
-    // 現在の問番号を取得（例："Ex25_5" → "5"）
-    const currentProblemNumber = selectedComponent.split("_")[1];
-
-    // 新しい年の問題リストから同じ問番号のものを探す
-    const sameProblem = groupedComponents[year].find(
-      (problem) => problem.id.split("_")[1] === currentProblemNumber
-    );
-
-    // 同じ問番号があればそれを選択、なければ最初の問題を選択
-    setSelectedComponent(
-      sameProblem ? sameProblem.id : groupedComponents[year][0].id
-    );
-  };
-
-  const handleProblemChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedComponent(e.target.value);
-  };
-
-  const selected = components.find((comp) => comp.id === selectedComponent);
-
+  }, [loading, user, router]);
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
@@ -152,6 +81,78 @@ export default function Home() {
     };
   }, [selection]);
 
+  const handleSelection = useCallback(() => {
+    const selectedText = window.getSelection()?.toString() || "";
+    setIsSelected(!!selectedText && selectedText.length > 0);
+    if (selectedText) {
+      setSelection(selectedText);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("selectionchange", handleSelection);
+    return () => {
+      document.removeEventListener("selectionchange", handleSelection);
+    };
+  }, [handleSelection]);
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+    } catch (error) {
+      console.error("サインアウトエラー:", error);
+    }
+  };
+
+  const handleUpgrade = async () => {
+    if (!user) return;
+
+    try {
+      // PayPayの支払い処理を開始
+      await initiatePayment(user.uid);
+    } catch (error) {
+      console.error("支払い処理中にエラーが発生しました", error);
+    }
+  };
+
+  // ローディング中は何も表示しない
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        ローディング中...
+      </div>
+    );
+  }
+  // ユーザーがログインしていない場合も何も表示しない（useEffectでリダイレクトされる）
+  if (!user) {
+    return null;
+  }
+
+  // 以下のコードは、userが存在する場合のみ実行される
+  const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const year = e.target.value as Year;
+    setSelectedYear(year);
+
+    // 現在の問番号を取得（例："Ex25_5" → "5"）
+    const currentProblemNumber = selectedComponent.split("_")[1];
+
+    // 新しい年の問題リストから同じ問番号のものを探す
+    const sameProblem = groupedComponents[year].find(
+      (problem) => problem.id.split("_")[1] === currentProblemNumber
+    );
+
+    // 同じ問番号があればそれを選択、なければ最初の問題を選択
+    setSelectedComponent(
+      sameProblem ? sameProblem.id : groupedComponents[year][0].id
+    );
+  };
+
+  const handleProblemChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedComponent(e.target.value);
+  };
+
+  const selected = components.find((comp) => comp.id === selectedComponent);
+
   const test = async () => {
     // const user = await getCurrentUser();
     console.log(user);
@@ -171,14 +172,14 @@ export default function Home() {
           onClick={handleUpgrade}
           className="bg-blue-600 text-white px-4 py-2 rounded text-sm"
         >
-          有料会員登録
+          {isMobile ? "有料会員登録" : "有料会員になって１０年分の問題を解く"}
         </button>
-        <button
+        {/* <button
           onClick={test}
           className="bg-blue-600 text-white px-4 py-2 rounded text-sm"
         >
           test
-        </button>
+        </button> */}
       </div>
 
       {/* ヘッダー終わり */}
@@ -188,7 +189,11 @@ export default function Home() {
           <select
             value={selectedYear}
             onChange={handleYearChange}
-            className="ml-5 p-2 border rounded"
+            disabled={!user?.isPremium}
+            className={cn(
+              "ml-5 p-2 border rounded",
+              !user?.isPremium && "bg-gray-200 text-black"
+            )}
           >
             {(Object.keys(groupedComponents) as Year[])
               .reverse()

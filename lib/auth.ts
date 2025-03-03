@@ -22,7 +22,9 @@ export interface User {
 }
 
 // ユーザー情報を取得する関数
-const getUserData = async (firebaseUser: FirebaseUser): Promise<User> => {
+export const getUserData = async (
+  firebaseUser: FirebaseUser
+): Promise<User> => {
   const token = await firebaseUser.getIdTokenResult();
   const isPremium = token.claims.premium === true;
 
@@ -35,45 +37,31 @@ const getUserData = async (firebaseUser: FirebaseUser): Promise<User> => {
 };
 
 // Googleでサインイン
-export const signInWithGoogle = async (): Promise<User> => {
+export const signInWithGoogle = async (): Promise<void> => {
   const provider = new GoogleAuthProvider();
-  const result = await signInWithPopup(auth, provider);
-  // IDトークンを取得
-  const idToken = await result.user.getIdToken();
-  // Server Actionを呼び出してセッションCookieを作成
-
-  return getUserData(result.user);
+  await signInWithPopup(auth, provider);
 };
 
 // Appleでサインイン
-export const signInWithApple = async (): Promise<User> => {
+export const signInWithApple = async (): Promise<void> => {
   const provider = new OAuthProvider("apple.com");
-  const result = await signInWithPopup(auth, provider);
-  // IDトークンを取得
-  const idToken = await result.user.getIdToken();
-  // Server Actionを呼び出してセッションCookieを作成
-  return getUserData(result.user);
+  await signInWithPopup(auth, provider);
 };
 
 // メールとパスワードでサインイン
 export const signInWithEmail = async (
   email: string,
   password: string
-): Promise<User> => {
-  const result = await signInWithEmailAndPassword(auth, email, password);
-  // IDトークンを取得
-  const idToken = await result.user.getIdToken();
-  // Server Actionを呼び出してセッションCookieを作成
-  return getUserData(result.user);
+): Promise<void> => {
+  await signInWithEmailAndPassword(auth, email, password);
 };
 
 // サインアップ
 export const signUp = async (
   email: string,
   password: string
-): Promise<User> => {
-  const result = await createUserWithEmailAndPassword(auth, email, password);
-  return getUserData(result.user);
+): Promise<void> => {
+  await createUserWithEmailAndPassword(auth, email, password);
 };
 
 // パスワードリセット
@@ -83,7 +71,7 @@ export const resetPassword = async (email: string): Promise<void> => {
 
 // サインアウト
 export const signOut = async (): Promise<void> => {
-  // await firebaseSignOut(auth);
+  await firebaseSignOut(auth);
 };
 
 // プレミアムステータスを確認

@@ -2,7 +2,11 @@ import { twMerge } from "tailwind-merge";
 import { type ClassValue, clsx } from "clsx";
 import React from "react";
 import Swal from "sweetalert2";
-import { translateTextGemini, translateTextDeepseek } from "@/lib/serverAction";
+import {
+  translateTextGemini,
+  translateTextDeepseek,
+  translateTextCohere,
+} from "@/lib/serverAction";
 import { type QandA, type Answers } from "./types";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -107,12 +111,16 @@ export const translateSentence = async (selectedText: string) => {
 
   try {
     const prompt =
-      "あなたは優秀な英語教師です、以下の英文を日本語に翻訳し、その後、改行して熟語・慣用句が含まれていたら、箇条書きで指摘してください  " +
+      "あなたは優秀な英語教師です、以下の英文を日本語に翻訳し、原文、１行あけて、翻訳文、その後、改行して熟語・慣用句が含まれていたら、箇条書きで指摘してください、箇条書きは 英語：日本語 の形式で指摘してください、文字は**で囲まないでください  " +
       selectedText;
     const result = await translateTextGemini(prompt);
+    // const prompt =
+    //   "あなたは優秀な英語教師です、以下の英文を日本語に翻訳し、センテンスごとに、原文、翻訳文と表示し、その後熟語・慣用句が含まれていたら、箇条書きで指摘してください、箇条書きは 英語：日本語 の形式で指摘してください" +
+    //   selectedText;
+    // const result = await translateTextCohere(prompt);
     // const result = (await translateTextDeepseek(prompt)) || "";
-    const formattedResult = result.replace(/\n/g, "<br/>"); // 改行を<br/>に変換
     // console.log("formattedResult", formattedResult);
+    const formattedResult = result.replace(/\n/g, "<br/>"); // 改行を<br/>に変換
     Swal.fire({
       title: "解説",
       html: formattedResult,
