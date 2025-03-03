@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
 import { userAtom } from "@/atoms/userAtom";
@@ -99,7 +100,24 @@ export default function SignIn() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-lg shadow">
-        <div>
+        <div className="flex justify-between items-center w-full flex-wrap">
+          <Image
+            src="/icons/icon-192x192.png"
+            alt="アプリアイコン"
+            className="w-10 h-auto cursor-pointer ml-5"
+            width={96}
+            height={96}
+            onClick={() => router.push("/")}
+          />
+          <button
+            onClick={() => router.push("/")}
+            className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md text-sm font-medium mr-5"
+          >
+            HOMEへ
+          </button>
+        </div>
+
+        <div className="flex items-center justify-center">
           <h2 className="text-center text-3xl font-bold">
             {isSignUp ? "アカウント作成" : "ログイン"}
           </h2>
@@ -199,13 +217,23 @@ export default function SignIn() {
               onClick={handleGoogleSignIn}
               className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
-              Googleでログイン
+              <span className="hidden sm:inline">Googleでログイン</span>
+              <span className="sm:hidden">
+                Googleで
+                <br />
+                ログイン
+              </span>
             </button>
             <button
               onClick={handleAppleSignIn}
               className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
-              Appleでログイン
+              <span className="hidden sm:inline">Appleでログイン</span>
+              <span className="sm:hidden">
+                Appleで
+                <br />
+                ログイン
+              </span>
             </button>
           </div>
         </div>
