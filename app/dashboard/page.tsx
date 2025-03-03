@@ -12,6 +12,7 @@ import { useAuth } from "@/components/AuthProvider";
 import { isMobile } from "react-device-detect";
 import { components, groupedComponents, Year } from "@/lib/utilExam";
 import { cn } from "@/lib/util";
+
 export default function Home() {
   const [selectedYear, setSelectedYear] = useState<Year>("2025");
   const [selectedComponent, setSelectedComponent] = useState("Ex25_1");
