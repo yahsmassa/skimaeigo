@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
+    "@paypayopa/paypayopa-sdk-node": "^2.1.0",
     "browserify-zlib": "^0.2.0",
     "clsx": "^2.1.1",
     "cohere-ai": "^7.16.0",

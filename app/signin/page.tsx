@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -100,21 +101,22 @@ export default function SignIn() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-lg shadow">
-        <div className="flex justify-between items-center w-full flex-wrap">
+        <Link
+          href="/"
+          className=" text-blue-700 underline text-base font-medium"
+        >
+          HOMEへ
+        </Link>
+
+        <div className="flex justify-center items-center w-full flex-wrap">
           <Image
             src="/icons/icon-192x192.png"
             alt="アプリアイコン"
-            className="w-10 h-auto cursor-pointer ml-5"
+            className="w-14 h-auto cursor-pointer"
             width={96}
             height={96}
             onClick={() => router.push("/")}
           />
-          <button
-            onClick={() => router.push("/")}
-            className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md text-sm font-medium mr-5"
-          >
-            HOMEへ
-          </button>
         </div>
 
         <div className="flex items-center justify-center">

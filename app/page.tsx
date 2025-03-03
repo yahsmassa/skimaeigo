@@ -127,18 +127,18 @@ export default function Home() {
               過去問に慣れて、時間内に解く練習をすることが大事です
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <a
-                href="#pricing"
+              <Link
+                href="/signin"
                 className="bg-white text-blue-600 font-bold px-6 py-3 rounded-lg text-center hover:bg-blue-50 transition-colors"
               >
                 今すぐ始める
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#features"
                 className="border-2 border-white text-white font-bold px-6 py-3 rounded-lg text-center hover:bg-white hover:text-blue-600 transition-colors"
               >
                 詳細を見る
-              </a>
+              </Link>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
@@ -408,7 +408,7 @@ export default function Home() {
                   className="w-10 h-10 rounded-full mr-3"
                 />
                 <div>
-                  <p className="font-bold">高校3年生</p>
+                  <p className="font-bold">高校２年生</p>
                   <div className="flex text-yellow-400">
                     <span>★</span>
                     <span>★</span>
@@ -432,7 +432,7 @@ export default function Home() {
                   className="w-10 h-10 rounded-full mr-3"
                 />
                 <div>
-                  <p className="font-bold">高校1年生</p>
+                  <p className="font-bold">高校３年生</p>
                   <div className="flex text-yellow-400">
                     <span>★</span>
                     <span>★</span>
@@ -504,7 +504,7 @@ export default function Home() {
                   className="w-10 h-10 rounded-full mr-3"
                 />
                 <div>
-                  <p className="font-bold">英語教師</p>
+                  <p className="font-bold">英語講師</p>
                   <div className="flex text-yellow-400">
                     <span>★</span>
                     <span>★</span>
@@ -678,9 +678,12 @@ export default function Home() {
             >
               無料で始める <ArrowRight size={20} className="ml-2" />
             </Link>
-            <button className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors">
+            <Link
+              href="#features"
+              className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
+            >
               詳細を見る
-            </button>
+            </Link>
           </div>
         </div>
       </section>
