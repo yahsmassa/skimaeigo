@@ -14,7 +14,8 @@ import { signOut, getCurrentUser, User } from "@/lib/auth";
 import { useAuth } from "@/components/AuthProvider";
 import { isMobile } from "react-device-detect";
 import { components, groupedComponents, Year } from "@/lib/utilExam";
-import { cn, cmpOrderId, getPaymentUrl } from "@/lib/util";
+import { cn } from "@/lib/util";
+import { getPaymentUrl } from "@/lib/paypay";
 
 import {
   qrCodeCreate,
