@@ -6,8 +6,7 @@ import { useAtom } from "jotai";
 import { userAtom } from "@/atoms/userAtom";
 import { store } from "@/lib/store";
 import Link from "next/link";
-import { setPremiumStatus } from "@/lib/serverActionsFirebase";
-import { getPaymentUrl } from "@/lib/util";
+
 import {
   ChevronDown,
   Clock,
@@ -27,10 +26,6 @@ export default function Home() {
 
   const test = async () => {
     // const result = await setPremiumStatus("QneWLYorhTQljQlwJf02amMAqub2");
-    const result = await getPaymentUrl("yyabui@gmail.com");
-    if (result) {
-      console.log("result", result);
-    }
   };
 
   // useEffect(() => {
