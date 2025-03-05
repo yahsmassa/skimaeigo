@@ -1,6 +1,6 @@
 "use server";
 import * as PAYPAY from "@paypayopa/paypayopa-sdk-node";
-import { formatDate } from "./util";
+import { formatDate, cmpOrderId } from "./util";
 // 環境変数または定数として定義
 const API_KEY = String(process.env.NEXT_PUBLIC_PAYPAY_API_KEY);
 const API_SECRET = String(process.env.NEXT_PUBLIC_PAYPAY_API_SECRET);
@@ -517,4 +517,24 @@ export type WebhookResponse = {
   state: string; //FAILED, COMP
   order_id: string; // Order Id
   authorized_at: string | null;
+};
+
+export const getPaymentUrl = async (uid: string) => {
+  if (uid.length === 0) return;
+  try {
+    const orderId = cmpOrderId(uid);
+    console.log("生成されたorderId:", orderId); // デバッグ用
+    const result = await qrCodeCreate(orderId);
+    console.log("qrCodeCreate結果:", result); // デバッグ用
+    const url = result?.data?.url;
+    return url;
+  } catch (error) {
+    console.error("QRコード作成エラー", error);
+    // より詳細なエラー情報を記録
+    if (error instanceof Error) {
+      console.error("エラーメッセージ:", error.message);
+      console.error("エラースタック:", error.stack);
+    }
+    return null;
+  }
 };
