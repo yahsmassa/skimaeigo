@@ -518,20 +518,3 @@ export type WebhookResponse = {
   order_id: string; // Order Id
   authorized_at: string | null;
 };
-
-export const cmpOrderId = (uid: string) => {
-  return uid + "_" + formatDate();
-};
-
-export const getPaymentUrl = async (uid: string) => {
-  if (uid.length === 0) return;
-  try {
-    const orderId = cmpOrderId(uid);
-    const result = await qrCodeCreate(orderId);
-    const url = result.data?.url;
-    return url;
-  } catch (error) {
-    console.error("支払い処理中にエラーが発生しました", error);
-    return null;
-  }
-};

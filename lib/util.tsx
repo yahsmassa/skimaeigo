@@ -188,3 +188,20 @@ export function formatDate(date = new Date()) {
 
   return `${year}${month}${day}${hours}${minutes}${seconds}`;
 }
+
+export const cmpOrderId = (uid: string) => {
+  return uid + "_" + formatDate();
+};
+
+export const getPaymentUrl = async (uid: string) => {
+  if (uid.length === 0) return;
+  try {
+    const orderId = cmpOrderId(uid);
+    const result = await qrCodeCreate(orderId);
+    const url = result.data?.url;
+    return url;
+  } catch (error) {
+    console.error("QRコード作成エラー", error);
+    return null;
+  }
+};
