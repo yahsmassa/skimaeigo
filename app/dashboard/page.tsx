@@ -219,13 +219,13 @@ export default function Home() {
         >
           {isMobile ? "有料会員登録" : "有料会員になって１０年分の問題を解く"}
         </button>
-        <button
+        {/* <button
           onClick={test}
           // onClick={getPaymentDetailInfo}
           className="bg-blue-600 text-white px-4 py-2 rounded text-sm"
         >
           test
-        </button>
+        </button> */}
       </div>
 
       {/* ヘッダー終わり */}

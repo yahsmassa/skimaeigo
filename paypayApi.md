@@ -24,3 +24,9 @@
 - リコンファイル通知Webフック: 取引明細取得用
 
 ## PayPay Lab REST APIの簡易テストが行える （オブジェクト確認用）
+
+## テスト環境でのテスト
+  - ngrok http 3000  => https://52c3-220-102-49-135.ngrok-free.app みたいなURL
+  - FirebaseのAuthenticationの設定でURL登録
+  - PayPayの決済トランザクション通知WebhookでURL登録
+  - qrCodeCreate (paypay.ts)のredirectUrlをngrokのURLにする

@@ -71,9 +71,9 @@ export const qrCodeCreate = async (
       "お支払い後に、有料会員となり、１０年分の試験データを利用できます",
     requestedAt: timeStamp(),
     isAuthorization: false,
-    // redirectUrl: "https://2c2d-220-102-49-135.ngrok-free.app/dashboard",
+    redirectUrl: "https://52c3-220-102-49-135.ngrok-free.app/dashboard",
     // redirectUrl: "http://localhost:3000/dashboard",
-    redirectUrl: "https://kyoutuu.com/dashboard",
+    // redirectUrl: "https://kyoutuu.com/dashboard",
     redirectType: "WEB_LINK",
     userAgent:
       "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1",
@@ -523,9 +523,7 @@ export const getPaymentUrl = async (uid: string) => {
   if (uid.length === 0) return;
   try {
     const orderId = cmpOrderId(uid);
-    console.log("生成されたorderId:", orderId); // デバッグ用
     const result = await qrCodeCreate(orderId);
-    console.log("qrCodeCreate結果:", result); // デバッグ用
     const url = result?.data?.url;
     return url;
   } catch (error) {
