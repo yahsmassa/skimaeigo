@@ -31,6 +31,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body
+        suppressHydrationWarning={true} //サーバ、クライアント間のHTMLレンダリングチェック警告を非表示に
         className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[1150px] mx-auto`}
       >
         <AuthProvider>{children}</AuthProvider>

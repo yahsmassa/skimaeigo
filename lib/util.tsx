@@ -1,4 +1,5 @@
 import { twMerge } from "tailwind-merge";
+import { qrCodeCreate } from "@/lib/paypay";
 import { type ClassValue, clsx } from "clsx";
 import React from "react";
 import Swal from "sweetalert2";
@@ -8,6 +9,7 @@ import {
   translateTextCohere,
 } from "@/lib/serverAction";
 import { type QandA, type Answers } from "./types";
+import { User } from "@/lib/auth";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -174,4 +176,32 @@ export const readSentence = (selectedText: string) => {
 
     speechSynthesis.speak(utterance);
   });
+};
+
+export function formatDate(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+
+  return `${year}${month}${day}${hours}${minutes}${seconds}`;
+}
+
+export const cmpOrderId = (uid: string) => {
+  return uid + "_" + formatDate();
+};
+
+export const getPaymentUrl = async (uid: string) => {
+  if (uid.length === 0) return;
+  try {
+    const orderId = cmpOrderId(uid);
+    const result = await qrCodeCreate(orderId);
+    const url = result.data?.url;
+    return url;
+  } catch (error) {
+    console.error("支払い処理中にエラーが発生しました", error);
+    return null;
+  }
 };

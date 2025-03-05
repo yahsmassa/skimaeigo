@@ -1,5 +1,6 @@
 import { initializeApp, getApps, cert } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
+import { getFirestore, FieldValue } from "firebase-admin/firestore";
 
 // サーバーサイドでのみ実行されるようにする
 const app = (() => {
@@ -36,6 +37,8 @@ const app = (() => {
 })();
 
 // サーバーサイドでのみ実行される認証オブジェクト
-const adminAuth = typeof window === "undefined" ? getAuth(app) : undefined;
+const adminAuth = typeof window === "undefined" ? getAuth(app!) : undefined;
+const adminDb = typeof window === "undefined" ? getFirestore(app!) : undefined;
 
-export { app, adminAuth };
+// FieldValueを直接エクスポート
+export { app, adminAuth, adminDb, FieldValue };

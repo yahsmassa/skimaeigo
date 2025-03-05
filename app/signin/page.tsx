@@ -6,8 +6,15 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
 import { userAtom } from "@/atoms/userAtom";
+import { store } from "@/lib/store";
 import { useAuth } from "@/components/AuthProvider";
-
+import {
+  qrCodeCreate,
+  qrCodeDelete,
+  paymentCancel,
+  paymentCapture,
+  paymentRevert,
+} from "@/lib/paypay";
 import {
   signInWithGoogle,
   signInWithApple,
@@ -15,12 +22,10 @@ import {
   signUp,
   resetPassword,
 } from "@/lib/auth";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/lib/firebase";
 
 export default function SignIn() {
   const router = useRouter();
-  const [user, setUser] = useAtom(userAtom);
+  const [user, setUser] = useAtom(userAtom, { store });
   const { loading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -86,9 +91,7 @@ export default function SignIn() {
     }
   };
 
-  const test = async () => {
-    console.log(user);
-  };
+  const test = async () => {};
   // ローディング中は何も表示しない
   if (loading) {
     return (
@@ -174,13 +177,13 @@ export default function SignIn() {
             >
               {isSignUp ? "アカウント作成" : "ログイン"}
             </button>
-            {/* <button
+            <button
               type="submit"
               className="mt-3 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
               onClick={test}
             >
-              TEST
-            </button> */}
+              PayPay
+            </button>
           </div>
         </form>
 

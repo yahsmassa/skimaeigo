@@ -1,33 +1,65 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Swal from "sweetalert2";
 import { translateSentence, readSentence } from "@/lib/util";
 import { ReadTranslate } from "@/components/ReadTranslate";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
 import { userAtom } from "@/atoms/userAtom";
+import { store } from "@/lib/store";
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 import { signOut, getCurrentUser, User } from "@/lib/auth";
-import { initiatePayment } from "@/lib/payment";
 import { useAuth } from "@/components/AuthProvider";
 import { isMobile } from "react-device-detect";
 import { components, groupedComponents, Year } from "@/lib/utilExam";
-import { cn } from "@/lib/util";
+import { cn, cmpOrderId, getPaymentUrl } from "@/lib/util";
 
+import {
+  qrCodeCreate,
+  paymentRefund,
+  getPaymentDetail,
+  getRefundDetail,
+} from "@/lib/paypay";
 export default function Home() {
+  const router = useRouter();
   const [selectedYear, setSelectedYear] = useState<Year>("2025");
   const [selectedComponent, setSelectedComponent] = useState("Ex25_1");
   const [isSelected, setIsSelected] = useState(false);
   const [selection, setSelection] = useState("");
-  const router = useRouter();
-  const [user, setUser] = useAtom(userAtom);
+  const [user, setUser] = useAtom(userAtom, { store });
   const { loading } = useAuth();
 
-  // ユーザーがログインしている場合、メインページにリダイレクト
+  useEffect(() => {
+    if (!user?.uid) return;
+    // ユーザーのプレミアムステータスを監視
+    const unsubscribePremium = onSnapshot(
+      doc(db, "users", user.uid),
+      (docSnapshot) => {
+        if (docSnapshot.exists()) {
+          const userData = docSnapshot.data();
+          const _user = { ...user, isPremium: userData.premiumStatus || false };
+          setUser(_user);
+        }
+      },
+      (error) => {
+        console.error("プレミアムステータスの監視エラー:", error);
+      }
+    );
+    // クリーンアップ関数
+    return () => {
+      unsubscribePremium();
+    };
+  }, [user?.uid]);
+
+  // ユーザーがログインしていない場合、サインインページにリダイレクト
   useEffect(() => {
     if (!user) {
       router.push("/signin");
     }
   }, [loading, user, router]);
+
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
@@ -97,22 +129,26 @@ export default function Home() {
     };
   }, [handleSelection]);
 
+  const refund = async () => {
+    const result = await paymentRefund(
+      "QneWLYorhTQljQlwJf02amMAqub2_20250304194630",
+      "04655223243259265024"
+    );
+    console.log("result", result);
+  };
+
+  const getPaymentDetailInfo = async () => {
+    const result = await getRefundDetail(
+      "QneWLYorhTQljQlwJf02amMAqub2_20250304194630"
+    );
+    console.log("result", result);
+  };
+
   const handleSignOut = async () => {
     try {
       await signOut();
     } catch (error) {
       console.error("サインアウトエラー:", error);
-    }
-  };
-
-  const handleUpgrade = async () => {
-    if (!user) return;
-
-    try {
-      // PayPayの支払い処理を開始
-      await initiatePayment(user.uid);
-    } catch (error) {
-      console.error("支払い処理中にエラーが発生しました", error);
     }
   };
 
@@ -129,6 +165,10 @@ export default function Home() {
     return null;
   }
 
+  const handlePayment = async () => {
+    const url = await getPaymentUrl(user.uid);
+    if (url) window.location.href = url;
+  };
   // 以下のコードは、userが存在する場合のみ実行される
   const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const year = e.target.value as Year;
@@ -170,13 +210,17 @@ export default function Home() {
           ログアウト
         </button>
         <button
-          onClick={handleUpgrade}
-          className="bg-blue-600 text-white px-4 py-2 rounded text-sm"
+          onClick={handlePayment}
+          className={cn(
+            "bg-blue-600 text-white px-4 py-2 rounded text-sm",
+            user?.isPremium && "hidden"
+          )}
         >
           {isMobile ? "有料会員登録" : "有料会員になって１０年分の問題を解く"}
         </button>
         {/* <button
           onClick={test}
+          // onClick={getPaymentDetailInfo}
           className="bg-blue-600 text-white px-4 py-2 rounded text-sm"
         >
           test

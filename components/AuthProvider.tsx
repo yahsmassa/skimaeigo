@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { auth } from "@/lib/firebase";
 import { userAtom } from "@/atoms/userAtom";
 import { useAtom } from "jotai";
+import { store } from "@/lib/store";
 import { User, getUserData } from "@/lib/auth";
 
 // 認証コンテキストの型定義
@@ -19,7 +20,7 @@ export const useAuth = () => useContext(AuthContext);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useAtom(userAtom);
+  const [user, setUser] = useAtom(userAtom, { store });
   const router = useRouter();
 
   useEffect(() => {

@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
 import { userAtom } from "@/atoms/userAtom";
+import { store } from "@/lib/store";
 import Link from "next/link";
-
+import { setPremiumStatus } from "@/lib/serverActionsFirebase";
+import { getPaymentUrl } from "@/lib/util";
 import {
   ChevronDown,
   Clock,
@@ -20,15 +22,23 @@ import {
 
 export default function Home() {
   const router = useRouter();
-  const [user] = useAtom(userAtom);
+  const [user] = useAtom(userAtom, { store });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    // ログインしている場合はダッシュボードにリダイレクト
-    if (user) {
-      router.push("/dashboard");
+  const test = async () => {
+    // const result = await setPremiumStatus("QneWLYorhTQljQlwJf02amMAqub2");
+    const result = await getPaymentUrl("yyabui@gmail.com");
+    if (result) {
+      console.log("result", result);
     }
-  }, [user, router]);
+  };
+
+  // useEffect(() => {
+  //   // ログインしている場合はダッシュボードにリダイレクト
+  //   if (user) {
+  //     router.push("/dashboard");
+  //   }
+  // }, [user, router]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800 font-sans">
@@ -139,6 +149,12 @@ export default function Home() {
               >
                 詳細を見る
               </Link>
+              <button
+                className="border-2 border-white text-white font-bold px-6 py-3 rounded-lg text-center hover:bg-white hover:text-blue-600 transition-colors"
+                onClick={test}
+              >
+                TEST
+              </button>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">

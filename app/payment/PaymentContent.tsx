@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useAtom } from "jotai";
 import { userAtom } from "@/atoms/userAtom";
+import { store } from "@/lib/store";
 import { useAuth } from "@/components/AuthProvider";
 
 export default function PaymentContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [user] = useAtom(userAtom);
+  const [user] = useAtom(userAtom, { store });
   const { loading } = useAuth();
   const [status, setStatus] = useState<string | null>(null);
 
