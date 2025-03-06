@@ -144,12 +144,12 @@ export default function Home() {
               >
                 詳細を見る
               </Link>
-              <button
+              {/* <button
                 className="border-2 border-white text-white font-bold px-6 py-3 rounded-lg text-center hover:bg-white hover:text-blue-600 transition-colors"
                 onClick={test}
               >
                 TEST
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
