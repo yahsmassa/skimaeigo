@@ -71,8 +71,8 @@ export const qrCodeCreate = async (
       "お支払い後に、有料会員となり、１０年分の試験データを利用できます",
     requestedAt: timeStamp(),
     isAuthorization: false,
-    redirectUrl: "https://52c3-220-102-49-135.ngrok-free.app/dashboard",
-    // redirectUrl: "http://localhost:3000/dashboard",
+    // redirectUrl: "https://52c3-220-102-49-135.ngrok-free.app/dashboard",
+    redirectUrl: "http://localhost:3000/dashboard",
     // redirectUrl: "https://kyoutuu.com/dashboard",
     redirectType: "WEB_LINK",
     userAgent:

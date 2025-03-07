@@ -1,0 +1,285 @@
+import React from "react";
+
+const JapaneseTestQuestion = () => {
+  return (
+    <div className="font-serif p-8 max-w-3xl mx-auto text-black">
+      <div className="mb-6 flex-row flex-wrap">
+        <span className="font-bold text-base md:text-xl mr-2">B</span>
+        <span className="text-base md:text-lg"></span>
+        <span className="text-base md:text-lg">
+          次の会話は，慈善活動の企画に関して大学生たちが行ったやりとりの一部であ
+          <span className="inline-flex items-center">
+            る。
+            <div className="flex items-center ml-2 text-sm">
+              <div className="border-2 border-black px-2 text-sm md:text-base md:px-4 py-1 mx-1 text-center min-w-10 font-sans">
+                30
+              </div>
+              <span className="mx-2">～</span>
+              <div className="border-2 border-black px-2 text-sm md:text-base md:px-4 py-1 mx-1 text-center min-w-10 font-sans">
+                32
+              </div>
+            </div>
+          </span>
+        </span>
+        <span className="ml-2">
+          に入れるのに最も適当なものを，それぞれ下の①～④のうちから一つずつ選べ。
+        </span>
+      </div>
+
+      <div className="space-y-6 mb-8">
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Akira:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            Hey, guys. Thanks for dropping in. I've asked you all to meet here
+            today to come up with ideas about how to raise money for our annual
+            charity event. We'll have about a month this summer to earn as much
+            as we can. Any thoughts?
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Teresa:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            How about doing odd jobs around the neighborhood?
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Akira:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            What's that? I've never heard of it.
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Jenna:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            Oh, I guess it's not common here in Japan. It can be anything, you
+            know, doing stuff around the house like cutting the grass, washing
+            the windows, or cleaning out the garage. When I was a high school
+            student back in the US, I made 300 dollars one summer by doing yard
+            work around the neighborhood. And sometimes people will ask you to
+            run around town for them to pick up the dry cleaning or do the
+            grocery shopping. It's a pretty typical way for young people to earn
+            some extra money.
+          </div>
+        </div>
+
+        <div className="flex items-center">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Akira:
+          </div>
+          <div className="flex-1 flex items-center leading-6 md:leading-8">
+            So, Jenna, you're saying that
+            <div className="border-2 font-sans text-sm border-black px-3 py-1 mx-2 text-center min-w-10">
+              30
+            </div>
+            ?
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-4 mb-8 pl-8">
+        {[
+          "cleaning up the yard is quite valuable work",
+          "dividing housework among the family is best",
+          "doing random jobs is a way to make money",
+          "gardening will surely be profitable in the US",
+        ].map((text, index) => (
+          <div key={index} className="flex items-start">
+            <div className="w-6 h-6 flex items-center justify-center mr-4 font-bold">
+              {["①", "②", "③", "④"][index]}
+            </div>
+            <div className="flex-1">{text}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex mt-6">
+        <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+          Jenna:
+        </div>
+        <div className="flex-1 leading-6 md:leading-8">
+          Yeah. I think that it could work in Japan, too.
+        </div>
+      </div>
+
+      <div className="space-y-6 mt-8 mb-8">
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Rudy:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            Here, many students do part-time jobs for local businesses. They
+            might work at a restaurant or convenience store. Odd jobs are
+            different. You're more like a kind of helper. It's a casual style of
+            working. You get paid directly by the people you help, not a
+            company. And you can decide which jobs you want to do.
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Maya:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            But isn't it dangerous? Usually, people are unwilling to enter a
+            house of someone they don't know. And what happens if you don't get
+            paid? How can you get the money you earned?
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Rudy:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            Not all jobs are inside the house. You can choose the kind of work
+            that you're comfortable with. In my experience, I never got cheated.
+            Basically, we work for people in our own community, so we sort of
+            know them. Often, they are older people who have lived in the
+            neighborhood a long time. And I always got paid in cash, so I was
+            excited to have money to spend.
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Teresa:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            There are a lot of seniors in our community. I'm sure they'd be
+            happy to have someone do the heavy lifting, or even just to see a
+            friendly face around. I really doubt that they would take advantage
+            of us. In general, don't you think most people are honest and kind?
+          </div>
+        </div>
+
+        <div className="flex md:items-center">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Akira:
+          </div>
+          <div className="flex-1 flex-wrap flex items-center leading-6 md:leading-8">
+            <span>It sounds like we shouldn't be too</span>
+            <span>worried because</span>
+            <div className="border-2 font-sans text-sm border-black px-3 py-1 mx-2 text-center min-w-10">
+              31
+            </div>
+            .
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-4 mb-8 pl-8">
+        {[
+          "elderly people would feel uneasy about our work",
+          "it's embarrassing to ask our neighbors for work",
+          "there's little risk in working within our community",
+          "we can be safe if we work for a company in town",
+        ].map((text, index) => (
+          <div key={index} className="flex items-start">
+            <div className="w-8 h-8 flex items-center justify-center mr-4 font-bold">
+              {["①", "②", "③", "④"][index]}
+            </div>
+            <div className="flex-1">{text}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="space-y-6 mt-8 mb-8">
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Dan:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            Is it OK to get paid for volunteer work? Shouldn't we work for
+            elderly people out of the goodness of our hearts? I think helping
+            people is its own reward.
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Kana:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            If we explain our purpose clearly from the beginning, to raise money
+            for the charity, I think people will be glad to help us. And it's
+            not like we're charging 5,000 yen per hour. Why don't we suggest 500
+            yen per hour? It's a lot more reasonable than asking some company to
+            do the job.
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Maya:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            Don't you have to pay any taxes? What happens if the government
+            finds out?
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Jenna:
+          </div>
+          <div className="flex-1 leading-6 md:leading-8">
+            I don't think we're breaking any laws. That's the way it works in
+            the US, anyway. Just to be on the safe side, though, let's ask
+            someone at the city tax office.
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
+            Akira:
+          </div>
+          <div className="flex-1 flex items-center leading-6 md:leading-8">
+            <span className="flex-wrap">
+              OK, thanks for all of your great ideas. I think we made a lot of
+              progress. According to the suggestions made today, it looks like
+              our next step is to
+              <div className="border-2 font-sans text-sm border-black px-3 py-1 mx-2 text-center min-w-10 inline-block">
+                32
+              </div>
+              . Right?
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-4 mb-8 pl-8">
+        {[
+          "consider being totally honest with each other",
+          "look for part-time jobs that have high wages",
+          "provide useful services for free to neighbors",
+          "think of a plan that works for our local area",
+        ].map((text, index) => (
+          <div key={index} className="flex items-start">
+            <div className="w-8 h-8 flex items-center justify-center mr-4 font-bold">
+              {["①", "②", "③", "④"][index]}
+            </div>
+            <div className="flex-1">{text}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex mt-6">
+        <div className="w-20">Jenna:</div>
+        <div className="flex-1">Sounds good.</div>
+      </div>
+    </div>
+  );
+};
+
+export default JapaneseTestQuestion;

@@ -1,9 +1,33 @@
+import Ex16_1 from "@/components/Ex16_1";
+import Ex16_2A from "@/components/Ex16_2A";
+import Ex16_2B from "@/components/Ex16_2B";
+import Ex16_2C from "@/components/Ex16_2C";
+import Ex16_3A from "@/components/Ex16_3A";
+import Ex16_3B from "@/components/Ex16_3B";
 import Ex16_4A from "@/components/Ex16_4A";
 import Ex16_4B from "@/components/Ex16_4B";
+import Ex17_1 from "@/components/Ex17_1";
+import Ex17_2A from "@/components/Ex17_2A";
+import Ex17_2B from "@/components/Ex17_2B";
+import Ex17_2C from "@/components/Ex17_2C";
+import Ex17_3A from "@/components/Ex17_3A";
+import Ex17_3B from "@/components/Ex17_3B";
 import Ex17_4A from "@/components/Ex17_4A";
 import Ex17_4B from "@/components/Ex17_4B";
+import Ex18_1 from "@/components/Ex18_1";
+import Ex18_2A from "@/components/Ex18_2A";
+import Ex18_2B from "@/components/Ex18_2B";
+import Ex18_2C from "@/components/Ex18_2C";
+import Ex18_3A from "@/components/Ex18_3A";
+import Ex18_3B from "@/components/Ex18_3B";
 import Ex18_4A from "@/components/Ex18_4A";
 import Ex18_4B from "@/components/Ex18_4B";
+import Ex19_1 from "@/components/Ex19_1";
+import Ex19_2A from "@/components/Ex19_2A";
+import Ex19_2B from "@/components/Ex19_2B";
+import Ex19_2C from "@/components/Ex19_2C";
+import Ex19_3A from "@/components/Ex19_3A";
+import Ex19_3B from "@/components/Ex19_3B";
 import Ex19_4A from "@/components/Ex19_4A";
 import Ex19_4B from "@/components/Ex19_4B";
 import Ex20_4A from "@/components/Ex20_4A";
@@ -16,6 +40,12 @@ import Ex18_5 from "@/components/Ex18_5";
 import Ex18_6 from "@/components/Ex18_6";
 import Ex19_5 from "@/components/Ex19_5";
 import Ex19_6 from "@/components/Ex19_6";
+import Ex20_1 from "@/components/Ex20_1";
+import Ex20_2A from "@/components/Ex20_2A";
+import Ex20_2B from "@/components/Ex20_2B";
+import Ex20_2C from "@/components/Ex20_2C";
+import Ex20_3A from "@/components/Ex20_3A";
+import Ex20_3B from "@/components/Ex20_3B";
 import Ex20_5 from "@/components/Ex20_5";
 import Ex20_6 from "@/components/Ex20_6";
 import Ex21_1A from "@/components/Ex21_1A";
@@ -68,22 +98,52 @@ import Ex25_7 from "@/components/Ex25_7";
 import Ex25_8 from "@/components/Ex25_8";
 
 export const components: ExComponent[] = [
+  { id: "Ex16_1", label: "2016年 問1", component: Ex16_1 },
+  { id: "Ex16_2A", label: "2016年 問2 A", component: Ex16_2A },
+  { id: "Ex16_2B", label: "2016年 問2 B", component: Ex16_2B },
+  { id: "Ex16_2C", label: "2016年 問2 C", component: Ex16_2C },
+  { id: "Ex16_3A", label: "2016年 問3 A", component: Ex16_3A },
+  { id: "Ex16_3B", label: "2016年 問3 B", component: Ex16_3B },
   { id: "Ex16_4A", label: "2016年 問4 A", component: Ex16_4A },
   { id: "Ex16_4B", label: "2016年 問4 B", component: Ex16_4B },
   { id: "Ex16_5", label: "2016年 問5", component: Ex16_5 },
   { id: "Ex16_6", label: "2016年 問6", component: Ex16_6 },
+  { id: "Ex17_1", label: "2017年 問1", component: Ex17_1 },
+  { id: "Ex17_2A", label: "2017年 問2 A", component: Ex17_2A },
+  { id: "Ex17_2B", label: "2017年 問2 B", component: Ex17_2B },
+  { id: "Ex17_2C", label: "2017年 問2 C", component: Ex17_2C },
+  { id: "Ex17_3A", label: "2017年 問3 A", component: Ex17_3A },
+  { id: "Ex17_3B", label: "2017年 問3 B", component: Ex17_3B },
   { id: "Ex17_4A", label: "2017年 問4 A", component: Ex17_4A },
   { id: "Ex17_4B", label: "2017年 問4 B", component: Ex17_4B },
   { id: "Ex17_5", label: "2017年 問5", component: Ex17_5 },
   { id: "Ex17_6", label: "2017年 問6", component: Ex17_6 },
+  { id: "Ex18_1", label: "2018年 問1", component: Ex18_1 },
+  { id: "Ex18_2A", label: "2018年 問2 A", component: Ex18_2A },
+  { id: "Ex18_2B", label: "2018年 問2 B", component: Ex18_2B },
+  { id: "Ex18_2C", label: "2018年 問2 C", component: Ex18_2C },
+  { id: "Ex18_3A", label: "2018年 問3 A", component: Ex18_3A },
+  { id: "Ex18_3B", label: "2018年 問3 B", component: Ex18_3B },
   { id: "Ex18_4A", label: "2018年 問4 A", component: Ex18_4A },
   { id: "Ex18_4B", label: "2018年 問4 B", component: Ex18_4B },
   { id: "Ex18_5", label: "2018年 問5", component: Ex18_5 },
   { id: "Ex18_6", label: "2018年 問6", component: Ex18_6 },
+  { id: "Ex19_1", label: "2019年 問1", component: Ex19_1 },
+  { id: "Ex19_2A", label: "2019年 問2 A", component: Ex19_2A },
+  { id: "Ex19_2B", label: "2019年 問2 B", component: Ex19_2B },
+  { id: "Ex19_2C", label: "2019年 問2 C", component: Ex19_2C },
+  { id: "Ex19_3A", label: "2019年 問3 A", component: Ex19_3A },
+  { id: "Ex19_3B", label: "2019年 問3 B", component: Ex19_3B },
   { id: "Ex19_4A", label: "2019年 問4 A", component: Ex19_4A },
   { id: "Ex19_4B", label: "2019年 問4 B", component: Ex19_4B },
   { id: "Ex19_5", label: "2019年 問5", component: Ex19_5 },
   { id: "Ex19_6", label: "2019年 問6", component: Ex19_6 },
+  { id: "Ex20_1", label: "2020年 問1", component: Ex20_1 },
+  { id: "Ex20_2A", label: "2020年 問2 A", component: Ex20_2A },
+  { id: "Ex20_2B", label: "2020年 問2 B", component: Ex20_2B },
+  { id: "Ex20_2C", label: "2020年 問2 C", component: Ex20_2C },
+  { id: "Ex20_3A", label: "2020年 問3 A", component: Ex20_3A },
+  { id: "Ex20_3B", label: "2020年 問3 B", component: Ex20_3B },
   { id: "Ex20_4A", label: "2020年 問4 A", component: Ex20_4A },
   { id: "Ex20_4B", label: "2020年 問4 B", component: Ex20_4B },
   { id: "Ex20_5", label: "2020年 問5", component: Ex20_5 },
@@ -159,30 +219,60 @@ export interface ExComponent {
 
 export const groupedComponents: GroupedComponents = {
   "2016": [
+    { id: "Ex16_1", label: "問1" },
+    { id: "Ex16_2A", label: "問2 A" },
+    { id: "Ex16_2B", label: "問2 B" },
+    { id: "Ex16_2C", label: "問2 C" },
+    { id: "Ex16_3A", label: "問3 A" },
+    { id: "Ex16_3B", label: "問3 B" },
     { id: "Ex16_4A", label: "問4 A" },
     { id: "Ex16_4B", label: "問4 B" },
     { id: "Ex16_5", label: "問5" },
     { id: "Ex16_6", label: "問6" },
   ],
   "2017": [
+    { id: "Ex17_1", label: "問1" },
+    { id: "Ex17_2A", label: "問2 A" },
+    { id: "Ex17_2B", label: "問2 B" },
+    { id: "Ex17_2C", label: "問2 C" },
+    { id: "Ex17_3A", label: "問3 A" },
+    { id: "Ex17_3B", label: "問3 B" },
     { id: "Ex17_4A", label: "問4 A" },
     { id: "Ex17_4B", label: "問4 B" },
     { id: "Ex17_5", label: "問5" },
     { id: "Ex17_6", label: "問6" },
   ],
   "2018": [
+    { id: "Ex18_1", label: "問1" },
+    { id: "Ex18_2A", label: "問2 A" },
+    { id: "Ex18_2B", label: "問2 B" },
+    { id: "Ex18_2C", label: "問2 C" },
+    { id: "Ex18_3A", label: "問3 A" },
+    { id: "Ex18_3B", label: "問3 B" },
     { id: "Ex18_4A", label: "問4 A" },
     { id: "Ex18_4B", label: "問4 B" },
     { id: "Ex18_5", label: "問5" },
     { id: "Ex18_6", label: "問6" },
   ],
   "2019": [
+    { id: "Ex19_1", label: "問1" },
+    { id: "Ex19_2A", label: "問2 A" },
+    { id: "Ex19_2B", label: "問2 B" },
+    { id: "Ex19_2C", label: "問2 C" },
+    { id: "Ex19_3A", label: "問3 A" },
+    { id: "Ex19_3B", label: "問3 B" },
     { id: "Ex19_4A", label: "問4 A" },
     { id: "Ex19_4B", label: "問4 B" },
     { id: "Ex19_5", label: "問5" },
     { id: "Ex19_6", label: "問6" },
   ],
   "2020": [
+    { id: "Ex20_1", label: "問1" },
+    { id: "Ex20_2A", label: "問2 A" },
+    { id: "Ex20_2B", label: "問2 B" },
+    { id: "Ex20_2C", label: "問2 C" },
+    { id: "Ex20_3A", label: "問3 A" },
+    { id: "Ex20_3B", label: "問3 B" },
     { id: "Ex20_4A", label: "問4 A" },
     { id: "Ex20_4B", label: "問4 B" },
     { id: "Ex20_5", label: "問5" },
