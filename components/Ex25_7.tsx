@@ -26,10 +26,10 @@ const Ex25_7 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "A. 体温を変化させる→本文に書かれていない。したがって，①が正解。",
-        "B. 全体的な健康を維持する→第2段落第1文 &quot;Sleep is essential for animals&apos; physical and mental health, and for their bodies to function efficiently.&quot;（睡眠は，動物の身体的および精神的な健康，そして効率的な身体機能のために不可欠です）",
-        "C. 動物の身体をリフレッシュさせる→第2段落第3文 &quot;Sleep also gives the brain neurons a chance to reset, and the body becomes energized.&quot;（睡眠は脳のニューロンにリセットの機会を与え，身体にエネルギーを与えます）",
-        "D. 脳のニューロンをリセットする→第2段落第3文 &quot;Sleep also gives the brain neurons a chance to reset, and the body becomes energized.&quot;（睡眠は脳のニューロンにリセットの機会を与え，身体にエネルギーを与えます）",
+        "正解は①：「A. 体温を変化させる」は本文に書かれていない",
+        "B. 全体的な健康を維持する",
+        "C. 動物の身体をリフレッシュさせる",
+        "D. 脳のニューロンをリセットする",
       ],
     },
     {
@@ -44,9 +44,7 @@ const Ex25_7 = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [
-        "[33] the biphasic sleepの特徴は，第3段落第4文 &quot;Some birds, insects, and mammals utilize a kind of biphasic sleep, where the animal has two waking and sleeping times, with one sleep being long and the other like a nap.&quot;（一部の鳥，昆虫，哺乳類は二相性睡眠を利用しており，これは1日の中で2回の覚醒と睡眠があり，1回は長く，もう1回は昼寝のような短い睡眠となっています）に書かれている。したがって，長い睡眠と短い睡眠が描かれている④が正解。",
-      ],
+      explanation: ["正解は④。長い睡眠と短い睡眠が描かれているから"],
     },
     {
       questionId: "7-3",
@@ -66,12 +64,12 @@ const Ex25_7 = () => {
       isCorrect: false,
       points: 4,
       explanation: [
-        "[34]・[35] 睡眠のパターンに影響する条件については，第4段落と第5段落に書かれている。各選択肢の意味と該当箇所は以下の通り。",
-        "① エネルギーを急速に消費する動物は，より頻繁に眠る傾向がある→第4段落第2文 &quot;Smaller animals such as squirrels or mice tend to use up their energy by moving quickly and frequently. This results in the need to sleep more often but for shorter periods of time.&quot;（リスやネズミのような小動物は，素早く頻繁に動き回るためエネルギーを多く消費します。そのため，短時間ですがより頻繁に眠る必要があります）に一致する。",
-        "② 食べ物を探し続ける動物は，より長い睡眠が必要である→第4段落第5文 &quot;Large herbivores like wild horses, on the other hand, sleep less than meat-eating animals because their plant-based diet has relatively few calories, resulting in the need to spend most of their time searching for food.&quot;（一方，草食動物のウマのような大型動物は，植物性の食事がカロリーが少ないため，ほとんどの時間を食べ物を探すことに費やす必要があり，睡眠時間が少なくなります）に反する。",
-        "③ カロリーが少ない食事を摂る動物は，より簡単に眠れる→第4段落第5文 ",
-        "④ 食事が胃を満たす動物は，通常より長く眠る→第4段落第4文 &quot;Lions are carnivorous and have longer sleeping times because their food sources satisfy their hunger for longer periods.&quot;（ライオンは肉食動物で，食物が長時間の満腹感を与えるため，より長い睡眠時間を確保できます）に一致する。",
-        "⑤ アクセスが難しい巣を持つ動物は，通常より短く眠る→第5段落第2文-第5文 &quot;Animals that can create safe spaces tend to enjoy longer periods of sleep, but those that might need to stay alert sleep less. Apes sleep on platforms, high above the jungle floor, which keep them away from attackers. Some smaller animals such as rabbits create shelters by digging into the ground where it is difficult for predators to find them. As a result, they feel safer and sleep longer.&quot;（安全な場所を作れる動物は長時間眠る傾向がありますが，警戒し続ける必要がある動物は睡眠時間が短くなります。類人猿はジャングルの地面から高いところにあるプラットフォームで眠り，そのおかげで彼らは捕食者から遠ざかっていられます。ウサギのような小型動物は，地中に穴を掘って隠れ家を作り，捕食者に見つかりにくい場所で眠ります。その結果，より安全に感じ，長く眠ることができます）に反する。",
+        "正解は1と4",
+        "① エネルギーを急速に消費する動物は，より頻繁に眠る傾向がある",
+        "② 食べ物を探し続ける動物は，より長い睡眠が必要である",
+        "③ カロリーが少ない食事を摂る動物は，より簡単に眠れる",
+        "④ 食事が胃を満たす動物は，通常より長く眠る",
+        "⑤ アクセスが難しい巣を持つ動物は，通常より短く眠る",
       ],
     },
     {
@@ -88,7 +86,11 @@ const Ex25_7 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[36] Unihemispheric sleepについては第6段落第2文から最終文 &quot;A pattern that may be less easily noticed in our daily lives is called unihemispheric sleep. In this type of sleep, some animals traveling in a group keep one eye open. While one side of the animal’s brain sleeps, the other side stays awake and alert to its surroundings. In this way, the animal can experience the reviving effects of sleep while also watching out for threats. This unihemispheric sleep occurs in some bird species when they are flying long distances in groups. Birds flying at the outer edge of the group use this type of sleep to help protect the other members that sleep with both eyes closed.&quot;（私たちの日常生活ではあまり気づかれにくいパターンとして，片半球睡眠と呼ばれるものがあります。このタイプの睡眠では，群れで移動している一部の動物が片目を開けたまま眠ります。動物の脳の片方が眠っている間，もう片方が目覚めていて周囲に警戒し続けます。この方法で，動物は睡眠の回復効果を得ながら，脅威を監視することができます。この片半球睡眠は，群れで長距離を飛ぶ鳥の一部で見られます。群れの外側を飛ぶ鳥はこの睡眠を利用して，両目を閉じて眠る他のメンバーを保護します）に書かれている。したがって，①「飛行中に部分的に眠り，部分的に目覚めている」が正解。",
+        "正解は①：「飛行中に部分的に眠り，部分的に目覚めている」が正解",
+        "② 脳の半分を眠らせることができ、その結果、心拍数が上昇する。lead to: ～につながる",
+        "③ 常に敵に警戒して目を光らせることができる * constantly: 絶えず、常に、watch out for: ～に注意する、警戒する",
+        "④ 常に敵に警戒して、両目を開けていられる * watch out for: 警戒する",
+        "⑤ グループ内部から外部のメンバーを守ることができる * from inside the group: グループ内部から",
       ],
     },
     {
@@ -104,7 +106,8 @@ const Ex25_7 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[37] 第7段落の内容をもとに，この段落にタイトルをつける問題。第7段落第1文 &quot;Besides the types of sleep explained above, there are patterns that can be considered to be sleep-like activities.&quot;（上記で説明した睡眠タイプに加えて，睡眠に似た活動とみなされるパターンもあります）について，クマの島民や，クラゲのリラクゼーションの具体例が挙げられている，したがって，④「睡眠に類似した状態」が正解。",
+        "④「睡眠に類似した状態」が正解。",
+        "① 自然な睡眠方法、② 睡眠の理由、③ 睡眠に似た状態",
       ],
     },
   ];
@@ -145,8 +148,8 @@ const Ex25_7 = () => {
             cat sleeps a lot during the day and is quite active in the evening
             and early morning. Humans, on the other hand, are awake during most
             of the daylight hours and then sleep for a long time at night.
+            {Kaisetsu(showResults, "25-7-1")}
           </p>
-          {Kaisetsu(showResults, "25-7-1")}
           <p className="indent-8">
             Sleep is essential for animals&apos; physical and mental health, and
             for their bodies to function efficiently. For animals with brains
@@ -157,8 +160,8 @@ const Ex25_7 = () => {
             to reset, and the body becomes energized. Most creatures experience
             states of sleep, but the types and patterns differ from species to
             species.
+            {Kaisetsu(showResults, "25-7-2")}
           </p>
-          {Kaisetsu(showResults, "25-7-2")}
           <p className="indent-8">
             Different sleep patterns over a 24-hour cycle have been identified
             in various types of animals. Three common patterns are called{" "}
@@ -172,8 +175,8 @@ const Ex25_7 = () => {
             sleep being long and the other like a nap. Dogs and cats are
             polyphasic, meaning they have four to six sleeping and waking
             periods throughout the day.
+            {Kaisetsu(showResults, "25-7-3")}
           </p>
-          {Kaisetsu(showResults, "25-7-3")}
           <p className="indent-8">
             There are variations in sleep patterns depending on the
             animal&apos;s size, physical needs, and diet. Smaller animals such
@@ -185,8 +188,8 @@ const Ex25_7 = () => {
             other hand, sleep less than meat-eating animals because their
             plant-based diet has relatively few calories, resulting in the need
             to spend most of their time searching for food.
+            {Kaisetsu(showResults, "25-7-4")}
           </p>
-          {Kaisetsu(showResults, "25-7-4")}
           <p className="indent-8">
             Safety is another variable in sleep patterns. Animals that can
             create safe spaces tend to enjoy longer periods of sleep, but those
@@ -198,8 +201,8 @@ const Ex25_7 = () => {
             often travel long distances and may feel exposed to danger from
             hunters or other animals, contributing to their short sleeping
             times.
+            {Kaisetsu(showResults, "25-7-5")}
           </p>
-          {Kaisetsu(showResults, "25-7-5")}
           <p className="indent-8">
             The animal sleep patterns discussed so far tend to be typical. A
             pattern that may be less easily noticed in our daily lives is called{" "}
@@ -212,8 +215,8 @@ const Ex25_7 = () => {
             they are flying long distances in groups. Birds flying at the outer
             edge of the group use this type of sleep to help protect the other
             members that sleep with both eyes closed.
+            {Kaisetsu(showResults, "25-7-6")}
           </p>
-          {Kaisetsu(showResults, "25-7-6")}
           <p className="indent-8">
             Besides the types of sleep explained above, there are patterns that
             can be considered to be sleep-like activities.{" "}
@@ -224,13 +227,13 @@ const Ex25_7 = () => {
             may appear dead. Creatures such as jellyfish that have no central
             nervous system also experience times of extreme relaxation where
             they remain in a less responsive state.
+            {Kaisetsu(showResults, "25-7-7")}
           </p>
-          {Kaisetsu(showResults, "25-7-7")}
           <p className="indent-8">
             As shown above, sleep plays an important role in the lives of
             animals and it is much more complex than simply closing the eyes.
+            {Kaisetsu(showResults, "25-7-8")}
           </p>
-          {Kaisetsu(showResults, "25-7-8")}
         </div>
       </div>
 

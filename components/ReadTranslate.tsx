@@ -15,11 +15,11 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         onClick={() => readSentence(selectedText)}
         disabled={!isSelected}
         className={cn(
-          "ml-2 px-2 py-1 text-white rounded w-[60px]",
+          "ml-2 px-2 py-1 text-white rounded w-[100px]",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
-        Read
+        選択Read
       </button>
       <button
         // onMouseDown={(e) => e.preventDefault()}
@@ -27,6 +27,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         disabled={!isSelected}
         className={cn(
           "ml-2 px-2 py-1 text-white rounded w-[60px]",
+          process.env.NEXT_PUBLIC_DEBUG === "true" ? "blick" : "hidden",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >

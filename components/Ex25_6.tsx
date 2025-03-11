@@ -35,11 +35,12 @@ const Ex25_6 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "① 彼は再びヒーローになる。→第1段落第1文-第2文 &quot;Everyone knows me as Bluebird, the world-famous superhero. Before, I was only a superhero in name, but now, I deserve my title.&quot;（誰もが私のことを世界的に有名なスーパーヒーロー，ブルーバードとして知っています。以前は名前だけのスーパーヒーローでしたが，今ではその称号にふさわしい存在です）と，最終段落 &quot;After reading the note, I understood who Melody was. Since then, working together, Melody and I have made the perfect team.&quot;（メモを読んで，メロディが誰なのか理解しました。それ以来，メロディと私は一緒に働き，完璧なチームを作り上げています）に該当する。",
-        "② 彼はパフォーマーである。→第3段落第1文-第2文 &quot;One day, we were filming The Lives of Heroes, a reality show about our everyday good deeds. The reality, however, was that we were actors; we pretended that we were helping the world.&quot;（ある日，私たちは日常の善行を描くリアリティ番組「ザ・ライブズ・オブ・ヒーローズ」の撮影をしていました。しかし現実は，私たちは俳優であり，世界を助けるふりをしていただけでした）に該当する。",
+        "正解は③",
+        "① 彼は再びヒーローになる。",
+        "② 彼はパフォーマーである。",
         "③ 彼はプロの作家である。→本文に書かれていない。",
-        "④ 彼はスーパー・パークレンジャーである。→第8段落第1文-第3文 &quot;I decided to put my powers to use by rescuing hikers. I could fly and see for miles; I could locate or aid a troubled hiker faster than any park ranger. I became known as the Amazing Park Ranger Boy. &quot;（私は自分の能力を活用してハイカーを救助することを決意しました。私は空を飛び，数マイル先を見ることができ，どんなレンジャーよりも早く困っているハイカーを見つけて助けることができました。その実績から「素晴らしい公園レンジャーボーイ」として知られるようになりました。その後，チームヒーローにスカウトされ，「ブルーバード」という名前を与えられ，より大きなことを成し遂げるよう期待されました）に該当する。",
-        "⑤ 彼は普通の少年である。→第7段落第1文-第3文 &quot;I grew up in Allegany State Park in New York State. My parents were both park rangers; they patrolled the park and helped hikers in trouble. When I was 12, I discovered my superpowers.&quot;（私はニューヨーク州のアレガニー州立公園で育ちました。私の両親はどちらもレンジャーで，公園を巡回し，困っているハイカーを助けていました。12歳のとき，私は自分の超能力に気付きました）から，12歳までは普通の少年だったと判断する。 ・本文では，冒頭で「誰もが私のことを世界的に有名なスーパーヒーロー，ブルーバードとして知っています。以前は名前だけのスーパーヒーローでしたが，今ではその称号にふさわしい存在です」と述べ，過去と現在を対比していることがわかる。本文の内容を時系列に整理すると次のようになる。",
+        "④ 彼はスーパー・パークレンジャーである。",
+        "⑤ 彼は普通の少年である。",
       ],
     },
     {
@@ -55,7 +56,13 @@ const Ex25_6 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[28] メロディーの能力については，第5段落第3文 &quot;She could teleport to any place on earth in less than a second, so her unexpected appearances were always full of surprise.&quot;（彼女は1秒以内に地球上のどこにでもテレポートできる能力を持っており，その予期せぬ登場はいつも驚きをもたらしました）がFの「瞬時に異なる場所に移動する」に該当し，同段落第4文 &quot;She said, &quot;Whiskers thinks that you can&apos;t be trusted. I&apos;ll try to convince him.&quot;（女はこう言いました。「ウィスカーズは君が信用できないと思っているわ。私が説得してみる。」）がCの「動物や人々の心を読む」に該当する。また，続く第5文&quot;Melody, who could recreate any sound, produced a cat&apos;s meow and Whiskers appeared.&quot;（メロディはどんな音でも再現できる能力を持っており，猫の鳴き声を出しました。するとウィスカーズが現れました）がBの「音を完全に模倣する」に該当し，第6段落第3文 &quot;Suddenly, a voice popped into my head, &quot;You do look foolish trying to be a celebrity.&quot;（突然，頭の中に声が響きました。「セレブを気取っていると本当に愚かに見えるよ。」）がEの「テレパシーで人々と話す」に該当する。したがって，④が正解。",
+        "④が正解。",
+        "A: 非常に高い高度で飛ぶ （書いてない）",
+        "B: 音を完全に模倣する",
+        "C: 動物や人々の心を読む",
+        "D: 遠くまで見る（書いてない）",
+        "E: テレパシーで人々と話す",
+        "F: 瞬時に異なる場所に移動する",
       ],
     },
     {
@@ -71,7 +78,10 @@ const Ex25_6 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[29] 第7段落第10文-第12文 &quot;I learned my parents had been told to send her to a special facility for extraordinary children, because her powers could help humanity. &quot;Someday, when the time is right, you&apos;ll meet her. I know now that we should never have let her go. We won&apos;t let that happen to you,&quot; said my mother.&quot;（両親は，姉が人類を助けるためにその能力を活用できる特別な施設に送られるべきだと言われたのだと教えてくれました。「いつか適切な時期が来たら，彼女に会えるわ。私たちは彼女を手放すべきではなかったと今では思っている。あなたのことは絶対にそうしないわ。」と母は言いました）の内容から，③「あなたを私たちと一緒にいさせる」が正解。",
+        "③「あなたを私たちと一緒にいさせる」が正解。",
+        "① あなたの力を制御しなさい",
+        "② あなたをスーパーヒーローとして雇う",
+        "④ 犯罪を犯さないようにしなさい。* make sure: 必ず～する、確かめる",
       ],
     },
     {
@@ -92,7 +102,9 @@ const Ex25_6 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[30]・[31] 本文で言及されていない内容を選ぶ。したがって，③「メロディが超能力に気づいた経緯」と，④「メロディがチームヒーローに加わった理由」が正解となる。なお，⑤の「ブルーバードとメロディの関係」については，直接言及してはいないものの，第7段落で述べられていた「超能力を持つ姉がいること」という内容と，最終段落のメモの内容（「家族経営を始めましょう。「REAL HEROES」の共同創設者として私と一緒に」）から，メロディがブルーバードの姉であることが推測できるため，誤りである。",
+        "③「メロディが超能力に気づいた経緯」と，④「メロディがチームヒーローに加わった理由」が正解で、本文で言及されていない",
+        "⑤の「ブルーバードとメロディの関係」については，直接言及してはいないものの，メロディがブルーバードの姉であることが推測できるため，誤りである。",
+        "①「ブルーバードの幼少時代の経験」、② 青い鳥のリアリティショーに関する見解は、本文で言及されている。",
       ],
     },
   ];

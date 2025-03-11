@@ -24,7 +24,7 @@ export default function Ex25_1() {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[1] Beginners!（初心者の皆さん！）という呼びかけの見出しから，④「水槽について情報を必要としている初心者」が正解。",
+        "正解は④「水槽について情報を必要としている初心者」、Beginners!（初心者の皆さん！）という呼びかけの見出しより",
       ],
     },
     {
@@ -40,10 +40,8 @@ export default function Ex25_1() {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[2] 2. Select decorationsの第1文 &quot;Natural and artificial decorations are necessary to keep fish in good health and should cover 50–70% of the area.",
-        "（自然の装飾品と人工の装飾品は魚を健康に保つために必要であり，水槽内の50〜70％の面積を覆うべきです）と，",
-        "3. Position decorationsの第1文-第2文 &quot;Fish need room to move. Leave space around the edges of the tank.",
-        "（魚には動き回るためのスペースが必要です。水槽の端の周りに空間を残しましょう）から，②「適切な空間を確保する」が正解。",
+        "正解は②「適切な空間を確保する」",
+        "自然の装飾品と人工の装飾品は魚を健康に保つために必要であり，水槽内の50〜70％の面積を覆うべきです）と，魚には動き回るためのスペースが必要です。水槽の端の周りに空間を残しましょう",
       ],
     },
     {
@@ -59,8 +57,8 @@ export default function Ex25_1() {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[3] 2. Select decorationsの第3文 &quot;Those from slow-moving or shallow water prefer soft objects like plants.",
-        "（ゆっくり泳ぐ魚や浅い水域の魚には，植物のような柔らかいものが好まれます）という記述から，柔らかい植物を含む絵を選ぶ。また，3. Position decorationsの第3文 &quot;Place tall decorations and plants at the back, and put short ones at the front.&quot;（背の高い装飾品や植物は後ろに置き，背の低いものは前に置いてください）から，④が正解。①は背の高さが逆になっている。②は柔らかい植物がない。③は装飾品の背の高さが前から順に高くなっているのではなく，左右から中心に向け，さらに後に向けて高くなっている。",
+        "正解は④、「背の高い装飾品や植物は後ろに置き，背の低いものは前に置いてください」より",
+        "①は背の高さが逆になっている。②は柔らかい植物がない。③は装飾品の背の高さが前から順に高くなっているのではなく，左右から中心に向け，さらに後に向けて高くなっている。",
       ],
     },
   ];

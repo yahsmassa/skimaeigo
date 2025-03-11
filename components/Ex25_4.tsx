@@ -23,9 +23,8 @@ const Ex25_4 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[14] (1)の前後の文",
-        "One key point of the slow life is to own fewer belongings. This makes it easier to concentrate on everyday activities. (1) Many people today tend to buy more than they can consume.",
-        "（スローライフの重要なポイントの1つは，持ち物を少なくすることです。これにより，日常の活動に集中しやすくなります。(1) 今日，多くの人が必要以上に物を買いすぎる傾向があります。）の内容から，「持ち物を少なくすべき」という内容と，「物を買いすぎる」という内容が対立的であると判断する。したがって，①「しかしながら」が正解。",
+        "正解は①「しかしながら」",
+        "「持ち物を少なくすべき」という内容と，「物を買いすぎる」という内容が対立的であると判断する",
       ],
     },
     {
@@ -41,9 +40,8 @@ const Ex25_4 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[15] (2)を含む段落 ",
-        "Another recommendation is to think about your communication style and manner in your public and private life. Sadly, one study has found that around 90% of people check smartphones during face-to-face conversations, which may appear impolite and affect relationships negatively.",
-        "（もう1つの提案は，公的生活や私生活における自分のコミュニケーションのスタイルや態度について考えることです。残念ながら，ある調査によると，人々の約90%が対面での会話中にスマートフォンを確認しており，これは失礼に見える可能性があり，人間関係に悪影響を及ぼすことがあります。）の内容から，対面状況での人間関係を重視すべきという主張がなされていることがわかる。したがって，③「話している相手に注意を集中するようにする」が正解。",
+        "正解は③「話している相手に注意を集中するようにする」",
+        "対面状況での人間関係を重視すべきという主張がなされていると捉える",
       ],
     },
     {
@@ -77,9 +75,8 @@ const Ex25_4 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[17] 下線部(4)は第4段落",
-        "The final aspect of slow living is to take 10 to 15 minutes to reflect on your day. Try to recollect people and events that were significant. By mentally highlighting them, you can find fulfillment in daily tasks.",
-        "（スローライフの最後の要素は，1日の振り返りに10〜15分をかけることです。その日特に重要だった人や出来事を思い出してみてください。それらを心の中で強調することで，日々のタスクに充実感を見出すことができます）の言い換えであると考えられる。したがって，③「その日の思い出深い出来事を振り返る」が正解。",
+        "正解は①「仕事と私生活の両方で満足感を得ることができる」、下線部(3)が本文のどの内容をまとめて言い換えているかを考える。",
+        "「代わりに，立ち止まって自分にとって本当に意味のあることに気づくことができます。時間をかけ，それらに完全に集中することで，仕事や生活の質を向上させることができます」という内容を言い換えたものにする",
       ],
     },
   ];

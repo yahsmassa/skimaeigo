@@ -26,9 +26,10 @@ export default function Ex25_2() {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[4] 第2段落第1文 &quot;All the speakers agreed on three points.",
-        "（すべてのスピーカーが3つの点に同意しました）という内容と，同段落第4文-第6文 &quot;Second, emergency services would be improved. Flying ambulances would be faster in large cities with heavy traffic. Also, they would be better for servicing small towns far from hospitals.",
-        "（次に，緊急サービスが改善されるという点です。空飛ぶ救急車は，交通渋滞の多い大都市でより迅速に対応できるようになります。また，病院から離れた小さな町にサービスを提供するのにも役立つでしょう）という内容から，②「空飛ぶ車は緊急対応を改善するだろう」が正解。",
+        "正解は②「空飛ぶ車は緊急対応を改善するだろう」",
+        "① 飛行車は緊急事態への対応を改善するだろう。",
+        "③ 現代の交通問題は解決が難しい。",
+        "④ ゼロエミッション技術は飛行車両には適用できない。",
       ],
     },
     {
@@ -44,8 +45,11 @@ export default function Ex25_2() {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[5] 第2段落最終文 &quot;Finally, from a safety point of view, they said that flying technology would need to be well tested and controlled to avoid accidents in the air.",
-        "（最後に，安全性の観点から，空飛ぶ技術は空中での事故を防ぐために十分にテストされ，制御される必要があると述べられました）という内容から，④「適切な評価と規制を必要とする」が正解。選びにくい選択肢だが，①～③はいずれも第2段落の内容に反しているため，消去法も使って考える必要がある。",
+        "正解は④「適切な評価と規制を必要とする」、",
+        "最後に，安全性の観点から，空飛ぶ技術は空中での事故を防ぐために十分にテストされ，制御される必要があると述べられました）という内容から",
+        "① 小さな町で、大都市ではなく使われる rather than: ～ではなく",
+        "② 病院周辺の交通渋滞の数を増加させる",
+        "③ 環境問題の解決策を妨げる",
       ],
     },
     {
@@ -61,10 +65,10 @@ export default function Ex25_2() {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[6] 第3段落第7文 &quot;The third speaker answered, &quot;No, because the operating costs of flying taxis are too high.",
-        "（3人目のスピーカーは「いいえ，空飛ぶタクシーの運営コストが高すぎるからです」と答えました）という内容から，④「空飛ぶタクシーは運営コストが高すぎる」が正解。①「空飛ぶタクシーの拠点が地方に設立されるであろう」とはどこにも書かれていない。②「空飛ぶタクシー技術はすでにテストされている」は第3段落第3文 ",
-        "A few of them are even testing flying taxi services in the middle of their major cities.",
-        "（そのうちのいくつかの国では，大都市の中心部で空飛ぶタクシーサービスをテストしているところもあります）に書かれているが，これは意見（opinion）ではなく事実（fact）である。③「空飛ぶタクシーはすでに広く普及している」は第3段落の内容に反する（また，既に広く普及しているかどうかは意見ではなく事実の問題でもある）。",
+        "正解は④「空飛ぶタクシーは運営コストが高すぎる」",
+        "①「空飛ぶタクシーの拠点が地方に設立されるであろう」（書かれていない）",
+        "②「空飛ぶタクシー技術はすでにテストされている」（意見出なく事実）",
+        "③「空飛ぶタクシーはすでに広く普及している」は第3段落の内容に反する",
       ],
     },
     {
@@ -80,8 +84,9 @@ export default function Ex25_2() {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[7] 第3段落第3文 &quot;A few of them are even testing flying taxi services in the middle of their major cities.",
-        "（そのうちのいくつかの国では，大都市の中心部で空飛ぶタクシーサービスをテストしているところもあります）から，④「空飛ぶタクシーサービスの都市での試験運用」が正解。",
+        "正解は④「空飛ぶタクシーサービスの都市での試験運用」",
+        "そのうちのいくつかの国では，大都市の中心部で空飛ぶタクシーサービスをテストしているところもあります）より",
+        "①飛行救急サービスのコスト、② 太陽光発電を利用した飛行輸送、③ 空飛ぶタクシーの駐車場",
       ],
     },
   ];
