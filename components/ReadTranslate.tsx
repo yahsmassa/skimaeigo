@@ -9,7 +9,7 @@ type props = {
 
 export function ReadTranslate({ isSelected, selectedText }: props) {
   return (
-    <div className="ml-5 flex items-center ">
+    <div className="ml-2 md:ml-5 flex items-center ">
       <button
         onMouseDown={(e) => e.preventDefault()}
         onClick={() => readSentence(selectedText)}
