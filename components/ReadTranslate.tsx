@@ -9,17 +9,17 @@ type props = {
 
 export function ReadTranslate({ isSelected, selectedText }: props) {
   return (
-    <div className="flex items-center ">
+    <div className="ml-5 flex items-center ">
       <button
         onMouseDown={(e) => e.preventDefault()}
         onClick={() => readSentence(selectedText)}
         disabled={!isSelected}
         className={cn(
-          "ml-2 px-2 py-1 text-white rounded w-[100px]",
+          "ml-2 px-2 py-1 text-white rounded w-[160px]",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
-        選択Read
+        選択部分の読み上げ
       </button>
       <button
         // onMouseDown={(e) => e.preventDefault()}

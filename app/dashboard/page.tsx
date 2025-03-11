@@ -212,7 +212,7 @@ export default function Home() {
       <div className="flex justify-end gap-2 mb-5 w-full pr-5">
         <button
           onClick={handleSignOut}
-          className="bg-gray-200 text-gray-800 px-4 py-2 rounded text-sm"
+          className="bg-blue-500 text-white px-4 py-2 rounded font-bold text-sm"
         >
           ログアウト
         </button>
@@ -235,7 +235,10 @@ export default function Home() {
       </div>
 
       {/* ヘッダー終わり */}
-      <h1 className="ml-2 text-xl font-bold">共通テスト 英語</h1>
+      <h1 className="ml-2 text-xl font-bold">
+        {(Number(selectedYear) < 2021 ? "センター試験" : "共通テスト") +
+          " 英語"}
+      </h1>
       <div className="sticky top-0 bg-white z-50 py-2 shadow-sm">
         <div className="flex items-center container mx-auto px-4">
           <select

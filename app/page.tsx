@@ -42,7 +42,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center">
             <span className="text-blue-600 font-bold text-2xl">
-              共通テスト対策アプリ
+              英語共通テスト対策アプリ
             </span>
           </div>
 
@@ -560,21 +560,21 @@ export default function Home() {
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>2025年の過去問題にアクセス</span>
+                  <span>2025年度の最新問題にアクセスできます</span>
                 </li>
                 <li className="flex items-start">
                   <Check
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>基本的な機能を全て利用可能</span>
+                  <span>基本的な機能、全て利用可能</span>
                 </li>
                 <li className="flex items-start">
                   <Check
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>タイマー・採点・翻訳・解説機能</span>
+                  <span>タイマー・読み上げ・採点・翻訳・解説機能</span>
                 </li>
                 <li className="flex items-start">
                   <Check
@@ -588,7 +588,9 @@ export default function Home() {
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>Google・Appleアカウントでログインできます</span>
+                  <span>
+                    メール以外に、Google・Appleアカウントでログインできます
+                  </span>
                 </li>
               </ul>
 
@@ -639,7 +641,7 @@ export default function Home() {
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
                   <span>
-                    全ての問題をきちんと理解するだけで、かなり英語力がつきます。
+                    全ての問題をアプリの機能を使って理解することで、かなり英語力がつきます。
                   </span>
                 </li>
                 <li className="flex items-start">
@@ -647,7 +649,7 @@ export default function Home() {
                     size={20}
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>高機能の参考書アプリ、かなり割安です</span>
+                  <span>１０年分の問題を備えた参考書アプリになります</span>
                 </li>
                 {/* <li className="flex items-start">
                   <Check
@@ -708,7 +710,7 @@ export default function Home() {
             <div className="ml-3">
               <h3 className="text-xl font-bold mb-4">英語共通テスト練習</h3>
               <p className="text-gray-400">
-                時間内に解く力を身につけるための最適なアプリ
+                時間内に解く力・英語の基礎体力を身につけるための最適なアプリ
               </p>
             </div>
 
