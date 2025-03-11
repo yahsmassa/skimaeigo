@@ -28,12 +28,12 @@ export default function Home() {
     // const result = await setPremiumStatus("QneWLYorhTQljQlwJf02amMAqub2");
   };
 
-  // useEffect(() => {
-  //   // ログインしている場合はダッシュボードにリダイレクト
-  //   if (user) {
-  //     router.push("/dashboard");
-  //   }
-  // }, [user, router]);
+  useEffect(() => {
+    // ログインしている場合はダッシュボードにリダイレクト
+    if (user) {
+      router.push("/dashboard");
+    }
+  }, [user, router]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800 font-sans">
@@ -299,7 +299,7 @@ export default function Home() {
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>１問題単位で解く前提</span>
+                    <span>大問題を５分から１０分で解く訓練に最適</span>
                   </li>
                   <li className="flex items-start">
                     <Check
@@ -313,28 +313,28 @@ export default function Home() {
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>スマホのみで完結、文房具不要</span>
+                    <span>文房具不要、スマホのみで学習可能</span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>ボタンタップだけで全て完了</span>
+                    <span>ボタンタップだけで、読み上げ・翻訳・採点</span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>ピンポイント読み上げ・翻訳機能</span>
+                    <span>スマホ・タブレット・パソコンで学習可能</span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>画面共有でグループ学習が可能</span>
+                    <span>長文問題も段落単位ピンポイント解説</span>
                   </li>
                 </ul>
               </div>
@@ -406,7 +406,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="italic">
-                "友達と同じ画面みながら、一緒に勉強できるのが便利。お互いに解き方のコツを教え合えるのが良い！"
+                "段落ごとに翻訳・解説、発音もピンポイントで読み上げできる、ホント、アプリなんですね。"
               </p>
             </div>
 
@@ -502,7 +502,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="italic">
-                "お風呂につかって、スマホで１問解いてます。毎日続けられるから、着実に力がついてきました。"
+                "お風呂につかって、スマホで１問解いてます。毎日続けられるから、英語への抵抗感が薄れた。"
               </p>
             </div>
 
@@ -526,7 +526,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="italic">
-                "授業で使っています。私はPCで解説、生徒はタブレットで確認。授業の効率が格段に上がりました。"
+                "１０年分の問題をランダムに取り出せるので、課題に応じて授業で使ったりします。タブレットを使うと便利。"
               </p>
             </div>
           </div>
@@ -574,7 +574,7 @@ export default function Home() {
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>タイマー・採点・解説機能</span>
+                  <span>タイマー・採点・翻訳・解説機能</span>
                 </li>
                 <li className="flex items-start">
                   <Check
@@ -638,22 +638,24 @@ export default function Home() {
                     size={20}
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>詳細な解説とヒント</span>
+                  <span>
+                    全ての問題をきちんと理解するだけで、かなり英語力がつきます。
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <Check
                     size={20}
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>選択範囲の読み上げ・翻訳機能</span>
+                  <span>高機能の参考書アプリ、かなり割安です</span>
                 </li>
-                <li className="flex items-start">
+                {/* <li className="flex items-start">
                   <Check
                     size={20}
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
                   <span>14日間の返金保証</span>
-                </li>
+                </li> */}
               </ul>
 
               <Link
@@ -665,9 +667,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="text-center mt-8 text-gray-600">
+          {/* <div className="text-center mt-8 text-gray-600">
             <p>※有料プランの解約は１４日以内なら全額返金可能です</p>
-          </div>
+          </div> */}
         </div>
       </section>
 

@@ -43,8 +43,9 @@ const PrivacyPolicy: NextPage = () => {
                   2.1 ユーザーが提供する情報
                 </h3>
                 <ul className="list-disc ml-5 text-gray-700 space-y-1">
-                  <li>アカウント情報（氏名、メールアドレス、パスワード）</li>
-                  <li>プロフィール情報</li>
+                  <li>
+                    アカウント情報（メールアドレス、パスワード[暗号化されており、当社では閲覧できません]）
+                  </li>
                   <li>
                     支払い情報（PayPay、Apple App Store、Google
                     Play経由での支払い）

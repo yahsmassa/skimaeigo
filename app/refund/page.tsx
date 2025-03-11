@@ -23,15 +23,19 @@ const PrivacyPolicy: NextPage = () => {
 
             <section className="mb-8">
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
-                1. 返金の申込
+                1. 返金について
               </h2>
               <p className="text-gray-700 mb-4">
-                アプリ購入から14日以内であれば返金を受け付けます。以下のフォームにお客様の情報を入力して送信してください。
-                PayPayの残高からの購入の場合は即日返金できますが、それ以外では時間がかかる場合があります。
+                申し訳ございませんが、原則、返金は受け付けておりません。
+                ご了承の上、ご購入ください。
+              </p>
+              <p className="text-gray-700 mb-4">
+                もしも特別な理由がある場合には、
+                kyoutuu-support@kuotore.comまでご連絡ください。
               </p>
             </section>
 
-            <section className="mb-8">
+            {/* <section className="mb-8">
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
                 2. 返金ができない場合
               </h2>
@@ -39,7 +43,7 @@ const PrivacyPolicy: NextPage = () => {
                 <li className="mb-2">⚪︎ ２度目の返金処理</li>
                 <li className="mb-2">⚪︎ 購入後１５日以上経過しているもの</li>
               </ul>
-            </section>
+            </section> */}
           </main>
         </div>
       </div>
