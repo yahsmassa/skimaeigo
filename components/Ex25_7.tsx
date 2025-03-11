@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex25_7 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -145,19 +146,19 @@ const Ex25_7 = () => {
             and early morning. Humans, on the other hand, are awake during most
             of the daylight hours and then sleep for a long time at night.
           </p>
-
+          {Kaisetsu(showResults, "25-7-1")}
           <p className="indent-8">
             Sleep is essential for animals&apos; physical and mental health, and
             for their bodies to function efficiently. For animals with brains
             and central nervous systems, sleep is generally defined as an
             altered state of consciousness characterized by specific body
             positions, closed eyes, a general decrease in physical activity, and
-            slower response rates. Sleep also gives the brain and body a chance
-            to rest, and the body becomes energized. Most creatures experience
+            slower response rates. Sleep also gives the brain neurons a chance
+            to reset, and the body becomes energized. Most creatures experience
             states of sleep, but the types and patterns differ from species to
             species.
           </p>
-
+          {Kaisetsu(showResults, "25-7-2")}
           <p className="indent-8">
             Different sleep patterns over a 24-hour cycle have been identified
             in various types of animals. Three common patterns are called{" "}
@@ -172,7 +173,7 @@ const Ex25_7 = () => {
             polyphasic, meaning they have four to six sleeping and waking
             periods throughout the day.
           </p>
-
+          {Kaisetsu(showResults, "25-7-3")}
           <p className="indent-8">
             There are variations in sleep patterns depending on the
             animal&apos;s size, physical needs, and diet. Smaller animals such
@@ -185,7 +186,7 @@ const Ex25_7 = () => {
             plant-based diet has relatively few calories, resulting in the need
             to spend most of their time searching for food.
           </p>
-
+          {Kaisetsu(showResults, "25-7-4")}
           <p className="indent-8">
             Safety is another variable in sleep patterns. Animals that can
             create safe spaces tend to enjoy longer periods of sleep, but those
@@ -198,7 +199,7 @@ const Ex25_7 = () => {
             hunters or other animals, contributing to their short sleeping
             times.
           </p>
-
+          {Kaisetsu(showResults, "25-7-5")}
           <p className="indent-8">
             The animal sleep patterns discussed so far tend to be typical. A
             pattern that may be less easily noticed in our daily lives is called{" "}
@@ -212,7 +213,7 @@ const Ex25_7 = () => {
             edge of the group use this type of sleep to help protect the other
             members that sleep with both eyes closed.
           </p>
-
+          {Kaisetsu(showResults, "25-7-6")}
           <p className="indent-8">
             Besides the types of sleep explained above, there are patterns that
             can be considered to be sleep-like activities.{" "}
@@ -224,19 +225,12 @@ const Ex25_7 = () => {
             nervous system also experience times of extreme relaxation where
             they remain in a less responsive state.
           </p>
-
-          <p className="indent-8">
-            &quot;Have no fear! I&apos;ll save Whiskers!&quot; I said, as I
-            threw open the cover of the drain and went underground. To my
-            surprise, the crew member told me that she had lost Whiskers and
-            asked me to find the cat. I walked around calling for Whiskers but
-            he did not come.
-          </p>
-
+          {Kaisetsu(showResults, "25-7-7")}
           <p className="indent-8">
             As shown above, sleep plays an important role in the lives of
             animals and it is much more complex than simply closing the eyes.
           </p>
+          {Kaisetsu(showResults, "25-7-8")}
         </div>
       </div>
 

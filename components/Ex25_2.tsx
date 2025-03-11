@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 export default function Ex25_2() {
   const correctAnswerArray = [2, 4, 4, 4];
@@ -107,6 +108,7 @@ export default function Ex25_2() {
           Your teacher asks you to write a report about the future of
           transportation. To prepare, you read a blog written by a British
           author about the topic.
+          {Kaisetsu(showResults, "25-2-1")}
         </p>
       </div>
 
@@ -140,6 +142,7 @@ export default function Ex25_2() {
             <span className="italic">Flying Vehicles: Today and Tomorrow</span>.
             Modern transportation problems and solutions were discussed by three
             guest speakers.
+            {Kaisetsu(showResults, "25-2-2")}
           </p>
 
           <p>
@@ -151,6 +154,7 @@ export default function Ex25_2() {
             better for servicing small towns far from hospitals. Finally, from a
             safety point of view, they said that flying technology would need to
             be well tested and controlled to avoid accidents in the air.
+            {Kaisetsu(showResults, "25-2-3")}
           </p>
 
           <p>
@@ -166,6 +170,7 @@ export default function Ex25_2() {
             operating costs of flying taxis are too high.&quot; I look forward
             to seeing which guest speaker&apos;s prediction turns out to be
             correct.
+            {Kaisetsu(showResults, "25-2-4")}
           </p>
 
           <p className="mb-8">

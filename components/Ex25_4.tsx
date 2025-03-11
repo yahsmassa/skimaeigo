@@ -5,7 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex25_4 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -105,6 +105,7 @@ const Ex25_4 = () => {
         In English class, you are writing an essay on a topic related to
         lifestyle in modern society. This is your most recent draft. You are now
         working on improvements based on comments from your teacher.
+        {Kaisetsu(showResults, "25-4-1")}
       </div>
 
       <div className="border border-gray-300">
@@ -132,6 +133,7 @@ const Ex25_4 = () => {
                     completely focused on these things, you can improve the
                     quality of your work and life. This essay will describe some
                     ways to do this.
+                    {Kaisetsu(showResults, "25-4-2")}
                   </p>
 
                   <p>
@@ -141,6 +143,7 @@ const Ex25_4 = () => {
                     can consume. Do you <i>really</i> need five pairs of the
                     latest sneakers? Slow-lifers would recommend reducing
                     possessions and buying only necessary items.
+                    {Kaisetsu(showResults, "25-4-3")}
                   </p>
 
                   <p>
@@ -149,6 +152,7 @@ const Ex25_4 = () => {
                     study has found that around 90% of people check smartphones
                     during face-to-face conversations, which may appear impolite
                     and affect relationships negatively.<sup>(2)</sup>^
+                    {Kaisetsu(showResults, "25-4-4")}
                   </p>
 
                   <p>
@@ -156,6 +160,7 @@ const Ex25_4 = () => {
                     to reflect on your day. Try to recollect people and events
                     that were significant. By mentally highlighting them, you
                     can find fulfillment in daily tasks.
+                    {Kaisetsu(showResults, "25-4-5")}
                   </p>
 
                   <p>
@@ -172,6 +177,7 @@ const Ex25_4 = () => {
                     </u>
                     . By doing these things, you will have a chance to live a
                     better and more rewarding life.
+                    {Kaisetsu(showResults, "25-4-6")}
                   </p>
                 </div>
               </td>

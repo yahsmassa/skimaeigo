@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex25_5 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -136,6 +137,7 @@ const Ex25_5 = () => {
           university&apos;s community volunteer program, you will help organize
           a special conference for local businesses. You wrote this email to the
           professor in charge and received a reply.
+          {Kaisetsu(showResults, "25-5-1")}
         </p>
       </div>
 
@@ -157,6 +159,7 @@ const Ex25_5 = () => {
             hope to work as a civil servant in the local development division
             after graduation, so this experience is very valuable for me. The
             conference schedule you requested is below.
+            {Kaisetsu(showResults, "25-5-2")}
           </p>
         </div>
 
@@ -318,8 +321,8 @@ const Ex25_5 = () => {
           information. You also mentioned parking. The university parking lot
           will be open for the event, so participants can use it without having
           a permit.
+          {Kaisetsu(showResults, "25-5-3")}
         </p>
-
         <p className="mb-6">
           With regard to the information you requested, I have received the
           remaining two presentation titles. One presenter is a local
@@ -330,6 +333,7 @@ const Ex25_5 = () => {
           the mayor has provided a title for his closing speech, &quot;Our town,
           our future.&quot; As for lunch, the cafeteria staff don&apos;t work on
           weekends, so we need to rethink it. Do you have any suggestions?
+          {Kaisetsu(showResults, "25-5-4")}
         </p>
 
         <p className="mb-6">
@@ -340,6 +344,7 @@ const Ex25_5 = () => {
           on each team, use the long tables. There isn&apos;t a lot of time to
           set up the stage for the debate, so you will need a few people to help
           carry the tables and chairs.
+          {Kaisetsu(showResults, "25-5-5")}
         </p>
 
         <p className="mb-4">Thank you for your assistance.</p>

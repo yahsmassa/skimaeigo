@@ -29,3 +29,8 @@ export type QandA = {
   isTwoOne?: boolean;
   specificPatern?: string;
 };
+
+export type Translate = {
+  id: string;
+  html: string;
+};

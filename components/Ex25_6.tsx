@@ -4,6 +4,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex25_6 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -135,7 +136,7 @@ const Ex25_6 = () => {
             was only a superhero in name, but now, I deserve my title. Let me
             tell you my story.
           </p>
-
+          {Kaisetsu(showResults, "25-6-1")}
           <p className="indent-8">
             I served as one of six members of the incredibly popular superhero
             group, Team Hero. Our slogan was &quot;Heroes for Humanity!&quot;
@@ -143,7 +144,7 @@ const Ex25_6 = () => {
             shows. Being so caught up in my own fame, I was unaware that I was a
             fake superhero.
           </p>
-
+          {Kaisetsu(showResults, "25-6-2")}
           <p className="text-center">♦♦♦♦♦</p>
 
           <p className="indent-8">
@@ -158,7 +159,7 @@ const Ex25_6 = () => {
             member of the television crew was standing in the underground drain
             with the cat.
           </p>
-
+          {Kaisetsu(showResults, "25-6-3")}
           <p className="indent-8">
             &quot;Have no fear! I&apos;ll save Whiskers!&quot; I said, as I
             threw open the cover of the drain and went underground. To my
@@ -166,7 +167,7 @@ const Ex25_6 = () => {
             asked me to find the cat. I walked around calling for Whiskers but
             he did not come.
           </p>
-
+          {Kaisetsu(showResults, "25-6-4")}
           <p className="indent-8">
             Suddenly, the newest Team Hero member, Melody, appeared out of
             nowhere. Melody was mysterious; she wore a mask around her eyes and
@@ -177,7 +178,7 @@ const Ex25_6 = () => {
             out.&quot; Melody, who could recreate any sound, produced a
             cat&apos;s meow and Whiskers appeared.
           </p>
-
+          {Kaisetsu(showResults, "25-6-5")}
           <p className="indent-8">
             After picking up the cat, I returned to the street and was cheered
             by onlookers. When I was posing for a photo with Whiskers and the
@@ -188,7 +189,7 @@ const Ex25_6 = () => {
             </span>
             &quot; I realized it was Melody, who had already vanished.
           </p>
-
+          {Kaisetsu(showResults, "25-6-6")}
           <p className="text-center">♦♦♦♦♦</p>
 
           <p className="indent-8">
@@ -205,7 +206,7 @@ const Ex25_6 = () => {
             should never have let her go. We won&apos;t let that happen to
             you,&quot; said my mother.
           </p>
-
+          {Kaisetsu(showResults, "25-6-7")}
           <p className="indent-8">
             I decided to put my powers to use by rescuing hikers. I could fly
             and see for miles; I could locate or aid a troubled hiker faster
@@ -214,7 +215,7 @@ const Ex25_6 = () => {
             joining, I was given the name Bluebird and told that I would be
             doing bigger and better things.
           </p>
-
+          {Kaisetsu(showResults, "25-6-8")}
           <p className="text-center">♦♦♦♦♦</p>
 
           <p className="indent-8">
@@ -224,6 +225,7 @@ const Ex25_6 = () => {
             opened the door, I briefly saw a person&apos;s shape before it
             disappeared. On my desk was a note:
           </p>
+          {Kaisetsu(showResults, "25-6-9")}
 
           <div className="mx-16 my-4 p-4 border border-gray-300">
             <p className="font-medium">Bluebird,</p>

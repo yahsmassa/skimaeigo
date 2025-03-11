@@ -5,6 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 export default function Ex25_1() {
   const [showResults, setShowResults] = useState(false);
@@ -103,6 +104,7 @@ export default function Ex25_1() {
                 Some fish need open spaces for swimming, while others want
                 places to hide. Also, some fish need sand to cover themselves
                 in. For other non-hiding fish, small stones can be used.
+                {Kaisetsu(showResults, "25-1-1")}
               </p>
             </div>
             {/* Fish and bottom material illustration will be added as img */}
@@ -131,6 +133,7 @@ export default function Ex25_1() {
                 objects like plants. Avoid any plastic or rubber items not
                 intended for aquariums. Clean all decorations carefully to make
                 sure there is nothing harmful on them.
+                {Kaisetsu(showResults, "25-1-2")}
               </p>
             </div>
             <div className="w-[70%] md:w-48 mx-auto">
@@ -154,6 +157,7 @@ export default function Ex25_1() {
                 Fish need room to move. Leave space around the edges of the
                 tank. Place tall decorations and plants at the back, and put
                 short ones at the front.
+                {Kaisetsu(showResults, "25-1-3")}
               </p>
             </div>
             {/* Tank decoration position illustration will be added as img */}

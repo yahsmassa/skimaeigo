@@ -5,7 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const TheContest = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -102,6 +102,7 @@ const TheContest = () => {
         You are an exchange student at a UK high school, and your teacher asked
         you to find an interesting story. You found this story to share in class
         next week.
+        {Kaisetsu(showResults, "25-3-1")}
       </p>
 
       <div className="border border-gray-300 p-8 mb-8">
@@ -124,6 +125,7 @@ const TheContest = () => {
           &quot;Tomo, you&apos;re too worried. Everything will be OK,&quot; Ren,
           our drummer, said as she smiled at me and waved goodbye. &quot;I hope
           so,&quot; I thought to myself.
+          {Kaisetsu(showResults, "25-3-2")}
         </p>
 
         <p className="mb-4">
@@ -134,6 +136,7 @@ const TheContest = () => {
           &quot;How could that be?&quot; I wondered. As I continued to listen, I
           paid extra attention to each instrument. &quot;I&apos;ve got it!&quot;
           I thought excitedly.
+          {Kaisetsu(showResults, "25-3-3")}
         </p>
 
         <p className="mb-4">
@@ -145,6 +148,7 @@ const TheContest = () => {
           &quot;These songs aren&apos;t even difficult...&quot;
           <br />
           &quot;What&apos;s the matter?&quot;
+          {Kaisetsu(showResults, "25-3-4")}
         </p>
 
         <p className="mb-4">
@@ -155,6 +159,7 @@ const TheContest = () => {
           &quot;The whole is greater than the sum of the parts.&quot; Although{" "}
           <i>Cat&apos;s Curry</i> did not win the contest, we all felt it was
           the best performance of our lives.
+          {Kaisetsu(showResults, "25-3-5")}
         </p>
       </div>
 

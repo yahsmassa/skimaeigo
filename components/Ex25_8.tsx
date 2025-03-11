@@ -4,6 +4,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 import Image from "next/image";
 const Ex25_8 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -22,9 +23,9 @@ const Ex25_8 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "①「宇宙船によるCO₂排出量は膨大で，宇宙空間に悪影響を及ぼしている」 →資料A第3文-第5文 ",
-        "It is estimated that one spacecraft launch emits 200–300 tons of CO₂ and other harmful gases into the Earth&apos;s atmosphere. More and more spacecraft are being sent into space, which is damaging for the Earth. The contribution to the greenhouse effect of these craft’s CO₂ emissions is causing the Earth’s temperature to rise.",
-        "「宇宙船1機の打ち上げで，約200～300トンのCO₂やその他の有害ガスが地球の大気中に放出されると推定されています。ますます多くの宇宙船が打ち上げられることで，地球に悪影響を及ぼしています。これらの宇宙船のCO₂排出量が温室効果に寄与し，地球の気温上昇を引き起こしています」に反する（宇宙空間に悪影響を及ぼしているのではなく，地球に悪影響を及ぼしている）。",
+        "①「注意が重要である」が正解。",
+        "地球外の知的生命体に人類の存在を知らせることは危険であると述べている",
+        "②は「発明はかけがえのないものである」，③は「科学は優れている」，④は「信頼は宝である」",
       ],
     },
     {
@@ -40,7 +41,8 @@ const Ex25_8 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "②「有害なガスの排出を抑えた新しいエンジンで宇宙船を更新するのは難しい」 →このような記述はない。",
+        "①「経済に影響を与え，民間企業が利益を得る機会を提供する」が正解。",
+        "② 人気が高まり(gaining popularity)，業界で働く人々の給与が平均以上である」，③は「異なる政策を持つ国々間の調整を必要とするため，政治的に困難である」，④は「特に国際宇宙ステーションを成功裏に運営するために，世界的な協力が必要である」という意味で，いずれも両者が共通に言及している内容ではない。",
       ],
     },
     {
@@ -65,9 +67,8 @@ const Ex25_8 = () => {
       isCorrect: false,
       points: 4,
       explanation: [
-        "③「宇宙ゴミは飛行機との衝突の可能性により人間にリスクをもたらす」 →資料Ａ第7文-第9文 ",
-        "The quantity of space debris, the junked parts of spacecraft or artificial satellites, is on the rise. NASA estimates that, in the thermosphere, there are currently around 23,000 pieces of space debris which are larger than a softball and travel at speeds of up to 28,000 km/h. This poses a risk to future spaceflight, and may even be a potential obstacle to astronomical observation.",
-        "（宇宙船や人工衛星の廃棄部品である宇宙ゴミの量が増加しています。NASAによれば，現在熱圏にはソフトボールより大きく，秒速28,000kmの速度で移動する宇宙ゴミが約23,000個存在していると推定されています。これは，将来の宇宙飛行にリスクをもたらし，天文観測においても潜在的な障害となる可能性があります）に反する（飛行機との衝突の可能性については言及されていない）。",
+        "４0、41は３と４が解答（宇宙探査に否定的なMelinとNaomi）",
+        "42は②「宇宙探査は人々を多くの危険にさらし，非常にリスクが高いです」が正解",
       ],
     },
     {
@@ -84,9 +85,9 @@ const Ex25_8 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "④「宇宙探査は地球と熱圏の両方の環境を汚染している」 →第3文から第5文で，温室効果ガスを排出することで地球に害を与えていることが書かれている。また，第6文 ",
+        "④「宇宙探査は地球と熱圏の両方の環境を汚染している」が正解 →第3文から第5文で，温室効果ガスを排出することで地球に害を与えていることが書かれている。また，第6文 ",
         "Second, space exploration is damaging the thermosphere (the space environment close to the Earth).",
-        "（次に，宇宙探査は熱圏（地球に近い宇宙環境）を損なっています）と述べられている。したがって，④が正解。",
+        "（次に，宇宙探査は熱圏（地球に近い宇宙環境）を損なっています）と述べられている。",
       ],
     },
     {
@@ -103,7 +104,7 @@ const Ex25_8 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[44] グラフの数値を計算する必要がある。正解は①「世界中の政府が宇宙探査に費やすお金は，飢餓を減らすだけでなく，途上国で初等教育を利用可能にすることもできる」で，グラフによると宇宙探査に費やす金額は $103 billionだが，飢餓を減らす（relieving hunger）には$40 billion，途上国で初等教育を利用可能にする（supplying basic education）には$54 billionが必要なので，$103 billion > $94 billion（$40 billion + $50 billion）となり，この選択肢だけがグラフの数値に合致していることになる。他の選択肢については以下の通り。",
+        "正解は①「世界中の政府が宇宙探査に費やすお金は，飢餓を減らすだけでなく，途上国で初等教育を利用可能にすることもできる」で，グラフによると宇宙探査に費やす金額は $103 billionだが，飢餓を減らす（relieving hunger）には$40 billion，途上国で初等教育を利用可能にする（supplying basic education）には$54 billionが必要なので，$103 billion > $94 billion（$40 billion + $50 billion）となり，この選択肢だけがグラフの数値に合致していることになる。他の選択肢については以下の通り。",
         "②「データによれば，途上国の人々に清潔な水を確保する費用は，世界中の政府が宇宙探査を行う費用よりも少ない」 →150 < 103なので誤り。",
         "③「政府が宇宙探査に費やす費用の半分以下で，発展途上国における教育格差の問題に対処することが可能である」 →103×0.5＝51.5で，54に満たないので誤り。",
         "④「現在宇宙探査に投資されているお金で，発展途上国に十分な食糧，基礎教育，清潔な水を提供することができる」 →150 + 54 + 40 > 103なので誤り。",
@@ -170,6 +171,7 @@ const Ex25_8 = () => {
               modern life is the computer mouse. This was developed in the 1960s
               on a NASA research project.
             </p>
+            {Kaisetsu(showResults, "25-8-1")}
           </div>
 
           {/* Christine's Opinion */}
@@ -186,6 +188,7 @@ const Ex25_8 = () => {
               financial cooperation and raising prestige are welcome, improper
               commercial or military use of outer space is not.
             </p>
+            {Kaisetsu(showResults, "25-8-2")}
           </div>
 
           {/* Meilin's Opinion */}
@@ -201,6 +204,7 @@ const Ex25_8 = () => {
               the likelihood Earth will be discovered by an aggressive alien
               civilization.
             </p>
+            {Kaisetsu(showResults, "25-8-3")}
           </div>
 
           {/* Naomi's Opinion */}
@@ -217,6 +221,7 @@ const Ex25_8 = () => {
               or industry would tolerate such a high level of danger. Why should
               the space industry?
             </p>
+            {Kaisetsu(showResults, "25-8-4")}
           </div>
 
           {/* Victor's Opinion */}
@@ -233,6 +238,7 @@ const Ex25_8 = () => {
               rise of space tourism, space mining, space colonization, and space
               militarization.
             </p>
+            {Kaisetsu(showResults, "25-8-5")}
           </div>
         </div>
       </div>
@@ -453,6 +459,7 @@ const Ex25_8 = () => {
             risk to future spaceflight, and may even be a potential obstacle to
             astronomical observation.
           </p>
+          {Kaisetsu(showResults, "25-8-6")}
         </div>
 
         {/* Source B Box */}
@@ -466,7 +473,7 @@ const Ex25_8 = () => {
             international institutions, that would be required to address some
             of the world&apos;s most important issues.
           </p>
-
+          {Kaisetsu(showResults, "25-8-7")}
           <Image
             src="/images/Ex25-8-1.jpg"
             alt="Bar graph comparing government investment in space exploration with potential annual budgets needed for providing clean water, supplying basic education, and relieving hunger in developing countries"

@@ -116,6 +116,7 @@ export const translateSentence = async (selectedText: string) => {
       "あなたは優秀な英語教師です、以下の英文を日本語に翻訳し、原文、１行あけて、翻訳文、その後、改行して熟語・慣用句が含まれていたら、箇条書きで指摘してください、箇条書きは 英語：日本語 の形式で指摘してください、文字は**で囲まないでください  " +
       selectedText;
     const result = await translateTextGemini(prompt);
+
     // const prompt =
     //   "あなたは優秀な英語教師です、以下の英文を日本語に翻訳し、センテンスごとに、原文、翻訳文と表示し、その後熟語・慣用句が含まれていたら、箇条書きで指摘してください、箇条書きは 英語：日本語 の形式で指摘してください" +
     //   selectedText;
@@ -123,8 +124,10 @@ export const translateSentence = async (selectedText: string) => {
     // const result = (await translateTextDeepseek(prompt)) || "";
     // console.log("formattedResult", formattedResult);
     const formattedResult = result.replace(/\n/g, "<br/>"); // 改行を<br/>に変換
+    console.log("formatResult", formattedResult);
     Swal.fire({
       title: "解説",
+      // text: result,
       html: formattedResult,
       confirmButtonText: "OK",
       width: "500px",
