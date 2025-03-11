@@ -31,6 +31,10 @@ export function Saiten({
     setTotalPoints(totalPoints);
   }, [qa]);
 
+  useEffect(() => {
+    if (showResults) handleQA();
+  }, [answers]);
+
   const sortFirstTwo = (str: string) => {
     if (str.length < 3) return "";
     // 最初の2文字を取得してソート
