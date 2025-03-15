@@ -1,8 +1,77 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const JapaneseExamQuestion = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "3A-1",
+      qa: [
+        {
+          questionNumber: "27",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は②"],
+    },
+    {
+      questionId: "3A-2",
+      qa: [
+        {
+          questionNumber: "28",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は③"],
+    },
+    {
+      questionId: "3A-3",
+      qa: [
+        {
+          questionNumber: "29",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は②"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="font-sans max-w-3xl mx-auto p-6 bg-white">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
+          <span className="text-gray-600">(配点 {18})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Question number and instruction */}
       <div className="mb-6">
         <h2 className="md:text-xl font-bold mb-2">
@@ -24,9 +93,10 @@ const JapaneseExamQuestion = () => {
       <div className="mb-6">
         <div className="flex items-center mb-2">
           <h4 className="text-lg font-bold mr-4">問1</h4>
-          <div className="border-2 border-black px-3 py-1">
-            <span className="text-lg">27</span>
-          </div>
+          {renderSelect("27", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="3A-1" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "18-3A-1")}
         </div>
 
         {/* English paragraph */}
@@ -71,9 +141,10 @@ const JapaneseExamQuestion = () => {
       <div className="mb-6">
         <div className="flex items-center mb-2">
           <h4 className="text-lg font-bold mr-4">問2</h4>
-          <div className="border-2 border-black px-3 py-1">
-            <span className="text-lg">28</span>
-          </div>
+          {renderSelect("28", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="3A-2" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "18-3A-2")}
         </div>
 
         {/* English paragraph about tomatoes */}
@@ -116,9 +187,10 @@ const JapaneseExamQuestion = () => {
       <div className="mb-6">
         <div className="flex items-center mb-2">
           <h4 className="text-lg font-bold mr-4">問3</h4>
-          <div className="border-2 border-black px-3 py-1">
-            <span className="text-lg">29</span>
-          </div>
+          {renderSelect("29", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="3A-3" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "18-3A-3")}
         </div>
 
         {/* English paragraph about insects as food */}

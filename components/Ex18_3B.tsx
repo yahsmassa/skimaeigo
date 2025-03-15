@@ -1,30 +1,100 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const ConversationImage = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "3B-1",
+      qa: [
+        {
+          questionNumber: "30",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は①"],
+    },
+    {
+      questionId: "3B-2",
+      qa: [
+        {
+          questionNumber: "31",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は③"],
+    },
+    {
+      questionId: "3B-3",
+      qa: [
+        {
+          questionNumber: "32",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は④"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="font-serif max-w-3xl mx-auto p-4 bg-white text-black">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第３問 B"}</h1>
+          <span className="text-gray-600">(配点 {9})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       {/* タイトル部分 */}
       <div className="mb-6">
         <div className="flex flex-wrap items-start">
           <div className="flex items-center my-1 flex-wrap">
             <span className=" mr-2">B</span>
-            <span className="mr-2">
-              次の会話は，ある大学で映像制作の課題について学生たちが話し合いをしている場面の一部である。
+            次の会話は，ある大学で映像制作の課題について学生たちが話し合いをしている場面の一部であ
+            <span className="inline-flex items-center">
+              る。
+              <div className="flex items-center ml-2 text-sm">
+                <div className="border-2 border-black px-2 text-sm md:text-base md:px-4 py-1 mx-1 text-center min-w-10 font-sans">
+                  30
+                </div>
+                <span className="mx-2">～</span>
+                <div className="border-2 border-black px-2 text-sm md:text-base md:px-4 py-1 mx-1 text-center min-w-10 font-sans">
+                  32
+                </div>
+              </div>
             </span>
-            <div className="border-2 border-black w-12 h-10 flex items-center justify-center mx-2">
-              30
-            </div>
-            <span className="mx-1">～</span>
-            <div className="border-2 border-black w-12 h-10 flex items-center justify-center mx-2">
-              32
-            </div>
-            <span>
-              に入れるのに最も適当なものを，それぞれ下の①～④のうちから一つずつ選べ。
-            </span>
+            <span>に入れるのに最も適当</span>
+            <span>なものを，それぞれ下の①～④のうちから一つずつ選べ。</span>
           </div>
         </div>
       </div>
-
       {/* 会話部分 */}
       <div className="space-y-6 text-base">
         <div className="flex">
@@ -36,6 +106,7 @@ const ConversationImage = () => {
             project in our film-making class. As the group leader, I think the
             sooner we start, the better our movie will be. Does anyone have any
             ideas for our movie?
+            {Kaisetsu(showResults, "18-3B-1")}
           </div>
         </div>
 
@@ -57,17 +128,24 @@ const ConversationImage = () => {
             audience and everyone involved in the film received lots of praise.
             I would like to create a similar movie documenting people working
             hard and achieving their goals.
+            {Kaisetsu(showResults, "18-3B-2")}
           </div>
         </div>
 
-        <div className="flex items-center">
+        <div
+          className={cn(
+            "flex md:items-center",
+            showResults && qaFormat(qa, "3B-1")
+          )}
+        >
           <div className="font-bold w-24 shrink-0">Jennifer:</div>
-          <div className="flex-1 pl-4 flex items-center">
-            So, are you saying that
-            <div className="border-2 border-black w-12 h-10 flex items-center justify-center mx-2">
-              30
-            </div>
-            ?
+          <div className="flex-1 flex-wrap pl-4 flex items-center">
+            <span>So, are you saying that</span>
+            {renderSelect("30", 4, answers, setAnswers)}
+            <span className="mr-2">?</span>
+            {showResults && <Explain qa={qa} questionId="3B-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "18-3B-3")}
           </div>
         </div>
 
@@ -108,6 +186,7 @@ const ConversationImage = () => {
             connect with. That's the reason people like love stories. People
             like to imagine: "How would I get her attention?"; "How would I ask
             him out on a date?"; or "Where would we go on our first date?"
+            {Kaisetsu(showResults, "18-3B-4")}
           </div>
         </div>
 
@@ -122,19 +201,27 @@ const ConversationImage = () => {
             if" question in an everyday setting. For example, what if we found a
             treasure map somewhere on campus? This could be the beginning of a
             nice, fun story, and it could make an exciting movie.
+            {Kaisetsu(showResults, "18-3B-5")}
           </div>
         </div>
 
-        <div className="flex mt-6 items-center">
+        <div
+          className={cn(
+            "flex mt-6 md:items-center",
+            showResults && qaFormat(qa, "3B-2")
+          )}
+        >
           <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
             Jennifer:
           </div>
-          <div className="flex-1 pl-4 flex items-center">
-            Kim and Mary, both of you think we should make a movie that
-            <div className="border-2 border-black w-12 h-10 flex items-center justify-center mx-2">
-              31
-            </div>
-            .
+          <div className="flex-1 flex-wrap pl-4 flex items-center">
+            <span>
+              Kim and Mary, both of you think we should make a movie that
+            </span>
+            {renderSelect("31", 4, answers, setAnswers)}
+            <span className="mr-2">.</span>
+            {showResults && <Explain qa={qa} questionId="3B-2" />}
+            {Kaisetsu(showResults, "18-3B-6")}
           </div>
         </div>
 
@@ -173,6 +260,7 @@ const ConversationImage = () => {
             or in the way it is told. Remember, the audience wants to watch
             something novel, too. So, I think we need to think about what our
             original perspective could be.
+            {Kaisetsu(showResults, "18-3B-7")}
           </div>
         </div>
 
@@ -190,6 +278,7 @@ const ConversationImage = () => {
             about our careers. All of these things sound very ordinary and not
             really special. So, is it possible to show our world in a unique way
             that will appeal to the audience?
+            {Kaisetsu(showResults, "18-3B-8")}
           </div>
         </div>
 
@@ -202,21 +291,29 @@ const ConversationImage = () => {
             combination of all those things together can make our work unique. I
             think that's what people would like to see: a movie that they can
             associate with but that is told from a unique perspective.
+            {Kaisetsu(showResults, "18-3B-9")}
           </div>
         </div>
 
-        <div className="flex mt-6">
+        <div
+          className={cn(
+            "flex mt-6 md:items-center",
+            showResults && qaFormat(qa, "3B-3")
+          )}
+        >
           <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
             Jennifer:
           </div>
           <div className="flex-1 flex-row flex-wrap pl-4 items-center">
             Well, we have some different ideas about our film, but it sounds
             like everyone is saying that
-            <div className="flex items-center">
-              <div className="border-2 border-black w-12 h-10 flex items-center justify-center mx-2">
-                32
-              </div>
-              is important when making our film.
+            <div className="flex flex-wrap items-center">
+              {renderSelect("32", 4, answers, setAnswers)}
+              <span className="mr-2">is important</span>
+              <span className="mr-2">when making our film.</span>
+              {showResults && <Explain qa={qa} questionId="3B-3" />}
+              <span className="mr-2"></span>
+              {Kaisetsu(showResults, "18-3B-10")}
             </div>
           </div>
         </div>

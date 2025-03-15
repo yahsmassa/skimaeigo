@@ -1,8 +1,77 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const TestQuestion = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "3A-1",
+      qa: [
+        {
+          questionNumber: "27",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は②"],
+    },
+    {
+      questionId: "3A-2",
+      qa: [
+        {
+          questionNumber: "28",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は②"],
+    },
+    {
+      questionId: "3A-3",
+      qa: [
+        {
+          questionNumber: "29",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は②"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="font-sans p-8 max-w-3xl mx-auto">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
+          <span className="text-gray-600">(配点 {18})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       <div className="mb-8">
         <h2 className="md:text-2xl font-bold mb-4">
           第3問 次の問い(A・B)に答えよ。(配点 33)
@@ -17,9 +86,10 @@ const TestQuestion = () => {
           <div className="mt-8">
             <div className="flex items-center mb-2">
               <span className="font-bold mr-2">問1</span>
-              <div className="border border-black w-12 h-10 flex items-center justify-center">
-                <span className="font-bold">27</span>
-              </div>
+              {renderSelect("27", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="3A-1" />}
+              <span className="mr-2"></span>
+              {Kaisetsu(showResults, "20-3A-1")}
             </div>
 
             <div className="mt-4 space-y-4">
@@ -62,9 +132,10 @@ const TestQuestion = () => {
           <div className="mt-12">
             <div className="flex items-center mb-2">
               <span className="font-bold mr-2">問2</span>
-              <div className="border border-black w-12 h-10 flex items-center justify-center">
-                <span className="font-bold">28</span>
-              </div>
+              {renderSelect("28", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="3A-2" />}
+              <span className="mr-2"></span>
+              {Kaisetsu(showResults, "20-3A-2")}
             </div>
 
             <div className="mt-4 space-y-4">
@@ -107,9 +178,10 @@ const TestQuestion = () => {
           <div className="mt-12">
             <div className="flex items-center mb-2">
               <span className="font-bold mr-2">問3</span>
-              <div className="border border-black w-12 h-10 flex items-center justify-center">
-                <span className="font-bold">29</span>
-              </div>
+              {renderSelect("29", 4, answers, setAnswers)}
+              {showResults && <Explain qa={qa} questionId="3A-3" />}
+              <span className="mr-2"></span>
+              {Kaisetsu(showResults, "20-3A-3")}
             </div>
 
             <div className="mt-4 space-y-4">

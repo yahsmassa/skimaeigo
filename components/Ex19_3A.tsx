@@ -1,8 +1,77 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const ExamQuestion = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "3A-1",
+      qa: [
+        {
+          questionNumber: "27",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は①"],
+    },
+    {
+      questionId: "3A-2",
+      qa: [
+        {
+          questionNumber: "28",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は②"],
+    },
+    {
+      questionId: "3A-3",
+      qa: [
+        {
+          questionNumber: "29",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は④"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="font-sans p-6 max-w-3xl mx-auto bg-white text-gray-800">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
+          <span className="text-gray-600">(配点 {18})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       {/* Question Number */}
       <div className="flex flex-wrap items-center mb-4">
         <h2 className="md:text-xl font-bold mr-4">第3問</h2>
@@ -27,9 +96,10 @@ const ExamQuestion = () => {
       <div className="ml-8 mb-8">
         <div className="flex items-center mb-4">
           <span className="font-bold mr-4">問 1</span>
-          <div className="border border-gray-800 px-4 py-1 inline-block">
-            <span className="text-center">27</span>
-          </div>
+          {renderSelect("27", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="3A-1" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "19-3A-1")}
         </div>
 
         {/* Paragraph with underlined options */}
@@ -75,9 +145,10 @@ const ExamQuestion = () => {
       <div className="ml-8 mb-8">
         <div className="flex items-center mb-4">
           <span className="font-bold mr-4">問 2</span>
-          <div className="border border-gray-800 px-4 py-1 inline-block">
-            <span className="text-center">28</span>
-          </div>
+          {renderSelect("28", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="3A-2" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "19-3A-2")}
         </div>
 
         {/* Paragraph with underlined options */}
@@ -123,9 +194,10 @@ const ExamQuestion = () => {
       <div className="ml-8 mb-8">
         <div className="flex items-center mb-4">
           <span className="font-bold mr-4">問 3</span>
-          <div className="border border-gray-800 px-4 py-1 inline-block">
-            <span className="text-center">29</span>
-          </div>
+          {renderSelect("29", 4, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="3A-3" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "19-3A-3")}
         </div>
 
         {/* Paragraph with underlined options */}

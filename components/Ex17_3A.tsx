@@ -1,8 +1,63 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const JapaneseTestQuestion = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "3A-1",
+      qa: [
+        {
+          questionNumber: "27",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は④"],
+    },
+    {
+      questionId: "3A-2",
+      qa: [
+        {
+          questionNumber: "28",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は④"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="p-6 font-serif max-w-3xl mx-auto">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
+          <span className="text-gray-600">(配点 {18})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       <div className="mb-6">
         <span className="text-xl font-bold font-sans">第3問</span>
         <span className="ml-4">次の問い(A～C)に答えよ。(配点　41)</span>
@@ -47,10 +102,11 @@ const JapaneseTestQuestion = () => {
                 speaker: "Student",
                 text: (
                   <div className="flex items-center -mt-1 md:mt-0">
-                    <div>I see. Well . . . </div>
-                    <div className="ml-2 border-2 border-black w-10 h-8 flex justify-center items-center">
-                      27
-                    </div>
+                    <span>I see. Well . . . </span>
+                    {renderSelect("27", 4, answers, setAnswers)}
+                    {showResults && <Explain qa={qa} questionId="3A-1" />}
+                    <span className="mr-2"></span>
+                    {Kaisetsu(showResults, "17-3A-1")}
                   </div>
                 ),
               },
@@ -116,12 +172,16 @@ const JapaneseTestQuestion = () => {
               {
                 speaker: "Ethan",
                 text: (
-                  <div className="flex items-center">
+                  <div className="flex flex-wrap items-center">
                     <span>I know, but </span>
-                    <div className="mx-2 border-2 border-black w-10 h-8 flex justify-center items-center">
-                      28
-                    </div>
-                    <span>. Let's find somewhere else to go.</span>
+                    {renderSelect("28", 4, answers, setAnswers)}
+                    <span className="mr-2"></span>
+                    <span>. Let's find</span>
+                    <span className="mr-2">somewhere else</span>
+                    <span className="mr-2">to go.</span>
+                    {showResults && <Explain qa={qa} questionId="3A-2" />}
+                    <span className="mr-2"></span>
+                    {Kaisetsu(showResults, "17-3A-2")}
                   </div>
                 ),
               },

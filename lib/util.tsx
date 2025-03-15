@@ -73,8 +73,8 @@ export const renderSelect = (
   answers: Answers,
   setAnswers: React.Dispatch<React.SetStateAction<Answers>>
 ) => (
-  <div className="mx-2 flex flex-row items-center whitespace-nowrap">
-    <div className={cn("font-medium mb-0.5 mr-2")}>[{number}]</div>
+  <div className="mx-2 flex flex-row items-center whitespace-nowrap font-sans">
+    <div className={cn("font-medium mb-0.5 mr-2 font-sans")}>[{number}]</div>
     <select
       value={answers[number] || ""}
       onChange={(e) => handleChange(number, Number(e.target.value), setAnswers)}
@@ -82,7 +82,7 @@ export const renderSelect = (
     >
       <option value="">選択</option>
       {Array.from({ length: count }, (_, index) => (
-        <option key={index + 1} value={index + 1}>
+        <option key={index + 1} value={index + 1} className="font-sans">
           {index + 1}
         </option>
       ))}

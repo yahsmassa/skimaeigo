@@ -1,8 +1,77 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const JapaneseTestQuestion = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "3B-1",
+      qa: [
+        {
+          questionNumber: "30",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は③"],
+    },
+    {
+      questionId: "3B-2",
+      qa: [
+        {
+          questionNumber: "31",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は③"],
+    },
+    {
+      questionId: "3B-3",
+      qa: [
+        {
+          questionNumber: "32",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 3,
+      explanation: ["正解は④"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="font-serif p-8 max-w-3xl mx-auto text-black">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第３問 B"}</h1>
+          <span className="text-gray-600">(配点 {9})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       <div className="mb-6 flex-row flex-wrap">
         <span className="font-bold text-base md:text-xl mr-2">B</span>
         <span className="text-base md:text-lg"></span>
@@ -36,6 +105,7 @@ const JapaneseTestQuestion = () => {
             today to come up with ideas about how to raise money for our annual
             charity event. We'll have about a month this summer to earn as much
             as we can. Any thoughts?
+            {Kaisetsu(showResults, "20-3B-1")}
           </div>
         </div>
 
@@ -45,6 +115,7 @@ const JapaneseTestQuestion = () => {
           </div>
           <div className="flex-1 leading-6 md:leading-8">
             How about doing odd jobs around the neighborhood?
+            {Kaisetsu(showResults, "20-3B-2")}
           </div>
         </div>
 
@@ -54,6 +125,7 @@ const JapaneseTestQuestion = () => {
           </div>
           <div className="flex-1 leading-6 md:leading-8">
             What's that? I've never heard of it.
+            {Kaisetsu(showResults, "20-3B-3")}
           </div>
         </div>
 
@@ -70,24 +142,31 @@ const JapaneseTestQuestion = () => {
             run around town for them to pick up the dry cleaning or do the
             grocery shopping. It's a pretty typical way for young people to earn
             some extra money.
+            {Kaisetsu(showResults, "20-3B-4")}
           </div>
         </div>
 
-        <div className="flex items-center">
+        {/* <div className="flex md:items-center"> */}
+        <div
+          className={cn(
+            "flex md:items-center",
+            showResults && qaFormat(qa, "3B-1")
+          )}
+        >
           <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
             Akira:
           </div>
-          <div className="flex-1 flex items-center leading-6 md:leading-8">
-            So, Jenna, you're saying that
-            <div className="border-2 font-sans text-sm border-black px-3 py-1 mx-2 text-center min-w-10">
-              30
-            </div>
-            ?
+          <div className="flex flex-wrap gap-2 items-center leading-6 md:leading-8">
+            <span>So, Jenna, you're saying that</span>
+            {renderSelect(String(30), 4, answers, setAnswers)}
+            <span className="mr-3">?</span>
+            {showResults && <Explain qa={qa} questionId="3B-1" />}
+            {Kaisetsu(showResults, "20-3B-5")}
           </div>
         </div>
       </div>
 
-      <div className="space-y-4 mb-8 pl-8">
+      <div className={cn("space-y-4 mb-8 pl-8")}>
         {[
           "cleaning up the yard is quite valuable work",
           "dividing housework among the family is best",
@@ -109,6 +188,7 @@ const JapaneseTestQuestion = () => {
         </div>
         <div className="flex-1 leading-6 md:leading-8">
           Yeah. I think that it could work in Japan, too.
+          {Kaisetsu(showResults, "20-3B-6")}
         </div>
       </div>
 
@@ -123,6 +203,7 @@ const JapaneseTestQuestion = () => {
             different. You're more like a kind of helper. It's a casual style of
             working. You get paid directly by the people you help, not a
             company. And you can decide which jobs you want to do.
+            {Kaisetsu(showResults, "20-3B-7")}
           </div>
         </div>
 
@@ -134,6 +215,7 @@ const JapaneseTestQuestion = () => {
             But isn't it dangerous? Usually, people are unwilling to enter a
             house of someone they don't know. And what happens if you don't get
             paid? How can you get the money you earned?
+            {Kaisetsu(showResults, "20-3B-8")}
           </div>
         </div>
 
@@ -148,6 +230,7 @@ const JapaneseTestQuestion = () => {
             know them. Often, they are older people who have lived in the
             neighborhood a long time. And I always got paid in cash, so I was
             excited to have money to spend.
+            {Kaisetsu(showResults, "20-3B-9")}
           </div>
         </div>
 
@@ -160,20 +243,27 @@ const JapaneseTestQuestion = () => {
             happy to have someone do the heavy lifting, or even just to see a
             friendly face around. I really doubt that they would take advantage
             of us. In general, don't you think most people are honest and kind?
+            {Kaisetsu(showResults, "20-3B-10")}
           </div>
         </div>
 
-        <div className="flex md:items-center">
+        <div
+          className={cn(
+            "flex md:items-center",
+            showResults && qaFormat(qa, "3B-2")
+          )}
+        >
           <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
             Akira:
           </div>
           <div className="flex-1 flex-wrap flex items-center leading-6 md:leading-8">
             <span>It sounds like we shouldn't be too</span>
             <span>worried because</span>
-            <div className="border-2 font-sans text-sm border-black px-3 py-1 mx-2 text-center min-w-10">
-              31
-            </div>
-            .
+            {renderSelect("31", 4, answers, setAnswers)}
+            <span className="mr-3"></span>
+            {showResults && <Explain qa={qa} questionId="3B-2" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "20-3B-11")}
           </div>
         </div>
       </div>
@@ -203,6 +293,7 @@ const JapaneseTestQuestion = () => {
             Is it OK to get paid for volunteer work? Shouldn't we work for
             elderly people out of the goodness of our hearts? I think helping
             people is its own reward.
+            {Kaisetsu(showResults, "20-3B-12")}
           </div>
         </div>
 
@@ -216,6 +307,7 @@ const JapaneseTestQuestion = () => {
             not like we're charging 5,000 yen per hour. Why don't we suggest 500
             yen per hour? It's a lot more reasonable than asking some company to
             do the job.
+            {Kaisetsu(showResults, "20-3B-13")}
           </div>
         </div>
 
@@ -226,6 +318,7 @@ const JapaneseTestQuestion = () => {
           <div className="flex-1 leading-6 md:leading-8">
             Don't you have to pay any taxes? What happens if the government
             finds out?
+            {Kaisetsu(showResults, "20-3B-14")}
           </div>
         </div>
 
@@ -237,23 +330,24 @@ const JapaneseTestQuestion = () => {
             I don't think we're breaking any laws. That's the way it works in
             the US, anyway. Just to be on the safe side, though, let's ask
             someone at the city tax office.
+            {Kaisetsu(showResults, "20-3B-15")}
           </div>
         </div>
 
-        <div className="flex">
+        <div className={cn("flex", showResults && qaFormat(qa, "3B-3"))}>
           <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
             Akira:
           </div>
-          <div className="flex-1 flex items-center leading-6 md:leading-8">
-            <span className="flex-wrap">
+          <div className="flex-1 flex flex-wrap items-center leading-6 md:leading-8">
+            <span>
               OK, thanks for all of your great ideas. I think we made a lot of
-              progress. According to the suggestions made today, it looks like
-              our next step is to
-              <div className="border-2 font-sans text-sm border-black px-3 py-1 mx-2 text-center min-w-10 inline-block">
-                32
-              </div>
-              . Right?
+              progress. According to the suggestions made
             </span>
+            <span>today, it looks like our next step is to</span>
+            {renderSelect("32", 4, answers, setAnswers)}
+            <span className="mr-2">. Right?</span>
+            {showResults && <Explain qa={qa} questionId="3B-3" />}
+            {Kaisetsu(showResults, "20-3B-16")}
           </div>
         </div>
       </div>

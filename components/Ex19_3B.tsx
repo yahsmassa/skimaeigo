@@ -1,8 +1,77 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const ExamQuestion = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "3B-1",
+      qa: [
+        {
+          questionNumber: "30",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: ["正解は①"],
+    },
+    {
+      questionId: "3B-2",
+      qa: [
+        {
+          questionNumber: "31",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: ["正解は③"],
+    },
+    {
+      questionId: "3B-3",
+      qa: [
+        {
+          questionNumber: "32",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 6,
+      explanation: ["正解は③"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="font-serif max-w-2xl mx-auto p-6">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第３問 B"}</h1>
+          <span className="text-gray-600">(配点 {9})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       <div className="mb-4">
         <div className="flex items-start">
           <div className="font-bold mr-2">B</div>
@@ -34,6 +103,7 @@ const ExamQuestion = () => {
                   students. We don't have much time before her party, so I'd
                   really like to reach a final decision today. Did you come up
                   with any ideas?
+                  {Kaisetsu(showResults, "19-3B-1")}
                 </div>
               </div>
 
@@ -48,17 +118,27 @@ const ExamQuestion = () => {
                   something that she can make the most of on a daily basis, then
                   she will feel the appreciation all her students have for her
                   more often.
+                  {Kaisetsu(showResults, "19-3B-2")}
                 </div>
               </div>
 
-              <div className="flex">
+              <div
+                className={cn(
+                  "flex md:items-center",
+                  showResults && qaFormat(qa, "3B-1")
+                )}
+              >
                 <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
                   Sean:
                 </div>
-                <div className="flex-1 leading-6 md:leading-8">
-                  Thanks, Alex. So, you think giving her something
-                  <span className="border border-black px-2 mx-1">30</span>{" "}
-                  would be appropriate, right?
+                <div className="flex-1 flex-wrap flex items-center leading-6 md:leading-8">
+                  <span>Thanks, Alex. So, you think giving</span>
+                  <span> her something</span>
+                  {renderSelect("30", 4, answers, setAnswers)}
+                  <span className="mr-2">would be appropriate, right?</span>
+                  {showResults && <Explain qa={qa} questionId="3B-1" />}
+                  <span className="mr-2"></span>
+                  {Kaisetsu(showResults, "19-3B-3")}
                 </div>
               </div>
 
@@ -75,6 +155,7 @@ const ExamQuestion = () => {
                 </div>
                 <div className="flex-1 leading-6 md:leading-8">
                   Yes, I think that would be best.
+                  {Kaisetsu(showResults, "19-3B-4")}
                 </div>
               </div>
 
@@ -89,6 +170,7 @@ const ExamQuestion = () => {
                   on Saturdays and Sundays, she runs in the mornings and plays
                   tennis in the evenings. She hardly ever stays indoors and
                   never misses her daily walk even if it is raining.
+                  {Kaisetsu(showResults, "19-3B-5")}
                 </div>
               </div>
               <div className="flex">
@@ -101,20 +183,29 @@ const ExamQuestion = () => {
                   massive deck. She has a great variety of flowers and
                   vegetables. She often spends time relaxing on her deck just
                   enjoying the view of her garden.
+                  {Kaisetsu(showResults, "19-3B-6")}
                 </div>
               </div>
 
-              <div className="flex">
+              <div
+                className={cn(
+                  "flex md:items-center",
+                  showResults && qaFormat(qa, "3B-2")
+                )}
+              >
                 <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
                   Sean:
                 </div>
-                <div className="flex-1 leading-6 md:leading-8">
-                  Thomas and Anne, it seems that you both think we should
-                  consider Ms. Guillot's{" "}
-                  <span className="font-sans text-sm border border-black px-2 mx-1">
-                    31
-                  </span>{" "}
-                  when we buy her present.
+                <div className="flex-1 flex-wrap flex items-center leading-6 md:leading-8">
+                  <span>
+                    Thomas and Anne, it seems that you both think we should
+                    consider
+                  </span>
+                  <span>Ms. Guillot's</span>
+                  {renderSelect("31", 4, answers, setAnswers)}
+                  <span className="mr-2">when we buy her present.</span>
+                  {showResults && <Explain qa={qa} questionId="3B-2" />}
+                  {Kaisetsu(showResults, "19-3B-7")}
                 </div>
               </div>
 
@@ -132,6 +223,7 @@ const ExamQuestion = () => {
                 <div className="flex-1 leading-6 md:leading-8">
                   That's right. But it's a little hard to come up with an actual
                   item, isn't it?
+                  {Kaisetsu(showResults, "19-3B-8")}
                 </div>
               </div>
 
@@ -148,6 +240,7 @@ const ExamQuestion = () => {
                   usually, people who like cooking have their own preferences
                   when it comes have their own preferences when it comes to
                   things like that.
+                  {Kaisetsu(showResults, "19-3B-9")}
                 </div>
               </div>
 
@@ -160,6 +253,7 @@ const ExamQuestion = () => {
                   that whenever she has them, everyone has to go inside to eat
                   if they want to sit down. Perhaps something that she can use
                   when entertaining her guests would be most appropriate.
+                  {Kaisetsu(showResults, "19-3B-10")}
                 </div>
               </div>
 
@@ -171,22 +265,34 @@ const ExamQuestion = () => {
                   I think that's a great point. Once she has retired, I'm sure
                   she'll be having more of those parties. Who knows? Maybe
                   she'll even invite us!
+                  {Kaisetsu(showResults, "19-3B-11")}
                 </div>
               </div>
 
-              <div className="flex">
+              <div
+                className={cn(
+                  "flex md:items-center",
+                  showResults && qaFormat(qa, "3B-3")
+                )}
+              >
                 <div className="font-bold w-16 text-sm md:text-base md:w-24 shrink-0">
                   Sean:
                 </div>
-                <div className="flex-1 leading-6 md:leading-8">
-                  That would be nice, wouldn't it, Anne? Well, thank you for all
-                  your ideas. Considering what we have discussed, I think a
-                  present such as{" "}
-                  <span className="font-sans text-sm border border-black px-2 mx-1">
-                    32
-                  </span>{" "}
-                  will be best as it seems to match what everyone has said about
-                  Ms. Guillot.
+                <div className="flex-1 flex-wrap flex items-center leading-6 md:leading-8">
+                  <span>
+                    That would be nice, wouldn't it, Anne? Well, thank you for
+                    all your ideas. Considering what we have discussed, I think
+                    a present
+                  </span>
+                  <span>such as</span>
+                  {renderSelect("32", 4, answers, setAnswers)}
+                  <span className="mr-2">
+                    will be best as it seems to match what everyone has said
+                    about Ms. Guillot.
+                  </span>
+                  {showResults && <Explain qa={qa} questionId="3B-3" />}
+                  <span className="mr-2"></span>
+                  {Kaisetsu(showResults, "19-3B-12")}
                 </div>
               </div>
 
