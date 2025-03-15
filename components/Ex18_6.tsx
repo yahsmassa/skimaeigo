@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex18_6 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -149,6 +150,7 @@ const Ex18_6 = () => {
               invisible to visible has led to tremendous growth in our
               comprehension of the world and has strongly influenced our ways of
               thinking.
+              {Kaisetsu(showResults, "18-6-1")}
             </p>
           </div>
         </div>
@@ -168,6 +170,7 @@ const Ex18_6 = () => {
               thus revealing facts about the universe that lies beyond the
               Earth. The telescope continues to offer us new views concerning
               things beyond our immediate reach.
+              {Kaisetsu(showResults, "18-6-2")}
             </p>
           </div>
         </div>
@@ -190,6 +193,7 @@ const Ex18_6 = () => {
               investigate even smaller items, such as molecules. These advances
               have altered our concepts regarding the composition of things in
               the world.
+              {Kaisetsu(showResults, "18-6-3")}
             </p>
           </div>
         </div>
@@ -209,6 +213,7 @@ const Ex18_6 = () => {
               same scene taken months or years apart, we can gain insights into
               how societies change. There are many other ways besides these in
               which the camera has changed our perceptions of the world.
+              {Kaisetsu(showResults, "18-6-4")}
             </p>
           </div>
         </div>
@@ -230,6 +235,7 @@ const Ex18_6 = () => {
               their patients, identify where there were problems, and cure them.
               This use of X-rays brought new understandings and methods for
               diagnosis and treatment.
+              {Kaisetsu(showResults, "18-6-5")}
             </p>
           </div>
         </div>
@@ -246,6 +252,7 @@ const Ex18_6 = () => {
               each discovery increases our knowledge about the world. Just as
               the devices mentioned above have done, new devices will continue
               to impact our lives and change our ways of thinking in the future.
+              {Kaisetsu(showResults, "18-6-6")}
             </p>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { Card, cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex21_2A = () => {
   const scores = [
@@ -162,10 +163,11 @@ const Ex21_2A = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="text-sm mb-6">
+      <div className="text-sm md:text-base mb-6">
         As the student in charge of a UK school festival band competition, you
         are examining all of the scores and the comments from three judges to
         understand and explain the rankings.
+        {Kaisetsu(showResults, "21-2A-0")}
       </div>
 
       <Card className="border-black">
@@ -251,7 +253,10 @@ const Ex21_2A = () => {
                 <td className="p-2 border-r border-black align-top w-32">
                   {item.judge}
                 </td>
-                <td className="p-2">{item.comment}</td>
+                <td className="p-2">
+                  {item.comment}{" "}
+                  {Kaisetsu(showResults, "21-2A-" + String(index + 1))}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -267,11 +272,13 @@ const Ex21_2A = () => {
             different. Ms Leigh and I agreed that performance is the most
             important quality for a band. Ms Wells also agreed. Therefore, first
             place is easily determined.
+            {Kaisetsu(showResults, "21-2A-4")}
           </p>
           <p>
             To decide between second and third places, Ms Wells suggested that
             song originality should be more important than good singing. Ms
             Leigh and I agreed on this opinion.
+            {Kaisetsu(showResults, "21-2A-5")}
           </p>
         </div>
       </Card>

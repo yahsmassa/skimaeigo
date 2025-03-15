@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex20_5 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -131,6 +132,7 @@ const Ex20_5 = () => {
           something unexpected happened and I lost sight of him. I looked and
           looked but couldn't find him. He had been with me for so long that it
           was like I was missing part of my soul.
+          {Kaisetsu(showResults, "20-5-1")}
         </p>
 
         <p>
@@ -139,6 +141,7 @@ const Ex20_5 = () => {
           pulling me to go back to the mountain. So every chance I got, I
           grabbed my backpack to see if the mountain could offer me some sense
           of relief.
+          {Kaisetsu(showResults, "20-5-2")}
         </p>
 
         <p>
@@ -150,12 +153,14 @@ const Ex20_5 = () => {
           unfamiliar place. I panicked a little, lost my footing, and slipped.
           From out of nowhere, an elderly man came running towards me and helped
           me up.
+          {Kaisetsu(showResults, "20-5-3")}
         </p>
 
         <p>
           Looking at his gentle, smiling face, I felt a sense of ease. The old
           man said he was looking for a way to the top of the mountain, so we
           decided to climb together.
+          {Kaisetsu(showResults, "20-5-4")}
         </p>
 
         <p>
@@ -166,6 +171,7 @@ const Ex20_5 = () => {
           officer for a short time, but he quit. He didn&apos;t say why. Later,
           he spent a long time as a bodyguard. He also had German roots. We
           laughed at these similarities.
+          {Kaisetsu(showResults, "20-5-5")}
         </p>
 
         <p>
@@ -175,6 +181,7 @@ const Ex20_5 = () => {
           bear. It was looking back at us. I should have held my dog because,
           sensing danger, he chased after the bear. I couldn&apos;t find him
           after that. I should have been more careful.&quot;
+          {Kaisetsu(showResults, "20-5-6")}
         </p>
 
         <p>
@@ -182,11 +189,13 @@ const Ex20_5 = () => {
           wasn&apos;t your fault. Your dog just wanted to keep you safe,&quot;
           he said. &quot;I&apos;m sure Tomo would want to tell you this. Also,
           thank you for not giving up.&quot;
+          {Kaisetsu(showResults, "20-5-7")}
         </p>
 
         <p>
           Tomo is my dog's name. Did I tell him this? The old man's comment{" "}
           <span className="border-b border-black">rang in the air</span>.
+          {Kaisetsu(showResults, "20-5-8")}
         </p>
 
         <p>
@@ -196,12 +205,14 @@ const Ex20_5 = () => {
           my backpack and we sat taking in the magnificent view. The old man
           looked at me and said, &quot;Mountains offer truly magical
           experiences.&quot;
+          {Kaisetsu(showResults, "20-5-9")}
         </p>
 
         <p>
           I looked around for a place to rest. I guess I was pretty tired,
           because I fell asleep right away. When I woke up, I noticed that the
           old man had disappeared. I waited, but he never returned.
+          {Kaisetsu(showResults, "20-5-10")}
         </p>
 
         <p>
@@ -209,18 +220,21 @@ const Ex20_5 = () => {
           saw a small metal tag beside my backpack. It was the same silver name
           tag that my parents originally gave to my dog.{" "}
           <span className="italic">Tomo</span> it said.
+          {Kaisetsu(showResults, "20-5-11")}
         </p>
 
         <p>
           It was then that I heard a familiar noise behind me. It was the
           ringing of a tiny bell. I turned around. What I saw caused so many
           emotions to rush over me.
+          {Kaisetsu(showResults, "20-5-12")}
         </p>
 
         <p>
           After a while on the mountaintop, I attached the name tag to my old
-          friend and carefully made my way home with the mountain's gift beside
-          me. My soul felt very much complete.
+          friend and carefully made my way home with the mountain&apos;s gift
+          beside me. My soul felt very much complete.
+          {Kaisetsu(showResults, "20-5-13")}
         </p>
       </div>
 

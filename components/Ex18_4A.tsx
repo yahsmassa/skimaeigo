@@ -5,6 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex18_4A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -113,6 +114,7 @@ const Ex18_4A = () => {
           preferences depending on product types. Through the research reported
           here, we can deepen our understanding of the influence of color on
           consumers.
+          {Kaisetsu(showResults, "18-4A-1")}
         </p>
         <p>
           In this study, researchers surveyed German consumers to obtain
@@ -123,6 +125,7 @@ const Ex18_4A = () => {
           that color was indeed important for the participants when shopping,
           with 68% of them mentioning color as a determining factor when
           choosing the product they intended to purchase.
+          {Kaisetsu(showResults, "18-4A-2")}
         </p>
         <p>
           Next, the researchers investigated whether the degree of importance
@@ -135,6 +138,7 @@ const Ex18_4A = () => {
           cellphones. This was the highest among the electronic products, but
           only slightly more than half of that for bags, which appeared one rank
           above.
+          {Kaisetsu(showResults, "18-4A-3")}
         </p>
 
         {/* グラフ部分 */}
@@ -151,6 +155,7 @@ const Ex18_4A = () => {
           <p className="italic">
             Figure 1. The percentages of the participants who placed high
             importance on color when purchasing six everyday products.
+            {Kaisetsu(showResults, "18-4A-4")}
           </p>
         </div>
 
@@ -161,6 +166,7 @@ const Ex18_4A = () => {
           relationship with nature, good luck, and health. Furthermore, the
           color white was associated with balance, health, and calm. Results
           showed each color had several different meanings.
+          {Kaisetsu(showResults, "18-4A-5")}
         </p>
         <p>
           The findings summarized in the above passage explained how colors
@@ -170,6 +176,7 @@ const Ex18_4A = () => {
           the Internet. Therefore, it is necessary to consider the importance
           consumers in other parts of the world place on color in their choices
           of products. The next part of this passage will examine this topic.
+          {Kaisetsu(showResults, "18-4A-6")}
         </p>
 
         {/* 出典 */}

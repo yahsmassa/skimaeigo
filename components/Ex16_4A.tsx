@@ -5,7 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex16_4A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -111,6 +111,7 @@ const Ex16_4A = () => {
             vegetable section in today&apos;s grocery store often has dozens of
             different fresh fruits on display all year around, which come from
             all corners of the globe as additions to domestic fresh fruit.
+            {Kaisetsu(showResults, "16-4A-1")}
           </p>
           <p className="leading-relaxed">
             The rapid growth of fresh-fruit imports has affected many aspects of
@@ -119,6 +120,7 @@ const Ex16_4A = () => {
             imports has grown steadily since the 1990s, with occasional sudden
             increases when the US crop experienced freezing weather (see Figure
             1).
+            {Kaisetsu(showResults, "16-4A-2")}
           </p>
           <div className="mb-6">
             <p className="mb-2 text-sm">1,000 tons</p>
@@ -146,6 +148,7 @@ const Ex16_4A = () => {
             permission from the US government to export its navel oranges there.
             Australia was followed by South Africa in the late 1990s, and most
             recently by Chile as well.
+            {Kaisetsu(showResults, "16-4A-3")}
           </p>
           <p className="leading-relaxed">
             In the US, two main types of oranges are produced domestically:
@@ -159,6 +162,7 @@ const Ex16_4A = () => {
             the US&apos;s top supplier of fresh-market oranges, California
             produced 87 percent of fresh-market navel oranges and more than 81
             percent of fresh- market Valencia oranges.
+            {Kaisetsu(showResults, "16-4A-4")}
           </p>
           <p className="leading-relaxed">
             The main harvest period for domestic fresh-market oranges is from
@@ -170,6 +174,7 @@ const Ex16_4A = () => {
             variety when navel oranges were out of season. As seen in Figure 2,
             however, navel orange imports from the Southern Hemisphere countries
             have come to dominate the US in the summer season.
+            {Kaisetsu(showResults, "16-4A-5")}
           </p>
         </div>
 
@@ -187,6 +192,7 @@ const Ex16_4A = () => {
           <p className="text-center mt-2">
             Figure 2. Seasonal relationship between imported and domestic
             oranges (2010-2012 average).
+            {Kaisetsu(showResults, "16-4A-6")}
           </p>
         </div>
 
@@ -199,6 +205,7 @@ const Ex16_4A = () => {
             for imports from the Southern Hemisphere countries is mainly from
             July through October, when US supplies are relatively low. This
             trend is similar to that seen with many other fruits as well.
+            {Kaisetsu(showResults, "16-4A-7")}
           </p>
 
           <p className="text-sm mt-4">

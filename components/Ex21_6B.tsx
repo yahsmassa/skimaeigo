@@ -6,6 +6,7 @@ import { Answers, QandA } from "@/lib/types";
 import Image from "next/image";
 import { Saiten } from "@/components/Saiten";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex21_6B = () => {
   const [showResults, setShowResults] = useState(false);
@@ -110,6 +111,7 @@ const Ex21_6B = () => {
           You are studying nutrition in health class. You are going to read the
           following passage from a textbook to learn more about various
           sweeteners.
+          {Kaisetsu(showResults, "21-6B-0")}
         </span>
       </div>
 
@@ -127,6 +129,7 @@ const Ex21_6B = () => {
           calories. Taking science one step further, over the past 70 years
           scientists have one step further, over the past 70 years scientists
           have developed a wide variety of artificial sweeteners.
+          {Kaisetsu(showResults, "21-6B-1")}
         </p>
         <p className="mb-6">
           A recent US National Health and Nutrition Examination Survey concluded
@@ -138,6 +141,7 @@ const Ex21_6B = () => {
           negative effects on our bodies, including excessive weight gain and
           other health problems. For this reason, many choose low-calorie
           substitutes for drinks, snacks, and desserts.
+          {Kaisetsu(showResults, "21-6B-2")}
         </p>
         <p className="mb-6">
           Natural alternatives to white sugar include brown sugar, honey, and
@@ -146,6 +150,7 @@ const Ex21_6B = () => {
           artificial chemical combinations, have become popular. The most common
           LCSs today are aspartame, Ace-K, stevia, and sucralose. Not all LCSs
           are artificial—stevia comes from plant leaves.
+          {Kaisetsu(showResults, "21-6B-3")}
         </p>
         <p className="mb-6">
           Alternative sweeteners can be hard to use in cooking because some
@@ -156,6 +161,7 @@ const Ex21_6B = () => {
           developed &quot;Advantame,&quot; which is 20,000 times sweeter than
           sugar. Only a tiny amount of this substance is required to sweeten
           something.
+          {Kaisetsu(showResults, "21-6B-4")}
         </p>
         <p className="mb-6">
           When choosing sweeteners, it is important to consider health issues.
@@ -170,6 +176,7 @@ const Ex21_6B = () => {
           natural alternative sweeteners, like xylitol and sorbitol, which are
           low in calories. Unfortunately, these move through the body extremely
           slowly, so consuming large amounts can cause stomach trouble.
+          {Kaisetsu(showResults, "21-6B-5")}
         </p>
         <p>
           When people want something sweet, even with all the information, it is
@@ -179,6 +186,7 @@ const Ex21_6B = () => {
           people who would not put artificial sweeteners in hot drinks may still
           buy such items. Individuals need to weigh the options and then choose
           the sweeteners that best suit their needs and circumstances.
+          {Kaisetsu(showResults, "21-6B-6")}
         </p>{" "}
       </div>
 

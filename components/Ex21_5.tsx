@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex21_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -133,10 +133,11 @@ const Ex21_5 = () => {
         />
       </div>
       {/* Instructions paragraph */}
-      <p className="text-base leading-relaxed">
+      <p className="text-base leading-relaxed mb-2">
         Using an international news report, you are going to take part in an
         English oral presentation contest. Read the following news story from
         France in preparation for your talk.
+        {Kaisetsu(showResults, "21-5-0")}
       </p>
 
       {/* Main content box */}
@@ -147,6 +148,7 @@ const Ex21_5 = () => {
           that she could never own another horse. Out of loneliness, she spent
           hours watching cows on a nearby milk farm. Then, one day, she asked
           the farmer if she could help look after them.
+          {Kaisetsu(showResults, "21-5-1")}
         </p>
 
         <p className="text-base leading-relaxed">
@@ -164,6 +166,7 @@ const Ex21_5 = () => {
           she had permission to move the animals, they moved to Sabine&apos;s
           farm. for walks to town. About nine months later, when at last she had
           permission to move the animals, they moved to Sabine&apos;s farm.
+          {Kaisetsu(showResults, "21-5-2")}
         </p>
 
         <p className="text-base leading-relaxed">
@@ -184,6 +187,7 @@ const Ex21_5 = () => {
           could adjust his steps before a jump. He also noticed his faults and
           corrected them without any help from Sabine. That&apos;s something
           only the very best Olympic-standard horses can do.
+          {Kaisetsu(showResults, "21-5-3")}
         </p>
 
         <p className="text-base leading-relaxed">
@@ -194,6 +198,7 @@ const Ex21_5 = () => {
           don&apos;t like to get too close to bulls with horns. But once they
           see his real nature, and see him performing, they often say, &apos;Oh
           he&apos;s really quite beautiful.&apos;&quot;
+          {Kaisetsu(showResults, "21-5-4")}
         </p>
 
         <p className="text-base leading-relaxed">
@@ -203,6 +208,7 @@ const Ex21_5 = () => {
           humans. Maybe that&apos;s why he doesn&apos;t mind people. Because he
           is so calm, children, in particular, really like watching him and
           getting a chance to be close to him.&quot;
+          {Kaisetsu(showResults, "21-5-5")}
         </p>
 
         <p className="text-base leading-relaxed">
@@ -212,6 +218,7 @@ const Ex21_5 = () => {
           300 kilometers away from home, which means they have to stay
           overnight. Aston has to sleep in a horse box, which isn&apos;t really
           big enough for him.
+          {Kaisetsu(showResults, "21-5-6")}
         </p>
 
         <p className="text-base leading-relaxed">
@@ -221,6 +228,7 @@ const Ex21_5 = () => {
           very gentle. He sometimes gets lonely, and he doesn&apos;t like being
           away from Leon for too long; but other than that, he&apos;s very
           happy.&quot;
+          {Kaisetsu(showResults, "21-5-7")}
         </p>
       </div>
       <div className="mt-8">

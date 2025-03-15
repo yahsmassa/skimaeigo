@@ -11,7 +11,7 @@ import {
 } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex24_2B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -100,9 +100,8 @@ const Ex24_2B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[11] 第3段落第2文  The plan provides 24-hour medical support through a smartphone app and telephone service.",
-        "（このプランは24時間のスマホのアプリと電話サービスを通して医療サポートを提供している）から，①「最も高いプランでは24時間の医療アシスタンスが利用できる」が正解。",
-        "→24-hour を day and night と言い換えていることに注意。",
+        "①「最も高いプランでは24時間の医療アシスタンスが利用できる」が正解。",
+        "（このプランは24時間のスマホのアプリと電話サービスを通して医療サポートを提供している）から，→24-hour を day and night と言い換えていることに注意。",
       ],
     },
     {
@@ -118,7 +117,7 @@ const Ex24_2B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[12] （※NOT問題）一番安いプランについては，第5段落に書かれているが，メールでのサポートについては挙げられていないので，①「メールによるサポート」が正解。",
+        "①「メールによるサポート」が正解。 一番安いプランについては，第5段落に書かれているが，メールでのサポートについては挙げられていない，",
       ],
     },
     {
@@ -134,10 +133,9 @@ const Ex24_2B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[13] 第2段落第3文の  They accept any form of payment, usually on a monthly basis.",
-        "（どのような支払方法にも対応しており，通常は月単位で支払う）から， Aの「月払いを認めている」が正しい。また，第2段落第2文の ",
-        "I signed up online in less than 15 minutes and was immediately covered.",
-        "（私は15分もかからずにオンラインで登録し，すぐにカバーされた）から，Dの「インターネットでの登録システムを提供している」も正しい。よって，①が正解。",
+        "①が正解。",
+        "（どのような支払方法にも対応しており，通常は月単位で支払う）から， Aの「月払いを認めている」が正しい。",
+        "また，第2段落第2文の （私は15分もかからずにオンラインで登録し，すぐにカバーされた）から，Dの「インターネットでの登録システムを提供している」も正しい。",
       ],
     },
     {
@@ -153,8 +151,7 @@ const Ex24_2B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[14] 第4段落最終文 However, it was nice to get the optional 15 % discount because I paid for six months of coverage in advance.",
-        "（しかし，6か月分の保険料を前払いしたため，オプションで15％の割引を受けられたのはよかった）から，③「コスト削減のオプションは魅力的だった」が正解。",
+        "③「コスト削減のオプションは魅力的だった」が正解。（しかし，6か月分の保険料を前払いしたため，オプションで15％の割引を受けられたのはよかった）から，",
       ],
     },
     {
@@ -170,10 +167,9 @@ const Ex24_2B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[15] 第1段落では旅の準備について述べており，最終文で  Also, you should purchase travel insurance.",
-        "（また，旅行保険を購入すべきだ）と述べている。さらに，最終段落では友人がけがをしたけれど保険のおかげですべてカバーできたというエピソードを述べたうえで，最終文で ",
-        "I realized how important insurance is ― you know that you will be supported when you are in trouble.",
-        "（保険がいかに重要かに気づいた。困ったときにサポートしてくれるとわかっているのだから）と述べていることから，②「彼女は旅行の準備が大切だと思っている」が正解。",
+        "②「彼女は旅行の準備が大切だと思っている」が正解。",
+        "第1段落では旅の準備について述べており，最終文で （また，旅行保険を購入すべきだ）と述べている。",
+        "さらに，最終段落では友人がけがをしたけれど保険のおかげですべてカバーできたというエピソードを述べたうえで，最終文で （保険がいかに重要かに気づいた。困ったときにサポートしてくれるとわかっているのだから）と述べている",
       ],
     },
   ];
@@ -199,7 +195,10 @@ const Ex24_2B = () => {
 
       {/* 本文 */}
       <div>
-        <h2 className="text-base px-5">{questionData.situation}</h2>.
+        <h2 className="text-base px-5 mb-2">
+          {questionData.situation}
+          {Kaisetsu(showResults, "24-2B-0")}
+        </h2>
       </div>
       <div className="bg-white rounded-lg border-2 border-black mb-8 p-6">
         <div className="space-y-4">
@@ -209,6 +208,7 @@ const Ex24_2B = () => {
                 {paragraph.split("\n").map((plan, i) => (
                   <div key={i}>
                     <p>{plan}</p>
+                    {Kaisetsu(showResults, "24-2B-" + (index + 1))}
                   </div>
                 ))}
               </div>

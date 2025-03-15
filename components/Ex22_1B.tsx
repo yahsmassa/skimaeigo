@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex22_1B = () => {
   const [showResults, setShowResults] = useState(false);
@@ -107,12 +108,13 @@ const Ex22_1B = () => {
             Your mission is to help his parents, Billy and Noelle, pick a name
             for their baby.
           </p>
+          {Kaisetsu(showResults, "22-1B-1")}
         </div>
 
         {/* How to Enter Section */}
         <div className="border-b border-gray-800 pb-4">
           <h3 className="font-bold mb-2">How to Enter</h3>
-          <ul className="space-y-2">
+          <ul className="space-y-2 mb-2">
             <li className="flex items-start">
               <span className="inline-block w-4 h-4 bg-gray-800 transform rotate-45 mt-1 mr-2"></span>
               <span>
@@ -148,6 +150,7 @@ const Ex22_1B = () => {
               </span>
             </li>
           </ul>
+          {Kaisetsu(showResults, "22-1B-2")}
         </div>
 
         {/* Contest Schedule Section */}
@@ -177,6 +180,7 @@ const Ex22_1B = () => {
               <p>Check our website for the winning name after 12:00 p.m.</p>
             </div>
           </div>
+          {Kaisetsu(showResults, "22-1B-3")}
         </div>
 
         {/* Prizes Section */}
@@ -192,6 +196,7 @@ const Ex22_1B = () => {
             Safari Tour!
           </p>
         </div>
+        {Kaisetsu(showResults, "22-1B-4")}
       </div>
 
       {/* Quiz Section */}

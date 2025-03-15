@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex21_6A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -107,6 +108,7 @@ const Ex21_6A = () => {
             You are working on a class project about safety in sports and found
             the following article. You are reading it and making a poster to
             present your findings to your classmates.
+            {Kaisetsu(showResults, "21-6A-0")}
           </span>
         </div>
 
@@ -125,6 +127,7 @@ const Ex21_6A = () => {
               reach a speed of 30 kilometers per hour sending the puck into the
               air. At this pace, both the players and the puck can be a cause of
               serious danger.
+              {Kaisetsu(showResults, "21-6A-1")}
             </p>
 
             <p>
@@ -134,6 +137,7 @@ const Ex21_6A = () => {
               players, equipment such as helmets, gloves, and pads for the
               shoulders, elbows, and legs, has been introduced over the years.
               Despite these efforts, ice hockey has a high rate of concussions.
+              {Kaisetsu(showResults, "21-6A-2")}
             </p>
 
             <p>
@@ -144,6 +148,7 @@ const Ex21_6A = () => {
               players may be unable to walk straight or see clearly, or they may
               experience ringing in the ears. Some believe they just have a
               slight headache and do not realize they have injured their brains.
+              {Kaisetsu(showResults, "21-6A-3")}
             </p>
           </div>
         </div>
@@ -166,6 +171,7 @@ const Ex21_6A = () => {
             <li>Six players on each team</li>
             <li>Sport played on ice at a high speed</li>
           </ul>
+          {Kaisetsu(showResults, "21-6A-4")}
           <Image
             src="/images/Ex21-6A-1.webp"
             alt="Hockey player silhouette"
@@ -183,7 +189,10 @@ const Ex21_6A = () => {
 
           <div className="border border-gray-300 p-4 mb-4">
             <h3 className="mb-2">Definition of a concussion</h3>
-            <p>An injury to the brain that affects the way it functions</p>
+            <p className="mb-2">
+              An injury to the brain that affects the way it functions
+            </p>
+            {Kaisetsu(showResults, "21-6A-5")}
           </div>
         </div>
 

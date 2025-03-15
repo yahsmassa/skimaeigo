@@ -5,6 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex17_4A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -114,6 +115,7 @@ const Ex17_4A = () => {
             children and adolescents can be encouraged to take part in physical
             activity. Thus, knowing how schoolyards are used by students may
             give us some helpful ideas to promote their physical activity.
+            {Kaisetsu(showResults, "17-4A-1")}
           </p>
 
           <p>
@@ -132,6 +134,7 @@ const Ex17_4A = () => {
             described the areas with the hardest surfaces, like concrete. These
             areas were identified by flat open spaces, often having numerous
             markings painted for games and benches set in different places.
+            {Kaisetsu(showResults, "17-4A-2")}
           </p>
 
           <p>
@@ -145,6 +148,7 @@ const Ex17_4A = () => {
             Multi-court then Grass. Natural and Playground showed similar
             averages for All students, with the average for All students in
             Playground being just over two minutes.
+            {Kaisetsu(showResults, "17-4A-3")}
           </p>
 
           {/* Graph */}
@@ -173,6 +177,7 @@ const Ex17_4A = () => {
             according to the regulations at all four schools, Children could not
             leave the schoolyard during lunch time, but Adolescents could when
             they wanted to.
+            {Kaisetsu(showResults, "17-4A-4")}
           </p>
 
           <p>
@@ -181,6 +186,7 @@ const Ex17_4A = () => {
             most active in Grass and Playground areas. On the other hand,
             students were quite passive in Solid Surface areas, with Adolescents
             spending only 7% of their time there being physically active.
+            {Kaisetsu(showResults, "17-4A-5")}
           </p>
 
           <p>
@@ -190,6 +196,7 @@ const Ex17_4A = () => {
             varieties of games Children and Adolescents play affect the length
             of time spent taking part in physical activity. Let us now take a
             look at these relationships.
+            {Kaisetsu(showResults, "17-4A-6")}
           </p>
 
           <p className="italic">

@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex21_1A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -63,6 +64,7 @@ const Ex21_1A = () => {
         <p className="mb-4">
           <span className="font-bold">A</span> Your dormitory roommate Julie has
           sent a text message to your mobile phone with a request.
+          {Kaisetsu(showResults, "21-1A-0")}
         </p>
       </div>
 
@@ -80,6 +82,7 @@ const Ex21_1A = () => {
                 my teacher by 4 p.m. today. Can you bring my USB to the library?
                 I think it&apos;s on top of my history book on my desk. I
                 don&apos;t need the book, just the USB.♡
+                {Kaisetsu(showResults, "21-1A-1")}
               </p>
             </div>
           </div>
@@ -93,6 +96,7 @@ const Ex21_1A = () => {
                 everywhere, even under your desk. Are you sure you don&apos;t
                 have it with you? I&apos;ll bring your laptop computer with me,
                 just in case.
+                {Kaisetsu(showResults, "21-1A-2")}
               </p>
             </div>
           </div>
@@ -105,6 +109,7 @@ const Ex21_1A = () => {
                 What a relief!
               </p>
               <p>Thanks anyway. ☺</p>
+              {Kaisetsu(showResults, "21-1A-3")}
             </div>
           </div>
         </div>

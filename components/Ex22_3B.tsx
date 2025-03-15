@@ -6,7 +6,7 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex22_3B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -100,6 +100,7 @@ const Ex22_3B = () => {
         <span className="ml-4">
           You enjoy outdoor sports and have found an interesting story in a
           mountain climbing magazine.
+          {Kaisetsu(showResults, "22-3B-0")}
         </span>
       </div>
 
@@ -114,6 +115,7 @@ const Ex22_3B = () => {
           Last September, a team of 12 of us, 10 climbers and two minibus
           drivers, participated in the Three Peaks Challenge, which is well
           known for its difficulty among climbers in Britain.
+          {Kaisetsu(showResults, "22-3B-1")}
         </div>
 
         {/* UK Map with peaks */}
@@ -135,6 +137,7 @@ const Ex22_3B = () => {
             To prepare for this, we trained on and off for several months and
             planned the route carefully. Our challenge would start at the foot
             of Ben Nevis and finish at the foot of Snowdon.
+            {Kaisetsu(showResults, "22-3B-2")}
           </p>
 
           <p>
@@ -143,6 +146,7 @@ const Ex22_3B = () => {
             three hours. On the way down, however, I realised I had dropped my
             phone. Fortunately, I found it with the help of the team, but we
             lost 15 minutes.
+            {Kaisetsu(showResults, "22-3B-3")}
           </p>
 
           <p>
@@ -154,6 +158,7 @@ const Ex22_3B = () => {
             traffic was light, we were right on schedule when we started our
             final climb. Now we felt more confident we could complete the
             challenge within the time limit.
+            {Kaisetsu(showResults, "22-3B-4")}
           </p>
 
           <p>
@@ -161,6 +166,7 @@ const Ex22_3B = () => {
             rain heavily and we had to slow down again. It was slippery and very
             difficult to see ahead. At 4:30 am, we realised that we could no
             longer finish in 24 hours.
+            {Kaisetsu(showResults, "22-3B-5")}
           </p>
 
           <p>
@@ -172,6 +178,7 @@ const Ex22_3B = () => {
             Suddenly, we were no longer tired. Even though we weren&apos;t
             successful with the time challenge, we were successful with the
             climb challenge. We had done it. What a feeling that was!
+            {Kaisetsu(showResults, "22-3B-6")}
           </p>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex23_5 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -22,7 +23,8 @@ const Ex23_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "④：第3段落最終文 &quot;To be honest, ... to play individually.&quot;（正直に言って，私が卓球を選んだのはその方が個人でするのに簡単だろうと思ったからです）という内容から，④「チームスポーツをするのを避けたかったから」が正解。",
+        "正解は④「チームスポーツをするのを避けたかったから」",
+        "第3段落最終文 &quot;To be honest, ... to play individually.&quot;（正直に言って，私が卓球を選んだのはその方が個人でするのに簡単だろうと思ったからです）という内容から，",
       ],
     },
     {
@@ -38,7 +40,8 @@ const Ex23_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "③：第6段落で兄のパトリックと対話した筆者は第7段落以降で友人とのコミュニケーションの取り方について考えを改めるようになった。よって，③「彼が必要とする社交スキルを学ぶ手助けをした」が正解。",
+        "正解は③ 「彼が必要とする社交スキルを学ぶ手助けをした」",
+        "第6段落で兄のパトリックと対話した筆者は第7段落以降で友人とのコミュニケーションの取り方について考えを改めるようになった。",
       ],
     },
     {
@@ -66,8 +69,10 @@ const Ex23_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "②→④→⑤→③：第4段落3文目（One day, however ...）～最終文（This made ...）で教師と話し合う場面が書かれているので，[32]は②「より上手に卓球をする方法について教師と話し合った」が正解。第5段落1文目（I deliberately ... opponent's moves）で「敵の動きにより綿密に注意を払った」と書かれているので，[33]は④「敵を研究し始めた」が正解。 ",
-        "第6段落3文目（We switched ...）で「卓球について話すことに切り替えた」と書かれているので，[34]は⑤「兄に卓球について話した」が正解。第7段落4文目（&quot;Hey, Ben! ...）でジョージから祝賀パーティーを開こうと誘われたことに対して5文目（Without thinking, ...）で「考えることなく『できない』と返答した」と書かれているので，[35]は③「彼を称えるパーティーを拒否した」が正解。 ",
+        "[32]の正解は②「より上手に卓球をする方法について教師と話し合った」②→④→⑤→③：第4段落3文目（One day, however ...）～最終文（This made ...）で教師と話し合う場面が書かれているので",
+        "[33]の正解は④「敵を研究し始めた」、第5段落1文目（I deliberately ... opponent's moves）で「敵の動きにより綿密に注意を払った」と書かれている",
+        "[34]の正解は⑤「兄に卓球について話した」、第6段落3文目（We switched ...）で「卓球について話すことに切り替えた」と書かれているので，",
+        "[35]の正解は③「彼を称えるパーティーを拒否した」、第7段落4文目（&quot;Hey, Ben! ...）でジョージから祝賀パーティーを開こうと誘われたことに対して5文目（Without thinking, ...）で「考えることなく『できない』と返答した」と書かれているので， ",
       ],
     },
     {
@@ -83,7 +88,8 @@ const Ex23_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "③：第8段落6文目 &quot;If I'd said, ... have been better.&quot;（もし私が「素晴らしい考えだ。ありがとう！トレント先生と話をして練習を少し休めるかどうか確かめさせてよ」と言っていたとしたら，ひょっとしたら結果はもっとよくなっていたであろうに）という内容から，③「友人の観点を適切に理解しようとする（べきであった）」が正解。 ",
+        "正解は③「友人の観点を適切に理解しようとする（べきであった）」",
+        "第8段落6文目 &quot;If I'd said, ... have been better.&quot;（もし私が「素晴らしい考えだ。ありがとう！トレント先生と話をして練習を少し休めるかどうか確かめさせてよ」と言っていたとしたら，ひょっとしたら結果はもっとよくなっていたであろうに）という内容から， ",
       ],
     },
     {
@@ -104,8 +110,9 @@ const Ex23_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "①・⑤：本文の情報をもとに推測する問題。第4段落では教師から，第6段落では兄からのアドバイスを受けて，筆者はそれぞれに応じて自分の行動を変えているので，①「私たちの周囲の人々からのアドバイスが私たちが変わる手助けになる」が正解。 ",
-        "また，第6段落最終文で兄のパトリックが「それは私たちがコミュニケーションを行う時に使うスキルと同じように聞こえる」と述べたことを受け，第8段落で筆者は卓球の技能がコミュニケーションにも応用できることに気が付き，第9段落1文目では自分のコミュニケーション能力に自信を持てるようになったと述べている。このことから，⑤「私たちは一つのことから学んだことを別のことに応用できる」が正解。",
+        "正解は①と⑤",
+        "①「私たちの周囲の人々からのアドバイスが私たちが変わる手助けになる」、第4段落では教師から，第6段落では兄からのアドバイスを受けて，筆者はそれぞれに応じて自分の行動を変えているので， ",
+        "⑤「私たちは一つのことから学んだことを別のことに応用できる」、第6段落最終文で兄のパトリックが「それは私たちがコミュニケーションを行う時に使うスキルと同じように聞こえる」と述べたことを受け，第8段落で筆者は卓球の技能がコミュニケーションにも応用できることに気が付き，第9段落1文目では自分のコミュニケーション能力に自信を持てるようになったと述べている。",
       ],
     },
   ];
@@ -133,6 +140,7 @@ const Ex23_5 = () => {
           Your English teacher has told everyone in your class to find an
           inspirational story and present it to a discussion group, using notes.
           You have found a story written by a high school student in the UK.
+          {Kaisetsu(showResults, "23-5-0")}
         </p>
       </div>
       {/* Story Content */}
@@ -152,6 +160,7 @@ const Ex23_5 = () => {
             when I started playing table tennis. It was frustrating, but I now
             know that the sport taught me more than simply how to be a better
             athlete.
+            {Kaisetsu(showResults, "23-5-1")}
           </p>
 
           <p>
@@ -159,6 +168,7 @@ const Ex23_5 = () => {
             but I didn&apos;t get along with my teammates. The coach often said
             that I should be more of a team player. I knew I should work on the
             problem, but communication was just not my strong point.
+            {Kaisetsu(showResults, "23-5-2")}
           </p>
 
           <p>
@@ -168,6 +178,7 @@ const Ex23_5 = () => {
             teacher, Mr Trent, and I joined that. To be honest, I chose table
             tennis because I thought it would be easier for me to play
             individually.
+            {Kaisetsu(showResults, "23-5-3")}
           </p>
 
           <p>
@@ -180,6 +191,7 @@ const Ex23_5 = () => {
             continued, &quot;but you also need to study your opponent&apos;s
             moves and adjust your play accordingly. Remember, your opponent is a
             person, not a ball.&quot; This made a deep impression on me.
+            {Kaisetsu(showResults, "23-5-4")}
           </p>
 
           <p>
@@ -192,6 +204,7 @@ const Ex23_5 = () => {
             conversations seemed to end before they really got started. Although
             my play might have improved, my communication skills obviously
             hadn&apos;t.
+            {Kaisetsu(showResults, "23-5-5")}
           </p>
 
           <p>
@@ -203,6 +216,7 @@ const Ex23_5 = () => {
             analysing my opponent&apos;s movements and making instant decisions
             about the next move. Patrick looked thoughtful. &quot;That sounds
             like the kind of skill we use when we communicate,&quot; he said.
+            {Kaisetsu(showResults, "23-5-6")}
           </p>
 
           <p>
@@ -213,6 +227,7 @@ const Ex23_5 = () => {
             to celebrate!&quot; Without thinking, I replied, &quot;I can&apos;t.
             I&apos;ve got practice.&quot; He looked a bit hurt and walked off
             without saying anything else.
+            {Kaisetsu(showResults, "23-5-7")}
           </p>
 
           <p>
@@ -224,6 +239,7 @@ const Ex23_5 = () => {
             practice,&quot; then maybe the outcome would have been better. At
             that moment Patrick&apos;s words made sense. Without attempting to
             grasp someone&apos;s intention, I wouldn&apos;t know how to respond.
+            {Kaisetsu(showResults, "23-5-8")}
           </p>
 
           <p>
@@ -231,6 +247,7 @@ const Ex23_5 = () => {
             definitely feel more confident in my communication skills now than
             before. Next year, my friends and I are going to co-ordinate the
             table tennis league with other schools.
+            {Kaisetsu(showResults, "23-5-9")}
           </p>
         </div>
       </div>

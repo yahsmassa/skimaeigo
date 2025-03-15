@@ -6,7 +6,7 @@ import { Answers, QandA } from "@/lib/types";
 import Image from "next/image";
 import { Saiten } from "@/components/Saiten";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const RecyclingSymbol = ({ number }: { number: string }) => (
   <div className="relative w-12 h-12">
     <div className="absolute inset-0 flex items-center justify-center">
@@ -124,6 +124,7 @@ const Ex22_6B = () => {
           theme &quot;What we should know in order to protect the
           environment.&quot; You have been using the following passage to create
           the poster.
+          {Kaisetsu(showResults, "22-6B-0")}
         </p>
       </div>
 
@@ -153,6 +154,7 @@ const Ex22_6B = () => {
             plastic recycling symbol on an object does not always mean that the
             item can be recycled. It only shows what type of plastic it is made
             from and that it might be recyclable.
+            {Kaisetsu(showResults, "22-6B-1")}
           </p>
 
           <div className="my-8">
@@ -184,12 +186,14 @@ const Ex22_6B = () => {
             considered to be safe for the human body, while the other group
             (numbers 1, 3, 6, and 7) could be problematic in certain
             circumstances. Let us look at the safer group first.
+            {Kaisetsu(showResults, "22-6B-2")}
           </p>
 
           <p>
             High-density Polyethylene is a recycle-type 2 plastic and is
             commonly called HDPE. It is non-toxic and can be used in the human
             body for heart
+            {Kaisetsu(showResults, "22-6B-3")}
           </p>
 
           <p>
@@ -206,6 +210,7 @@ const Ex22_6B = () => {
             freezing. It is suitable for furniture, food containers, and polymer
             banknotes such as the Australian dollar. Only 3% of Type 5 is
             recycled.
+            {Kaisetsu(showResults, "22-6B-4")}
           </p>
 
           <p>
@@ -230,6 +235,7 @@ const Ex22_6B = () => {
             Type 7 plastics (acrylics, nylons, and polycarbonates) are difficult
             to recycle. Type 7 plastics are often used in the manufacture of
             vehicle parts such as seats, dashboards, and bumpers.
+            {Kaisetsu(showResults, "22-6B-5")}
           </p>
 
           <p>
@@ -237,6 +243,7 @@ const Ex22_6B = () => {
             55% ends up in a landfill. Therefore, knowledge about different
             types of plastic could help reduce waste and contribute to an
             increased awareness of the environment.
+            {Kaisetsu(showResults, "22-6B-6")}
           </p>
         </div>
       </div>

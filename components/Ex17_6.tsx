@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex17_6 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -151,6 +152,7 @@ const Ex17_6 = () => {
               could result in ends to some of our friendships. Fortunately, even
               when such conflicts occur, it is possible to find ways to maintain
               or save the friendships.
+              {Kaisetsu(showResults, "17-6-1")}
             </p>
           </div>
         </div>
@@ -175,6 +177,7 @@ const Ex17_6 = () => {
               studies. Susan would never have known there was a problem if Mary
               had not mentioned it. Not cutting off contact, even when we may be
               angry, is very important for maintaining good relationships.
+              {Kaisetsu(showResults, "17-6-2")}
             </p>
           </div>
         </div>
@@ -192,6 +195,7 @@ const Ex17_6 = () => {
               little girl for a serious illness. Mark then understood why Kate
               hadn&apos;t come and, instead of being angry, he felt sympathy for
               her.
+              {Kaisetsu(showResults, "17-6-3")}
             </p>
           </div>
         </div>
@@ -209,6 +213,7 @@ const Ex17_6 = () => {
               may change. In other words, sometimes a close friendship may alter
               in nature. We should keep in mind that we may still be friends but
               not in the same way as before.
+              {Kaisetsu(showResults, "17-6-4")}
             </p>
           </div>
         </div>
@@ -226,6 +231,7 @@ const Ex17_6 = () => {
               their friends&apos; viewpoints and not being afraid to express
               their honest feelings, those who were interviewed were able to
               keep something minor from growing into a major argument.
+              {Kaisetsu(showResults, "17-6-5")}
             </p>
           </div>
         </div>
@@ -245,6 +251,7 @@ const Ex17_6 = () => {
               and appreciate that relationships can change. However, regardless
               of the states of our friendships, they will continue to be an
               important part of our lives.
+              {Kaisetsu(showResults, "17-6-6")}
             </p>
           </div>
         </div>

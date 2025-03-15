@@ -5,6 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex20_4A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -107,6 +108,7 @@ const Ex20_4A = () => {
             potentially facilitates learning outcomes without increasing the
             amount of practice. A study was conducted to examine how different
             training schedules influence throwing performance.
+            {Kaisetsu(showResults, "20-4A-1")}
           </p>
 
           <p>
@@ -120,6 +122,7 @@ const Ex20_4A = () => {
             50, 40, 30, 20, or 10 points were recorded accordingly. If the ball
             landed outside of the target, no points were given. If the ball
             landed on a line separating two zones, the higher score was awarded.
+            {Kaisetsu(showResults, "20-4A-2")}
           </p>
 
           <p>
@@ -137,6 +140,7 @@ const Ex20_4A = () => {
             started with a blocked schedule and gradually shifted to a random
             schedule. On the next day, all students completed a performance test
             of 12 throws.
+            {Kaisetsu(showResults, "20-4A-3")}
           </p>
           <p>
             Results showed that during the practice of 81 throws, the Blocked
@@ -147,6 +151,7 @@ const Ex20_4A = () => {
             can be obtained for adults in training programs for other throwing
             actions, such as those seen in bowling, baseball, and basketball.
             This will be addressed in the following section.
+            {Kaisetsu(showResults, "20-4A-4")}
           </p>
 
           <p className="mt-4 text-sm mb-8">

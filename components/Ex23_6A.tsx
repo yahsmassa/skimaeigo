@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 import Image from "next/image";
 
 const Ex23_6A = () => {
@@ -31,7 +31,8 @@ const Ex23_6A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "③：第1段落8文目 &quot;One person's trash ... person's treasure.&quot;（一人の人間のごみが別の人の宝物になりうる）という内容から，③「一人の人間にとって重要ではないものが他の誰かにとって価値があるかもしれない」が正解。",
+        "[39] 正解は③「一人の人間にとって重要ではないものが他の誰かにとって価値があるかもしれない」",
+        "第1段落8文目 （一人の人間のごみが別の人の宝物になりうる）という内容から，",
       ],
     },
     {
@@ -47,7 +48,7 @@ const Ex23_6A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "④：第2段落4文目&quot;Researchers in .. this behavior.&quot;（この分野の研究者は，およそ3分の1の大人がこの行動を維持するということに一般的に同意している）という内容から，④「およそ30%の人々が大人になっても収集を続けている」が正解。",
+        "正解は④「およそ30%の人々が大人になっても収集を続けている」、第2段落4文目（この分野の研究者は，およそ3分の1の大人がこの行動を維持するということに一般的に同意している）という内容から，",
       ],
     },
     {
@@ -68,8 +69,9 @@ const Ex23_6A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[41] ④・[42] ⑥：第3段落7文目 &quot;Some save greeting cards ... and so on.&quot;（友達や家族からのグリーティングカード，特別なイベントでもらったドライフラワー，浜辺で過ごした日の貝殻などを貯めている人もいる）という内容から，④「大切なイベントを思い出させるもの」が正解。 ",
-        "また，第4段落4文目後半 &quot;while others ... an investment&quot;（一方で，特に投資としてものを集める人もいる）という内容から，⑥「何らかの種類の利益を求める」が正解。5文目（While it is ... worth a lot.）ではその内容が具体的に説明されている。",
+        "正解は[41] ④「大切なイベントを思い出させるもの」、[42] ⑥「何らかの種類の利益を求める」",
+        "第3段落7文目 （友達や家族からのグリーティングカード，特別なイベントでもらったドライフラワー，浜辺で過ごした日の貝殻などを貯めている人もいる）",
+        "第4段落4文目後半 （一方で，特に投資としてものを集める人もいる）という内容から，5文目（While it is ... worth a lot.）ではその内容が具体的に説明されている。",
       ],
     },
     {
@@ -85,7 +87,8 @@ const Ex23_6A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "①：第6段落3文目 &quot;As technology can ... 30 years ago.&quot;（テクノロジーが物理的制約を取り除けるので，30年前には想像もできなかったであろう膨大な音楽や美術のデジタルライブラリーを今では個人が所有できる）という内容から，①「収集はおそらく大きさや形が変わり続けるであろう」が正解だと判断する。 ",
+        "正解は①「収集はおそらく大きさや形が変わり続けるであろう」",
+        '第6段落3文目 "As technology can ... 30 years ago."（テクノロジーが物理的制約を取り除けるので，30年前には想像もできなかったであろう膨大な音楽や美術のデジタルライブラリーを今では個人が所有できる）という内容から',
       ],
     },
   ];
@@ -113,6 +116,7 @@ const Ex23_6A = () => {
           You are in a discussion group in school. You have been asked to
           summarize the following article. You will speak about it, using only
           notes.
+          {Kaisetsu(showResults, "23-6A-0")}
         </p>
       </div>
       {/* Article Title */}
@@ -133,6 +137,7 @@ const Ex23_6A = () => {
           one person&apos;s trash can be another person&apos;s treasure.
           Regardless of how someone&apos;s collection was started, it is human
           nature to collect things.
+          {Kaisetsu(showResults, "23-6A-1")}
         </p>
         <p>
           In 1988, researchers Brenda Danet and Tamar Katriel analyzed 80 years
@@ -147,11 +152,13 @@ const Ex23_6A = () => {
           their collection is a connection to their youth. They may have
           baseball cards, comic books, dolls, or miniature cars that they have
           kept since they were small.
+          {Kaisetsu(showResults, "23-6A-2")}
         </p>
         <p>
           Others have an attachment to history; they seek and hold onto
           historical documents, signed letters and autographs from famous
           people, and so forth.
+          {Kaisetsu(showResults, "23-6A-3")}
         </p>
         <p>
           For some individuals there is a social reason. People collect things
@@ -166,6 +173,7 @@ const Ex23_6A = () => {
           Sperl&apos;s room is filled with all things &quot;hamburger.&quot;
           Similarly, Liu Fuchang, of China, is a collector of playing cards. He
           has 11,087 different sets.
+          {Kaisetsu(showResults, "23-6A-4")}
         </p>
         <p>
           Perhaps the easiest motivation to understand is pleasure. Some people
@@ -180,6 +188,7 @@ const Ex23_6A = () => {
           condition,&quot; can make the game worth a lot. Owning various
           valuable &quot;collector&apos;s items&quot; could ensure some
           financial security.
+          {Kaisetsu(showResults, "23-6A-5")}
         </p>
         <p>
           This behavior of collecting things will definitely continue into the
@@ -191,6 +200,7 @@ const Ex23_6A = () => {
           though, what other impacts technology will have on collections. Can
           you even imagine the form and scale that the next generation&apos;s
           collections will take?
+          {Kaisetsu(showResults, "23-6A-6")}
         </p>
       </div>
       {/* Notes Section */}

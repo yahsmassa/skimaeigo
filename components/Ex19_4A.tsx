@@ -5,6 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex19_4A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -109,6 +110,7 @@ const Ex19_4A = () => {
           determine if this idea could be extended to paintings featuring family
           meals. The results of this study might help illustrate why certain
           kinds of foods were painted.
+          {Kaisetsu(showResults, "19-4A-1")}
         </p>
 
         <p>
@@ -120,6 +122,7 @@ const Ex19_4A = () => {
           onions appeared in a painting, the researchers coded it as 1. Then
           they calculated the percentage of the paintings from these countries
           that included each food.
+          {Kaisetsu(showResults, "19-4A-2")}
         </p>
 
         <p>
@@ -137,6 +140,7 @@ const Ex19_4A = () => {
           of them included shellfish although only 6% of the country touches the
           sea. Also, lemons were most common in paintings from the Netherlands,
           even though they do not grow there naturally.
+          {Kaisetsu(showResults, "19-4A-3")}
         </p>
       </div>
       {/* Table 1 */}
@@ -196,6 +200,7 @@ const Ex19_4A = () => {
           These are the period in which the paintings were completed and the
           cultural associations of foods. Both issues will be taken up in the
           following sections.
+          {Kaisetsu(showResults, "19-4A-4")}
         </p>
 
         <p className="text-sm mt-4">

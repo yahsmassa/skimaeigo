@@ -6,7 +6,7 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex22_3A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -68,6 +68,7 @@ const Ex22_3A = () => {
           countries.
         </p>
         <p className="mt-2">You are reading a young UK blogger&apos;s post.</p>
+        {Kaisetsu(showResults, "22-3A-0")}
       </div>
 
       <div className="border border-gray-400 p-6 bg-white mb-6">
@@ -96,6 +97,7 @@ const Ex22_3A = () => {
             served green-tea ice cream, <i>takoyaki</i>, and <i>yakitori</i>. I
             tried green-tea ice cream and <i>takoyaki</i>. The <i>takoyaki</i>{" "}
             was especially delicious. You should try some!
+            {Kaisetsu(showResults, "22-3A-1")}
           </p>
 
           <p>
@@ -105,6 +107,7 @@ const Ex22_3A = () => {
             about Japanese culture. For me, the other two, the <i>taiko</i> and
             the <i>koto</i>, were the highlights. The <i>taiko</i> were
             powerful, and the <i>koto</i> was relaxing.
+            {Kaisetsu(showResults, "22-3A-2")}
           </p>
 
           <p>
@@ -114,11 +117,13 @@ const Ex22_3A = () => {
             <i>nagashi-somen</i> experience was really interesting! It involved
             trying to catch cooked noodles with chopsticks as they slid down a
             bamboo water slide. It was very difficult to catch them.
+            {Kaisetsu(showResults, "22-3A-3")}
           </p>
 
           <p>
             If you want to experience a slice of Japan, this festival is for
             you! I took a picture of the flyer. Check it out.
+            {Kaisetsu(showResults, "22-3A-4")}
           </p>
         </div>
       </div>

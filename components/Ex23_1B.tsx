@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex23_1B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -24,9 +24,11 @@ const Ex23_1B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "③：3つの情報をまとめる問題。FOREST の2文目 &quot;Your instructors have taught English ... in several countries.&quot;（あなたのインストラクターは20年以上の間いくつかの国で英語を教えてきました）， ",
+        "3つの情報をまとめる問題。",
+        "正解は③「他の国々で働いた」",
+        "FOREST の2文目 &quot;Your instructors have taught English ... in several countries.&quot;（あなたのインストラクターは20年以上の間いくつかの国で英語を教えてきました）， ",
         "MOUNTAIN の2文目 &quot;Instructors for this course have worked at theater schools in New York City.&quot;（このコースのインストラクターはニューヨーク市の演劇学校で働いてきました）， ",
-        "SKY の2文目 &quot;Your instructors have been to many countries to coach debate teams&quot;（あなたのインストラクターは多くの国々を訪れてディベートチームをコーチしてきました）から，③「他の国々で働いた」が正解。",
+        "SKY の2文目 &quot;Your instructors have been to many countries to coach debate teams&quot;（あなたのインストラクターは多くの国々を訪れてディベートチームをコーチしてきました）から，",
       ],
     },
     {
@@ -42,9 +44,11 @@ const Ex23_1B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "④：3つの情報をまとめる問題。FOREST の4文目 &quot;On the final day ... all the other campers listen.&quot;（キャンプの最終日に，あなたは他の全てのキャンパーが聴く中，スピーチコンテストに参加します）， ",
-        "MOUNTAIN の4文目 &quot;You&apos;ll perform your skit ... on AUgust 14.&quot;（8月14日に全てのキャンパーが楽しめるようにあなたは自分のスキットを演じます）， ",
-        "SKY の4文目 &quot;You&apos;ll do a short debate ... on the last day.&quot;（あなたは最終日に他の全てのキャンパーの前で短いディベートを行います）から，④「キャンプで学んだことを見せる」が正解。",
+        "3つの情報をまとめる問題。",
+        "正解は④「キャンプで学んだことを見せる」",
+        "FOREST の4文目 &quot;On the final day ... all the other campers listen.&quot;（キャンプの最終日に，あなたは他の全てのキャンパーが聴く中，スピーチコンテストに参加します）",
+        "MOUNTAIN の4文目 &quot;You&apos;ll perform your skit ... on AUgust 14.&quot;（8月14日に全てのキャンパーが楽しめるようにあなたは自分のスキットを演じます）",
+        "SKY の4文目 &quot;You&apos;ll do a short debate ... on the last day.&quot;（あなたは最終日に他の全てのキャンパーの前で短いディベートを行います）から",
       ],
     },
     {
@@ -60,7 +64,8 @@ const Ex23_1B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "③：Step 2 の &quot;We'll contact you ... your course preference&quot;（あなたの英語の能力を査定し，あなたのコースの選択について尋ねるために面接を設定するため連絡します）から，③「あなたの英語のレベルがチェックされる」が正解。 ",
+        "正解は③「あなたの英語のレベルがチェックされる」",
+        "Step 2 の &quot;We'll contact you ... your course preference&quot;（あなたの英語の能力を査定し，あなたのコースの選択について尋ねるために面接を設定するため連絡します）から，",
       ],
     },
   ];
@@ -87,6 +92,7 @@ const Ex23_1B = () => {
           You are a senior high school student interested in improving your
           English during the summer vacation. You find a website for an
           intensive English summer camp run by an international school.
+          {Kaisetsu(showResults, "23-1B-0")}
         </p>
       </div>
       <div className="border border-gray-800 p-6">
@@ -111,6 +117,7 @@ const Ex23_1B = () => {
               Galley International School (GIS) has provided intensive English
               summer camps for senior high school students in Japan since 1989.
               Spend two weeks in an all-English environment!
+              {Kaisetsu(showResults, "23-1B-1")}
             </p>
           </div>
         </div>
@@ -129,6 +136,7 @@ const Ex23_1B = () => {
             and accommodation (additional fees for optional activities such as
             kayaking and canoeing)
           </p>
+          {Kaisetsu(showResults, "23-1B-2")}
         </div>
 
         {/* Courses Section */}
@@ -146,6 +154,7 @@ const Ex23_1B = () => {
                 have taught English for over 20 years in several countries. On
                 the final day of the camp, you&apos;ll take part in a speech
                 contest while all the other campers listen.
+                {Kaisetsu(showResults, "23-1B-3")}
               </p>
             </div>
 
@@ -156,6 +165,7 @@ const Ex23_1B = () => {
                 English. Instructors for this course have worked at theater
                 schools in New York City, London, and Sydney. You&apos;ll
                 perform your skit for all the campers to enjoy on August 14.
+                {Kaisetsu(showResults, "23-1B-4")}
               </p>
             </div>
 
@@ -168,6 +178,7 @@ const Ex23_1B = () => {
                 the subject. You&apos;ll do a short debate in front of all the
                 other campers on the last day. (Note: Only those with an
                 advanced level of English will be accepted.)
+                {Kaisetsu(showResults, "23-1B-5")}
               </p>
             </div>
           </div>
@@ -191,6 +202,7 @@ const Ex23_1B = () => {
               <span className="font-bold">Step 3:</span> You&apos;ll be assigned
               to a course.
             </p>
+            {Kaisetsu(showResults, "23-1B-6")}
           </div>
         </div>
       </div>

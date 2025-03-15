@@ -6,6 +6,7 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 export default function Ex21_3A() {
   const [showResults, setShowResults] = useState(false);
@@ -69,6 +70,7 @@ export default function Ex21_3A() {
         <p className="text-gray-800">
           You are planning to stay at a hotel in the UK. You found useful
           information in the Q&A section of a travel advice website.
+          {Kaisetsu(showResults, "21-3A-0")}
         </p>
       </div>
 
@@ -80,6 +82,7 @@ export default function Ex21_3A() {
             I&apos;m considering staying at the Hollytree Hotel in Castleton in
             March 2021. Would you recommend this hotel, and is it easy to get
             there from Buxton Airport?
+            {Kaisetsu(showResults, "21-3A-1")}
           </p>
           <p className="text-right text-gray-600">(Liz)</p>
         </div>
@@ -93,10 +96,12 @@ export default function Ex21_3A() {
             twice. It&apos;s inexpensive, and the service is brilliant!
             There&apos;s also a wonderful free breakfast. (Click{" "}
             <span className="underline">here</span> for access information.)
+            {Kaisetsu(showResults, "21-3A-2")}
           </p>
 
           <p className="text-gray-800">
             Let me tell you my own experience of getting there.
+            {Kaisetsu(showResults, "21-3A-3")}
           </p>
 
           <p className="text-gray-800">
@@ -106,6 +111,7 @@ export default function Ex21_3A() {
             Victoria should normally take about seven minutes, but the
             directions weren&apos;t clear and I needed an extra five minutes.
             From Victoria, it was a ten-minute bus ride to the hotel.
+            {Kaisetsu(showResults, "21-3A-4")}
           </p>
 
           <p className="text-gray-800">
@@ -115,6 +121,7 @@ export default function Ex21_3A() {
             takes three times as long as usual to get to the hotel by city bus,
             although buses run every ten minutes. It&apos;s possible to walk,
             but I took the bus as the weather was bad.
+            {Kaisetsu(showResults, "21-3A-5")}
           </p>
 
           <div className="flex justify-between items-center pt-2">

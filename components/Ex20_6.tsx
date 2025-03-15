@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex20_6 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -146,6 +147,7 @@ const Ex20_6 = () => {
             anywhere you go. Some of these machines sell train or meal tickets,
             and others sell snacks or drinks. They are especially useful for
             people who want to get something quickly and conveniently.
+            {Kaisetsu(showResults, "20-6-1")}
           </div>
         </div>
 
@@ -162,6 +164,7 @@ const Ex20_6 = () => {
             of the coin let a specific amount of water pour out until the coin
             fell off. This ensured that people received an equal portion of the
             special water.
+            {Kaisetsu(showResults, "20-6-2")}
           </div>
         </div>
 
@@ -182,6 +185,7 @@ const Ex20_6 = () => {
             advanced and machines could be set to sell products with different
             prices. After that, a wider variety of products were sold. When this
             happened, the vending machine industry expanded rapidly.
+            {Kaisetsu(showResults, "20-6-3")}
           </div>
         </div>
 
@@ -198,6 +202,7 @@ const Ex20_6 = () => {
             counterfeit. Now, vending machines have become technologically
             advanced, not only to prevent problems with cash but also to accept
             credit cards and more recent forms of electronic payment.
+            {Kaisetsu(showResults, "20-6-4")}
           </div>
         </div>
 
@@ -217,6 +222,7 @@ const Ex20_6 = () => {
             machines that sell unexpected products like bananas, fresh eggs, and
             bags of rice. It is understandable that visitors see them as one
             aspect particular to Japanese culture.
+            {Kaisetsu(showResults, "20-6-5")}
           </div>
         </div>
 
@@ -230,6 +236,7 @@ const Ex20_6 = () => {
             a sales clerk. The next time you want to purchase a hot drink on a
             cold day, remember that, in Japan at least, there is probably a
             vending machine just around the next corner.
+            {Kaisetsu(showResults, "20-6-6")}
           </div>
         </div>
       </div>

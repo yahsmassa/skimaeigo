@@ -5,6 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex22_6A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -110,6 +111,7 @@ const Ex22_6A = () => {
           Your study group is learning about &quot;how time of day affects
           people.&quot; You have found an article you want to share. Complete
           the summary notes for your next meeting.
+          {Kaisetsu(showResults, "22-6A-0")}
         </span>
       </div>
 
@@ -130,6 +132,7 @@ const Ex22_6A = () => {
             opposite of <em>owls</em>, are <em>larks</em>. Creatures active
             during the day are &quot;diurnal&quot; and those emerging at night
             are &quot;nocturnal.&quot;
+            {Kaisetsu(showResults, "22-6A-1")}
           </p>
 
           <p className="text-justify">
@@ -144,6 +147,7 @@ const Ex22_6A = () => {
             occurs before 4:00 p.m., so young <em>larks</em> may perform certain
             tasks better. Business deals made early in the day may make some{" "}
             <em>larks</em> wealthier.
+            {Kaisetsu(showResults, "22-6A-2")}
           </p>
 
           <p className="text-justify">
@@ -157,6 +161,7 @@ const Ex22_6A = () => {
             and office work happen in daylight, we assume that day begins in the
             morning. People asleep are not first in line, and might miss
             chances.
+            {Kaisetsu(showResults, "22-6A-3")}
           </p>
 
           <p className="text-justify">
@@ -169,6 +174,7 @@ const Ex22_6A = () => {
             hour of the rat, the first period, is from 11:00 p.m. to 1:00 a.m.
             Chinese culture also begins the day at night. In other words,
             ancient customs support how <em>owls</em> view time.
+            {Kaisetsu(showResults, "22-6A-4")}
           </p>
 
           <p className="text-justify">
@@ -188,6 +194,7 @@ const Ex22_6A = () => {
             seek perfection, and feel little stress. <em>Owls</em> seek new
             adventures and exciting leisure activities, yet they often have
             trouble relaxing.
+            {Kaisetsu(showResults, "22-6A-5")}
           </p>
 
           <p className="text-justify">
@@ -203,6 +210,7 @@ const Ex22_6A = () => {
             appears all the time. A study of university students in Russia
             suggests that there are six types, so <em>owls</em> and{" "}
             <em>larks</em> may not be the only birds around!
+            {Kaisetsu(showResults, "22-6A-6")}
           </p>
         </div>
       </div>
@@ -249,6 +257,7 @@ const Ex22_6A = () => {
                     Not all of us fit easily into the common daytime schedule,
                     but we are forced to follow it, especially when we are
                     children.
+                    {Kaisetsu(showResults, "22-6A-7")}
                   </p>
                 </li>
                 <li className="flex">
@@ -256,6 +265,7 @@ const Ex22_6A = () => {
                   <p>
                     Some studies indicate that the most active time for each of
                     us is part of our nature.
+                    {Kaisetsu(showResults, "22-6A-8")}
                   </p>
                 </li>
                 <li className="flex">
@@ -270,7 +280,10 @@ const Ex22_6A = () => {
                 </li>
                 <li className="flex">
                   <span className="mr-2">•</span>
-                  <p>Perspectives keep changing with new research.</p>
+                  <p>
+                    Perspectives keep changing with new research.
+                    {Kaisetsu(showResults, "22-6A-9")}
+                  </p>
                 </li>
               </ul>
             </section>
@@ -286,7 +299,7 @@ const Ex22_6A = () => {
                     <span className="inline-block border border-gray-800 px-2">
                       41
                     </span>
-                    .
+                    .{Kaisetsu(showResults, "22-6A-10")}
                   </p>
                 </li>
                 <li className="flex">

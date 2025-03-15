@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex24_4 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -24,8 +24,7 @@ const Ex24_4 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[24] 記事（article）の第1段落第2文 「SIN, which stands for Stimulation, Individualization, and Naturalness, is a framework that might be helpful to consider when designing classrooms.」",
-        "（SINとはStimulation（刺激），Individualization（個性化），Naturalness（自然さ）の頭文字をとったもので，教室をデザインする際に参考になるフレームワークである）から，③「教室の環境を計画する際に従うべきモデル」が正解。",
+        "正解は③「教室の環境を計画する際に従うべきモデル」、（SINとはStimulation（刺激），Individualization（個性化），Naturalness（自然さ）の頭文字をとったもので，教室をデザインする際に参考になるフレームワークである）から，",
       ],
     },
     {
@@ -41,8 +40,7 @@ const Ex24_4 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[25] 記事の第2段落第6文 「In addition, it can be visually distracting to have too many things displayed on walls.」",
-        "（さらに，壁にたくさんのものが掲示されていると，視覚的に気が散ってしまう可能性がある）から，④「掲示されるものを減らす」が正解。",
+        "正解は ④「掲示されるものを減らす」（さらに，壁にたくさんのものが掲示されていると，視覚的に気が散ってしまう可能性がある）から，",
       ],
     },
     {
@@ -58,7 +56,7 @@ const Ex24_4 = () => {
       isCorrect: false,
       points: 4,
       explanation: [
-        "[26] （※NOT問題）Naturalnessについて解説している第4段落では，光と温度の話しかなされていないため，④「ソファを壁の近くに置く」が正解。",
+        "正解は ④「ソファを壁の近くに置く」、光と温度の話しかなされていないため，",
       ],
     },
     {
@@ -79,8 +77,8 @@ const Ex24_4 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[27] グラフの解答数が最も多い Sleeping という項目から，[27]は⑤「～で昼寝をする」が正解。また，寝てしまうことについてのコメントはS4の第2文 「Everyone likes the sofas ― they are so comfortable that we often use the room for sleeping!」",
-        "（ソファはみんな気に入っていて，寝心地がいいので，よく寝るときに使っています！）に述べられているので，[28]は④が正解。",
+        "[27]は⑤「～で昼寝をする」が正解。グラフの解答数が最も多い Sleeping という項目からわかる",
+        "[28]は④が正解。（ソファはみんな気に入っていて，寝心地がいいので，よく寝るときに使っています！）に述べられている",
       ],
     },
     {
@@ -96,8 +94,7 @@ const Ex24_4 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[29] S3のコメントの第2文 「Also, lots of members speak Japanese, even though it's an English club.」",
-        "（また，英語のクラブなのに，日本語を話すメンバーが多い）から，③が正解。",
+        "正解は③。（また，英語のクラブなのに，日本語を話すメンバーが多い）から，",
       ],
     },
   ];
@@ -508,7 +505,9 @@ const Ex24_4 = () => {
         />
       </div>
       {/* What Makes a Good Classroom? */}
-      <p className="mb-6">{questionData.instruction}</p>
+      <p className="mb-6">
+        {questionData.instruction} {Kaisetsu(showResults, "24-4-1")}
+      </p>
       <div className="p-6 border-2 border-gray-300 rounded-lg">
         <div className="text-center mb-6">
           <h2 className="text-xl font-bold mb-3">{articleData.title}</h2>
@@ -518,32 +517,37 @@ const Ex24_4 = () => {
         </div>
 
         <div className="space-y-4">
-          <p>{articleData.introduction}</p>
+          <p>
+            {articleData.introduction} {Kaisetsu(showResults, "24-4-2")}
+          </p>
 
-          {articleData.framework.components.map((component) => (
+          {articleData.framework.components.map((component, idx) => (
             <div key={component.name} className="mb-4">
               <p>
                 {component.description}
                 {component.guidelines && (
                   <span> For example, {component.guidelines.join(". ")}</span>
                 )}
+                {idx === 0 && Kaisetsu(showResults, "24-4-3")}
               </p>
 
               {component.details && (
                 <div className="mt-2">
-                  {Object.entries(component.details).map(([key, value]) => (
-                    <div key={key}>
-                      <p>
-                        {value.description}
-                        {"examples" in value &&
-                          value.examples.length > 0 &&
-                          `. Examples of this include ${value.examples.join(
-                            ", and "
-                          )}`}
-                        .
-                      </p>
-                    </div>
-                  ))}
+                  {Object.entries(component.details).map(
+                    ([key, value], index) => (
+                      <div key={key}>
+                        <p>
+                          {value.description}
+                          {"examples" in value &&
+                            value.examples.length > 0 &&
+                            `. Examples of this include ${value.examples.join(
+                              ", and "
+                            )}`}
+                          . {index === 1 && Kaisetsu(showResults, "24-4-4")}
+                        </p>
+                      </div>
+                    )
+                  )}
                 </div>
               )}
 
@@ -551,13 +555,16 @@ const Ex24_4 = () => {
                 <div className="mt-2">
                   <p>
                     {component.concerns.join(". ")}. {component.recommendation}
+                    {Kaisetsu(showResults, "24-4-5")}
                   </p>
                 </div>
               )}
             </div>
           ))}
 
-          <p>{articleData.conclusion}</p>
+          <p>
+            {articleData.conclusion} {Kaisetsu(showResults, "24-4-6")}
+          </p>
         </div>
       </div>
       {/* Results of the Questionnaire */}
@@ -601,7 +608,11 @@ const Ex24_4 = () => {
             {questionnaireData.questions.q2.comments.map((comment, index) => (
               <div key={index} className="text-sm">
                 <span className="font-medium">{comment.student}:</span>{" "}
-                <span>{comment.text}</span>
+                <span>
+                  {comment.text}{" "}
+                  {index === 2 && Kaisetsu(showResults, "24-4-7")}
+                  {index === 5 && Kaisetsu(showResults, "24-4-8")}
+                </span>
               </div>
             ))}
           </div>

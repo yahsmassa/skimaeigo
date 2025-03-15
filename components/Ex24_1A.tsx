@@ -11,6 +11,7 @@ import {
 } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 type Activity = {
   title: string;
@@ -64,7 +65,8 @@ export default function Ex24_1A() {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[1] 本文第1段落第2文の &quot;TELS students don&apos;t need to pay the entrance fee.&quot;（TELSの生徒は入場料金をし貼らす必要はない）から，④「TELSの生徒である証拠を示す」が正解。",
+        "④「TELSの生徒である証拠を示す」が正解。",
+        "[1] 本文第1段落第2文の （TELSの生徒は入場料金を支払う必要はない）から，",
       ],
     },
     {
@@ -80,7 +82,8 @@ export default function Ex24_1A() {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[2] イベント解説の2つ目の●の最後の文 &quot;Learn how people from these cultures use facial expressions and their hands to communicate.&quot;（こうした文化の人々がどのようにして表情や手を用いて意思を伝えるかを学ぶ）から，①「様々な文化のジェスチャーについて学ぶ」が正解。 ",
+        "①「様々な文化のジェスチャーについて学ぶ」が正解。",
+        "[2] イベント解説の2つ目の●の最後の文 （こうした文化の人々がどのようにして表情や手を用いて意思を伝えるかを学ぶ）から， ",
       ],
     },
   ];
@@ -165,7 +168,10 @@ export default function Ex24_1A() {
       </div>
 
       <div className="">
-        <p className="mb-4">{questionData.scenario?.context}</p>
+        <p className="mb-4">
+          {questionData.scenario?.context}
+          {Kaisetsu(showResults, "24-1A-0")}
+        </p>
 
         <div className="border p-4 mb-4">
           <h2 className="text-center text-lg font-bold mb-2">
@@ -184,16 +190,21 @@ export default function Ex24_1A() {
 
           <p className="mb-4">
             {questionData.scenario?.eventDetails?.description}
+            {Kaisetsu(showResults, "24-1A-1")}
           </p>
 
           {questionData.scenario?.activities.map((activity, index) => (
             <div key={index} className="mb-4">
               <h4 className="font-bold mb-2">• {activity.title}</h4>
               <p className="ml-4">{activity.description}</p>
+              {Kaisetsu(showResults, "24-1A-" + String(index + 2))}
             </div>
           ))}
 
-          <p className="mt-4">{questionData.scenario?.additionalInfo}</p>
+          <p className="mt-4">
+            {questionData.scenario?.additionalInfo}
+            {Kaisetsu(showResults, "24-1A-5")}
+          </p>
         </div>
       </div>
 

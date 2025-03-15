@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex19_6 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -146,6 +147,7 @@ const Ex19_6 = () => {
             routes have enabled people to move, transport things, and send
             information from one place to another quickly and safely. Throughout
             history, they have been important in our daily lives.
+            {Kaisetsu(showResults, "19-6-1")}
           </div>
         </div>
 
@@ -163,6 +165,7 @@ const Ex19_6 = () => {
             communities grew, economies evolved, and cultures expanded. The
             importance of land routes increased further, especially after the
             appearance of automobiles.
+            {Kaisetsu(showResults, "19-6-2")}
           </div>
         </div>
 
@@ -183,6 +186,7 @@ const Ex19_6 = () => {
             previously been able to reach. A number of important sea routes
             emerged, leading to the exchange of natural resources, products, and
             ideas. This, in turn, helped cities and towns thrive.
+            {Kaisetsu(showResults, "19-6-3")}
           </div>
         </div>
 
@@ -201,6 +205,7 @@ const Ex19_6 = () => {
             them in a single day by airplane. Owing to the establishment of
             these sky routes, a great number of people now travel around the
             world for sightseeing, visiting friends, and doing business.
+            {Kaisetsu(showResults, "19-6-4")}
           </div>
         </div>
 
@@ -217,6 +222,7 @@ const Ex19_6 = () => {
             half of the global population, have access to this electronic route
             today. As technology advances, more and more people will take
             advantage of this route to gather information and communicate.
+            {Kaisetsu(showResults, "19-6-5")}
           </div>
         </div>
 
@@ -230,6 +236,7 @@ const Ex19_6 = () => {
             communities, economies, and cultures. Routes have played significant
             roles in the development and prosperity of humankind. Currently
             unknown routes will surely take us even further in the future.
+            {Kaisetsu(showResults, "19-6-6")}
           </div>
         </div>
       </div>

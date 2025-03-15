@@ -5,7 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex16_4B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -91,12 +91,13 @@ const Ex16_4B = () => {
             <div className="flex items-center flex-wrap gap-2 mb-3">
               <span className="whitespace-nowrap mr-2">問 1</span>
 
-              <div>
+              <div className="flex flex-wrap gap-2">
                 Kazuko, a 19-year-old shop assistant, wants to participate in a
                 museum activity but is only free on weekday evenings. Which
                 activity will she most likely choose?
                 {renderSelect("39", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="4B-1" />}
+                {Kaisetsu(showResults, "16-4B-1")}
               </div>
             </div>
             <div className="pl-8 space-y-2">
@@ -111,13 +112,14 @@ const Ex16_4B = () => {
           <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
             <div className="flex items-center flex-wrap gap-2 mb-3">
               <span className="whitespace-nowrap mr-2">問 2</span>
-              <div>
+              <div className="flex flex-wrap gap-2">
                 A retired couple and their 6-year-old grandchild wish to
                 participate together in a weekday afternoon activity. Which
                 activity will they most likely choose and how much will they pay
                 in total?
                 {renderSelect("40", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="4B-2" />}
+                {Kaisetsu(showResults, "16-4B-2")}
               </div>
             </div>
             <div className="pl-8 space-y-2">
@@ -137,6 +139,7 @@ const Ex16_4B = () => {
               </span>
               {renderSelect("41", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="4B-3" />}
+              {Kaisetsu(showResults, "16-4B-3")}
             </div>
             <div className="pl-8 space-y-2">
               <div>
@@ -188,6 +191,7 @@ const Ex16_4B = () => {
             vast collection with many permanent exhibits, and also offers
             special exhibits, lectures by professional artists and critics,
             classes for school children, and tours guided by specialists.
+            {Kaisetsu(showResults, "16-4B-4")}
           </p>
           <Image
             src="/images/Ex16-4B-3.webp"
@@ -297,7 +301,7 @@ const Ex16_4B = () => {
         {/* Notes */}
         <div>
           <h2 className="font-bold mb-2">Notes:</h2>
-          <ul className="space-y-2">
+          <ul className="space-y-2 mb-2">
             <li>
               - The fees for tours, classes, and workshops include the admission
               fee.
@@ -316,6 +320,7 @@ const Ex16_4B = () => {
               .
             </li>
           </ul>
+          {Kaisetsu(showResults, "16-4B-5")}
         </div>
       </div>
     </div>

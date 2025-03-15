@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex22_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -141,6 +141,7 @@ const Ex22_5 = () => {
         In your English class, you will give a presentation about a great
         inventor. You found the following article and prepared notes for your
         presentation.
+        {Kaisetsu(showResults, "22-5-0")}
       </p>
 
       {/* Main article container */}
@@ -156,6 +157,7 @@ const Ex22_5 = () => {
           people&apos;s attention because it was between a young man and a giant
           corporation. This patent would give the inventor the official right to
           be the only person to develop, use, or sell the system.
+          {Kaisetsu(showResults, "22-5-1")}
         </p>
 
         {/* Text and image wrapped section */}
@@ -184,6 +186,7 @@ const Ex22_5 = () => {
             could find on the subject. He would often repair the old generator
             and even changed his mother&apos;s hand-powered washing machine into
             an electricity-powered one.
+            {Kaisetsu(showResults, "22-5-2")}
           </p>
 
           <p className="mb-4">
@@ -197,6 +200,7 @@ const Ex22_5 = () => {
             concept of an electronic television system. With sketches and
             diagrams on blackboards, he showed the teacher how it might be
             accomplished, and Tolman encouraged him to develop his ideas.
+            {Kaisetsu(showResults, "22-5-3")}
           </p>
 
           <p className="mb-4">
@@ -204,6 +208,7 @@ const Ex22_5 = () => {
             electronic image. In the following years, he further improved the
             system so that it could successfully broadcast live images. The US
             government gave him a patent for this system in 1930.
+            {Kaisetsu(showResults, "22-5-4")}
           </p>
 
           {/* Rest of the paragraphs */}
@@ -218,6 +223,7 @@ const Ex22_5 = () => {
               sum of money to sell them his patent as his system was superior to
               that of Zworykin&apos;s. He refused this offer, which started a
               patent war between Farnsworth and RCA.
+              {Kaisetsu(showResults, "22-5-5")}
             </p>
 
             <p className="mb-4">
@@ -231,6 +237,7 @@ const Ex22_5 = () => {
               was issued. In 1934, a judge approved Farnsworth&apos;s patent
               claim on the strength of handwritten notes made by his old high
               school teacher, Tolman.
+              {Kaisetsu(showResults, "22-5-6")}
             </p>
 
             <p className="mb-4">
@@ -244,6 +251,7 @@ const Ex22_5 = () => {
               worthwhile.&quot; His story will always be tied to his teenage
               dream of sending moving pictures through the air and those
               blackboard drawings at his high school.
+              {Kaisetsu(showResults, "22-5-7")}
             </p>
           </div>
         </div>

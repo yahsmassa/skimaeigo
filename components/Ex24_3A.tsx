@@ -13,7 +13,7 @@ import { Saiten } from "@/components/Saiten";
 import { qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 export interface HeaderText {
   title: string;
   description: string;
@@ -125,6 +125,7 @@ const Ex24_3A: React.FC = () => {
           {item.content}
           <span className="underline">{item.link}</span>
           {item.endContent}
+          {Kaisetsu(showResults, "24-3A-" + (index + 1))}
         </p>
       );
     }
@@ -132,6 +133,7 @@ const Ex24_3A: React.FC = () => {
     return (
       <p key={index} className="mb-4">
         {item.content}
+        {Kaisetsu(showResults, "24-3A-" + (index + 1))}
       </p>
     );
   };
@@ -185,10 +187,9 @@ const Ex24_3A: React.FC = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[16] 本文第6文～第11文 「But, on the way to the last target, the statue of a famous samurai from the city, we got lost. Time was running out and my feet were hurting from walking for over two hours. We stopped a man with a pet monkey for help, but neither our Japanese nor his English were good enough. After he&apos;d explained the way using gestures, we realised we wouldn&apos;t have enough time to get there and would have to give up. We took a photo with him and said goodbye. When we got back to Sakura City Hall, we were surprised to hear that the winning team had completed 19 checkpoints.」 ",
+        "②が正解、",
         "（しかし，最後の目標である有名な侍の像に向かう途中で私たちは道に迷った。時間切れになりつつあり，2時間以上歩いたので私の足は痛くなった。ペットの猿を連れた男性を呼び止めて助けを求めたが，私たちの日本語も彼の英語も十分上手ではなかった。彼が身振り手振りを交えて道を説明してくれた後，私たちは，そこにたどり着くには時間が足りず，あきらめるしかないと悟った。私たちは彼と写真を撮って別れた。私たちがサクラ市役所に到着した時，勝利したチームは19のチェックポイントを回ったと聞いて私たちは驚いた）という内容と， ",
-        "本文最終文の 「It reminds me of the man&apos;s warmth and kindness: our own &quot;gold medal.&quot;」（それが私に思い出させてくれるのは，その男性の暖かさと優しさだ。",
-        "それが私たち自身の「金メダル」だ）という内容から，その写真には猿を連れた男性が写っており，かつ，市役所に着いたのは男性と別れた後であることから，②が正解だとわかる。",
+        "本文最終文の 「それが私に思い出させてくれるのは，その男性の暖かさと優しさだ。」という内容から，その写真には猿を連れた男性が写っており，かつ，市役所に着いたのは男性と別れた後であることからわかる。",
       ],
     },
     {
@@ -204,11 +205,11 @@ const Ex24_3A: React.FC = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[17] （※推測問題）本文第11文から，自分のチームは勝利していないことがわかるため，①の「金メダルをつけている写真を見たい」は誤り。同じく第11文から，19チーム回ったのは自分たちではなく別のチームのことだとわかるので，",
-        "③「3時間で19のチェックポイントに着いたの？」も誤り。④を選んだ受験生もいたかもしれないが，ルールの下から二つ目に &quot;No mobile phones&quot;（携帯電話は無し）とあるので，④の「あなたの写真は素晴らしい！電話をアップグレードしたの？」も誤りである。 ",
-        "よって，消去法で②「あなたはベストを尽くしたよ。日本に戻ってもう一度挑戦して！」が正解となる。なお，筆者が日本にいないことについては，冒頭の説明文 ",
-        "Susan, your English ALT's sister, visited your class last month. Now back in the UK, she wrote on her blog about an event she took part in.",
-        "（あなたの英語のALTの妹であるスーザンは先月あなたのクラスを訪れた。今はイギリスに戻ったが，彼女はブログに自分が参加したイベントについて書いた）とあることが根拠となる。このように，設問の前書きの部分にもヒントが書かれていることがあるので，注意すること。",
+        "正解は②「あなたはベストを尽くしたよ。日本に戻ってもう一度挑戦して！」。",
+        "（あなたの英語のALTの妹であるスーザンは先月あなたのクラスを訪れた。今はイギリスに戻ったが，彼女はブログに自分が参加したイベントについて書いた）とあることが根拠となる。このように，設問の前書きの部分にもヒントが書かれていることがあるので，注意。",
+        "自分のチームは勝利していないことがわかるため，①の「金メダルをつけている写真を見たい」は誤り。",
+        "19チーム回ったのは自分たちではなく別のチームのことだとわかるので、③「3時間で19のチェックポイントに着いたの？」も誤り。",
+        "④を選んだ受験生もいたかもしれないが，（携帯電話は無し）とあるので，④の「あなたの写真は素晴らしい！電話をアップグレードしたの？」も誤り。 ",
       ],
     },
   ];
@@ -234,6 +235,7 @@ const Ex24_3A: React.FC = () => {
       <div className="mb-4">
         <p className="text-base">
           {headerText.title} {headerText.description}
+          {Kaisetsu(showResults, "24-3A-1")}
         </p>
       </div>
 
@@ -249,6 +251,7 @@ const Ex24_3A: React.FC = () => {
               <ul className="space-y-3">
                 {rules.items.map((rule, index) => renderRuleItem(rule, index))}
               </ul>
+              {Kaisetsu(showResults, "24-3A-5")}
             </div>
           </div>
         </CardContent>

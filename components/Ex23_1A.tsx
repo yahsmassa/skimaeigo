@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex23_1A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -24,7 +25,8 @@ const Ex23_1A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "問1 ①：下部の &quot;Fill in the form below and hand it in to your teacher today.&quot;（下の書式に記入して，今日，教師に提出しなさい）から，①「下部を完成させて提出する」が正解。",
+        "正解は①「下部を完成させて提出する」",
+        "下部の &quot;Fill in the form below and hand it in to your teacher today.&quot;（下の書式に記入して，今日，教師に提出しなさい）から，",
       ],
     },
     {
@@ -40,8 +42,9 @@ const Ex23_1A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "④：2つの情報の共通点を把握する問題。Palace Theater の2つ目の項目 &quot;Actors available to talk in the lobby after the performance&quot;（役者と公演の後ロビーで話せます）と，",
-        "The Guitar Queen の2つ目の項目 &quot;Opportunity to greet the cast in their costumes before the show starts&quot;（ショーが始まる前に衣装を着たキャストとあいさつをする機会があります）から，④「劇場で演者に会える」が正解。",
+        "正解は④「劇場で演者に会える」",
+        "Palace Theater の2つ目の項目 &quot;Actors available to talk in the lobby after the performance&quot;（役者と公演の後ロビーで話せます）と，",
+        "The Guitar Queen の2つ目の項目 &quot;Opportunity to greet the cast in their costumes before the show starts&quot;（ショーが始まる前に衣装を着たキャストとあいさつをする機会があります）から，",
       ],
     },
   ];
@@ -69,6 +72,7 @@ const Ex23_1A = () => {
             You are studying in the US, and as an afternoon activity you need to
             choose one of two performances to go and see. Your teacher gives you
             this handout.
+            {Kaisetsu(showResults, "23-1A-1")}
           </p>
         </div>
 
@@ -94,6 +98,7 @@ const Ex23_1A = () => {
                 <li>▶ No food or drinks available</li>
                 <li>▶ Free T-shirts for five lucky people</li>
               </ul>
+              {Kaisetsu(showResults, "23-1A-2")}
             </div>
 
             {/* Grand Theater */}
@@ -115,6 +120,7 @@ const Ex23_1A = () => {
                   other goods sold in the lobby
                 </li>
               </ul>
+              {Kaisetsu(showResults, "23-1A-3")}
             </div>
           </div>
         </div>
@@ -123,6 +129,7 @@ const Ex23_1A = () => {
           <p className="mb-4">
             Instructions: Which performance would you like to attend? Fill in
             the form below and hand it in to your teacher today.
+            {Kaisetsu(showResults, "23-1A-4")}
           </p>
           <div className="flex items-center mb-4">
             <Scissors className="w-6 h-6" />

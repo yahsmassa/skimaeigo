@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex16_6 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -148,6 +148,7 @@ const Ex16_6 = () => {
             great singer. Such singers are trained to present some of the
             greatest and most challenging music that has ever been composed for
             the human voice.
+            {Kaisetsu(showResults, "16-6-1")}
           </div>
         </div>
 
@@ -164,6 +165,7 @@ const Ex16_6 = () => {
             been introduced to opera through modern recording technology. Some
             singers have become celebrities thanks to performing on radio, on
             television, and in the cinema.
+            {Kaisetsu(showResults, "16-6-2")}
           </div>
         </div>
 
@@ -184,6 +186,7 @@ const Ex16_6 = () => {
             they suffer in poverty, but this is unrealistic: If artists,
             including opera singers, lack the support they need, valuable talent
             is wasted.
+            {Kaisetsu(showResults, "16-6-3")}
           </div>
         </div>
 
@@ -199,6 +202,7 @@ const Ex16_6 = () => {
             lessons and coaching sessions. If they become ill or cancel their
             performance, they lose their performance fee. The insecurity of this
             system puts the future of opera at risk.
+            {Kaisetsu(showResults, "16-6-4")}
           </div>
         </div>
 
@@ -216,6 +220,7 @@ const Ex16_6 = () => {
             theater or concert hall without a microphone if their body weight is
             too low. Emphasizing physical appearance over singing ability may
             cause audiences to miss out on the human voice at its best.
+            {Kaisetsu(showResults, "16-6-5")}
           </div>
         </div>
 
@@ -230,6 +235,7 @@ const Ex16_6 = () => {
             opera has survived many obstacles and continues to attract the
             rising generation demonstrates that it remains a respected art form
             full of value.
+            {Kaisetsu(showResults, "16-6-6")}
           </div>
         </div>
       </div>

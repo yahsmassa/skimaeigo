@@ -6,7 +6,7 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex23_3B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -36,9 +36,11 @@ const Ex23_3B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "問1 ③→④→②→①：第2段落3文目 &quot;I rearranged ... the scene.&quot;（私は居間の家具を並べ替え，その場面を設定するために，持っていた古い絵を何枚かとランプをいくつか付け加えました）という内容から，[18]に③が入る。 ",
-        "本文の family room が選択肢では living room に言い換えられている。第4段落7文目 &quot;To get into ... children wear costumes.&quot;（雰囲気に溶け込むため，それから私は子どもたちに衣装を着せました）という内容から，[19]に④が入る。 ",
-        "さらに，同じ段落の9文目 &quot;After that, ... the first clue.&quot;（その後，子どもたちは最初の手掛かりを探し始めました）という内容から，[20]に②が入る。最後に，第5段落2文目（For the final task...）～4文目（Neither of my kids ...）の内容から，[21]に①が入る。",
+        "解答は ③→④→②→①",
+        "[18]に③が入る。第2段落3文目 &quot;I rearranged ... the scene.&quot;（私は居間の家具を並べ替え，その場面を設定するために，持っていた古い絵を何枚かとランプをいくつか付け加えました）という内容から， ",
+        "[19]に④が入る。本文の family room が選択肢では living room に言い換えられている。第4段落7文目 &quot;To get into ... children wear costumes.&quot;（雰囲気に溶け込むため，それから私は子どもたちに衣装を着せました）という内容から， ",
+        "[20]に②が入る。同じ段落の9文目 &quot;After that, ... the first clue.&quot;（その後，子どもたちは最初の手掛かりを探し始めました）という内容から，",
+        "[21]に①が入る。第5段落2文目（For the final task...）～4文目（Neither of my kids ...）の内容から，",
       ],
     },
     {
@@ -54,7 +56,8 @@ const Ex23_3B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "③：第4段落6文目 &quot;Remember that ... final goal.&quot;（パズルは最終のゴールに近いところで徐々に難しくなるようにすべきだということを覚えておいてください）という内容から，③「チャレンジを徐々に難しくする」が正解。",
+        "正解は③「チャレンジを徐々に難しくする」",
+        "第4段落6文目 &quot;Remember that ... final goal.&quot;（パズルは最終のゴールに近いところで徐々に難しくなるようにすべきだということを覚えておいてください）という内容から，",
       ],
     },
     {
@@ -70,7 +73,8 @@ const Ex23_3B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "②：本文の内容を要約した選択肢を選ぶ問題。本文では父親が自分の子どもの好きなものや苦手なものを考慮して仕掛けを作っているため，②「特に自分の子どものために経験を作った」が正解。",
+        "正解は②「特に自分の子どものために経験を作った」",
+        "本文の内容を要約した選択肢を選ぶ問題。本文では父親が自分の子どもの好きなものや苦手なものを考慮して仕掛けを作っているため，",
       ],
     },
   ];
@@ -98,6 +102,7 @@ const Ex23_3B = () => {
           <span className="font-bold">B</span> Your English club will make an
           &quot;adventure room&quot; for the school festival. To get some ideas,
           you are reading a blog about a room a British man created.
+          {Kaisetsu(showResults, "23-3B-0")}
         </p>
       </div>
       {/* Blog Content */}
@@ -111,6 +116,7 @@ const Ex23_3B = () => {
             Last year, I took part in an &quot;adventure room&quot; experience.
             I really enjoyed it, so I created one for my children. Here are some
             tips on making your own.
+            {Kaisetsu(showResults, "23-3B-1")}
           </p>
 
           {/* Key Steps Diagram */}
@@ -135,6 +141,7 @@ const Ex23_3B = () => {
               decided on a detective mystery. I rearranged the furniture in our
               family room, and added some old paintings and lamps I had to set
               the scene.
+              {Kaisetsu(showResults, "23-3B-2")}
             </p>
 
             <p>
@@ -142,6 +149,7 @@ const Ex23_3B = () => {
               <span className="italic">The Case of the Missing Chocolates</span>
               . My children would be &quot;detectives&quot; searching for clues
               to locate the missing sweets.
+              {Kaisetsu(showResults, "23-3B-3")}
             </p>
 
             <p>
@@ -156,6 +164,7 @@ const Ex23_3B = () => {
               excited when I handed him a magnifying glass, and immediately
               began acting like Sherlock Holmes. After that, the children
               started to search for the first clue.
+              {Kaisetsu(showResults, "23-3B-4")}
             </p>
 
             <p>
@@ -167,6 +176,7 @@ const Ex23_3B = () => {
               my kids would eat yogurt, so this truly was tough for them. During
               the adventure, my children were totally focused, and they enjoyed
               themselves so much that we will have another one next month.
+              {Kaisetsu(showResults, "23-3B-5")}
             </p>
           </div>
         </div>

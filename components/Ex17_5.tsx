@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex17_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -123,12 +123,14 @@ const Ex17_5 = () => {
           downstairs. I stretched out my arms in front of myself and raised my
           back; it felt so good. I sat up straight, licked my hand, and started
           to clean my face with it....
+          {Kaisetsu(showResults, "17-5-1")}
         </p>
 
         <p className="mb-4">
           Huh?... Something was strange. Why was I licking my hand with my
           tongue? Why was my body covered with fur? I tried to say something,
           but the sound that came out of my mouth was... &quot;Meow.&quot;
+          {Kaisetsu(showResults, "17-5-2")}
         </p>
 
         <p className="mb-4">
@@ -140,6 +142,7 @@ const Ex17_5 = () => {
           afraid.... But after a few moments those feelings passed. So, with a
           wave of my tail, I started to explore my surroundings. A cat&apos;s
           mind is said to be changeable like that.
+          {Kaisetsu(showResults, "17-5-3")}
         </p>
 
         <p className="mb-4">
@@ -148,7 +151,7 @@ const Ex17_5 = () => {
           sharper than those of a human. When I got to the dining room, what I
           saw almost stopped my heart. It was <em>me</em>! The human <em>I</em>{" "}
           was sitting at the dining table! I couldn&apos;t take my eyes off{" "}
-          <em>myself</em>.
+          <em>myself</em>.{Kaisetsu(showResults, "17-5-4")}
         </p>
 
         <p className="mb-4">
@@ -157,6 +160,7 @@ const Ex17_5 = () => {
           <em>my</em> head down toward the phone, <em>I</em> was sitting with
           rounded shoulders and a curved back. <em>I</em> looked very
           uncomfortable.
+          {Kaisetsu(showResults, "17-5-5")}
         </p>
 
         <p className="mb-4">
@@ -169,17 +173,20 @@ const Ex17_5 = () => {
           focused on the text messages or games that <em>I</em> took little
           interest in what was happening around
           <em>me</em>. In fact, <em>my</em> face had no expression on it at all.
+          {Kaisetsu(showResults, "17-5-6")}
         </p>
 
         <p className="mb-4">
           &quot;Yuji, you never study these days. Are you ready for your final
           exams? You&apos;re making me a little bit worried,&quot; said Mom.
+          {Kaisetsu(showResults, "17-5-7")}
         </p>
 
         <p className="mb-4">
           &quot;Mmm,&quot; said <em>I</em>. A sign of frustration briefly
           appeared on <em>my</em> face, but it disappeared in an instant.{" "}
           <em>My</em> face was again as expressionless as it had been before.
+          {Kaisetsu(showResults, "17-5-8")}
         </p>
 
         <p className="mb-4">
@@ -188,11 +195,13 @@ const Ex17_5 = () => {
           </span>{" "}
           I thought. But this guy was me. I couldn&apos;t deny it. For the first
           time, I realized how I really looked to other people.
+          {Kaisetsu(showResults, "17-5-9")}
         </p>
 
         <p className="mb-4">
           Then, as <em>I</em> started to leave the table, our eyes met.
           &quot;Wow! Mom, look! There&apos;s a cat in the dining room!&quot;
+          {Kaisetsu(showResults, "17-5-10")}
         </p>
 
         <p className="mb-4">
@@ -200,6 +209,7 @@ const Ex17_5 = () => {
           Running up the stairs, I found the window in my room was open. I
           jumped! I had a strange feeling. The world suddenly seemed to have
           shifted. I felt my body falling down and....
+          {Kaisetsu(showResults, "17-5-11")}
         </p>
 
         <p className="mb-4">Bump!</p>
@@ -212,11 +222,13 @@ const Ex17_5 = () => {
           Without thinking, as was my usual habit in the morning, I started to
           walk to my desk where my smartphone had completed charging and... I
           stopped.
+          {Kaisetsu(showResults, "17-5-12")}
         </p>
 
         <p className="mb-4">
           After pausing for a moment, I turned around and went downstairs for
           breakfast.
+          {Kaisetsu(showResults, "17-5-13")}
         </p>
       </div>
 

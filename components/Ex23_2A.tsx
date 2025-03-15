@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex23_2A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -24,9 +25,10 @@ const Ex23_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "②：Special Features の内容をまとめ，言い換えた選択肢を選ぶ問題。Special Features の1文目 &quot;Smart Support shoes have ... the iSupport application.&quot;",
-        "（スマートサポートシューズには，アイサポートアプリにつないだ時に足のかたちを分析するナノチップが入っている），2文目 &quot;Download the app ... smartwatch.&quot;（アプリをスマートフォン，パソコン，タブレットおよび／あるいはスマートウォッチにダウンロードしてください）という内容から，②「ハイテクの日常用シューズ」が正解。",
-        "「日常用（everyday）」については，冒頭の説明文1文目 &quot;You wantr to buy ... get sore feet.&quot;（あなたは良い靴を1足買いたがっている。というのも学校まで長距離を歩いて足が痛くなることがよくあるからだ）という内容と，Customers' Comments の4つ目 &quot;I wear mine all year round&quot;（私は一年中自分の靴を履いている）という内容から，この靴が日常的に履くためのものだと判断できる。",
+        "Special Features の内容をまとめ，言い換えた選択肢を選ぶ問題。",
+        "正解は② 「ハイテクの日常用シューズ」：Special Features の1文目 （スマートサポートシューズには，アイサポートアプリにつないだ時に足のかたちを分析するナノチップが入っている）",
+        "2文目 （アプリをスマートフォン，パソコン，タブレットおよび／あるいはスマートウォッチにダウンロードしてください）という内容から",
+        "「日常用（everyday）」については，冒頭の説明文1文目 （あなたは良い靴を1足買いたがっている。というのも学校まで長距離を歩いて足が痛くなることがよくあるからだ）という内容と，Customers' Comments の4つ目 （私は一年中自分の靴を履いている）という内容から，この靴が日常的に履くためのものだと判断できる。",
       ],
     },
     {
@@ -42,8 +44,10 @@ const Ex23_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "②：本文の内容から推測して適切な選択肢を選ぶ問題。冒頭の説明文1文目 &quot;You want to buy ... get sore feet.&quot;（あなたは良い靴を1足買いたがっている。というのも学校まで長距離を歩いて足が痛くなることがよくあるからだ）という内容と， ",
-        "Special Features の4文目 &quot;The inside of the shoe ... personalised foot support.&quot;（靴の内側が自動的に自動的に調整し，正しく，個人に合った足のサポートを提供します）という内容から，②「個人に合った足のサポートをしてくれる」が正解。",
+        "本文の内容から推測して適切な選択肢を選ぶ問題",
+        "正解は②「個人に合った足のサポートをしてくれる」",
+        "冒頭の説明文1文目 （あなたは良い靴を1足買いたがっている。というのも学校まで長距離を歩いて足が痛くなることがよくあるからだ）という内容と， ",
+        "（靴の内側が自動的に自動的に調整し，正しく，個人に合った足のサポートを提供します）という内容から，",
       ],
     },
     {
@@ -59,7 +63,9 @@ const Ex23_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "②：本文の内容から推測して適切な言いかえを選ぶ問題。Customers&apos; Comments の7つ目の2文目 &quot;The app&apos;s basic features are easy to use, but I wouldn&apos;t pay for the optional advanced ones.&quot;（このアプリの基本的な機能は使いやすいが，私はオプションの上級版の機能にお金を払うことはないだろう）から，②「アプリの無料の機能はユーザーフレンドリーである」が正解。「上級版の機能にお金を払う」という内容から，基本的な機能は無料で使える，と推測することが求められている。",
+        "本文の内容から推測して適切な言いかえを選ぶ問題。",
+        "正解は②「アプリの無料の機能はユーザーフレンドリーである」",
+        "（このアプリの基本的な機能は使いやすいが，私はオプションの上級版の機能にお金を払うことはないだろう）から，「上級版の機能にお金を払う」という内容から，基本的な機能は無料で使える，と推測することが求められている。",
       ],
     },
     {
@@ -75,7 +81,8 @@ const Ex23_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "問4 ④：Advantages の Route Options に &quot;View your live location ... to read directions.&quot;（自分のディバイスで現在の位置を見るか，イヤフォンで方向が自動的に音声で流れるようにさせるか，スマートウォッチを使って方向を知るようにしてください）という内容から，④の Route Options が正解。設問の audio devices が本文では earphones となっていることに気付く必要がある。 ",
+        "正解は④の Route Options ",
+        "Advantages の Route Options に （自分のディバイスで現在の位置を見るか，イヤフォンで方向が自動的に音声で流れるようにさせるか，スマートウォッチを使って方向を知るようにしてください）という内容から，設問の audio devices が本文では earphones となっていることに気付く必要がある。 ",
       ],
     },
     {
@@ -91,7 +98,8 @@ const Ex23_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "問5 ①：Customers&apos; Comments の3つ目 &quot;I love my pair now, but it took several days to get used to them&quot;（私は自分の靴が今大好きですが，それに慣れるのに数日かかりました）から，①「靴に慣れるのに時間を割くこと」が正解。",
+        "正解は①「靴に慣れるのに時間を割くこと」",
+        "Customers&apos; Comments の3つ目 （私は自分の靴が今大好きですが，それに慣れるのに数日かかりました）から，",
       ],
     },
   ];
@@ -119,6 +127,7 @@ const Ex23_2A = () => {
           You want to buy a good pair of shoes as you walk a long way to school
           and often get sore feet. You are searching on a UK website and find
           this advertisement.
+          {Kaisetsu(showResults, "23-2A-0")}
         </p>
       </div>
       {/* Main Advertisement */}
@@ -133,6 +142,7 @@ const Ex23_2A = () => {
             <span className="italic">Smart Support</span> shoes are strong,
             long-lasting, and reasonably priced. They are available in three
             colours and styles.
+            {Kaisetsu(showResults, "23-2A-1")}
           </p>
           <div className="w-1/3 text-center">
             <Image
@@ -158,6 +168,7 @@ const Ex23_2A = () => {
             The inside of the shoe will automatically adjust to give correct,
             personalised foot support. As with other Navi 55 products, the shoes
             have our popular Route Memory function.
+            {Kaisetsu(showResults, "23-2A-2")}
           </p>
 
           <h2 className="font-bold text-lg text-center">Advantages</h2>
@@ -195,6 +206,7 @@ const Ex23_2A = () => {
                 directions.
               </p>
             </div>
+            {Kaisetsu(showResults, "23-2A-3")}
           </div>
         </div>
       </div>
@@ -217,6 +229,7 @@ const Ex23_2A = () => {
             </li>
           ))}
         </ul>
+        {Kaisetsu(showResults, "23-2A-4")}
       </div>
       {/* Question 1 */}
       <div

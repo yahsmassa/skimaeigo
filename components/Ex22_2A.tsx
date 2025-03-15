@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex22_2A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -116,6 +116,7 @@ const Ex22_2A = () => {
           programme, which is taking place on a university campus in the UK. You
           are reading the information about the library so that you can do your
           coursework.
+          {Kaisetsu(showResults, "22-2A-0")}
         </p>
       </div>
 
@@ -153,6 +154,7 @@ const Ex22_2A = () => {
                 on the first floor. If books are not returned by the due date,
                 you will not be allowed to borrow library books again for three
                 days from the day the books are returned.
+                {Kaisetsu(showResults, "22-2A-1")}
               </p>
             </div>
 
@@ -166,6 +168,7 @@ const Ex22_2A = () => {
                 library, but may use them only in the Study Area on the second
                 floor. Students are asked to work quietly, and also not to
                 reserve seats for friends.
+                {Kaisetsu(showResults, "22-2A-2")}
               </p>
             </div>
 
@@ -176,6 +179,7 @@ const Ex22_2A = () => {
                 On Tuesdays at 10 am, 20-minute library orientations are held in
                 the Reading Room on the third floor. Talk to the Information
                 Desk staff for details.
+                {Kaisetsu(showResults, "22-2A-3")}
               </p>
             </div>
           </div>
@@ -191,6 +195,7 @@ const Ex22_2A = () => {
                 <p>
                   The library orientation was really good. The materials were
                   great, too!
+                  {Kaisetsu(showResults, "22-2A-4")}
                 </p>
               </li>
               <li className="flex items-start">
@@ -198,6 +203,7 @@ const Ex22_2A = () => {
                 <p>
                   The Study Area can get really crowded. Get there as early as
                   possible to get a seat!
+                  {Kaisetsu(showResults, "22-2A-5")}
                 </p>
               </li>
               <li className="flex items-start">
@@ -206,6 +212,7 @@ const Ex22_2A = () => {
                   The Wi-Fi inside the library is quite slow, but the one at the
                   coffee shop next door is good. By the way, you cannot bring
                   any drinks into the library.
+                  {Kaisetsu(showResults, "22-2A-6")}
                 </p>
               </li>
               <li className="flex items-start">
@@ -213,6 +220,7 @@ const Ex22_2A = () => {
                 <p>
                   The staff at the Information Desk answered all my questions.
                   Go there if you need any help!
+                  {Kaisetsu(showResults, "22-2A-7")}
                 </p>
               </li>
               <li className="flex items-start">
@@ -222,6 +230,7 @@ const Ex22_2A = () => {
                   library&apos;s videos. When watching videos, you need to use
                   your own earphones or headphones. Next to the TVs there are
                   photocopiers.
+                  {Kaisetsu(showResults, "22-2A-8")}
                 </p>
               </li>
             </ul>

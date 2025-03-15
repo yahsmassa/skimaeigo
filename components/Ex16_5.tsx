@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex16_5 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -123,6 +124,7 @@ const Ex16_5 = () => {
           because in a few days he was going to compete in{" "}
           <span className="italic">The Big-Time Cook Off</span>, a nationwide TV
           cooking contest.
+          {Kaisetsu(showResults, "16-5-1")}
         </p>
 
         <p>
@@ -133,6 +135,7 @@ const Ex16_5 = () => {
           sisters. But as bills kept piling up, the family got into trouble.
           John&apos;s father finally had to take a job in a city far away, so he
           could only come home on the weekends.
+          {Kaisetsu(showResults, "16-5-2")}
         </p>
 
         <p>
@@ -146,6 +149,7 @@ const Ex16_5 = () => {
           friends, sometimes skipping his classes. Little by little John&apos;s
           grades got worse. His parents and teachers were worried about his
           future.
+          {Kaisetsu(showResults, "16-5-3")}
         </p>
 
         <p>
@@ -153,10 +157,12 @@ const Ex16_5 = () => {
           own mother, his father was napping in the TV room. John&apos;s sisters
           were hungry, so John started to cook something for them. He was not
           sure how to cook, but he did not want to bother his father.
+          {Kaisetsu(showResults, "16-5-4")}
         </p>
 
         <p>
           Suddenly, the kitchen door opened, and his father was standing there.
+          {Kaisetsu(showResults, "16-5-5")}
         </p>
 
         <p>
@@ -168,6 +174,7 @@ const Ex16_5 = () => {
           &quot;It&apos;s OK. I like cooking. It reminds me of my college days
           when I worked part-time as a cook. I&apos;ll show you how to prepare
           delicious steaks.&quot;
+          {Kaisetsu(showResults, "16-5-6")}
         </p>
 
         <p>
@@ -181,6 +188,7 @@ const Ex16_5 = () => {
           cooking for his family regularly, and then later for his friends at
           college. John always felt happy when he cooked, and this happiness
           spilled over into other areas of his life.
+          {Kaisetsu(showResults, "16-5-7")}
         </p>
 
         <p>
@@ -190,6 +198,7 @@ const Ex16_5 = () => {
           He was finally able to open his own restaurant serving his unique
           style of food. He won several awards and cooked for the rich and
           famous.
+          {Kaisetsu(showResults, "16-5-8")}
         </p>
 
         <p>
@@ -202,6 +211,7 @@ const Ex16_5 = () => {
           about, and talk — just you and me. It&apos;s exactly like what my dad
           did for me one fine day in summer, so many years ago. And that made
           all the difference in my life.&quot;
+          {Kaisetsu(showResults, "16-5-9")}
         </p>
       </div>
       <div className="mt-12 space-y-8">

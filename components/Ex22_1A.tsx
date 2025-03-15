@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex22_1A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -69,6 +70,7 @@ const Ex22_1A = () => {
           high school. Your teacher asked you to do research on food in Brazil.
           You find a Brazilian cookbook and read about fruits used to make
           desserts.
+          {Kaisetsu(showResults, "22-1A-0")}
         </p>
       </div>
 
@@ -93,13 +95,14 @@ const Ex22_1A = () => {
               />
               <h3 className="font-medium mb-2">Cupuaçu</h3>
             </div>
-            <ul className="list-disc pl-6 space-y-1">
+            <ul className="list-disc pl-6 space-y-1 mb-2">
               <li>Smells and tastes like chocolate</li>
               <li>Great for desserts, such as cakes, and with yogurt</li>
               <li>
                 Brazilians love the chocolate-flavored juice of this fruit.
               </li>
             </ul>
+            {Kaisetsu(showResults, "22-1A-1")}
           </div>
 
           {/* Jabuticaba */}
@@ -114,7 +117,7 @@ const Ex22_1A = () => {
               />
               <h3 className="font-medium mb-2">Jabuticaba</h3>
             </div>
-            <ul className="list-disc pl-6 space-y-1">
+            <ul className="list-disc pl-6 space-y-1 mb-2">
               <li>Looks like a grape</li>
               <li>Eat them within three days of picking for a sweet flavor.</li>
               <li>
@@ -122,6 +125,7 @@ const Ex22_1A = () => {
                 cakes.
               </li>
             </ul>
+            {Kaisetsu(showResults, "22-1A-2")}
           </div>
 
           {/* Pitanga */}
@@ -136,11 +140,12 @@ const Ex22_1A = () => {
               />
               <h3 className="font-medium mb-2">Pitanga</h3>
             </div>
-            <ul className="list-disc pl-6 space-y-1">
+            <ul className="list-disc pl-6 space-y-1 mb-2">
               <li>Comes in two varieties, red and green</li>
               <li>Use the sweet red one for making cakes.</li>
               <li>The sour green one is only for jams and jellies.</li>
             </ul>
+            {Kaisetsu(showResults, "22-1A-3")}
           </div>
 
           {/* Buriti */}
@@ -155,11 +160,12 @@ const Ex22_1A = () => {
               />
               <h3 className="font-medium mb-2">Buriti</h3>
             </div>
-            <ul className="list-disc pl-6 space-y-1">
+            <ul className="list-disc pl-6 space-y-1 mb-2">
               <li>Orange inside, similar to a peach or a mango</li>
               <li>Tastes very sweet, melts in your mouth</li>
               <li>Best for ice cream, cakes, and jams</li>
             </ul>
+            {Kaisetsu(showResults, "22-1A-4")}
           </div>
         </div>
       </div>

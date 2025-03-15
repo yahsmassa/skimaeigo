@@ -5,7 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex20_4B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -187,6 +187,7 @@ const Ex20_4B = () => {
             must apply for an outdoor space. For outdoor spaces, the organizers
             will help set up tents for no extra charge. Trucks are available for
             additional fees if you need to transport your goods.
+            {Kaisetsu(showResults, "20-4B-1")}
           </p>
         </div>
 
@@ -238,12 +239,13 @@ const Ex20_4B = () => {
             ➢ If you apply for both Saturday and Sunday, you&apos;ll get a $2
             discount each day.
           </p>
+          {Kaisetsu(showResults, "20-4B-2")}
         </div>
 
         {/* Keep in Mind Section */}
         <div>
           <h2 className="font-bold mb-4">Keep in Mind</h2>
-          <ol className="list-decimal pl-6 space-y-2">
+          <ol className="list-decimal pl-6 space-y-2 mb-2">
             <li>
               Location of the spaces is decided by the organizers. No requests
               or changes are possible.
@@ -261,6 +263,7 @@ const Ex20_4B = () => {
             </li>
             <li>Fires and open flames are prohibited.</li>
           </ol>
+          {Kaisetsu(showResults, "20-4B-3")}
         </div>
       </div>
     </div>

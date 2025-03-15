@@ -5,7 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 export default function Ex21_4() {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -126,6 +126,7 @@ export default function Ex21_4() {
         to help her plan the day&apos;s schedule for hosting students from your
         sister school. You&apos;re reading the email exchanges between Natsuki
         and Emma so that you can draft the schedule.
+        {Kaisetsu(showResults, "21-4-0")}
       </p>
 
       {/* Natsuki's Email */}
@@ -139,12 +140,14 @@ export default function Ex21_4() {
           10:00 a.m. So, I&apos;ve been looking at the attached timetable. Will
           they arrive at Azuma Station at 9:39 a.m. and then take a taxi to the
           school?
+          {Kaisetsu(showResults, "21-4-1")}
         </p>
 
         <p className="mb-4 leading-relaxed">
           We have also been discussing the afternoon activities. How about
           seeing something related to science? We have two ideas, but if you
           need a third, please let me know.
+          {Kaisetsu(showResults, "21-4-2")}
         </p>
 
         <p className="mb-4 leading-relaxed">
@@ -153,7 +156,7 @@ export default function Ex21_4() {
           sea plankton. We think it would be a good choice. Since it&apos;s
           popular, the best time to visit will be when it is least busy.
           I&apos;m attaching the graph I found on the aquarium&apos;s homepage.
-          graph I found on the aquarium&apos;s homepage.
+          {Kaisetsu(showResults, "21-4-3")}
         </p>
 
         <p className="mb-4 leading-relaxed">
@@ -161,12 +164,14 @@ export default function Ex21_4() {
           been developing an interesting way of producing electricity from
           plants. Luckily, the professor in charge will give a short talk about
           it on that day in the early afternoon! Why don&apos;t we go?
+          {Kaisetsu(showResults, "21-4-4")}
         </p>
 
         <p className="mb-4 leading-relaxed">
           Everyone will want to get some souvenirs, won&apos;t they? I think
           West Mall, next to Hibari Station, would be best, but we don&apos;t
           want to carry them around with us all day.
+          {Kaisetsu(showResults, "21-4-5")}
         </p>
 
         <p className="mb-4 leading-relaxed">
@@ -174,6 +179,7 @@ export default function Ex21_4() {
           statue in Azuma Memorial Park next to our school, but we can&apos;t
           work out a good schedule. Also, could you tell us what the plan is for
           lunch?
+          {Kaisetsu(showResults, "21-4-6")}
         </p>
 
         <p className="mt-6">Yours,</p>
@@ -188,6 +194,7 @@ export default function Ex21_4() {
           Thank you for your email! You&apos;ve been working hard. In answer to
           your question, they&apos;ll arrive at the station at 9:20 a.m. and
           then catch the school bus.
+          {Kaisetsu(showResults, "21-4-7")}
         </p>
 
         <p className="mb-4 leading-relaxed">
@@ -196,6 +203,7 @@ export default function Ex21_4() {
           education, and the purpose of this program is to improve the
           scientific knowledge of the students. However, it would be wise to
           have a third suggestion just in case.
+          {Kaisetsu(showResults, "21-4-8")}
         </p>
 
         <p className="mb-4 leading-relaxed">
@@ -204,17 +212,20 @@ export default function Ex21_4() {
           for shopping and our guests can still be back at the hotel by 6:30
           p.m. for dinner, as the hotel is only a few minutes&apos; walk from
           Kaede Station.
+          {Kaisetsu(showResults, "21-4-9")}
         </p>
 
         <p className="mb-4 leading-relaxed">
           About lunch, the school cafeteria will provide boxed lunches. We can
           eat under the statue you mentioned. If it rains, let&apos;s eat
           inside.
+          {Kaisetsu(showResults, "21-4-10")}
         </p>
 
         <p className="mb-4 leading-relaxed">
           Thank you so much for your suggestions. Could you two make a draft for
           the schedule?
+          {Kaisetsu(showResults, "21-4-11")}
         </p>
 
         <p className="mt-6">Best,</p>

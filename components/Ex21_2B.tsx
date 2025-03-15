@@ -6,7 +6,7 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex21_2B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -120,6 +120,7 @@ const Ex21_2B = () => {
           You&apos;ve heard about a change in school policy at the school in the
           UK where you are now studying as an exchange student. You are reading
           the discussions about the policy in an online forum.
+          {Kaisetsu(showResults, "21-2B-0")}
         </p>
       </div>
       <div className="bg-gray-100 p-6 border border-gray-300">
@@ -147,6 +148,7 @@ const Ex21_2B = () => {
                   On behalf of all students, welcome to St Mark&apos;s School.
                   We heard that you are the first Head Teacher with a business
                   background, so we hope your experience will help our school.
+                  {Kaisetsu(showResults, "21-2B-1")}
                 </p>
 
                 <p className="indent-8">
@@ -160,6 +162,7 @@ const Ex21_2B = () => {
                   stay at school until 6:00 pm as they have always done.
                   Therefore, I would like to ask you to think again about this
                   sudden change in policy.
+                  {Kaisetsu(showResults, "21-2B-2")}
                 </p>
 
                 <div className="mt-8">
@@ -191,6 +194,7 @@ const Ex21_2B = () => {
                   Many thanks for your kind post. You&apos;ve expressed some
                   important concerns, especially about the energy costs and
                   student opinions on school activities.
+                  {Kaisetsu(showResults, "21-2B-3")}
                 </p>
 
                 <p className="indent-8">
@@ -199,6 +203,7 @@ const Ex21_2B = () => {
                   showed that our city has become less safe due to a 5% increase
                   in serious crimes. I would like to protect our students, so I
                   would like them to return home before it gets dark.
+                  {Kaisetsu(showResults, "21-2B-4")}
                 </p>
 
                 <div className="mt-8">

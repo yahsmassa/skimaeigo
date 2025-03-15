@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex21_1B = () => {
   const [showResults, setShowResults] = useState(false);
@@ -87,6 +88,7 @@ const Ex21_1B = () => {
           <span className="font-bold">B</span> Your favorite musician will have
           a concert tour in Japan, and you are thinking of joining the fan club.
           You visit the official fan club website.
+          {Kaisetsu(showResults, "21-1B-0")}
         </p>
       </div>
 
@@ -104,6 +106,7 @@ const Ex21_1B = () => {
           third album <span className="font-bold italic">Speeding Up</span>. The
           New Member&apos;s Pack will be delivered to your home, and will arrive
           a week or so after you join the fan club.
+          {Kaisetsu(showResults, "21-1B-1")}
         </p>
 
         <p className="mb-4">
@@ -111,6 +114,7 @@ const Ex21_1B = () => {
           You can join from any country, and you can use the membership card for
           one year. The <span className="font-bold">TQ</span> fan club has three
           types of membership: Pacer, Speeder, and Zoomer.
+          {Kaisetsu(showResults, "21-1B-2")}
         </p>
 
         <p className="mb-4">Please choose from the membership options below.</p>
@@ -171,6 +175,7 @@ const Ex21_1B = () => {
           Whether you are a Pacer, a Speeder, or a Zoomer, you will love being a
           member of the TQ fan club. For more information, or to join, click{" "}
           <span className="underline">here</span>.
+          {Kaisetsu(showResults, "21-1B-3")}
         </p>
       </div>
 

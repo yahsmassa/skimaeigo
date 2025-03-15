@@ -5,7 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex19_4B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -104,6 +104,7 @@ const Ex19_4B = () => {
             <span>What is a common characteristic of all four castles?</span>
             {renderSelect("37", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4B-1" />}
+            {Kaisetsu(showResults, "19-4B-1")}
           </div>
           <ol className="list-none pl-8">
             <li>① Amount of damage</li>
@@ -124,6 +125,7 @@ const Ex19_4B = () => {
             </span>
             {renderSelect("38", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4B-2" />}
+            {Kaisetsu(showResults, "19-4B-2")}
           </div>
           <ol className="list-none pl-8">
             <li>① Crestvale Castle</li>
@@ -146,6 +148,7 @@ const Ex19_4B = () => {
             </span>
             {renderSelect("39", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4B-3" />}
+            {Kaisetsu(showResults, "19-4B-3")}
           </div>
 
           <ol className="list-none pl-8">
@@ -167,6 +170,7 @@ const Ex19_4B = () => {
             </span>
             {renderSelect("40", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4B-4" />}
+            {Kaisetsu(showResults, "19-4B-4")}
           </div>
           <ol className="list-none pl-8">
             <li>① €14</li>
@@ -191,6 +195,7 @@ const Ex19_4B = () => {
             of Grandlefolk, is currently being studied by researchers. During
             the open season, except on Sundays, guides explain what the research
             is revealing about local history.
+            {Kaisetsu(showResults, "19-4B-5")}
           </p>
         </div>
 
@@ -204,6 +209,7 @@ const Ex19_4B = () => {
             border area, fell into ruin in the 16th century. At the entrance,
             signboards explain its history. This castle&apos;s open spaces are
             suitable for performances.
+            {Kaisetsu(showResults, "19-4B-6")}
           </p>
         </div>
 
@@ -217,6 +223,7 @@ const Ex19_4B = () => {
             grandest in the country. Its large collection of paintings and
             furniture provide a look at the area&apos;s past. Guides are
             available every day.
+            {Kaisetsu(showResults, "19-4B-7")}
           </p>
         </div>
 
@@ -231,6 +238,7 @@ const Ex19_4B = () => {
             Fridays, guides tell the story of the family&apos;s history and
             explain their collection of modern sculptures. Some of its rooms are
             available for public events.
+            {Kaisetsu(showResults, "19-4B-8")}
           </p>
         </div>
 

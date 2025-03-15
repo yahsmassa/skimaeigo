@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex19_5 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -124,6 +125,7 @@ const Ex19_5 = () => {
           of the seeds today.&quot; My father was calling to me. &quot;I&apos;m
           busy,&quot; I said. My father loves his garden, but at that time I
           didn&apos;t understand why working in the dirt excited him so much.
+          {Kaisetsu(showResults, "19-5-1")}
         </p>
 
         <p className="indent-8">
@@ -138,6 +140,7 @@ const Ex19_5 = () => {
           of his garden until he recovered. I assumed that the little plants
           would continue to grow as long as they had water, and luckily it
           rained fairly often so I didn&apos;t think much about the garden.
+          {Kaisetsu(showResults, "19-5-2")}
         </p>
 
         <p className="indent-8">
@@ -150,6 +153,7 @@ const Ex19_5 = () => {
           at the carrots next, but they didn&apos;t look healthy. I pulled up a
           carrot, but it was tiny and looked like something had taken small
           bites from it.
+          {Kaisetsu(showResults, "19-5-3")}
         </p>
 
         <p className="indent-8">
@@ -157,6 +161,7 @@ const Ex19_5 = () => {
           wallet, quietly went out the door, and rode my bicycle to the nearest
           store to buy some vegetables. I went back home and cut them up to make
           a salad for my father.
+          {Kaisetsu(showResults, "19-5-4")}
         </p>
 
         <p className="indent-8">
@@ -165,6 +170,7 @@ const Ex19_5 = () => {
           lettuce is so crisp and delicious. You must be taking very good care
           of my garden.&quot; My father looked happy, but I felt a little bit
           guilty.
+          {Kaisetsu(showResults, "19-5-5")}
         </p>
 
         <p className="indent-8">
@@ -180,6 +186,7 @@ const Ex19_5 = () => {
           even the bugs. They simply don&apos;t like the spicy water. The{" "}
           <u>bug-free</u> vegetables grew quickly, and finally I was able to
           pick some.
+          {Kaisetsu(showResults, "19-5-6")}
         </p>
 
         <p className="indent-8">
@@ -187,6 +194,7 @@ const Ex19_5 = () => {
           with a hint of a smile. &quot;Christine, the carrots are smaller in
           this salad, but they taste better.&quot; I realized that he had known
           all along about my shopping trip. I smiled back at him.
+          {Kaisetsu(showResults, "19-5-7")}
         </p>
 
         <p className="indent-8">
@@ -194,11 +202,13 @@ const Ex19_5 = () => {
           something can help you appreciate the results more, however small they
           may be. Perhaps this was one of the reasons for my father&apos;s love
           of gardening.
+          {Kaisetsu(showResults, "19-5-8")}
         </p>
 
         <p className="indent-8">
           In a few days he&apos;ll be back in the garden. I&apos;ll be right
           beside him helping him in any way I can.
+          {Kaisetsu(showResults, "19-5-9")}
         </p>
       </div>
 

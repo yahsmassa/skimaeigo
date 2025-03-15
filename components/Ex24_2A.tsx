@@ -7,7 +7,7 @@ import { Saiten } from "@/components/Saiten";
 import { qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex24_2A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -25,10 +25,8 @@ const Ex24_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[6] 本文第5文・第6文  This club is open to all students of our school. Regardless of skill level, you are welcome to join.",
-        "（このクラブは本校のすべての生徒に対して開かれています。スキルのレベルに関係なく入部を歓迎します）と，メンバーからのコメントの最後に",
-        "I was a complete beginner when I joined, and I had no problem! ",
-        "（入部の時，私は完全に素人でしたが，問題ありませんでした）から，①「全くの素人は歓迎される」が正解。",
+        "①「全くの素人は歓迎される」が正解。（入部の時，私は完全に素人でしたが，問題ありませんでした）とある，",
+        "本文第5文・第6文  （このクラブは本校のすべての生徒に対して開かれています。スキルのレベルに関係なく入部を歓迎します）と，メンバーからのコメントの最後に I was a complete beginner when I joined, and I had no problem! とある。",
       ],
     },
     {
@@ -44,9 +42,8 @@ const Ex24_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[7] （※NOT問題）活動内容については，戦略ゲームをすることのほかに6つの●の項目が挙げられているが，②「コンピュータと対戦する」に該当する内容は書かれていないため，②が正解。なお①の「部員以外と対戦する」は最後の●の ",
-        "participate in local and national tournaments",
-        "（地域や全国トーナメントに参加する）を指していると思われる。 →各選択肢が●のどの内容を言い換えているかを考える問題。",
+        "解答は ②「コンピュータと対戦する」に該当する内容は書かれていない ",
+        "なお①の「部員以外と対戦する」は最後の●の、（地域や全国トーナメントに参加する）を指していると思われる",
       ],
     },
     {
@@ -62,9 +59,8 @@ const Ex24_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[8] メンバーのコメントの二つ目にある 「It's cool to learn how some games have certain similarities.」",
-        "（いくつかのゲームがどのように似ているかを学ぶのはイケてる）という内容から，①「様々なゲームを比べるのは興味深い」が正解。",
-        "③の「メンバーは競技会でコツを学ぶ」はopinion（意見）ではなくfact（事実）であり，かつ，学ぶのは競技会ではなくクラブのウェブページなので誤り。",
+        "①「様々なゲームを比べるのは興味深い」が正解、メンバーのコメントの二つ目にある （いくつかのゲームがどのように似ているかを学ぶのはイケてる）という内容から。",
+        "③ の「メンバーは競技会でコツを学ぶ」はopinion（意見）ではなくfact（事実）であり，かつ，学ぶのは競技会ではなくクラブのウェブページなので誤り。",
       ],
     },
     {
@@ -80,10 +76,8 @@ const Ex24_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[9] 招待文の3文目 「You can learn skills such as thinking logically and deeply without distractions.」",
-        "（論理的に考えたり，気を散らすことなく深く考えたりするといった技能を学べる） と，メンバーのコメントの一つ目にある ",
-        "My mind is clearer, calmer, and more focused in class.",
-        "（授業中，私の心はより明晰で，穏やかで，集中している）から，④「戦略ゲームは集中力を高める手助けになる」が正解。",
+        "④「戦略ゲームは集中力を高める手助けになる」が正解。",
+        "（論理的に考えたり，気を散らすことなく深く考えたりするといった技能を学べる） と，メンバーのコメントの一つ目にある （授業中，私の心はより明晰で，穏やかで，集中している）から，",
       ],
     },
     {
@@ -99,10 +93,8 @@ const Ex24_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "[10] （※推測問題）活動内容の●の一つ目  learn basic moves from demonstrations by club members ",
-        "（部員にょるデモンストレーションから基本的な動きを学ぶ），三つ目  share tips on our club webpage",
-        "（部のウェブページでコツを共有する），五つ目  analyse games using computer software",
-        "（コンピュータソフトを使ってゲームを分析する）という内容から判断し，②「戦略ゲームを行うスキルのレベルを上げる」が正解。",
+        "②「戦略ゲームを行うスキルのレベルを上げる」が正解。",
+        "（部員にょるデモンストレーションから基本的な動きを学ぶ）（部のウェブページでコツを共有する）（コンピュータソフトを使ってゲームを分析する）という内容から判断",
       ],
     },
   ];
@@ -239,23 +231,30 @@ const Ex24_2A = () => {
           {questionData.passage.content.map((paragraph, index) => (
             <div key={index}>
               {index > 2 ? (
-                <div className="flex flex-col md:flex-row gap-4">
-                  <ul className="space-y-2 ">
-                    {paragraph.split("\n").map((item, i) => (
-                      <li
-                        key={i}
-                        className={cn(
-                          "flex items-start",
-                          index === 10 && "text-xl font-bold underline"
-                        )}
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <div>
+                  <div className="flex flex-col md:flex-row gap-4">
+                    <ul className="space-y-2 ">
+                      {paragraph.split("\n").map((item, i) => (
+                        <li
+                          key={i}
+                          className={cn(
+                            "flex items-start",
+                            index === 10 && "text-xl font-bold underline"
+                          )}
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {index === 9 && Kaisetsu(showResults, "24-2A-2")}
+                  {index === 16 && Kaisetsu(showResults, "24-2A-3")}
                 </div>
               ) : (
-                <p>{paragraph}</p>
+                <p>
+                  {paragraph}
+                  {index === 0 && Kaisetsu(showResults, "24-2A-1")}
+                </p>
               )}
             </div>
           ))}

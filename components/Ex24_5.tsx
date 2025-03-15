@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex24_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -36,10 +36,10 @@ const Ex24_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[30] ④→[31] ⑤→[32] ①→[33] ②が正解となる。 ",
-        "[30] 第1場第2文で &quot;Maki had joined her family business at the age of 19 when her father became ill.&quot;（マキは19歳のとき，父親が病気になったので家業に入った）と述べている。→④「マキが家業で働き始める」 ",
-        "[31] 第3場の後半で &quot;Maki&apos;s encouragement inspired Takuya.&quot;（マキの励ましがタクヤに刺激を与えた）とある。第3場では，第2段落で卒業してからちょうど1年後にタクヤが俳優になる夢に破れてカワナカ町に戻り，マキに電話をかけたと述べている。第3場の第2段落第3文 &quot;He was surprised to learn that Maki had abandoned her plan to attend university because she had to manage her family&apos;s restaurant.&quot;（マキが家業のレストランを経営せざるを得なくなって大学に通う計画をあきらめてしまっていたと知って彼は驚いた）とあることから，④の後に，⑤「タクヤが自分のビジネスを始める刺激を受ける」が続くことになる。 ",
-        "[32]・[33] 第4場の第4段落最終文 &quot;Since then, she had steadily climbed her way up the company ladder until she had been named vice-president of Beautella this year.&quot;（それ以来，彼女は着実に出世し，今年，ボーテラの副社長に任命された）で，カスミが会社の副社長になったことが述べられている。さらに，第4場の最終段落で &quot;&quot;I wouldn&apos;t be vice-president now without Maki,&quot; she thought, &quot;she helped me when I was struggling, but I was too absorbed with my work in Ishijima to give her support when she had to quit her preparatory school.&quot; Glancing back to the article, she decided to call Takuya.&quot;（「マキがいなかったら，私は今，副社長になってはいない」と彼女は思った。「私が悩んでいたときに彼女は助けてくれたのに，私はイシジマでの仕事に夢中で，彼女が予備校を辞めなければならなくなったときにサポートしてあげられなかった。」その記事をちらりと見返し。彼女は拓也に電話することにした」とあるので，①「カスミが会社の副社長になる」の後に，②「カスミがタクヤに連絡する」が続くことになる。",
+        "[30] ④ 、[31] ⑤、[32] ①、[33] ② が正解 ",
+        "[30] 第1場第2文で（マキは19歳のとき，父親が病気になったので家業に入った）と述べている。→④「マキが家業で働き始める」 ",
+        "[31] 第3場の後半で （マキの励ましがタクヤに刺激を与えた）とある。第3場では，第2段落で卒業してからちょうど1年後にタクヤが俳優になる夢に破れてカワナカ町に戻り，マキに電話をかけたと述べている。第3場の第2段落第3文 （マキが家業のレストランを経営せざるを得なくなって大学に通う計画をあきらめてしまっていたと知って彼は驚いた）とあることから，④の後に，⑤「タクヤが自分のビジネスを始める刺激を受ける」が続くことになる。 ",
+        "[32]・[33] 第4場の第4段落最終文 （それ以来，彼女は着実に出世し，今年，ボーテラの副社長に任命された）で，カスミが会社の副社長になったことが述べられている。さらに，第4場の最終段落で （「マキがいなかったら，私は今，副社長になってはいない」と彼女は思った。「私が悩んでいたときに彼女は助けてくれたのに，私はイシジマでの仕事に夢中で，彼女が予備校を辞めなければならなくなったときにサポートしてあげられなかった。」その記事をちらりと見返し。彼女は拓也に電話することにした」とあるので，①「カスミが会社の副社長になる」の後に，②「カスミがタクヤに連絡する」が続くことになる。",
       ],
     },
     {
@@ -55,9 +55,7 @@ const Ex24_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[34] 第3場のタクヤの &quot;Thanks. Hey, you weren&apos;t at our 20th high school reunion last month.&quot;（ありがとう。そういえば，先月の20回目の同窓会には来なかったよね）という発話と，それに続くマキの ",
-        "&quot;No, I couldn&apos;t make it. I can&apos;t believe it&apos;s been 20 years since we graduated.&quot;（そう，行けなかったの。卒業してから20年も経ったなんて信じられないよ）という発話から， ",
-        "高校を18歳で卒業し，その20年後が現代であることがわかる（第1場の内容から，マキが家業を継いだのが19歳だとわかるので，仮にそこから数えたとしても40歳にはなっていない）。したがって，②「30代後半」が正解。",
+        "②「30代後半」が正解。高校を18歳で卒業し，その20年後が現代とわかるので",
       ],
     },
     {
@@ -77,9 +75,8 @@ const Ex24_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[35]・[36] 第3場の後半で &quot;Maki had a sign in her restaurant saying, &quot;We proudly serve Takuya&apos;s Coffee,&quot; and this publicity helped the coffee gain popularity in Kawanaka.&quot;（マキは，「私たちはタクヤの珈琲を自信をもってお出ししています」という看板を店内に掲げ，この宣伝はタクヤの珈琲がカワナカで評判になる手助けとなった）とあるので，[35]は①「その製品を人々に知られるようにした」が正解。 ",
-        "第4場の第3文～第6文 &quot;One day, Maki had an idea, &quot;Doesn&apos;t Beautella do make-up workshops?  I think you are more suited for that. You can show people how to use the make-up.  They&apos;ll love the way they look and buy lots of cosmetics!&quot;&quot;（ある日，マキはひらめいた。「ボーテラはメイクのワークショップはやらないの？あなたはそっちの方が向いていると思うの。あなたはメイクの仕方を教えることができる。みんな自分の見た目を気に入って，化粧品をたくさん買ってくれるわよ！」）と， ",
-        "続く第4段落第1文と第2文 &quot;Kasumi&apos;s company agreed to let her do workshops, and they were a hit!  Kasumi&apos;s sales were so good that eight months out of high school, she had been promoted, moving to the big city of Ishijima.&quot;（カスミの会社は彼女にワークショップをさせることに同意し，それがヒットした！カスミの売り上げはとても好調で，高校を卒業して8ヶ月後には昇進し，大都会イシジマに引っ越してた）から，[36]は②「成功するビジネスのアイディアを提案した」が正解。",
+        "[35]は①「その製品を人々に知られるようにした」が正解。（マキは，「私たちはタクヤの珈琲を自信をもってお出ししています」という看板を店内に掲げ，この宣伝はタクヤの珈琲がカワナカで評判になる手助けとなった）とある",
+        "[36]は②「成功するビジネスのアイディアを提案した」が正解。",
       ],
     },
     {
@@ -95,9 +92,7 @@ const Ex24_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "第4場のタクヤとカスミの以下のやり取りから，彼らが恩人であるマキに感謝の気持ちが伝えられていないことを悔やんでいることがうかがえる。したがって，[37]は③「自分たちの友人にもっと価値を置かなかったことを悔やんでいる」が正解。",
-        "&quot;Maki wasn&apos;t at the reunion.  I haven&apos;t seen her in ages,&quot; said Takuya. （「同窓会にマキはいなかった。ぼくは何年も彼女に会ってないよ」と拓也は言った。） ",
-        "&quot;Same here. It&apos;s a pity.  Where would we be without her?&quot; asked Kasumi.  The conversation became silent, as they wordlessly communicated their guilt. （「同じよ。残念だわ。彼女がいなかったら，私たちはどうなっているんだろう？」とカスミは尋ねた。二人は無言で罪悪感を伝え合い，会話は静かになった。）",
+        "正解は③「自分たちの友人にもっと価値を置かなかったことを悔やんでいる」、第4場のタクヤとカスミの以下のやり取りから，彼らが恩人であるマキに感謝の気持ちが伝えられていないことを悔やんでいることがうかがえる。",
       ],
     },
     {
@@ -113,7 +108,7 @@ const Ex24_5 = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "第6場の以下のやり取りから，[38]は②「彼女自身の才能を認識する」が正解。",
+        "正解は ②「彼女自身の才能を認識する」",
         "&quot;No. The opposite. You understand people incredibly well. You can identify others&apos; strengths and show them how to make use of them. We&apos;re proof of this. You made us aware of our gifts,&quot; said Takuya. &quot;The irony is that you couldn&apos;t do the same for yourself,&quot; added Kasumi.",
         "いや，その逆だよ。君は信じられないほど人のことをちゃんと理解している。他人の長所を見極め，それを活かす方法を教えることができる。ぼくたちがその証拠だよ。君はぼくたちに自分の才能を気づかせてくれた」とタクヤは言った。 「皮肉なことに，あなた自身には同じことができなかったのね」とカスミが付け加えた。",
       ],
@@ -213,7 +208,8 @@ const Ex24_5 = () => {
         </p>
         <p>
           You have found a story in an English language magazine in Japan. You
-          are preparing notes for your presentation.
+          are preparing notes for your presentation.{" "}
+          {Kaisetsu(showResults, "24-5-1")}
         </p>
       </div>
 
@@ -234,12 +230,14 @@ const Ex24_5 = () => {
             food, but also to sit at the counter and talk to her. Although her
             business was doing very well, Maki occasionally daydreamed about
             doing something different.
+            {Kaisetsu(showResults, "24-5-2")}
           </p>
           <p className="mb-4">
             &quot;Can we sit at the counter?&quot; she heard. It was her old
             friends, Takuya and Kasumi. A phone call a few weeks earlier from
             Kasumi to Takuya had given them the idea to visit Maki and surprise
             her.
+            {Kaisetsu(showResults, "24-5-3")}
           </p>
         </div>
 
@@ -265,6 +263,7 @@ const Ex24_5 = () => {
             &quot;No, I couldn&apos;t make it. I can&apos;t believe it&apos;s
             been 20 years since we graduated. Actually, I was calling to ask if
             you&apos;ve seen Maki recently.&quot;
+            {Kaisetsu(showResults, "24-5-4")}
           </p>
         </div>
 
@@ -284,6 +283,7 @@ const Ex24_5 = () => {
             preparatory school. Kasumi, on the other hand, started her career.
             Takuya tried out for various acting roles but was constantly
             rejected; eventually, he quit.
+            {Kaisetsu(showResults, "24-5-5")}
           </p>
         </div>
         <p className="my-4">
@@ -293,6 +293,7 @@ const Ex24_5 = () => {
           university because she had to manage her family&apos;s restaurant. Her
           first day of work had been the day he called. For some reason, Takuya
           could not resist giving Maki some advice.
+          {Kaisetsu(showResults, "24-5-6")}
         </p>
 
         <p className="mb-4">
@@ -300,18 +301,21 @@ const Ex24_5 = () => {
           should change the coffee it serves. I think people in Kawanaka want a
           bolder flavor. I&apos;d be happy to recommend a different brand,&quot;
           he said.
+          {Kaisetsu(showResults, "24-5-7")}
         </p>
 
         <p className="mb-4">
           &quot;Takuya, you really know your coffee. Hey, I was walking by Café
           Kawanaka and saw a help-wanted sign. You should apply!&quot; Maki
           replied.
+          {Kaisetsu(showResults, "24-5-8")}
         </p>
 
         <p className="mb-4">
           Takuya was hired by Café Kawanaka and became fascinated by the science
           of coffee making. On the one-year anniversary of his employment,
           Takuya was talking to Maki at her restaurant.
+          {Kaisetsu(showResults, "24-5-9")}
         </p>
 
         <div className="mb-4">
@@ -328,6 +332,7 @@ const Ex24_5 = () => {
           <p className="mb-4">
             &quot;I can&apos;t imagine a better person for it. What are you
             waiting for?&quot;
+            {Kaisetsu(showResults, "24-5-10")}
           </p>
         </div>
 
@@ -339,6 +344,7 @@ const Ex24_5 = () => {
           Kawanaka. Takuya started making good money selling his beans.
           Eventually, he opened his own café and became a successful business
           owner.
+          {Kaisetsu(showResults, "24-5-11")}
         </p>
 
         {/* Diamond separator */}
@@ -354,6 +360,7 @@ const Ex24_5 = () => {
           . &quot;Who would have thought that Takuya would be so
           successful?&quot; Kasumi thought to herself as she reflected on her
           past.
+          {Kaisetsu(showResults, "24-5-12")}
         </p>
 
         <p className="mb-4">
@@ -362,6 +369,7 @@ const Ex24_5 = () => {
           and saw that a cosmetics company called Beautella was advertising for
           salespeople. She encouraged Kasumi to apply, and, after graduation,
           she became an employee of Beautella.
+          {Kaisetsu(showResults, "24-5-13")}
         </p>
 
         <p className="mb-4">
@@ -371,6 +379,7 @@ const Ex24_5 = () => {
           think you are more suited for that. You can show people how to use the
           make-up. They&apos;ll love the way they look and buy lots of
           cosmetics!&quot;
+          {Kaisetsu(showResults, "24-5-14")}
         </p>
 
         <p className="mb-4">
@@ -379,6 +388,7 @@ const Ex24_5 = () => {
           school, she had been promoted, moving to the big city of Ishijima.
           Since then, she had steadily climbed her way up the company ladder
           until she had been named vice-president of Beautella this year.
+          {Kaisetsu(showResults, "24-5-15")}
         </p>
 
         <p className="mb-4">
@@ -387,6 +397,7 @@ const Ex24_5 = () => {
           absorbed with my work in Ishijima to give her support when she had to
           quit her preparatory school.&quot; Glancing back to the article, she
           decided to call Takuya.
+          {Kaisetsu(showResults, "24-5-16")}
         </p>
 
         {/* Diamond separator */}
@@ -407,6 +418,7 @@ const Ex24_5 = () => {
         <p className="mb-4">
           The conversation became silent, as they wordlessly communicated their
           guilt. Then, Kasumi had an idea.
+          {Kaisetsu(showResults, "24-5-17")}
         </p>
 
         {/* Diamond separator */}
@@ -429,6 +441,7 @@ const Ex24_5 = () => {
             can identify others&apos; strengths and show them how to make use of
             them. We&apos;re proof of this. You made us aware of our
             gifts,&quot; said Takuya.
+            {Kaisetsu(showResults, "24-5-18")}
           </p>
           <p className="mb-2">
             &quot;The irony is that you couldn&apos;t do the same for
@@ -443,6 +456,7 @@ const Ex24_5 = () => {
             &quot;You&apos;d have to go there a few times a month, but you could
             stay with me. Also, Takuya can help you find staff for your
             restaurant,&quot; said Kasumi.
+            {Kaisetsu(showResults, "24-5-19")}
           </p>
         </div>
 
@@ -450,6 +464,7 @@ const Ex24_5 = () => {
           Maki closed her eyes and imagined Kawanaka having both
           &quot;Maki&apos;s Kitchen&quot; and &quot;Maki&apos;s
           Counseling.&quot; She liked that idea.
+          {Kaisetsu(showResults, "24-5-20")}
         </p>
       </div>
       {/* 画像部分 */}

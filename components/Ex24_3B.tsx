@@ -6,7 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex24_3B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -37,12 +37,10 @@ const Ex24_3B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[18]-[21] 本文第1段落第2文 &quot;The winter weather had been terrible, so we were excited to see the tropical scenery of the volcanic island projected on the screen.&quot;（冬の天候は最悪だったので，スクリーンに映し出される火山島のトロピカルな風景に興奮した）と，第2段落第2文 &quot;We &quot;got into the car,&quot; ",
-        "which our teacher, Mr Leach, sometimes stopped so we could look out of the window and get a better sense of the rainforest.&quot; （私たちは「車に乗り込み」，私たちの先生であるリーチ先生がときどき車を止めて，窓から熱帯雨林を眺めることができた）という内容へのコメントに該当するのが，①「その島はどれほど危険なのだろうと思った。私はジャングルの中で美しい鳥たちや巨大な蛇を見た」である。第3段落では第1文で「海に潜り，海洋生物の多様性について学んだ」と書かれており，さらに第4文～第 ",
-        "7文 &quot;Then he showed us an image of the ocean 10 years ago. The reef we&apos;d seen on camera was dynamic, but in the photo it was even more full of life. It looked so different after only 10 years! Mr Leach told us human activity was affecting the ocean and it could be totally ruined if we didn&apos;t act now. &quot; ",
-        "（するとリーチ先生は，10年前の海の画像を見せてくれた。カメラで見たサンゴ礁もダイナミックだったが，その写真では，サンゴ礁はさらに生命力に溢れていた。たった10年で，こんなにも違って見えるものなんだ！リーチ先生は，人間の活動が海に影響を及ぼしており，私たちが今すぐ行動を起こさなければ，海は完全にダメになってしまうかもしれないと話した）という内容から，これについてのコメントに該当するのが，②「以前ははるかに多くの生物がいたことに本当に驚いた。私たちは美しい海を守らねばなりません！」である。第4段落第2文 &quot;We put up tents in the gymnasium and created a temporary planetarium on the ceiling using a projector.&quot;（私たちは体育館にテントを張り，プロジェクターを使って天井に仮設のプラネタリウムを作った）という内容へのコメントに該当するのが，③「体育館の中にキャンプ場を設定するのはちょっと変な感じだったけれど，とても面白かった！屋外より良かった。だって，虫に刺されなかったのだから」である。 ",
-        "第4段落第3文～最終文 &quot;We were fascinated by the sky full of constellations, shooting stars, and the Milky Way. Someone pointed out one of the brightest lights and asked Mr Leach if it was Venus, a planet close to Earth. He nodded and explained that humans have created so much artificial light that hardly anything is visible in our city&apos;s night sky.&quot; ",
-        "（私たちは満天の星座，流れ星，天の川に魅了された。誰かが最も明るい光のひとつを指さして，リーチ先生にそれが地球に最も近い惑星である金星なのかと尋ねた。彼はうなずき，人間が人工的な光をたくさん作り出したため，私たちの都市の夜空にはほとんど何も見えないのだと説明した）という内容へのコメントに該当するのが，④「私たちは宇宙ショーの間，言葉を失った。そして，たとえそこにあっても私たちは物事に気づかないのだということに気がついた」である。よって，[18] ①→[19] ②→[20] ③→[21] ④が正解。",
+        "[18] ①、[19] ②、[20] ③、[21] ④が正解。",
+        "（するとリーチ先生は，10年前の海の画像を見せてくれた。カメラで見たサンゴ礁もダイナミックだったが，その写真では，サンゴ礁はさらに生命力に溢れていた。たった10年で，こんなにも違って見えるものなんだ！リーチ先生は，人間の活動が海に影響を及ぼしており，私たちが今すぐ行動を起こさなければ，海は完全にダメになってしまうかもしれないと話した）という内容から，これについてのコメントに該当するのが，②「以前ははるかに多くの生物がいたことに本当に驚いた。私たちは美しい海を守らねばなりません！」である。",
+        "（私たちは体育館にテントを張り，プロジェクターを使って天井に仮設のプラネタリウムを作った）という内容へのコメントに該当するのが，③「体育館の中にキャンプ場を設定するのはちょっと変な感じだったけれど，とても面白かった！屋外より良かった。だって，虫に刺されなかったのだから」である。 ",
+        "（私たちは満天の星座，流れ星，天の川に魅了された。誰かが最も明るい光のひとつを指さして，リーチ先生にそれが地球に最も近い惑星である金星なのかと尋ねた。彼はうなずき，人間が人工的な光をたくさん作り出したため，私たちの都市の夜空にはほとんど何も見えないのだと説明した）という内容へのコメントに該当するのが，④「私たちは宇宙ショーの間，言葉を失った。そして，たとえそこにあっても私たちは物事に気づかないのだということに気がついた」",
       ],
     },
     {
@@ -58,7 +56,7 @@ const Ex24_3B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[22] （※NOT問題）本文では南の島の季節ごとの天候については述べられていないので，③「季節ごとの天候」が正解。",
+        "③「季節ごとの天候」が正解。本文では南の島の季節ごとの天候については述べられていない",
       ],
     },
     {
@@ -74,8 +72,8 @@ const Ex24_3B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[23] （※推測問題）最終段落第1文～第2文 「On my way home after school, the weather had improved and the sky was now cloudless. I looked up at the moonless sky and realised what Mr Leach had told us was true.」",
-        "（放課後の帰り道，天気は回復し，雲ひとつない空になった。私は月のない空を見上げて，リーチ先生が話してくれたことが本当だと気づいた）と，第4段落最終文の「人間が人工的な光をたくさん作り出したため，私たちの都市の夜空にはほとんど何も見えないのだと説明した」という内容から，②「わずかな数の星」が正解。",
+        "②「わずかな数の星」が正解。",
+        "（放課後の帰り道，天気は回復し，雲ひとつない空になった。私は月のない空を見上げて，リーチ先生が話してくれたことが本当だと気づいた）と，第4段落最終文の「人間が人工的な光をたくさん作り出したため，私たちの都市の夜空にはほとんど何も見えないのだと説明した」という内容から",
       ],
     },
   ];
@@ -191,7 +189,10 @@ const Ex24_3B = () => {
               {index === 3 ? (
                 <div className="flex flex-col md:flex-row gap-4 my-6">
                   <div className="flex-grow">
-                    <p>{paragraph}</p>
+                    <p>
+                      {paragraph}{" "}
+                      {Kaisetsu(showResults, "24-3B-" + (index + 1))}
+                    </p>
                   </div>
                   <div className="w-full">
                     <Image
@@ -204,7 +205,9 @@ const Ex24_3B = () => {
                   </div>
                 </div>
               ) : (
-                <p>{paragraph}</p>
+                <p>
+                  {paragraph} {Kaisetsu(showResults, "24-3B-" + (index + 1))}
+                </p>
               )}
             </div>
           ))}

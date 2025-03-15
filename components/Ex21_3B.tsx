@@ -5,6 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 import Image from "next/image";
 
 const Ex21_3B = () => {
@@ -98,6 +99,7 @@ const Ex21_3B = () => {
           <span className="font-bold mr-2">B</span>
           Your classmate showed you the following message in your school&apos;s
           newsletter, written by an exchange student from the UK.
+          {Kaisetsu(showResults, "21-3B-0")}
         </div>
 
         <div className="border border-gray-300 p-6">
@@ -109,6 +111,7 @@ const Ex21_3B = () => {
             <p>
               Hello, everyone. I&apos;m Sarah King, an exchange student from
               London. I&apos;d like to share something important with you today.
+              {Kaisetsu(showResults, "21-3B-1")}
             </p>
 
             <p>
@@ -119,6 +122,7 @@ const Ex21_3B = () => {
               problem. The building is getting old, and requires expensive
               repairs. To help raise funds to maintain the centre, many
               volunteers are needed.
+              {Kaisetsu(showResults, "21-3B-2")}
             </p>
 
             <p>
@@ -129,6 +133,7 @@ const Ex21_3B = () => {
               that they had asked the town mayor for financial assistance, but
               their request had been rejected. They had no choice but to start
               fund-raising.
+              {Kaisetsu(showResults, "21-3B-3")}
             </p>
 
             <p>
@@ -140,6 +145,7 @@ const Ex21_3B = () => {
               to use the building much longer. I felt the need to do something
               more. Then, the idea came to me that other students might be
               willing to help. Katy was delighted to hear this.
+              {Kaisetsu(showResults, "21-3B-4")}
             </p>
 
             <p>
@@ -148,6 +154,7 @@ const Ex21_3B = () => {
               an exchange student, my time in Japan is limited, but I want to
               make the most of it. By working together, we can really make a
               difference.
+              {Kaisetsu(showResults, "21-3B-5")}
             </p>
 
             <div className="mt-6">

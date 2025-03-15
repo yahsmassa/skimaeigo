@@ -5,6 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex17_4B = () => {
   const [showResults, setShowResults] = useState(false);
@@ -92,6 +93,7 @@ const Ex17_4B = () => {
             </span>
             {renderSelect("39", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4B-1" />}
+            {Kaisetsu(showResults, "17-4B-1")}
             <div className="pl-8 space-y-2">
               <p>① a place to meet new friends of the same age</p>
               <p>② an airplane ticket to Australia to create a video clip</p>
@@ -111,6 +113,7 @@ const Ex17_4B = () => {
             </span>
             {renderSelect("40", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4B-2" />}
+            {Kaisetsu(showResults, "17-4B-2")}
           </div>
           <div className="pl-8 space-y-2">
             <p>① Category A</p>
@@ -129,6 +132,7 @@ const Ex17_4B = () => {
             </span>
             {renderSelect("41", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4B-3" />}
+            {Kaisetsu(showResults, "17-4B-3")}
           </div>
           <div className="pl-8 space-y-2">
             <p>
@@ -172,6 +176,7 @@ const Ex17_4B = () => {
             great way to share your creations with a wide audience. Anyone aged
             25 and under can participate. The IAYP invites submissions in the
             following four categories:
+            {Kaisetsu(showResults, "17-4B-4")}
           </p>
         </div>
 
@@ -238,13 +243,14 @@ const Ex17_4B = () => {
             overall grand champion will be awarded a ticket to the next IAYP
             Conference in Sydney, Australia. So, don&apos;t miss this chance!
             Get out your video camera and start filming!
+            {Kaisetsu(showResults, "17-4B-5")}
           </p>
         </div>
 
         {/* Steps */}
         <div className="mb-8">
           <h2 className="font-bold mb-4">Follow these steps:</h2>
-          <ul className="list-none space-y-2">
+          <ul className="list-none space-y-2 mb-2">
             <li className="flex items-start">
               <span className="mr-2">▶</span>
               <span>
@@ -260,6 +266,7 @@ const Ex17_4B = () => {
               </span>
             </li>
           </ul>
+          {Kaisetsu(showResults, "17-4B-6")}
         </div>
 
         {/* Rules */}
@@ -267,7 +274,7 @@ const Ex17_4B = () => {
           <div className="md:relative">
             <div className="md:pr-[260px]">
               <h2 className="font-bold mb-4">Rules and conditions:</h2>
-              <ul className="list-none space-y-2">
+              <ul className="list-none space-y-2 mb-2">
                 <li className="flex items-start">
                   <span className="mr-2">▶</span>
                   <span>
@@ -288,6 +295,7 @@ const Ex17_4B = () => {
                   </span>
                 </li>
               </ul>
+              {Kaisetsu(showResults, "17-4B-7")}
             </div>
 
             {/* Woman with Camera Image */}

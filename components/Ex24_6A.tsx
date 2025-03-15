@@ -5,6 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex24_6A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -28,8 +29,8 @@ const Ex24_6A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[39] 第1段落では，哲学者のアンリ・ベルクソンによる時間の区分（時計時間と心理的時間）が述べられていることから，⑥「時間の種類」が正解。",
-        "[40] 第4段落では，感情面での状態が時間意識に与える影響について述べられていることから，②「私たちの感情の影響」が正解。",
+        "[39] 正解は ⑥「時間の種類」第1段落で，哲学者のアンリ・ベルクソンによる時間の区分（時計時間と心理的時間）が述べられている",
+        "[40] 正解は ②「私たちの感情の影響」が正解。第4段落で，感情面での状態が時間意識に与える影響について述べられている",
       ],
     },
     {
@@ -45,9 +46,10 @@ const Ex24_6A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[41] 第5段落第6文～第7文 &quot;Daily routines are shaken up when drastic changes occur, such as changing jobs or relocating to a new city. In such cases, the passage of time for those people is similar to that for children.&quot;「転職や新しい街への転居など，劇的な変化が起きると，日常の決まりきった状態は大きく揺れ動く。そのような場合，その人たちの時間の流れは子どものそれと似ている」と述べられている。 ",
-        "ここでいう「子どもの時間の感じ方」については，この段落の2文目 &quot;Children constantly encounter new information and have new experiences, which makes each day memorable and seem longer when recalled.&quot;（子どもたちは常に新しい情報に出会い，新しい経験をする。それによって，毎日が記憶に残り，思い出したときにより長く感じられる）と述べられている。 ",
-        "これは，子どもにとって時間が進むのがゆっくりに感じられることを示している。よって，①「どの年齢でも大きなライフスタイルの変化がおそらく時間をゆっくりと進ませる」が正解。",
+        "正解は ①「どの年齢でも大きなライフスタイルの変化がおそらく時間をゆっくりと進ませる」",
+        "② 年齢に関わらず、生活の大幅な変化は時間の流れを速く感じる可能性が高いでしょう。",
+        "③ 大人の場合、生活の小さな変化は時間の流れを遅く感じる可能性が高いでしょう。",
+        "④ 子供の場合、生活の小さな変化は時間の流れを速く感じる可能性が高いでしょう。",
       ],
     },
     {
@@ -63,8 +65,8 @@ const Ex24_6A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[42] （※推測問題）retrospective timing（追想的時間）については，第2段落第4文 「To answer, they used a mental process called retrospective timing, which is estimating time based on the information retrieved from memory.」 ",
-        "（答えるために，記憶から取り出された情報に基づいて時間を推定する，追想的タイミングと呼ばれる精神的プロセスが用いられた）の内容を参照する。したがって，③「今日，何時間働いたかを振り返る」が正解。",
+        "正解は ③「今日，何時間働いたかを振り返る」",
+        "① anticipating a message from a classmate<br/><br/>クラスメイトからのメッセージを待っている<br/><br/><br/>② memorizing your mother's cellphone number<br/><br/>お母さんの携帯電話番号を暗記する<br/><br/><br/>④ remembering that you have a meeting tomorrow<br/><br/>明日会議があることを覚えている",
       ],
     },
     {
@@ -80,8 +82,8 @@ const Ex24_6A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[43] （※推測問題）prospective timing（予期的時間）については，第3段落第1文～第3文 &quot;Another process to measure psychological time is called prospective timing. It is used when you are actively keeping track of time while doing something. Instead of using the amount of information recalled, the level of attention given to time while doing the activity is used.&quot;",
-        "（心理的時間を測定するもう一つのプロセスは，予期的時間と呼ばれる。これは，何かをしながら積極的に時間を記録しているときに使われる。想起された情報量を使う代わりに，活動をしている間の時間に対する注意の度合いが使われる。）の内容を参照する。したがって，①「これまでどのくらいの時間ジョギングし続けてきたかを推測する」が正解。なお，①の選択肢では you&apos;ve been jogging という現在完了進行形が用いられていることに注意しよう。これは，過去から行ってきた動作がまだ継続していることを表すため，ジョギングをしている人がまだ走り続けながらその時間について考えているということを示しており，「何かをしながら積極的に時間を記録しているとき」に相当すると考えられる。",
+        "正解は ①「これまでどのくらいの時間ジョギングし続けてきたかを推測する」 you've been jogging という現在完了進行形が用いられており、「何かをしながら積極的に時間を記録しているとき」に相当",
+        "② making a schedule for the basketball team summer camp<br/><br/>バスケットボールチームのサマーキャンプのスケジュールを作成すること<br/><br/><br/>③running into your tennis coach at the railway station<br/><br/>駅でテニスコーチにばったり会うこと<br/><br/><br/>④thinking about your last family vacation to a hot spring<br/><br/>最後の家族旅行で温泉に行ったことを考えていること<br/><br/><br/>熟語・慣用句はありませんでした。<br/>",
       ],
     },
   ];
@@ -123,6 +125,7 @@ const Ex24_6A = () => {
             clock time, so they use mental processes instead. This is called{" "}
             <span className="font-semibold">psychological time</span>, which
             everyone perceives differently.
+            {Kaisetsu(showResults, "24-6A-1")}
           </p>
 
           <p className="leading-relaxed">
@@ -137,6 +140,7 @@ const Ex24_6A = () => {
             Participants who were shown the complex shapes felt the time was
             longer, while the people who saw the simple shapes experienced the
             opposite.
+            {Kaisetsu(showResults, "24-6A-2")}
           </p>
 
           <p className="leading-relaxed">
@@ -149,10 +153,12 @@ const Ex24_6A = () => {
             estimating the time needed to complete them. Time seemed shorter for
             the people doing more challenging mental activities which required
             them to place more focus on the task than on time.
+            {Kaisetsu(showResults, "24-6A-3")}
           </p>
           <p className="leading-relaxed">
             Time felt longer for the participants who did simpler tasks and the
             longest for those who were waiting or doing nothing.
+            {Kaisetsu(showResults, "24-6A-4")}
           </p>
 
           <p className="leading-relaxed">
@@ -168,6 +174,7 @@ const Ex24_6A = () => {
             first time. Participants with high levels of unpleasant emotions
             perceived the time spent skydiving to be much longer than it was in
             reality.
+            {Kaisetsu(showResults, "24-6A-5")}
           </p>
 
           <p className="leading-relaxed">
@@ -183,6 +190,7 @@ const Ex24_6A = () => {
             relocating to a new city. In such cases, the passage of time for
             those people is similar to that for children. But generally
             speaking, time seems to accelerate as we mature.
+            {Kaisetsu(showResults, "24-6A-6")}
           </p>
 
           <p className="leading-relaxed">
@@ -193,6 +201,7 @@ const Ex24_6A = () => {
             boredom and speed up the time. The next occasion that you hear
             &quot;Time flies when you&apos;re having fun,&quot;you will be
             reminded of this.
+            {Kaisetsu(showResults, "24-6A-7")}
           </p>
         </div>
       </div>

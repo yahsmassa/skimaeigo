@@ -6,6 +6,7 @@ import { Answers, QandA } from "@/lib/types";
 import Image from "next/image";
 import { Saiten } from "@/components/Saiten";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex24_6B = () => {
   const [showResults, setShowResults] = useState(false);
@@ -25,8 +26,8 @@ const Ex24_6B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[44] 第3段落の最後の2文 The reason some people cannot tolerate chili spice but can eat foods flavored with wasabi is that the spice compounds in it are low in density. The compounds in wasabi vaporize easily, delivering a blast of spiciness to our nose when we eat it.",
-        "（唐辛子のスパイスには耐えられないが，ワサビ味の食品なら食べられるという人がいる理由は，ワサビに含まれるスパイス化合物の濃度が低いからである。ワサビに含まれる化合物は気化しやすく，食べたときに鼻に抜けるような辛さをもたらす）の内容から，④「軽い化合物」が正解。",
+        "正解は ④「軽い化合物」",
+        "（唐辛子のスパイスには耐えられないが，ワサビ味の食品なら食べられるという人がいる理由は，ワサビに含まれるスパイス化合物の濃度が低いからである。ワサビに含まれる化合物は気化しやすく，食べたときに鼻に抜けるような辛さをもたらす）の内容から",
       ],
     },
     {
@@ -42,9 +43,11 @@ const Ex24_6B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[45] （※NOT問題） Aの「痛みを減らす」については第4段落第3文 &quot;Strangely, capsaicin can also make pain go away.&quot;（不思議なことに，カプサイシンは痛みを消すこともできる）に一致している。Bの「あなたにより多くのエネルギーを与える」は，第5段落第3文 &quot;This is because spicy foods increase the heart rate, send more energy to the muscles, and convert fat into energy.&quot;（これは，辛い食べ物が心拍数を上げ，筋肉により多くのエネルギーを送り，脂肪をエネルギーに変えるからである）に一致する。",
-        "Cの「新陳代謝を加速させる」は，第5段落第1文 &quot;Another benefit of eating chili peppers is that they accelerate the metabolism.&quot;（唐辛子を食べることのもう一つの利点は，新陳代謝を促進することである）に一致する。Eの「食中毒を減らす」は，第6段落第1文 &quot;It is also believed that chili peppers are connected with food safety, which might lead to a healthier life.&quot;（また，唐辛子は食品の安全性とも関係があり， ",
-        "より健康的な生活につながるかもしれないと考えられている）と，第3文～第4文 &quot;Studies have shown that capsaicin and other chemicals found in chili peppers have antibacterial properties that can slow down or even stop microorganism growth. As a result, food lasts longer and there are fewer food-borne illnesses. &quot;（唐辛子に含まれるカプサイシンやその他の化学物質には抗菌作用があり，微生物の繁殖を遅らせたり，止めたりすることさえできるという研究結果がある。その結果，食べ物がより長持ちし，食中毒が少なくなる）に一致する。しかし，Dの「ストレスを感じさせなくなる」という内容は利点には述べられていない。したがって，④が正解。",
+        "正解は④ Dの「ストレスを感じさせなくなる」という内容は利点には述べられていない。",
+        "Aの「痛みを減らす」については（不思議なことに，カプサイシンは痛みを消すこともできる）に一致している。",
+        "Bの「あなたにより多くのエネルギーを与える」は（これは，辛い食べ物が心拍数を上げ，筋肉により多くのエネルギーを送り，脂肪をエネルギーに変えるからである）に一致する。",
+        "Cの「新陳代謝を加速させる」は（唐辛子を食べることのもう一つの利点は，新陳代謝を促進することである）に一致する",
+        "Eの「食中毒を減らす」は（また，唐辛子は食品の安全性とも関係があり， より健康的な生活につながるかもしれないと考えられている）と，（唐辛子に含まれるカプサイシンやその他の化学物質には抗菌作用があり，微生物の繁殖を遅らせたり，止めたりすることさえできるという研究結果がある。その結果，食べ物がより長持ちし，食中毒が少なくなる）に一致する。",
       ],
     },
     {
@@ -65,9 +68,8 @@ const Ex24_6B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[46]・[47] 第7段落第3文 &quot;People who have eaten several of the world&apos;s hottest chilis in a short time have reported experiencing upset stomachs, diarrhea, numb hands, and symptoms similar to a heart attack.&quot;（世界一辛い唐辛子を短時間に何本も食べた人は，胃の不調，下痢，手のしびれ，心臓発作に似た症状を経験したと報告している）の内容から，",
-        "②「胃の痛みを経験するかもしれない」と，③「手の感触を失うかもしれない」が正解。④の「指が火が付いたように感じられるかもしれない」は，第7段落第4文 &quot;Ghost peppers, which contain one million SHUs, can even burn a person&apos;s skin if they are touched.&quot; ",
-        "（100万SHUを含むゴースト・ペッパーは，触ると皮膚が火傷することさえある）のことと考えられるが，設問では「あまりにも強力な唐辛子を短時間に食べた時」に起きることを選ぶように求められているいるため，これは誤りである。",
+        "②「胃の痛みを経験するかもしれない」と，③「手の感触を失うかもしれない」が正解。",
+        "④の「指が火が付いたように感じられるかもしれない」は（100万SHUを含むゴースト・ペッパーは，触ると皮膚が火傷することさえある）のことと考えられるが，設問では「あまりにも強力な唐辛子を短時間に食べた時」に起きることが問われているので，誤り。",
       ],
     },
     {
@@ -84,10 +86,8 @@ const Ex24_6B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "48] （※推測問題）スパイスへの耐性について，本文の内容を基に推測する問題。 ",
-        "第4段落第4文 &quot;Scientists found that TRPV1 ceases to be turned on after long-term exposure to chili peppers, temporarily easing painful sensations.&quot;（科学者たちは，唐辛子に長期間さらされるとTRPV1がオンにならなくなり，一時的に痛覚が和らぐことを発見した）という内容と，第6段落第5文 &quot;This may explain why people in hot climates have a tendency to use more chili peppers, and therefore, be more tolerant of spicier foods due to repeated exposure.&quot; ",
-        "（こういうわけで，暑い気候に住む人々は唐辛子を多く使う傾向があり，したがって，何度も唐辛子に触れる傾向があるため，より辛い食べ物に対してより耐性があるのかもしれない）という内容から，③「唐辛子への耐性が低い人でも，その辛さに慣れることができる」が正解。④「ワサビへの耐性が低い人は高いSHUに耐えることができない」も紛らわしく，実際，第3段落第3文では &quot;However, people have compared the level of spice in it to chilis with around 1,000 SHUs, which is on the lower end of the scale.&quot; ",
-        "（しかし，人々はワサビの中のスパイスのレベルを，約1,000SHUの唐辛子に例えてきた）と述べられてはいるものの，あくまでも「1,000SHUにたとえる」と述べているだけであって，実際にワサビへの耐性が低い人が高いSHUに耐えられるかどうかについては言及していないため，誤りだと考えられる。",
+        "③「唐辛子への耐性が低い人でも，その辛さに慣れることができる」が正解。",
+        "④「ワサビへの耐性が低い人は高いSHUに耐えることができない」が紛らわしいが，あくまでも「1,000SHUにたとえる」と述べているだけであって，実際にワサビへの耐性が低い人が高いSHUに耐えられるかどうかについては言及していないため，誤りだと考えられる。",
       ],
     },
     {
@@ -103,9 +103,9 @@ const Ex24_6B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[49] （※推測問題）締めの一言を選ぶ問題。本文は，第1段落で唐辛子とワサビの違いについて問題提起を行い，それを説明するために第2段落で化学的な仕組みを説明し，続く第3段落ではワサビが唐辛子と異なる理由が述べられている。第4段落から第6段落では唐辛子の利点が述べられており，第7段落ではSHUの高い唐辛子を大量に摂取した時の問題点が述べられており，それを踏まえて最後の第8段落では，辛いものは食べても安全だが量には注意しようとまとめている。したがって，8つの段落中，3つの段落を費やして唐辛子の利点を述べていることからも，⑤「誰かがあなたに辛い食べ物を勧めた時，それには何らかの利点があるということを思い出そう」が正解。これ以外の選択肢の意味と誤りの根拠は以下の通りである。 ",
+        "⑤「誰かがあなたに辛い食べ物を勧めた時，それには何らかの利点があるということを思い出そう」が正解 ",
         "① Don&apos;t be afraid. Eating spicy foods will boost your confidence. 「恐れてはいけない。辛い食べ物を食べると自信が増す」 →このような内容は本文に含まれていない。 ",
-        "② Next time you eat chili chicken, remember its punch only stays for a second. 「次にチリチキンを食べるときには，そのパンチが一瞬しか残らないことを覚えておこう」 →最終段落の第1文で「辛いものを食べた後に感じる不快感が数時間以内に消える」とは書かれているが，「一瞬しか残らない」とは述べていない。 ",
+        "② Next time you eat chili chicken, remember its punch only stays for a second. 「次にチリチキンを食べるときには，そのパンチが一瞬しか残らないことを覚えておこう」 →「一瞬しか残らない」とは述べていない。 ",
         "③ Personality plays a big role in our spice preference, so don&apos;t worry. 「個性（性格）はスパイスの好みで大きな役割を果たす。だから心配しないで」 →人の個性（性格）とスパイスの関係については本文で言及されていない。 ",
         "④ Unfortunately, there are no cures for a low wasabi tolerance. 「残念ながら，ワサビの低い耐性には治療法は存在しない」 →ワサビの耐性に関する治療法の話は本文でなされていない。 ",
       ],
@@ -147,6 +147,7 @@ const Ex24_6B = () => {
           sashimi with wasabi. This might lead one to wonder what spiciness
           actually is and to ask where the difference between chili and wasabi
           comes from.
+          {Kaisetsu(showResults, "24-6B-1")}
         </p>
 
         <p>
@@ -164,6 +165,7 @@ const Ex24_6B = () => {
           Units (SHU). SHUs range from the sweet and mild shishito pepper at
           50-200 SHUs to the Carolina Reaper pepper, which can reach up to 2.2
           million.
+          {Kaisetsu(showResults, "24-6B-2")}
         </p>
 
         <p>
@@ -175,6 +177,7 @@ const Ex24_6B = () => {
           wasabi is that the spice compounds in it are low in density. The
           compounds in wasabi vaporize easily, delivering a blast of spiciness
           to our nose when we eat it.
+          {Kaisetsu(showResults, "24-6B-3")}
         </p>
 
         <p>
@@ -187,6 +190,7 @@ const Ex24_6B = () => {
           chili peppers, temporarily easing painful sensations. Thus, skin
           creams containing capsaicin might be useful for people who experience
           muscle aches.
+          {Kaisetsu(showResults, "24-6B-4")}
         </p>
 
         <p>
@@ -197,6 +201,7 @@ const Ex24_6B = () => {
           send more energy to the muscles, and convert fat into energy.
           Recently, scientists at the University of Wyoming have created a
           weight-loss drug with capsaicin as a main ingredient.
+          {Kaisetsu(showResults, "24-6B-5")}
         </p>
 
         <p>
@@ -212,6 +217,7 @@ const Ex24_6B = () => {
           repeated exposure. Also, in the past, before there were refrigerators,
           they were less likely to have food poisoning than people in cooler
           climates.
+          {Kaisetsu(showResults, "24-6B-6")}
         </p>
 
         <p>
@@ -222,6 +228,7 @@ const Ex24_6B = () => {
           reported experiencing upset stomachs, diarrhea, numb hands, and
           symptoms similar to a heart attack. Ghost peppers, which contain one
           million SHUs, can even burn a person&apos;s skin if they are touched.
+          {Kaisetsu(showResults, "24-6B-7")}
         </p>
 
         <p>
@@ -231,6 +238,7 @@ const Ex24_6B = () => {
           flavorful touch to the table. Remember, it is safe to consume spicy
           foods, but you might want to be careful about the amount of peppers
           you put in your dishes.
+          {Kaisetsu(showResults, "24-6B-8")}
         </p>
       </div>
 

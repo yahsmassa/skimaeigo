@@ -6,7 +6,7 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex22_2B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -116,6 +116,7 @@ const Ex22_2B = () => {
           <strong>B</strong> You are the editor of a school English paper.
           David, an exchange student from the UK, has written an article for the
           paper.
+          {Kaisetsu(showResults, "22-2B-0")}
         </p>
       </div>
 
@@ -126,6 +127,7 @@ const Ex22_2B = () => {
           in five UK homes have pets. This is lower than in the US, where more
           than half of homes have pets. However, Australia has the highest
           percentage of homes with pets!
+          {Kaisetsu(showResults, "22-2B-1")}
         </p>
 
         <p className="mb-4">
@@ -162,6 +164,7 @@ const Ex22_2B = () => {
               One disadvantage is that pets have to be cared for when owners go
               away. It may be difficult to organise care for them; 25% of owners
               take their pets on holidays or road trips.
+              {Kaisetsu(showResults, "22-2B-2")}
             </p>
             <div className="w-24 h-24 flex-shrink-0">
               <Image
@@ -184,6 +187,7 @@ const Ex22_2B = () => {
           popular as pets in Japan. Some people take their pig(s) for a walk,
           which must be fun, but I wonder how easy it is to keep pigs inside
           homes.
+          {Kaisetsu(showResults, "22-2B-3")}
         </p>
       </div>
 

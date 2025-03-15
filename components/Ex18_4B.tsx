@@ -5,7 +5,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-
+import { Kaisetsu } from "@/components/Kaisetsu";
 const Ex18_4B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -106,6 +106,7 @@ const Ex18_4B = () => {
           </span>
           {renderSelect("37", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4B-1" />}
+          {Kaisetsu(showResults, "18-4B-1")}
         </div>
         <ol className="list-none pl-4">
           <li className="mb-1">
@@ -136,6 +137,7 @@ const Ex18_4B = () => {
           </span>
           {renderSelect("38", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4B-2" />}
+          {Kaisetsu(showResults, "18-4B-2")}
         </div>
         <div className="flex gap-8 pl-4">
           <span>① $270</span>
@@ -156,6 +158,7 @@ const Ex18_4B = () => {
           </span>
           {renderSelect("39", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4B-3" />}
+          {Kaisetsu(showResults, "18-4B-3")}
         </div>
         <ol className="list-none pl-4">
           <li className="mb-1">① Chinese</li>
@@ -172,6 +175,7 @@ const Ex18_4B = () => {
           <span>The advertisement suggests that</span>
           {renderSelect("40", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4B-4" />}
+          {Kaisetsu(showResults, "18-4B-4")}
         </div>
         <ol className="list-none pl-4">
           <li className="mb-1">
@@ -223,6 +227,7 @@ const Ex18_4B = () => {
             a variety of meals under the guidance of professional cooks, making
             you the envy of your family and friends. The following cooking
             courses start in the first week of May.
+            {Kaisetsu(showResults, "18-4B-5")}
           </p>
 
           <table className="w-full border-collapse border mb-4">
@@ -284,6 +289,7 @@ const Ex18_4B = () => {
                 plates will be provided by the school.
               </li>
             </ul>
+            {Kaisetsu(showResults, "18-4B-6")}
           </div>
           <Image
             src="/images/Ex18-4B-2.webp"
@@ -304,12 +310,14 @@ const Ex18_4B = () => {
             </li>
             <li className="mb-2">➢ An empty stomach!</li>
           </ul>
+          {Kaisetsu(showResults, "18-4B-7")}
         </div>
 
         <div className="flex justify-between items-center">
           <p>
             Check out our Papa Bear Cooking School website for details of our
             facilities and other cooking courses.
+            {Kaisetsu(showResults, "18-4B-8")}
           </p>
           <Image
             src="/images/Ex18-4B-3.webp"
@@ -319,14 +327,6 @@ const Ex18_4B = () => {
             height={110}
             priority
           />
-
-          {/* <div className="border-2 border-dashed p-4 text-center">
-            <div className="mb-2">✂</div>
-            <div className="font-bold">10% Off</div>
-            <div className="font-bold">Course Fee</div>
-            <div className="font-bold">Papa Bear</div>
-            <div className="font-bold">Cooking School</div>
-          </div> */}
         </div>
       </div>
     </div>

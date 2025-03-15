@@ -6,6 +6,7 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex23_3A = () => {
   const [showResults, setShowResults] = useState(false);
@@ -24,7 +25,9 @@ const Ex23_3A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "②：第1段落3文目（The first thing ... balance the backpack.）～6文目（Most good backpacks ... small easy-to reach items.）の内容，特に，5文目の &quot;That means putting ... at the top.&quot;（それが意味しているのは，寝袋を底に，食べ物，調理器具，テントを真ん中に，そして服を上部に置くということです）から，②が正解。",
+        "正解は②",
+        "第1段落3文目（The first thing ... balance the backpack.）～6文目（Most good backpacks ... small easy-to reach items.）の内容，",
+        "特に，5文目の &quot;That means putting ... at the top.&quot;（それが意味しているのは，寝袋を底に，食べ物，調理器具，テントを真ん中に，そして服を上部に置くということです）から，",
       ],
     },
     {
@@ -40,8 +43,8 @@ const Ex23_3A = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "③：第2段落4文目 Then, my friend ... the empty space.",
-        "（そうしたら，私の友達が，外側の服を外してそれを寝袋の中に詰め込み，空いている空間を埋めるように言いました）という内容から，③「寝袋の隙間を埋める」が正解。",
+        "正解は③「寝袋の隙間を埋める」",
+        "第2段落4文目 Then, my friend ... the empty space.（そうしたら，私の友達が，外側の服を外してそれを寝袋の中に詰め込み，空いている空間を埋めるように言いました）という内容から",
       ],
     },
   ];
@@ -68,6 +71,7 @@ const Ex23_3A = () => {
           <span className="font-bold">A</span> You are studying at Camberford
           University, Sydney. You are going on a class camping trip and are
           reading the camping club&apos;s newsletter to prepare.
+          {Kaisetsu(showResults, "23-3A-0")}
         </p>
       </div>
       {/* Newsletter */}
@@ -88,6 +92,7 @@ const Ex23_3A = () => {
                 food, cookware and tent in the middle; and your clothes at the
                 top. Most good backpacks come with a &quot;brain&quot; (an
                 additional pouch) for small easy-to-reach items.
+                {Kaisetsu(showResults, "23-3A-1")}
               </p>
             </div>
             <div className="w-32 mx-auto md:absolute md:top-0 md:right-0">
@@ -110,12 +115,14 @@ const Ex23_3A = () => {
             told me to take off my outer layers and stuff them into my sleeping
             bag to fill up some of the empty space. This stuffing method was new
             to me, and surprisingly kept me warm all night!
+            {Kaisetsu(showResults, "23-3A-2")}
           </p>
 
           {/* Closing */}
           <p>
             I hope my advice helps you stay warm and comfortable. Enjoy your
             camping trip!
+            {Kaisetsu(showResults, "23-3A-3")}
           </p>
         </div>
       </div>

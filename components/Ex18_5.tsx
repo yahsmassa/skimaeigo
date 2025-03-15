@@ -6,6 +6,7 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const Ex18_5 = () => {
   const [showResults, setShowResults] = useState(false);
@@ -130,6 +131,7 @@ const Ex18_5 = () => {
             Its surface is mostly a blue liquid, though it is spotted with some
             green and brown parts, and some kind of white substance seems to be
             moving around the planet.
+            {Kaisetsu(showResults, "18-5-1")}
           </p>
         </div>
 
@@ -144,6 +146,7 @@ const Ex18_5 = () => {
             system? Have they signaled our approach? There doesn&apos;t seem to
             be any threat, so we have decided to ignore them and get closer to
             the planet. I hope that their inventors are friendly.
+            {Kaisetsu(showResults, "18-5-2")}
           </p>
         </div>
 
@@ -160,6 +163,7 @@ const Ex18_5 = () => {
             something alive down there. We are ready to start direct observation
             and will soon dive in. I&apos;m so excited that I won&apos;t be able
             to sleep tonight!
+            {Kaisetsu(showResults, "18-5-3")}
           </p>
         </div>
 
@@ -178,6 +182,7 @@ const Ex18_5 = () => {
             <span className="border-b-2 border-black">reservations</span> about
             meeting us? Is that why they use those flying objects to check out
             space? Hopefully, we will be able to find some answers.
+            {Kaisetsu(showResults, "18-5-4")}
           </p>
         </div>
 
@@ -189,6 +194,7 @@ const Ex18_5 = () => {
             somewhat like our spaceship. It sat silently looking very old and
             damaged. Apparently, it isn&apos;t being used anymore. Maybe it is a
             part of the remains of this planet&apos;s ancient civilization.
+            {Kaisetsu(showResults, "18-5-5")}
           </p>
         </div>
 
@@ -203,6 +209,7 @@ const Ex18_5 = () => {
             leaving a cloud of black substance. We don&apos;t know if it is the
             most intelligent life on this planet, but our expectations for new
             discoveries continue to grow.
+            {Kaisetsu(showResults, "18-5-6")}
           </p>
         </div>
 
@@ -217,6 +224,7 @@ const Ex18_5 = () => {
             found life on this planet, which is a very big discovery. We must
             leave this planet for now, but we will certainly come back someday
             to continue our research. We will return home with amazing reports.
+            {Kaisetsu(showResults, "18-5-7")}
           </p>
         </div>
 
@@ -230,6 +238,7 @@ const Ex18_5 = () => {
             imagined creatures like them! Floating safely in our ship&apos;s
             liquid, we realized that our common sense had led us to the wrong
             conclusion.
+            {Kaisetsu(showResults, "18-5-8")}
           </p>
         </div>
       </div>
