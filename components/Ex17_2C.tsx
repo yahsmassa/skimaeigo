@@ -1,9 +1,77 @@
-import React from "react";
-import cn from "clsx";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const JapaneseTestNewFormat = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "2C-1",
+      qa: [
+        {
+          questionNumber: "24",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "5",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解⑤"],
+    },
+    {
+      questionId: "2C-2",
+      qa: [
+        {
+          questionNumber: "25",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解②"],
+    },
+    {
+      questionId: "2C-3",
+      qa: [
+        {
+          questionNumber: "26",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "7",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解⑦"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="font-sans p-6 max-w-3xl mx-auto">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第２問 C"}</h1>
+          <span className="text-gray-600">(配点 {10})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       {/* Section C instruction */}
       <div className="mb-6 leading-8">
         <p className="mb-4">
@@ -18,7 +86,6 @@ const JapaneseTestNewFormat = () => {
           において，三人目の発言が最も適当な応答となるように文を作るには，それぞれ(A)と(B)をどのように選んで組み合わせればよいか，下の①～⑧のうちから一つずつ選べ。
         </p>
       </div>
-
       {/* Question 1 */}
       <div className="mb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
@@ -33,12 +100,15 @@ const JapaneseTestNewFormat = () => {
             {
               speaker: "Co-worker",
               text: (
-                <>
-                  Well, the monthly report is very important and
-                  <span className="inline-block border-2 border-black px-3 py-1 mx-1">
-                    24
-                  </span>
-                </>
+                <div
+                  className={cn(
+                    "flex flex-row -mt-1 flex-wrap items-center space-y-0",
+                    showResults && qaFormat(qa, "2C-1")
+                  )}
+                >
+                  <span>Well, the monthly report is very important and</span>
+                  {renderSelect("24", 4, answers, setAnswers)}
+                </div>
               ),
             },
           ].map((item, index) => (
@@ -48,6 +118,11 @@ const JapaneseTestNewFormat = () => {
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}
+          <div className="flex flex-row md:w-[400px]">
+            {showResults && <Explain qa={qa} questionId="2C-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "17-2C-1")}
+          </div>
         </div>
 
         {/* Options */}
@@ -126,7 +201,6 @@ const JapaneseTestNewFormat = () => {
           ))}
         </div>
       </div>
-
       {/* Question 2 */}
       <div className="mb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
@@ -141,13 +215,16 @@ const JapaneseTestNewFormat = () => {
             {
               speaker: "Adele",
               text: (
-                <>
-                  I love cricket, and this is a great match.
-                  <span className="inline-block border-2 border-black px-3 py-1 mx-1">
-                    25
-                  </span>
-                  for you, too.
-                </>
+                <div
+                  className={cn(
+                    "flex flex-row -mt-1 flex-wrap items-center space-y-0",
+                    showResults && qaFormat(qa, "2C-2")
+                  )}
+                >
+                  <span>I love cricket, and this is a great match.</span>
+                  {renderSelect("25", 4, answers, setAnswers)}
+                  <span>for you, too.</span>
+                </div>
               ),
             },
           ].map((item, index) => (
@@ -157,6 +234,11 @@ const JapaneseTestNewFormat = () => {
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}
+          <div className="flex flex-row md:w-[400px]">
+            {showResults && <Explain qa={qa} questionId="2C-2" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "17-2C-2")}
+          </div>
         </div>
 
         {/* Options */}
@@ -235,7 +317,6 @@ const JapaneseTestNewFormat = () => {
           ))}
         </div>
       </div>
-
       {/* Question 3 */}
       <div className="mb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
@@ -250,12 +331,15 @@ const JapaneseTestNewFormat = () => {
             {
               speaker: "Sophia",
               text: (
-                <>
-                  I heard it, too, but it's false. I wonder
-                  <span className="inline-block border-2 border-black px-3 py-1 mx-1">
-                    26
-                  </span>
-                </>
+                <div
+                  className={cn(
+                    "flex flex-row -mt-1 flex-wrap items-center space-y-0",
+                    showResults && qaFormat(qa, "2C-3")
+                  )}
+                >
+                  <span>I heard it, too, but it's false. I wonder</span>
+                  {renderSelect("26", 4, answers, setAnswers)}
+                </div>
               ),
             },
           ].map((item, index) => (
@@ -265,6 +349,11 @@ const JapaneseTestNewFormat = () => {
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}
+          <div className="flex flex-row md:w-[400px]">
+            {showResults && <Explain qa={qa} questionId="2C-3" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "17-2C-3")}
+          </div>
         </div>
 
         {/* Options */}

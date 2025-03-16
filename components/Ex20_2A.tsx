@@ -1,11 +1,170 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const JapaneseTestQuestion = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "2A-1",
+      qa: [
+        {
+          questionNumber: "8",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解③"],
+    },
+    {
+      questionId: "2A-2",
+      qa: [
+        {
+          questionNumber: "9",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解①"],
+    },
+    {
+      questionId: "2A-3",
+      qa: [
+        {
+          questionNumber: "10",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      points: 2,
+      explanation: ["正解③"],
+    },
+    {
+      questionId: "2A-4",
+      qa: [
+        {
+          questionNumber: "11",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      points: 2,
+      explanation: ["正解③"],
+    },
+    {
+      questionId: "2A-5",
+      qa: [
+        {
+          questionNumber: "12",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      points: 2,
+      explanation: ["正解①"],
+    },
+    {
+      questionId: "2A-6",
+      qa: [
+        {
+          questionNumber: "13",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      points: 2,
+      explanation: ["正解①"],
+    },
+    {
+      questionId: "2A-7",
+      qa: [
+        {
+          questionNumber: "14",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      points: 2,
+      explanation: ["正解①"],
+    },
+    {
+      questionId: "2A-8",
+      qa: [
+        {
+          questionNumber: "15",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      points: 2,
+      explanation: ["正解④"],
+    },
+    {
+      questionId: "2A-9",
+      qa: [
+        {
+          questionNumber: "16",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      points: 2,
+      explanation: ["正解②"],
+    },
+    {
+      questionId: "2A-10",
+      qa: [
+        {
+          questionNumber: "17",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      points: 2,
+      explanation: ["正解①"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="p-6 font-sans">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第２問 A"}</h1>
+          <span className="text-gray-600">(配点 {20})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       <div className="mb-8">
         <h2 className="md:text-xl font-bold mb-6">
-          第2問 次の問い（A～C）に答えよ。（配点 47）
+          第2問 次の問い（A）に答えよ。（配点 20）
         </h2>
 
         <div className="mb-6">
@@ -41,16 +200,20 @@ const JapaneseTestQuestion = () => {
         </div>
 
         <div className="space-y-7">
-          <div className="flex flex-wrap items-center">
+          <div
+            className={cn(
+              "flex flex-wrap items-center",
+              showResults && qaFormat(qa, "2A-1")
+            )}
+          >
             <div className="font-bold mr-4">問1</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Due to the rain, our performance</span>
               <span className="mr-2">in the game was</span>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 mx-2">
-                8
-              </div>
+              {renderSelect("8", 4, answers, setAnswers)}
               <span>from perfect.</span>
             </div>
+            {showResults && <Explain qa={qa} questionId="2A-1" />}
           </div>
 
           <div className="grid grid-cols-4 gap-2 md:gap-4  md:ml-8">
@@ -64,15 +227,19 @@ const JapaneseTestQuestion = () => {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center">
+          <div
+            className={cn(
+              "flex flex-wrap items-center",
+              showResults && qaFormat(qa, "2A-2")
+            )}
+          >
             <div className="font-bold mr-4">問2</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Emergency doors can be found at</span>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 mx-2">
-                9
-              </div>
+              {renderSelect("9", 4, answers, setAnswers)}
+              <span className="mr-2">ends of this hallway.</span>
+              {showResults && <Explain qa={qa} questionId="2A-2" />}
             </div>
-            <span>ends of this hallway.</span>
           </div>
 
           <div className="grid grid-cols-4 gap-2 md:gap-4  md:ml-8">
@@ -86,16 +253,20 @@ const JapaneseTestQuestion = () => {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center">
+          <div
+            className={cn(
+              "flex flex-wrap items-center",
+              showResults && qaFormat(qa, "2A-3")
+            )}
+          >
             <div className="font-bold mr-4">問3</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 My plans for studying abroad depend on
               </span>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 mx-2">
-                10
-              </div>
-              <span>I can get a scholarship.</span>
+              {renderSelect("10", 4, answers, setAnswers)}
+              <span className="mr-2">I can get a scholarship.</span>
+              {showResults && <Explain qa={qa} questionId="2A-3" />}
             </div>
           </div>
 
@@ -110,14 +281,18 @@ const JapaneseTestQuestion = () => {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center">
+          <div
+            className={cn(
+              "flex flex-wrap items-center",
+              showResults && qaFormat(qa, "2A-4")
+            )}
+          >
             <div className="font-bold mr-4">問4</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Noriko can speak Swahili and</span>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 mx-2">
-                11
-              </div>
-              <span>can Marco.</span>
+              {renderSelect("11", 4, answers, setAnswers)}
+              <span className="mr-2">can Marco.</span>
+              {showResults && <Explain qa={qa} questionId="2A-4" />}
             </div>
           </div>
 
@@ -132,17 +307,19 @@ const JapaneseTestQuestion = () => {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center">
+          <div
+            className={cn(
+              "flex flex-wrap items-center",
+              showResults && qaFormat(qa, "2A-5")
+            )}
+          >
             <div className="font-bold mr-4">問5</div>
             <div className="flex flex-wrap items-center">
-              <span className="mr-2">
-                To say you will go jogging every day is
-              </span>
-              <span>one thing, but to do it is</span>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 mx-2">
-                12
-              </div>
+              <span>To say you will go jogging every day is</span>
+              <span className="mr-2">one thing, but to do it is</span>
+              {renderSelect("12", 4, answers, setAnswers)}
               <span>.</span>
+              {showResults && <Explain qa={qa} questionId="2A-5" />}
             </div>
           </div>
 
@@ -159,17 +336,21 @@ const JapaneseTestQuestion = () => {
             )}
           </div>
 
-          <div className="flex flex-wrap items-center">
+          <div
+            className={cn(
+              "flex flex-wrap items-center",
+              showResults && qaFormat(qa, "2A-6")
+            )}
+          >
             <div className="font-bold mr-4">問6</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 Our boss is a hard worker, but can be
               </span>
-              <span className="mr-2">difficult to get</span>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 mx-2">
-                13
-              </div>
-              <span>.</span>
+              <span>difficult to get</span>
+              {renderSelect("13", 4, answers, setAnswers)}
+              <span className="mr-2">.</span>
+              {showResults && <Explain qa={qa} questionId="2A-6" />}
             </div>
           </div>
 
@@ -186,14 +367,18 @@ const JapaneseTestQuestion = () => {
             )}
           </div>
 
-          <div className="flex flex-wrap items-center">
+          <div
+            className={cn(
+              "flex flex-wrap items-center",
+              showResults && qaFormat(qa, "2A-7")
+            )}
+          >
             <div className="font-bold mr-4">問7</div>
             <div className="flex flex-wrap items-center">
-              <span className="mr-2">When Ayano came to my house,</span>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 mx-2">
-                14
-              </div>
-              <span>happened that nobody was at home.</span>
+              <span>When Ayano came to my house,</span>
+              {renderSelect("14", 4, answers, setAnswers)}
+              <span className="mr-2">happened that nobody was at home.</span>
+              {showResults && <Explain qa={qa} questionId="2A-7" />}
             </div>
           </div>
 
@@ -209,15 +394,19 @@ const JapaneseTestQuestion = () => {
           </div>
 
           <div className="flex flex-col">
-            <div className="flex flex-wrap items-center mb-2">
+            <div
+              className={cn(
+                "flex flex-wrap items-center mb-2",
+                showResults && qaFormat(qa, "2A-8")
+              )}
+            >
               <div className="font-bold mr-4">問8</div>
               <span className="mr-2">We'll be able to get home on time as</span>
               <span className="mr-2">（ A ） as the roads are （ B ）.</span>
-              <div className="ml-8 mb-2">
-                <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1">
-                  15
-                </div>
-              </div>
+              <span className="flex flex-row">
+                {renderSelect("15", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="2A-8" />}
+              </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">
@@ -241,16 +430,22 @@ const JapaneseTestQuestion = () => {
           </div>
 
           <div className="flex flex-col">
-            <div className="flex flex-wrap items-center mb-2">
+            <div
+              className={cn(
+                "flex flex-wrap items-center mb-2",
+                showResults && qaFormat(qa, "2A-9")
+              )}
+            >
               <span className="font-bold mr-4">問9</span>
               <span>
                 I know you said you weren't going to the sports festival, but it
                 is an important event,
               </span>
               <span>so please （ A ） it a （ B ） thought.</span>
-              <div className="inline-block border border-black w-12 h-8 text-center py-1 mx-2">
-                16
-              </div>
+              <span className="flex flex-row">
+                {renderSelect("16", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="2A-9" />}
+              </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">
@@ -274,13 +469,19 @@ const JapaneseTestQuestion = () => {
           </div>
 
           <div className="flex flex-col">
-            <div className="flex items-center flex-wrap mb-2">
+            <div
+              className={cn(
+                "flex items-center flex-wrap mb-2",
+                showResults && qaFormat(qa, "2A-10")
+              )}
+            >
               <span className="font-bold mr-4">問10</span>
               <span>I didn't recognize （ A ） of the guests （ B ）</span>
               <span>the two sitting in the back row.</span>
-              <div className="inline-block border border-black w-12 h-8 text-center py-1 mx-2">
-                17
-              </div>
+              <span className="flex flex-row">
+                {renderSelect("17", 4, answers, setAnswers)}
+                {showResults && <Explain qa={qa} questionId="2A-10" />}
+              </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">

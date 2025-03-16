@@ -1,8 +1,112 @@
-import React from "react";
-import cn from "clsx";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const JapaneseTestQuestion = () => {
-  // 日本語の番号文字
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "1-1",
+      qa: [
+        {
+          questionNumber: "1",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解④"],
+    },
+    {
+      questionId: "1-2",
+      qa: [
+        {
+          questionNumber: "2",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解③"],
+    },
+    {
+      questionId: "1-3",
+      qa: [
+        {
+          questionNumber: "3",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "4",
+      answerString: "",
+      points: 2,
+      explanation: ["正解④"],
+    },
+    {
+      questionId: "1-4",
+      qa: [
+        {
+          questionNumber: "4",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      points: 2,
+      explanation: ["正解②"],
+    },
+    {
+      questionId: "1-5",
+      qa: [
+        {
+          questionNumber: "5",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      points: 2,
+      explanation: ["正解①"],
+    },
+    {
+      questionId: "1-6",
+      qa: [
+        {
+          questionNumber: "6",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "2",
+      answerString: "",
+      points: 2,
+      explanation: ["正解②"],
+    },
+    {
+      questionId: "1-7",
+      qa: [
+        {
+          questionNumber: "7",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      points: 2,
+      explanation: ["正解①"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question); // 日本語の番号文字
   const japaneseNumbers = ["①", "②", "③", "④"];
 
   // 問題の選択肢データを配列として定義
@@ -105,25 +209,39 @@ const JapaneseTestQuestion = () => {
     index: number;
     isLargeWords?: boolean;
   }) => (
-    <div className="mb-8">
+    <div
+      className={cn("mb-8", showResults && qaFormat(qa, `1-${questionNumber}`))}
+    >
       <div className="flex items-center mb-4">
         <span className="font-bold mr-4">問 {index + 1}</span>
-        <div className="border border-black px-6 py-1 w-16 text-center">
-          {questionNumber}
-        </div>
+        {renderSelect(String(questionNumber), 4, answers, setAnswers)}
+        {showResults && <Explain qa={qa} questionId={`1-${questionNumber}`} />}
       </div>
       <QuestionOptions options={options} isLargeWords={isLargeWords} />
     </div>
   );
 
   return (
-    <div className="p-6 font-sans">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第1問"}</h1>
+          <span className="text-gray-600">(配点 {14})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       {/* Question Header */}
       <div className="mb-6 md:text-lg font-bold flex md:items-center">
         <span className="w-12">第1問</span>
         <span className="ml-4">次の問い(A・B)に答えよ。(配点 14)</span>
       </div>
-
       {/* Section A */}
       <div className="mb-8">
         <div className="mb-6 flex items-start">
@@ -146,7 +264,6 @@ const JapaneseTestQuestion = () => {
           />
         ))}
       </div>
-
       {/* Section B */}
       <div className="mb-8">
         <div className="mb-6 flex items-start">

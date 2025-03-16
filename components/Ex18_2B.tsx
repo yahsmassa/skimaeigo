@@ -1,8 +1,89 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const JapaneseExam = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "2B-1",
+      qa: [
+        {
+          questionNumber: "18",
+          answer: 0,
+        },
+        {
+          questionNumber: "19",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "42",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解④と②"],
+    },
+    {
+      questionId: "2B-2",
+      qa: [
+        {
+          questionNumber: "20",
+          answer: 0,
+        },
+        {
+          questionNumber: "21",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "43",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解④と③"],
+    },
+    {
+      questionId: "2B-3",
+      qa: [
+        {
+          questionNumber: "22",
+          answer: 0,
+        },
+        {
+          questionNumber: "23",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "52",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解⑤と②"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="max-w-3xl mx-auto bg-white p-8 font-serif">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第２問 B"}</h1>
+          <span className="text-gray-600">(配点 {12})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       {/* タイトル部分 */}
       <div className="mb-6 leading-8">
         <p className="text-base md:text-lg mb-4">
@@ -18,7 +99,6 @@ const JapaneseExam = () => {
           に入れるものの番号のみを答えよ。
         </p>
       </div>
-
       {/* 問題1 */}
       <div className="mb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
@@ -29,24 +109,30 @@ const JapaneseExam = () => {
           <div className="md:col-span-10 md:ml-2">
             What are we going to do with the Australian students after they
             arrive?
+            {Kaisetsu(showResults, "18-2B-1")}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
+        <div
+          className={cn(
+            "grid grid-cols-1 md:grid-cols-12 gap-2 mb-4",
+            showResults && qaFormat(qa, "2B-1")
+          )}
+        >
           <div className="md:col-span-1"></div>
           <div className="md:col-span-1">Teacher:</div>
-          <div className="md:col-span-10 md:ml-2">
-            The first night, we'll have a barbecue by the river so that you all
-            <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              18
+          <div className="md:col-span-10 md:ml-2 flex flex-row flex-wrap items-center space-y-0">
+            <span>
+              The first night, we'll have a barbecue by the river so that you
+              all
             </span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
+            {renderSelect("18", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              19
-            </span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            quickly.
+            {renderSelect("19", 6, answers, setAnswers)}
+            <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
+            <span className="mr-2">quickly.</span>
+            {showResults && <Explain qa={qa} questionId="2B-1" />}
           </div>
         </div>
 
@@ -61,7 +147,6 @@ const JapaneseExam = () => {
           ))}
         </div>
       </div>
-
       {/* 問題2 */}
       <div className="mb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
@@ -71,24 +156,27 @@ const JapaneseExam = () => {
           <div className="md:col-span-1">Bridget:</div>
           <div className="md:col-span-10 md:ml-2">
             How was your basketball season last year?
+            {Kaisetsu(showResults, "18-2B-2")}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
+        <div
+          className={cn(
+            "grid grid-cols-1 md:grid-cols-12 gap-2 mb-4",
+            showResults && qaFormat(qa, "2B-2")
+          )}
+        >
           <div className="md:col-span-1"></div>
           <div className="md:col-span-1">Toshi:</div>
-          <div className="md:col-span-10">
-            I
+          <div className="md:col-span-10 flex flex-row flex-wrap items-center space-y-0">
+            <span>I</span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              20
-            </span>
+            {renderSelect("20", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              21
-            </span>
+            {renderSelect("21", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            .
+            <span className="mr-2">was the highest scorer on the team.</span>
+            {showResults && <Explain qa={qa} questionId="2B-2" />}
           </div>
         </div>
 
@@ -105,7 +193,6 @@ const JapaneseExam = () => {
           )}
         </div>
       </div>
-
       {/* 問題3 */}
       <div className="mb-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
@@ -116,25 +203,30 @@ const JapaneseExam = () => {
           <div className="md:col-span-10">
             I want to buy my first computer, but I don't know which one I should
             get.
+            {Kaisetsu(showResults, "18-2B-3")}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
+        <div
+          className={cn(
+            "grid grid-cols-1 md:grid-cols-12 gap-2 mb-4",
+            showResults && qaFormat(qa, "2B-3")
+          )}
+        >
           <div className="md:col-span-1"></div>
           <div className="md:col-span-1">Sam:</div>
-          <div className="md:col-span-10">
-            Don't worry. Electronic stores always have experts available to give
-            advice
-            <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              22
+          <div className="md:col-span-10 flex flex-row flex-wrap items-center space-y-0">
+            <span>
+              Don't worry. Electronic stores always have experts available to
+              give advice
             </span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
+            {renderSelect("22", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              23
-            </span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            using computers.
+            {renderSelect("23", 6, answers, setAnswers)}
+            <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
+            <span className="mr-2">using computers.</span>
+            {showResults && <Explain qa={qa} questionId="2B-3" />}
           </div>
         </div>
 

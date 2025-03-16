@@ -1,8 +1,77 @@
-import React from "react";
-import cn from "clsx";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
+
 const JapaneseExamQuestion = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "2C-1",
+      qa: [
+        {
+          questionNumber: "24",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解③"],
+    },
+    {
+      questionId: "2C-2",
+      qa: [
+        {
+          questionNumber: "25",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "1",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解①"],
+    },
+    {
+      questionId: "2C-3",
+      qa: [
+        {
+          questionNumber: "26",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "3",
+      answerString: "",
+      isCorrect: false,
+      points: 2,
+      explanation: ["正解③"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="font-sans p-6 max-w-3xl mx-auto">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第２問 B"}</h1>
+          <span className="text-gray-600">(配点 {10})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>
       <div className="mb-6 leading-8">
         <p className="mb-4">
           <span className="font-bold">C</span>{" "}
@@ -45,14 +114,19 @@ const JapaneseExamQuestion = () => {
               speaker: "Luke",
               //解答部分
               text: (
-                <>
-                  But{" "}
-                  <span className="inline-block border-2 border-black px-3 py-1 mx-1">
-                    24
-                  </span>{" "}
-                  young people. It will definitely have a positive economic
-                  effect on our city.
-                </>
+                <div
+                  className={cn(
+                    "flex flex-row -mt-1 flex-wrap items-center space-y-0",
+                    showResults && qaFormat(qa, "3B-1")
+                  )}
+                >
+                  <span>But</span> {renderSelect("24", 4, answers, setAnswers)}
+                  <span>young people.</span>
+                  <span>
+                    It will definitely have a positive economic effect on our
+                    city.
+                  </span>
+                </div>
               ),
               align: "md:text-right",
             },
@@ -65,6 +139,11 @@ const JapaneseExamQuestion = () => {
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}
+          <div className="flex flex-row md:w-[400px]">
+            {showResults && <Explain qa={qa} questionId="2C-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "20-2C-1")}
+          </div>
         </div>
       </div>
 
@@ -166,13 +245,17 @@ const JapaneseExamQuestion = () => {
           {
             speaker: "Lee",
             text: (
-              <>
-                Very much so. But{" "}
-                <span className="inline-block border-2 border-black px-3 py-1 mx-1">
-                  25
-                </span>{" "}
-                to Emma's plan. They always support each other in the end.
-              </>
+              <div
+                className={cn(
+                  "flex flex-row -mt-1 flex-wrap items-center space-y-0",
+                  showResults && qaFormat(qa, "2C-2")
+                )}
+              >
+                <span>Very much so.</span>{" "}
+                {renderSelect("25", 4, answers, setAnswers)}
+                <span>to Emma's plan.</span>{" "}
+                <span>They always support each other in the end.</span>
+              </div>
             ),
           },
         ].map((conv, index) => (
@@ -182,6 +265,11 @@ const JapaneseExamQuestion = () => {
             <div className="md:col-span-1"></div>
           </React.Fragment>
         ))}
+        <div className="flex flex-row md:w-[400px]">
+          {showResults && <Explain qa={qa} questionId="2C-2" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "20-2C-2")}
+        </div>
       </div>
 
       <div className="flex flex-row flex-wrap items-center mb-6 space-y-0">
@@ -277,14 +365,19 @@ const JapaneseExamQuestion = () => {
           {
             speaker: "Ms. Sakamoto",
             text: (
-              <>
-                Even if you think you do, the drill is{" "}
-                <span className="inline-block border-2 border-black px-3 py-1 mx-1">
-                  26
-                </span>{" "}
-                help each other in case of a disaster. We should take it
-                seriously.
-              </>
+              <div
+                className={cn(
+                  "flex flex-row -mt-1 flex-wrap items-center space-y-0",
+                  showResults && qaFormat(qa, "2C-3")
+                )}
+              >
+                <span>Even if you think you do, the drill is</span>{" "}
+                {renderSelect("26", 4, answers, setAnswers)}
+                <span>
+                  help each other in case of a disaster. We should take it
+                  seriously.
+                </span>
+              </div>
             ),
           },
         ].map((conv, index) => (
@@ -294,6 +387,11 @@ const JapaneseExamQuestion = () => {
             <div className="md:col-span-1"></div>
           </React.Fragment>
         ))}
+        <div className="flex flex-row md:w-[400px]">
+          {showResults && <Explain qa={qa} questionId="2C-3" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "20-2C-3")}
+        </div>
       </div>
 
       <div className="flex flex-row flex-wrap items-center mb-6 space-y-0">

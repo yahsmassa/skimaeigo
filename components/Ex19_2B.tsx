@@ -1,8 +1,89 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { Saiten } from "@/components/Saiten";
+import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import { Answers, QandA } from "@/lib/types";
+import { Explain } from "@/components/Explain";
+import Image from "next/image";
+import { Kaisetsu } from "@/components/Kaisetsu";
 
 const EnglishTestQuestions = () => {
+  const [showResults, setShowResults] = useState(false);
+  const [answers, setAnswers] = useState<Answers>({});
+  const question: QandA[] = [
+    {
+      questionId: "2B-1",
+      qa: [
+        {
+          questionNumber: "18",
+          answer: 0,
+        },
+        {
+          questionNumber: "19",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "25",
+      answerString: "",
+      isCorrect: false,
+      points: 4,
+      explanation: ["正解②と⑤"],
+    },
+    {
+      questionId: "2B-2",
+      qa: [
+        {
+          questionNumber: "20",
+          answer: 0,
+        },
+        {
+          questionNumber: "21",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "62",
+      answerString: "",
+      isCorrect: false,
+      points: 4,
+      explanation: ["正解⑥と②"],
+    },
+    {
+      questionId: "2B-3",
+      qa: [
+        {
+          questionNumber: "22",
+          answer: 0,
+        },
+        {
+          questionNumber: "23",
+          answer: 0,
+        },
+      ],
+      rightAnswerString: "26",
+      answerString: "",
+      isCorrect: false,
+      points: 4,
+      explanation: ["正解②と⑥"],
+    },
+  ];
+  const [qa, setQA] = useState<QandA[]>(question);
   return (
-    <div className="max-w-3xl mx-auto bg-white p-8 font-serif">
+    <div className={exPageFormat}>
+      <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
+        <div className="flex items-center space-x-4 mb-2">
+          <h1 className="text-lg font-bold">{"第２問 B"}</h1>
+          <span className="text-gray-600">(配点 {12})</span>
+        </div>
+        <Saiten
+          qa={qa}
+          setQA={setQA}
+          showResults={showResults}
+          setShowResults={setShowResults}
+          answers={answers}
+          setAnswers={setAnswers}
+        />
+      </div>{" "}
       <div className="mb-6 leading-8">
         <p className="text-base md:text-lg mb-4">
           B
@@ -17,7 +98,6 @@ const EnglishTestQuestions = () => {
           に入れるものの番号のみを答えよ。
         </p>
       </div>
-
       <div className="mb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
@@ -27,24 +107,27 @@ const EnglishTestQuestions = () => {
           <div className="md:col-span-10">
             Did you hear that a new entrance ID system will be introduced next
             month?
+            {Kaisetsu(showResults, "19-2B-1")}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
+        <div
+          className={cn(
+            "grid grid-cols-1 md:grid-cols-12 gap-2 mb-4",
+            showResults && qaFormat(qa, "2B-1")
+          )}
+        >
           <div className="md:col-span-1"></div>
           <div className="md:col-span-1">Lucas:</div>
-          <div className="md:col-span-10">
-            Really? Do we need it? I
+          <div className="md:col-span-10 flex flex-row flex-wrap items-center space-y-0">
+            <span>Really? Do we need it? I</span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              18
-            </span>
+            {renderSelect("18", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              19
-            </span>
+            {renderSelect("19", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            to replace the current system.
+            <span className="mr-2">to replace the current system.</span>
+            {showResults && <Explain qa={qa} questionId="2B-1" />}
           </div>
         </div>
 
@@ -61,7 +144,6 @@ const EnglishTestQuestions = () => {
           )}
         </div>
       </div>
-
       <div className="mb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
@@ -70,24 +152,33 @@ const EnglishTestQuestions = () => {
           <div className="md:col-span-1">David:</div>
           <div className="md:col-span-10">
             What's the plan for your trip to England?
+            {Kaisetsu(showResults, "19-2B-2")}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
+        <div
+          className={cn(
+            "grid grid-cols-1 md:grid-cols-12 gap-2 mb-4",
+            showResults && qaFormat(qa, "2B-2")
+          )}
+        >
           <div className="md:col-span-1"></div>
           <div className="md:col-span-1">Saki:</div>
-          <div className="md:col-span-10">
-            I'll spend the first few days in London and then be in Cambridge
-            <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              20
+          <div className="md:col-span-10 flex flex-row flex-wrap items-center space-y-0">
+            <span>
+              I'll spend the first few days in London and then be in Cambridge
             </span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
+            {renderSelect("20", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              21
+            <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
+            {renderSelect("21", 6, answers, setAnswers)}
+            <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
+            <span>
+              <span className="mr-2">
+                for a few days. I'll also visit some friends in Oxford.
+              </span>
+              {showResults && <Explain qa={qa} questionId="2B-2" />}
             </span>
-            <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            .
           </div>
         </div>
 
@@ -102,7 +193,6 @@ const EnglishTestQuestions = () => {
           ))}
         </div>
       </div>
-
       <div className="mb-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
@@ -112,24 +202,27 @@ const EnglishTestQuestions = () => {
           <div className="md:col-span-10">
             The party we went to last night was very noisy. My throat is still
             sore from speaking loudly the whole time.
+            {Kaisetsu(showResults, "19-2B-3")}
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
+        <div
+          className={cn(
+            "grid grid-cols-1 md:grid-cols-12 gap-2 mb-4",
+            showResults && qaFormat(qa, "2B-3")
+          )}
+        >
           <div className="md:col-span-1"></div>
           <div className="md:col-span-1">Ronald:</div>
-          <div className="md:col-span-10">
-            Yeah. It can sometimes
+          <div className="md:col-span-10 flex flex-row flex-wrap items-center space-y-0">
+            <span>Yeah. It can sometimes</span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              22
-            </span>
+            {renderSelect("22", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="inline-block border border-black px-4 py-1 mx-1 text-center font-sans">
-              23
-            </span>
+            {renderSelect("23", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            in such a crowded place.
+            <span className="mr-2">in such a crowded place.</span>
+            {showResults && <Explain qa={qa} questionId="2B-3" />}
           </div>
         </div>
 
