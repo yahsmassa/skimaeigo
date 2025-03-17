@@ -84,21 +84,21 @@ const JapaneseTestComponent = () => {
               scientific principles through actual experience.
             </span>
             <span className="font-bold ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               They do well in science in comparison with other students around
               the world.
             </span>
             <span className="font-bold ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               They build electric motors using everyday goods, such as wire,
               magnets, and paper clips.
             </span>
             <span className="font-bold ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               They make ice cream by hand with salt and ice.
             </span>
             <span className="font-bold ml-2 mr-1">④</span>
-            <span className="underline decoration-2 mr-2">
+            <span className="border-b-2 border-black mr-2">
               Students say that they like the new studying style because it is
               practical as well as enjoyable and educational.
             </span>
@@ -129,21 +129,21 @@ const JapaneseTestComponent = () => {
               treatments. They may decide to use any one of the treatments.
             </span>
             <span className="font-bold ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               If the treatment does not improve the condition, they try another
               one.
             </span>
             <span className="font-bold ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               They are concerned about how scientific the treatment is.
             </span>
             <span className="font-bold ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               This is an example of how this approach is adopted in everyday
               life.
             </span>
             <span className="font-bold ml-2 mr-1">④</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               When an idea fails, they consider the alternatives.
             </span>
             <span className="">

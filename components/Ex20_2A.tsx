@@ -24,7 +24,12 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解③"],
+      explanation: [
+        "正解③ be far from A：Aには程遠い",
+        "be apart from A：Aから離れている",
+        "be different from A：Aとは違う",
+        "be free from A：A（心配など）のない",
+      ],
     },
     {
       questionId: "2A-2",
@@ -38,7 +43,11 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解①"],
+      explanation: [
+        "正解① both",
+        "通りの両側にバス停がある",
+        "each:それぞれ、either:片方の、neithr:どちらの〜も・・ない",
+      ],
     },
     {
       questionId: "2A-3",
@@ -51,7 +60,7 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "3",
       answerString: "",
       points: 2,
-      explanation: ["正解③"],
+      explanation: ["正解③", "wheter SV... 「・・・かどうか」"],
     },
     {
       questionId: "2A-4",
@@ -64,7 +73,11 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "3",
       answerString: "",
       points: 2,
-      explanation: ["正解③"],
+      explanation: [
+        "正解③",
+        "Marcoも話せる",
+        "so + 助動詞[be動詞]＋Sで前の工程分に対して、「Sもそうである」",
+      ],
     },
     {
       questionId: "2A-5",
@@ -77,7 +90,10 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: [
+        "正解①",
+        "A is one thing , but B is another で「AとBは違うことだ",
+      ],
     },
     {
       questionId: "2A-6",
@@ -90,7 +106,7 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: ["正解①", "get along with A 「Aとうまくやる」"],
     },
     {
       questionId: "2A-7",
@@ -103,7 +119,7 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: ["正解①", "It happens that SV ... 「たまたま・・・である」"],
     },
     {
       questionId: "2A-8",
@@ -116,7 +132,11 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "4",
       answerString: "",
       points: 2,
-      explanation: ["正解④"],
+      explanation: [
+        "正解④",
+        "..as logn as ..していれば、clear （道が）すいていれば",
+        "...as far as ... している限り",
+      ],
     },
     {
       questionId: "2A-9",
@@ -129,7 +149,7 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "2",
       answerString: "",
       points: 2,
-      explanation: ["正解②"],
+      explanation: ["正解②", "..give A a second thought ..を考え直す"],
     },
     {
       questionId: "2A-10",
@@ -142,7 +162,12 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: [
+        "正解①",
+        "否定語と一緒に使うany",
+        "except for を除いて",
+        "in the back row の後ろの列に",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -315,7 +340,9 @@ const JapaneseTestQuestion = () => {
           >
             <div className="font-bold mr-4">問5</div>
             <div className="flex flex-wrap items-center">
-              <span>To say you will go jogging every day is</span>
+              <span className="mr-2">
+                To say you will go jogging every day is
+              </span>
               <span className="mr-2">one thing, but to do it is</span>
               {renderSelect("12", 4, answers, setAnswers)}
               <span>.</span>

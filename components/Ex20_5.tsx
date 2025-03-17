@@ -24,7 +24,10 @@ const Ex20_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "回答は①で彼女は説明できない衝動を感じた。* an urge: 衝動",
+        "* find out: みつける、* planned to.. :・・する予定だった",
+      ],
     },
     {
       questionId: "5-2",
@@ -38,7 +41,7 @@ const Ex20_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["回答は④ 彼女は老人に助けられた。"],
     },
     {
       questionId: "5-3",
@@ -52,7 +55,9 @@ const Ex20_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は④ 彼らは公共の安全を守るために働いた。 犬も、老人も警察で働いていたので",
+      ],
     },
     {
       questionId: "5-4",
@@ -67,7 +72,7 @@ const Ex20_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は② 印象を残した"],
     },
     {
       questionId: "5-5",
@@ -81,7 +86,10 @@ const Ex20_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は② 彼女は断固としていた、そしてそれから慰められた。",
+        "* depressed: 落ち込んだ、* sadder: より悲しい、* miserable: 惨めな、不幸な、* became entertained: 楽しんだ、楽しませてもらった",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

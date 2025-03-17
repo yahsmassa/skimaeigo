@@ -23,7 +23,10 @@ const Ex20_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は④ 230",
+        "境界は、高い方のスコアをカウントするのがポイント",
+      ],
     },
     {
       questionId: "4A-2",
@@ -37,7 +40,12 @@ const Ex20_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は ④ Throwing three or more times in a row from the same location was against the rules for the Random group. ランダム群では、同じ地点から連続して3回以上投擲することはルール違反だった。",
+        "① Eighty-one throws were made from the same initial throwing location in the Blocked group. ブロッキング群では、同じ開始投擲地点から81回の投擲が行われた。",
+        "② The distance from the target remained unchanged during the entire experiment for the Combined group. コンバインド群では、実験全体を通してターゲットからの距離は変化しなかった。",
+        "③ The set of throws from the same location involved various ways of throwing for the Combined group. コンバインド群では、同じ地点からの投擲は、様々な投擲方法を含んでいた。",
+      ],
     },
     {
       questionId: "4A-3",
@@ -51,7 +59,12 @@ const Ex20_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は② The Blocked group showed the worst score among the three groups on the performance test. ブロッキング群は、3つのグループの中で最も悪いスコアを示した。",
+        "① ブロックされたグループは、練習中とパフォーマンステストの両方で最高のスコアを記録した。",
+        "③ コンバインドグループは、ランダムグループよりも低い精度を示した。",
+        "④ ランダムグループは、練習中とパフォーマンステストの両方で最低の精度だった",
+      ],
     },
     {
       questionId: "4A-4",
@@ -65,7 +78,12 @@ const Ex20_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は④ Various kinds of throwing motions 様々な投げ方",
+        "① Mental imagery training of underhand throws アンダーハンド投げのメンタルイメージトレーニング",
+        "② Observation of younger students' movements 若い学生の動きの観察",
+        "③ Overarm throws with eyes closed 目を閉じたアウターハンド投げ",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

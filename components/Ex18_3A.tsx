@@ -110,24 +110,24 @@ const JapaneseExamQuestion = () => {
               anxiety about his surroundings.
             </span>
             <span className="ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               He realized people sometimes misunderstood him because of his
               regional accent and expressions.
             </span>
             <span className="ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               He knew that his parents missed him very much because he was their
               only child.
             </span>
             <span className="ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               He also noticed many of his classmates had learned various things
               in high school that he had never even heard of.
             </span>
             Everyone seemed smarter, more mature, and even more fashionable than
             he was.
             <span className="ml-2 mr-1">④</span>
-            <span className="underline decoration-2 mr-1">
+            <span className="border-b-2 border-black mr-1">
               He was afraid he was already too far behind in everything.
             </span>
             However, it turned out that most of the other students had more or
@@ -158,22 +158,22 @@ const JapaneseExamQuestion = () => {
               and contain seeds.
             </span>
             <span className="ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               According to this scientific definition, tomatoes, as well as
               cucumbers, pumpkins, and green peppers, are fruits.
             </span>
             <span className="ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Contrary to what science says, most people consider the tomato a
               vegetable and use it as a vegetable.
             </span>
             <span className="ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               For example, in some countries the tomato has been given names
               such as "golden apple" and "love apple."
             </span>
             <span className="ml-2 mr-1">④</span>
-            <span className="underline decoration-2 mr-2">
+            <span className="border-b-2 border-black mr-2">
               Tomatoes are eaten cooked or raw as many vegetables are and not
               traditionally served for dessert like fruits.
             </span>
@@ -203,23 +203,23 @@ const JapaneseExamQuestion = () => {
               pigs, chickens, and cows.
             </span>
             <span className="ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               It isn't well known, but insects are an extremely healthy food as
               they are full of protein, vitamins, and minerals.
             </span>
             <span className="ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Insects have been around for millions of years, living with the
               dinosaurs and then very early human beings.
             </span>
             <span className="ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Raising insects can be environmentally friendly as they neither
               take up much space, eat much food, nor release much greenhouse
               gas.
             </span>
             <span className="ml-2 mr-1">④</span>
-            <span className="underline decoration-2 mr-2">
+            <span className="border-b-2 border-black mr-2">
               Most are able to survive with little water, making them an ideal
               alternative food for locations with severe water shortages.
             </span>

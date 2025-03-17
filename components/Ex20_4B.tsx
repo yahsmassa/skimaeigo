@@ -22,7 +22,10 @@ const Ex20_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "回答は①",
+        "両日利用者にはそれぞれの日で２＄割引になるので、８＄が６＄、１０＄が８＄になり１４＄",
+      ],
     },
     {
       questionId: "4B-2",
@@ -36,7 +39,11 @@ const Ex20_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "回答は①",
+        "屋外スペースはテントの設置サービスがある",
+        "払い戻しは８割の返金、スペースは自分で指定できない、トラックは追加料金が必要",
+      ],
     },
     {
       questionId: "4B-3",
@@ -50,7 +57,10 @@ const Ex20_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "回答は② お客様に石鹸を試してもらえるように、洗面器に水を用意できる",
+        "場所は自分で指定できない、ペットは持ち込めない、火は使えない",
+      ],
     },
     {
       questionId: "4B-4",
@@ -64,7 +74,10 @@ const Ex20_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "回答は④ 主催者はスケジュール変更に関する情報を提供します",
+        "手作り品は問題なし、ゴミは分別、申し込み日に制限なし",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

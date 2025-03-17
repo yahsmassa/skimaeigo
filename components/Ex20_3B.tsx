@@ -24,7 +24,7 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は③"],
+      explanation: ["正解は③", "odd jobsとrandom jobsが同じ意味と判断する"],
     },
     {
       questionId: "3B-2",
@@ -38,7 +38,10 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は③"],
+      explanation: [
+        "正解は③ 地域内で働くことにはほとんどリスクがない。",
+        "他の選択肢の内容は文章にない",
+      ],
     },
     {
       questionId: "3B-3",
@@ -52,7 +55,10 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は④"],
+      explanation: [
+        "正解は④ 私たちの地域に有効な計画を立てる",
+        "他の選択肢の内容は文章にない",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -257,8 +263,8 @@ const JapaneseTestQuestion = () => {
             Akira:
           </div>
           <div className="flex-1 flex-wrap flex items-center leading-6 md:leading-8">
-            <span>It sounds like we shouldn't be too</span>
-            <span>worried because</span>
+            <span className="mr-2">It sounds like we shouldn't be too</span>
+            <span className="mr-2">worried because</span>
             {renderSelect("31", 4, answers, setAnswers)}
             <span className="mr-3"></span>
             {showResults && <Explain qa={qa} questionId="3B-2" />}
@@ -347,6 +353,7 @@ const JapaneseTestQuestion = () => {
             {renderSelect("32", 4, answers, setAnswers)}
             <span className="mr-2">. Right?</span>
             {showResults && <Explain qa={qa} questionId="3B-3" />}
+            <span className="mr-2"></span>
             {Kaisetsu(showResults, "20-3B-16")}
           </div>
         </div>

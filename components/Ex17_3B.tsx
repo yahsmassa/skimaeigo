@@ -100,22 +100,22 @@ const JapaneseExamQuestions = () => {
               shoes.
             </span>
             <span className="font-bold ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Make sure the insole, the inner bottom part of the shoe, is made
               of material which absorbs the impact on your foot when walking.
             </span>{" "}
             <span className="font-bold ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               The upper part of the shoe should be made of breathable material
               such as leather or cloth.
             </span>{" "}
             <span className="font-bold ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Some brand-name leather shoes are famous because of their
               fashionable designs.
             </span>
             <span className="font-bold ml-2 mr-1">④</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               When you try on shoes, pay attention not only to their length but
               also to their depth and width.
             </span>{" "}
@@ -142,23 +142,23 @@ const JapaneseExamQuestions = () => {
               method has its own advantages and disadvantages.{" "}
             </span>
             <span className="font-bold ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Transportation by air, though it can be expensive, is suitable for
               carrying goods which require speedy delivery.
             </span>
             <span className="font-bold ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Buses can carry many passengers, and they are convenient for daily
               life.
             </span>{" "}
             <span className="font-bold ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Ships, on the other hand, can carry large quantities at low cost,
               but it takes much time for them to reach their destinations.
             </span>{" "}
             Trains can stop only at stations, but their arrival times can easily
             be estimated. <span className="font-bold ml-2 mr-1">④</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Although trucks cannot carry much compared with trains, they are
               useful for carrying things from door to door.
             </span>
@@ -187,22 +187,22 @@ const JapaneseExamQuestions = () => {
               idea. For instance, two groups of divers went into the sea.{" "}
             </span>
             <span className="font-bold ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               After listening to a list of words underwater, they came back on
               land and wrote down as many words as they could remember.
             </span>
             <span className="font-bold ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               A day later, one group sat on land, while the other went back into
               the sea.
             </span>{" "}
             <span className="font-bold ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Researchers carefully chose the list of words, and the divers
               selected the diving site.
             </span>{" "}
             <span className="font-bold ml-2 mr-1">④</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Each group was asked to recall and write the words they had
               learned the day before.
             </span>{" "}

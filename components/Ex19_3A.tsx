@@ -112,7 +112,7 @@ const ExamQuestion = () => {
               needed them when flying from one side of the country to the other.
             </span>
             <span className="ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               The arrows were seen as being so successful that some people even
               suggested floating arrows on the Atlantic Ocean.
             </span>
@@ -122,12 +122,12 @@ const ExamQuestion = () => {
               and San Francisco.
             </span>
             <span className="ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Every 16 kilometers, pilots would pass a 21-meter-long arrow that
               was painted bright yellow.
             </span>
             <span className="ml-2 mr-1">④</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               A rotating light in the middle and one light at each end made the
               arrow visible at night.
             </span>
@@ -163,22 +163,22 @@ const ExamQuestion = () => {
               reported their findings.
             </span>
             <span className="ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               The birds from urban areas were better at problem-solving tasks
               than the ones from rural environments.
             </span>
             <span className="ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               The researchers prepared several experiments to check the
               differences between the groups of birds.
             </span>
             <span className="ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               The urban birds had more capacity to resist disease than the rural
               ones.
             </span>
             <span className="ml-2 mr-1">④</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               The researchers had expected that in comparison to the rural
               birds, the urban birds would be smarter but weaker.
             </span>
@@ -209,22 +209,22 @@ const ExamQuestion = () => {
               carefully in order to show one's wealth and place in society.
             </span>
             <span className="ml-2 mr-1">①</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Whatever happened at the feasts reflected social class, even the
               order in which people walked into the room.
             </span>
             <span className="ml-2 mr-1">②</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               There was a top table and the highest ranking guest would sit on
               the right of the king or the queen.
             </span>
             <span className="ml-2 mr-1">③</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               Gold and silver dishes were also laid out to emphasize how rich
               the family was.
             </span>
             <span className="ml-2 mr-1">④</span>
-            <span className="underline decoration-2">
+            <span className="border-b-2 border-black">
               The way feasts were held during the Tudor era has been richly
               presented in various films.
             </span>

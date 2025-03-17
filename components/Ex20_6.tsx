@@ -24,7 +24,11 @@ const Ex20_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は① 一定量の液体を取得できるようにすること",
+        "* Permitting visitors to enter ..: （参拝者が寺に）入ることを許可する",
+        "* Providing a regular income to .. : 定期的な収入を提供する",
+      ],
     },
     {
       questionId: "6-2",
@@ -38,7 +42,10 @@ const Ex20_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は③ 自動販売機の技術は、アジアでは数世紀も前に見られていた。",
+        "* vending machines were common in the world: 自動販売機は1世界中で一般的になった。",
+      ],
     },
     {
       questionId: "6-3",
@@ -53,7 +60,10 @@ const Ex20_6 = () => {
       isOrderFree: true,
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は② 無許可の模倣品を作成する",
+        "① 不正な取引を受け入れる、③ 承認されていない技術を制限する、④ 不要な支援を撤回する",
+      ],
     },
     {
       questionId: "6-4",
@@ -67,7 +77,10 @@ const Ex20_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は④ 様々な品揃えが、それらを世界で唯一のものにしている。",
+        "* hesitate to..: をためらう、* over three quarters of them : それらの3/4以上が、* a variety of  : さまざまな",
+      ],
     },
     {
       questionId: "6-5",
@@ -81,7 +94,10 @@ const Ex20_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は② 自動販売機の通史",
+        "① 日本の社会における自動販売機の文化的利点、③ 国際比較による自動販売機の経済的影響、④ 現代技術による自動販売機のグローバル化",
+      ],
     },
     {
       questionId: "6-6",
@@ -105,9 +121,14 @@ const Ex20_6 = () => {
       ],
       rightAnswerString: "2431",
       answerString: "",
-      isCorrect: false,
+      isCorrect: true,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は順に、② 自動販売機1台の製作と、その装置の使用方法の説明",
+        "④ 過去、様々な場所で販売されていた自動販売機の商品の種類",
+        "③ 異なる通貨を導入した後の自動販売機の製造における困難",
+        "① ある国で自動販売機が広く普及するのを可能にしたある要因",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

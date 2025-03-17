@@ -136,7 +136,7 @@ const JapaneseTestQuestion = () => {
         options: [
           "acc<u>u</u>se",
           "c<u>u</u>be",
-          "cuc<u>u</u>mber",
+          "c<u>u</u>cumber",
           "c<u>u</u>ltivate",
         ],
       },

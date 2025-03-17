@@ -22,9 +22,12 @@ const JapaneseExamQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解③"],
+      points: 5,
+      explanation: [
+        "正解③",
+        "according to the experts,it will create more jobs for",
+        "accorcing to .. によると、create （仕事を）創出する",
+      ],
     },
     {
       questionId: "2C-2",
@@ -36,9 +39,12 @@ const JapaneseExamQuestion = () => {
       ],
       rightAnswerString: "1",
       answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解①"],
+      points: 5,
+      explanation: [
+        "正解①",
+        "although  he is quite upset,he doesn't object",
+        "although SV... 「・・・だけど」、upset:戸惑っている、 object to 反対する",
+      ],
     },
     {
       questionId: "2C-3",
@@ -50,9 +56,12 @@ const JapaneseExamQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解③"],
+      points: 5,
+      explanation: [
+        "正解③",
+        "essential so that we can",
+        "essential:きわめて大切な、不可欠な、so that S can 〜:Sができるように",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -60,8 +69,8 @@ const JapaneseExamQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 B"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <h1 className="text-lg font-bold">{"第２問 C"}</h1>
+          <span className="text-gray-600">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}
@@ -117,7 +126,7 @@ const JapaneseExamQuestion = () => {
                 <div
                   className={cn(
                     "flex flex-row -mt-1 flex-wrap items-center space-y-0",
-                    showResults && qaFormat(qa, "3B-1")
+                    showResults && qaFormat(qa, "2C-1")
                   )}
                 >
                   <span>But</span> {renderSelect("24", 4, answers, setAnswers)}
@@ -132,7 +141,7 @@ const JapaneseExamQuestion = () => {
             },
           ].map((item, index) => (
             <React.Fragment key={index}>
-              <div className={cn("md:col-span-1", item.align)}>
+              <div className={cn("md:col-span-1 text-right pr-2", item.align)}>
                 {item.speaker}:
               </div>
               <div className="md:col-span-10">{item.text}</div>
@@ -260,7 +269,7 @@ const JapaneseExamQuestion = () => {
           },
         ].map((conv, index) => (
           <React.Fragment key={index}>
-            <div className="md:col-span-1">{conv.speaker}:</div>
+            <div className="md:col-span-1 text-right pr-2">{conv.speaker}:</div>
             <div className="md:col-span-10">{conv.text}</div>
             <div className="md:col-span-1"></div>
           </React.Fragment>

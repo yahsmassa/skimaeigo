@@ -28,7 +28,11 @@ const EnglishTest = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解④と②"],
+      explanation: [
+        "正解④と②",
+        "would not have been completed by the time ",
+        "by the time ・・するまでに",
+      ],
     },
     {
       questionId: "2B-2",
@@ -46,7 +50,11 @@ const EnglishTest = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解④と③"],
+      explanation: [
+        "正解④と③",
+        "youngest of whom is studying music in Longon ",
+        "関係代名詞 A of whom 「その人のうちのA」 Aにはmany, mostなどの代名詞や、形容詞の最上級がくる",
+      ],
     },
     {
       questionId: "2B-3",
@@ -64,7 +72,12 @@ const EnglishTest = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解⑤と②"],
+      explanation: [
+        "正解⑤と②",
+        "as planned of put it off",
+        "as planned:計画どおりに",
+        "put it off:延期する",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -121,7 +134,7 @@ const EnglishTest = () => {
           )}
         >
           <div className="md:col-span-1"></div>
-          <div className="md:col-span-1">Mei:</div>
+          <div className="md:col-span-1 md:ml-2">Mei:</div>
           <div className="md:col-span-10 flex flex-row flex-wrap items-center space-y-0">
             <span>
               Yes, thank you so much. Without your help, the preparations
@@ -156,7 +169,7 @@ const EnglishTest = () => {
           <div className="md:col-span-1">
             <span className="font-bold">問２</span>
           </div>
-          <div className="md:col-span-1">Ichiro:</div>
+          <div className="md:col-span-1 md:ml-2">Ichiro:</div>
           <div className="md:col-span-10">
             <span>Mr. Smith has two daughters in school now, right?</span>
             {Kaisetsu(showResults, "20-2B-2")}
@@ -171,18 +184,15 @@ const EnglishTest = () => {
           <div className="md:col-span-1"></div>
           <div className="md:col-span-1 -ml-3">Natasha:</div>
           <div className="md:col-span-9 flex flex-row flex-wrap items-center space-y-0">
-            <span>
-              Actually, he has three, the oldest one is studying music, the
-              middle one is studying art, and the youngest one is studying
-              science.
-            </span>
+            <span>Actually, he has three, the</span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             {renderSelect("20", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             {renderSelect("21", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
-            <span className="mr-2">youngest one is studying science.</span>
+            <span className="mr-2">London.</span>
+            <span className="mr-2">I don’t think you’ve met her yet.</span>
             {showResults && <Explain qa={qa} questionId="2B-2" />}
           </div>
         </div>

@@ -24,7 +24,10 @@ const TestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は②"],
+      explanation: [
+        "正解は② 翻訳参照",
+        "ミスの話は、ルール変更でExcitingするようになった文脈とあってない",
+      ],
     },
     {
       questionId: "3A-2",
@@ -38,7 +41,10 @@ const TestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は②"],
+      explanation: [
+        "正解は② 翻訳参照",
+        "正しい姿勢についての文脈のなかで、体の構造の話になっているところが不自然",
+      ],
     },
     {
       questionId: "3A-3",
@@ -52,7 +58,10 @@ const TestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は②"],
+      explanation: [
+        "正解は② 翻訳参照",
+        "ハムについての保存のなかで、コショウに違和感",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -84,7 +93,12 @@ const TestQuestion = () => {
           </p>
 
           <div className="mt-8">
-            <div className="flex items-center mb-2">
+            <div
+              className={cn(
+                "flex items-center mb-2",
+                showResults && qaFormat(qa, "3A-1")
+              )}
+            >
               <span className="font-bold mr-2">問1</span>
               {renderSelect("27", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="3A-1" />}
@@ -100,7 +114,7 @@ const TestQuestion = () => {
                   scoring and, as a result, not always exciting.{" "}
                 </span>
                 <span className="ml-2 mr-1">①</span>
-                <span className="underline decoration-2">
+                <span className="border-b-2 border-black">
                   A prime example was a game between the Lakers and the Pistons
                   in 1950.
                 </span>{" "}
@@ -109,17 +123,17 @@ const TestQuestion = () => {
                 motivation to introduce a new rule to increase scoring: a
                 24-second limit for each shot.
                 <span className="ml-2 mr-1">②</span>
-                <span className="underline decoration-2">
+                <span className="border-b-2 border-black">
                   The pressure of the time limit caused players to miss their
                   shots more often.
                 </span>
                 <span className="ml-2 mr-1">③</span>
-                <span className="underline decoration-2">
+                <span className="border-b-2 border-black">
                   After much discussion, the rule was first used in an official
                   game on October 30, 1954.
                 </span>
                 <span className="ml-2 mr-1">④</span>
-                <span className="underline decoration-2">
+                <span className="border-b-2 border-black">
                   Ever since, individual teams have often scored over 100 points
                   in a game.
                 </span>{" "}
@@ -130,7 +144,12 @@ const TestQuestion = () => {
           </div>
 
           <div className="mt-12">
-            <div className="flex items-center mb-2">
+            <div
+              className={cn(
+                "flex items-center mb-2",
+                showResults && qaFormat(qa, "3A-2")
+              )}
+            >
               <span className="font-bold mr-2">問2</span>
               {renderSelect("28", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="3A-2" />}
@@ -148,21 +167,21 @@ const TestQuestion = () => {
                   weak.{" "}
                 </span>
                 <span className="ml-2 mr-1">①</span>
-                <span className="underline decoration-2">
+                <span className="border-b-2 border-black">
                   Our back is naturally curved—from the side it is S-shaped.
                 </span>
                 <span className="ml-2 mr-1">②</span>
-                <span className="underline decoration-2">
-                  ②Individuals have their own unique bone sizes that determine
+                <span className="border-b-2 border-black">
+                  Individuals have their own unique bone sizes that determine
                   their body shapes.
                 </span>{" "}
                 <span className="ml-2 mr-1">③</span>
-                <span className="underline decoration-2">
+                <span className="border-b-2 border-black">
                   It has been thought that good posture meant straightening out
                   some of the curves.
                 </span>{" "}
                 <span className="ml-2 mr-1">④</span>
-                <span className="underline decoration-2 mr-2">
+                <span className="border-b-2 border-black mr-2">
                   According to a study examining doctors' opinions, it was found
                   that there was no single agreed-upon standard of proper
                   posture.
@@ -176,7 +195,12 @@ const TestQuestion = () => {
           </div>
 
           <div className="mt-12">
-            <div className="flex items-center mb-2">
+            <div
+              className={cn(
+                "flex items-center mb-2",
+                showResults && qaFormat(qa, "3A-3")
+              )}
+            >
               <span className="font-bold mr-2">問3</span>
               {renderSelect("29", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="3A-3" />}
@@ -193,23 +217,23 @@ const TestQuestion = () => {
                   world produce ham, but when and where did it begin?{" "}
                 </span>
                 <span className="ml-2 mr-1">①</span>
-                <span className="underline decoration-2">
+                <span className="border-b-2 border-black">
                   Many credit the Chinese with being the first people to record
                   salting raw pork, while others have cited the Gauls, ancient
                   people who lived in western parts of Europe.
                 </span>{" "}
                 <span className="ml-2 mr-1">②</span>
-                <span className="underline decoration-2">
+                <span className="border-b-2 border-black">
                   Another common seasoning is pepper, which works just as well
                   in the preservation of food.
                 </span>{" "}
                 <span className="ml-2 mr-1">③</span>
-                <span className="underline decoration-2">
+                <span className="border-b-2 border-black">
                   It seems almost certain that it was a well-established
                   practice by the Roman period.
                 </span>{" "}
                 <span className="ml-2 mr-1">④</span>
-                <span className="underline decoration-2 mr-2">
+                <span className="border-b-2 border-black mr-2">
                   A famous politician in ancient Rome wrote extensively about
                   the "salting of hams" as early as 160 B.C.
                 </span>{" "}
