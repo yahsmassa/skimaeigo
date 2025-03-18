@@ -23,7 +23,10 @@ const Ex19_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は② 1",
+        "２段落めで、複数個あっても１とカウントすると書かれている",
+      ],
     },
     {
       questionId: "4A-2",
@@ -37,7 +40,10 @@ const Ex19_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は④ イタリアは、ドイツよりも高い割合でタマネギを使用していた。",
+        "①、②、③の内容も間違っている",
+      ],
     },
     {
       questionId: "4A-3",
@@ -51,7 +57,11 @@ const Ex19_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は② イタリアの絵画の1割にも満たない作品にしか魚が登場しなかった、イタリアの大部分は海に接しているのに",
+        "* less than one tenth of: 10分の1にも満たない、* next to: ～の隣に、～に接して",
+        "* native to: 原産である、* touch seas: 海に面している",
+      ],
     },
     {
       questionId: "4A-4",
@@ -65,7 +75,11 @@ const Ex19_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は③ 画家たちの芸術的な技能と才能を示す",
+        "* demonstrate: 示す、* artistic skills and abilities: 画家の技術や能力",
+        "* love of: 愛する、* local foods: 地元の食べ物",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

@@ -24,7 +24,11 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解⑥"],
+      explanation: [
+        "正解⑥",
+        "it can't be helped that there are fewer people while ...",
+        "* it can't be helped.. [しかたがない」、duringは前置詞、whileは接続詞でSVと続く",
+      ],
     },
     {
       questionId: "2C-2",
@@ -38,7 +42,11 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解②"],
+      explanation: [
+        "正解②",
+        "I was barely able to chath the last train ",
+        "barely かろうじて、seldom  めったに〜しない",
+      ],
     },
     {
       questionId: "2C-3",
@@ -52,7 +60,11 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解③"],
+      explanation: [
+        "正解③",
+        "I'm afraid the meeting will have to be put off until next week",
+        "I'm afraid (that) SV 「残念ながら・・・だと思う」、put off 延期する",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -116,15 +128,15 @@ const JapaneseTestQuestion = () => {
                     showResults && qaFormat(qa, "2C-1")
                   )}
                 >
-                  <span>So,</span> {renderSelect("24", 4, answers, setAnswers)}
+                  <span>So,</span> {renderSelect("24", 6, answers, setAnswers)}
                   <span>the most popular area is closed.</span>
                 </div>
               ),
             },
           ].map((conv, index) => (
             <React.Fragment key={index}>
-              <div className="md:col-span-2 md:text-right">{conv.speaker}:</div>
-              <div className="md:col-span-9">{conv.text}</div>
+              <div className="md:col-span-3 md:text-right">{conv.speaker}:</div>
+              <div className="md:col-span-8">{conv.text}</div>
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}
@@ -150,7 +162,7 @@ const JapaneseTestQuestion = () => {
               { label: "(A)", text: "that there are fewer people" },
               { label: "(B)", text: "that there are more people" },
             ],
-            width: "w-[180px] md:w-72",
+            width: "w-[180px] md:w-[228px]",
           },
           {
             options: [
@@ -233,7 +245,7 @@ const JapaneseTestQuestion = () => {
                 )}
               >
                 <span>Yes, it was really late.</span>{" "}
-                {renderSelect("25", 4, answers, setAnswers)}
+                {renderSelect("25", 6, answers, setAnswers)}
                 <span>
                   It was crowded, but riding with hundreds of other fans was
                   fun.
@@ -243,8 +255,8 @@ const JapaneseTestQuestion = () => {
           },
         ].map((conv, index) => (
           <React.Fragment key={index}>
-            <div className="md:col-span-1 md:text-right">{conv.speaker}:</div>
-            <div className="md:col-span-10">{conv.text}</div>
+            <div className="md:col-span-2 md:text-right">{conv.speaker}:</div>
+            <div className="md:col-span-9">{conv.text}</div>
             <div className="md:col-span-1"></div>
           </React.Fragment>
         ))}
@@ -353,15 +365,15 @@ const JapaneseTestQuestion = () => {
                   showResults && qaFormat(qa, "2C-3")
                 )}
               >
-                <span>Yes.</span> {renderSelect("26", 4, answers, setAnswers)}
+                <span>Yes.</span> {renderSelect("26", 6, answers, setAnswers)}
                 <span>Without him, we can't talk about those issues.</span>
               </div>
             ),
           },
         ].map((conv, index) => (
           <React.Fragment key={index}>
-            <div className="md:col-span-1 md:text-right">{conv.speaker}:</div>
-            <div className="md:col-span-10">{conv.text}</div>
+            <div className="md:col-span-2 md:text-right">{conv.speaker}:</div>
+            <div className="md:col-span-9">{conv.text}</div>
             <div className="md:col-span-1"></div>
           </React.Fragment>
         ))}
@@ -379,7 +391,7 @@ const JapaneseTestQuestion = () => {
               { label: "(A)", text: "I'm afraid" },
               { label: "(B)", text: "I'm afraid of" },
             ],
-            width: "w-[200px] md:w-48",
+            width: "w-[200px] md:w-36",
           },
           {
             options: [
@@ -393,7 +405,7 @@ const JapaneseTestQuestion = () => {
               { label: "(A)", text: "until next week." },
               { label: "(B)", text: "until this evening." },
             ],
-            width: "w-[200px] md:w-48",
+            width: "w-[200px] md:w-52",
           },
         ].map((section, sectionIndex) => (
           <div

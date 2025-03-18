@@ -28,7 +28,7 @@ const EnglishTestQuestions = () => {
       answerString: "",
       isCorrect: false,
       points: 4,
-      explanation: ["正解②と⑤"],
+      explanation: ["正解②と⑤", "wonder how much it will cost"],
     },
     {
       questionId: "2B-2",
@@ -46,7 +46,10 @@ const EnglishTestQuestions = () => {
       answerString: "",
       isCorrect: false,
       points: 4,
-      explanation: ["正解⑥と②"],
+      explanation: [
+        "正解⑥と②",
+        "for the rest of my stay、* the rest of A .. Aの残り",
+      ],
     },
     {
       questionId: "2B-3",
@@ -64,7 +67,10 @@ const EnglishTestQuestions = () => {
       answerString: "",
       isCorrect: false,
       points: 4,
-      explanation: ["正解②と⑥"],
+      explanation: [
+        "正解②と⑥",
+        "be difficult to make yourself heard、* make yourself heard 自分の話（考え）を聞かせる",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

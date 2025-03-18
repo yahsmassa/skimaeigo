@@ -24,7 +24,10 @@ const ExamQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: ["正解は①"],
+      explanation: [
+        "正解は① 彼女がかなり頻繁に使用できる（なにか）。",
+        "前の文脈で、日常的に使うものなら、みんなの感謝をたびたび感じてもらえると言っている",
+      ],
     },
     {
       questionId: "3B-2",
@@ -38,7 +41,10 @@ const ExamQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: ["正解は③"],
+      explanation: [
+        "正解は③ 余暇",
+        "前の文脈で、スポーツやガーデニングなどの彼女の余暇の過ごし方が説明されている",
+      ],
     },
     {
       questionId: "3B-3",
@@ -52,7 +58,10 @@ const ExamQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: ["正解は③"],
+      explanation: [
+        "正解は③ いくつかの屋外用家具",
+        "前の文脈で、座って食事したければ、家の中に入らなくてはならないと言っているので",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -132,8 +141,10 @@ const ExamQuestion = () => {
                   Sean:
                 </div>
                 <div className="flex-1 flex-wrap flex items-center leading-6 md:leading-8">
-                  <span>Thanks, Alex. So, you think giving</span>
-                  <span> her something</span>
+                  <span className="mr-2">
+                    Thanks, Alex. So, you think giving
+                  </span>
+                  <span className="mr-2"> her something</span>
                   {renderSelect("30", 4, answers, setAnswers)}
                   <span className="mr-2">would be appropriate, right?</span>
                   {showResults && <Explain qa={qa} questionId="3B-1" />}
@@ -141,8 +152,7 @@ const ExamQuestion = () => {
                   {Kaisetsu(showResults, "19-3B-3")}
                 </div>
               </div>
-
-              <div className="pl-8 space-y-2">
+              <div className="pl-14 space-y-2">
                 <p>① she can use quite regularly</p>
                 <p>② to make her house look nice</p>
                 <p>③ to share at the retirement party</p>
@@ -209,7 +219,7 @@ const ExamQuestion = () => {
                 </div>
               </div>
 
-              <div className="pl-8 space-y-2">
+              <div className="pl-14 space-y-2">
                 <p>① art works</p>
                 <p>② garden</p>
                 <p>③ leisure time</p>
@@ -296,7 +306,7 @@ const ExamQuestion = () => {
                 </div>
               </div>
 
-              <div className="pl-8 space-y-2">
+              <div className="pl-14 space-y-2">
                 <p>① a large bunch of flowers</p>
                 <p>② a statue for her garden</p>
                 <p>③ some outdoor furniture</p>

@@ -183,7 +183,9 @@ const JapaneseTestQuestion = () => {
     options: string[];
     index: number;
   }) => (
-    <div className="mb-8">
+    <div
+      className={cn("mb-8", showResults && qaFormat(qa, `1-${questionNumber}`))}
+    >
       <div className="flex items-center mb-4">
         <span className="font-bold mr-4">問 {index + 1}</span>
         {renderSelect(String(questionNumber), 4, answers, setAnswers)}

@@ -24,7 +24,10 @@ const ExamQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は①"],
+      explanation: [
+        "正解は① 矢は非常に成功したと見なされたため、大西洋に矢を浮かべることを提案する者さえいた。",
+        "「パイロットにとっていかに役立っていたか」という文脈から外れている",
+      ],
     },
     {
       questionId: "3A-2",
@@ -38,7 +41,10 @@ const ExamQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は②"],
+      explanation: [
+        "正解は② 研究者たちは、鳥のグループ間の違いを調べるため、いくつかの実験の準備をしました。",
+        "「都会と田舎の鳥の比較」という文脈から外れている",
+      ],
     },
     {
       questionId: "3A-3",
@@ -52,7 +58,10 @@ const ExamQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は④"],
+      explanation: [
+        "正解は④ チューダー朝時代の宴の催し方は、様々な映画で豊かに描かれている。",
+        "「チューダー朝時代の宴のマナー」という文脈から外れて、映画の話になっている",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -94,7 +103,12 @@ const ExamQuestion = () => {
 
       {/* Question 1 */}
       <div className="ml-8 mb-8">
-        <div className="flex items-center mb-4">
+        <div
+          className={cn(
+            "flex items-center mb-2",
+            showResults && qaFormat(qa, "3A-1")
+          )}
+        >
           <span className="font-bold mr-4">問 1</span>
           {renderSelect("27", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-1" />}
@@ -143,7 +157,12 @@ const ExamQuestion = () => {
 
       {/* Question 2 */}
       <div className="ml-8 mb-8">
-        <div className="flex items-center mb-4">
+        <div
+          className={cn(
+            "flex items-center mb-2",
+            showResults && qaFormat(qa, "3A-2")
+          )}
+        >
           <span className="font-bold mr-4">問 2</span>
           {renderSelect("28", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-2" />}
@@ -192,7 +211,12 @@ const ExamQuestion = () => {
 
       {/* Question 3 */}
       <div className="ml-8 mb-8">
-        <div className="flex items-center mb-4">
+        <div
+          className={cn(
+            "flex items-center mb-2",
+            showResults && qaFormat(qa, "3A-3")
+          )}
+        >
           <span className="font-bold mr-4">問 3</span>
           {renderSelect("29", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-3" />}

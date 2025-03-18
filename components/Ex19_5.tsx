@@ -24,7 +24,10 @@ const Ex19_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は① それが彼女の父親にとって重要だと知った",
+        "* originally: 当初、* asked to do: ～するように頼まれた、* interested in: ～に興味がある",
+      ],
     },
     {
       questionId: "5-2",
@@ -38,7 +41,10 @@ const Ex19_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は② 昆虫がレタスとニンジンを食べた。",
+        "dug 堀った、* incorrectly: 不正確に",
+      ],
     },
     {
       questionId: "5-3",
@@ -52,7 +58,10 @@ const Ex19_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は① 彼女の父は庭の成長を見ることができなかった。、入院して退院した後もしばらくの間寝たきりと書いてある",
+        "* progress: 進展、成長、",
+      ],
     },
     {
       questionId: "5-4",
@@ -67,7 +76,7 @@ const Ex19_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は③ 虫が見つからない", "翻訳参照"],
     },
     {
       questionId: "5-5",
@@ -81,7 +90,7 @@ const Ex19_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は③ 努力は報われる", "翻訳参照"],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

@@ -24,7 +24,10 @@ const Ex19_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は② 必要である",
+        "その後、いろんなことが可能になった話が続く",
+      ],
     },
     {
       questionId: "6-2",
@@ -38,7 +41,10 @@ const Ex19_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は③ 陸路の発展は、社会の多くの分野で進歩をもたらした。",
+        "(2)では 「The importance of land routes」について書かれている、 翻訳参照",
+      ],
     },
     {
       questionId: "6-3",
@@ -53,7 +59,10 @@ const Ex19_6 = () => {
       isOrderFree: true,
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は④ 都市における水路の重要な役割を説明するために 江戸が紹介された",
+        "翻訳参照",
+      ],
     },
     {
       questionId: "6-4",
@@ -67,7 +76,10 @@ const Ex19_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は① ルートは、世界に目に見えない形で存在すると考えることができる。",
+        "「a new type of route, the Internet,」などの記述から、翻訳参照",
+      ],
     },
     {
       questionId: "6-5",
@@ -81,7 +93,10 @@ const Ex19_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は④ 人類の発展は、ルートの発展によって促された。いろいろなルートが開発され、人類が発展した文脈から",
+        "* come at a cost: 犠牲を払って実現する、* interfere with: 邪魔する・妨げる",
+      ],
     },
     {
       questionId: "6-6",
@@ -107,7 +122,13 @@ const Ex19_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は[51]① [52]④ [53]② [54]③ 翻訳参照",
+        "① 人、動物、そして車両が利用する道路の建設",
+        "④ 船舶の航路開設（および物資輸送）* lanes for ships to travel and transport things: 船舶が航行し物資を輸送するための航路",
+        "② 人々が場所から場所へ飛ぶための方法を開発する",
+        "③ 情報のグローバルな伝達経路の確立 * global paths: グローバルな経路/世界的な経路",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
