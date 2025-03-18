@@ -24,7 +24,10 @@ const JapaneseExamQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は②"],
+      explanation: [
+        "正解は② 彼は、自分が一人っ子だったから、両親が自分をとても恋しがっていることを知っていた。",
+        "他の選択肢は、新しい友達との関係を示している、翻訳を参照",
+      ],
     },
     {
       questionId: "3A-2",
@@ -38,7 +41,10 @@ const JapaneseExamQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は③"],
+      explanation: [
+        "正解は③ 例として、いくつかの国ではトマトは「黄金のリンゴ」や「恋のリンゴ」のような名前で呼ばれています。",
+        "他の選択肢では、一般的にトマトは野菜として扱われているという内容になっているので、不自然、翻訳を参照",
+      ],
     },
     {
       questionId: "3A-3",
@@ -52,7 +58,10 @@ const JapaneseExamQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は②"],
+      explanation: [
+        "正解は② 昆虫は数百万年もの間存在し、恐竜やその後の人類の初期の段階から共に生きてきた。",
+        "他の選択肢は、「代用食としての昆虫について」語っている、翻訳を参照",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -91,7 +100,12 @@ const JapaneseExamQuestion = () => {
 
       {/* Question 1 */}
       <div className="mb-6">
-        <div className="flex items-center mb-2">
+        <div
+          className={cn(
+            "flex items-center mb-2",
+            showResults && qaFormat(qa, "3A-1")
+          )}
+        >
           <h4 className="text-lg font-bold mr-4">問1</h4>
           {renderSelect("27", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-1" />}
@@ -139,7 +153,12 @@ const JapaneseExamQuestion = () => {
 
       {/* Question 2 */}
       <div className="mb-6">
-        <div className="flex items-center mb-2">
+        <div
+          className={cn(
+            "flex items-center mb-2",
+            showResults && qaFormat(qa, "3A-2")
+          )}
+        >
           <h4 className="text-lg font-bold mr-4">問2</h4>
           {renderSelect("28", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-2" />}
@@ -185,7 +204,12 @@ const JapaneseExamQuestion = () => {
 
       {/* Question 3 */}
       <div className="mb-6">
-        <div className="flex items-center mb-2">
+        <div
+          className={cn(
+            "flex items-center mb-2",
+            showResults && qaFormat(qa, "3A-3")
+          )}
+        >
           <h4 className="text-lg font-bold mr-4">問3</h4>
           {renderSelect("29", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-3" />}

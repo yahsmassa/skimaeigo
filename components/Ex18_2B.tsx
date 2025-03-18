@@ -24,11 +24,15 @@ const JapaneseExam = () => {
           answer: 0,
         },
       ],
-      rightAnswerString: "42",
+      rightAnswerString: "32",
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解④と②"],
+      explanation: [
+        "正解③と②",
+        "can get to know each other",
+        "get to know .. 知り合いになる、each other お互い",
+      ],
     },
     {
       questionId: "2B-2",
@@ -42,11 +46,15 @@ const JapaneseExam = () => {
           answer: 0,
         },
       ],
-      rightAnswerString: "43",
+      rightAnswerString: "42",
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解④と③"],
+      explanation: [
+        "正解④と②",
+        "was the seconde highest score on the team",
+        "「the second 最上級 」２番目に最高の",
+      ],
     },
     {
       questionId: "2B-3",
@@ -60,11 +68,15 @@ const JapaneseExam = () => {
           answer: 0,
         },
       ],
-      rightAnswerString: "52",
+      rightAnswerString: "32",
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解⑤と②"],
+      explanation: [
+        "正解③と②",
+        "to those who aren't familiar with",
+        "be familiar with..  に精通している、those who 〜の人たち",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

@@ -23,7 +23,10 @@ const Ex18_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は② 消費者は、商品の色によって異なる好みを持っている",
+        "翻訳参照、①は世代による好みのカラー、③ マーケターが選ぶカラー、④はカラーのことを言ってない",
+      ],
     },
     {
       questionId: "4A-2",
@@ -37,7 +40,10 @@ const Ex18_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は③  (A) Footwear (B) Bags (C) Cellphones (D) Music pl",
+        "翻訳参照、バッグが５０％をわずかに超えるから、Bがバッグ、36.4％が携帯なので、Cが携帯とわかる",
+      ],
     },
     {
       questionId: "4A-3",
@@ -51,7 +57,10 @@ const Ex18_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は② ドイツの消費者は、一つの色の中に複数のイメージが含まれていると認識している。",
+        "赤、緑、白それぞれで、いろいろな意味を説明している。翻訳参照 ",
+      ],
     },
     {
       questionId: "4A-4",
@@ -65,7 +74,10 @@ const Ex18_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は④ 他の国の消費者にとっての色の重要性",
+        "翻訳参照、最後にグローバルで色を考慮する必然性について言っている",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -105,7 +117,7 @@ const Ex18_4A = () => {
       </div>
       {/* 英文部分 */}
       <div className="space-y-4 leading-relaxed">
-        <p>
+        <p className="indent-7">
           Color is an important feature considered by consumers when shopping
           for various products. Marketing companies need to identify the colors
           that can create an intention to purchase and a desired atmosphere in
@@ -116,7 +128,7 @@ const Ex18_4A = () => {
           consumers.
           {Kaisetsu(showResults, "18-4A-1")}
         </p>
-        <p>
+        <p className="indent-7">
           In this study, researchers surveyed German consumers to obtain
           information on whether the participants thought color was important
           when shopping, how much they were influenced by color when buying
@@ -127,7 +139,7 @@ const Ex18_4A = () => {
           choosing the product they intended to purchase.
           {Kaisetsu(showResults, "18-4A-2")}
         </p>
-        <p>
+        <p className="indent-7">
           Next, the researchers investigated whether the degree of importance
           consumers put on color varied depending on the products purchased.
           Figure 1 shows six everyday products and the percentages of the
@@ -159,7 +171,7 @@ const Ex18_4A = () => {
           </p>
         </div>
 
-        <p>
+        <p className="indent-7">
           Third, the researchers looked at the participants&apos; perceptions of
           and associations with colors. The results showed that red had various
           meanings: love, danger, anger, and power. Green produced a
@@ -168,7 +180,7 @@ const Ex18_4A = () => {
           showed each color had several different meanings.
           {Kaisetsu(showResults, "18-4A-5")}
         </p>
-        <p>
+        <p className="indent-7">
           The findings summarized in the above passage explained how colors
           influenced German consumers. However, this influence may vary from
           country to country. In this globalized world, it has become easier to

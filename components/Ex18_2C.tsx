@@ -24,7 +24,10 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解②"],
+      explanation: [
+        "正解②",
+        "be going to ... 〜する予定、be wrong 間違っている",
+      ],
     },
     {
       questionId: "2C-2",
@@ -38,7 +41,10 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解④"],
+      explanation: [
+        "正解④",
+        "I wouldn't have taken the train without your suggestion",
+      ],
     },
     {
       questionId: "2C-3",
@@ -52,7 +58,11 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解⑧"],
+      explanation: [
+        "正解⑧",
+        "That's why we had to cancel out our trip to Mt.Fuji. unfortunately",
+        "That's why 〜が原因で・・・ということになる。、unfortunately 残念ながら",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -116,15 +126,15 @@ const JapaneseTestQuestion = () => {
                     showResults && qaFormat(qa, "2C-1")
                   )}
                 >
-                  <span>Really?</span> I thought it
-                  {renderSelect("24", 4, answers, setAnswers)}
+                  <span className="mr-2">Really?</span> I thought it
+                  {renderSelect("24", 8, answers, setAnswers)}
                 </div>
               ),
             },
           ].map((item, index) => (
             <React.Fragment key={index}>
-              <div className="md:col-span-1">{item.speaker}:</div>
-              <div className="md:col-span-10">{item.text}</div>
+              <div className="md:col-span-1 md:text-right">{item.speaker}:</div>
+              <div className="md:col-span-10 md:ml-2">{item.text}</div>
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}
@@ -240,14 +250,14 @@ const JapaneseTestQuestion = () => {
                   )}
                 >
                   <span>You're so helpful.</span>
-                  {renderSelect("25", 4, answers, setAnswers)}
+                  {renderSelect("25", 8, answers, setAnswers)}
                 </div>
               ),
             },
           ].map((item, index) => (
             <React.Fragment key={index}>
-              <div className="md:col-span-2">{item.speaker}:</div>
-              <div className="md:col-span-9">{item.text}</div>
+              <div className="md:col-span-2 md:text-right">{item.speaker}:</div>
+              <div className="md:col-span-9 md:ml-2">{item.text}</div>
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}
@@ -367,7 +377,7 @@ const JapaneseTestQuestion = () => {
                   )}
                 >
                   <span>Yes, it did.</span>
-                  {renderSelect("26", 4, answers, setAnswers)}
+                  {renderSelect("26", 8, answers, setAnswers)}
                   <span>I hope we get another chance to do it.</span>
                 </div>
               ),

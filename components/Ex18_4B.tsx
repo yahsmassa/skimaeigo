@@ -22,7 +22,10 @@ const Ex18_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は④ 彼は父親たちに、素早く、美味しく、そして健康的な食事を作ることを教えたいと思っていた。",
+        "翻訳参照、短時間で美味しい料理を作るのが難しいと言っている",
+      ],
     },
     {
       questionId: "4B-2",
@@ -36,7 +39,10 @@ const Ex18_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は② ",
+        "フレンチコースの１割引は$225、タオル・エプロンセットは50$なので、$275、 翻訳参照、",
+      ],
     },
     {
       questionId: "4B-3",
@@ -50,7 +56,10 @@ const Ex18_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は③ 日本",
+        "Weekendsと午前中はダメな条件に合うのは日本だけ",
+      ],
     },
     {
       questionId: "4B-4",
@@ -64,7 +73,10 @@ const Ex18_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は④ Papa Bear Cooking Schoolの生徒たちは、自分が作った料理を食べることができます。",
+        "普通に考えてもそうだが、「An empty stomach!」と書いてあることで、確信できる",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

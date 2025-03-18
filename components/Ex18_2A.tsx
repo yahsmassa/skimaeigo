@@ -337,6 +337,7 @@ const JapaneseExamQuestion = () => {
               <span className="mr-2">novels for about</span>
               <span className="mr-2">seven years</span>
               <span className="mr-2">when she won the national</span>
+              <span className="mr-2"> novel contest.</span>
               {showResults && <Explain qa={qa} questionId="2A-5" />}
             </div>
           </div>
@@ -394,10 +395,10 @@ const JapaneseExamQuestion = () => {
           >
             <div className="font-bold mr-4">問7</div>
             <div className="flex flex-wrap items-center">
+              {renderSelect("14", 4, answers, setAnswers)}
               <span className="mr-2">
                 I didn't notice it, but there was a huge spider in the bathroom.
               </span>
-              {renderSelect("14", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="2A-7" />}
             </div>
           </div>
@@ -435,7 +436,7 @@ const JapaneseExamQuestion = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 md:ml-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 md:ml-8">
             {[
               "Ａ：looked Ｂ：making",
               "Ａ：looked Ｂ：to make",
@@ -472,7 +473,7 @@ const JapaneseExamQuestion = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 md:ml-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 md:ml-8">
             {[
               "Ａ：should Ｂ：before",
               "Ａ：should Ｂ：enough",
@@ -508,7 +509,7 @@ const JapaneseExamQuestion = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 md:ml-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 md:ml-8">
             {[
               "Ａ：could Ｂ：than",
               "Ａ：could Ｂ：to",

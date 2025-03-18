@@ -24,7 +24,10 @@ const ConversationImage = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は①"],
+      explanation: [
+        "正解は① 観客は、成功を収める人々の物語を見るのを楽しむ。",
+        "自分が感動したドキュメンタリー映画のようなものを作りたいことが文脈からわかる、翻訳参照",
+      ],
     },
     {
       questionId: "3B-2",
@@ -38,7 +41,10 @@ const ConversationImage = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は③"],
+      explanation: [
+        "正解は③ 平均的な人が共感できる状況を有する",
+        "会話では日常性や平均性について評価している、翻訳参照",
+      ],
     },
     {
       questionId: "3B-3",
@@ -52,7 +58,10 @@ const ConversationImage = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は④"],
+      explanation: [
+        "正解は④ 観客の好みを考慮して",
+        "それぞれ違う主張だが、顧客に受け入れられることを共通して意識している",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -221,6 +230,7 @@ const ConversationImage = () => {
             {renderSelect("31", 4, answers, setAnswers)}
             <span className="mr-2">.</span>
             {showResults && <Explain qa={qa} questionId="3B-2" />}
+            <span className="mr-2"></span>
             {Kaisetsu(showResults, "18-3B-6")}
           </div>
         </div>
