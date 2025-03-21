@@ -154,8 +154,8 @@ export default function Ex24_1A() {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 A"}</h1>
-          <span className="text-gray-600">(配点 {4})</span>
+          <h1 className="text-lg font-bold font-sans">{"第１問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {4})</span>
         </div>
         <Saiten
           qa={qa}
@@ -218,7 +218,9 @@ export default function Ex24_1A() {
             )}
           >
             <div className="flex items-center flex-wrap  gap-2 mb-2">
-              <span className="whitespace-nowrap mr-2">{question.number}</span>
+              <span className="whitespace-nowrap mr-2 font-sans">
+                {question.number}
+              </span>
               <span>{question.prompt}</span>
               {renderSelect(
                 question.number.replace("問 ", ""),

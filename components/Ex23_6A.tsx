@@ -98,8 +98,8 @@ const Ex23_6A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問 A"}</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -319,184 +319,106 @@ const Ex23_6A = () => {
       >
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Choose the best option for </span>
             {renderSelect("39", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6A-1" />}
           </div>
-          <div className="ml-8 space-y-3">
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                1
-              </span>
-              <span>
-                a great place for people to sell things to collectors at a high
-                price is a yard sale
-              </span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                2
-              </span>
-              <span>
-                people can evaluate items incorrectly and end up paying too much
-                money for junk
-              </span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                3
-              </span>
-              <span>
-                something not important to one person may be of value to someone
-                else
-              </span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                4
-              </span>
-              <span>
-                things once collected and thrown in another person&apos;s yard
-                may be valuable to others
-              </span>
-            </div>
+          <div className="ml-2 md:ml-8 space-y-3">
+            {[
+              "a great place for people to sell things to collectors at a high price is a yard sale",
+              "people can evaluate items incorrectly and end up paying too much money for junk",
+              "something not important to one person may be of value to someone else",
+              "things once collected and thrown in another person's yard may be valuable to others",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Choose the best option for </span>
             {renderSelect("40", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6A-2" />}
           </div>
-          <div className="ml-8 space-y-3">
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                1
-              </span>
-              <span>
-                About two thirds of children do not collect ordinary things.
-              </span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                2
-              </span>
-              <span>
-                Almost one third of adults start collecting things for pleasure.
-              </span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                3
-              </span>
-              <span>
-                Approximately 10% of kids have collections similar to their
-                friends.
-              </span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                4
-              </span>
-              <span>Roughly 30% of people keep collecting into adulthood.</span>
+          <div className="ml-2 md:ml-8 space-y-3">
+            <div>
+              {[
+                "About two thirds of children do not collect ordinary things.",
+                "Almost one third of adults start collecting things for pleasure.",
+                "Approximately 10% of kids have collections similar to their friends.",
+                "Roughly 30% of people keep collecting into adulthood.",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex flex-wrap items-center gap-2 ">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>Choose the best options for</span>{" "}
             {renderSelect("41", 6, answers, setAnswers)} and{" "}
             {renderSelect("42", 6, answers, setAnswers)}
             <span> (The order does not matter.)</span>
             {showResults && <Explain qa={qa} questionId="6A-3" />}
           </div>
-          <div className="ml-8 space-y-3">
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                1
-              </span>
-              <span>desire to advance technology</span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                2
-              </span>
-              <span>fear of missing unexpected opportunities</span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                3
-              </span>
-              <span>filling a sense of emptiness</span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                4
-              </span>
-              <span>reminder of precious events</span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                5
-              </span>
-              <span>reusing objects for the future</span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                6
-              </span>
-              <span>seeking some sort of profit</span>
+          <div className="ml-2 md:ml-8 space-y-3">
+            <div>
+              {[
+                "desire to advance technology",
+                "fear of missing unexpected opportunities",
+                "filling a sense of emptiness",
+                "reminder of precious events",
+                "reusing objects for the future",
+                "seeking some sort of profit",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-4"))}>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Choose the best option for </span>
             {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6A-4" />}
           </div>
-          <div className="ml-8 space-y-3">
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                1
-              </span>
-              <span>
-                Collections will likely continue to change in size and shape.
-              </span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                2
-              </span>
-              <span>
-                Collectors of mint-condition games will have more digital copies
-                of them.
-              </span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                3
-              </span>
-              <span>
-                People who have lost their passion for collecting will start
-                again.
-              </span>
-            </div>
-            <div className="flex gap-4">
-              <span className="inline-block w-6 h-6 border border-gray-300 rounded-full text-center">
-                4
-              </span>
-              <span>
-                Reasons for collecting will change because of advances in
-                technology.
-              </span>
+          <div className="ml-2 md:ml-8 space-y-3">
+            <div>
+              {[
+                "Collections will likely continue to change in size and shape.",
+                "Collectors of mint-condition games will have more digital copies of them.",
+                "People who have lost their passion for collecting will start again.",
+                "Reasons for collecting will change because of advances in technology.",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

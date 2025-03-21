@@ -52,8 +52,8 @@ export default function Ex21_3A() {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {6})</span>
         </div>
         <Saiten
           qa={qa}
@@ -147,27 +147,34 @@ export default function Ex21_3A() {
       <div className="space-y-8">
         {/* Question 1 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "3A-1"))}>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>From Alex&apos;s answer, you learn that Alex</span>
             {renderSelect("16", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3A-1" />}
           </div>
 
-          <div className="space-y-2 pl-8">
-            <p>① appreciates the convenient location of the hotel</p>
-            <p>
-              ② got lost in Victoria Station on his first visit to Castleton
-            </p>
-            <p>③ thinks that the hotel is good value for money</p>
-            <p>④ used the same route from the airport both times</p>
+          <div className="pl-2 md:pl-8 space-y-1">
+            {[
+              "appreciates the convenient location of the hotel",
+              "got lost in Victoria Station on his first visit to Castleton",
+              "thinks that the hotel is good value for money",
+              "used the same route from the airport both times",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 2 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "3A-2"))}>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               You are departing on public transport from the airport at 2.00 pm
               on 15 March 2021. What is the fastest way to get to the hotel?
@@ -176,11 +183,20 @@ export default function Ex21_3A() {
             {showResults && <Explain qa={qa} questionId="3A-2" />}
           </div>
 
-          <div className="space-y-2 pl-8">
-            <p>① By express bus and city bus</p>
-            <p>② By express bus and on foot</p>
-            <p>③ By underground and city bus</p>
-            <p>④ By underground and on foot</p>
+          <div className="pl-2 md:pl-8 space-y-1">
+            {[
+              "By express bus and city bus",
+              "By express bus and on foot",
+              "By underground and city bus",
+              "By underground and on foot",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

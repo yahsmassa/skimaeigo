@@ -75,8 +75,8 @@ const Ex23_1B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <h1 className="text-lg font-bold font-sans">{"第１問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {6})</span>
         </div>
         <Saiten
           qa={qa}
@@ -212,111 +212,72 @@ const Ex23_1B = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-1"))}>
           <div className="flex items-center flex-wrap mb-4 gap-2">
-            <span className="whitespace-nowrap mr-1">問 1</span>
+            <span className="whitespace-nowrap mr-1 font-sans">問 1</span>
             <span>All GIS instructors have</span>
             {renderSelect("3", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-1" />}
           </div>
-          <ol className="list-none space-y-2">
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                1
+          {[
+            "been in Japan since 1989",
+            "won international competitions",
+            "worked in other countries",
+            "written some popular books",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <span>been in Japan since 1989</span>
-            </li>
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                2
-              </span>
-              <span>won international competitions</span>
-            </li>
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                3
-              </span>
-              <span>worked in other countries</span>
-            </li>
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                4
-              </span>
-              <span>written some popular books</span>
-            </li>
-          </ol>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-2"))}>
           <div className="flex items-center flex-wrap mb-4 gap-2">
-            <span className="whitespace-nowrap mr-1">問 2</span>
+            <span className="whitespace-nowrap mr-1 font-sans">問 2</span>
             <span>On the last day of the camp, campers will</span>
             {renderSelect("4", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-2" />}
           </div>
-          <ol className="list-none space-y-2">
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                1
+          {[
+            "assess each other&apos;s performances",
+            "compete to receive the best prize",
+            "make presentations about the future",
+            "show what they learned at the camp",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <span>assess each other&apos;s performances</span>
-            </li>
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                2
-              </span>
-              <span>compete to receive the best prize</span>
-            </li>
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                3
-              </span>
-              <span>make presentations about the future</span>
-            </li>
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                4
-              </span>
-              <span>show what they learned at the camp</span>
-            </li>
-          </ol>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-3"))}>
           <div className="flex items-center flex-wrap mb-4 gap-2">
-            <span className="whitespace-nowrap mr-1">問 3</span>
+            <span className="whitespace-nowrap mr-1 font-sans">問 3</span>
             <span>
               What will happen after submitting your camp application?
             </span>
             {renderSelect("5", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-3" />}
           </div>
-          <ol className="list-none space-y-2">
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                1
+          {[
+            "You will call the English instructors.",
+            "You will take a written English test.",
+            "Your English level will be checked.",
+            "Your English speech topic will be sent.",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <span>You will call the English instructors.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                2
-              </span>
-              <span>You will take a written English test.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                3
-              </span>
-              <span>Your English level will be checked.</span>
-            </li>
-            <li className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                4
-              </span>
-              <span>Your English speech topic will be sent.</span>
-            </li>
-          </ol>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

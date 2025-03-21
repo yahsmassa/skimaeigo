@@ -160,8 +160,8 @@ const Ex24_3B = () => {
       {/* 問題番号とシチュエーション */}
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 B"}</h1>
-          <span className="text-gray-600">(配点 {9})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {9})</span>
         </div>
         <Saiten
           qa={qa}
@@ -218,7 +218,7 @@ const Ex24_3B = () => {
       <div className="w-full max-w-2xl mx-auto px-2 sm:px-4">
         <div className={cn("mb-6", showResults && qaFormat(qa, "3B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
-            <span className="whitespace-nowrap mr-2">問1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問1</span>
             <span>
               Yuzu&apos;s article also included student comments (⓪~④)
               describing the events in the virtual tour. Put the comments in the
@@ -246,7 +246,7 @@ const Ex24_3B = () => {
 
         <div className={cn("my-8", showResults && qaFormat(qa, "3B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
-            <span className="whitespace-nowrap mr-2">問2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問2</span>
             <span>
               From the tour, Yuzu did&nbsp;{" "}
               <span className="underline">not</span>&nbsp; learn about the
@@ -268,7 +268,7 @@ const Ex24_3B = () => {
 
         <div className={cn("mb-6", showResults && qaFormat(qa, "3B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
-            <span className="whitespace-nowrap mr-2">問3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問3</span>
             <span>On the way home, Yuzu looked up and most likely saw</span>
             {renderSelect("23", 4, answers, setAnswers)}
             <span>in the night sky.</span>

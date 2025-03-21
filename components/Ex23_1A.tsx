@@ -54,8 +54,8 @@ const Ex23_1A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 A"}</h1>
-          <span className="text-gray-600">(配点 {4})</span>
+          <h1 className="text-lg font-bold font-sans">{"第１問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {4})</span>
         </div>
         <Saiten
           qa={qa}
@@ -182,7 +182,7 @@ const Ex23_1A = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1A-1"))}>
           <div className="flex flex-wrap items-center mb-4 gap-2">
             <div className="flex items-center flex-wrap">
-              <span className="mr-2 whitespace-nowrap">問 1</span>
+              <span className="mr-2 whitespace-nowrap font-sans">問 1</span>
               <span>What are you told to do after reading the handout?</span>
               {renderSelect("1", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="1A-1" />}
@@ -195,12 +195,12 @@ const Ex23_1A = () => {
               "Talk to your teacher about your decision.",
               "Write your name and explain your choice.",
             ].map((text, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
                 </span>
-                {text}
-              </li>
+                <span>{text}</span>
+              </div>
             ))}
           </ol>
         </div>
@@ -208,7 +208,7 @@ const Ex23_1A = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1A-2"))}>
           <div className="flex flex-wrap items-center mb-4 gap-2">
             <div className="flex items-center flex-wrap">
-              <span className="mr-2 whitespace-nowrap">問 2</span>
+              <span className="mr-2 whitespace-nowrap font-sans">問 2</span>
               <span>Which is true about both performances?</span>
             </div>
             {renderSelect("2", 4, answers, setAnswers)}
@@ -221,12 +221,12 @@ const Ex23_1A = () => {
               "They will finish at the same time.",
               "You can meet performers at the theaters.",
             ].map((text, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
                 </span>
-                {text}
-              </li>
+                <span>{text}</span>
+              </div>
             ))}
           </ol>
         </div>

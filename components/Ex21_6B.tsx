@@ -65,7 +65,7 @@ const Ex21_6B = () => {
       points: 3,
       explanation: [
         "正解③「植物から代替甘味料を取り出すのは可能である」 ⑤「xylitolやsorbitolのような甘味料はすぐに消化されない」",
-        "解説 第１パラグラフに、&quot;We can now extract sugars from many other plants.&quot;「他にも多くの植物から砂糖を抽出することは可能である」と書かれているので、選択肢③「植物から代替甘味料を取り出すのは可能である」が選ばれる。ここでの「代替甘味料」とは、いわゆるサトウキビ以外の植物から取れる砂糖のことであり、必ずしも人工甘味料ではない。また、第５パラグラフの終盤に、&quot;Unfortunately, theses (xylitol, sorbitolを指す) move through the body extremely slowly, ~.&quot;「これらキシリトールやソルビトールは非常にゆっくりと身体を通過する」とあるが、これは「消化しにくさ」を意味しているものなので、⑤「xylitolやsorbitolのような甘味料はすぐに消化されない」が選ばれる。それ以外の選択肢は、①「代替甘味料は体重増加を引き起こすことが分かった」、②「アメリカ人は代替甘味料からエネルギーの14.6%を摂取している」（第２パラグラフ一文目、&quot;14.6% of the average American’s energy intake is from &quot;added sugar,&quot;「平均的なアメリカ人のエネルギー摂取の14.6%は「加糖」によるもの」とあり、合致していない）、④「ほとんどの人工甘味料は料理に使いやすい」であり、いずれも記述はない。",
+        '解説 第１パラグラフに、"We can now extract sugars from many other plants.";「他にも多くの植物から砂糖を抽出することは可能である」と書かれているので、選択肢③「植物から代替甘味料を取り出すのは可能である」が選ばれる。ここでの「代替甘味料」とは、いわゆるサトウキビ以外の植物から取れる砂糖のことであり、必ずしも人工甘味料ではない。また、第５パラグラフの終盤に、&quot;Unfortunately, theses (xylitol, sorbitolを指す) move through the body extremely slowly, ~."「これらキシリトールやソルビトールは非常にゆっくりと身体を通過する」とあるが、これは「消化しにくさ」を意味しているものなので、⑤「xylitolやsorbitolのような甘味料はすぐに消化されない」が選ばれる。それ以外の選択肢は、①「代替甘味料は体重増加を引き起こすことが分かった」、②「アメリカ人は代替甘味料からエネルギーの14.6%を摂取している」（第２パラグラフ一文目、"14.6% of the average American\'s energy intake is from &quot;added sugar,"「平均的なアメリカ人のエネルギー摂取の14.6%は「加糖」によるもの」とあり、合致していない）、④「ほとんどの人工甘味料は料理に使いやすい」であり、いずれも記述はない。',
       ],
     },
     {
@@ -92,8 +92,8 @@ const Ex21_6B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問 B"}</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -195,7 +195,7 @@ const Ex21_6B = () => {
         {/* Question 1 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "6B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               You learn that modern science has changed the world of sweeteners
               by
@@ -205,24 +205,21 @@ const Ex21_6B = () => {
             {showResults && <Explain qa={qa} questionId="6B-1" />}
           </div>
 
-          <div className="ml-8 space-y-2">
-            <div className="flex gap-4">
-              <span>①</span>
-              <span>discovering new, sweeter white sugar types</span>
-            </div>
-            <div className="flex gap-4">
-              <span>②</span>
-              <span>measuring the energy intake of Americans</span>
-            </div>
-            <div className="flex gap-4">
-              <span>③</span>
-              <span>providing a variety of new options</span>
-            </div>
-            <div className="flex gap-4">
-              <span>④</span>
-              <span>
-                using many newly-developed plants from the environment
-              </span>
+          <div className="ml-2 md:ml-8 space-y-2">
+            <div>
+              {[
+                "discovering new, sweeter white sugar types",
+                "measuring the energy intake of Americans",
+                "providing a variety of new options",
+                "using many newly-developed plants from the environment",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -230,7 +227,7 @@ const Ex21_6B = () => {
         {/* Question 2 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "6B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               You are summarizing the information you have just studied. How
               should the table be finished?
@@ -288,7 +285,7 @@ const Ex21_6B = () => {
           </div>
 
           {/* Answer Options */}
-          <div className="ml-8 space-y-4">
+          <div className="ml-2 md:ml-8 space-y-4">
             {[1, 2, 3, 4].map((num) => (
               <div key={num} className="grid grid-cols-2 gap-8">
                 <div className="flex gap-8">
@@ -348,7 +345,7 @@ const Ex21_6B = () => {
         {/* Question 3 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "6B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               According to the article you read, which of the following are
               true?
@@ -360,7 +357,7 @@ const Ex21_6B = () => {
             {showResults && <Explain qa={qa} questionId="6B-3" />}
           </div>
 
-          <div className="ml-8 space-y-2">
+          <div className="ml-2 md:ml-8 space-y-2">
             <div className="flex gap-4">
               <span>①</span>
               <span>
@@ -395,7 +392,7 @@ const Ex21_6B = () => {
         {/* Question 4 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "6B-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               To describe the author&apos;s position, which of the following is
               most appropriate?
@@ -404,7 +401,7 @@ const Ex21_6B = () => {
             {showResults && <Explain qa={qa} questionId="6B-4" />}
           </div>
 
-          <div className="ml-8 space-y-2">
+          <div className="ml-2 md:ml-8 space-y-2">
             <div className="flex gap-4">
               <span>①</span>
               <span>

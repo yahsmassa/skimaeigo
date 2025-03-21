@@ -108,8 +108,8 @@ const Ex23_4 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {16})</span>
         </div>
         <Saiten
           qa={qa}
@@ -275,54 +275,50 @@ const Ex23_4 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-1"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Oxford believes that</span>
             {renderSelect("24", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="4-1" />}
           </div>
-          <ol className="list-none space-y-2">
-            {[
-              "continuous drilling is boring",
-              "reading an explanation of terms is helpful",
-              "students are not interested in science",
-              "studying with a workbook leads to success",
-            ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {[
+            "continuous drilling is boring",
+            "reading an explanation of terms is helpful",
+            "students are not interested in science",
+            "studying with a workbook leads to success",
+          ].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>In the study discussed by Lee, students took a test</span>
             {renderSelect("25", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="4-2" />}
           </div>
-          <ol className="list-none space-y-2">
-            {["four weeks", "immediately", "one day", "one week"].map(
-              (answer, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                    {index + 1}
-                  </span>
-                  {answer}
-                </li>
-              )
-            )}
-          </ol>
+          {["four weeks", "immediately", "one day", "one week"].map(
+            (answer, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{answer}</span>
+              </div>
+            )
+          )}
         </div>
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-3"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               Lee introduces spaced learning, which involves studying at
             </span>
@@ -335,55 +331,51 @@ const Ex23_4 = () => {
             </span>
             {showResults && <Explain qa={qa} questionId="4-3" />}
           </div>
-          <ol className="list-none space-y-2">
-            {[
-              "contextual",
-              "extended",
-              "fixed",
-              "irregular",
-              "massed",
-              "practical",
-            ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {[
+            "contextual",
+            "extended",
+            "fixed",
+            "irregular",
+            "massed",
+            "practical",
+          ].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-4"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Both writers agree that</span>
             {renderSelect("28", 4, answers, setAnswers)}.
             <span>is helpful for remembering new information.</span>
             {showResults && <Explain qa={qa} questionId="4-4" />}
           </div>
-          <ol className="list-none space-y-2">
-            {[
-              "experiential learning",
-              "having proper rest",
-              "long-term attention",
-              "studying with workbooks",
-            ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {[
+            "experiential learning",
+            "having proper rest",
+            "long-term attention",
+            "studying with workbooks",
+          ].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-5"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>
               Which additional information would be the best to further support
               Lee&apos;s argument for spaced learning?
@@ -391,21 +383,19 @@ const Ex23_4 = () => {
             {renderSelect("29", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="4-5" />}
           </div>
-          <ol className="list-none space-y-2">
-            {[
-              "The main factor that makes a science class attractive",
-              "The most effective length of intervals for spaced learning",
-              "Whether students&apos; workbooks include visuals or not",
-              "Why Oxford&apos;s students could not memorize information well",
-            ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {[
+            "The main factor that makes a science class attractive",
+            "The most effective length of intervals for spaced learning",
+            "Whether students&apos; workbooks include visuals or not",
+            "Why Oxford&apos;s students could not memorize information well",
+          ].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

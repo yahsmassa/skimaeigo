@@ -124,8 +124,8 @@ const Ex22_5 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第５問"}</h1>
-          <span className="text-gray-600">(配点 {15})</span>
+          <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}
@@ -280,7 +280,9 @@ const Ex22_5 = () => {
 
             {/* Number box */}
             <div className="flex justify-center mb-6">
-              <div className="border border-gray-400 px-3 py-1 mx-2">30</div>
+              <div className="border border-gray-400 px-3 py-1 mx-2 font-sans">
+                30
+              </div>
             </div>
 
             {/* Early Days section */}
@@ -292,13 +294,13 @@ const Ex22_5 = () => {
                 </li>
                 <li className="mb-2 flex items-center">
                   -{" "}
-                  <div className="border border-gray-400 px-3 py-1 mx-2">
+                  <div className="border border-gray-400 px-3 py-1 mx-2 font-sans">
                     31
                   </div>
                 </li>
                 <li className="flex items-center">
                   -{" "}
-                  <div className="border border-gray-400 px-3 py-1 mx-2">
+                  <div className="border border-gray-400 px-3 py-1 mx-2 font-sans">
                     32
                   </div>
                 </li>
@@ -310,12 +312,12 @@ const Ex22_5 = () => {
               <h4 className="text-lg underline mb-2">Sequence of Key Events</h4>
               <div className="ml-4 border-l-2 border-gray-400 pl-4">
                 <div className="mb-2">
-                  <div className="border border-gray-400 px-3 py-1 inline-block mb-2">
+                  <div className="border border-gray-400 px-3 py-1 inline-block mb-2 font-sans">
                     33
                   </div>
                 </div>
                 <div className="mb-2">
-                  <div className="border border-gray-400 px-3 py-1 inline-block mb-2">
+                  <div className="border border-gray-400 px-3 py-1 inline-block mb-2 font-sans">
                     34
                   </div>
                 </div>
@@ -323,12 +325,12 @@ const Ex22_5 = () => {
                   Farnsworth successfully sent his first image.
                 </div>
                 <div className="mb-2">
-                  <div className="border border-gray-400 px-3 py-1 inline-block mb-2">
+                  <div className="border border-gray-400 px-3 py-1 inline-block mb-2 font-sans">
                     35
                   </div>
                 </div>
                 <div className="mb-2">
-                  <div className="border border-gray-400 px-3 py-1 inline-block mb-2">
+                  <div className="border border-gray-400 px-3 py-1 inline-block mb-2 font-sans">
                     36
                   </div>
                 </div>
@@ -341,7 +343,10 @@ const Ex22_5 = () => {
               <h4 className="text-lg underline mb-2">Outcome</h4>
               <p className="ml-4 flex items-center">
                 - Farnsworth won the patent battle against RCA thanks to
-                <div className="border border-gray-400 px-3 py-1 mx-2">37</div>.
+                <div className="border border-gray-400 px-3 py-1 mx-2 font-sans">
+                  37
+                </div>
+                .
               </p>
             </div>
 
@@ -359,7 +364,7 @@ const Ex22_5 = () => {
                 </li>
                 <li className="flex items-center">
                   -{" "}
-                  <div className="border border-gray-400 px-3 py-1 mx-2">
+                  <div className="border border-gray-400 px-3 py-1 mx-2 font-sans">
                     38
                   </div>
                 </li>
@@ -374,37 +379,24 @@ const Ex22_5 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Which is the best subtitle for your presentation?</span>
             {renderSelect("30", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-1" />}
           </div>
-          <div className="ml-8 space-y-2">
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                1
+          {[
+            "A Young Inventor Against a Giant Company",
+            "From High School Teacher to Successful Inventor",
+            "Never-Ending Passion for Generating Electricity",
+            "The Future of Electronic Television",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start ml-2 md:ml-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              A Young Inventor Against a Giant Company
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                2
-              </span>
-              From High School Teacher to Successful Inventor
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                3
-              </span>
-              Never-Ending Passion for Generating Electricity
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                4
-              </span>
-              The Future of Electronic Television
-            </p>
-          </div>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 2 */}
@@ -412,7 +404,7 @@ const Ex22_5 = () => {
           className={cn("space-y-4 mt-5", showResults && qaFormat(qa, "5-2"))}
         >
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span className="ml-2">Choose the best two options for </span>
             {renderSelect("31", 5, answers, setAnswers)}
             <span> and </span>
@@ -422,39 +414,20 @@ const Ex22_5 = () => {
             {showResults && <Explain qa={qa} questionId="5-2" />}
             <span className="ml-2">(The order does not matter)</span>
           </div>
-          <div className="ml-8 space-y-2">
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                1
+          {[
+            "bought a generator to provide his family with electricity",
+            "built a log cabin that had electricity with the help of his father",
+            "enjoyed reading books on every subject in school",
+            "fixed and improved household equipment for his family",
+            "got the idea for an electronic television system while working in a field",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start ml-2 md:ml-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              bought a generator to provide his family with electricity
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                2
-              </span>
-              built a log cabin that had electricity with the help of his father
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                3
-              </span>
-              enjoyed reading books on every subject in school
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                4
-              </span>
-              fixed and improved household equipment for his family
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                5
-              </span>
-              got the idea for an electronic television system while working in
-              a field
-            </p>
-          </div>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 3 */}
@@ -462,7 +435,7 @@ const Ex22_5 = () => {
           className={cn("space-y-4 mt-5", showResults && qaFormat(qa, "5-3"))}
         >
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               <span className="ml-2">Choose </span>
               <span className="underline">four</span>
@@ -481,38 +454,20 @@ const Ex22_5 = () => {
             {renderSelect("36", 5, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-3" />}
           </div>
-          <div className="ml-8 space-y-2">
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                1
+          {[
+            "Farnsworth rejected RCA's offer.",
+            "Farnsworth shared his idea with his high school teacher.",
+            "RCA won the first stage of the battle.",
+            "The US government gave Farnsworth the patent.",
+            "Zworykin was granted a patent for his television system.",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start ml-2 md:ml-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              Farnsworth rejected RCA&apos;s offer.
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                2
-              </span>
-              Farnsworth shared his idea with his high school teacher.
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                3
-              </span>
-              RCA won the first stage of the battle.
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                4
-              </span>
-              The US government gave Farnsworth the patent.
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                5
-              </span>
-              Zworykin was granted a patent for his television system.
-            </p>
-          </div>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 4 */}
@@ -520,39 +475,26 @@ const Ex22_5 = () => {
           className={cn("space-y-4 mt-7", showResults && qaFormat(qa, "5-4"))}
         >
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Choose the best option for</span>
             {renderSelect("37", 4, answers, setAnswers)}
             <span>to complete</span>
             <span className="underline ml-1">Outcome</span>.
             {showResults && <Explain qa={qa} questionId="5-4" />}
           </div>
-          <div className="ml-8 space-y-2">
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                1
+          {[
+            "the acceptance of his rival's technological inferiority",
+            "the financial assistance provided by Tolman",
+            "the sketches his teacher had kept for many years",
+            "the withdrawal of RCA from the battle",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start ml-2 md:ml-8">
+              <span className="inline-block w-6 h-6 text-center mr-4">
+                {"①②③④⑤⑥"[index]}
               </span>
-              the acceptance of his rival&apos;s technological inferiority
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                2
-              </span>
-              the financial assistance provided by Tolman
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                3
-              </span>
-              the sketches his teacher had kept for many years
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                4
-              </span>
-              the withdrawal of RCA from the battle
-            </p>
-          </div>
+              {text}
+            </div>
+          ))}
         </div>
 
         {/* Question 5 */}
@@ -560,41 +502,26 @@ const Ex22_5 = () => {
           className={cn("space-y-4 mt-7", showResults && qaFormat(qa, "5-5"))}
         >
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span className="ml-2">Choose the best option for</span>
             {renderSelect("38", 4, answers, setAnswers)}
             <span>to complete</span>
             <span className="underline ml-1">Achievements and Recognition</span>
             .{showResults && <Explain qa={qa} questionId="5-5" />}
           </div>
-          <div className="ml-8 space-y-2">
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                1
+          {[
+            "He and his wife were given an award for their work with RCA.",
+            "He appeared on TV when Armstrong's first moon landing was broadcast.",
+            "His invention has enabled us to watch historic events live.",
+            "Many teenagers have followed their dreams after watching him on TV.",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              He and his wife were given an award for their work with RCA.
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                2
-              </span>
-              He appeared on TV when Armstrong&apos;s first moon landing was
-              broadcast.
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                3
-              </span>
-              His invention has enabled us to watch historic events live.
-            </p>
-            <p>
-              <span className="inline-block w-6 h-6 border border-gray-400 rounded-full text-center mr-4">
-                4
-              </span>
-              Many teenagers have followed their dreams after watching him on
-              TV.
-            </p>
-          </div>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

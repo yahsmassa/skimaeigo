@@ -47,8 +47,8 @@ const Ex21_1A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 A"}</h1>
-          <span className="text-gray-600">(配点 {4})</span>
+          <h1 className="text-lg font-bold font-sans">{"第１問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {4})</span>
         </div>
         <Saiten
           qa={qa}
@@ -120,32 +120,50 @@ const Ex21_1A = () => {
         {/* Question 1 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1A-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>What was Julie&apos;s request?</span>
             {renderSelect("1", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1A-1" />}
           </div>
           <div className="space-y-2 pl-4">
-            <p>① To bring her USB memory stick</p>
-            <p>② To hand in her history homework</p>
-            <p>③ To lend her a USB memory stick</p>
-            <p>④ To print out her history homework</p>
+            {[
+              "To bring her USB memory stick",
+              "To hand in her history homework",
+              "To lend her a USB memory stick",
+              "To print out her history homework",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 2 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>How will you reply to Julie&apos;s second text message?</span>
             {renderSelect("2", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1A-2" />}
           </div>
           <div className="space-y-2 pl-4">
-            <p>① Don&apos;t worry. You&apos;ll find it.</p>
-            <p>② I&apos;m really glad to hear that.</p>
-            <p>③ Look in your bag again.</p>
-            <p>④ You must be disappointed.</p>
+            {[
+              "Don't worry. You'll find it.",
+              "I'm really glad to hear that.",
+              "Look in your bag again.",
+              "You must be disappointed.",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -301,7 +301,7 @@ const Ex25_6 = () => {
               Also, I was moved when Bluebird&apos;s mother said, &quot;We
               won&apos;t let that happen to you.&quot; She meant, &quot;We are
               going to{" "}
-              <span className="border border-gray-400 px-3 py-1 inline-block">
+              <span className="border border-gray-400 px-3 py-1 inline-block font-sans">
                 29
               </span>
               .&quot;
@@ -311,11 +311,11 @@ const Ex25_6 = () => {
             <p>
               On the other hand, I think you can still make the story a little
               better by adding a few details. You could write about{" "}
-              <span className="border border-gray-400 px-3 py-1 inline-block">
+              <span className="border border-gray-400 px-3 py-1 inline-block font-sans">
                 30
               </span>{" "}
               and
-              <span className="border border-gray-400 px-3 py-1 inline-block ml-1">
+              <span className="border border-gray-400 px-3 py-1 inline-block ml-1 font-sans">
                 31
               </span>
               , which are not mentioned or suggested. These details would give

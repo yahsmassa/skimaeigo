@@ -70,8 +70,8 @@ const Ex21_1B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <h1 className="text-lg font-bold font-sans">{"第１問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {6})</span>
         </div>
         <Saiten
           qa={qa}
@@ -184,49 +184,76 @@ const Ex21_1B = () => {
         {/* Question 1 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>A New Member&apos;s Pack</span>
             {renderSelect("3", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-1" />}
           </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① includes TQ&apos;s first album</li>
-            <li>② is delivered on May 10</li>
-            <li>③ requires a $10 delivery fee</li>
-            <li>④ takes about seven days to arrive</li>
-          </ol>
+          <div className="pl-2 md:pl-8 space-y-2">
+            {[
+              "includes TQ's first album",
+              "is delivered on May 10",
+              "requires a $10 delivery fee",
+              "takes about seven days to arrive",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Question 2 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>What will you get if you become a new Pacer member?</span>
             {renderSelect("4", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-2" />}
           </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① Discount concert tickets and a calendar</li>
-            <li>② Regular emails and signing event invitations</li>
-            <li>③ Tour information and postcards every month</li>
-            <li>④ Video messages and access to online magazines</li>
-          </ol>
+          <div className="pl-2 md:pl-8 space-y-2">
+            {[
+              "Discount concert tickets and a calendar",
+              "Regular emails and signing event invitations",
+              "Tour information and postcards every month",
+              "Video messages and access to online magazines",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Question 3 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>After being a fan club member for one year, you can</span>
             {renderSelect("5", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-3" />}
           </div>
-          <ol className="list-none pl-8 space-y-2">
-            <li>① become a Zoomer for a $50 fee</li>
-            <li>② get a New Member&apos;s Pack for $4</li>
-            <li>③ renew your membership at half price</li>
-            <li>④ upgrade your membership for free</li>
-          </ol>
+          <div className="pl-2 md:pl-8 space-y-2">
+            {[
+              "become a Zoomer for a $50 fee",
+              "get a New Member&apos;s Pack for $4",
+              "renew your membership at half price",
+              "upgrade your membership for free",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

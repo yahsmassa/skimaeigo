@@ -487,8 +487,8 @@ const Ex24_4 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {16})</span>
         </div>
         <Saiten
           qa={qa}
@@ -545,15 +545,6 @@ const Ex24_4 = () => {
                   )}
                 </div>
               )}
-
-              {/* {component.concerns && (
-                <div className="mt-2">
-                  <p>
-                    {component.concerns.join(". ")}. {component.recommendation}
-                    {Kaisetsu(showResults, "24-4-5")}
-                  </p>
-                </div>
-              )} */}
             </div>
           ))}
 
@@ -671,7 +662,9 @@ const Ex24_4 = () => {
             )}
           >
             <div className="flex flex-wrap items-baseline mb-4">
-              <span className="font-medium mr-2 w-7">問{question.id}</span>
+              <span className="font-medium mr-2 w-7 font-sans">
+                問{question.id}
+              </span>
               <span>
                 {question.text}
                 {question.emphasizedText && (

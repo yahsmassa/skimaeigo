@@ -93,8 +93,8 @@ const Ex24_6A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">第６問 A</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <h1 className="text-lg font-bold font-sans">第６問 A</h1>
+          <span className="text-gray-600 font-sans">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -215,7 +215,7 @@ const Ex24_6A = () => {
               <ol className="ml-4 space-y-1">
                 <li className="flex items-start">
                   <span>1.</span>
-                  <div className="ml-1 border border-gray-800 px-2 w-12 text-center">
+                  <div className="ml-1 border border-gray-800 px-2 w-12 text-center font-sans">
                     39
                   </div>
                 </li>
@@ -229,7 +229,7 @@ const Ex24_6A = () => {
                 </li>
                 <li className="flex items-start">
                   <span>4.</span>
-                  <div className="ml-1 border border-gray-800 px-2 w-12 text-center">
+                  <div className="ml-1 border border-gray-800 px-2 w-12 text-center font-sans">
                     40
                   </div>
                 </li>
@@ -246,7 +246,7 @@ const Ex24_6A = () => {
                   <span className="ml-1">
                     Time speeds up as we mature, but a
                   </span>
-                  <div className="ml-1 border border-gray-800 px-2 w-12 text-center">
+                  <div className="ml-1 border border-gray-800 px-2 w-12 text-center font-sans">
                     41
                   </div>
                 </li>
@@ -269,7 +269,7 @@ const Ex24_6A = () => {
                   </p>
                   <p className="flex items-start ml-8">
                     <span>Example:</span>
-                    <div className="ml-1 border border-gray-800 px-2 w-12 text-center">
+                    <div className="ml-1 border border-gray-800 px-2 w-12 text-center font-sans">
                       42
                     </div>
                   </p>
@@ -281,7 +281,7 @@ const Ex24_6A = () => {
                   </p>
                   <p className="flex items-start ml-8">
                     <span>Example:</span>
-                    <div className="ml-1 border border-gray-800 px-2 w-12 text-center">
+                    <div className="ml-1 border border-gray-800 px-2 w-12 text-center font-sans">
                       43
                     </div>
                   </p>
@@ -295,169 +295,94 @@ const Ex24_6A = () => {
       <div className="space-y-8 mt-8">
         <div className={cn(showResults && qaFormat(qa, "6A-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-none mr-2">問 1</span>{" "}
+            <span className="flex-none mr-2 font-sans">問 1</span>{" "}
             <span>Choose the best options for</span>
             {renderSelect("39", 6, answers, setAnswers)} and
             {renderSelect("40", 6, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"6A-1"} />}
           </div>
           <ol className="list-none space-y-2">
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                1
-              </span>
-              <span>Biological mechanisms</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                2
-              </span>
-              <span>Effects of our feelings</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                3
-              </span>
-              <span>Kinds of memory</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                4
-              </span>
-              <span>Life stages</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                5
-              </span>
-              <span>Ongoing research</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                6
-              </span>
-              <span>Types of time</span>
-            </li>
+            {[
+              "Biological mechanisms",
+              "Effects of our feelings",
+              "Kinds of memory",
+              "Life stages",
+              "Ongoing research",
+              "Types of time",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex  items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </ol>
         </div>
 
         <div className={cn(showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-none mr-2">問 2</span>
+            <span className="flex-none mr-2 font-sans">問 2</span>
             <span>Choose the best option for</span>
             {renderSelect("41", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"6A-2"} />}
           </div>
-          <ol className="list-none space-y-2">
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                1
+          {[
+            "major lifestyle change at any age will likely make time slow down",
+            "major lifestyle change regardless of age will likely make time speed up",
+            "minor lifestyle change for adults will likely make time slow down",
+            "minor lifestyle change for children will likely make time speed up",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex t  items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <span>
-                major lifestyle change at any age will likely make time slow
-                down
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                2
-              </span>
-              <span>
-                major lifestyle change regardless of age will likely make time
-                speed up
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                3
-              </span>
-              <span>
-                minor lifestyle change for adults will likely make time slow
-                down
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                4
-              </span>
-              <span>
-                minor lifestyle change for children will likely make time speed
-                up
-              </span>
-            </li>
-          </ol>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
-
         <div className={cn(showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-none mr-2">問 3</span>
+            <span className="flex-none mr-2 font-sans">問 3</span>
             <span>Choose the best option for</span>
             {renderSelect("42", 6, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"6A-3"} />}
           </div>
-          <ol className="list-none space-y-2">
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                1
+          {[
+            "anticipating a message from a classmate",
+            "memorizing your mother&apos;s cellphone number",
+            "reflecting on how many hours you worked today",
+            "remembering that you have a meeting tomorrow",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <span>anticipating a message from a classmate</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                2
-              </span>
-              <span>memorizing your mother&apos;s cellphone number</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                3
-              </span>
-              <span>reflecting on how many hours you worked today</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                4
-              </span>
-              <span>remembering that you have a meeting tomorrow</span>
-            </li>
-          </ol>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
 
         <div className={cn(showResults && qaFormat(qa, "6A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="flex-none mr-2">問 4</span>
+            <span className="flex-none mr-2 font-sans">問 4</span>
             <span>Choose the best option for</span>
             {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"6A-4"} />}
           </div>
-          <ol className="list-none space-y-2">
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                1
+          {[
+            "guessing how long you&apos;ve been jogging so far",
+            "making a schedule for the basketball team summer camp",
+            "running into your tennis coach at the railway station",
+            "thinking about your last family vacation to a hot spring",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <span>guessing how long you&apos;ve been jogging so far</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                2
-              </span>
-              <span>making a schedule for the basketball team summer camp</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                3
-              </span>
-              <span>running into your tennis coach at the railway station</span>
-            </li>
-            <li className="flex items-start">
-              <span className="border border-gray-800 rounded-full w-6 h-6 flex items-center justify-center mr-2">
-                4
-              </span>
-              <span>
-                thinking about your last family vacation to a hot spring
-              </span>
-            </li>
-          </ol>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

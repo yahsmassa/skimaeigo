@@ -122,8 +122,8 @@ const Ex23_5 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第５問"}</h1>
-          <span className="text-gray-600">(配点 {15})</span>
+          <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}
@@ -268,7 +268,7 @@ const Ex23_5 = () => {
                 <li>Played football at middle school.</li>
                 <li>
                   Started playing table tennis at his new school because he
-                  <div className="border border-gray-800 inline-block mx-2 px-3 py-0.5">
+                  <div className="border border-gray-800 inline-block mx-2 px-3 py-0.5 font-sans">
                     30
                   </div>
                   .
@@ -287,7 +287,7 @@ const Ex23_5 = () => {
                 </li>
                 <li>
                   Patrick: Ben&apos;s brother, who
-                  <div className="border border-gray-800 inline-block mx-2 px-3 py-0.5">
+                  <div className="border border-gray-800 inline-block mx-2 px-3 py-0.5 font-sans">
                     31
                   </div>
                   .
@@ -307,13 +307,21 @@ const Ex23_5 = () => {
               <div className="flex items-center flex-wrap">
                 <span>Began playing table tennis</span>
                 <span className="mx-2">→</span>
-                <div className="border border-gray-800 px-3 py-0.5">32</div>
+                <div className="border border-gray-800 px-3 py-0.5 font-sans">
+                  32
+                </div>
                 <span className="mx-2">→</span>
-                <div className="border border-gray-800 px-3 py-0.5">33</div>
+                <div className="border border-gray-800 px-3 py-0.5 font-sans">
+                  33
+                </div>
                 <span className="mx-2">→</span>
-                <div className="border border-gray-800 px-3 py-0.5">34</div>
+                <div className="border border-gray-800 px-3 py-0.5 font-sans">
+                  34
+                </div>
                 <span className="mx-2">→</span>
-                <div className="border border-gray-800 px-3 py-0.5">35</div>
+                <div className="border border-gray-800 px-3 py-0.5 font-sans">
+                  35
+                </div>
               </div>
             </div>
 
@@ -323,7 +331,7 @@ const Ex23_5 = () => {
               </h3>
               <div className="flex items-center">
                 <span>He should have</span>
-                <div className="border border-gray-800 inline-block mx-2 px-3 py-0.5">
+                <div className="border border-gray-800 inline-block mx-2 px-3 py-0.5 font-sans">
                   36
                 </div>
                 <span>.</span>
@@ -336,12 +344,12 @@ const Ex23_5 = () => {
               </h3>
               <ul className="list-disc pl-5 space-y-2">
                 <li>
-                  <div className="border border-gray-800 inline-block px-3 py-0.5">
+                  <div className="border border-gray-800 inline-block px-3 py-0.5 font-sans">
                     37
                   </div>
                 </li>
                 <li>
-                  <div className="border border-gray-800 inline-block px-3 py-0.5">
+                  <div className="border border-gray-800 inline-block px-3 py-0.5 font-sans">
                     38
                   </div>
                 </li>
@@ -352,63 +360,53 @@ const Ex23_5 = () => {
       </div>
       <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-1"))}>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="whitespace-nowrap mr-2">問 1</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>Choose the best option for</span>
           {renderSelect("30", 4, answers, setAnswers)}.
           {showResults && <Explain qa={qa} questionId="5-1" />}
         </div>
 
-        <div className="space-y-3 ml-8">
-          <div className="flex gap-4">
-            <span>①</span>
-            <span>believed it would help him communicate</span>
-          </div>
-          <div className="flex gap-4">
-            <span>②</span>
-            <span>hoped to become popular at school</span>
-          </div>
-          <div className="flex gap-4">
-            <span>③</span>
-            <span>thought he could win games easily</span>
-          </div>
-          <div className="flex gap-4">
-            <span>④</span>
-            <span>wanted to avoid playing a team sport</span>
-          </div>
+        <div className="space-y-3 ml-2 md:ml-8">
+          {[
+            "believed it would help him communicate",
+            "hoped to become popular at school",
+            "thought he could win games easily",
+            "wanted to avoid playing a team sport",
+          ].map((text, index) => (
+            <div key={index} className="flex gap-4">
+              <span>{"①②③④"[index]}</span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
       {/* Question 2 */}
       <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-2"))}>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="whitespace-nowrap mr-2">問 2</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
           <span>Choose the best option for</span>
           {renderSelect("31", 4, answers, setAnswers)}.
           {showResults && <Explain qa={qa} questionId="5-2" />}
         </div>
 
-        <div className="space-y-3 ml-8">
-          <div className="flex gap-4">
-            <span>①</span>
-            <span>asked him what he enjoyed about communication</span>
-          </div>
-          <div className="flex gap-4">
-            <span>②</span>
-            <span>encouraged him to be more confident</span>
-          </div>
-          <div className="flex gap-4">
-            <span>③</span>
-            <span>helped him learn the social skills he needed</span>
-          </div>
-          <div className="flex gap-4">
-            <span>④</span>
-            <span>told him what he should have said to his school friends</span>
-          </div>
+        <div className="space-y-3 ml-2 md:ml-8">
+          {[
+            "asked him what he enjoyed about communication",
+            "encouraged him to be more confident",
+            "helped him learn the social skills he needed",
+            "told him what he should have said to his school friends",
+          ].map((text, index) => (
+            <div key={index} className="flex gap-4">
+              <span>{"①②③④"[index]}</span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
       {/* Question 3 */}
       <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-3"))}>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="whitespace-nowrap mr-2">問 3</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span> Choose </span>
           <span className="underline">four</span>
           <span>
@@ -428,27 +426,19 @@ const Ex23_5 = () => {
           {showResults && <Explain qa={qa} questionId="5-3" />}
         </div>
 
-        <div className="space-y-3 ml-8">
-          <div className="flex gap-4">
-            <span>①</span>
-            <span>Became a table tennis champion</span>
-          </div>
-          <div className="flex gap-4">
-            <span>②</span>
-            <span>Discussed with his teacher how to play well</span>
-          </div>
-          <div className="flex gap-4">
-            <span>③</span>
-            <span>Refused a party in his honour</span>
-          </div>
-          <div className="flex gap-4">
-            <span>④</span>
-            <span>Started to study his opponents</span>
-          </div>
-          <div className="flex gap-4">
-            <span>⑤</span>
-            <span>Talked to his brother about table tennis</span>
-          </div>
+        <div className="space-y-3 ml-2 md:ml-8">
+          {[
+            "Became a table tennis champion",
+            "Discussed with his teacher how to play well",
+            "Refused a party in his honour",
+            "Started to study his opponents",
+            "Talked to his brother about table tennis",
+          ].map((text, index) => (
+            <div key={index} className="flex gap-4">
+              <span>{"①②③④⑤"[index]}</span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
       {/* Question 4 */}
@@ -460,40 +450,24 @@ const Ex23_5 = () => {
           {showResults && <Explain qa={qa} questionId="5-4" />}
         </div>
 
-        <div className="space-y-3 ml-8">
-          <div className="flex gap-4">
-            <span>①</span>
-            <span>
-              asked his friend questions to find out more about his motivation
-            </span>
-          </div>
-          <div className="flex gap-4">
-            <span>②</span>
-            <span>
-              invited Mr Trent and other classmates to the party to show
-              appreciation
-            </span>
-          </div>
-          <div className="flex gap-4">
-            <span>③</span>
-            <span>
-              tried to understand his friend&apos;s point of view to act
-              appropriately
-            </span>
-          </div>
-          <div className="flex gap-4">
-            <span>④</span>
-            <span>
-              worked hard to be a better team player for successful
-              communication
-            </span>
-          </div>
+        <div className="space-y-3 ml-2 md:ml-8">
+          {[
+            "asked his friend questions to find out more about his motivation",
+            "invited Mr Trent and other classmates to the party to show appreciation",
+            "tried to understand his friend&apos;s point of view to act appropriately",
+            "worked hard to be a better team player for successful communication",
+          ].map((text, index) => (
+            <div key={index} className="flex gap-4">
+              <span>{"①②③④"[index]}</span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
       {/* Question 5 */}
       <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-5"))}>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="whitespace-nowrap mr-2">問 5</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
           <span> Choose the best two options for </span>
           {renderSelect("37", 5, answers, setAnswers)}
           <span> and </span>
@@ -502,31 +476,19 @@ const Ex23_5 = () => {
           {showResults && <Explain qa={qa} questionId="5-5" />}
         </div>
 
-        <div className="space-y-3 ml-8">
-          <div className="flex gap-4">
-            <span>①</span>
-            <span>Advice from people around us can help us change.</span>
-          </div>
-          <div className="flex gap-4">
-            <span>②</span>
-            <span>Confidence is important for being a good communicator.</span>
-          </div>
-          <div className="flex gap-4">
-            <span>③</span>
-            <span>
-              It is important to make our intentions clear to our friends.
-            </span>
-          </div>
-          <div className="flex gap-4">
-            <span>④</span>
-            <span>
-              The support that teammates provide one another is helpful.
-            </span>
-          </div>
-          <div className="flex gap-4">
-            <span>⑤</span>
-            <span>We can apply what we learn from one thing to another.</span>
-          </div>
+        <div className="space-y-3 ml-2 md:ml-8">
+          {[
+            "Advice from people around us can help us change.",
+            "Confidence is important for being a good communicator.",
+            "It is important to make our intentions clear to our friends.",
+            "The support that teammates provide one another is helpful.",
+            "We can apply what we learn from one thing to another.",
+          ].map((text, index) => (
+            <div key={index} className="flex gap-4">
+              <span>{"①②③④⑤"[index]}</span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

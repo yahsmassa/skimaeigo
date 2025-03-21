@@ -109,8 +109,8 @@ const Ex24_1B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <h1 className="text-lg font-bold font-sans">{"第１問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {6})</span>
         </div>
         <Saiten
           qa={qa}
@@ -235,7 +235,7 @@ const Ex24_1B = () => {
             )}
           >
             <div className="flex items-center flex-wrap gap-2 mb-2">
-              <span className="whitespace-nowrap mr-2">
+              <span className="whitespace-nowrap mr-2 font-sans">
                 問{question.number}
               </span>
               <span>{question.prompt}</span>

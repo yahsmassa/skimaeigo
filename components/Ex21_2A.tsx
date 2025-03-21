@@ -73,7 +73,7 @@ const Ex21_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "正解②Mountain Pear 解説・・・Judges’ final average scoresにおいて、Singingの項目が最も高く、4.9である。",
+        "正解②Mountain Pear 解説・・・Judges' final average scoresにおいて、Singingの項目が最も高く、4.9である。",
       ],
     },
     {
@@ -151,8 +151,8 @@ const Ex21_2A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 A"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {10})</span>
         </div>
         <Saiten
           qa={qa}
@@ -170,12 +170,12 @@ const Ex21_2A = () => {
         {Kaisetsu(showResults, "21-2A-0")}
       </div>
 
-      <Card className="border-black">
+      <Card className="border-black mb-4">
         <div className="text-center font-medium p-2 border-b border-black">
           Judges&apos; final average scores
         </div>
         <table className="w-full">
-          <thead>
+          <thead className="text-[11px] md:text-base">
             <tr className="border-b border-black">
               <th className="text-left p-2 border-r border-black">
                 Band names
@@ -204,7 +204,7 @@ const Ex21_2A = () => {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-[12px] md:text-base">
             {scores.map((score, index) => (
               <tr
                 key={score.band}
@@ -213,22 +213,22 @@ const Ex21_2A = () => {
                 }
               >
                 <td className="p-2 border-r border-black">{score.band}</td>
-                <td className="p-2 text-center border-r border-black">
+                <td className="p-2 text-center border-r border-black font-sans">
                   {score.performance === "did not perform" ? (
                     <span className="col-span-4">(did not perform)</span>
                   ) : (
                     score.performance
                   )}
                 </td>
-                <td className="p-2 text-center border-r border-black">
+                <td className="p-2 text-center border-r border-black font-sans">
                   {score.performance === "did not perform" ? "" : score.singing}
                 </td>
-                <td className="p-2 text-center border-r border-black">
+                <td className="p-2 text-center border-r border-black font-sans">
                   {score.performance === "did not perform"
                     ? ""
                     : score.originality}
                 </td>
-                <td className="p-2 text-center">
+                <td className="p-2 text-center font-sans">
                   {score.performance === "did not perform" ? "" : score.total}
                 </td>
               </tr>
@@ -237,7 +237,7 @@ const Ex21_2A = () => {
         </table>
       </Card>
 
-      <Card className="border-black">
+      <Card className="border-black mb-4">
         <div className="text-center font-medium p-2 border-b border-black">
           Judges&apos; individual comments
         </div>
@@ -286,7 +286,7 @@ const Ex21_2A = () => {
       <div className="space-y-6">
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               Based on the judges&apos; final average scores, which band sang
               the best?
@@ -294,32 +294,47 @@ const Ex21_2A = () => {
             {renderSelect("6", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2A-1" />}
           </div>
-          <div className="pl-8 space-y-1">
-            <div>① Green Forest</div>
-            <div>② Mountain Pear</div>
-            <div>③ Silent Hill</div>
-            <div>④ Thousand Ants</div>
+          <div>
+            {[
+              "Green Forest",
+              "Mountain Pear",
+              "Silent Hill",
+              "Thousand Ants",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start pl-2 md:pl-8">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Which judge gave both positive and critical comments?</span>
             {renderSelect("7", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2A-2" />}
           </div>
-          <div className="pl-8 space-y-1">
-            <div>① Mr Hobbs</div>
-            <div>② Ms Leigh</div>
-            <div>③ Ms Wells</div>
-            <div>④ None of them</div>
+          <div className="pl-2 md:pl-8 space-y-1">
+            {["Mr Hobbs", "Ms Leigh", "Ms Wells", "None of them"].map(
+              (text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              )
+            )}
           </div>
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               One <span className="underline">fact</span> from the judges&apos;
               individual comments is that
@@ -327,17 +342,26 @@ const Ex21_2A = () => {
             {renderSelect("8", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2A-3" />}
           </div>
-          <div className="pl-8 space-y-1">
-            <div>① all the judges praised Green Forest&apos;s song</div>
-            <div>② Green Forest need to practice more</div>
-            <div>③ Mountain Pear can sing very well</div>
-            <div>④ Silent Hill have a promising future</div>
+          <div className="pl-2 md:pl-8 space-y-1">
+            {[
+              "all the judges praised Green Forest&apos;s song",
+              "Green Forest need to practice more",
+              "Mountain Pear can sing very well",
+              "Silent Hill have a promising future",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               One <span className="underline">opinion</span> from the
               judges&apos; comments and shared evaluation is that
@@ -345,19 +369,26 @@ const Ex21_2A = () => {
             {renderSelect("9", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2A-4" />}
           </div>
-          <div className="pl-8 space-y-1">
-            <div>① each evaluated band received the same total score</div>
-            <div>
-              ② Ms Wells&apos; suggestion about originality was agreed on
-            </div>
-            <div>③ Silent Hill really connected with the audience</div>
-            <div>④ the judges&apos; comments determined the rankings</div>
+          <div className="pl-2 md:pl-8 space-y-1">
+            {[
+              "each evaluated band received the same total score",
+              "Ms Wells&apos; suggestion about originality was agreed on",
+              "Silent Hill really connected with the audience",
+              "the judges&apos; comments determined the rankings",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>
               Which of the following is the final ranking based on the
               judges&apos; shared evaluation?

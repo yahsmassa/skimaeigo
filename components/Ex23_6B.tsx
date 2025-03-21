@@ -117,8 +117,8 @@ const Ex23_6B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問 B"}</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -257,7 +257,7 @@ const Ex23_6B = () => {
       {/* Question 1 */}
       <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-1"))}>
         <div className="flex flex-wrap items-center mb-4">
-          <span className="whitespace-nowrap mr-2">問 1</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>
             Which of the following should you{" "}
             <span className="underline">not</span> include for
@@ -265,18 +265,18 @@ const Ex23_6B = () => {
           {renderSelect("44", 5, answers, setAnswers)}.<span>?</span>
           {showResults && <Explain qa={qa} questionId="6B-1" />}
         </div>
-        <div className="space-y-2 ml-8">
+        <div className="space-y-2 ml-2 md:ml-8">
           {[
             "eight short legs",
             "either blind or sighted",
             "plant-eating or creature-eating",
             "sixteen different types of feet",
             "two stylets rather than teeth",
-          ].map((text, idx) => (
-            <div key={idx} className="flex items-start">
-              <div className="border border-black rounded-full w-6 h-6 flex items-center justify-center mr-4">
-                {idx + 1}
-              </div>
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
               <span>{text}</span>
             </div>
           ))}
@@ -285,7 +285,7 @@ const Ex23_6B = () => {
       {/* Question 2 */}
       <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-2"))}>
         <div className="flex flex-wrap items-center mb-4">
-          <span className="whitespace-nowrap mr-2">問 2</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
           <span>
             For the <span className="font-bold">Secrets to Survival</span>{" "}
             slide, select two features of the tardigrade which best help it
@@ -296,18 +296,18 @@ const Ex23_6B = () => {
           {renderSelect("46", 5, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="6B-2" />}
         </div>
-        <div className="space-y-2 ml-8">
+        <div className="space-y-2 ml-2 md:ml-8">
           {[
             "In dry conditions, their metabolism drops to less than one percent of normal.",
             "Tardigrades in a state of tun are able to survive in temperatures exceeding 151℃.",
             "The state of tun will cease when the water in a tardigrade&apos;s body is above 0.01%.",
             "Their shark-like mouths allow them to more easily eat other creatures.",
             "They have an ability to withstand extreme levels of radiation.",
-          ].map((text, idx) => (
-            <div key={idx} className="flex items-start">
-              <div className="border border-black rounded-full w-6 h-6 flex items-center justify-center mr-4">
-                {idx + 1}
-              </div>
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
               <span>{text}</span>
             </div>
           ))}
@@ -316,7 +316,7 @@ const Ex23_6B = () => {
       {/* Question 3 */}
       <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-3"))}>
         <div className="flex flex-wrap items-center mb-4">
-          <span className="whitespace-nowrap mr-2">問 3</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span>
             Complete the missing labels on the illustration of a tardigrade for
             the <span className="font-bold">Digestive Systems</span> slide.
@@ -324,73 +324,55 @@ const Ex23_6B = () => {
           {renderSelect("47", 5, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="6B-3" />}
         </div>
-        <div className="space-y-2 ml-8">
-          {[1, 2, 3, 4, 5].map((num) => (
-            <div key={num} className="flex items-start">
-              <div className="border border-black rounded-full w-6 h-6 flex items-center justify-center mr-4">
-                {num}
+        <div className="space-y-2 ml-2 md:ml-8">
+          {[1, 2, 3, 4, 5].map((num, index) => (
+            <div key={num} className="flex  items-start">
+              <div className="w-6 h-6 flex items-center justify-center mr-4">
+                {"①②③④⑤"[index]}
               </div>
-              <div className="grid grid-cols-5 gap-8">
-                <div>
-                  (A){" "}
-                  {
-                    [
-                      "Esophagus",
-                      "Pharynx",
-                      "Salivary gland",
-                      "Salivary gland",
-                      "Stylets",
-                    ][num - 1]
-                  }
-                </div>
-                <div>
-                  (B){" "}
-                  {
-                    [
-                      "Pharynx",
-                      "Stylets",
-                      "Esophagus",
-                      "Middle gut",
-                      "Salivary gland",
-                    ][num - 1]
-                  }
-                </div>
-                <div>
-                  (C){" "}
-                  {
-                    [
-                      "Middle gut",
-                      "Salivary gland",
-                      "Middle gut",
-                      "Stylets",
-                      "Pharynx",
-                    ][num - 1]
-                  }
-                </div>
-                <div>
-                  (D){" "}
-                  {
-                    [
-                      "Stylets",
-                      "Esophagus",
-                      "Stylets",
-                      "Esophagus",
-                      "Middle gut",
-                    ][num - 1]
-                  }
-                </div>
-                <div>
-                  (E){" "}
-                  {
-                    [
-                      "Salivary gland",
-                      "Middle gut",
-                      "Pharynx",
-                      "Pharynx",
-                      "Esophagus",
-                    ][num - 1]
-                  }
-                </div>
+              <div className="flex flex-wrap items-start">
+                {[
+                  [
+                    "Esophagus",
+                    "Pharynx",
+                    "Middle gut",
+                    "Stylets",
+                    "Salivary gland",
+                  ],
+                  [
+                    "Pharynx",
+                    "Stylets",
+                    "Salivary gland",
+                    "Esophagus",
+                    "Middle gut",
+                  ],
+                  [
+                    "Salivary gland",
+                    "Esophagus",
+                    "Middle gut",
+                    "Stylets",
+                    "Pharynx",
+                  ],
+                  [
+                    "Salivary gland",
+                    "Middle gut",
+                    "Stylets",
+                    "Esophagus",
+                    "Pharynx",
+                  ],
+                  [
+                    "Stylets",
+                    "Salivary gland",
+                    "Pharynx",
+                    "Middle gut",
+                    "Esophagus",
+                  ],
+                ][num - 1].map((text, index) => (
+                  <div key={index} className="flex flex-wrap items-start">
+                    <span className="mr-2">({"ABCDE"[index]})</span>
+                    <span className="mr-2 w-[105px]">{text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
@@ -399,21 +381,21 @@ const Ex23_6B = () => {
       {/* Question 4 */}
       <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-4"))}>
         <div className="flex flex-wrap items-center mb-4">
-          <span className="whitespace-nowrap mr-2">問 4</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>Which is the best statement for the final slide?</span>
           {renderSelect("48", 5, answers, setAnswers)}
         </div>
-        <div className="space-y-4 ml-8">
+        <div className="space-y-4 ml-2 md:ml-8">
           {[
             "For thousands of years, tardigrades have survived some of the harshest conditions on earth and in space. They will live longer than humankind.",
             "Tardigrades are from space and can live in temperatures exceeding the limits of the Arctic fox and Bactrian camel, so they are surely stronger than human beings.",
             "Tardigrades are, without a doubt, the toughest creatures on earth. They can survive on the top of mountains; at the bottom of the sea; in the waters of hot springs; and they can also thrive on the moon.",
             "Tardigrades have survived some of the harshest conditions on earth, and at least one trip into space. This remarkable creature might outlive the human species.",
-          ].map((text, idx) => (
-            <div key={idx} className="flex items-start">
-              <div className="border border-black rounded-full w-6 h-6 flex items-center justify-center mr-4 flex-shrink-0">
-                {idx + 1}
-              </div>
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
               <span>{text}</span>
             </div>
           ))}
@@ -422,24 +404,24 @@ const Ex23_6B = () => {
       {/* Question 5 */}
       <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-5"))}>
         <div className="flex flex-wrap items-center mb-4">
-          <span className="whitespace-nowrap mr-2">問 5</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
           <span>
             What can be inferred about sending tardigrades into space?
           </span>
           {renderSelect("49", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="6B-5" />}
         </div>
-        <div className="space-y-4 ml-8">
+        <div className="space-y-4 ml-2 md:ml-8">
           {[
             "Finding out whether the tardigrades can survive in space was never thought to be important.",
             "Tardigrades, along with other creatures that have been on earth for millions of years, can withstand X-rays and ultraviolet radiation.",
             "The Israeli researchers did not expect so many tardigrades to survive the harsh environment of space.",
             "The reason why no one has been to see if tardigrades can survive on the moon&apos;s surface attracted the author&apos;s attention.",
-          ].map((text, idx) => (
-            <div key={idx} className="flex items-start">
-              <div className="border border-black rounded-full w-6 h-6 flex items-center justify-center mr-4 flex-shrink-0">
-                {idx + 1}
-              </div>
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
               <span>{text}</span>
             </div>
           ))}

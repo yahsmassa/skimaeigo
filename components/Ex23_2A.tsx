@@ -109,8 +109,8 @@ const Ex23_2A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 A"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {10})</span>
         </div>
         <Saiten
           qa={qa}
@@ -236,7 +236,7 @@ const Ex23_2A = () => {
         className={cn("space-y-4 mt-7", showResults && qaFormat(qa, "2A-1"))}
       >
         <div className="flex items-center flex-wrap mb-4 gap-2">
-          <span className="whitespace-nowrap mr-1">問 1</span>
+          <span className="whitespace-nowrap mr-1 font-sans">問 1</span>
           <span>
             According to the maker&apos;s statements, which best describes the
             new shoes?
@@ -251,12 +251,12 @@ const Ex23_2A = () => {
             "Light comfortable sports shoes",
             "Stylish colourful cycling shoes",
           ].map((answer, index) => (
-            <li key={index} className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                {index + 1}
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              {answer}
-            </li>
+              <span>{answer}</span>
+            </div>
           ))}
         </ol>
       </div>
@@ -279,12 +279,12 @@ const Ex23_2A = () => {
             "Knowing how fast you walk",
             "Looking cool wearing them",
           ].map((answer, index) => (
-            <li key={index} className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                {index + 1}
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              {answer}
-            </li>
+              <span>{answer}</span>
+            </div>
           ))}
         </ol>
       </div>
@@ -293,7 +293,7 @@ const Ex23_2A = () => {
         className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-3"))}
       >
         <div className="flex items-center flex-wrap mb-4 gap-2">
-          <span className="whitespace-nowrap mr-2">問 3</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span>
             One <u>opinion</u> stated by a customer is that
           </span>
@@ -303,16 +303,16 @@ const Ex23_2A = () => {
         <ol className="list-none space-y-2">
           {[
             "the app encourages fast walking",
-            "the app&apos;s free functions are user-friendly",
+            "the app's free functions are user-friendly",
             "the shoes are good value for money",
             "the shoes increase your cycling speed",
           ].map((answer, index) => (
-            <li key={index} className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                {index + 1}
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              {answer}
-            </li>
+              <span>{answer}</span>
+            </div>
           ))}
         </ol>
       </div>
@@ -321,7 +321,7 @@ const Ex23_2A = () => {
         className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-4"))}
       >
         <div className="flex items-start mb-4 mt-3 flex-wrap gap-2">
-          <span className="whitespace-nowrap mr-2">問 4</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>
             One customer&apos;s comment mentions using audio devices. Which
             benefit is this comment based on?
@@ -336,12 +336,12 @@ const Ex23_2A = () => {
             "Route Memory",
             "Route Options",
           ].map((answer, index) => (
-            <li key={index} className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                {index + 1}
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              {answer}
-            </li>
+              <span>{answer}</span>
+            </div>
           ))}
         </ol>
       </div>
@@ -350,7 +350,7 @@ const Ex23_2A = () => {
         className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-5"))}
       >
         <div className="flex items-center mb-4 mt-3 flex-wrap">
-          <span className="whitespace-nowrap mr-2">問 5</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
           <span>According to one customer&apos;s opinion,</span>
           {renderSelect("10", 4, answers, setAnswers)}
           <span>is recommended.</span>
@@ -363,12 +363,12 @@ const Ex23_2A = () => {
             "connecting to the app before putting the shoes on",
             "paying for the iSupport advanced features",
           ].map((answer, index) => (
-            <li key={index} className="flex items-start">
-              <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                {index + 1}
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
               <span>{answer}</span>
-            </li>
+            </div>
           ))}
         </ol>
       </div>

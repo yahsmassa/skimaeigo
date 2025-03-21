@@ -104,8 +104,8 @@ const Ex22_6B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問 B"}</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -257,7 +257,7 @@ const Ex22_6B = () => {
         </div>
 
         {/* Number box */}
-        <div className="border border-gray-300 w-16 p-1 mb-4 text-center">
+        <div className="border border-gray-300 w-16 p-1 mb-4 text-center font-sans">
           44
         </div>
 
@@ -297,7 +297,7 @@ const Ex22_6B = () => {
                 </td>
                 <td className="p-2 border-r">
                   This type of plastic is easily recycled
-                  <span className="inline-block border border-gray-300 px-2 mx-1">
+                  <span className="inline-block border border-gray-300 px-2 mx-1 font-sans">
                     45
                   </span>
                   .
@@ -314,7 +314,7 @@ const Ex22_6B = () => {
                 </td>
                 <td className="p-2 border-r">
                   This type of plastic is
-                  <span className="inline-block border border-gray-300 px-2 mx-1">
+                  <span className="inline-block border border-gray-300 px-2 mx-1 font-sans">
                     46
                   </span>
                   .
@@ -331,10 +331,12 @@ const Ex22_6B = () => {
         </div>
 
         <div className="border border-gray-300 p-4">
-          <div className="border border-gray-300 w-16 p-1 mb-2 text-center">
+          <div className="border border-gray-300 w-16 p-1 mb-2 text-center font-sans">
             47
           </div>
-          <div className="border border-gray-300 w-16 p-1 text-center">48</div>
+          <div className="border border-gray-300 w-16 p-1 text-center font-sans">
+            48
+          </div>
         </div>
       </div>
 
@@ -343,7 +345,7 @@ const Ex22_6B = () => {
         {/* Question 1 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               Under the first poster heading, your group wants to introduce the
               plastic recycling symbols as explained in the passage. Which of
@@ -352,30 +354,27 @@ const Ex22_6B = () => {
             {renderSelect("44", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6B-1" />}
           </div>
-          <div className="space-y-2 pl-8">
-            <div>
-              ① They are symbols that rank the recyclability of plastics and
-              other related problems.
-            </div>
-            <div>
-              ② They provide information on the chemical make-up and recycling
-              options of the plastic.
-            </div>
-            <div>
-              ③ They tell the user which standards organization gave them
-              certificates for general use.
-            </div>
-            <div>
-              ④ They were introduced by ASTM and developed by the Society of the
-              Plastics Industry.
-            </div>
+          <div className="">
+            {[
+              "They are symbols that rank the recyclability of plastics and other related problems.",
+              "They provide information on the chemical make-up and recycling options of the plastic.",
+              "They tell the user which standards organization gave them certificates for general use.",
+              "They were introduced by ASTM and developed by the Society of the Plastics Industry.",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start ml-2 md:ml-8">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 2 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               You have been asked to write descriptions of Type 2 and Type 3
               plastics. Choose the best options for
@@ -387,35 +386,51 @@ const Ex22_6B = () => {
 
           {/* Type 2 Options */}
           <div className="mb-4">
-            <div className="mb-2">
+            <div className="mb-2 font-sans">
               Type 2{" "}
-              <span className="inline-block border border-gray-300 px-2">
+              <span className="inline-block border border-gray-300 px-2 font-sans">
                 45
               </span>
             </div>
-            <div className="space-y-2 pl-8">
-              <div>① and commonly known as a single-use plastic</div>
-              <div>② and used at a wide range of temperatures</div>
-              <div>③ but harmful to humans</div>
-              <div>④ but unsuitable for drink containers</div>
+            <div>
+              {[
+                "and commonly known as a single-use plastic",
+                "and used at a wide range of temperatures",
+                "but harmful to humans",
+                "but unsuitable for drink containers",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start ml-2 md:ml-8">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Type 3 Options */}
           <div>
-            <div className="mb-2">
+            <div className="mb-2 font-sans">
               Type 3{" "}
-              <span className="inline-block border border-gray-300 px-2">
+              <span className="inline-block border border-gray-300 px-2 font-sans">
                 46
               </span>
             </div>
-            <div className="space-y-2 pl-8">
-              <div>
-                ① difficult to recycle and should not be burned in the yard
-              </div>
-              <div>② flammable; however, it is soft and cheap to produce</div>
-              <div>③ known to be a non-toxic product</div>
-              <div>④ well known for being easily recyclable</div>
+            <div>
+              {[
+                "difficult to recycle and should not be burned in the yard",
+                "flammable; however, it is soft and cheap to produce",
+                "known to be a non-toxic product",
+                "well known for being easily recyclable",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start ml-2 md:ml-8">
+                  <span className="w-6 h-6 flex items-center  mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -423,39 +438,32 @@ const Ex22_6B = () => {
         {/* Question 3 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               You are making statements about some plastics which share common
               properties. According to the article, which two of the following
               are appropriate? (The order does not matter.)
             </span>
             {renderSelect("47", 4, answers, setAnswers)}・
-            {renderSelect("48", 4, answers, setAnswers)}.
+            {renderSelect("48", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6B-3" />}
           </div>
-          <div className="space-y-2 pl-8">
-            <div>
-              ① Boiling water (100℃) can be served in Type 1 and Type 6 plastic
-              containers.
-            </div>
-            <div>
-              ② It is easy to recycle products with Type 1, 2, and 3 logos.
-            </div>
-            <div>
-              ③ Products with the symbols 1, 2, 4, 5, and 6 are suitable for
-              food or drink containers.
-            </div>
-            <div>
-              ④ Products with Type 5 and Type 6 markings are light in weight.
-            </div>
-            <div>
-              ⑤ Type 4 and 5 plastics are heat resistant and are widely
-              recycled.
-            </div>
-            <div>
-              ⑥ Type 6 and 7 plastics are easy to recycle and environmentally
-              friendly.
-            </div>
+          <div className="">
+            {[
+              "Boiling water (100℃) can be served in Type 1 and Type 6 plastic containers.",
+              "It is easy to recycle products with Type 1, 2, and 3 logos.",
+              "Products with the symbols 1, 2, 4, 5, and 6 are suitable for food or drink containers.",
+              "Products with Type 5 and Type 6 markings are light in weight.",
+              "Type 4 and 5 plastics are heat resistant and are widely recycled.",
+              "Type 6 and 7 plastics are easy to recycle and environmentally friendly.",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start ml-2 md:ml-8">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

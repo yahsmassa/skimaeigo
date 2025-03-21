@@ -111,7 +111,7 @@ export function Saiten({
         >
           Reset
         </button>
-        <div className="ml-2 text-base font-semibold w-[130px]">
+        <div className="ml-2 text-base font-semibold w-[130px] font-sans">
           得点: {showResults && score !== null ? score : "-"} / {totalPoints}点
         </div>
       </div>

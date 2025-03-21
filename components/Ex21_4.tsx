@@ -108,8 +108,8 @@ export default function Ex21_4() {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {16})</span>
         </div>
         <Saiten
           qa={qa}
@@ -343,8 +343,8 @@ export default function Ex21_4() {
       <div className="mt-8">
         {/* Question 1 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-1"))}>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               The guests from the sister school will arrive on the number
             </span>
@@ -355,7 +355,7 @@ export default function Ex21_4() {
             {showResults && <Explain qa={qa} questionId="4-1" />}
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-3 gap-4 mt-4 font-sans">
             <div>① 109</div>
             <div>② 110</div>
             <div>③ 111</div>
@@ -367,7 +367,7 @@ export default function Ex21_4() {
         {/* Question 2 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Which best completes the draft schedule?</span>
             {renderSelect("26", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4-2" />}
@@ -387,7 +387,7 @@ export default function Ex21_4() {
             width={800}
             height={200}
           />
-          <div className="ml-8">
+          <div className="ml-2 md:ml-8">
             <p>① D→A→B→C</p>
             <p>② D→B→A→C</p>
             <p>③ D→B→C→A</p>
@@ -398,14 +398,14 @@ export default function Ex21_4() {
         {/* Question 3 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>Unless it rains, the guests will eat lunch in the</span>
             {renderSelect("27", 4, answers, setAnswers)}
             <span>.</span>
             {showResults && <Explain qa={qa} questionId="4-3" />}
           </div>
 
-          <div className="ml-8">
+          <div className="ml-2 md:ml-8">
             <p>① botanical garden</p>
             <p>② park next to the school</p>
             <p>③ park next to the station</p>
@@ -416,7 +416,7 @@ export default function Ex21_4() {
         {/* Question 4 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               The guests will <span className="underline">not</span> get around
             </span>
@@ -425,7 +425,7 @@ export default function Ex21_4() {
             {showResults && <Explain qa={qa} questionId="4-4" />}
           </div>
 
-          <div className="ml-8">
+          <div className="ml-2 md:ml-8">
             <p>① by bus</p>
             <p>② by taxi</p>
             <p>③ by train</p>
@@ -436,7 +436,7 @@ export default function Ex21_4() {
         {/* Question 5 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>
               As a third option, which would be the most suitable for your
               program?
@@ -445,7 +445,7 @@ export default function Ex21_4() {
             {showResults && <Explain qa={qa} questionId="4-5" />}
           </div>
 
-          <div className="ml-8">
+          <div className="ml-2 md:ml-8">
             <p>① Hibari Amusement Park</p>
             <p>② Hibari Art Museum</p>
             <p>③ Hibari Castle</p>

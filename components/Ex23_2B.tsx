@@ -110,8 +110,8 @@ const Ex23_2B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 B"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {10})</span>
         </div>
         <Saiten
           qa={qa}
@@ -202,7 +202,7 @@ const Ex23_2B = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-1"))}>
           <div className="flex items-center mb-4 mt-3 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               The aim of the Commuting Challenge was to help students to
             </span>
@@ -216,12 +216,12 @@ const Ex23_2B = () => {
               "manage English classes better",
               "use their time better",
             ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
                 </span>
-                {answer}
-              </li>
+                <span>{answer}</span>
+              </div>
             ))}
           </ol>
         </div>
@@ -229,7 +229,7 @@ const Ex23_2B = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-2"))}>
           <div className="flex items-center mb-4 mt-3 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               One <u>fact</u> about the Commuting Challenge is that
             </span>
@@ -243,12 +243,12 @@ const Ex23_2B = () => {
               "students had to use portable devices on buses",
               "the majority of participants travelled by train",
             ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
                 </span>
-                {answer}
-              </li>
+                <span>{answer}</span>
+              </div>
             ))}
           </ol>
         </div>
@@ -256,7 +256,7 @@ const Ex23_2B = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-3"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>From the feedback,</span>
             {renderSelect("13", 4, answers, setAnswers)}
             <span>were activities reported by participants.</span>
@@ -277,12 +277,12 @@ const Ex23_2B = () => {
               "B and D",
               "C and D",
             ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
                 </span>
-                {answer}
-              </li>
+                <span>{answer}</span>
+              </div>
             ))}
           </ol>
         </div>
@@ -290,7 +290,7 @@ const Ex23_2B = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-4"))}>
           <div className="flex items-center mb-4  flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               One of the participants&apos; opinions about the Commuting
               Challenge is that
@@ -298,21 +298,19 @@ const Ex23_2B = () => {
             {renderSelect("14", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-4" />}
           </div>
-          <ol className="list-none space-y-2">
-            {[
-              "it could have included students who walk to school",
-              "the train was a good place to read books",
-              "there were plenty of audio materials for studying",
-              "watching videos for fun helped time pass quickly",
-            ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {[
+            "it could have included students who walk to school",
+            "the train was a good place to read books",
+            "there were plenty of audio materials for studying",
+            "watching videos for fun helped time pass quickly",
+          ].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 5 */}
@@ -323,16 +321,14 @@ const Ex23_2B = () => {
             {renderSelect("15", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-5" />}
           </div>
-          <ol className="list-none space-y-2">
-            {["HS", "JH", "KF", "MN", "SS"].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {["HS", "JH", "KF", "MN", "SS"].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
       </div>
       <div className="text-center text-gray-500 mt-8">— 12 —</div>

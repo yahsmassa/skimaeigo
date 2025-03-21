@@ -2,7 +2,13 @@
 
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
-import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
+import {
+  cn,
+  exPageFormat,
+  qaFormat,
+  renderSelect,
+  ParsedHTML,
+} from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
@@ -109,13 +115,6 @@ const JapaneseTestQuestion = () => {
   const [qa, setQA] = useState<QandA[]>(question); // 日本語の番号文字
   const japaneseNumbers = ["①", "②", "③", "④"];
 
-  const UnderlinedText = ({ children }: { children: React.ReactNode }) => (
-    <span className="relative">
-      {children}
-      <span className="absolute bottom-[-3px] left-0 w-full h-[1px] bg-black"></span>
-    </span>
-  );
-
   // 問題の選択肢データを配列として定義
   const questionData = {
     sectionA: [
@@ -168,27 +167,6 @@ const JapaneseTestQuestion = () => {
   };
 
   // HTML文字列をパースして React 要素に変換するコンポーネント
-  const ParsedHTML = ({ html }: { html: string }) => {
-    // 正規表現で <u> タグを検出
-    const parts = html.split(/(<u>.*?<\/u>)/);
-
-    return (
-      <>
-        {parts.map((part, i) => {
-          if (part.startsWith("<u>") && part.endsWith("</u>")) {
-            // <u> タグの内容を抽出
-            const content = part.replace(/<\/?u>/g, "");
-            return (
-              <u key={i} className="underline underline-offset-4">
-                {content}
-              </u>
-            );
-          }
-          return <React.Fragment key={i}>{part}</React.Fragment>;
-        })}
-      </>
-    );
-  };
 
   // QuestionOptions コンポーネントを修正
   const QuestionOptions = ({ options }: { options: string[] }) => (

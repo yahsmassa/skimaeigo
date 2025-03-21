@@ -82,8 +82,8 @@ const Ex22_3B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 B"}</h1>
-          <span className="text-gray-600">(配点 {9})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {9})</span>
         </div>
         <Saiten
           qa={qa}
@@ -185,7 +185,7 @@ const Ex22_3B = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-1"))}>
           <div className="mb-4">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 1 </span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 1 </span>
               <span>
                 Put the following events (①～④) into the order they happened.
               </span>
@@ -201,20 +201,25 @@ const Ex22_3B = () => {
               {showResults && <Explain qa={qa} questionId="3B-1" />}
             </div>
           </div>
-          <ol className="list-none space-y-2">
-            <li>
-              ① All members reached the top of the highest mountain in Scotland.
-            </li>
-            <li>② Some members gave up climbing Snowdon.</li>
-            <li>③ The group travelled by minibus to Wales.</li>
-            <li>④ The team members helped to find the writer&apos;s phone.</li>
-          </ol>
+          {[
+            "All members reached the top of the highest mountain in Scotland.",
+            "Some members gave up climbing Snowdon.",
+            "The group travelled by minibus to Wales.",
+            "The team members helped to find the writer's phone.",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-2"))}>
           <div className="mb-4">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 2 </span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 2 </span>
               <span>
                 What was the reason for being behind schedule when they
                 completed Scafell Pike?
@@ -223,31 +228,43 @@ const Ex22_3B = () => {
               {showResults && <Explain qa={qa} questionId="3B-2" />}
             </div>
           </div>
-          <ol className="list-none space-y-2">
-            <li>
-              ① It took longer than planned to reach the top of Ben Nevis.
-            </li>
-            <li>② It was difficult to make good progress in the dark.</li>
-            <li>③ The climbers took a rest in order to save energy.</li>
-            <li>④ The team had to wait until the conditions improved.</li>
-          </ol>
+          {[
+            "It took longer than planned to reach the top of Ben Nevis.",
+            "It was difficult to make good progress in the dark.",
+            "The climbers took a rest in order to save energy.",
+            "The team had to wait until the conditions improved.",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-3"))}>
           <div className="mb-4">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 3 </span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 3 </span>
               <span>From this story, you learnt that the writer </span>
               {renderSelect("23", 4, answers, setAnswers)}.
               {showResults && <Explain qa={qa} questionId="3B-3" />}
             </div>
           </div>
-          <ol className="list-none space-y-2">
-            <li>① didn&apos;t feel a sense of satisfaction</li>
-            <li>② reached the top of all three mountains</li>
-            <li>③ successfully completed the time challenge</li>
-            <li>④ was the second driver of the minibus</li>
-          </ol>
+          {[
+            "didn't feel a sense of satisfaction",
+            "reached the top of all three mountains",
+            "successfully completed the time challenge",
+            "was the second driver of the minibus",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

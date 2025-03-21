@@ -88,8 +88,8 @@ const Ex21_6A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問 A"}</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -256,7 +256,9 @@ const Ex21_6A = () => {
                 <li>Loss of consciousness</li>
                 <li>Difficulty walking straight</li>
                 <li className="flex items-center">
-                  <div className="border border-gray-300 px-2 mx-2">[39]</div>
+                  <div className="border border-gray-700 px-2 mx-2 font-sans">
+                    39
+                  </div>
                 </li>
                 <li>Ringing in the ears</li>
               </ul>
@@ -266,7 +268,9 @@ const Ex21_6A = () => {
               <ul className="list-disc pl-6">
                 <li>Problems with concentration</li>
                 <li className="flex items-center">
-                  <div className="border border-gray-300 px-2 mx-2">[40]</div>
+                  <div className="border border-gray-700 px-2 mx-2 font-sans">
+                    40
+                  </div>
                 </li>
                 <li>Psychological problems</li>
                 <li>Smell and taste disorders</li>
@@ -285,7 +289,9 @@ const Ex21_6A = () => {
               <li>Gives severe penalties to dangerous players</li>
               <li className="flex items-center">
                 Has introduced concussion spotters to
-                <div className="border border-gray-300 px-2 mx-2">[41]</div>
+                <div className="border border-gray-700 px-2 mx-2 font-sans">
+                  41
+                </div>
               </li>
             </ul>
           </div>
@@ -297,7 +303,10 @@ const Ex21_6A = () => {
           <p>
             Ice hockey players have a high risk of suffering from concussions.
             Therefore, the NHL has{" "}
-            <span className="border border-gray-300 px-2 mx-1">[42]</span>.
+            <span className="border border-gray-700 px-2 mx-1 font-sans">
+              42
+            </span>
+            .
           </p>
         </div>
       </div>
@@ -307,148 +316,104 @@ const Ex21_6A = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Choose the best option for</span>
             {renderSelect("39", 4, answers, setAnswers)}
             <span>on your poster.</span>
             {showResults && <Explain qa={qa} questionId="6A-1" />}
           </div>
-          <div className="space-y-2 pl-8">
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                1
-              </span>
-              Aggressive behavior
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                2
-              </span>
-              Difficulty thinking
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                3
-              </span>
-              Personality changes
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                4
-              </span>
-              Unclear vision
-            </div>
+          <div className="space-y-2 pl-2 md:pl-8">
+            {[
+              "Aggressive behavior",
+              "Difficulty thinking",
+              "Personality changes",
+              "Unclear vision",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Choose the best option for</span>
             {renderSelect("40", 4, answers, setAnswers)}
             <span>on your poster.</span>
             {showResults && <Explain qa={qa} questionId="6A-2" />}
           </div>
-          <div className="space-y-2 pl-8">
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                1
-              </span>
-              Loss of eyesight
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                2
-              </span>
-              Memory problems
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                3
-              </span>
-              Sleep disorders
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                4
-              </span>
-              Unsteady walking
-            </div>
+          <div className="space-y-2 pl-2 md:pl-8">
+            {[
+              "Loss of eyesight",
+              "Memory problems",
+              "Sleep disorders",
+              "Unsteady walking",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>Choose the best option for</span>
             {renderSelect("41", 4, answers, setAnswers)}
             <span>on your poster.</span>
             {showResults && <Explain qa={qa} questionId="6A-3" />}
           </div>
-          <div className="space-y-2 pl-8">
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                1
-              </span>
-              allow players to return to the game
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                2
-              </span>
-              examine players who have a concussion
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                3
-              </span>
-              fine players who cause concussions
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                4
-              </span>
-              identify players showing signs of a concussion
-            </div>
+          <div className="space-y-2 pl-2 md:pl-8">
+            {[
+              "Allow players to return to the game",
+              "Examine players who have a concussion",
+              "Fine players who cause concussions",
+              "Identify players showing signs of a concussion",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Choose the best option for</span>
             {renderSelect("42", 4, answers, setAnswers)}
             <span>on your poster.</span>
             {showResults && <Explain qa={qa} questionId="6A-4" />}
           </div>
-          <div className="space-y-2 pl-8">
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                1
-              </span>
-              been expecting the players to become tougher
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                2
-              </span>
-              been implementing new rules and guidelines
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                3
-              </span>
-              given medical training to coaches
-            </div>
-            <div>
-              <span className="inline-block w-6 text-center border border-gray-300 rounded-full mr-2">
-                4
-              </span>
-              made wearing of visors optional
-            </div>
+          <div className="space-y-2 pl-2 md:pl-8">
+            {[
+              "been expecting the players to become tougher",
+              "been implementing new rules and guidelines",
+              "given medical training to coaches",
+              "made wearing of visors optional",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -208,3 +208,24 @@ export const getPaymentUrl = async (uid: string) => {
     return null;
   }
 };
+export const ParsedHTML = ({ html }: { html: string }) => {
+  // 正規表現で <u> タグを検出
+  const parts = html.split(/(<u>.*?<\/u>)/);
+
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith("<u>") && part.endsWith("</u>")) {
+          // <u> タグの内容を抽出
+          const content = part.replace(/<\/?u>/g, "");
+          return (
+            <u key={i} className="underline underline-offset-4">
+              {content}
+            </u>
+          );
+        }
+        return <React.Fragment key={i}>{part}</React.Fragment>;
+      })}
+    </>
+  );
+};

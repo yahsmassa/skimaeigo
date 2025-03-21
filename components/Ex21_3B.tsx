@@ -81,8 +81,8 @@ const Ex21_3B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 B"}</h1>
-          <span className="text-gray-600">(配点 {9})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {9})</span>
         </div>
         <Saiten
           qa={qa}
@@ -172,9 +172,9 @@ const Ex21_3B = () => {
       <div className="space-y-8 mt-7">
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-1"))}>
-          <div className="flex items-center flex-wrap gap-2">
+          <div className="flex items-center flex-wrap gap-2 mb-4">
             <div className="flex items-center flex-wrap gap-2">
-              <span className="whitespace-nowrap mr-2">問 1</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
               <p>
                 Put the following events (①～④) into the order in which they
                 happened.
@@ -190,18 +190,27 @@ const Ex21_3B = () => {
               {showResults && <Explain qa={qa} questionId="3B-1" />}
             </div>
           </div>
-          <div className="space-y-2 ml-4">
-            <p>① Sarah attended a centre event.</p>
-            <p>② Sarah donated money to the centre.</p>
-            <p>③ Sarah made a suggestion to Katy.</p>
-            <p>④ The campaigners asked the mayor for help.</p>
+          <div className="space-y-2 ml-2 md:ml-4">
+            {[
+              "Sarah attended a centre event.",
+              "Sarah donated money to the centre.",
+              "Sarah made a suggestion to Katy.",
+              "The campaigners asked the mayor for help.",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center mr-2">
+                  {"①②③④"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               From Sarah&apos;s message, you learn that the Sakura International
               Centre
@@ -209,18 +218,27 @@ const Ex21_3B = () => {
             {renderSelect("22", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3B-2" />}
           </div>
-          <div className="space-y-2 ml-4">
-            <p>① gives financial aid to international residents</p>
-            <p>② offers opportunities to develop friendships</p>
-            <p>③ publishes newsletters for the community</p>
-            <p>④ sends exchange students to the UK</p>
+          <div className="space-y-2 ml-2 md:ml-4">
+            {[
+              "gives financial aid to international residents",
+              "offers opportunities to develop friendships",
+              "publishes newsletters for the community",
+              "sends exchange students to the UK",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center mr-2">
+                  {"①②③④"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               You have decided to help with the campaign after reading
               Sarah&apos;s message. What should you do first?
@@ -228,11 +246,20 @@ const Ex21_3B = () => {
             {renderSelect("23", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3B-3" />}
           </div>
-          <div className="space-y-2 ml-4">
-            <p>① Advertise the events at the centre.</p>
-            <p>② Contact Sarah for further information.</p>
-            <p>③ Organise volunteer activities at school.</p>
-            <p>④ Start a new fund-raising campaign.</p>
+          <div className="space-y-2 ml-2 md:ml-4">
+            {[
+              "Advertise the events at the centre.",
+              "Contact Sarah for further information.",
+              "Organise volunteer activities at school.",
+              "Start a new fund-raising campaign.",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center mr-2">
+                  {"①②③④"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

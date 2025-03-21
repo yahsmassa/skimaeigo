@@ -84,8 +84,8 @@ const Ex23_3B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 B"}</h1>
-          <span className="text-gray-600">(配点 {9})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {9})</span>
         </div>
         <Saiten
           qa={qa}
@@ -187,7 +187,7 @@ const Ex23_3B = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-1"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               Put the following events (①～④) into the order in which they
               happened.
@@ -201,27 +201,25 @@ const Ex23_3B = () => {
             {renderSelect("21", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3B-1" />}
           </div>
-          <ol className="list-none space-y-2 ml-4">
-            {[
-              "The children ate food they are not fond of.",
-              "The children started the search for the sweets.",
-              "The father decorated the living room in the house.",
-              "The father gave his sons some clothes to wear.",
-            ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {[
+            "The children ate food they are not fond of.",
+            "The children started the search for the sweets.",
+            "The father decorated the living room in the house.",
+            "The father gave his sons some clothes to wear.",
+          ].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-2"))}>
           <div className="flex items-start gap-2 mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               If you follow the father&apos;s advice to create your own
               &quot;adventure room,&quot; you should
@@ -229,46 +227,42 @@ const Ex23_3B = () => {
             {renderSelect("22", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="3B-2" />}
           </div>
-          <ol className="list-none space-y-2 ml-4">
-            {[
-              "concentrate on three-letter words",
-              "leave secret messages under the lamps",
-              "make the challenges gradually harder",
-              "practise acting like Sherlock Holmes",
-            ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {[
+            "concentrate on three-letter words",
+            "leave secret messages under the lamps",
+            "make the challenges gradually harder",
+            "practise acting like Sherlock Holmes",
+          ].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-3"))}>
           <div className="flex items-center mb-4 flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>From this story, you understand that the father</span>
             {renderSelect("23", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="3B-3" />}
           </div>
-          <ol className="list-none space-y-2 ml-4">
-            {[
-              "became focused on searching for the sweets",
-              "created an experience especially for his children",
-              "had some trouble preparing the adventure game",
-              "spent a lot of money decorating the room",
-            ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {[
+            "became focused on searching for the sweets",
+            "created an experience especially for his children",
+            "had some trouble preparing the adventure game",
+            "spent a lot of money decorating the room",
+          ].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

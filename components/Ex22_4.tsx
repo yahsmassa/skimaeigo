@@ -105,8 +105,8 @@ const Ex22_4 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {16})</span>
         </div>
         <Saiten
           qa={qa}
@@ -247,119 +247,78 @@ const Ex22_4 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-1"))}>
           <div className="flex items-center flex-wrap space-x-2">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Len recommends buying used goods because</span>
             {renderSelect("24", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="4-1" />}
           </div>
-          <div className="mt-4 space-y-2">
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                1
+          {[
+            "it will help the university",
+            "most of the items are good for the environment",
+            "they are affordable for students",
+            "you can find what you need in a hurry",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start ml-2 md:ml-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <span>it will help the university</span>
+              <span>{text}</span>
             </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                2
-              </span>
-              <span>most of the items are good for the environment</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                3
-              </span>
-              <span>they are affordable for students</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                4
-              </span>
-              <span>you can find what you need in a hurry</span>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center space-x-2 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span className="text-base">Cindy suggests buying</span>
             {renderSelect("25", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="4-2" />}
           </div>
-          <div className="mt-4 space-y-2">
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                1
+          {[
+            "from a single big chain store because it saves time",
+            "from the website because it offers the best prices",
+            "new items that have warranties for replacement",
+            "used items because they are much cheaper than new items",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start ml-2 md:ml-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <span>from a single big chain store because it saves time</span>
+              <span>{text}</span>
             </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                2
-              </span>
-              <span>from the website because it offers the best prices</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                3
-              </span>
-              <span>new items that have warranties for replacement</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                4
-              </span>
-              <span>
-                used items because they are much cheaper than new items
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-3"))}>
           <div className="flex items-center space-x-2 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span className="text-base">
               Both Len and Cindy recommend that you
             </span>
             {renderSelect("26", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="4-3" />}
           </div>
-          <div className="mt-4 space-y-2">
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                1
+          {[
+            "buy from the store near your university",
+            "buy your appliances as soon as you can",
+            "choose a shop offering a student discount",
+            "choose the items with warranties",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start ml-2 md:ml-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <span>buy from the store near your university</span>
+              <span>{text}</span>
             </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                2
-              </span>
-              <span>buy your appliances as soon as you can</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                3
-              </span>
-              <span>choose a shop offering a student discount</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                4
-              </span>
-              <span>choose the items with warranties</span>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-4"))}>
           <div className="flex items-center space-x-2 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span className="text-base">
               If you want to buy new appliances at the best possible prices, you
               should
@@ -368,37 +327,26 @@ const Ex22_4 = () => {
             {showResults && <Explain qa={qa} questionId="4-4" />}
           </div>
           <div className="mt-4 space-y-2">
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                1
-              </span>
-              <span>access the URL in Cindy&apos;s post</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                2
-              </span>
-              <span>access the URL in Len&apos;s post</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                3
-              </span>
-              <span>contact one big chain store</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                4
-              </span>
-              <span>contact shops close to the campus</span>
-            </div>
+            {[
+              "access the URL in Cindy's post",
+              "access the URL in Len's post",
+              "contact one big chain store",
+              "contact shops close to the campus",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start ml-2 md:ml-8">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-5"))}>
           <div className="flex items-center space-x-2 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>You have decided to buy a microwave from</span>
             {renderSelect("28", 4, answers, setAnswers)}.
             <span>
@@ -412,32 +360,16 @@ const Ex22_4 = () => {
             </div>
             {showResults && <Explain qa={qa} questionId="4-5" />}
           </div>
-          <div className="mt-4 space-y-2">
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                1
-              </span>
-              <span>Cut Price</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                2
-              </span>
-              <span>Great Buy</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                3
-              </span>
-              <span>Second Hand</span>
-            </div>
-            <div className="flex items-start space-x-4">
-              <span className="border border-black rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                4
-              </span>
-              <span>Value Saver</span>
-            </div>
-          </div>
+          {["Cut Price", "Great Buy", "Second Hand", "Value Saver"].map(
+            (text, index) => (
+              <div key={index} className="flex items-start ml-2 md:ml-8">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>

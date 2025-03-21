@@ -188,8 +188,8 @@ const Ex24_5 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第５問"}</h1>
-          <span className="text-gray-600">(配点 {15})</span>
+          <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}
@@ -488,7 +488,9 @@ const Ex24_5 = () => {
             )}
           >
             <div className="flex flex-wrap items-baseline mb-4">
-              <span className="font-medium mr-2">問{question.id}</span>
+              <span className="font-medium mr-2 font-sans">
+                問{question.id}
+              </span>
               <span>{question.text}</span>
               {/* 30,31,32,33 は 0,1,2,3 に対応 */}
               {question.boxes && (

@@ -53,8 +53,8 @@ const Ex23_3A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {6})</span>
         </div>
         <Saiten
           qa={qa}
@@ -131,7 +131,7 @@ const Ex23_3A = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-1"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               If you take Kaitlyn&apos;s advice, how should you fill your
               backpack?
@@ -153,27 +153,25 @@ const Ex23_3A = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-2"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>According to Kaitlyn,</span>
             {renderSelect("17", 4, answers, setAnswers)}.
             <span>is the best method to stay warm all night.</span>
             {showResults && <Explain qa={qa} questionId="3A-2" />}
           </div>
-          <ol className="list-none space-y-2">
-            {[
-              "avoiding going out of your tent",
-              "eating hot meals beside your campfire",
-              "filling the gaps in your sleeping bag",
-              "wearing all of your extra clothes",
-            ].map((answer, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex items-center justify-center w-6 h-6 border border-gray-800 rounded-full mr-2">
-                  {index + 1}
-                </span>
-                {answer}
-              </li>
-            ))}
-          </ol>
+          {[
+            "avoiding going out of your tent",
+            "eating hot meals beside your campfire",
+            "filling the gaps in your sleeping bag",
+            "wearing all of your extra clothes",
+          ].map((answer, index) => (
+            <div key={index} className="flex items-start">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{answer}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

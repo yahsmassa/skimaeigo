@@ -51,8 +51,8 @@ const Ex22_1A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 A"}</h1>
-          <span className="text-gray-600">(配点 {4})</span>
+          <h1 className="text-lg font-bold font-sans">{"第１問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {4})</span>
         </div>
         <Saiten
           qa={qa}
@@ -175,42 +175,46 @@ const Ex22_1A = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1A-1"))}>
           <div className="flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             Both <i>cupuaçu</i> and <i>buriti</i> can be used to make{" "}
             {renderSelect("1", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1A-1" />}
           </div>
-          <ol className="list-none space-y-2 pl-8">
-            <li>① a cake</li>
-            <li>② chocolate</li>
-            <li>③ ice cream</li>
-            <li>④ yogurt</li>
+          <ol className="space-y-2 pl-2 md:pl-8">
+            {["a cake", "chocolate", "ice cream", "yogurt"].map(
+              (text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              )
+            )}
           </ol>
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1A-2"))}>
           <div className="flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               If you want to make a sour cake, the best fruit to use is{" "}
             </span>
             {renderSelect("2", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1A-2" />}
           </div>
-          <ol className="list-none space-y-2 pl-8">
-            <li>
-              ① <i>buriti</i>
-            </li>
-            <li>
-              ② <i>cupuaçu</i>
-            </li>
-            <li>
-              ③ <i>jabuticaba</i>
-            </li>
-            <li>
-              ④ <i>pitanga</i>
-            </li>
+          <ol className="space-y-2 pl-2 md:pl-8">
+            {["buriti", "cupuaçu", "jabuticaba", "pitanga"].map(
+              (text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              )
+            )}
           </ol>
         </div>
       </div>

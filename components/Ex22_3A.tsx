@@ -50,8 +50,8 @@ const Ex22_3A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {6})</span>
         </div>
         <Saiten
           qa={qa}
@@ -139,24 +139,35 @@ const Ex22_3A = () => {
       <div className=" space-y-8">
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-1"))}>
           <div className="flex flex-wrap items-center mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>{" "}
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>{" "}
             <span>In Emily&apos;s blog, you read that she </span>
             {renderSelect("16", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="3A-1" />}
           </div>
-          <div className="space-y-2 ml-8">
-            <p>① enjoyed Japanese traditional music</p>
-            <p>② learnt how to play Japanese drums</p>
-            <p>③ made a water slide from bamboo</p>
-            <p>
-              ④ was able to try all the <i>yatai</i> foods
-            </p>
+          <div className="space-y-2 ml-2 md:ml-8">
+            {[
+              "enjoyed Japanese traditional music",
+              "learnt how to play Japanese drums",
+              "made a water slide from bamboo",
+              "was able to try all the yatai foods",
+            ].map((text, index) => (
+              <p key={index}>
+                {"①②③④"[index]}{" "}
+                {index === 3 ? (
+                  <>
+                    was able to try all the <i>yatai</i> foods
+                  </>
+                ) : (
+                  text
+                )}
+              </p>
+            ))}
           </div>
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-2"))}>
           <div className="flex flex-wrap items-center mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>{" "}
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>{" "}
             <span>Emily was most likely </span>
             {renderSelect("17", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="3A-2" />}
@@ -164,11 +175,17 @@ const Ex22_3A = () => {
               when she was listening to the <i>rakugo</i> comedy.
             </span>
           </div>
-          <div className="space-y-2 ml-8">
-            <p>① confused</p>
-            <p>② convinced</p>
-            <p>③ excited</p>
-            <p>④ relaxed</p>
+          <div className="space-y-2 ml-2 md:ml-8">
+            {["confused", "convinced", "excited", "relaxed"].map(
+              (text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

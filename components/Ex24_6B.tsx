@@ -117,8 +117,8 @@ const Ex24_6B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問 B"}</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -310,7 +310,7 @@ const Ex24_6B = () => {
         <div className="space-y-8 ">
           <div className={cn(showResults && qaFormat(qa, "6B-1"))}>
             <div className="flex items-center flex-wrap gap-2">
-              <span className="flex-none mr-2">問 1</span>
+              <span className="flex-none mr-2 font-sans">問 1</span>
               <span>
                 What is the first characteristic of wasabi on Slide 2?
               </span>
@@ -318,36 +318,27 @@ const Ex24_6B = () => {
               {showResults && <Explain qa={qa} questionId={"6B-1"} />}
             </div>
             <div className="mt-4 space-y-2 ml-6">
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  1
-                </span>
-                <span>burning taste</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  2
-                </span>
-                <span>fire-like sensation</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  3
-                </span>
-                <span>lasting feeling</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  4
-                </span>
-                <span>light compounds</span>
+              <div>
+                {[
+                  "burning taste",
+                  "fire-like sensation",
+                  "lasting feeling",
+                  "light compounds",
+                ].map((text, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="w-6 h-6 flex items-center justify-center mr-2">
+                      {"①②③④"[index]}
+                    </span>
+                    <span>{text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
           <div className={cn(showResults && qaFormat(qa, "6B-2"))}>
             <div className="flex items-center flex-wrap gap-2">
-              <span className="whitespace-nowrap mr-2">問 2</span>
+              <span className="flex-none mr-2 font-sans">問 2</span>
               <span>
                 Which is an <u>error</u> you found on Slide 3?
               </span>
@@ -355,42 +346,22 @@ const Ex24_6B = () => {
               {showResults && <Explain qa={qa} questionId={"6B-2"} />}
             </div>
             <div className="mt-4 space-y-2 ml-6">
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  1
-                </span>
-                <span>A</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  2
-                </span>
-                <span>B</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  3
-                </span>
-                <span>C</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  4
-                </span>
-                <span>D</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  5
-                </span>
-                <span>E</span>
+              <div>
+                {["A", "B", "C", "D", "E"].map((text, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="w-6 h-6 flex items-center justify-center mr-2">
+                      {"①②③④⑤"[index]}
+                    </span>
+                    <span>{text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
           <div className={cn(showResults && qaFormat(qa, "6B-3"))}>
             <div className="flex items-center flex-wrap gap-2 mt-2">
-              <span className="flex-none mr-2">問 3</span>
+              <span className="flex-none mr-2 font-sans">問 3</span>
               <span>
                 Choose two options for Slide 4. (The order does not matter.)
               </span>
@@ -399,41 +370,27 @@ const Ex24_6B = () => {
               {showResults && <Explain qa={qa} questionId={"6B-3"} />}
             </div>
             <div className="mt-4 space-y-2 ml-6">
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  1
-                </span>
-                <span>you might activate harmful bacteria.</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  2
-                </span>
-                <span>you might experience stomach pain.</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  3
-                </span>
-                <span>you might lose feeling in your hands.</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  4
-                </span>
-                <span>your fingers might feel like they are on fire.</span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  5
-                </span>
-                <span>your nose might start hurting.</span>
+              <div>
+                {[
+                  "you might activate harmful bacteria.",
+                  "you might experience stomach pain.",
+                  "you might lose feeling in your hands.",
+                  "your fingers might feel like they are on fire.",
+                  "your nose might start hurting.",
+                ].map((text, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="w-6 h-6 flex items-center justify-center mr-2">
+                      {"①②③④⑤"[index]}
+                    </span>
+                    <span>{text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
           <div className={cn(showResults && qaFormat(qa, "6B-4"))}>
             <div className="flex items-center flex-wrap gap-2">
-              <span className="flex-none mr-2">問 4</span>
+              <span className="flex-none mr-2 font-sans">問 4</span>
               <span>
                 What can be inferred about tolerance for spices for Slide 5?
               </span>
@@ -441,96 +398,47 @@ const Ex24_6B = () => {
               {showResults && <Explain qa={qa} questionId={"6B-4"} />}
             </div>
             <div className="mt-4 space-y-3 ml-6">
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  1
-                </span>
-                <span>
-                  People with a high tolerance to chili peppers pay attention to
-                  the spices used in their food.
-                </span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  2
-                </span>
-                <span>
-                  People with a high tolerance to wasabi are scared of chili
-                  peppers&apos; negative effects.
-                </span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  3
-                </span>
-                <span>
-                  People with a low tolerance to chili peppers can get used to
-                  their heat.
-                </span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  4
-                </span>
-                <span>
-                  People with a low tolerance to wasabi cannot endure high SHU
-                  levels.
-                </span>
+              <div>
+                {[
+                  "People with a high tolerance to chili peppers pay attention to the spices used in their food.",
+                  "People with a high tolerance to wasabi are scared of chili peppers&apos; negative effects.",
+                  "People with a low tolerance to chili peppers can get used to their heat.",
+                  "People with a low tolerance to wasabi cannot endure high SHU levels.",
+                ].map((text, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="w-6 h-6 flex items-center justify-center mr-2">
+                      {"①②③④"[index]}
+                    </span>
+                    <span>{text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
           <div className={cn(showResults && qaFormat(qa, "6B-5"))}>
             <div className="flex items-center flex-wrap gap-2">
-              <span className="flex-none mr-2">問 5</span>
+              <span className="flex-none mr-2 font-sans">問 5</span>
               <span>Choose the most appropriate remark for Slide 6.</span>
               {renderSelect("49", 5, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId={"6B-5"} />}
             </div>
             <div className="mt-4 space-y-3 ml-6">
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  1
-                </span>
-                <span>
-                  Don&apos;t be afraid. Eating spicy foods will boost your
-                  confidence.
-                </span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  2
-                </span>
-                <span>
-                  Next time you eat chili chicken, remember its punch only stays
-                  for a second.
-                </span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  3
-                </span>
-                <span>
-                  Personality plays a big role in our spice preference, so
-                  don&apos;t worry.
-                </span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  4
-                </span>
-                <span>
-                  Unfortunately, there are no cures for a low wasabi tolerance.
-                </span>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 text-center border border-black rounded-full">
-                  5
-                </span>
-                <span>
-                  When someone offers you some spicy food, remember it has some
-                  benefits.
-                </span>
+              <div>
+                {[
+                  "Don't be afraid. Eating spicy foods will boost your confidence.",
+                  "Next time you eat chili chicken, remember its punch only stays for a second.",
+                  "Personality plays a big role in our spice preference, so don't worry.",
+                  "Unfortunately, there are no cures for a low wasabi tolerance.",
+                  "When someone offers you some spicy food, remember it has some benefits.",
+                ].map((text, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="w-6 h-6 flex items-center justify-center mr-2">
+                      {"①②③④⑤"[index]}
+                    </span>
+                    <span>{text}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

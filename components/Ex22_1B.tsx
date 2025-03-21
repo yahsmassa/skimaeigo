@@ -67,8 +67,8 @@ const Ex22_1B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問 B"}</h1>
-          <span className="text-gray-600">(配点 {6})</span>
+          <h1 className="text-lg font-bold font-sans">{"第１問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {6})</span>
         </div>
         <Saiten
           qa={qa}
@@ -204,43 +204,30 @@ const Ex22_1B = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-1"))}>
           <div className="flex items-start space-x-2">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>You can enter this contest between </span>
             {renderSelect("3", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1B-1" />}
           </div>
-          <div className="space-y-2 pl-8">
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                1
+          {[
+            "May 26 and May 31",
+            "June 1 and June 7",
+            "June 8 and June 9",
+            "June 10 and July 31",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start pl-2 md:pl-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
               </span>
-              <p>May 26 and May 31</p>
+              <span>{text}</span>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                2
-              </span>
-              <p>June 1 and June 7</p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                3
-              </span>
-              <p>June 8 and June 9</p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                4
-              </span>
-              <p>June 10 and July 31</p>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-2"))}>
           <div className="flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               When submitting your idea for the baby giraffe&apos;s name, you
               must
@@ -248,38 +235,25 @@ const Ex22_1B = () => {
             {renderSelect("4", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1B-2" />}
           </div>
-          <div className="space-y-2 pl-8">
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                1
+          {[
+            "buy a day pass",
+            "pay the submission fee",
+            "spend five dollars at the City Zoo",
+            "watch the giraffe through the website",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start pl-2 md:pl-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④"[index]}
               </span>
-              <p>buy a day pass</p>
+              <span>{text}</span>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                2
-              </span>
-              <p>pay the submission fee</p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                3
-              </span>
-              <p>spend five dollars at the City Zoo</p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                4
-              </span>
-              <p>watch the giraffe through the website</p>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-3"))}>
           <div className="flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               If the name you submitted is included among the five finalists,
               you will
@@ -287,32 +261,19 @@ const Ex22_1B = () => {
             {renderSelect("5", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1B-3" />}
           </div>
-          <div className="space-y-2 pl-8">
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                1
+          {[
+            "get free entry to the zoo for a day",
+            "have free access to the live website",
+            "meet and feed the baby giraffe",
+            "take a picture with the giraffe&apos;s family",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start pl-2 md:pl-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④"[index]}
               </span>
-              <p>get free entry to the zoo for a day</p>
+              <p>{text}</p>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                2
-              </span>
-              <p>have free access to the live website</p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                3
-              </span>
-              <p>meet and feed the baby giraffe</p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="w-6 h-6 border border-gray-800 rounded-full flex items-center justify-center">
-                4
-              </span>
-              <p>take a picture with the giraffe&apos;s family</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

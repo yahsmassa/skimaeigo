@@ -58,7 +58,7 @@ export function ExTimer() {
       </button>
       <span
         className={cn(
-          "ml-3 text-gray-600 font-bold w-[50px]",
+          "ml-3 text-gray-600 font-bold w-[50px] font-sans",
           isRunning && "text-red-600"
         )}
       >

@@ -280,7 +280,7 @@ const Ex24_2A = () => {
             )}
           >
             <div className="flex items-center flex-wrap gap-2 mb-2">
-              <span className="whitespace-nowrap mr-2">
+              <span className="whitespace-nowrap mr-2 font-sans">
                 問{question.number}
               </span>
               <span>{question.prompt}</span>

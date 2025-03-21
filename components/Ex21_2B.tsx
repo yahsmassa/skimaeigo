@@ -102,8 +102,8 @@ const Ex21_2B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 B"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {10})</span>
         </div>
         <Saiten
           qa={qa}
@@ -222,24 +222,33 @@ const Ex21_2B = () => {
       <div className="space-y-4 mt-5">
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2B-1"))}>
           <div className="flex items-center flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問1</span>
             <span>Ken thinks the new policy</span>{" "}
             {renderSelect("11", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-1" />}
           </div>
           <div>
-            <ol className="list-none pl-6 space-y-1">
-              <li>① can make students study more</li>
-              <li>② may improve school safety</li>
-              <li>③ should be introduced immediately</li>
-              <li>④ will reduce after-school activity time</li>
-            </ol>
+            <div className="list-none pl-2 md:pl-6 space-y-1">
+              {[
+                "can make students study more",
+                "may improve school safety",
+                "should be introduced immediately",
+                "will reduce after-school activity time",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2B-2"))}>
           <div className="flex items-center flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問2</span>
             <span>
               One <span className="underline">fact</span> stated in Ken&apos;s
               forum post is that{" "}
@@ -248,70 +257,96 @@ const Ex21_2B = () => {
             {showResults && <Explain qa={qa} questionId="2B-2" />}
           </div>
           <div>
-            <ol className="list-none pl-6 space-y-1">
-              <li>① more discussion is needed about the policy</li>
-              <li>
-                ② the Head Teacher&apos;s experience is improving the school
-              </li>
-              <li>③ the school should think about students&apos; activities</li>
-              <li>④ there are students who do not welcome the new policy</li>
-            </ol>
+            <div className="pl-2 md:pl-6 space-y-1">
+              {[
+                "more discussion is needed about the policy",
+                "the Head Teacher&apos;s experience is improving the school",
+                "the school should think about students' activities",
+                "there are students who do not welcome the new policy",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2B-3"))}>
           <div className="flex items-center flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問3</span>
             <span>Who thinks the aim of the policy is to save energy? </span>
             {renderSelect("13", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-3" />}
           </div>
           <div>
-            <ol className="list-none pl-6 space-y-1">
-              <li>① Dr Berger</li>
-              <li>② Ken</li>
-              <li>③ The city</li>
-              <li>④ The police</li>
-            </ol>
+            <div className="pl-2 md:pl-6 space-y-1">
+              {["Dr Berger", "Ken", "The city", "The police"].map(
+                (text, index) => (
+                  <div key={index} className="flex items-start">
+                    <span className="w-6 h-6 flex items-center mr-2">
+                      {"①②③④⑤⑥"[index]}
+                    </span>
+                    <span>{text}</span>
+                  </div>
+                )
+              )}
+            </div>
           </div>
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2B-4"))}>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問4</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2 font-sans">問4</span>
             <span> Dr Berger is basing his new policy on the </span>
             <span className="underline">fact</span>
+            <span> that</span>
             {renderSelect("14", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-4" />}
           </div>
-          <div>
-            <ol className="list-none pl-6 space-y-1">
-              <li>① going home early is important</li>
-              <li>② safety in the city has decreased</li>
-              <li>③ the school has to save electricity</li>
-              <li>④ the students need protection</li>
-            </ol>
+          <div className="pl-2 md:pl-6 space-y-1">
+            {[
+              "going home early is important",
+              "safety in the city has decreased",
+              "the school has to save electricity",
+              "the students need protection",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2B-5"))}>
-          <div className="flex items-center flex-wrap gap-2">
-            <span className="whitespace-nowrap mr-2">問5</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4">
+            <span className="whitespace-nowrap mr-2 font-sans">問5</span>
             <span>
               What would you research to help Ken oppose the new policy?{" "}
             </span>
             {renderSelect("15", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-5" />}
           </div>
-          <div>
-            <ol className="list-none pl-6 space-y-1">
-              <li>① The crime rate and its relation to the local area</li>
-              <li>② The energy budget and electricity costs of the school</li>
-              <li>③ The length of school activity time versus the budget</li>
-              <li>
-                ④ The study hours for students who do after-school activities
-              </li>
-            </ol>
+          <div className="pl-2 md:pl-6 space-y-1">
+            {[
+              "The crime rate and its relation to the local area",
+              "The energy budget and electricity costs of the school",
+              "The length of school activity time versus the budget",
+              "The study hours for students who do after-school activities",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

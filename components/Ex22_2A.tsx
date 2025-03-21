@@ -97,8 +97,8 @@ const Ex22_2A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 A"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {10})</span>
         </div>
         <Saiten
           qa={qa}
@@ -245,7 +245,7 @@ const Ex22_2A = () => {
         {/* Question 1 */}
         <div className="space-y-4">
           <div className="flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             {renderSelect("6", 5, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="2A-1" />}
           </div>
@@ -273,7 +273,7 @@ const Ex22_2A = () => {
         className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-2"))}
       >
         <div className="flex flex-wrap items-center">
-          <span className="whitespace-nowrap mr-2">問 2</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
           <span>
             You are at the main entrance of the library and want to go to the
             orientation. You need to
@@ -295,7 +295,7 @@ const Ex22_2A = () => {
         className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-3"))}
       >
         <div className="flex flex-wrap items-center">
-          <span className="whitespace-nowrap mr-2">問 3</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           {renderSelect("8", 4, answers, setAnswers)}.
           <span>near the main entrance to the library.</span>
           {showResults && <Explain qa={qa} questionId="2A-3" />}
@@ -313,7 +313,7 @@ const Ex22_2A = () => {
         className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-4"))}
       >
         <div className="flex flex-wrap items-center">
-          <span className="whitespace-nowrap mr-2">問 4</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>
             If you borrowed three books on 2 August and returned them on 10
             August, you could
@@ -335,7 +335,7 @@ const Ex22_2A = () => {
         className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-5"))}
       >
         <div className="flex flex-wrap items-center">
-          <span className="whitespace-nowrap mr-2">問 5</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
           <span>
             One <span className="underline">fact</span> stated by a previous
             student is that

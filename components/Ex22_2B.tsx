@@ -98,8 +98,8 @@ const Ex22_2B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 B"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {10})</span>
         </div>
         <Saiten
           qa={qa}
@@ -196,7 +196,7 @@ const Ex22_2B = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-1"))}>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             In terms of the ratios for homes with pets, which shows the
             countries&apos; ranking from{" "}
             <span className="underline">highest to lowest</span>?
@@ -204,20 +204,31 @@ const Ex22_2B = () => {
             {showResults && <Explain qa={qa} questionId="2B-1" />}
           </div>
 
-          <div className="space-y-2 pl-8">
-            <p>① Australia — the UK — the US</p>
-            <p>② Australia — the US — the UK</p>
-            <p>③ The UK — Australia — the US</p>
-            <p>④ The UK — the US — Australia</p>
-            <p>⑤ The US — Australia — the UK</p>
-            <p>⑥ The US — the UK — Australia</p>
+          <div className="space-y-2 pl-2 md:pl-8">
+            <div>
+              {[
+                "Australia — the UK — the US",
+                "Australia — the US — the UK",
+                "The UK — Australia — the US",
+                "The UK — the US — Australia",
+                "The US — Australia — the UK",
+                "The US — the UK — Australia",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-2"))}>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               According to David&apos;s report, one advantage of having pets is
               that
@@ -226,18 +237,29 @@ const Ex22_2B = () => {
             {showResults && <Explain qa={qa} questionId="2B-2" />}
           </div>
 
-          <div className="space-y-2 pl-8">
-            <p>① you can save money</p>
-            <p>② you can sleep longer</p>
-            <p>③ you will become popular</p>
-            <p>④ your life can be more enjoyable</p>
+          <div className="space-y-2 pl-2 md:pl-8">
+            <div>
+              {[
+                "you can save money",
+                "you can sleep longer",
+                "you will become popular",
+                "your life can be more enjoyable",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-3"))}>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               The statement that best reflects one finding from the survey is
             </span>
@@ -245,22 +267,29 @@ const Ex22_2B = () => {
             {showResults && <Explain qa={qa} questionId="2B-3" />}
           </div>
 
-          <div className="space-y-2 pl-8">
-            <p>
-              ① &apos;I feel uncomfortable when I watch TV with my cat.&apos;
-            </p>
-            <p>
-              ② &apos;I spend about three hours with my pet every day.&apos;
-            </p>
-            <p>③ &apos;Most pets like going on car trips.&apos;</p>
-            <p>④ &apos;Pets need a room of their own.&apos;</p>
+          <div className="space-y-2 pl-2 md:pl-8">
+            <div>
+              {[
+                "'I feel uncomfortable when I watch TV with my cat.'",
+                "'I spend about three hours with my pet every day.'",
+                "'Most pets like going on car trips.'",
+                "'Pets need a room of their own.'",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-4"))}>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               Which best summarises David&apos;s opinions about having pets in
               Japan?
@@ -269,28 +298,50 @@ const Ex22_2B = () => {
             {showResults && <Explain qa={qa} questionId="2B-4" />}
           </div>
 
-          <div className="space-y-2 pl-8">
-            <p>① It is not troublesome to keep pets.</p>
-            <p>② People might stop keeping pets.</p>
-            <p>③ Pet owners have more family members.</p>
-            <p>④ Some people are happy to keep pets inside their homes.</p>
+          <div className="space-y-2 pl-2 md:pl-8">
+            <div>
+              {[
+                "It is not troublesome to keep pets.",
+                "People might stop keeping pets.",
+                "Pet owners have more family members.",
+                "Some people are happy to keep pets inside their homes.",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④⑤⑥"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-5"))}>
           <div className="mb-4 flex flex-wrap items-center">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>Which is the most suitable title for the article?</span>
             {renderSelect("15", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="2B-5" />}
           </div>
 
-          <div className="space-y-2 pl-8">
-            <p>① Does Your Pet Sleep on Your Bed?</p>
-            <p>② What Does Keeping Pets Give Us?</p>
-            <p>③ What Pet Do You Have?</p>
-            <p>④ Why Not Keep a Pet Pig?</p>
+          <div className="space-y-2 pl-2 md:pl-8">
+            <div>
+              {[
+                "Does Your Pet Sleep on Your Bed?",
+                "What Does Keeping Pets Give Us?",
+                "What Pet Do You Have?",
+                "Why Not Keep a Pet Pig?",
+              ].map((text, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="w-6 h-6 flex items-center justify-center mr-2">
+                    {"①②③④"[index]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -92,8 +92,8 @@ const Ex22_6A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問 A"}</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -240,7 +240,7 @@ const Ex22_6A = () => {
                 <p>
                   Definition of{" "}
                   <span className="italic underline">diurnal</span>:{" "}
-                  <span className="inline-block border border-gray-800 px-2">
+                  <span className="inline-block border border-gray-800 px-2 font-sans">
                     39
                   </span>
                 </p>
@@ -272,7 +272,7 @@ const Ex22_6A = () => {
                   <span className="mr-2">•</span>
                   <p>
                     Basically,{" "}
-                    <span className="inline-block border border-gray-800 px-2">
+                    <span className="inline-block border border-gray-800 px-2 font-sans">
                       40
                     </span>
                     .
@@ -296,7 +296,7 @@ const Ex22_6A = () => {
                   <p>
                     The Jewish and Christian religions, as well as Chinese time
                     division, are referred to in the article in order to{" "}
-                    <span className="inline-block border border-gray-800 px-2">
+                    <span className="inline-block border border-gray-800 px-2 font-sans">
                       41
                     </span>
                     .{Kaisetsu(showResults, "22-6A-10")}
@@ -306,12 +306,12 @@ const Ex22_6A = () => {
                   <span className="mr-2">•</span>
                   <p>
                     Some studies show that{" "}
-                    <span className="inline-block border border-gray-800 px-2">
+                    <span className="inline-block border border-gray-800 px-2 font-sans">
                       42
                     </span>{" "}
                     may set a person&apos;s internal clock and may be the
                     explanation for differences in intelligence and{" "}
-                    <span className="inline-block border border-gray-800 px-2">
+                    <span className="inline-block border border-gray-800 px-2 font-sans ">
                       43
                     </span>
                     .
@@ -324,88 +324,107 @@ const Ex22_6A = () => {
       </div>
       <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6A-1"))}>
         <div className="flex items-center flex-wrap gap-2 mb-4">
-          <span className="whitespace-nowrap mr-2">問 1</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>Choose the best option for</span>{" "}
           {renderSelect("39", 4, answers, setAnswers)}.
           {showResults && <Explain qa={qa} questionId="6A-1" />}
         </div>
-        <div className="ml-4 space-y-2">
-          <p>① achieves goals quickly</p>
-          <p>② likes keeping pet birds</p>
-          <p>③ lively in the daytime</p>
-          <p>④ skillful in finding food</p>
-        </div>
+        {[
+          "achieves goals quickly",
+          "likes keeping pet birds",
+          "lively in the daytime",
+          "skillful in finding food",
+        ].map((text, index) => (
+          <div key={index} className="flex items-start ml-2 md:ml-8">
+            <span className="w-6 h-6 flex items-center justify-center mr-2">
+              {"①②③④⑤⑥"[index]}
+            </span>
+            <span>{text}</span>
+          </div>
+        ))}
       </div>
       <div className="mt-8 space-y-8">
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Choose the best option for</span>{" "}
             {renderSelect("40", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="6A-2" />}
           </div>
-          <div className="ml-4 space-y-3">
-            <p>
-              ① a more flexible time and performance schedule will be developed
-              in the future
-            </p>
-            <p>
-              ② enjoying social activities in the morning becomes more important
-              as we age
-            </p>
-            <p>
-              ③ it might be hard for us to change what time of day we perform
-              best
-            </p>
-            <p>
-              ④ living on the <span className="italic">owl</span> schedule will
-              eventually lead to social and financial benefits
-            </p>
+          <div>
+            {[
+              "a more flexible time and performance schedule will be developed in the future",
+              "enjoying social activities in the morning becomes more important as we age",
+              "it might be hard for us to change what time of day we perform best",
+              "",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start ml-2 md:ml-8">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④"[index]}
+                </span>
+                <span>
+                  {index === 3 ? (
+                    <>
+                      living on the <span className="italic">owl</span> schedule
+                      will eventually lead to social and financial benefits
+                    </>
+                  ) : (
+                    text
+                  )}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>Choose the best option for</span>{" "}
             {renderSelect("41", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="6A-3" />}
           </div>
-          <div className="ml-4 space-y-3">
-            <p>
-              ① explain that certain societies have long believed that a day
-              begins at night
-            </p>
-            <p>
-              ② indicate that nocturnal people were more religious in the past
-            </p>
-            <p>
-              ③ say that people have long thought they miss chances due to
-              morning laziness
-            </p>
-            <p>
-              ④ support the idea that <span className="italic">owls</span> must
-              go to work or school on the <span className="italic">lark</span>{" "}
-              schedule
-            </p>
+          <div>
+            {[
+              "explain that certain societies have long believed that a day begins at night",
+              "indicate that nocturnal people were more religious in the past",
+              "say that people have long thought they miss chances due to morning laziness",
+              "support the idea that owls must go to work or school on the lark schedule",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start ml-2 md:ml-8">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Choose the best options for</span>{" "}
             {renderSelect("42", 6, answers, setAnswers)} and{" "}
             {renderSelect("43", 6, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="6A-4" />}
           </div>
-          <div className="ml-4 space-y-2">
-            <p>① amount of sleep</p>
-            <p>② appearance</p>
-            <p>③ behavior</p>
-            <p>④ cultural background</p>
-            <p>⑤ religious beliefs</p>
-            <p>⑥ time of birth</p>
+          <div>
+            {[
+              "amount of sleep",
+              "appearance",
+              "behavior",
+              "cultural background",
+              "religious beliefs",
+              "time of birth",
+            ].map((text, index) => (
+              <div key={index} className="flex items-start ml-2 md:ml-8">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
