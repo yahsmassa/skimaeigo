@@ -137,7 +137,7 @@ const Ex22_4 = () => {
 
         {/* Blog content */}
         <div className="space-y-4">
-          <p className="text-base">
+          <p className="text-base indent-7">
             Getting ready for college? Do you need some home appliances or
             electronics, but don&apos;t want to spend too much money?
             There&apos;s a great store close to the university called Second
@@ -161,7 +161,7 @@ const Ex22_4 = () => {
 
           <p className="text-sm">https://secondhand.web</p>
 
-          <p className="text-base">
+          <p className="text-base indent-7">
             Purchasing used goods is eco-friendly. Plus, by buying from Second
             Hand you&apos;ll be supporting a local business. The owner is
             actually a graduate of Robinson University!
@@ -184,13 +184,13 @@ const Ex22_4 = () => {
 
         {/* Blog content */}
         <div className="space-y-4">
-          <p className="text-base">
+          <p className="text-base indent-7">
             Are you starting at Robinson University soon? You may be preparing
             to buy some household appliances or electronics for your new life.
             {Kaisetsu(showResults, "22-4-3")}
           </p>
 
-          <p className="text-base">
+          <p className="text-base indent-7">
             You&apos;re going to be here for four years, so buy your goods new!
             In my first year, I bought all of my appliances at a shop selling
             used goods near the university because they were cheaper than
@@ -202,7 +202,7 @@ const Ex22_4 = () => {
             {Kaisetsu(showResults, "22-4-4")}
           </p>
 
-          <p className="text-base">
+          <p className="text-base indent-7">
             The website called save4unistu.com is very useful for comparing the
             prices of items from different stores before you go shopping. The
             following table compares current prices for the most popular new
@@ -223,7 +223,7 @@ const Ex22_4 = () => {
 
           <p className="text-sm">https://save4unistu.com</p>
 
-          <p className="text-base">
+          <p className="text-base indent-7">
             Note that warranties are available for all items. So, if anything
             stops working, replacing it will be straightforward. Value Saver
             provides one-year warranties on all household goods for free. If the

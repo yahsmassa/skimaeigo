@@ -132,7 +132,7 @@ const Ex23_6B = () => {
       <div className="space-y-6">
         {/* Question Header */}
         <div className="flex gap-4">
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             You are in a student group preparing for an international science
             presentation contest. You are using the following passage to create
             your part of the presentation on extraordinary creatures.
@@ -142,7 +142,7 @@ const Ex23_6B = () => {
 
         {/* Main Text */}
         <div className="space-y-4">
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Ask someone to name the world&apos;s toughest animal, and they might
             say the Bactrian camel as it can survive in temperatures as high as
             50°C, or the Arctic fox which can survive in temperatures lower than
@@ -151,7 +151,7 @@ const Ex23_6B = () => {
             {Kaisetsu(showResults, "23-6B-1")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Tardigrades, also known as water bears, are microscopic creatures,
             which are between 0.1 mm to 1.5 mm in length. They live almost
             everywhere, from 6,000-meter-high mountains to 4,600 meters below
@@ -163,7 +163,7 @@ const Ex23_6B = () => {
             {Kaisetsu(showResults, "23-6B-2")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             All they need are a few drops or a thin layer of water to live in.
             When the water dries up, so do they. They lose all but three percent
             of their body&apos;s water and their metabolism slows down to 0.01%
@@ -175,7 +175,7 @@ const Ex23_6B = () => {
             {Kaisetsu(showResults, "23-6B-3")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Whether the tardigrade is in tun for 1 week or 10 years does not
             really matter. The moment it is surrounded by water, it comes alive
             again. When tardigrades are in a state of tun, they are so tough
@@ -185,7 +185,7 @@ const Ex23_6B = () => {
             {Kaisetsu(showResults, "23-6B-4")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Perhaps even more amazing than their ability to survive on earth —
             they have been on earth for some 540 million years — is their
             ability to survive in space. In 2007, a team of European researchers
@@ -201,7 +201,7 @@ const Ex23_6B = () => {
             {Kaisetsu(showResults, "23-6B-5")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Tardigrades are shaped like a short cucumber. They have four short
             legs on each side of their bodies. Some species have sticky pads at
             the end of each leg, while others have claws. There are 16 known
@@ -212,7 +212,7 @@ const Ex23_6B = () => {
             {Kaisetsu(showResults, "23-6B-6")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Basically, tardigrades can be divided into those that eat plant
             matter, and those that eat other creatures. Those that eat
             vegetation have a ventral mouth — a mouth located in the lower part
@@ -225,7 +225,7 @@ const Ex23_6B = () => {
             {Kaisetsu(showResults, "23-6B-7")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Both types of tardigrade have rather simple digestive systems. The
             mouth leads to the pharynx (throat), where digestive juices and food
             are mixed. Located above the pharynx is a salivary gland. This

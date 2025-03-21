@@ -22,7 +22,7 @@ const Ex16_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: ["正解は② ", "翻訳参照"],
     },
     {
       questionId: "4A-2",
@@ -36,7 +36,10 @@ const Ex16_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は① ネーブルオレンジはバレンシアオレンジよりも種が少ない",
+        "翻訳参照",
+      ],
     },
     {
       questionId: "4A-3",
@@ -50,7 +53,10 @@ const Ex16_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は③ アメリカ合衆国におけるオレンジの生産量と輸入量の関係を示す",
+        "翻訳参照",
+      ],
     },
     {
       questionId: "4A-4",
@@ -64,7 +70,10 @@ const Ex16_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は② その他の果物の輸入における季節変化を示す統計",
+        "翻訳参照",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -74,7 +83,7 @@ const Ex16_4A = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <span className="text-gray-600">(配点 {20})</span>
         </div>
         <Saiten
           qa={qa}
@@ -105,7 +114,7 @@ const Ex16_4A = () => {
 
         {/* English Text */}
         <div className="mb-6 space-y-4">
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             US consumers have benefited from an increased volume and variety of
             fresh-fruit imports, particularly since the 1990s. The fruit and
             vegetable section in today&apos;s grocery store often has dozens of
@@ -113,7 +122,7 @@ const Ex16_4A = () => {
             all corners of the globe as additions to domestic fresh fruit.
             {Kaisetsu(showResults, "16-4A-1")}
           </p>
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             The rapid growth of fresh-fruit imports has affected many aspects of
             the US fresh-fruit market. For example, while oranges are the
             US&apos;s leading domestically grown fruit, the volume of US orange
@@ -137,7 +146,7 @@ const Ex16_4A = () => {
               Figure 1. US fresh-orange imports by country.
             </p>
           </div>
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             The US domestic market receives orange imports from various
             countries and regions. Among the major suppliers, Mexico is a
             longtime source. However, due to the strong US demand for fresh
@@ -150,7 +159,7 @@ const Ex16_4A = () => {
             recently by Chile as well.
             {Kaisetsu(showResults, "16-4A-3")}
           </p>
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             In the US, two main types of oranges are produced domestically:
             "navel oranges" and "Valencia oranges." Navel oranges — virtually
             without seeds, with flesh that separates easily and is firm rather
@@ -164,7 +173,7 @@ const Ex16_4A = () => {
             percent of fresh- market Valencia oranges.
             {Kaisetsu(showResults, "16-4A-4")}
           </p>
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             The main harvest period for domestic fresh-market oranges is from
             November through May, a time when California&apos;s navel oranges
             are in season. However, the amount of oranges produced and shipped
@@ -198,7 +207,7 @@ const Ex16_4A = () => {
 
         {/* Additional Text */}
         <div className="mb-8 space-y-4">
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             Because of seasonal production patterns, the majority of
             Mexico&apos;s oranges arrive in the US market from December through
             June, when US supplies are relatively high. In contrast, the season
@@ -227,29 +236,54 @@ const Ex16_4A = () => {
               {showResults && <Explain qa={qa} questionId="4A-1" />}
             </div>
             <div className="space-y-4 pl-8">
-              <div className="flex space-x-16">
-                <p>① (A) Australia</p>
-                <p>(B) Chile</p>
-                <p>(C) Mexico</p>
-                <p>(D) South Africa</p>
-              </div>
-              <div className="flex space-x-16">
-                <p>② (A) Australia</p>
-                <p>(B) Mexico</p>
-                <p>(C) South Africa</p>
-                <p>(D) Chile</p>
-              </div>
-              <div className="flex space-x-16">
-                <p>③ (A) South Africa</p>
-                <p>(B) Chile</p>
-                <p>(C) Australia</p>
-                <p>(D) Mexico</p>
-              </div>
-              <div className="flex space-x-16">
-                <p>④ (A) South Africa</p>
-                <p>(B) Mexico</p>
-                <p>(C) Australia</p>
-                <p>(D) Chile</p>
+              <div>
+                {[
+                  {
+                    options: [
+                      "(A) Australia",
+                      "(B) Chile",
+                      "(C) Mexico",
+                      "(D) South Africa",
+                    ],
+                  },
+                  {
+                    options: [
+                      "(A) Australia",
+                      "(B) Mexico",
+                      "(C) South Africa",
+                      "(D) Chile",
+                    ],
+                  },
+                  {
+                    options: [
+                      "(A) South Africa",
+                      "(B) Chile",
+                      "(C) Australia",
+                      "(D) Mexico",
+                    ],
+                  },
+                  {
+                    options: [
+                      "(A) South Africa",
+                      "(B) Mexico",
+                      "(C) Australia",
+                      "(D) Chile",
+                    ],
+                  },
+                ].map((item, index) => (
+                  <div key={index} className="mb-4">
+                    <div className="flex ">
+                      <span className="md:w-[20px] mr-4">{"①②③④"[index]}</span>
+                      <div className="flex flex-wrap">
+                        {item.options.map((option, optIndex) => (
+                          <span className="w-[150px]" key={optIndex}>
+                            {option}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -264,22 +298,24 @@ const Ex16_4A = () => {
               </span>
               {renderSelect("36", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="4A-2" />}
+              {Kaisetsu(showResults, "16-4A-8")}
             </div>
-            <div className="space-y-4 pl-8">
-              <p>
-                ① Navel oranges contain fewer seeds than Valencia oranges do.
-              </p>
-              <p>
-                ② Navel oranges contain more juice than Valencia oranges do.
-              </p>
-              <p>
-                ③ Valencia oranges are more popular than navel oranges in the
-                winter.
-              </p>
-              <p>
-                ④ Valencia oranges are more suitable for eating fresh than navel
-                oranges.
-              </p>
+            <div className="space-y-4 md:pl-8">
+              <div>
+                {[
+                  "Navel oranges contain fewer seeds than Valencia oranges do.",
+                  "Navel oranges contain more juice than Valencia oranges do.",
+                  "Valencia oranges are more popular than navel oranges in the winter.",
+                  "Valencia oranges are more suitable for eating fresh than navel oranges.",
+                ].map((text, index) => (
+                  <div key={index} className="flex my-2">
+                    <span className="mr-2 text-xl w-[20px]">
+                      {"①②③④"[index]}
+                    </span>
+                    <span className="">{text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           {/* Question 3 */}
@@ -289,23 +325,22 @@ const Ex16_4A = () => {
               <span>What is the main purpose of this passage?</span>
               {renderSelect("37", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="4A-3" />}
+              {Kaisetsu(showResults, "16-4A-9")}
             </div>
-            <div className="space-y-4 pl-8">
-              <p>
-                ① To account for the seasonal changes in the US production of
-                oranges
-              </p>
-              <p>
-                ② To explain the differences between navel oranges and Valencia
-                oranges
-              </p>
-              <p>
-                ③ To illustrate the relation between US production and imports
-                of oranges
-              </p>
-              <p>
-                ④ To improve the quality of the navel oranges produced in the US
-              </p>
+            <div className="space-y-4 md:pl-8">
+              <div>
+                {[
+                  "To account for the seasonal changes in the US production of oranges",
+                  "To explain the differences between navel oranges and Valencia oranges",
+                  "To illustrate the relation between US production and imports of oranges",
+                  "To improve the quality of the navel oranges produced in the US",
+                ].map((text, index) => (
+                  <div key={index} className="flex my-2">
+                    <span className="mr-2 text-xl">{"①②③④"[index]}</span>
+                    <span className="">{text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           {/* Question 4 */}
@@ -317,21 +352,24 @@ const Ex16_4A = () => {
               </span>
               {renderSelect("38", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="4A-4" />}
+              {Kaisetsu(showResults, "16-4A-10")}
             </div>
-            <div className="space-y-4 pl-8">
-              <p>
-                ① Export rates of other fruits from the US to the Southern
-                Hemisphere
-              </p>
-              <p>
-                ② Statistics showing the seasonal changes in imports of other
-                fruits
-              </p>
-              <p>
-                ③ The shipping methods of navel oranges from the Southern
-                Hemisphere
-              </p>
-              <p>④ The variety of fruits commonly grown in the US and Mexico</p>
+            <div className="space-y-4 md:pl-8">
+              <div>
+                {[
+                  "Export rates of other fruits from the US to the Southern Hemisphere",
+                  "Statistics showing the seasonal changes in imports of other fruits",
+                  "The shipping methods of navel oranges from the Southern Hemisphere",
+                  "The variety of fruits commonly grown in the US and Mexico",
+                ].map((text, index) => (
+                  <div key={index} className="flex my-2">
+                    <span className="mr-2 text-xl w-[20px]">
+                      {"①②③④"[index]}
+                    </span>
+                    <span className="">{text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

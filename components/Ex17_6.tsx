@@ -24,7 +24,7 @@ const Ex17_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は④、翻訳参照", ""],
     },
     {
       questionId: "6-2",
@@ -38,7 +38,7 @@ const Ex17_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は②、翻訳参照", ""],
     },
     {
       questionId: "6-3",
@@ -53,7 +53,7 @@ const Ex17_6 = () => {
       isOrderFree: true,
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は④、翻訳参照", ""],
     },
     {
       questionId: "6-4",
@@ -67,7 +67,7 @@ const Ex17_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は④、翻訳参照", ""],
     },
     {
       questionId: "6-5",
@@ -81,7 +81,7 @@ const Ex17_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は①、翻訳参照", ""],
     },
     {
       questionId: "6-6",
@@ -107,7 +107,7 @@ const Ex17_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は[52]④、[53]②、[54]③、[55]①、翻訳参照", ""],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -143,7 +143,7 @@ const Ex17_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(1)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               For most people, their friendships are a valuable and important
               part of who they are. Psychologists have pointed out that
               well-established friendships lead us to a better understanding of
@@ -161,7 +161,7 @@ const Ex17_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(2)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               One way to help save a friendship in trouble is to keep in touch.
               When we think a friend has done something that hurt our feelings,
               our first response may be to cut off contact. However, it may be
@@ -186,7 +186,7 @@ const Ex17_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(3)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               Another way to help a friendship is to see things from our
               friend&apos;s point of view. For example, Mark was very upset at
               his good friend, Kate, because she had not visited him in the
@@ -204,7 +204,7 @@ const Ex17_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(4)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               An important part of dealing with friendships is to recognize and
               accept that they can change as our needs and lifestyles evolve.
               For example, we may have a good friend in high school, but once we
@@ -222,7 +222,7 @@ const Ex17_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(5)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               How do people keep friendships for a long time? In one study,
               researchers interviewed many people who had been friends for a
               long time in order to find out the secret. They found that those
@@ -240,7 +240,7 @@ const Ex17_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(6)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               We all know that friendships are precious, but we also understand
               that friendships are not always stable. The challenge in
               maintaining friendships is keeping the connections strong during
@@ -277,6 +277,7 @@ const Ex17_6 = () => {
               </p>
               {renderSelect("47", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-1" />}
+              {Kaisetsu(showResults, "17-6-7")}
             </div>
             <div className="ml-8 space-y-2">
               <p>① They are frequently compared to one&apos;s possessions.</p>
@@ -299,6 +300,7 @@ const Ex17_6 = () => {
               </p>
               {renderSelect("48", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-2" />}
+              {Kaisetsu(showResults, "17-6-8")}
             </div>
             <div className="ml-8 space-y-2">
               <p>① Give our thanks to someone</p>
@@ -317,6 +319,7 @@ const Ex17_6 = () => {
               </p>
               {renderSelect("49", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-3" />}
+              {Kaisetsu(showResults, "17-6-9")}
             </div>
             <div className="ml-8 space-y-2">
               <p>① hesitate to express one&apos;s true feelings</p>
@@ -336,6 +339,7 @@ const Ex17_6 = () => {
               </p>
               {renderSelect("50", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-4" />}
+              {Kaisetsu(showResults, "17-6-10")}
             </div>
             <div className="ml-8 space-y-2">
               <p>① Finding new and interesting friends</p>
@@ -352,6 +356,7 @@ const Ex17_6 = () => {
               <p>What would be the best title for this passage?</p>
               {renderSelect("51", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-5" />}
+              {Kaisetsu(showResults, "17-6-11")}
             </div>
             <div className="ml-8 space-y-2">
               <p>① Advice for Friendships That Will Last</p>
@@ -380,6 +385,7 @@ const Ex17_6 = () => {
                 {renderSelect("54", 4, answers, setAnswers)}
                 {renderSelect("55", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="6-6" />}
+                {Kaisetsu(showResults, "17-6-12")}
               </span>
             </p>
           </div>

@@ -64,11 +64,11 @@ const Ex25_7 = () => {
       isCorrect: false,
       points: 4,
       explanation: [
-        "正解は1と4",
+        "正解は①と④",
         "① エネルギーを急速に消費する動物は，より頻繁に眠る傾向がある",
+        "④ 食事が胃を満たす動物は，通常より長く眠る",
         "② 食べ物を探し続ける動物は，より長い睡眠が必要である",
         "③ カロリーが少ない食事を摂る動物は，より簡単に眠れる",
-        "④ 食事が胃を満たす動物は，通常より長く眠る",
         "⑤ アクセスが難しい巣を持つ動物は，通常より短く眠る",
       ],
     },
@@ -134,6 +134,7 @@ const Ex25_7 = () => {
         You are preparing a presentation for a science project on animal habits.
         You found some interesting information in the article below and are now
         making your outline.
+        {Kaisetsu(showResults, "25-7-0")}
       </p>
 
       {/* Article content */}
@@ -248,7 +249,9 @@ const Ex25_7 = () => {
             <div>
               <div className="flex gap-2 items-center mb-2">
                 <h3 className="text-lg italic">Importance of Sleep</h3>
-                <div className="border border-gray-400 px-3 py-1">32</div>
+                <div className="border border-gray-400 px-3 py-1 font-sans">
+                  32
+                </div>
               </div>
               <div className="space-y-2 ml-4">
                 <p>A. To alter body temperature</p>
@@ -256,6 +259,7 @@ const Ex25_7 = () => {
                 <p>C. To refresh the animal&apos;s body</p>
                 <p>D. To reset the brain neurons</p>
               </div>
+              {Kaisetsu(showResults, "25-7-9")}
             </div>
 
             <div>
@@ -263,7 +267,9 @@ const Ex25_7 = () => {
                 <h3 className="text-lg italic">
                   Biphasic Sleep Pattern (in each 24-hour cycle)
                 </h3>
-                <div className="border border-gray-400 px-3 py-1">33</div>
+                <div className="border border-gray-400 px-3 py-1 font-sans">
+                  33
+                </div>
               </div>
             </div>
 
@@ -274,12 +280,16 @@ const Ex25_7 = () => {
               <div className="space-y-2 ml-4">
                 <div className="flex gap-2 items-center">
                   <span>- Animals</span>
-                  <div className="border border-gray-400 px-3 py-1">34</div>
+                  <div className="border border-gray-400 px-3 py-1 font-sans">
+                    34
+                  </div>
                   <span>.</span>
                 </div>
                 <div className="flex gap-2 items-center">
                   <span>- Animals</span>
-                  <div className="border border-gray-400 px-3 py-1">35</div>
+                  <div className="border border-gray-400 px-3 py-1 font-sans">
+                    35
+                  </div>
                   <span>.</span>
                 </div>
               </div>
@@ -290,7 +300,9 @@ const Ex25_7 = () => {
               <div className="space-y-2 ml-4">
                 <div className="flex gap-2 items-center">
                   <span>- Some birds</span>
-                  <div className="border border-gray-400 px-3 py-1">36</div>
+                  <div className="border border-gray-400 px-3 py-1 font-sans">
+                    36
+                  </div>
                   <span>.</span>
                 </div>
               </div>
@@ -298,12 +310,15 @@ const Ex25_7 = () => {
 
             <div>
               <div className="flex gap-2 items-start mb-2">
-                <div className="border border-gray-400 px-3 py-1">37</div>
+                <div className="border border-gray-400 px-3 py-1 font-sans">
+                  37
+                </div>
               </div>
               <div className="space-y-2 ml-4">
                 <p>- Black bear hibernation</p>
                 <p>- Jellyfish relaxation</p>
               </div>
+              {Kaisetsu(showResults, "25-7-10")}
             </div>
           </div>
         </div>

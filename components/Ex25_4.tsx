@@ -121,7 +121,7 @@ const Ex25_4 = () => {
             <tr>
               <td className="w-2/3 p-6 align-top border-r border-gray-300">
                 <div className="space-y-4">
-                  <p>
+                  <p className="indent-7">
                     In modern society, people are always busy and this fast pace
                     of living can be stressful. The movement toward a slow life
                     has shown us that you don&apos;t have to be busy all the
@@ -133,7 +133,7 @@ const Ex25_4 = () => {
                     {Kaisetsu(showResults, "25-4-2")}
                   </p>
 
-                  <p>
+                  <p className="indent-7">
                     One key point of the slow life is to own fewer belongings.
                     This makes it easier to concentrate on everyday activities.
                     <sup>(1)</sup>^ Many people today tend to buy more than they
@@ -143,7 +143,7 @@ const Ex25_4 = () => {
                     {Kaisetsu(showResults, "25-4-3")}
                   </p>
 
-                  <p>
+                  <p className="indent-7">
                     Another recommendation is to think about your communication
                     style and manner in your public and private life. Sadly, one
                     study has found that around 90% of people check smartphones
@@ -152,7 +152,7 @@ const Ex25_4 = () => {
                     {Kaisetsu(showResults, "25-4-4")}
                   </p>
 
-                  <p>
+                  <p className="indent-7">
                     The final aspect of slow living is to take 10 to 15 minutes
                     to reflect on your day. Try to recollect people and events
                     that were significant. By mentally highlighting them, you
@@ -160,7 +160,7 @@ const Ex25_4 = () => {
                     {Kaisetsu(showResults, "25-4-5")}
                   </p>
 
-                  <p>
+                  <p className="indent-7">
                     In summary, through a slow life,{" "}
                     <u>
                       <sup>(3)</sup>you can relax
@@ -179,21 +179,27 @@ const Ex25_4 = () => {
                 </div>
               </td>
               <td className="w-1/3 p-6 align-top">
-                <div className="space-y-4 italic text-gray-600">
-                  <p>(1) Add an appropriate connecting word.</p>
+                <div className="space-y-4 italic ">
+                  <p>
+                    (1) Add an appropriate connecting word.
+                    {Kaisetsu(showResults, "25-4-1B")}
+                  </p>
 
                   <p>
                     (2) Add a concluding sentence to improve this paragraph.
+                    {Kaisetsu(showResults, "25-4-2B")}
                   </p>
 
                   <p>
                     (3) The underlined part isn&apos;t your main argument.
                     Rewrite it.
+                    {Kaisetsu(showResults, "25-4-3B")}
                   </p>
 
                   <p>
                     (4) The underlined part doesn&apos;t describe your essay
                     content well. Change it.
+                    {Kaisetsu(showResults, "25-4-4B")}
                   </p>
                 </div>
               </td>
@@ -205,6 +211,7 @@ const Ex25_4 = () => {
                   You have really improved your essay. Keep working on it.
                   I&apos;m going to follow your suggestions to slow down and
                   hopefully improve the quality of my life.☺
+                  {Kaisetsu(showResults, "25-4-7")}
                 </div>
               </td>
             </tr>
@@ -215,73 +222,116 @@ const Ex25_4 = () => {
       <div className="space-y-4 mt-4">
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
-            <span className="flex gap-1">
-              Based on Comment (1), which is the best word to add?{" "}
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
+            <span className="mr-2">
+              Based on Comment (1), which is the best word to add?
             </span>
             {renderSelect("14", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4-1" />}
+            {Kaisetsu(showResults, "25-4-8")}
           </div>
-          <div className="pl-8 space-y-2">
-            <p>① However</p>
-            <p>② Moreover</p>
-            <p>③ Otherwise</p>
-            <p>④ Therefore</p>
+          <div className="pl-2 md:pl-8 space-y-2">
+            <div>
+              {["However", "Moreover", "Otherwise", "Therefore"].map(
+                (text, index) => (
+                  <div key={index} className="flex gap-2">
+                    <span className="inline-block w-6 h-6 text-center">
+                      {"①②③④"[index]}
+                    </span>
+                    <p>{text}</p>
+                  </div>
+                )
+              )}
+            </div>
           </div>
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
-            <span className="flex gap-1">
-              Based on Comment (2), which is the best sentence to add?{" "}
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
+            <span className="mr-2">
+              Based on Comment (2), which is the best sentence to add?
             </span>
             {renderSelect("15", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4-2" />}
+            {Kaisetsu(showResults, "25-4-9")}
           </div>
-          <div className="pl-8 space-y-2">
-            <p>① Limit the time you spend having conversations with people.</p>
-            <p>② Send messages with your phone just once or twice a day.</p>
-            <p>
-              ③ Try to focus your attention on the person you are talking with.
-            </p>
-            <p>④ Use your phone to find real friends through social media.</p>
+          <div className="pl-2 md:pl-8 space-y-2">
+            <div>
+              {[
+                "Limit the time you spend having conversations with people.",
+                "Send messages with your phone just once or twice a day.",
+                "Try to focus your attention on the person you are talking with.",
+                "Use your phone to find real friends through social media.",
+              ].map((text, index) => (
+                <div key={index} className="flex gap-2">
+                  <span className="inline-block w-6 h-6 text-center">
+                    {"①②③④"[index]}
+                  </span>
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span className="flex gap-1">
               Based on Comment (3), which is the best phrase to replace the
               underlined part?{" "}
             </span>
             {renderSelect("16", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4-3" />}
+            {Kaisetsu(showResults, "25-4-10")}
           </div>
-          <div className="pl-8 space-y-2">
-            <p>① you can be satisfied at work and in your personal life</p>
-            <p>② you can complete tasks in a short period of time</p>
-            <p>③ you can decrease stress by sharing work with others</p>
-            <p>④ you can focus on the outcome rather than the process</p>
+          <div className="pl-2 md:pl-8 space-y-2">
+            <div>
+              {[
+                "you can be satisfied at work and in your personal life",
+                "you can complete tasks in a short period of time",
+                "you can decrease stress by sharing work with others",
+                "you can focus on the outcome rather than the process",
+              ].map((text, index) => (
+                <div key={index} className="flex gap-2">
+                  <span className="inline-block w-6 h-6 text-center">
+                    {"①②③④"[index]}
+                  </span>
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span className="flex gap-1">
               Based on Comment (4), which is the best phrase to replace the
               underlined part?{" "}
             </span>
             {renderSelect("17", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4-4" />}
+            {Kaisetsu(showResults, "25-4-11")}
           </div>
-          <div className="pl-8 space-y-2">
-            <p>① plan your daily activities as soon as you wake up</p>
-            <p>② recall the bad things that happened in your life</p>
-            <p>③ think back to the memorable parts of your day</p>
-            <p>④ throw away unwanted items before sleeping</p>
+          <div className="pl-2 md:pl-8 space-y-2">
+            <div>
+              {[
+                "plan your daily activities as soon as you wake up",
+                "recall the bad things that happened in your life",
+                "think back to the memorable parts of your day",
+                "throw away unwanted items before sleeping",
+              ].map((text, index) => (
+                <div key={index} className="flex gap-2">
+                  <span className="inline-block w-6 h-6 text-center">
+                    {"①②③④"[index]}
+                  </span>
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

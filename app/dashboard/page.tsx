@@ -23,6 +23,7 @@ import {
   getPaymentDetail,
   getRefundDetail,
 } from "@/lib/paypay";
+
 export default function Home() {
   const router = useRouter();
   const [selectedYear, setSelectedYear] = useState<Year>("2025");

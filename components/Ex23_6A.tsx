@@ -112,7 +112,7 @@ const Ex23_6A = () => {
       </div>{" "}
       {/* Question Label */}
       <div className="flex gap-2 mb-6">
-        <p className="text-justify">
+        <p className="text-justify indent-7">
           You are in a discussion group in school. You have been asked to
           summarize the following article. You will speak about it, using only
           notes.
@@ -123,7 +123,7 @@ const Ex23_6A = () => {
       <h1 className="text-center font-bold text-xl mb-8">Collecting</h1>
       {/* Article Content */}
       <div className="space-y-6 text-justify">
-        <p>
+        <p className="indent-7">
           Collecting has existed at all levels of society, across cultures and
           age groups since early times. Museums are proof that things have been
           collected, saved, and passed down for future generations. There are
@@ -139,7 +139,7 @@ const Ex23_6A = () => {
           nature to collect things.
           {Kaisetsu(showResults, "23-6A-1")}
         </p>
-        <p>
+        <p className="indent-7">
           In 1988, researchers Brenda Danet and Tamar Katriel analyzed 80 years
           of studies on children under the age of 10, and found that about 90%
           collected something. This shows us that people like to gather things
@@ -153,14 +153,12 @@ const Ex23_6A = () => {
           baseball cards, comic books, dolls, or miniature cars that they have
           kept since they were small.
           {Kaisetsu(showResults, "23-6A-2")}
-        </p>
-        <p>
           Others have an attachment to history; they seek and hold onto
           historical documents, signed letters and autographs from famous
           people, and so forth.
           {Kaisetsu(showResults, "23-6A-3")}
         </p>
-        <p>
+        <p className="indent-7">
           For some individuals there is a social reason. People collect things
           such as pins to share, show, and even trade, making new friends this
           way. Others, like some holders of Guinness World Records, appreciate
@@ -175,7 +173,7 @@ const Ex23_6A = () => {
           has 11,087 different sets.
           {Kaisetsu(showResults, "23-6A-4")}
         </p>
-        <p>
+        <p className="indent-7">
           Perhaps the easiest motivation to understand is pleasure. Some people
           start collections for pure enjoyment. They may purchase and put up
           paintings just to gaze at frequently, or they may collect audio
@@ -190,7 +188,7 @@ const Ex23_6A = () => {
           financial security.
           {Kaisetsu(showResults, "23-6A-5")}
         </p>
-        <p>
+        <p className="indent-7">
           This behavior of collecting things will definitely continue into the
           distant future. Although the reasons why people keep things will
           likely remain the same, advances in technology will have an influence

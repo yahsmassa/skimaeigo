@@ -117,7 +117,7 @@ const Ex21_6B = () => {
 
       {/* Main textbook content */}
       <div className="border border-gray-300 p-8 leading-relaxed text-justify">
-        <p className="mb-6">
+        <p className="mb-6 indent-7">
           Cake, candy, soft drinks—most of us love sweet things. In fact, young
           people say &quot;Sweet!&quot; to mean something is &quot;good&quot; in
           English. When we think of sweetness, we imagine ordinary white sugar
@@ -131,7 +131,7 @@ const Ex21_6B = () => {
           have developed a wide variety of artificial sweeteners.
           {Kaisetsu(showResults, "21-6B-1")}
         </p>
-        <p className="mb-6">
+        <p className="mb-6 indent-7">
           A recent US National Health and Nutrition Examination Survey concluded
           that 14.6% of the average American&apos;s energy intake is from
           &quot;added sugar,&quot; which refers to sugar that is not derived
@@ -143,7 +143,7 @@ const Ex21_6B = () => {
           substitutes for drinks, snacks, and desserts.
           {Kaisetsu(showResults, "21-6B-2")}
         </p>
-        <p className="mb-6">
+        <p className="mb-6 indent-7">
           Natural alternatives to white sugar include brown sugar, honey, and
           maple syrup, but they also tend to be high in calories. Consequently,
           alternative &quot;low-calorie sweeteners&quot; (LCSs), mostly
@@ -152,7 +152,7 @@ const Ex21_6B = () => {
           are artificial—stevia comes from plant leaves.
           {Kaisetsu(showResults, "21-6B-3")}
         </p>
-        <p className="mb-6">
+        <p className="mb-6 indent-7">
           Alternative sweeteners can be hard to use in cooking because some
           cannot be heated and most are far sweeter than white sugar. Aspartame
           and Ace-K are 200 times sweeter than sugar. Stevia is 300 times
@@ -163,7 +163,7 @@ const Ex21_6B = () => {
           something.
           {Kaisetsu(showResults, "21-6B-4")}
         </p>
-        <p className="mb-6">
+        <p className="mb-6 indent-7">
           When choosing sweeteners, it is important to consider health issues.
           Making desserts with lots of white sugar, for example, results in
           high-calorie dishes that could lead to weight gain. There are those
@@ -178,7 +178,7 @@ const Ex21_6B = () => {
           slowly, so consuming large amounts can cause stomach trouble.
           {Kaisetsu(showResults, "21-6B-5")}
         </p>
-        <p>
+        <p className="mb-6 indent-7">
           When people want something sweet, even with all the information, it is
           difficult for them to decide whether to stick to common higher calorie
           sweeteners like sugar or to use LCSs. Many varieties of gum and candy

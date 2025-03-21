@@ -122,7 +122,7 @@ const Ex22_6A = () => {
         </h1>
 
         <div className="space-y-6">
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             When asked &quot;Are you a morning person?&quot; some reply
             &quot;No, I&apos;m a night owl.&quot; Such people can concentrate
             and create at night. At the other end of the clock, a well-known
@@ -135,7 +135,7 @@ const Ex22_6A = () => {
             {Kaisetsu(showResults, "22-6A-1")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Yet another proverb states: &quot;Early to bed, early to rise makes
             a man healthy, wealthy, and wise.&quot; <em>Larks</em> may jump out
             of bed and welcome the morning with a big breakfast, while{" "}
@@ -150,7 +150,7 @@ const Ex22_6A = () => {
             {Kaisetsu(showResults, "22-6A-2")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             What makes one person a <em>lark</em> and another an <em>owl</em>?
             One theory suggests preference for day or night has to do with time
             of birth. In 2010, Cleveland State University researchers found
@@ -164,7 +164,7 @@ const Ex22_6A = () => {
             {Kaisetsu(showResults, "22-6A-3")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Does everyone follow the system of beginning days in the morning?
             The Jewish people, an approximately 6,000-year-old religious group,
             believe a day is measured from sundown until the following
@@ -177,7 +177,7 @@ const Ex22_6A = () => {
             {Kaisetsu(showResults, "22-6A-4")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Research indicates <em>owls</em> are smarter and more creative. So,
             perhaps <em>larks</em> are not always wiser! That is to say,{" "}
             <em>larks</em> win &quot;healthy&quot; and sometimes
@@ -197,7 +197,7 @@ const Ex22_6A = () => {
             {Kaisetsu(showResults, "22-6A-5")}
           </p>
 
-          <p className="text-justify">
+          <p className="text-justify indent-7">
             Can people change? While the results are not all in, studies of
             young adults seem to say no, we are hard-wired. So, as young people
             grow and acquire more freedom, they end up returning to their{" "}

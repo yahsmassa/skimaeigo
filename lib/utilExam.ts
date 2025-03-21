@@ -4,6 +4,7 @@ import Ex16_2B from "@/components/Ex16_2B";
 import Ex16_2C from "@/components/Ex16_2C";
 import Ex16_3A from "@/components/Ex16_3A";
 import Ex16_3B from "@/components/Ex16_3B";
+import Ex16_3C from "@/components/Ex16_3C";
 import Ex16_4A from "@/components/Ex16_4A";
 import Ex16_4B from "@/components/Ex16_4B";
 import Ex17_1 from "@/components/Ex17_1";
@@ -12,6 +13,7 @@ import Ex17_2B from "@/components/Ex17_2B";
 import Ex17_2C from "@/components/Ex17_2C";
 import Ex17_3A from "@/components/Ex17_3A";
 import Ex17_3B from "@/components/Ex17_3B";
+import Ex17_3C from "@/components/Ex17_3C";
 import Ex17_4A from "@/components/Ex17_4A";
 import Ex17_4B from "@/components/Ex17_4B";
 import Ex18_1 from "@/components/Ex18_1";
@@ -104,6 +106,7 @@ export const components: ExComponent[] = [
   { id: "Ex16_2C", label: "2016年 問2 C", component: Ex16_2C },
   { id: "Ex16_3A", label: "2016年 問3 A", component: Ex16_3A },
   { id: "Ex16_3B", label: "2016年 問3 B", component: Ex16_3B },
+  { id: "Ex16_3C", label: "2016年 問3 C", component: Ex16_3C },
   { id: "Ex16_4A", label: "2016年 問4 A", component: Ex16_4A },
   { id: "Ex16_4B", label: "2016年 問4 B", component: Ex16_4B },
   { id: "Ex16_5", label: "2016年 問5", component: Ex16_5 },
@@ -114,6 +117,7 @@ export const components: ExComponent[] = [
   { id: "Ex17_2C", label: "2017年 問2 C", component: Ex17_2C },
   { id: "Ex17_3A", label: "2017年 問3 A", component: Ex17_3A },
   { id: "Ex17_3B", label: "2017年 問3 B", component: Ex17_3B },
+  { id: "Ex17_3C", label: "2017年 問3 C", component: Ex17_3C },
   { id: "Ex17_4A", label: "2017年 問4 A", component: Ex17_4A },
   { id: "Ex17_4B", label: "2017年 問4 B", component: Ex17_4B },
   { id: "Ex17_5", label: "2017年 問5", component: Ex17_5 },
@@ -225,6 +229,7 @@ export const groupedComponents: GroupedComponents = {
     { id: "Ex16_2C", label: "問2 C" },
     { id: "Ex16_3A", label: "問3 A" },
     { id: "Ex16_3B", label: "問3 B" },
+    { id: "Ex16_3C", label: "問3 C" },
     { id: "Ex16_4A", label: "問4 A" },
     { id: "Ex16_4B", label: "問4 B" },
     { id: "Ex16_5", label: "問5" },
@@ -237,6 +242,7 @@ export const groupedComponents: GroupedComponents = {
     { id: "Ex17_2C", label: "問2 C" },
     { id: "Ex17_3A", label: "問3 A" },
     { id: "Ex17_3B", label: "問3 B" },
+    { id: "Ex17_3C", label: "問3 C" },
     { id: "Ex17_4A", label: "問4 A" },
     { id: "Ex17_4B", label: "問4 B" },
     { id: "Ex17_5", label: "問5" },

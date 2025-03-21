@@ -176,47 +176,34 @@ export default function Ex25_1() {
           {/* Question 1 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "1-1"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 1</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
               <span>
                 The customers most likely to benefit from this pamphlet are{" "}
               </span>
               {renderSelect("1", 4, answers, setAnswers)}.
               {showResults && <Explain qa={qa} questionId="1-1" />}
             </div>
-            <div className="pl-8 space-y-2">
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                  1
-                </span>
-                <p>aquarium lovers who are looking for discount prices</p>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                  2
-                </span>
-                <p>experienced fish lovers who need specialized advice</p>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                  3
-                </span>
-                <p>
-                  fish fans who want different methods of feeding their fish
-                </p>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                  4
-                </span>
-                <p>newcomers who need to be informed about their aquarium</p>
-              </div>
+            <div className="pl-2 md:pl-8 space-y-2">
+              {[
+                "aquarium lovers who are looking for discount prices",
+                "experienced fish lovers who need specialized advice",
+                "fish fans who want different methods of feeding their fish",
+                "newcomers who need to be informed about their aquarium",
+              ].map((text, index) => (
+                <div key={index} className="flex gap-2">
+                  <span className="inline-block w-6 h-6 text-center">
+                    {"①②③④"[index]}
+                  </span>
+                  <p>{text}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Question 2 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "1-2"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 2</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
               <span className="flex gap-1">
                 When arranging decorations to keep your fish in good health, it
                 is a good idea to
@@ -224,37 +211,26 @@ export default function Ex25_1() {
               {renderSelect("2", 4, answers, setAnswers)}.
               {showResults && <Explain qa={qa} questionId="1-2" />}
             </div>
-            <div className="pl-8 space-y-2">
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                  1
-                </span>
-                <p>avoid using solid and soft objects</p>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                  2
-                </span>
-                <p>provide the right amount of open space</p>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                  3
-                </span>
-                <p>reuse your old toothbrush as a decoration</p>
-              </div>
-              <div className="flex gap-2">
-                <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                  4
-                </span>
-                <p>wash decorations briefly and roughly</p>
-              </div>
+            <div className="pl-2 md:pl-8 space-y-2">
+              {[
+                "avoid using solid and soft objects",
+                "provide the right amount of open space",
+                "reuse your old toothbrush as a decoration",
+                "wash decorations briefly and roughly",
+              ].map((text, index) => (
+                <div key={index} className="flex gap-2">
+                  <span className="inline-block w-6 h-6 text-center">
+                    {"①②③④"[index]}
+                  </span>
+                  <p>{text}</p>
+                </div>
+              ))}
             </div>
           </div>
           {/* Question 3 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "1-3"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 3</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
               <span className="flex gap-1">
                 According to the pamphlet, which picture best shows how to
                 decorate for fish from slow-moving water?

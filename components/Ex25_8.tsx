@@ -131,7 +131,7 @@ const Ex25_8 = () => {
         />
       </div>
       {/* Introduction and Steps */}
-      <div className="space-y-4">
+      <div className="space-y-4 mb-4">
         <p>
           You are working on an essay about{" "}
           <span className="font-medium">space exploration</span>. You will
@@ -150,6 +150,7 @@ const Ex25_8 = () => {
             <span className="font-medium">Step 3</span>: Create an outline of
             your essay using additional sources.
           </p>
+          <p className="">{Kaisetsu(showResults, "25-8-0")}</p>
         </div>
       </div>
 
@@ -249,7 +250,7 @@ const Ex25_8 = () => {
         {/* Question 1 */}
         <div className="space-y-4">
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 1</span>
+            <span className="whitespace-nowrap font-sans">問 1</span>
             <span>
               Which of the following best expresses Meilin&apos;s opinion?
             </span>
@@ -257,11 +258,20 @@ const Ex25_8 = () => {
             {showResults && <Explain qa={qa} questionId="8-1" />}
           </div>
 
-          <div className="space-y-2 ml-8">
-            <div>① Caution is critical.</div>
-            <div>② Invention is invaluable.</div>
-            <div>③ Science is superior.</div>
-            <div>④ Trust is treasure.</div>
+          <div className="space-y-2 ml-2 md:ml-8">
+            {[
+              "Caution is critical.",
+              "Invention is invaluable.",
+              "Science is superior.",
+              "Trust is treasure.",
+            ].map((text, index) => (
+              <div key={index} className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center">
+                  {"①②③④"[index]}
+                </span>
+                <p>{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -270,7 +280,7 @@ const Ex25_8 = () => {
       <div className={cn("space-y-4 mt-6", showResults && qaFormat(qa, "8-2"))}>
         <div className="space-y-4">
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 2</span>
+            <span className="whitespace-nowrap font-sans">問 2</span>
             <span>
               Both Christine and Victor mention that space exploration
             </span>
@@ -279,22 +289,21 @@ const Ex25_8 = () => {
             <span>.</span>
           </div>
 
-          <div className="space-y-4 ml-8">
+          <div className="space-y-4 ml-2 md:ml-8">
             <div>
-              ① has economic impacts and provides opportunities for private
-              corporations to make money
-            </div>
-            <div>
-              ② is gaining popularity and that salaries for people working in
-              the industry are above average
-            </div>
-            <div>
-              ③ is politically challenging as it requires coordination among
-              countries with different policies
-            </div>
-            <div>
-              ④ needs global cooperation, especially to operate the
-              International Space Station successfully
+              {[
+                "has economic impacts and provides opportunities for private corporations to make money",
+                "is gaining popularity and that salaries for people working in the industry are above average",
+                "is politically challenging as it requires coordination among countries with different policies",
+                "needs global cooperation, especially to operate the International Space Station successfully",
+              ].map((text, index) => (
+                <div key={index} className="flex gap-2">
+                  <span className="inline-block w-6 h-6 text-center">
+                    {"①②③④"[index]}
+                  </span>
+                  <p>{text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -307,17 +316,27 @@ const Ex25_8 = () => {
         <div className="space-y-6">
           <div className={cn("space-y-4", showResults && qaFormat(qa, "8-3"))}>
             <div>
-              <span>問 3</span>
+              <span className="font-sans">問 3</span>
               <span className="ml-2">
                 Now that you have understood the various opinions, you have
                 taken a position on space exploration and written some notes
                 below. Choose the best options to complete{" "}
-                <span className="border border-gray-400 px-2">40</span>—
-                <span className="border border-gray-400 px-2">42</span>. (You
-                must have <span className="underline">all</span> of{" "}
-                <span className="border border-gray-400 px-2">40</span>—
-                <span className="border border-gray-400 px-2">42</span> correct
-                to get points.)
+                <span className="border border-gray-400 px-2 font-sans">
+                  40
+                </span>
+                —
+                <span className="border border-gray-400 px-2 font-sans">
+                  42
+                </span>
+                . (You must have <span className="underline">all</span> of{" "}
+                <span className="border border-gray-400 px-2 font-sans">
+                  40
+                </span>
+                —
+                <span className="border border-gray-400 px-2 font-sans">
+                  42
+                </span>{" "}
+                correct to get points.)
               </span>
             </div>
 
@@ -329,15 +348,21 @@ const Ex25_8 = () => {
               <div className="ml-4 space-y-2">
                 <div className="flex items-center gap-2">
                   <span>•</span>
-                  <div className="border border-gray-400 px-2">40</div>
+                  <div className="border border-gray-400 px-2 font-sans">
+                    40
+                  </div>
                   <span>and</span>
-                  <div className="border border-gray-400 px-2">41</div>
+                  <div className="border border-gray-400 px-2 font-sans">
+                    41
+                  </div>
                   <span>opinions support this the most.</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>•</span>
                   <span>An argument common to these two people is that</span>
-                  <div className="border border-gray-400 px-2">42</div>
+                  <div className="border border-gray-400 px-2 font-sans">
+                    42
+                  </div>
                   <span>.</span>
                 </div>
               </div>
@@ -352,12 +377,21 @@ const Ex25_8 = () => {
                 matter):
               </p>
 
-              <div className="ml-4 space-y-2">
-                <div>① Apu&apos;</div>
-                <div>② Christine&apos;</div>
-                <div>③ Meilin&apos;</div>
-                <div>④ Naomi&apos;</div>
-                <div>⑤ Victor&apos;</div>
+              <div className="ml-2 md:ml-4 space-y-2">
+                {[
+                  "Apu's",
+                  "Christine's",
+                  "Meilin's",
+                  "Naomi's",
+                  "Victor's",
+                ].map((text, index) => (
+                  <div key={index} className="flex gap-2">
+                    <span className="inline-block w-6 h-6 text-center">
+                      {"①②③④⑤"[index]}
+                    </span>
+                    <p>{text}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -366,23 +400,20 @@ const Ex25_8 = () => {
               <p className="flex items-center gap-2 flex-wrap">
                 Options for {renderSelect("42", 4, answers, setAnswers)}.
               </p>
-              <div className="ml-4 space-y-3">
-                <div>
-                  ① military conflict in outer space is something we should try
-                  hard to avoid
-                </div>
-                <div>
-                  ② space exploration exposes people to a lot of danger and is
-                  too risky
-                </div>
-                <div>
-                  ③ the possibility of alien invasion is too great to be ignored
-                  and must be addressed
-                </div>
-                <div>
-                  ④ the risk of death for people in the industry is extremely
-                  high compared with other jobs
-                </div>
+              <div className="ml-2 md:ml-4 space-y-3">
+                {[
+                  "military conflict in outer space is something we should try hard to avoid",
+                  "space exploration exposes people to a lot of danger and is too risky",
+                  "the possibility of alien invasion is too great to be ignored and must be addressed",
+                  "the risk of death for people in the industry is extremely high compared with other jobs",
+                ].map((text, index) => (
+                  <div key={index} className="flex gap-2">
+                    <span className="inline-block w-6 h-6 text-center">
+                      {"①②③④"[index]}
+                    </span>
+                    <p>{text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -407,6 +438,7 @@ const Ex25_8 = () => {
             <p>
               Space exploration is without doubt on the frontline of science,
               but it should not be a priority for the following three reasons.
+              {Kaisetsu(showResults, "25-8-8")}
             </p>
           </div>
 
@@ -419,13 +451,17 @@ const Ex25_8 = () => {
               </p>
               <p>
                 REASON 2 (
-                <span className="border border-gray-400 px-2">43</span>), based
-                on evidence from Source A
+                <span className="border border-gray-400 px-2 font-sans">
+                  43
+                </span>
+                ), based on evidence from Source A
               </p>
               <p>
                 REASON 3, based on evidence (
-                <span className="border border-gray-400 px-2">44</span>) from
-                Source B
+                <span className="border border-gray-400 px-2 font-sans">
+                  44
+                </span>
+                ) from Source B{Kaisetsu(showResults, "25-8-9")}
               </p>
             </div>
           </div>
@@ -435,6 +471,7 @@ const Ex25_8 = () => {
             <p>
               Upon consideration of all its aspects, we should perhaps
               prioritize other things over exploring space.
+              {Kaisetsu(showResults, "25-8-10")}
             </p>
           </div>
         </div>
@@ -488,7 +525,7 @@ const Ex25_8 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "8-4"))}>
           <div className="flex items-start gap-2 flex-wrap">
-            <span className="whitespace-nowrap">問 4</span>
+            <span className="whitespace-nowrap font-sans">問 4</span>
             <span>
               Based on Source A, which of the following is the most appropriate
               for REASON 2?
@@ -497,53 +534,27 @@ const Ex25_8 = () => {
             {showResults && <Explain qa={qa} questionId="8-4" />}
           </div>
 
-          <div className="space-y-4 ml-6">
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                1
-              </span>
-              <div>
-                CO₂ emissions produced by spacecraft are huge and are damaging
-                outer space.
+          <div className="space-y-4 ml-2 md:ml-6">
+            {[
+              "CO₂ emissions produced by spacecraft are huge and are damaging outer space.",
+              "It is difficult to update spacecraft with new engines that emit fewer harmful gases.",
+              "Space debris poses risks to humans due to potential collision with airplanes.",
+              "Space exploration is polluting the environment of both the Earth and the thermosphere.",
+            ].map((text, index) => (
+              <div key={index} className="flex gap-2">
+                <span className="inline-block w-6 h-6  text-center">
+                  {"①②③④"[index]}
+                </span>
+                <p>{text}</p>
               </div>
-            </div>
-
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                2
-              </span>
-              <div>
-                It is difficult to update spacecraft with new engines that emit
-                fewer harmful gases.
-              </div>
-            </div>
-
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                3
-              </span>
-              <div>
-                Space debris poses risks to humans due to potential collision
-                with airplanes.
-              </div>
-            </div>
-
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                4
-              </span>
-              <div>
-                Space exploration is polluting the environment of both the Earth
-                and the thermosphere.
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "8-5"))}>
           <div className="flex items-start gap-2">
-            <div className="whitespace-nowrap">問 5</div>
+            <div className="whitespace-nowrap font-sans">問 5</div>
             <div className="flex-1">
               <div>
                 For REASON 3, you have decided to write{" "}
@@ -561,50 +572,20 @@ const Ex25_8 = () => {
             </div>
           </div>
 
-          <div className="space-y-4 ml-6">
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                1
-              </span>
-              <div>
-                The amount of money that governments around the world spend on
-                space exploration could not only reduce hunger but also make
-                primary education available in developing countries.
+          <div className="space-y-4 ml-2 md:ml-6">
+            {[
+              "The amount of money that governments around the world spend on space exploration could not only reduce hunger but also make primary education available in developing countries.",
+              "The data show that it costs less to ensure clean water for people in developing countries than for governments around the world to explore space.",
+              "With less than half the money that governments spend on space exploration, it would be possible to address the problem of educational inequality in the developing world.",
+              "With the money currently invested in space exploration, we could provide sufficient food, basic education, and enough clean water in developing countries.",
+            ].map((text, index) => (
+              <div key={index} className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center">
+                  {"①②③④"[index]}
+                </span>
+                <p>{text}</p>
               </div>
-            </div>
-
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                2
-              </span>
-              <div>
-                The data show that it costs less to ensure clean water for
-                people in developing countries than for governments around the
-                world to explore space.
-              </div>
-            </div>
-
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                3
-              </span>
-              <div>
-                With less than half the money that governments spend on space
-                exploration, it would be possible to address the problem of
-                educational inequality in the developing world.
-              </div>
-            </div>
-
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                4
-              </span>
-              <div>
-                With the money currently invested in space exploration, we could
-                provide sufficient food, basic education, and enough clean water
-                in developing countries.
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

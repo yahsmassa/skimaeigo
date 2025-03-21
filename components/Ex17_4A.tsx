@@ -23,7 +23,7 @@ const Ex17_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: ["正解は③、翻訳参照"],
     },
     {
       questionId: "4A-2",
@@ -37,7 +37,10 @@ const Ex17_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は①、３段めの翻訳参照",
+        "solid surface、multi-court、glassと続き natural playgroundが同等だが、playgorundの平均が２分を超えていたと説明しているので、グラフをみると、Multi-courtがB、GlassがA、playgroundがDとわかる",
+      ],
     },
     {
       questionId: "4A-3",
@@ -51,7 +54,10 @@ const Ex17_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は④、翻訳参照",
+        "１段落目の内容、や参照論文の題名からわかる",
+      ],
     },
     {
       questionId: "4A-4",
@@ -65,7 +71,10 @@ const Ex17_4A = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は②、ゲームの種類と活動時間の長さとの関連性 翻訳参照",
+        "最終段落でgameに関して記述しており、②が自然",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -74,7 +83,7 @@ const Ex17_4A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
+          <h1 className="text-lg font-bold">{"第４問 A"}</h1>
           <span className="text-gray-600">(配点 {16})</span>
         </div>
         <Saiten
@@ -88,7 +97,7 @@ const Ex17_4A = () => {
       </div>{" "}
       {/* Question Header */}
       <div className="flex items-center gap-4 mb-6">
-        <h2 className=" font-bold">第4問</h2>
+        <h2 className=" font-bold">第4問 A</h2>
         <p>次の問い（A・B）に答えよ。（配点 35）</p>
       </div>
       {/* Section A */}
@@ -107,7 +116,7 @@ const Ex17_4A = () => {
 
         {/* Main Text */}
         <div className="space-y-4 text-base leading-relaxed">
-          <p>
+          <p className="text-justify indent-7">
             Physical activity in your childhood, such as playing sports and
             exercising, can greatly benefit your health when you are older.
             Therefore, it is important to promote physical activity in childhood
@@ -118,7 +127,7 @@ const Ex17_4A = () => {
             {Kaisetsu(showResults, "17-4A-1")}
           </p>
 
-          <p>
+          <p className="text-justify indent-7">
             A study was conducted at four schools in Denmark in order to
             investigate how much different types of schoolyard areas were used
             and whether students were active or passive in those areas. In the
@@ -137,7 +146,7 @@ const Ex17_4A = () => {
             {Kaisetsu(showResults, "17-4A-2")}
           </p>
 
-          <p>
+          <p className="text-justify indent-7">
             Using GPS devices and other instruments, the researchers measured
             the lengths of time the students spent in the different schoolyard
             areas as well as the degrees of their physical activity. Figure 1
@@ -168,7 +177,7 @@ const Ex17_4A = () => {
             </p>
           </div>
 
-          <p>
+          <p className="text-justify indent-7">
             Furthermore, the study revealed differences between the average
             amounts of time spent in schoolyards by Children and Adolescents. In
             comparison with Adolescents, Children spent more time in all
@@ -180,7 +189,7 @@ const Ex17_4A = () => {
             {Kaisetsu(showResults, "17-4A-4")}
           </p>
 
-          <p>
+          <p className="text-justify indent-7">
             When looking at the degree of physical activity, researchers
             discovered differences among the schoolyard areas. Students were
             most active in Grass and Playground areas. On the other hand,
@@ -189,7 +198,7 @@ const Ex17_4A = () => {
             {Kaisetsu(showResults, "17-4A-5")}
           </p>
 
-          <p>
+          <p className="text-justify indent-7">
             The findings of this study show the importance of investigating the
             potential of various environments and features in schoolyards. To
             promote students&apos; health, it is also beneficial to observe how
@@ -216,28 +225,25 @@ const Ex17_4A = () => {
                 </span>
                 {renderSelect("35", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="4A-1" />}
+                {Kaisetsu(showResults, "17-4A-7")}
               </div>
 
-              <div className="space-y-4 pl-8">
-                <p>
-                  ① Unlike Multi-court, Solid Surface contains artificial grass
-                  for younger students to play on.
-                </p>
-
-                <p>
-                  ② Unlike Multi-court, Solid Surface does not contain
-                  boundaries marked for students&apos; games.
-                </p>
-
-                <p>
-                  ③ Unlike Solid Surface, Multi-court has a relatively soft
-                  surface made of various materials.
-                </p>
-
-                <p>
-                  ④ Unlike Solid Surface, Multi-court is not surrounded by
-                  anything, which makes it easy to access.
-                </p>
+              <div className="space-y-4 md:pl-8">
+                <div>
+                  {[
+                    "Unlike Multi-court, Solid Surface contains artificial grass for younger students to play on.",
+                    "Unlike Multi-court, Solid Surface does not contain boundaries marked for students&apos; games.",
+                    "Unlike Solid Surface, Multi-court has a relatively soft surface made of various materials.",
+                    "Unlike Solid Surface, Multi-court is not surrounded by anything, which makes it easy to access.",
+                  ].map((text, index) => (
+                    <div key={index} className="flex my-2">
+                      <span className="mr-2 text-xl w-[20px]">
+                        {"①②③④"[index]}
+                      </span>
+                      <span className="">{text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -253,21 +259,58 @@ const Ex17_4A = () => {
                 {showResults && <Explain qa={qa} questionId="4A-2" />}
               </div>
 
-              <div className="space-y-4 pl-8">
-                <p>
-                  ① (A) Grass　　 (B) Multi-court　(C) Natural　　 (D)
-                  Playground
-                </p>
-                <p>
-                  ② (A) Grass　　 (B) Multi-court　(C) Playground　(D) Natural
-                </p>
-                <p>
-                  ③ (A) Multi-court (B) Grass　　　(C) Natural　　 (D)
-                  Playground
-                </p>
-                <p>
-                  ④ (A) Multi-court (B) Grass　　　(C) Playground　(D) Natural
-                </p>
+              <div className="space-y-4 md:pl-8">
+                <div>
+                  {[
+                    {
+                      options: [
+                        "(A) Grass",
+                        "(B) Multi-court",
+                        "(C) Natural",
+                        "(D) Playground",
+                      ],
+                    },
+                    {
+                      options: [
+                        "(A) Grass",
+                        "(B) Multi-court",
+                        "(C) Playground",
+                        "(D) Natural",
+                      ],
+                    },
+                    {
+                      options: [
+                        "(A) Multi-court",
+                        "(B) Grass",
+                        "(C) Natural",
+                        "(D) Playground",
+                      ],
+                    },
+                    {
+                      options: [
+                        "(A) Multi-court",
+                        "(B) Grass",
+                        "(C) Playground",
+                        "(D) Natural",
+                      ],
+                    },
+                  ].map((item, index) => (
+                    <div key={index} className="mb-4">
+                      <div className="flex">
+                        <span className="md:w-[20px] mr-4">
+                          {"①②③④"[index]}
+                        </span>
+                        <div className="flex flex-wrap">
+                          {item.options.map((option, optIndex) => (
+                            <span className="w-[150px]" key={optIndex}>
+                              {option}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -278,25 +321,25 @@ const Ex17_4A = () => {
                 <span>The main purpose of this passage is to</span>
                 {renderSelect("37", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="4A-3" />}
+                {Kaisetsu(showResults, "17-4A-8")}
               </div>
 
-              <div className="space-y-4 pl-8">
-                <p>
-                  ① discuss the benefits of being physically active at school in
-                  childhood
-                </p>
-                <p>
-                  ② give advice to increase the number of physically active
-                  adolescents
-                </p>
-                <p>
-                  ③ introduce schools that encourage students to play on grassed
-                  areas
-                </p>
-                <p>
-                  ④ show that types of schoolyards affect students&apos;
-                  behavior there
-                </p>
+              <div className="space-y-4 md:pl-8">
+                <div>
+                  {[
+                    "discuss the benefits of being physically active at school in childhood",
+                    "give advice to increase the number of physically active adolescents",
+                    "introduce schools that encourage students to play on grassed areas",
+                    "show that types of schoolyards affect students&apos; behavior there",
+                  ].map((text, index) => (
+                    <div key={index} className="flex my-2">
+                      <span className="mr-2 text-xl w-[20px]">
+                        {"①②③④"[index]}
+                      </span>
+                      <span className="">{text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -309,25 +352,25 @@ const Ex17_4A = () => {
                 </span>
                 {renderSelect("38", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="4A-4" />}
+                {Kaisetsu(showResults, "17-4A-9")}
               </div>
 
-              <div className="space-y-4 pl-8">
-                <p>
-                  ① The benefits of studying various school environments for
-                  different activities
-                </p>
-                <p>
-                  ② The connections between types of games and lengths of time
-                  being active
-                </p>
-                <p>
-                  ③ The influence of the schoolyard environment on
-                  Adolescents&apos; physical activity
-                </p>
-                <p>
-                  ④ The way schoolyard surfaces affect the time spent doing
-                  physical activity
-                </p>
+              <div className="space-y-4 md:pl-8">
+                <div>
+                  {[
+                    "The benefits of studying various school environments for different activities",
+                    "The connections between types of games and lengths of time being active",
+                    "The influence of the schoolyard environment on Adolescents&apos; physical activity",
+                    "The way schoolyard surfaces affect the time spent doing physical activity",
+                  ].map((text, index) => (
+                    <div key={index} className="flex my-2">
+                      <span className="mr-2 text-xl w-[20px]">
+                        {"①②③④"[index]}
+                      </span>
+                      <span className="">{text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

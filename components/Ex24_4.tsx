@@ -149,14 +149,9 @@ const Ex24_4 = () => {
           name: "Naturalness",
           aspects: ["light", "temperature"],
           description:
-            "Naturalness relates to the quality and quantity of light, both natural and artificial, and the temperature of the classroom.",
-          concerns: [
-            "Too much natural light may make screens and boards difficult to see",
-            "students may have difficulty reading or writing if there is a lack of light",
-            "hot summer classrooms do not promote effective study",
-          ],
-          recommendation:
-            "Schools should install systems allowing for the adjustment of both light and temperature.",
+            "Naturalness relates to the quality and quantity of light, both natural and artificial, and the temperature of the classroom. Too much natural light may make screens and boards difficult to see;students may have difficulty reading or writing if there is a lack of light. In addition, hot summer classrooms do not promote effective study. Schools should install systems allowing for the adjustment of both light and temperature.",
+          // concerns: [],
+          // recommendation: "",
         },
       ],
     },
@@ -517,13 +512,13 @@ const Ex24_4 = () => {
         </div>
 
         <div className="space-y-4">
-          <p>
+          <p className="indent-7">
             {articleData.introduction} {Kaisetsu(showResults, "24-4-2")}
           </p>
 
           {articleData.framework.components.map((component, idx) => (
             <div key={component.name} className="mb-4">
-              <p>
+              <p className="indent-7">
                 {component.description}
                 {component.guidelines && (
                   <span> For example, {component.guidelines.join(". ")}</span>
@@ -551,18 +546,18 @@ const Ex24_4 = () => {
                 </div>
               )}
 
-              {component.concerns && (
+              {/* {component.concerns && (
                 <div className="mt-2">
                   <p>
                     {component.concerns.join(". ")}. {component.recommendation}
                     {Kaisetsu(showResults, "24-4-5")}
                   </p>
                 </div>
-              )}
+              )} */}
             </div>
           ))}
 
-          <p>
+          <p className="indent-7">
             {articleData.conclusion} {Kaisetsu(showResults, "24-4-6")}
           </p>
         </div>

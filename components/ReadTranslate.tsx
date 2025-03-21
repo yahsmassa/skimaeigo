@@ -27,7 +27,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         disabled={!isSelected}
         className={cn(
           "ml-2 px-2 py-1 text-white rounded w-[60px]",
-          process.env.NEXT_PUBLIC_DEBUG === "true" ? "blick" : "hidden",
+          process.env.NEXT_PUBLIC_DEBUG === "true" ? "hidden" : "hidden",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >

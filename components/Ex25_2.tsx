@@ -129,7 +129,7 @@ export default function Ex25_2() {
           <p className="mb-4">Bristol, UK</p>
 
           {/* Flying vehicle illustration will be added as img */}
-          <div className="absolute top-0 right-0 w-48">
+          <div className="absolute top-12 right-0 w-40">
             <Image
               src="/images/Ex25-2-1.jpg"
               alt="Flying vehicle illustration"
@@ -190,39 +190,28 @@ export default function Ex25_2() {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span className="flex gap-1">
               Which of the following did all the guest speakers agree on?{" "}
             </span>
             {renderSelect("4", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="2-1" />}
           </div>
-          <div className="pl-8 space-y-2">
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                1
-              </span>
-              <p>Flying vehicles are widely accepted as being safe.</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                2
-              </span>
-              <p>Flying vehicles will improve responses to emergencies.</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                3
-              </span>
-              <p>Modern transportation problems are difficult to solve.</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                4
-              </span>
-              <p>
-                Zero-emission technologies cannot be applied to flying vehicles.
-              </p>
+          <div className="pl-2 md:pl-8 space-y-2">
+            <div>
+              {[
+                "Flying vehicles are widely accepted as being safe.",
+                "Flying vehicles will improve responses to emergencies.",
+                "Modern transportation problems are difficult to solve.",
+                "Zero-emission technologies cannot be applied to flying vehicles.",
+              ].map((text, index) => (
+                <div key={index} className="flex gap-2">
+                  <span className="inline-block w-6 h-6  text-center">
+                    {"①②③④"[index]}
+                  </span>
+                  <p>{text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -230,43 +219,32 @@ export default function Ex25_2() {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span className="flex gap-1">Flying vehicles will most likely</span>
             {renderSelect("5", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="2-2" />}
           </div>
-          <div className="pl-8 space-y-2">
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                1
-              </span>
-              <p>be used in small towns rather than large cities</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                2
-              </span>
-              <p>increase the number of traffic jams near hospitals</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                3
-              </span>
-              <p>prevent solutions to environmental problems</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                4
-              </span>
-              <p>require proper assessment and regulation</p>
-            </div>
+          <div className="pl-2 md:pl-8 space-y-2">
+            {[
+              "be used in small towns rather than large cities",
+              "increase the number of traffic jams near hospitals",
+              "prevent solutions to environmental problems",
+              "require proper assessment and regulation",
+            ].map((text, index) => (
+              <div key={index} className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center">
+                  {"①②③④"[index]}
+                </span>
+                <p>{text}</p>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span className="flex gap-1">
               One guest speaker&apos;s{" "}
               <span className="border-b border-black">opinion</span> is that{" "}
@@ -274,69 +252,47 @@ export default function Ex25_2() {
             {renderSelect("6", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="2-3" />}
           </div>
-          <div className="pl-8 space-y-2">
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                1
-              </span>
-              <p>flying taxi centres will be based in rural areas</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                2
-              </span>
-              <p>flying taxi technology has already been tested</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                3
-              </span>
-              <p>flying taxis are already widespread</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                4
-              </span>
-              <p>flying taxis are too expensive to run</p>
-            </div>
+          <div className="pl-2 md:pl-8 space-y-2">
+            {[
+              "flying taxi centres will be based in rural areas",
+              "flying taxi technology has already been tested",
+              "flying taxis are already widespread",
+              "flying taxis are too expensive to run",
+            ].map((text, index) => (
+              <div key={index} className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center">
+                  {"①②③④"[index]}
+                </span>
+                <p>{text}</p>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span className="flex gap-1">
               Which of the following is mentioned in the blog?{" "}
             </span>
-            {renderSelect("7", 4, answers, setAnswers)}.
+            {renderSelect("7", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2-4" />}
           </div>
-          <div className="pl-8 space-y-2">
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                1
-              </span>
-              <p>Costs of flying ambulance services</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                2
-              </span>
-              <p>Flying transport using solar-power</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                3
-              </span>
-              <p>Parking areas for flying taxis</p>
-            </div>
-            <div className="flex gap-2">
-              <span className="inline-block w-6 h-6 border border-black rounded-full text-center">
-                4
-              </span>
-              <p>Urban trials of flying taxi services</p>
-            </div>
+          <div className="pl-2 md:pl-8 space-y-2">
+            {[
+              "Costs of flying ambulance services",
+              "Flying transport using solar-power",
+              "Parking areas for flying taxis",
+              "Urban trials of flying taxi services",
+            ].map((text, index) => (
+              <div key={index} className="flex gap-2">
+                <span className="inline-block w-6 h-6 text-center">
+                  {"①②③④"[index]}
+                </span>
+                <p>{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

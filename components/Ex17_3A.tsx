@@ -20,11 +20,13 @@ const JapaneseTestQuestion = () => {
           answer: 0,
         },
       ],
-      rightAnswerString: "4",
+      rightAnswerString: "2",
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は④"],
+      explanation: [
+        "正解は② 明日の放課後、あなたのオフィスにお伺いしてもよろしいでしょうか？",
+      ],
     },
     {
       questionId: "3A-2",
@@ -34,11 +36,11 @@ const JapaneseTestQuestion = () => {
           answer: 0,
         },
       ],
-      rightAnswerString: "4",
+      rightAnswerString: "3",
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は④"],
+      explanation: ["正解は③ それは高すぎます。"],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -101,7 +103,12 @@ const JapaneseTestQuestion = () => {
               {
                 speaker: "Student",
                 text: (
-                  <div className="flex items-center -mt-1 md:mt-0">
+                  <div
+                    className={cn(
+                      "flex items-center -mt-1 md:mt-0",
+                      showResults && qaFormat(qa, "3A-1")
+                    )}
+                  >
                     <span>I see. Well . . . </span>
                     {renderSelect("27", 4, answers, setAnswers)}
                     {showResults && <Explain qa={qa} questionId="3A-1" />}
@@ -127,7 +134,7 @@ const JapaneseTestQuestion = () => {
             ))}
           </div>
 
-          <div className="mt-4 md:mt-0 mb-6 md:ml-6">
+          <div className="mt-4 md:mt-6 mb-6 md:ml-12">
             {[
               "Are you sure you can skip the appointments?",
               "Could I come to your office after school tomorrow?",
@@ -172,11 +179,16 @@ const JapaneseTestQuestion = () => {
               {
                 speaker: "Ethan",
                 text: (
-                  <div className="flex flex-wrap items-center">
+                  <div
+                    className={cn(
+                      "flex flex-wrap items-center",
+                      showResults && qaFormat(qa, "3A-2")
+                    )}
+                  >
                     <span>I know, but </span>
                     {renderSelect("28", 4, answers, setAnswers)}
                     <span className="mr-2"></span>
-                    <span>. Let's find</span>
+                    <span className="mr-2">. Let's find</span>
                     <span className="mr-2">somewhere else</span>
                     <span className="mr-2">to go.</span>
                     {showResults && <Explain qa={qa} questionId="3A-2" />}
@@ -190,15 +202,15 @@ const JapaneseTestQuestion = () => {
                 <div className="font-sans text-sm md:text-base w-[40px] md:w-[50px] font-bold">
                   {dialogue.questionNumber}
                 </div>
-                <div className="text-sm md:text-base w-[60px] font-bold">
+                <div className="text-sm md:text-base md:text-right w-[60px] font-bold">
                   {dialogue.speaker}:
                 </div>
-                <div className="">{dialogue.text}</div>
+                <div className="md:ml-2">{dialogue.text}</div>
               </div>
             ))}
           </div>
 
-          <div className="mt-4 md:mt-0 mb-6 md:ml-6">
+          <div className="mt-4 md:mt-0 mb-6 md:ml-12">
             {[
               "I don't feel like going out",
               "it helps us to get there",

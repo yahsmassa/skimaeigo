@@ -165,12 +165,12 @@ const TheContest = () => {
       <div className="space-y-8">
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Which person is telling the story? </span>
-            {renderSelect("8", 4, answers, setAnswers)}.
+            {renderSelect("8", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3-1" />}
           </div>
-          <div className="pl-8 space-y-2">
+          <div className="pl-2 md:pl-8 space-y-2">
             <p>① Kei</p>
             <p>② Ren</p>
             <p>③ Tomo</p>
@@ -180,7 +180,7 @@ const TheContest = () => {
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               Choose <span className="underline">four</span> out of the five
               options (①～⑤) and put them in the order they happened.
@@ -196,7 +196,7 @@ const TheContest = () => {
             {renderSelect("12", 5, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3-2" />}
           </div>
-          <div className="pl-8 space-y-2">
+          <div className="pl-2 md:pl-8 space-y-2">
             <p>① The band changed its attitude.</p>
             <p>② The band decided to practise more often.</p>
             <p>③ The band leader identified the problem.</p>
@@ -207,14 +207,15 @@ const TheContest = () => {
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
-            <span>
-              How did the band most likely feel after the competition?{" "}
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
+            <span className="mr-2">
+              How did the band most likely feel after
             </span>
+            <span className="mr-2">the competition? </span>
             {renderSelect("13", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3-3" />}
           </div>
-          <div className="pl-8 space-y-2">
+          <div className="pl-2 md:pl-8 space-y-2">
             <p>① Awful</p>
             <p>② Embarrassed</p>
             <p>③ Independent</p>

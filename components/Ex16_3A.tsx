@@ -23,8 +23,11 @@ const JapaneseExamQuestion = () => {
       rightAnswerString: "4",
       answerString: "",
       isCorrect: false,
-      points: 3,
-      explanation: ["正解は④"],
+      points: 4,
+      explanation: [
+        "正解は④ 彼が見ないよう、それを隠しておいた方がいいわよ、いつ入ってくるかわからないと言ってるのでこれが自然",
+        "翻訳を参照",
+      ],
     },
     {
       questionId: "3A-2",
@@ -37,8 +40,11 @@ const JapaneseExamQuestion = () => {
       rightAnswerString: "2",
       answerString: "",
       isCorrect: false,
-      points: 3,
-      explanation: ["正解は②"],
+      points: 4,
+      explanation: [
+        "正解は② 時間の無駄だよ 前後の文脈からFredが否定的な発言をしていると予測できる",
+        "翻訳を参照",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -61,9 +67,7 @@ const JapaneseExamQuestion = () => {
       {/* Question Header */}
       <div className="flex items-center mb-6">
         <h2 className="text-xl font-bold mr-2">第3問</h2>
-        <p className="text-base md:text-lg">
-          次の問い(A～C)に答えよ。（配点 41）
-        </p>
+        <p className="text-base md:text-lg">次の問い(A)に答えよ。（配点 8）</p>
       </div>
       {/* Section A */}
       <div className="mb-8">

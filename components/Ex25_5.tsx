@@ -26,7 +26,9 @@ const Ex25_5 = () => {
       points: 3,
       explanation: [
         "①「イベント運営経験の不足」が正解",
-        "② あなたのプレゼンテーションスキルに関する懸念、③ 将来の雇用の可能性、④ あなたの英語メール作成能力",
+        "② あなたのプレゼンテーションスキルに関する懸念",
+        "③ 将来の雇用の可能性",
+        "④ あなたの英語メール作成能力",
       ],
     },
     {
@@ -49,7 +51,10 @@ const Ex25_5 = () => {
       explanation: [
         "正解は [19]が6、[20]が4 です。",
         "⑥「伝統的なビジネスモデルの更新」、④「地元の食材の利点を再発見する」",
-        "① 私たちの町の英雄の記念像を建設すること、② 地元ボランティアとの連携、③ 異文化交流イベントの企画、⑤ 村の教会の改修",
+        "① 私たちの町の英雄の記念像を建設すること",
+        "② 地元ボランティアとの連携",
+        "③ 異文化交流イベントの企画",
+        "⑤ 村の教会の改修",
       ],
     },
     {
@@ -66,7 +71,9 @@ const Ex25_5 = () => {
       points: 3,
       explanation: [
         "正解は①「会議の登録手続き」、登録を会議の7日前に締め切るのは短すぎます。資料を準備して情報を送る時間が足りませんという内容から",
-        "② メインホールを会場として、③ 市長のスピーチタイトル、④ 営業時間",
+        "② メインホールを会場として",
+        "③ 市長のスピーチタイトル",
+        "④ 営業時間",
       ],
     },
     {
@@ -247,6 +254,7 @@ const Ex25_5 = () => {
         {/* Confirmation Points */}
         <p className="mb-2">
           I would like you to confirm the following points:
+          {Kaisetsu(showResults, "25-5-6")}
         </p>
         <ul className="list-disc pl-6 mb-4">
           <li>The conference will start at 9:45 a.m. and end at 4:45 p.m.</li>
@@ -258,6 +266,7 @@ const Ex25_5 = () => {
         {/* To Be Decided List */}
         <p className="mb-2">
           Below is a list of things that still need to be decided:
+          {Kaisetsu(showResults, "25-5-7")}
         </p>
         <ul className="list-disc pl-6 mb-4">
           <li>Can we use the cafeteria for the lunch time reception?</li>
@@ -272,15 +281,18 @@ const Ex25_5 = () => {
         <p className="mb-4">
           The number of volunteers that can help with the conference isn&apos;t
           set yet. I&apos;ll send you the list as soon as possible.
+          {Kaisetsu(showResults, "25-5-8")}
         </p>
 
         <p className="mb-4">
           This is my first time being on a committee like this, and I am rather
           anxious, so I would appreciate any advice you have.
+          {Kaisetsu(showResults, "25-5-9")}
         </p>
 
         <p className="mb-4">
           I&apos;m looking forward to assisting and attending the presentations.
+          {Kaisetsu(showResults, "25-5-10")}
         </p>
 
         <p className="mb-4">With regards,</p>

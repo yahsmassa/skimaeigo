@@ -28,7 +28,10 @@ const JapaneseExam2 = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解②と⑥"],
+      explanation: [
+        "正解②と⑥",
+        "I find it difficult to keep it 〜しておくことが難しいと思う",
+      ],
     },
     {
       questionId: "2B-2",
@@ -46,7 +49,11 @@ const JapaneseExam2 = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解⑤と①"],
+      explanation: [
+        "正解⑤と①",
+        "it may cost you a few hours ",
+        "* cost A B .. A（人）にB（時間・労力）がかかる",
+      ],
     },
     {
       questionId: "2B-3",
@@ -64,7 +71,11 @@ const JapaneseExam2 = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解⑥と②"],
+      explanation: [
+        "正解⑥と②",
+        "how come you are leaving earlier than どうしていつもより早く帰るの？",
+        "how come S V... で「なぜ・・？」という意味",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

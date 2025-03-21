@@ -108,13 +108,13 @@ const Ex21_3B = () => {
           </h2>
 
           <div className="space-y-4">
-            <p>
+            <p className="indent-7">
               Hello, everyone. I&apos;m Sarah King, an exchange student from
               London. I&apos;d like to share something important with you today.
               {Kaisetsu(showResults, "21-3B-1")}
             </p>
 
-            <p>
+            <p className="indent-7">
               You may have heard of the Sakura International Centre. It provides
               valuable opportunities for Japanese and foreign residents to get
               to know each other. Popular events such as cooking classes and
@@ -125,7 +125,7 @@ const Ex21_3B = () => {
               {Kaisetsu(showResults, "21-3B-2")}
             </p>
 
-            <p>
+            <p className="indent-7">
               I learnt about the problem a few months ago. While shopping in
               town, I saw some people taking part in a fund-raising campaign. I
               spoke to the leader of the campaign, Katy, who explained the
@@ -136,7 +136,7 @@ const Ex21_3B = () => {
               {Kaisetsu(showResults, "21-3B-3")}
             </p>
 
-            <p>
+            <p className="indent-7">
               Last month, I attended a lecture on art at the centre. Again, I
               saw people trying to raise money, and I decided to help. They were
               happy when I joined them in asking passers-by for donations. We
@@ -148,7 +148,7 @@ const Ex21_3B = () => {
               {Kaisetsu(showResults, "21-3B-4")}
             </p>
 
-            <p>
+            <p className="indent-7">
               Now, I&apos;m asking you to join me in the fund-raising campaign
               to help the Sakura International Centre. Please email me today! As
               an exchange student, my time in Japan is limited, but I want to

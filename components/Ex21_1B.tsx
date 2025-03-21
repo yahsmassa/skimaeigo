@@ -96,7 +96,7 @@ const Ex21_1B = () => {
       <div className="border border-gray-300 p-6 space-y-4">
         <h1 className="text-xl font-bold">TYLER QUICK FAN CLUB</h1>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           Being a member of the{" "}
           <span className="font-bold">TYLER QUICK (TQ)</span> fan club is so
           much fun! You can keep up with the latest news, and take part in many
@@ -109,7 +109,7 @@ const Ex21_1B = () => {
           {Kaisetsu(showResults, "21-1B-1")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           <span className="font-bold">TQ</span> is loved all around the world.
           You can join from any country, and you can use the membership card for
           one year. The <span className="font-bold">TQ</span> fan club has three

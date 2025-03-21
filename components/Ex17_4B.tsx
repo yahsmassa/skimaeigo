@@ -23,7 +23,10 @@ const Ex17_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は④、翻訳参照",
+        "This is a great way to share your creations with a wide audience.とあるので、④が自然",
+      ],
     },
     {
       questionId: "4B-2",
@@ -37,7 +40,10 @@ const Ex17_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は②、翻訳参照",
+        "チームという単語があるので、Aと勘違いしやすいが、姉妹校との絆なのでB",
+      ],
     },
     {
       questionId: "4B-3",
@@ -51,7 +57,10 @@ const Ex17_4B = () => {
       answerString: "",
       isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は④、翻訳参照",
+        "締め切りの制約を満たしている、①でCategory Dがあってるようにも思えるが、ドラマティックなエンディングでないので違う、",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

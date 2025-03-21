@@ -153,7 +153,7 @@ const Ex23_5 = () => {
 
         {/* Main Content */}
         <div className="space-y-6 leading-relaxed">
-          <p>
+          <p className="indent-7">
             The ball flew at lightning speed to my backhand. It was completely
             unexpected and I had no time to react. I lost the point and the
             match. Defeat... Again! This is how it was in the first few months
@@ -163,7 +163,7 @@ const Ex23_5 = () => {
             {Kaisetsu(showResults, "23-5-1")}
           </p>
 
-          <p>
+          <p className="indent-7">
             In middle school, I loved football. I was one of the top scorers,
             but I didn&apos;t get along with my teammates. The coach often said
             that I should be more of a team player. I knew I should work on the
@@ -171,7 +171,7 @@ const Ex23_5 = () => {
             {Kaisetsu(showResults, "23-5-2")}
           </p>
 
-          <p>
+          <p className="indent-7">
             I had to leave the football club when my family moved to a new town.
             I wasn&apos;t upset as I had decided to stop playing football
             anyway. My new school had a table tennis club, coached by the PE
@@ -181,7 +181,7 @@ const Ex23_5 = () => {
             {Kaisetsu(showResults, "23-5-3")}
           </p>
 
-          <p>
+          <p className="indent-7">
             At first, I lost more games than I won. I was frustrated and often
             went straight home after practice, not speaking to anyone. One day,
             however, Mr Trent said to me, &quot;You could be a good player, Ben,
@@ -194,7 +194,7 @@ const Ex23_5 = () => {
             {Kaisetsu(showResults, "23-5-4")}
           </p>
 
-          <p>
+          <p className="indent-7">
             I deliberately modified my style of play, paying closer attention to
             my opponent&apos;s moves. It was not easy, and took a lot of
             concentration. My efforts paid off, however, and my play improved.
@@ -207,7 +207,7 @@ const Ex23_5 = () => {
             {Kaisetsu(showResults, "23-5-5")}
           </p>
 
-          <p>
+          <p className="indent-7">
             My older brother Patrick was one of the few people I could
             communicate with well. One day, I tried to explain my problems with
             communication to him, but couldn&apos;t make him understand. We
@@ -219,7 +219,7 @@ const Ex23_5 = () => {
             {Kaisetsu(showResults, "23-5-6")}
           </p>
 
-          <p>
+          <p className="indent-7">
             At that time, I didn&apos;t understand, but soon after our
             conversation, I won a silver medal in a table tennis tournament. My
             classmates seemed really pleased. One of them, George, came running
@@ -230,7 +230,7 @@ const Ex23_5 = () => {
             {Kaisetsu(showResults, "23-5-7")}
           </p>
 
-          <p>
+          <p className="indent-7">
             Why was he upset? I thought about this incident for a long time. Why
             did he suggest a party? Should I have said something different? A
             lot of questions came to my mind, but then I realised that he was
@@ -242,7 +242,7 @@ const Ex23_5 = () => {
             {Kaisetsu(showResults, "23-5-8")}
           </p>
 
-          <p>
+          <p className="indent-7">
             I&apos;m still not the best communicator in the world, but I
             definitely feel more confident in my communication skills now than
             before. Next year, my friends and I are going to co-ordinate the

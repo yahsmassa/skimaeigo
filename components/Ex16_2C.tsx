@@ -23,8 +23,11 @@ const JapaneseTestThirdVersion = () => {
       rightAnswerString: "2",
       answerString: "",
       isCorrect: false,
-      points: 2,
-      explanation: ["正解②"],
+      points: 4,
+      explanation: [
+        "正解は② I don't think our teachers will allow us to light a fire",
+        "* don't think SV ..「〜でないと思う」、* allow A .. to不定詞 「Aが〜するのを許す」",
+      ],
     },
     {
       questionId: "2C-2",
@@ -37,8 +40,11 @@ const JapaneseTestThirdVersion = () => {
       rightAnswerString: "2",
       answerString: "",
       isCorrect: false,
-      points: 2,
-      explanation: ["正解②"],
+      points: 4,
+      explanation: [
+        "正解は② No one is more talented than you",
+        "否定＋比較級で最上級の意味になる例",
+      ],
     },
     {
       questionId: "2C-3",
@@ -50,9 +56,12 @@ const JapaneseTestThirdVersion = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解④"],
+      isCorrect: true,
+      points: 4,
+      explanation: [
+        "正解は④ should get someone else to teach him",
+        "* get A to不定詞 「Aに〜してもらう」",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -60,8 +69,8 @@ const JapaneseTestThirdVersion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 B"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <h1 className="text-lg font-bold">{"第２問 C"}</h1>
+          <span className="text-gray-600">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}

@@ -118,7 +118,7 @@ const Ex21_6A = () => {
           </h1>
 
           <div className="space-y-4">
-            <p>
+            <p className="indent-7">
               Ice hockey is a team sport enjoyed by a wide variety of people
               around the world. The object of the sport is to move a hard rubber
               disk called a &quot;puck&quot; into the other team&apos;s net with
@@ -130,7 +130,7 @@ const Ex21_6A = () => {
               {Kaisetsu(showResults, "21-6A-1")}
             </p>
 
-            <p>
+            <p className="indent-7">
               The speed of the sport and the slippery surface of the ice rink
               make it easy for players to fall down or bump into each other
               resulting in a variety of injuries. In an attempt to protect
@@ -140,7 +140,7 @@ const Ex21_6A = () => {
               {Kaisetsu(showResults, "21-6A-2")}
             </p>
 
-            <p>
+            <p className="indent-7">
               A concussion is an injury to the brain that affects the way it
               functions; it is caused by either direct or indirect impact to the
               head, face, neck, or elsewhere and can sometimes cause temporary
@@ -149,6 +149,56 @@ const Ex21_6A = () => {
               experience ringing in the ears. Some believe they just have a
               slight headache and do not realize they have injured their brains.
               {Kaisetsu(showResults, "21-6A-3")}
+            </p>
+            <p className="indent-7">
+              In addition to not realizing the seriousness of the injury,
+              players tend to worry about what their coach will think. In the
+              past, coaches preferred tough players who played in spite of the
+              pain. In other words, while it would seem logical for an injured
+              player to stop playing after getting hurt, many did not. Recently,
+              however, it has been found that concussions can have serious
+              effects that last a lifetime. People with a history of concussion
+              may have trouble concentrating or sleeping. Moreover, they may
+              suffer from psychological problems such as depression and mood
+              changes. In some cases, players may develop smell and taste
+              disorders.
+              {Kaisetsu(showResults, "21-6A-4")}
+            </p>
+            <p className="indent-7">
+              The National Hockey League (NHL), consisting of teams in Canada
+              and the United States, has been making stricter rules and
+              guidelines to deal with concussions. For example, in 2001, the NHL
+              introduced the wearing of visors—pieces of clear plastic attached
+              to the helmet that protect the face. At first, it was optional and
+              many players chose not to wear them. Since 2013, however, it has
+              been required. In addition, in 2004, the NHL began to give more
+              severe penalties, such as suspensions and fines, to players who
+              hit another player in the head deliberately.
+              {Kaisetsu(showResults, "21-6A-5")}
+            </p>
+
+            <p className="indent-7">
+              The NHL also introduced a concussion spotters system in 2015. In
+              this system, NHL officials with access to live streaming and video
+              watch for visible indications of concussion during each game. At
+              first, two concussion spotters, who had no medical training,
+              monitored the game in the arena. The following year, one to four
+              concussion spotters with medical training were added. They
+              monitored each game from the League's head office in New York. If
+              a spotter thinks that a player has suffered a concussion, the
+              player is removed from the game and is taken to a "quiet room" for
+              an examination by a medical doctor. The player is not allowed to
+              return to the game until the doctor gives permission.
+              {Kaisetsu(showResults, "21-6A-6")}
+            </p>
+
+            <p className="indent-7">
+              The NHL has made much progress in making ice hockey a safer sport.
+              As more is learned about the causes and effects of concussions,
+              the NHL will surely take further measures to ensure player safety.
+              Better safety might lead to an increase in the number of ice
+              hockey players and fans.
+              {Kaisetsu(showResults, "21-6A-7")}
             </p>
           </div>
         </div>
@@ -171,7 +221,7 @@ const Ex21_6A = () => {
             <li>Six players on each team</li>
             <li>Sport played on ice at a high speed</li>
           </ul>
-          {Kaisetsu(showResults, "21-6A-4")}
+          {Kaisetsu(showResults, "21-6A-8")}
           <Image
             src="/images/Ex21-6A-1.webp"
             alt="Hockey player silhouette"
@@ -192,7 +242,7 @@ const Ex21_6A = () => {
             <p className="mb-2">
               An injury to the brain that affects the way it functions
             </p>
-            {Kaisetsu(showResults, "21-6A-5")}
+            {Kaisetsu(showResults, "21-6A-9")}
           </div>
         </div>
 

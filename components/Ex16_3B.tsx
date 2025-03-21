@@ -20,11 +20,14 @@ const JapaneseTestComponent = () => {
           answer: 0,
         },
       ],
-      rightAnswerString: "2",
+      rightAnswerString: "1",
       answerString: "",
       isCorrect: false,
-      points: 3,
-      explanation: ["正解は②"],
+      points: 5,
+      explanation: [
+        "正解は① 彼らは世界中の他の生徒と比較して科学で良い成績を収めています。",
+        "翻訳参照",
+      ],
     },
     {
       questionId: "3B-2",
@@ -34,10 +37,27 @@ const JapaneseTestComponent = () => {
           answer: 0,
         },
       ],
+      rightAnswerString: "2",
+      answerString: "",
+      isCorrect: false,
+      points: 5,
+      explanation: [
+        "正解は② 彼らはその治療法がどの程度科学的なものなのかを気にする。",
+        "翻訳参照",
+      ],
+    },
+    {
+      questionId: "3B-3",
+      qa: [
+        {
+          questionNumber: "31",
+          answer: 0,
+        },
+      ],
       rightAnswerString: "1",
       answerString: "",
       isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: ["正解は①"],
     },
   ];

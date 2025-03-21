@@ -24,7 +24,7 @@ const Ex16_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は② マイクのために特別な食事を作っていた", "翻訳参照"],
     },
     {
       questionId: "5-2",
@@ -38,7 +38,7 @@ const Ex16_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は③ 家族の生活費がもっと必要だったから", "翻訳参照"],
     },
     {
       questionId: "5-3",
@@ -52,7 +52,7 @@ const Ex16_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は② 彼は勉強への興味を失った。", "翻訳参照"],
     },
     {
       questionId: "5-4",
@@ -67,7 +67,10 @@ const Ex16_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は③ 料理を通して父親と繋がりを持つようになったこと",
+        "翻訳参照",
+      ],
     },
     {
       questionId: "5-5",
@@ -81,7 +84,10 @@ const Ex16_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は② 彼に近い人たちと意味のある人間関係を持つこと",
+        "翻訳参照",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -115,7 +121,7 @@ const Ex16_5 = () => {
       </div>
 
       <div className="space-y-4 text-base leading-relaxed">
-        <p>
+        <p className="indent-7">
           &quot;No one thought I would amount to much,&quot; Uncle John said, as
           he stood in the kitchen, showing me how he put together an
           award-winning four-course dinner. I had just graduated from
@@ -127,7 +133,7 @@ const Ex16_5 = () => {
           {Kaisetsu(showResults, "16-5-1")}
         </p>
 
-        <p>
+        <p className="indent-7">
           When Uncle John was young, his family lived in the countryside. His
           mother taught at a local school, but when John was 10, she had to quit
           to take care of her elderly mother. Until then, his father had been
@@ -138,7 +144,7 @@ const Ex16_5 = () => {
           {Kaisetsu(showResults, "16-5-2")}
         </p>
 
-        <p>
+        <p className="indent-7">
           Gradually, because of his busy work schedule, John&apos;s father began
           looking tired whenever he came home. To tell the truth, he had changed
           from being good-humored to being in a bad mood all the time. When he
@@ -152,7 +158,7 @@ const Ex16_5 = () => {
           {Kaisetsu(showResults, "16-5-3")}
         </p>
 
-        <p>
+        <p className="indent-7">
           One Sunday morning, while John&apos;s mom was out taking care of her
           own mother, his father was napping in the TV room. John&apos;s sisters
           were hungry, so John started to cook something for them. He was not
@@ -160,12 +166,9 @@ const Ex16_5 = () => {
           {Kaisetsu(showResults, "16-5-4")}
         </p>
 
-        <p>
+        <p className="indent-7">
           Suddenly, the kitchen door opened, and his father was standing there.
           {Kaisetsu(showResults, "16-5-5")}
-        </p>
-
-        <p>
           &quot;Dad, I&apos;m sorry if I woke you up. Chelsea and Jessica are
           hungry, and I was trying to cook them some eggs.&quot; His dad looked
           at him seriously for a moment. &quot;Eggs? Eggs aren&apos;t good for
@@ -177,7 +180,7 @@ const Ex16_5 = () => {
           {Kaisetsu(showResults, "16-5-6")}
         </p>
 
-        <p>
+        <p className="indent-7">
           To John&apos;s surprise, his father became energetic when he started
           cooking. He took John aside and explained to him in detail that
           cooking was, in a way, like a science project. &quot;You need to
@@ -191,7 +194,7 @@ const Ex16_5 = () => {
           {Kaisetsu(showResults, "16-5-7")}
         </p>
 
-        <p>
+        <p className="indent-7">
           Uncle John worked his way through college with jobs in restaurants,
           and eventually he became a chef at a famous restaurant. He really
           liked the job and worked hard developing his own special techniques.
@@ -201,7 +204,7 @@ const Ex16_5 = () => {
           {Kaisetsu(showResults, "16-5-8")}
         </p>
 
-        <p>
+        <p className="indent-7">
           This brings us back to the contest. Uncle John and I were excited
           about his being selected. Yet, he shared something really touching
           with me there in the kitchen. &quot;You know, Mike,&quot; Uncle John
@@ -222,6 +225,7 @@ const Ex16_5 = () => {
             <span>At the beginning of the story, Uncle John was</span>
             {renderSelect("42", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-1" />}
+            {Kaisetsu(showResults, "16-5-10")}
           </div>
 
           <div className="ml-8 mt-4 space-y-2">
@@ -244,6 +248,7 @@ const Ex16_5 = () => {
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-2" />}
+            {Kaisetsu(showResults, "16-5-11")}
           </div>
 
           <div className="ml-8 mt-4 space-y-2">
@@ -264,6 +269,7 @@ const Ex16_5 = () => {
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-3" />}
+            {Kaisetsu(showResults, "16-5-12")}
           </div>
           <div className="ml-8 mt-4 space-y-2">
             <p>① He just wanted to rest at home.</p>
@@ -279,6 +285,7 @@ const Ex16_5 = () => {
             <span>What helped to change Uncle John&apos;s life the most?</span>
             {renderSelect("45", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-4" />}
+            {Kaisetsu(showResults, "16-5-13")}
           </div>
           <div className="ml-8 mt-4 space-y-2">
             <p>① Eating an award-winning dinner with his friends</p>
@@ -297,6 +304,7 @@ const Ex16_5 = () => {
             <span>What does Uncle John find most rewarding?</span>
             {renderSelect("46", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-5" />}
+            {Kaisetsu(showResults, "16-5-14")}
           </div>
           <div className="ml-8 mt-4 space-y-2">
             <p>① Developing unique four-course dinners for famous people</p>

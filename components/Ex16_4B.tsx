@@ -20,9 +20,8 @@ const Ex16_4B = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: ["正解は② デッサン教室", "翻訳参照"],
     },
     {
       questionId: "4B-2",
@@ -34,9 +33,8 @@ const Ex16_4B = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: ["正解は③ ショートツアー、20ドル", "翻訳参照"],
     },
     {
       questionId: "4B-3",
@@ -48,9 +46,11 @@ const Ex16_4B = () => {
       ],
       rightAnswerString: "1",
       answerString: "",
-      isCorrect: false,
       points: 5,
-      explanation: [],
+      explanation: [
+        "正解は① 事前予約は「アートトーク」には必要ありません。",
+        "翻訳参照",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

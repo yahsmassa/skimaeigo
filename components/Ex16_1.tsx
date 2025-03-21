@@ -109,6 +109,13 @@ const JapaneseTestQuestion = () => {
   const [qa, setQA] = useState<QandA[]>(question); // 日本語の番号文字
   const japaneseNumbers = ["①", "②", "③", "④"];
 
+  const UnderlinedText = ({ children }: { children: React.ReactNode }) => (
+    <span className="relative">
+      {children}
+      <span className="absolute bottom-[-3px] left-0 w-full h-[1px] bg-black"></span>
+    </span>
+  );
+
   // 問題の選択肢データを配列として定義
   const questionData = {
     sectionA: [
@@ -124,19 +131,19 @@ const JapaneseTestQuestion = () => {
       {
         questionNumber: 2,
         options: [
-          "<u>b</u>ounded",
-          "<u>f</u>ounded",
-          "su<u>rr</u>ounded",
-          "<u>w</u>ounded",
+          "b<u>ou</u>nded",
+          "f<u>ou</u>nded",
+          "surr<u>ou</u>nded",
+          "w<u>ou</u>nded",
         ],
       },
       {
         questionNumber: 3,
         options: [
-          "<u>ch</u>urch",
-          "<u>c</u>urious",
-          "<u>c</u>urtain",
-          "o<u>cc</u>ur",
+          "ch<u>ur</u>ch",
+          "c<u>ur</u>ious",
+          "c<u>ur</u>tain",
+          "occ<u>ur</u>",
         ],
       },
     ],
@@ -160,13 +167,36 @@ const JapaneseTestQuestion = () => {
     ],
   };
 
-  // 選択肢を表示するコンポーネント
+  // HTML文字列をパースして React 要素に変換するコンポーネント
+  const ParsedHTML = ({ html }: { html: string }) => {
+    // 正規表現で <u> タグを検出
+    const parts = html.split(/(<u>.*?<\/u>)/);
+
+    return (
+      <>
+        {parts.map((part, i) => {
+          if (part.startsWith("<u>") && part.endsWith("</u>")) {
+            // <u> タグの内容を抽出
+            const content = part.replace(/<\/?u>/g, "");
+            return (
+              <u key={i} className="underline underline-offset-4">
+                {content}
+              </u>
+            );
+          }
+          return <React.Fragment key={i}>{part}</React.Fragment>;
+        })}
+      </>
+    );
+  };
+
+  // QuestionOptions コンポーネントを修正
   const QuestionOptions = ({ options }: { options: string[] }) => (
     <div className="grid grid-cols-4 gap-4 pl-2 md:pl-8">
       {options.map((word, index) => (
-        <div key={index} className="flex flex-col items-center">
-          <span className="mb-2">{japaneseNumbers[index]}</span>
-          <span dangerouslySetInnerHTML={{ __html: word }} />
+        <div key={index} className="flex flex-row">
+          <span className="text-xl mb-2 mr-2">{japaneseNumbers[index]}</span>
+          <ParsedHTML html={word} />
         </div>
       ))}
     </div>

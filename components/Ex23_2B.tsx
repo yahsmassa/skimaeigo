@@ -139,15 +139,13 @@ const Ex23_2B = () => {
 
         {/* Main Content */}
         <div className="mb-8 leading-relaxed">
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             Most students come to my school by bus or train. I often see a lot
             of students playing games on their phones or chatting. However, they
             could also use this time for reading or doing homework. We started
             this activity to help students use their commuting time more
             effectively.
             {Kaisetsu(showResults, "23-2B-1")}
-          </p>
-          <p className="mb-4">
             Students had to complete a commuting activity chart from January
             17th to February 17th. A total of 300 students participated: More
             than two thirds of them were second-years; about a quarter were

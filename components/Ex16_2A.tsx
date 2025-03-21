@@ -24,7 +24,7 @@ const JapaneseTestAlternate = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解①"],
+      explanation: ["正解は① have already arrived 過去完了"],
     },
     {
       questionId: "2A-2",
@@ -38,7 +38,7 @@ const JapaneseTestAlternate = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解①"],
+      explanation: ["正解は① Although Tokyo has... 従属接続詞"],
     },
     {
       questionId: "2A-3",
@@ -51,7 +51,10 @@ const JapaneseTestAlternate = () => {
       rightAnswerString: "2",
       answerString: "",
       points: 2,
-      explanation: ["正解②"],
+      explanation: [
+        "正解は② バイリンガルの両親に育てられた子供たちは、自然と2つの言語を学ぶかもしれません。",
+        "* bring up 育てる",
+      ],
     },
     {
       questionId: "2A-4",
@@ -64,7 +67,10 @@ const JapaneseTestAlternate = () => {
       rightAnswerString: "4",
       answerString: "",
       points: 2,
-      explanation: ["正解④"],
+      explanation: [
+        "正解は④ 私の姉は真面目な高校生ではありませんでした、そして私もそうだった",
+        "neither + 倒置 「・・もまた〜ない」",
+      ],
     },
     {
       questionId: "2A-5",
@@ -77,7 +83,10 @@ const JapaneseTestAlternate = () => {
       rightAnswerString: "2",
       answerString: "",
       points: 2,
-      explanation: ["正解②"],
+      explanation: [
+        "正解は② 映画が始まる前に、携帯電話の電源を切っていることを確認して。",
+        "make sure (that) SV ... 「・・ということを確かめる」",
+      ],
     },
     {
       questionId: "2A-6",
@@ -90,7 +99,10 @@ const JapaneseTestAlternate = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: [
+        "正解は① 私たちはとてもはかどったので、すでに予定より早く進んでいる。",
+        "* ahead of  「〜より進んで」、* apart from 「〜は別として」、* far from 「〜から遠い」、* out of 「〜から外へ」",
+      ],
     },
     {
       questionId: "2A-7",
@@ -103,7 +115,10 @@ const JapaneseTestAlternate = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: [
+        "正解は① プレゼンテーション後の彼らの友好的なコメントのおかげで、私はとても安心しました。",
+        "friendlyは形容詞、②③④は副詞",
+      ],
     },
     {
       questionId: "2A-8",
@@ -116,7 +131,7 @@ const JapaneseTestAlternate = () => {
       rightAnswerString: "3",
       answerString: "",
       points: 2,
-      explanation: ["正解③"],
+      explanation: ["正解は③ この必須科目を修了するまで、卒業できません。 "],
     },
     {
       questionId: "2A-9",
@@ -129,7 +144,10 @@ const JapaneseTestAlternate = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: [
+        "正解は① 以前は木材が主要な燃料として用いられていたが、今日では化石燃料が広く用いられている。",
+        "* used to 「以前は・・だった」、* be used to不定詞 「〜するために使われている」過去との対比では現在形があとに続く",
+      ],
     },
     {
       questionId: "2A-10",
@@ -142,7 +160,10 @@ const JapaneseTestAlternate = () => {
       rightAnswerString: "4",
       answerString: "",
       points: 2,
-      explanation: ["正解④"],
+      explanation: [
+        "正解は④ 毎日病院に祖母を見舞いに行くなんて、なんて思いやりがあるのでしょう。",
+        "It is + 形容詞 ＋ of A to-不定詞 「〜するとはAは・・・だ」",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

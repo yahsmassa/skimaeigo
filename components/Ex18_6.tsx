@@ -24,7 +24,10 @@ const Ex18_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は④ 古代の、初期の望遠鏡についての記述",
+        "（２）翻訳参照、",
+      ],
     },
     {
       questionId: "6-2",
@@ -38,7 +41,10 @@ const Ex18_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は② 材料はより小さなものから構成されていた。",
+        "microscopeについての（３）翻訳参照、",
+      ],
     },
     {
       questionId: "6-3",
@@ -53,7 +59,10 @@ const Ex18_6 = () => {
       isOrderFree: true,
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は① 正確に瞬間を捉えることができる。",
+        "カメラについて（４）翻訳参照、",
+      ],
     },
     {
       questionId: "6-4",
@@ -67,7 +76,10 @@ const Ex18_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は① 体の問題箇所を見つけるために",
+        "X線撮影について（５）翻訳参照、",
+      ],
     },
     {
       questionId: "6-5",
@@ -81,7 +93,10 @@ const Ex18_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は② 技術の発展は私たちの思考様式に影響を与える。",
+        "altered our understanding of the world around usなどから（６）翻訳参照、",
+      ],
     },
     {
       questionId: "6-6",
@@ -107,7 +122,10 @@ const Ex18_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は[51]④ [52]② [53]③ [54]①",
+        "天体観察（望遠鏡）、微小物観察（顕微鏡）、一連の変化の観察（カメラ）、物の内部の観察（X線）、翻訳参照",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -141,7 +159,7 @@ const Ex18_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(1)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               History teaches us that technology and associated discoveries have
               changed how we understand the world. Many technological devices
               provide additional range and power to our natural capacities, such
@@ -159,17 +177,17 @@ const Ex18_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(2)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               In the 17th century, a scientist noticed that by holding two
               lenses together in a certain way he could make an object appear
               larger. He used this technique to construct the first simple
-              telescope. Using these archaic telescopes, early scientists were
-              able to describe the surface of the Moon in detail and to see that
-              Jupiter had at least four such satellites. Since that time, people
-              have developed various devices that expand our range of sight,
-              thus revealing facts about the universe that lies beyond the
-              Earth. The telescope continues to offer us new views concerning
-              things beyond our immediate reach.
+              telescope. Using these <u>archaic</u> telescopes, early scientists
+              were able to describe the surface of the Moon in detail and to see
+              that Jupiter had at least four such satellites. Since that time,
+              people have developed various devices that expand our range of
+              sight, thus revealing facts about the universe that lies beyond
+              the Earth. The telescope continues to offer us new views
+              concerning things beyond our immediate reach.
               {Kaisetsu(showResults, "18-6-2")}
             </p>
           </div>
@@ -179,7 +197,7 @@ const Ex18_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(3)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               Later, the microscope was developed using principles similar to
               the telescope. The microscope allows us to study objects we
               normally cannot see because they are too small. Looking through a
@@ -202,7 +220,7 @@ const Ex18_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(4)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               The invention of the camera also made the invisible world visible.
               In the world, everything is changing. Some things change faster
               than we can see. The camera is a tool that gives us the power to
@@ -222,7 +240,7 @@ const Ex18_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(5)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               In the late 19th century, machines that used the newly discovered
               X-rays revolutionized the way in which we looked at things. Rather
               than seeing only the surface of an object, we gained the ability
@@ -244,7 +262,7 @@ const Ex18_6 = () => {
         <div className="flex">
           <div className="w-12 flex-shrink-0">(6)</div>
           <div className="flex-grow">
-            <p className="text-justify">
+            <p className="text-justify indent-7">
               Different technological devices have made it possible to observe
               things that we could not see with the naked eye. This has
               significantly altered our understandings of the world around us.

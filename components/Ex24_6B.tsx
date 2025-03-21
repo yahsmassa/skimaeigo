@@ -139,7 +139,7 @@ const Ex24_6B = () => {
       </div>
 
       <div className="space-y-4">
-        <p>
+        <p className="indent-7">
           Tiny pieces of red spice in chili chicken add a nice touch of color,
           but biting into even a small piece can make a person&apos;s mouth burn
           as if it were on fire. While some people love this, others want to
@@ -150,7 +150,7 @@ const Ex24_6B = () => {
           {Kaisetsu(showResults, "24-6B-1")}
         </p>
 
-        <p>
+        <p className="indent-7">
           Unlike sweetness, saltiness, and sourness, spiciness is not a taste.
           In fact, we do not actually taste heat, or spiciness, when we eat
           spicy foods. The bite we feel from eating chili peppers and wasabi is
@@ -168,7 +168,7 @@ const Ex24_6B = () => {
           {Kaisetsu(showResults, "24-6B-2")}
         </p>
 
-        <p>
+        <p className="indent-7">
           Wasabi is considered a root, not a pepper, and does not contain
           capsaicin. Thus, wasabi is not ranked on the Scoville Scale. However,
           people have compared the level of spice in it to chilis with around
@@ -180,7 +180,7 @@ const Ex24_6B = () => {
           {Kaisetsu(showResults, "24-6B-3")}
         </p>
 
-        <p>
+        <p className="indent-7">
           Consuming chili peppers can have positive effects on our health, and
           much research has been conducted into the benefits of capsaicin. When
           capsaicin activates the TRPV1 receptor in a person&apos;s body, it is
@@ -193,7 +193,7 @@ const Ex24_6B = () => {
           {Kaisetsu(showResults, "24-6B-4")}
         </p>
 
-        <p>
+        <p className="indent-7">
           Another benefit of eating chili peppers is that they accelerate the
           metabolism. A group of researchers analyzed 90 studies on capsaicin
           and body weight and found that people had a reduced appetite when they
@@ -204,7 +204,7 @@ const Ex24_6B = () => {
           {Kaisetsu(showResults, "24-6B-5")}
         </p>
 
-        <p>
+        <p className="indent-7">
           It is also believed that chili peppers are connected with food safety,
           which might lead to a healthier life. When food is left outside of a
           refrigerated environment, microorganisms multiply on it, which may
@@ -220,7 +220,7 @@ const Ex24_6B = () => {
           {Kaisetsu(showResults, "24-6B-6")}
         </p>
 
-        <p>
+        <p className="indent-7">
           Chili peppers seem to have health benefits, but can they also be bad
           for our health? Peppers that are high on the Scoville Scale can cause
           physical discomfort when eaten in large quantities. People who have
@@ -231,7 +231,7 @@ const Ex24_6B = () => {
           {Kaisetsu(showResults, "24-6B-7")}
         </p>
 
-        <p>
+        <p className="indent-7">
           Luckily the discomfort some people feel after eating spicy foods tends
           to go away soon—usually within a few hours. Despite some negative side
           effects, spicy foods remain popular around the world and add a

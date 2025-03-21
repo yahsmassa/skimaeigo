@@ -116,10 +116,10 @@ const JapaneseTestQuestion = () => {
       {
         questionNumber: 1,
         options: [
-          "<u>s</u>carce",
-          "<u>s</u>cenery",
-          "<u>s</u>cratch",
-          "<u>s</u>cream",
+          "<u>sc</u>arce",
+          "<u>sc</u>enery",
+          "<u>sc</u>ratch",
+          "<u>sc</u>ream",
         ],
       },
       {

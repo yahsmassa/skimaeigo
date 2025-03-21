@@ -23,7 +23,10 @@ const Ex16_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は① オペラは新たな状況に適応することで発展する",
+        "段落２にオペラの発展についての記述がある、翻訳参照",
+      ],
     },
     {
       questionId: "6-2",
@@ -37,7 +40,10 @@ const Ex16_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は③ オペラ歌手の価値とは何でしょう？",
+        "段落（３）の企業経営者や、スポーツ選手の報酬の話の流れから、翻訳参照",
+      ],
     },
     {
       questionId: "6-3",
@@ -52,7 +58,10 @@ const Ex16_6 = () => {
       isOrderFree: true,
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は① オペラ歌手は経済的に不安定だ",
+        "オペラ歌手の病気での収入がなくなる記述などから、翻訳参照",
+      ],
     },
     {
       questionId: "6-4",
@@ -66,7 +75,10 @@ const Ex16_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は③ オペラ歌手の容姿よりも、声の方がもっと高く評価されるべきである",
+        "体重がある程度ないと、声量がでにくいなどの記述から、翻訳参照",
+      ],
     },
     {
       questionId: "6-5",
@@ -80,7 +92,10 @@ const Ex16_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は③ オペラが直面する困難",
+        "段落（３）に述べられているオペラの深刻な問題についての記述などから、翻訳参照",
+      ],
     },
     {
       questionId: "6-6",
@@ -106,7 +121,10 @@ const Ex16_6 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: [
+        "正解は[52]③ [53]① [54]④ [55]② ",
+        "段落（３）に述べられているオペラの深刻な問題についての記述などから、翻訳参照",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -141,7 +159,7 @@ const Ex16_6 = () => {
         {/* Paragraph 1 */}
         <div className="flex">
           <div className="w-12 flex-shrink-0">(1)</div>
-          <div className="flex-grow">
+          <div className="flex-grow indent-7">
             Opera is an art form that celebrates the human voice at its highest
             level of expression. No other art form creates excitement and moves
             the heart in the way that opera does, especially when performed by a
@@ -155,7 +173,7 @@ const Ex16_6 = () => {
         {/* Paragraph 2 */}
         <div className="flex">
           <div className="w-12 flex-shrink-0">(2)</div>
-          <div className="flex-grow">
+          <div className="flex-grow indent-7">
             Opera is an important part of the Western classical music tradition.
             It uses music, words, and actions to bring a dramatic story to life.
             Opera started in Italy at the end of the 16th century and later
@@ -172,7 +190,7 @@ const Ex16_6 = () => {
         {/* Paragraph 3 */}
         <div className="flex">
           <div className="w-12 flex-shrink-0">(3)</div>
-          <div className="flex-grow">
+          <div className="flex-grow indent-7">
             However, in recent years, opera has been facing serious challenges.
             The causes of some of these are beyond its control. One current
             challenge to opera is economic. The current world economic slowdown
@@ -193,7 +211,7 @@ const Ex16_6 = () => {
         {/* Paragraph 4 */}
         <div className="flex">
           <div className="w-12 flex-shrink-0">(4)</div>
-          <div className="flex-grow">
+          <div className="flex-grow indent-7">
             Not only the shortage of money, but also the way money is managed in
             the opera world has led to hardships. Principal singers are
             generally paid performance fees once they complete a show. They
@@ -209,7 +227,7 @@ const Ex16_6 = () => {
         {/* Paragraph 5 */}
         <div className="flex">
           <div className="w-12 flex-shrink-0">(5)</div>
-          <div className="flex-grow">
+          <div className="flex-grow indent-7">
             Another problem faced by opera is how to meet the demands of
             audiences who are influenced by popular entertainment. Pop singers
             are often judged as much on the basis of how they look as how they
@@ -227,7 +245,7 @@ const Ex16_6 = () => {
         {/* Paragraph 6 */}
         <div className="flex">
           <div className="w-12 flex-shrink-0">(6)</div>
-          <div className="flex-grow">
+          <div className="flex-grow indent-7">
             There are no easy solutions to opera's problems and there are many
             different opinions about the value of opera. However, every year
             many young people register for music courses with hopes and dreams
@@ -242,7 +260,7 @@ const Ex16_6 = () => {
 
       {/* Question Section */}
       <div className="mt-8 space-y-6">
-        <div className="flex items-center">
+        <div className="flex ">
           <div className="font-bold mr-2">A</div>
           <div>
             次の問い（問１～５）の
@@ -264,6 +282,7 @@ const Ex16_6 = () => {
             <p>Which of these statements is true according to paragraph (2)?</p>
             {renderSelect("47", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-1" />}
+            {Kaisetsu(showResults, "16-6-7")}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -288,6 +307,7 @@ const Ex16_6 = () => {
             </p>
             {renderSelect("48", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-2" />}
+            {Kaisetsu(showResults, "16-6-8")}
           </div>
           <div className="ml-8 space-y-2">
             <div>① How do opera singers prepare?</div>
@@ -304,6 +324,7 @@ const Ex16_6 = () => {
             <p>According to paragraphs (3) and (4), which statement is true?</p>
             {renderSelect("49", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-3" />}
+            {Kaisetsu(showResults, "16-6-9")}
           </div>
           <div className="ml-8 space-y-2">
             <div>① Opera singers are financially unstable.</div>
@@ -323,6 +344,7 @@ const Ex16_6 = () => {
             </span>
             {renderSelect("50", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-4" />}
+            {Kaisetsu(showResults, "16-6-10")}
           </div>
           <div className="ml-8 space-y-2">
             <div>① Audiences know best how opera should be performed.</div>
@@ -343,6 +365,7 @@ const Ex16_6 = () => {
             <p>What would be the best title for this passage?</p>
             {renderSelect("51", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-5" />}
+            {Kaisetsu(showResults, "16-6-11")}
           </div>
           <div className="ml-8 space-y-2">
             <div>① How to Make Money in Opera</div>
@@ -371,6 +394,7 @@ const Ex16_6 = () => {
               {renderSelect("54", 4, answers, setAnswers)}
               {renderSelect("55", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-6" />}
+              {Kaisetsu(showResults, "16-6-12")}
             </span>
           </p>
         </div>

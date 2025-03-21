@@ -220,7 +220,7 @@ const Ex24_5 = () => {
 
         {/* First paragraph */}
         <div className="mb-6 leading-relaxed">
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             <span className="italic">&quot;Irasshai-mase,&quot;</span> said Maki
             as two customers entered her restaurant, Maki&apos;s Kitchen. Maki
             had joined her family business at the age of 19 when her father
@@ -232,7 +232,7 @@ const Ex24_5 = () => {
             doing something different.
             {Kaisetsu(showResults, "24-5-2")}
           </p>
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             &quot;Can we sit at the counter?&quot; she heard. It was her old
             friends, Takuya and Kasumi. A phone call a few weeks earlier from
             Kasumi to Takuya had given them the idea to visit Maki and surprise
@@ -248,18 +248,18 @@ const Ex24_5 = () => {
 
         {/* Phone conversation section */}
         <div className="mb-6 leading-relaxed">
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             Takuya&apos;s phone vibrated, and he saw a familiar name, Kasumi.
           </p>
-          <p className="mb-2">&quot;Kasumi!&quot;</p>
-          <p className="mb-2">
+          <p className="mb-2 indent-7">&quot;Kasumi!&quot;</p>
+          <p className="mb-2 indent-7">
             &quot;Hi Takuya, I saw you in the newspaper. Congratulations!&quot;
           </p>
-          <p className="mb-2">
+          <p className="mb-2 indent-7">
             &quot;Thanks. Hey, you weren&apos;t at our 20th high school reunion
             last month.&quot;
           </p>
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             &quot;No, I couldn&apos;t make it. I can&apos;t believe it&apos;s
             been 20 years since we graduated. Actually, I was calling to ask if
             you&apos;ve seen Maki recently.&quot;
@@ -274,7 +274,7 @@ const Ex24_5 = () => {
 
         {/* Final paragraph */}
         <div className="leading-relaxed">
-          <p>
+          <p className="mb-4 indent-7">
             Takuya&apos;s family had moved to Kawanaka Town shortly before he
             started high school. He joined the drama club, where he met Maki and
             Kasumi. The three became inseparable. After graduation, Takuya left
@@ -286,7 +286,7 @@ const Ex24_5 = () => {
             {Kaisetsu(showResults, "24-5-5")}
           </p>
         </div>
-        <p className="my-4">
+        <p className="mb-4 indent-7">
           Exactly one year after graduation, Takuya returned to Kawanaka with
           his dreams destroyed. He called Maki, who offered her sympathy. He was
           surprised to learn that Maki had abandoned her plan to attend
@@ -296,7 +296,7 @@ const Ex24_5 = () => {
           {Kaisetsu(showResults, "24-5-6")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           &quot;Maki, I&apos;ve always thought your family&apos;s restaurant
           should change the coffee it serves. I think people in Kawanaka want a
           bolder flavor. I&apos;d be happy to recommend a different brand,&quot;
@@ -304,14 +304,14 @@ const Ex24_5 = () => {
           {Kaisetsu(showResults, "24-5-7")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           &quot;Takuya, you really know your coffee. Hey, I was walking by Café
           Kawanaka and saw a help-wanted sign. You should apply!&quot; Maki
           replied.
           {Kaisetsu(showResults, "24-5-8")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           Takuya was hired by Café Kawanaka and became fascinated by the science
           of coffee making. On the one-year anniversary of his employment,
           Takuya was talking to Maki at her restaurant.
@@ -319,24 +319,24 @@ const Ex24_5 = () => {
         </p>
 
         <div className="mb-4">
-          <p className="mb-2">
+          <p className="mb-2 indent-7">
             &quot;Maki,&quot; he said, &quot;do you know what my dream is?&quot;
           </p>
-          <p className="mb-2">
+          <p className="mb-2 indent-7">
             &quot;It must have something to do with coffee.&quot;
           </p>
-          <p className="mb-2">
+          <p className="mb-2 indent-7">
             &quot;That&apos;s right! It&apos;s to have my own coffee
             business.&quot;
           </p>
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             &quot;I can&apos;t imagine a better person for it. What are you
             waiting for?&quot;
             {Kaisetsu(showResults, "24-5-10")}
           </p>
         </div>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           Maki&apos;s encouragement inspired Takuya. He quit his job, purchased
           a coffee bean roaster, and began roasting beans. Maki had a sign in
           her restaurant saying, &quot;We proudly serve Takuya&apos;s
@@ -352,7 +352,7 @@ const Ex24_5 = () => {
           <div className="text-black">♦♦♦♦♦</div>
         </div>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           Kasumi was reading the newspaper when she saw the headline:{" "}
           <span className="italic">
             TAKUYA&apos;S CAFÉ ATTRACTING TOURISTS TO KAWANAKA TOWN
@@ -363,7 +363,7 @@ const Ex24_5 = () => {
           {Kaisetsu(showResults, "24-5-12")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           In the high school drama club, Kasumi&apos;s duty was to put make-up
           on the actors. No one could do it better than her. Maki noticed this
           and saw that a cosmetics company called Beautella was advertising for
@@ -372,7 +372,7 @@ const Ex24_5 = () => {
           {Kaisetsu(showResults, "24-5-13")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           The work was tough; Kasumi went door to door selling cosmetics. On bad
           days, she would call Maki, who would lift her spirits. One day, Maki
           had an idea. &quot;Doesn&apos;t Beautella do make-up workshops? I
@@ -382,7 +382,7 @@ const Ex24_5 = () => {
           {Kaisetsu(showResults, "24-5-14")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           Kasumi&apos;s company agreed to let her do workshops, and they were a
           hit! Kasumi&apos;s sales were so good that eight months out of high
           school, she had been promoted, moving to the big city of Ishijima.
@@ -391,7 +391,7 @@ const Ex24_5 = () => {
           {Kaisetsu(showResults, "24-5-15")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           &quot;I wouldn&apos;t be vice-president now without Maki,&quot; she
           thought, &quot;she helped me when I was struggling, but I was too
           absorbed with my work in Ishijima to give her support when she had to
@@ -405,17 +405,17 @@ const Ex24_5 = () => {
           <div className="text-black">♦♦♦♦♦</div>
         </div>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           &quot;Maki wasn&apos;t at the reunion. I haven&apos;t seen her in
           ages,&quot; said Takuya.
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           &quot;Same here. It&apos;s a pity. Where would we be without
           her?&quot; asked Kasumi.
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           The conversation became silent, as they wordlessly communicated their
           guilt. Then, Kasumi had an idea.
           {Kaisetsu(showResults, "24-5-17")}
@@ -427,32 +427,32 @@ const Ex24_5 = () => {
         </div>
 
         <div className="mb-4">
-          <p className="mb-2">
+          <p className="mb-2 indent-7">
             The three friends were talking and laughing when Maki asked,
             &quot;By the way, I&apos;m really happy to see you two, but what
             brings you here?&quot;
           </p>
-          <p className="mb-2">&quot;Payback,&quot; said Takuya.</p>
-          <p className="mb-2">
+          <p className="mb-2 indent-7">&quot;Payback,&quot; said Takuya.</p>
+          <p className="mb-2 indent-7">
             &quot;Have I done something wrong?&quot; asked Maki.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             &quot;No. The opposite. You understand people incredibly well. You
             can identify others&apos; strengths and show them how to make use of
             them. We&apos;re proof of this. You made us aware of our
             gifts,&quot; said Takuya.
             {Kaisetsu(showResults, "24-5-18")}
           </p>
-          <p className="mb-2">
+          <p className="mb-2 indent-7">
             &quot;The irony is that you couldn&apos;t do the same for
             yourself,&quot; added Kasumi.
           </p>
-          <p className="mb-2">
+          <p className="mb-2 indent-7">
             &quot;I think Ishijima University would be ideal for you. It offers
             a degree program in counseling that&apos;s designed for people with
             jobs,&quot; said Takuya.
           </p>
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             &quot;You&apos;d have to go there a few times a month, but you could
             stay with me. Also, Takuya can help you find staff for your
             restaurant,&quot; said Kasumi.
@@ -460,7 +460,7 @@ const Ex24_5 = () => {
           </p>
         </div>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           Maki closed her eyes and imagined Kawanaka having both
           &quot;Maki&apos;s Kitchen&quot; and &quot;Maki&apos;s
           Counseling.&quot; She liked that idea.

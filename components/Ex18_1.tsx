@@ -115,10 +115,10 @@ const JapaneseTestQuestion = () => {
       {
         questionNumber: 1,
         options: [
-          "commi<u>t</u>",
-          "convin<u>c</u>e",
-          "insi<u>s</u>t",
-          "preci<u>s</u>e",
+          "comm<u>i</u>t",
+          "conv<u>i</u>nce",
+          "ins<u>i</u>st",
+          "prec<u>i</u>se",
         ],
       },
       {
@@ -133,10 +133,10 @@ const JapaneseTestQuestion = () => {
       {
         questionNumber: 3,
         options: [
-          "bi<u>r</u>d",
-          "ha<u>r</u>d",
-          "jou<u>r</u>ney",
-          "wo<u>r</u>k",
+          "b<u>ir</u>d",
+          "h<u>ar</u>d",
+          "j<u>our</u>ney",
+          "w<u>or</u>k",
         ],
       },
     ],

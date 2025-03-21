@@ -131,6 +131,7 @@ const Ex25_6 = () => {
         Your friend, Harry, wants to be a professional writer. He has written a
         story about two new heroes for a writing contest. You read it and then
         give him feedback.
+        {Kaisetsu(showResults, "25-6-0")}
       </p>
 
       {/* Story content in a bordered box */}
@@ -250,6 +251,7 @@ const Ex25_6 = () => {
           <p className="indent-8">
             After reading the note, I understood who Melody was. Since then,
             working together, Melody and I have made our parents proud.
+            {Kaisetsu(showResults, "25-6-10")}
           </p>
         </div>
       </div>
@@ -264,23 +266,32 @@ const Ex25_6 = () => {
             <p>
               I loved your story! I really liked how Bluebird passes through
               various stages in his personal growth (see below).
+              {Kaisetsu(showResults, "25-6-11")}
             </p>
 
             <div className="flex items-center gap-2 my-4">
-              <div className="border border-gray-400 px-3 py-1">24</div>
+              <div className="border border-gray-400 px-3 py-1 font-sans">
+                24
+              </div>
               <span>→</span>
-              <div className="border border-gray-400 px-3 py-1">25</div>
+              <div className="border border-gray-400 px-3 py-1 font-sans">
+                25
+              </div>
               <span>→</span>
-              <div className="border border-gray-400 px-3 py-1">26</div>
+              <div className="border border-gray-400 px-3 py-1 font-sans">
+                26
+              </div>
               <span>→</span>
-              <div className="border border-gray-400 px-3 py-1">27</div>
+              <div className="border border-gray-400 px-3 py-1 font-sans">
+                27
+              </div>
             </div>
 
             <p>
               I found Melody really fascinating with her unique superpowers.
-              <br />
+              {Kaisetsu(showResults, "25-6-12")}
               She can{" "}
-              <span className="border border-gray-400 px-3 py-1 inline-block">
+              <span className="border border-gray-400 px-3 py-1 font-sans inline-block">
                 28
               </span>
               .
@@ -294,6 +305,7 @@ const Ex25_6 = () => {
                 29
               </span>
               .&quot;
+              {Kaisetsu(showResults, "25-6-13")}
             </p>
 
             <p>
@@ -308,6 +320,7 @@ const Ex25_6 = () => {
               </span>
               , which are not mentioned or suggested. These details would give
               your characters depth and make your story more interesting.
+              {Kaisetsu(showResults, "25-6-14")}
             </p>
 
             <p>Good luck!</p>

@@ -24,7 +24,10 @@ const JapaneseExamQuestions = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は③"],
+      explanation: [
+        "正解は③ いくつかのブランド物の革靴は、その流行のデザインゆえに有名です。",
+        "他の選択肢は、靴の機能性について記述している",
+      ],
     },
     {
       questionId: "3B-2",
@@ -38,7 +41,10 @@ const JapaneseExamQuestions = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は②"],
+      explanation: [
+        "正解は② バスは多くの乗客を乗せることができ、日常生活に便利である。",
+        "他の選択肢は、物流について話している",
+      ],
     },
     {
       questionId: "3B-3",
@@ -52,7 +58,10 @@ const JapaneseExamQuestions = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: ["正解は③"],
+      explanation: [
+        "正解は③ 研究者たちは単語のリストを注意深く選び、ダイバーたちはダイビング場所を選んだ。",
+        "文脈は「記憶した場所にいけば思い出しやすい実験の話」",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -84,7 +93,12 @@ const JapaneseExamQuestions = () => {
 
       {/* Question 1 */}
       <div className="mb-10">
-        <div className="flex items-center mb-3">
+        <div
+          className={cn(
+            "flex items-center mb-3",
+            showResults && qaFormat(qa, "3B-1")
+          )}
+        >
           <p className="font-bold mr-4">問１</p>
           {renderSelect("29", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3B-1" />}
@@ -127,7 +141,12 @@ const JapaneseExamQuestions = () => {
 
       {/* Question 2 */}
       <div className="mb-10">
-        <div className="flex items-center mb-3">
+        <div
+          className={cn(
+            "flex items-center mb-3",
+            showResults && qaFormat(qa, "3B-2")
+          )}
+        >
           <p className="font-bold mr-4">問２</p>
           {renderSelect("30", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3B-2" />}
@@ -142,23 +161,23 @@ const JapaneseExamQuestions = () => {
               method has its own advantages and disadvantages.{" "}
             </span>
             <span className="font-bold ml-2 mr-1">①</span>
-            <span className="border-b-2 border-black">
+            <span className="border-b-2 border-black mr-2">
               Transportation by air, though it can be expensive, is suitable for
               carrying goods which require speedy delivery.
             </span>
             <span className="font-bold ml-2 mr-1">②</span>
-            <span className="border-b-2 border-black">
+            <span className="border-b-2 border-black mr-2">
               Buses can carry many passengers, and they are convenient for daily
               life.
             </span>{" "}
             <span className="font-bold ml-2 mr-1">③</span>
-            <span className="border-b-2 border-black">
+            <span className="border-b-2 border-black mr-2">
               Ships, on the other hand, can carry large quantities at low cost,
               but it takes much time for them to reach their destinations.
             </span>{" "}
             Trains can stop only at stations, but their arrival times can easily
             be estimated. <span className="font-bold ml-2 mr-1">④</span>
-            <span className="border-b-2 border-black">
+            <span className="border-b-2 border-black mr-2">
               Although trucks cannot carry much compared with trains, they are
               useful for carrying things from door to door.
             </span>
@@ -171,7 +190,12 @@ const JapaneseExamQuestions = () => {
 
       {/* Question 3 */}
       <div className="mb-10">
-        <div className="flex items-center mb-3">
+        <div
+          className={cn(
+            "flex items-center mb-3",
+            showResults && qaFormat(qa, "3B-3")
+          )}
+        >
           <p className="font-bold mr-4">問３</p>
           {renderSelect("31", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3B-3" />}

@@ -143,7 +143,7 @@ const Ex23_4 = () => {
 
         {/* Main Content */}
         <div className="space-y-4">
-          <p>
+          <p className="indent-7">
             As a science teacher, I am always concerned about how to help
             students who struggle to learn. Recently, I found that their main
             way of learning was to study new information repeatedly until they
@@ -157,7 +157,7 @@ const Ex23_4 = () => {
             {Kaisetsu(showResults, "23-4-1")}
           </p>
 
-          <p>
+          <p className="indent-7">
             To help them learn, I tried applying &quot;contextual
             learning.&quot; In this kind of learning, new knowledge is
             constructed through students&apos; own experiences. For my science
@@ -171,7 +171,7 @@ const Ex23_4 = () => {
 
           <div className="flex flex-col md:flex-row justify-between items-start">
             <div className="w-full md:w-2/3">
-              <p className="mb-4">
+              <p className="mb-4 indent-7">
                 Thanks to this experience, I think these students will always be
                 able to describe the properties of the rocks they studied. One
                 issue, however, is that we don&apos;t always have the time to do
@@ -207,7 +207,7 @@ const Ex23_4 = () => {
 
         {/* Main Content */}
         <div className="space-y-4">
-          <p>
+          <p className="indent-7">
             Mr. Oxford&apos;s thoughts on contextual learning were insightful. I
             agree that it can be beneficial. Repetition, though, can also work
             well. However, the repetitive learning strategy he discussed, which
@@ -218,7 +218,7 @@ const Ex23_4 = () => {
             {Kaisetsu(showResults, "23-4-4")}
           </p>
 
-          <p>
+          <p className="indent-7">
             The interval between studying is the key difference. In Mr.
             Oxford&apos;s example, his students probably used their workbooks to
             study over a short period of time. In this case, they might have
@@ -235,7 +235,7 @@ const Ex23_4 = () => {
 
           <div className="flex flex-col md:flex-row justify-between items-start">
             <div className="w-full md:w-2/3">
-              <p className="mb-4">
+              <p className="mb-4 indent-7">
                 Previous research has provided evidence for the advantages of
                 spaced learning. In one experiment, students in Groups A and B
                 tried to memorize the names of 50 animals. Both groups studied
@@ -247,7 +247,7 @@ const Ex23_4 = () => {
                 {Kaisetsu(showResults, "23-4-6")}
               </p>
 
-              <p>
+              <p className="indent-7">
                 I understand that students often need to learn a lot of
                 information in a short period of time, and long intervals
                 between studying might not be practical. You should understand,

@@ -24,7 +24,7 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解④"],
+      explanation: ["正解は④"],
     },
     {
       questionId: "1-2",
@@ -38,7 +38,7 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解③"],
+      explanation: ["正解は③"],
     },
     {
       questionId: "1-3",
@@ -51,7 +51,7 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "4",
       answerString: "",
       points: 2,
-      explanation: ["正解④"],
+      explanation: ["正解は④"],
     },
     {
       questionId: "1-4",
@@ -64,7 +64,7 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "2",
       answerString: "",
       points: 2,
-      explanation: ["正解②"],
+      explanation: ["正解は②"],
     },
     {
       questionId: "1-5",
@@ -124,7 +124,7 @@ const JapaneseTestQuestion = () => {
       {
         questionNumber: 2,
         options: [
-          "att<u>a</u>ch",
+          "atta<u>ch</u>",
           "<u>ch</u>annel",
           "<u>ch</u>orus",
           "mer<u>ch</u>ant",

@@ -138,7 +138,7 @@ const Ex22_6B = () => {
         </h2>
 
         <div className="space-y-6">
-          <p>
+          <p className="indent-7">
             The world is full of various types of plastic. Look around, and you
             will see dozens of plastic items. Look closer and you will notice a
             recycling symbol on them. In Japan, you might have seen the first
@@ -181,7 +181,7 @@ const Ex22_6B = () => {
             </div>
           </div>
 
-          <p>
+          <p className="indent-7">
             So, what do these numbers mean? One group (numbers 2, 4, and 5) is
             considered to be safe for the human body, while the other group
             (numbers 1, 3, 6, and 7) could be problematic in certain
@@ -189,14 +189,11 @@ const Ex22_6B = () => {
             {Kaisetsu(showResults, "22-6B-2")}
           </p>
 
-          <p>
+          <p className="indent-7">
             High-density Polyethylene is a recycle-type 2 plastic and is
             commonly called HDPE. It is non-toxic and can be used in the human
             body for heart
             {Kaisetsu(showResults, "22-6B-3")}
-          </p>
-
-          <p>
             valves and artificial joints. It is strong and can be used at
             temperatures as low as -40°C and as high as 100°C. HDPE can be
             reused without any harm and is also suitable for beer-bottle cases,
@@ -213,7 +210,7 @@ const Ex22_6B = () => {
             {Kaisetsu(showResults, "22-6B-4")}
           </p>
 
-          <p>
+          <p className="indent-7">
             Now let us look at the second group, Types 1, 3, 6, and 7. These are
             more challenging because of the chemicals they contain or the
             difficulty in recycling them. Recycle-type 1 plastic is commonly
@@ -238,7 +235,7 @@ const Ex22_6B = () => {
             {Kaisetsu(showResults, "22-6B-5")}
           </p>
 
-          <p>
+          <p className="indent-7">
             Currently, only about 20% of plastic is recycled, and approximately
             55% ends up in a landfill. Therefore, knowledge about different
             types of plastic could help reduce waste and contribute to an

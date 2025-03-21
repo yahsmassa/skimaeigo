@@ -25,11 +25,11 @@
   },
   {
     "id": "16-3A-1",
-    "html": "Sue:You know, Peter's birthday is coming soon. Is everything going well for the surprise party?<br/>Sue:ねえ、ピーターの誕生日がもうすぐだね。サプライズパーティーの準備は順調？<br/><br/>Polly:Yes. I've already bought and wrapped his present. Here, look.<br/>Polly:うん。プレゼントはもう買って包装も済ませたわ。ほら、見て。<br/><br/>Sue:[27] He might walk in at any moment.<br/>Sue:[27]彼はいつだって入って来るかもしれないわよ。<br/><br/>Polly:わかった。パーティーが始まるまでしまっておくわ。<br/>① He doesn't like the color of the wrapping.<br/>① 彼は包装紙の色が気に入らない。<br/>② I don't have the slightest idea what to buy.<br/>② 何を買ったらいいのか、全く見当もつかない。<br/><br/>③ Show him what you bought when he comes.<br/>③ 彼が来たら、買った物を見せてあげなさい。<br/>④ You should hide it so that he won't see it.<br/>④ 彼は見ないよう、それを隠しておいた方がいいわよ。<br/><br/><br/>* going well: 順調である<br/>* at any moment: いつでも、いつだって<br/>* put it away: しまっておく<br/>* the slightest idea: 少しの考え、見当<br/>* so that ~:  〜するように<br/>"
+    "html": "Sue:You know, Peter's birthday is coming soon. Is everything going well for the surprise party?<br/>Sue:ねえ、ピーターの誕生日がもうすぐだね。サプライズパーティーの準備は順調？<br/><br/>Polly:Yes. I've already bought and wrapped his present. Here, look.<br/>Polly:うん。プレゼントはもう買って包装も済ませたわ。ほら、見て。<br/><br/>Sue:[27] He might walk in at any moment.<br/>Sue:[27]彼はいつだって入って来るかもしれないわよ。<br/><br/>Polly:わかった。パーティーが始まるまでしまっておくわ。<br/>① He doesn't like the color of the wrapping.<br/>&nbsp彼は包装紙の色が気に入らない。<br/><br/>② I don't have the slightest idea what to buy.<br/>&nbsp何を買ったらいいのか、全く見当もつかない。<br/><br/>③ Show him what you bought when he comes.<br/>&nbsp彼が来たら、買った物を見せてあげなさい。<br/><br/>④ You should hide it so that he won't see it.<br/>&nbsp彼は見ないよう、それを隠しておいた方がいいわよ。<br/><br/><br/>* going well: 順調である<br/>* at any moment: いつでも、いつだって<br/>* put it away: しまっておく<br/>* the slightest idea: 少しの考え、見当<br/>* so that ~:  〜するように<br/>"
   },
   {
     "id": "16-3A-2",
-    "html": "Diego:Did you do the English homework? It was difficult, wasn't it?<br/><br/>ディエゴ：英語の宿題やった？難しかったよね？<br/><br/><br/>Fred:Oh! I totally forgot about it.<br/><br/>フレッド：ああ！完全に忘れてたよ。<br/><br/><br/>Diego:You can do it during lunch time.<br/><br/>ディエゴ：お昼休みにやればいいよ。<br/><br/><br/>Fred:There's little point in even trying.[28]<br/><br/>フレッド：やってもほとんど意味がないよ。[28]<br/><br/><br/>Diego:Don't give up. You need to pass English, right?<br/><br/>ディエゴ：諦めるなよ。英語に合格する必要があるだろ？<br/><br/><br/>① I'm sure I can make it.<br/><br/>① 必ずうまくいくよ。<br/><br/><br/>② It'd be a waste of time.<br/><br/>② 時間の無駄だよ。<br/><br/><br/>③ Let me see what you can do.<br/><br/>③ 君の実力を見せてごらん。<br/><br/><br/>④ You don't want to miss it.<br/><br/>④ それを逃したくないだろう。<br/><br/><br/>* totally forgot about it: 完全に忘れていた<br/>* There's little point in even trying: やってもほとんど意味がない<br/>* Don't give up: 諦めるな<br/>* make it: うまくいく、成功する<br/>* a waste of time: 時間の無駄<br/>* miss it: 逃す<br/><br/><br/>"
+    "html": "Diego:Did you do the English homework? It was difficult, wasn't it?<br/>ディエゴ：英語の宿題やった？難しかったよね？<br/><br/><br/>Fred:Oh! I totally forgot about it.<br/>フレッド：ああ！完全に忘れてたよ。<br/><br/><br/>Diego:You can do it during lunch time.<br/>ディエゴ：お昼休みにやればいいよ。<br/><br/><br/>Fred:There's little point in even trying.[28]<br/>フレッド：やってもほとんど意味がないよ。[28]<br/><br/><br/>Diego:Don't give up. You need to pass English, right?<br/>ディエゴ：諦めるなよ。英語に合格する必要があるだろ？<br/><br/><br/>① I'm sure I can make it.<br/>&nbsp必ずうまくいくよ。<br/><br/><br/>② It'd be a waste of time.<br/>&nbsp時間の無駄だよ。<br/><br/><br/>③ Let me see what you can do.<br/>&nbsp君の実力を見せてごらん。<br/><br/><br/>④ You don't want to miss it.<br/>&nbspそれを逃したくないだろう。<br/><br/><br/>* totally forgot about it: 完全に忘れていた<br/>* There's little point in even trying: やってもほとんど意味がない<br/>* Don't give up: 諦めるな<br/>* make it: うまくいく、成功する<br/>* a waste of time: 時間の無駄<br/>* miss it: 逃す<br/><br/><br/>"
   },
   {
     "id": "16-3B-1",
@@ -38,6 +38,66 @@
   {
     "id": "16-3B-2",
     "html": "Trial and error, an approach used in science, is often found in daily life.<br/><br/>試行錯誤は、科学で使われる手法だが、日常生活でも頻繁に見られる。<br/><br/><br/>They may already have a list of treatments they have used before. They can also consult a medical book or check the Internet for new treatments. They may decide to use any one of the treatments.①If the treatment does not improve the condition, they try another one.②They are concerned about how scientific the treatment is.③This is an example of how this approach is adopted in everyday life.④When an idea fails, they consider the alternatives.In this way, approaches used in science and daily life have some points in common.<br/><br/>彼らは以前試した治療法のリストを既に持っているかもしれない。また、医療書を参照したり、インターネットで新しい治療法を探したりすることもある。そして、それらの治療法のいずれかを使ってみるかもしれない。①治療法が状態を改善しなければ、彼らは別のものを試す。②彼らはその治療法がどの程度科学的なものなのかを気にする。③これは、この手法が日常生活でどのように採用されているかの一例である。④アイデアが失敗した時、彼らは代替案を考える。このように、科学と日常生活で使われる手法にはいくつかの共通点がある。<br/><br/><br/>* trial and error：試行錯誤<br/>* feel well：具合が良い<br/>* check the Internet：インターネットで調べる<br/>* improve the condition：状態を改善する<br/>* adopt in everyday life：日常生活で採用する<br/>* When an idea fails：アイデアが失敗した時<br/>* consider the alternatives：代替案を考える<br/>* have some points in common：いくつかの共通点がある<br/><br/>"
+  },
+  {
+    "id": "16-4A-1",
+    "html": "US consumers have benefited from an increased volume and variety of fresh-fruit imports, particularly since the 1990s.<br/><br/>アメリカの消費者は、特に1990年代以降、輸入される生鮮果物の量と種類の増加から恩恵を受けてきた。<br/><br/><br/>The fruit and vegetable section in today's grocery store often has dozens of different fresh fruits on display all year around, which come from all corners of the globe as additions to domestic fresh fruit.<br/><br/>今日の食料品店の青果コーナーには、一年中、世界中から集められた様々な生鮮果物が数十種類も陳列されていることが多く、それは国産の生鮮果物に加わるものとなっている。<br/><br/><br/>熟語・慣用句：<br/><br/>* all year around: 一年中<br/>* all corners of the globe: 世界中<br/>* as additions to: ～に加えて<br/>"
+  },
+  {
+    "id": "16-3C-1",
+    "html": "Good morning. I'm sure everyone did the homework reading, so I want to begin today's class on intercultural communication. My first question is \"Why do we need to study intercultural communication?\" Would anyone like to answer?<br/><br/>おはようございます。皆さん宿題の読書を済ませたと思いますので、今日の授業は異文化コミュニケーションを始めたいと思います。最初の質問は「なぜ異文化コミュニケーションを学ぶ必要があるのか？」です。どなたか答えていただけますか？<br/><br/><br/>* I'm sure: きっと～だろう<br/>"
+  },
+  {
+    "id": "16-3C-2",
+    "html": "Yes, I'll try to answer that. People may think the way they do things or the way they view the world is \"natural\" and \"correct.\" When they encounter someone doing things differently, they regard it as \"strange\" or \"wrong.\" Having an awareness of intercultural communication can help us understand and deal with misunderstandings when they arise. I think it is especially important these days because people travel overseas for many reasons, such as work, study, or vacations. The opportunities to meet people from other countries have increased greatly. With this increased contact, there are more chances for trouble between people from different cultures.<br/><br/><br/>はい、それについてお答えしてみましょう。人々は、自分たちが物事を行う方法や世界を見る方法が「自然」で「正しい」と思っているかもしれません。異なった方法で物事を行う人に遭遇すると、それを「奇妙」または「間違っている」とみなします。異文化コミュニケーションへの意識を持つことは、誤解が生じた際に、それらを理解し対処するのに役立ちます。人々が仕事、勉強、休暇など、多くの理由で海外旅行をするようになった今日において、それは特に重要だと思います。他の国の人々と出会う機会は大幅に増加しました。この接触の増加に伴い、異なる文化の人々の間でトラブルが生じる可能性が高まっています。<br/><br/><br/>* deal with: 対処する<br/>* misunderstandings: 誤解<br/>* such as: 例えば<br/>* for many reasons: 多くの理由で<br/>* increased greatly: 大幅に増加した<br/><br/><br/>Professor:<br/>"
+  },
+  {
+    "id": "16-3C-3",
+    "html": "Right. As you said, studying intercultural communication is useful because 32.<br/><br/>はい、おっしゃる通り、異文化コミュニケーションを学ぶことは役に立ちます。なぜなら32.<br/><br/><br/>①<br/>intercultural knowledge encourages people to study in a foreign country<br/>異文化に関する知識は、人々が外国で勉強することを促します。<br/><br/><br/>②<br/>some ways of living are considered to be more correct than others<br/>ある生き方は他の生き方よりも正しいと考えられている。<br/><br/><br/>③<br/>there were many more cases of intercultural communication in the past<br/>過去には、異文化コミュニケーションの事例がはるかに多かった。<br/><br/><br/>④<br/>we can cope with cultural misunderstandings more easily and smoothly<br/>私たちは、文化的な誤解をより容易に、円滑に対処できるようになる。<br/><br/><br/>熟語・慣用句：<br/><br/>* cope with: 対処する<br/>"
+  },
+  {
+    "id": "16-3C-4",
+    "html": "Let's move on to the concept of \"culture.\" You should know that because culture is all around us all the time, it is difficult to define. Therefore, we tend to discuss culture in terms of characteristics. Can anyone give an example of a cultural characteristic?<br/><br/>それでは、「文化」という概念に進みましょう。文化は常に私たちの周囲にあるため、定義するのが難しいということを知っておくべきです。そのため、私たちは文化を特徴という観点から議論する傾向があります。文化的な特徴の例を挙げてくれる人はいますか？<br/><br/><br/>* all around us all the time：常に私たちの周囲に<br/>* in terms of：～という観点から<br/>"
+  },
+  {
+    "id": "16-3C-5",
+    "html": "The characteristic I found interesting is that people belonging to a culture have the same values, beliefs, and behaviors.<br/><br/>私が興味深いと思った特徴は、ある文化に属する人々は同じ価値観、信念、行動を持っているということです。<br/><br/><br/>Values are things that are felt to be of worth, like the Japanese concept of \"mottainai.\"<br/><br/>価値観とは、価値があると感じるものであり、「もったいない」という日本の概念のようなものです。<br/><br/><br/>Beliefs are things that people believe to be true, and these cover a wide variety of areas. For example, people in a culture might share beliefs about the kinds of foods that are unacceptable.<br/><br/>信念とは、人々が真実だと信じていることであり、それは非常に多様な分野に及びます。例えば、ある文化の人々は、受け入れられない種類の食べ物に関する信念を共有しているかもしれません。<br/><br/><br/>Behavior is about people's actions, and people in the same culture can often be seen behaving similarly.<br/><br/>行動とは人々の行動に関することであり、同じ文化の人々はしばしば似たような行動をとっているのが見られます。<br/><br/><br/>熟語・慣用句：<br/><br/>* a wide variety of: 多様な<br/>* feel to be of worth: 価値があると感じる<br/>"
+  },
+  {
+    "id": "16-3C-6",
+    "html": "That's a good explanation. That means [33].<br/><br/><br/>①<br/>having the same beliefs as other cultural groups is important<br/>それは良い説明です。つまり33です。<br/><br/><br/>他の文化集団と同様の信念を持つことは重要です。<br/><br/><br/>②<br/>people from the same cultural group usually behave differently<br/>同じ文化集団の人々は通常、異なる行動をとります。<br/><br/><br/>③<br/>people's attitudes to food determine which cultures they are from<br/>人々の食べ物に対する態度は、彼らがどの文化圏に属するかを決定します。<br/><br/><br/>④<br/>shared behaviors may make you a member of a cultural group<br/>共有された行動が、あなたをある文化集団の一員にする可能性があります。<br/><br/><br/>熟語・慣用句はありませんでした。<br/>"
+  },
+  {
+    "id": "16-3C-7",
+    "html": "What about people who always seem to be different from those around them? Sometimes I don't do things in the same way as my friends. So, if we need to have the same behavior for group membership, does that mean those who are not the same aren't members of their cultural group?<br/><br/>周りの人たちとはいつも違うように見える人々についてはどうでしょうか？ 時には、友達と同じやり方では物事をしません。ですから、集団の一員になるためには同じ行動をとる必要があるとすれば、同じではない人々は自分の文化集団の一員ではないということになるのでしょうか？<br/><br/><br/>熟語・慣用句:<br/><br/>* in the same way as: ～と同じように<br/>* group membership: 集団所属<br/>"
+  },
+  {
+    "id": "16-3C-8",
+    "html": " That's a good question. To answer it we need to think in terms of cultural norms rather than individual examples.<br/><br/>それは良い質問です。それに答えるには、個々の例ではなく、文化的規範という観点から考える必要があります。<br/><br/><br/>* in terms of: ～の点から、～に関して<br/>"
+  },
+  {
+    "id": "16-3C-9",
+    "html": "What is a cultural norm?<br/><br/>文化的規範とは何か？<br/><br/><br/>* cultural norm: 文化的規範<br/>"
+  },
+  {
+    "id": "16-3C-10",
+    "html": "Well, a cultural norm is a rule or standard of behavior shared by members of a cultural group.<br/><br/>さて、文化的規範とは、文化集団の構成員によって共有される行動規範あるいは基準のことです。<br/><br/><br/>* rule or standard of behavior: 行動規範あるいは基準<br/>"
+  },
+  {
+    "id": "16-3C-11",
+    "html": "Then what happens to the people who do not follow the cultural norms?<br/><br/>それから、文化規範に従わない人々はどうなるのでしょうか？<br/><br/><br/>* cultural norms: 文化規範<br/>"
+  },
+  {
+    "id": "16-3C-12",
+    "html": "Well, they may belong to a smaller group, or a sub-cultural group, but that group is still considered to be part of the culture. This is true as long as their actions are within the acceptable limits of behavior for that particular culture.<br/><br/>さて、彼らはより小さなグループ、あるいはサブカルチャーグループに属しているかもしれませんが、そのグループはまだ文化の一部とみなされます。これは、彼らの行動がその特定の文化における行動の許容範囲内にある限りにおいて真実です。<br/><br/><br/>* within the acceptable limits of behavior: 行動の許容範囲内<br/>"
+  },
+  {
+    "id": "16-3C-13",
+    "html": "So, am I right in thinking that [34]?<br/><br/>つまり、私が[34]だと思うのは正しいですか？<br/><br/><br/>① a culture contains groups that make up one larger group<br/>&nbsp一つの大きな集団を構成する複数の集団が、文化に含まれている。<br/><br/><br/>② acting differently isn't allowed for group membership<br/>&nbsp異なった行動は、集団への所属を許されない。<br/><br/><br/>③ it is important to be in the group that follows the cultural norms<br/>&nbsp文化規範に従う集団に属することが重要である。<br/><br/><br/>④ the number of sub-cultural groups should be limited<br/>&nbsp亜文化集団の数は制限されるべきである。<br/>"
+  },
+  {
+    "id": "16-3C-14",
+    "html": "Yes. I hope this has cleared things up for you. OK. I think we're ready to move on and think about another characteristic of culture.<br/><br/>はい。これで分かりやすくなったと思います。了解です。では、次の文化の特徴について考えましょう。<br/><br/><br/>* cleared things up: 分かりやすくした<br/>* move on: 次に進む<br/>"
   },
   {
     "id": "16-4A-1",
@@ -68,16 +128,28 @@
     "html": "Because of seasonal production patterns, the majority of Mexico's oranges arrive in the US market from December through June, when US supplies are relatively high.<br/><br/>メキシコのオレンジの大半は、季節的な生産パターンにより、アメリカの供給量が比較的多い12月から6月にかけて、米国市場に届けられる。<br/><br/><br/>In contrast, the season for imports from the Southern Hemisphere countries is mainly from July through October, when US supplies are relatively low.<br/><br/>対照的に、南半球諸国からの輸入シーズンは、アメリカの供給量が比較的少ない7月から10月にかけてが主である。<br/><br/><br/>This trend is similar to that seen with many other fruits as well.<br/><br/>この傾向は、他の多くの果物にも見られる。<br/><br/><br/>熟語・慣用句：<br/><br/>* in contrast: 対照的に<br/>"
   },
   {
+    "id": "16-4A-8",
+    "html": "According to the passage, which of the following correctly describes one difference between navel oranges and Valencia oranges?<br/><br/>本文によると、以下のうちどれがネーブルオレンジとバレンシアオレンジの違いを正しく記述していますか？<br/><br/><br/>① Navel oranges contain fewer seeds than Valencia oranges do.<br/>ネーブルはバレンシアオレンジよりも種が少ないです。<br/><br/><br/>② Navel oranges contain more juice than Valencia oranges do.<br/>ネーブルオレンジはバレンシアオレンジよりも果汁が多いです。<br/><br/><br/>③ Valencia oranges are more popular than navel oranges in the winter.<br/>冬にはバレンシアオレンジの方がネーブルオレンジよりも人気があります。<br/><br/><br/>④ Valencia oranges are more suitable for eating fresh than navel oranges.<br/>バレンシアオレンジはネーブルオレンジよりも生食に適しています。<br/>"
+  },
+  {
+    "id": "16-4A-9",
+    "html": "What is the main purpose of this passage?<br/>この文章の主な目的は何ですか？<br/><br/><br/>① To account for the seasonal changes in the US production of oranges<br/>アメリカ合衆国におけるオレンジの生産量の季節変化を説明する<br/><br/>② To explain the differences between navel oranges and Valencia oranges<br/>ネーブルオレンジとバレンシアオレンジの違いを説明する<br/><br/>③ To illustrate the relation between US production and imports of oranges<br/>アメリカ合衆国におけるオレンジの生産量と輸入量の関係を示す<br/><br/>④ To improve the quality of the navel oranges produced in the US<br/>アメリカ合衆国で生産されるネーブルオレンジの品質を向上させる<br/>"
+  },
+  {
+    "id": "16-4A-10",
+    "html": "What topic is most likely to follow the last paragraph?<br/><br/>最後の段落の次に続く話題として、最も可能性が高いのは何ですか？<br/><br/><br/>① Export rates of other fruits from the US to the Southern Hemisphere<br/>アメリカ合衆国から南半球へのその他の果物の輸出数量<br/><br/><br/>② Statistics showing the seasonal changes in imports of other fruits<br/>その他の果物の輸入における季節変化を示す統計<br/><br/><br/>③ The shipping methods of navel oranges from the Southern Hemisphere<br/>南半球からのネーブルオレンジの輸送方法<br/><br/><br/>④ The variety of fruits commonly grown in the US and Mexico<br/>アメリカ合衆国とメキシコで一般的に栽培されている果物の種類<br/>"
+  },
+  {
     "id": "16-4B-1",
-    "html": "Kazuko, a 19-year-old shop assistant, wants to participate in a museum activity but is only free on weekday evenings. Which activity will she most likely choose?<br/><br/>19歳のショップ店員であるカズコは、美術館の催しに参加したいと考えていますが、平日の夜しか空いていません。彼女はどの催しを選ぶのが最も可能性が高いでしょうか？<br/>"
+    "html": "Kazuko, a 19-year-old shop assistant, wants to participate in a museum activity but is only free on weekday evenings. Which activity will she most likely choose?<br/><br/>19歳のショップ店員であるカズコは、美術館の催しに参加したいと考えていますが、平日の夜しか空いていません。彼女はどの催しを選ぶのが最も可能性が高いでしょうか？<br/>① Comprehensive tour<br/>包括的なツアー<br/><br/><br/>② Drawing class<br/>デッサン教室<br/><br/><br/>③ Photography workshop<br/>写真ワークショップ<br/><br/><br/>④ Short tour<br/>短いツアー<br/>"
   },
   {
     "id": "16-4B-2",
-    "html": "A retired couple and their 6-year-old grandchild wish to participate together in a weekday afternoon activity. Which activity will they most likely choose and how much will they pay in total?<br/><br/>引退した夫婦と6歳の子どもは、平日午後のアクティビティに一緒に参加したいと思っています。彼らはどのようなアクティビティを選ぶ可能性が高く、合計でいくら支払うことになるでしょうか？<br/>"
+    "html": "A retired couple and their 6-year-old grandchild wish to participate together in a weekday afternoon activity. Which activity will they most likely choose and how much will they pay in total?<br/><br/>引退した夫婦と6歳の子どもは、平日午後のアクティビティに一緒に参加したいと思っています。彼らはどのようなアクティビティを選ぶ可能性が高く、合計でいくら支払うことになるでしょうか？<br/>① Comprehensive tour, $20<br/>総合ツアー、20ドル<br/><br/><br/>② Comprehensive tour, $40<br/>総合ツアー、40ドル<br/><br/><br/>③ Short tour, $20<br/>ショートツアー、20ドル<br/><br/><br/>④ Short tour, $28<br/>ショートツアー、28ドル<br/>"
   },
   {
     "id": "16-4B-3",
-    "html": "Which of the following is true according to the website?<br/><br/>ウェブサイトによると、以下のうちどれが正しいですか？<br/>① Advance booking is not necessary for \"Art Talks.\"<br/><br/>事前予約は「アートトーク」には必要ありません。<br/><br/><br/>② Comprehensive tours are held every day.<br/><br/>毎日、総合的なツアーが行われています。<br/><br/><br/>③ The admission fee is not included in the fees of tours.<br/><br/>入場料はツアー料金に含まれていません。<br/><br/><br/>④ There are lectures given by amateur artists.<br/><br/>アマチュアのアーティストによる講演会があります。<br/>"
+    "html": "Which of the following is true according to the website?<br/><br/>ウェブサイトによると、以下のうちどれが正しいですか？<br/>① Advance booking is not necessary for \"Art Talks.\"<br/>事前予約は「アートトーク」には必要ありません。<br/><br/><br/>② Comprehensive tours are held every day.<br/>毎日、総合的なツアーが行われています。<br/><br/><br/>③ The admission fee is not included in the fees of tours.<br/>入場料はツアー料金に含まれていません。<br/><br/><br/>④ There are lectures given by amateur artists.<br/>アマチュアのアーティストによる講演会があります。<br/>"
   },
   {
     "id": "16-4B-4",
@@ -124,6 +196,26 @@
     "html": "This brings us back to the contest. Uncle John and I were excited about his being selected. Yet, he shared something really touching with me there in the kitchen. \"You know, Mike,\" Uncle John said, \"I'm thrilled to be able to go on TV as part of The Big-Time Cook Off. But what makes me the happiest is to stand here with you, one of the people I care about, and talk — just you and me. It's exactly like what my dad did for me one fine day in summer, so many years ago. And that made all the difference in my life.\"<br/><br/>これは、私たちをコンテストの話に戻します。ジョンおじさんと私は、彼が選ばれたことに興奮していました。しかし、彼はそこで台所で、本当に感動的なことを私に打ち明けてくれました。「マイク、君も知っているだろうけど」ジョンおじさんは言いました。「『ビッグタイム・クックオフ』の一員としてテレビに出演できるのは本当に嬉しい。でも、僕を一番幸せにするのは、君という大切な人の一人と一緒にここに立って、ただ二人で話せることなんだ。それは、何年も前の夏の素晴らしい日に、父がしてくれたことと全く同じなんだ。そして、それが僕の人生を大きく変えたんだ。」<br/><br/><br/>* made all the difference: 大きな違いを生んだ<br/>"
   },
   {
+    "id": "16-5-10",
+    "html": "At the beginning of the story, Uncle John was<br/><br/>解説<br/>① cooking for The Big-Time Cook Off<br/>② making a special meal for Mike<br/>③ training Mike for the contest<br/>④ trying to improve his recipes<br/><br/><br/>物語の始まりで、ジョンおじさんは ..<br/><br/>解説<br/>① ビッグタイムクックオフのために料理をしていた<br/>② マイクのために特別な食事を作っていた<br/>③ マイクをコンテストのためにトレーニングしていた<br/>④ レシピを改良しようとしていた<br/>"
+  },
+  {
+    "id": "16-5-11",
+    "html": "Uncle John's father began working in the city because ..<br/>ジョンのおじの父親は、.. のために都会で働き始めた。<br/><br/><br/>解説<br/>① he was tired of living in the countryside<br/>&nbsp田舎暮らしにうんざりしていたから<br/><br/><br/>② it was easier to spend time with his family<br/>&nbsp家族と過ごす時間が増えやすかったから<br/><br/><br/>③ the family needed more money for living<br/>&nbsp家族の生活費がもっと必要だったから<br/><br/><br/>④ Uncle John's mother had become sick<br/>&nbspジョンのおじの母親が病気になったから<br/>"
+  },
+  {
+    "id": "16-5-12",
+    "html": "Why were Uncle John's parents and teachers worried about his future?<br/><br/>なぜジョン叔父さんの両親と教師たちは彼の将来を心配していたのですか？<br/><br/><br/>解説<br/>① He just wanted to rest at home.<br/>&nbsp彼はただ家で休みたいだけだった。<br/><br/>② He lost interest in studying.<br/>&nbsp彼は勉強への興味を失った。<br/><br/>③ He stopped avoiding his father.<br/>&nbsp彼は父親を避けるのをやめた。<br/><br/>④ He was no longer good-humored.<br/>&nbsp彼はもう快活ではなかった。<br/>"
+  },
+  {
+    "id": "16-5-13",
+    "html": "What helped to change Uncle John's life the most?<br/>ジョン叔父の生活を最も変えたものは何ですか？<br/><br/><br/>解説<br/>① Eating an award-winning dinner with his friends<br/><br/>② Entering cooking contests such as The Big-Time Cook Off<br/><br/>③ Making a connection with his father through cooking<br/><br/>④ Spending time talking with Mike in the kitchen<br/><br/><br/>解説<br/>① 賞を受賞した夕食を友人たちと共にしたこと<br/><br/>② ビッグタイムクックオフのような料理コンテストに出場したこと<br/><br/>③ 料理を通して父親と繋がりを持つようになったこと<br/><br/>④ マイクとキッチンで話す時間を過ごしたこと<br/>"
+  },
+  {
+    "id": "16-5-14",
+    "html": "What does Uncle John find most rewarding?<br/>ジョンおじさんは何をするのが一番やりがいを感じますか？<br/><br/><br/>解説<br/>① 有名人のために独自の4品コースの夕食を開発すること<br/><br/>② 彼に近い人たちと意味のある人間関係を持つこと<br/><br/>③ テレビ番組で料理を通して人々を幸せにすること<br/><br/>④ 彼のレストランで多くの人々に美味しい食事を提供すること<br/>"
+  },
+  {
     "id": "16-6-1",
     "html": "Opera is an art form that celebrates the human voice at its highest level of expression.<br/><br/>オペラは、人間の表現力の最高峰にある声を称える芸術形式である。<br/><br/><br/>No other art form creates excitement and moves the heart in the way that opera does, especially when performed by a great singer.<br/><br/>他のいかなる芸術形式も、特に偉大な歌手によって歌われた場合、オペラのように興奮を呼び起こし、心を動かすことはない。<br/><br/><br/>Such singers are trained to present some of the greatest and most challenging music that has ever been composed for the human voice.<br/><br/>そのような歌手たちは、人間の voixのために作曲された、最も偉大で、最も挑戦的な音楽の一部を披露するために訓練されている。<br/><br/><br/>熟語・慣用句：<br/><br/>* moves the heart：心を動かす<br/>"
   },
@@ -146,6 +238,30 @@
   {
     "id": "16-6-6",
     "html": "There are no easy solutions to opera's problems and there are many different opinions about the value of opera.<br/><br/>オペラの抱える問題に簡単な解決策はなく、オペラの価値についても様々な意見があります。<br/><br/><br/>However, every year many young people register for music courses with hopes and dreams of developing their talents in this special art form.<br/><br/>しかし、毎年多くの若者が、この特別な芸術形式において才能を伸ばすという希望と夢を持って音楽コースに登録しています。<br/><br/><br/>The fact that opera has survived many obstacles and continues to attract the rising generation demonstrates that it remains a respected art form full of value.<br/><br/>オペラが多くの障害を乗り越えてきたこと、そして次世代を引き続き惹きつけているという事実は、それが価値に満ちた尊敬される芸術形式であり続けていることを示しています。<br/><br/><br/>熟語・慣用句：<br/><br/>* rising generation：若い世代、次世代<br/>"
+  },
+  {
+    "id": "16-6-7",
+    "html": "Which of these statements is true according to paragraph (2)?<br/>段落(2)によると、これらの記述のうちどれが正しいですか？<br/><br/>解説<br/>① オペラは新たな状況に適応することで発展する。<br/>② オペラファンは出演してくれた有名人に感謝する。<br/>③ オペラ歌手はテレビや映画で歌うことを避ける。<br/>④ オペラ歌手の生涯物語は劇化される。<br/>"
+  },
+  {
+    "id": "16-6-8",
+    "html": "In paragraph (3), what is another way of asking the question \"But what about opera singers?\"<br/>段落(3)で、「でもオペラ歌手はどうなの？」という質問を別の言い方で尋ねるとしたら、どのような言い方がありますか？<br/><br/>① How do opera singers prepare?<br/>オペラ歌手はどのように準備をするのですか？<br/><br/><br/>② How should we use opera singers?<br/>私たちはオペラ歌手たちをどのように活用すべきなのでしょうか？<br/><br/><br/>③ What are opera singers worth?<br/>オペラ歌手の価値とは何でしょう？/ オペラ歌手はどれだけの価値があるのでしょうか？<br/><br/><br/>④ What sums do opera singers pay?<br/>オペラ歌手たちはいくらかのお金を支払っているのでしょうか？<br/>"
+  },
+  {
+    "id": "16-6-9",
+    "html": "According to paragraphs (3) and (4), which statement is true?<br/>段落(3)と(4)によると、どれが正しい記述ですか？<br/>① Opera singers are financially unstable.<br/>オペラ歌手は経済的に不安定だ。<br/><br/><br/>② Opera singers ask only the wealthy to attend.<br/>オペラ歌手は裕福な人々だけに来場を求める。<br/><br/><br/>③ Opera singers get paid before the show.<br/>オペラ歌手は公演前に給料を受け取る。<br/><br/><br/>④ Opera singers perform better if they are poor.<br/>オペラ歌手は貧しい方がより良い演奏をする。<br/>"
+  },
+  {
+    "id": "16-6-10",
+    "html": "Which statement best expresses the author's opinion in paragraph (5)?<br/><br/>5段落における著者の意見を最もよく表している記述はどれですか？<br/><br/>① Audiences know best how opera should be performed.<br/>オペラはどのように上演されるべきか、観客が一番よく知っている。<br/><br/><br/>② Microphones should be used to make opera more enjoyable.<br/>オペラをより楽しめるように、マイクを使用すべきである。<br/><br/><br/>③ Opera singers' voices should be valued more than their looks.<br/>オペラ歌手の容姿よりも、声の方がもっと高く評価されるべきである。<br/><br/><br/>④ Popular culture has had a positive influence on opera.<br/>大衆文化はオペラに好影響を与えてきた。<br/>"
+  },
+  {
+    "id": "16-6-11",
+    "html": "What would be the best title for this passage?<br/>この文章の最適なタイトルは何でしょう？<br/><br/>① How to Make Money in Opera<br/>オペラでどうやってお金を稼ぐか<br/><br/><br/>② Opera as a Part of Popular Culture<br/>オペラを大衆文化の一部として<br/><br/><br/>③ The Difficulties Facing Opera<br/>オペラが直面する困難<br/><br/><br/>④ The Historical Context of Opera<br/>オペラの歴史的背景<br/>"
+  },
+  {
+    "id": "16-6-12",
+    "html": "① Effect of world finance on opera<br/>世界の金融がオペラに及ぼす影響<br/><br/><br/>② Impact of popular culture on popular culture<br/>大衆文化がオペラに及ぼす影響<br/><br/><br/>③ Opera from the past to the present<br/>過去のオペラから現代のオペラまで<br/><br/><br/>④ Problems in money management<br/>資金管理の問題点<br/>"
   },
   {
     "id": "17-2C-1",
@@ -180,6 +296,54 @@
     "html": "If you forget something you once learned, go back to the place where you originally learned it.<br/><br/>もしあなたがかつて学んだことを忘れてしまったら、最初に学んだ場所に戻りなさい。<br/><br/><br/>Experimental studies support this idea. For instance, two groups of divers went into the sea. ①After listening to a list of words underwater, they came back on land and wrote down as many words as they could remember. ②A day later, one group sat on land, while the other went back into the sea. ③Researchers carefully chose the list of words, and the divers selected the diving site. ④Each group was asked to recall and write the words they had learned the day before. It turned out that the divers in the sea recalled words better than the divers on land. Thus, a person's ability to remember seems to be better if learning and recalling are done in the same environment.<br/><br/>実験的研究がこの考えを裏付けています。例えば、ダイバーの2つのグループが海に入りました。①水中であらゆる単語のリストを聞いた後、彼らは陸に戻り、思い出せる限り多くの単語を書き留めました。②1日後、一方のグループは陸に留まり、もう一方のグループは海に戻りました。③研究者たちは単語リストを注意深く選び、ダイバーたちはダイビング場所を選びました。④それぞれのグループは、前日に学んだ単語を思い出し、書き出すように求められました。すると、海の中にいたダイバーの方が、陸上にいたダイバーよりも単語を良く思い出したことが分かりました。このように、学習と想起が同じ環境で行われる場合、人の記憶力は向上するようです。<br/><br/><br/>熟語・慣用句:<br/><br/>* go back to: ～に戻る<br/>* for instance: 例えば<br/>* a day later: 1日後<br/>* It turned out that～: ～ということが判明した<br/>"
   },
   {
+    "id": "17-3C-1",
+    "html": "The mayor has asked me to lead this meeting to discuss ways to develop our town. Tom, how about beginning with you?<br/><br/>市長が、私たちの町の発展方法について話し合うこの会議を私が主導するように頼みました。トム、あなたから始めましょうか？<br/><br/><br/>* how about~: ～はどうですか？<br/>"
+  },
+  {
+    "id": "17-3C-2",
+    "html": "Sure. If a new factory is built here, more people will move to our town. This would help local shops and restaurants because there would be more customers. Also, some of our residents working in the next town could find jobs here. Many people have complained about their long drive back and forth to work. Working closer to home would improve their family life by giving them more time to spend together.<br/><br/>もし新しい工場がここに建てられれば、もっと多くの人が私たちの町に移り住むでしょう。これは、顧客が増えるため、地元の商店やレストランの役に立つでしょう。また、隣の町で働いている住民の中には、ここで仕事を見つけることができる人もいるでしょう。多くの人が、職場への長い往復のドライブについて不満を述べています。自宅に近いところで働くことは、一緒に過ごす時間を増やすことで、彼らの家庭生活を改善するでしょう。<br/><br/><br/>* back and forth: 行ったり来たり<br/>"
+  },
+  {
+    "id": "17-3C-3",
+    "html": "①many of our residents prefer traveling to another town to work<br/><br/>私たちの住民の多くは、仕事のために別の町へ行くことを好んでいます。<br/><br/><br/>②new businesses should do much more to increase their sales<br/><br/>新しい企業は、売上を伸ばすために、もっと多くのことをすべきです。<br/><br/><br/>③people in our town would benefit from a new workplace here<br/><br/>私たちの町の住民は、ここに新しい職場ができることで恩恵を受けるでしょう。<br/><br/><br/>④working in the next town may make people's lives better<br/><br/>隣の町で働くことは、人々の生活をより良くするかもしれません。<br/>"
+  },
+  {
+    "id": "17-3C-4",
+    "html": "Well, I think it would be better to build a shopping mall. It would be good for both customers and shop owners. When the new housing complex is completed in the northeastern part of town, people living there would be pleased with a nearby mall to shop at. Lots of my fellow merchants have been wishing they could move to a new place. Such a mall would be a benefit to shop owners because more people would visit their shops.<br/><br/>そうですね、ショッピングモールを建設する方が良いと思います。それは顧客と店主の両方にとって良いことです。町の北東部に新しい住宅団地が完成すれば、そこに住む人々は近くのモールで買い物ができることを喜ぶでしょう。私の仲間の商人たちは多くが新しい場所に移動したいと願っています。そのようなモールは、より多くの人が彼らの店を訪れるようになるため、店主にとって利益となるでしょう。<br/><br/><br/>熟語・慣用句：<br/><br/>* be good for: ～にとって良い<br/>* a benefit to: ～にとっての利益<br/>"
+  },
+  {
+    "id": "17-3C-5",
+    "html": "I agree. A mall would also be useful for people in other parts of town because they could do all of their shopping at one place. It would save everyone time, and families would enjoy their lives more. And the highway exit is in the same area. So, not only would people in our town shop at a mall built there but people from other towns would also have easy access to it. That would increase our local businesses' profits.<br/><br/>同意します。ショッピングモールは町の中でも他の地域に住む人々にとっても便利でしょう。なぜなら、彼らはそこで全ての買い物を済ませることができるからです。それは皆の時間を節約し、家族はより豊かな生活を送ることができるでしょう。そして、高速道路の出口も同地域にあります。ですから、私たちの町の人々がそこに建てられたショッピングモールで買い物をすると同時に、他の町の人々も簡単にアクセスできるようになるでしょう。それは地元企業の利益増加につながるでしょう。<br/><br/><br/>* save everyone time：皆の時間を節約する<br/>* enjoy their lives more：より豊かな生活を送る<br/>* easy access to it：簡単にアクセスできる<br/>* increase our local businesses' profits：地元企業の利益増加につながる<br/><br/>"
+  },
+  {
+    "id": "17-3C-6",
+    "html": "Right. It would make family life here much better as well as bring more customers to our town.<br/><br/>はい、それはここの家庭生活をずっと良くするだけでなく、町にもっと多くの顧客を呼び込むでしょう。<br/><br/><br/>* as well as: 〜と同様に、〜に加えて<br/>"
+  },
+  {
+    "id": "17-3C-7",
+    "html": "①bring money into our town to fix the highway<br/><br/>町に道路を修理するための資金を呼び込む<br/><br/><br/>②develop downtown and the northeastern areas<br/><br/>中心部と北東部地域を開発する<br/><br/><br/>③give rise to a lot of controversies and arguments<br/><br/>多くの論争や議論を引き起こす<br/><br/><br/>④improve our town's economy and convenience<br/><br/>町の経済と利便性を向上させる<br/><br/><br/>熟語・慣用句：<br/><br/>* bring money into: 町に資金を呼び込む<br/>* give rise to: 引き起こす、生じさせる<br/>"
+  },
+  {
+    "id": "17-3C-8",
+    "html": "I don't think building a mall or opening a business is the only way to help our economy grow. We should find ways of using the beauty of nature, which our town is already famous for. It makes our town a nice place for families to live in.<br/><br/>ショッピングモールを建設したり、事業を始めたりすることが、私たちの経済成長を助ける唯一の方法だと私は思いません。私たちの町がすでに有名である自然の美を生かす方法を見つけるべきです。それは私たちの町を家族が住むのに良い場所にします。<br/><br/><br/>* help our economy grow：経済成長を助ける<br/>* be famous for：～で有名である<br/>* a nice place for families to live in：家族が住むのに良い場所<br/>"
+  },
+  {
+    "id": "17-3C-9",
+    "html": "I think so, too. We should try to develop without changing the things that families living here and visitors enjoy. Using the beautiful scenery of our town in more creative ways would encourage people to come and live here. That would bring more money into our town.<br/><br/>私もそう思います。ここに住む家族や観光客が楽しんでいるものを変えることなく、開発を試みるべきです。町の美しい景色をより創造的な方法で活用すれば、人々がここに住もうと促すことができるでしょう。それは町にもっとお金をもたらすでしょう。<br/><br/><br/>* bring more money into our town：町にもっとお金をもたらす<br/>"
+  },
+  {
+    "id": "17-3C-10",
+    "html": "I completely agree. In the long run, our town will be hurt if its natural surroundings are not preserved.<br/><br/>まったく同意します。長い目で見れば、町の自然環境が保護されなければ、町は損害を受けるでしょう。<br/><br/><br/>* In the long run: 長い目で見れば<br/>"
+  },
+  {
+    "id": "17-3C-11",
+    "html": "So, Leslie and Ellen are talking about the importance of maintaining the natural features of our town.<br/><br/>レズリーとエレンは、私たちの町の自然の特徴を維持することの重要性について話しています。<br/><br/><br/>Well, from our discussion so far, it seems everyone thinks, when developing our town, we should<br/>[34]<br/><br/>. Let's see if there are so far any other points we need to take into account.<br/><br/>さて、これまでの議論からすると、町を開発する際には皆、[34] と考えているようです。他に考慮すべき点がないか見てみましょう。<br/><br/><br/>熟語・慣用句：<br/><br/>take into account：考慮する<br/>"
+  },
+  {
+    "id": "17-3C-12",
+    "html": "①build a large shopping center<br/><br/>大型ショッピングセンターを建設する<br/><br/><br/>②consider residents' family lives<br/><br/>住民の家庭生活を考慮する<br/><br/><br/>③increase the number of employees<br/><br/>従業員数を増やす<br/><br/><br/>④think of the natural environment<br/><br/>自然環境のことを考える<br/><br/><br/>熟語・慣用句は含まれていません。<br/>"
+  },
+  {
     "id": "17-4A-1",
     "html": "Physical activity in your childhood, such as playing sports and exercising, can greatly benefit your health when you are older. Therefore, it is important to promote physical activity in childhood for one's good health. The schoolyard is one place where children and adolescents can be encouraged to take part in physical activity. Thus, knowing how schoolyards are used by students may give us some helpful ideas to promote their physical activity.<br/><br/>子どもの頃、スポーツをしたり運動したりするなどの身体活動は、年をとった時の健康に大きな恩恵をもたらします。したがって、健康のために子どもの頃の身体活動を促進することが重要です。校庭は、子どもや青少年が身体活動に参加するよう促せる場所の一つです。そのため、生徒が校庭をどのように利用しているかを知ることは、彼らの身体活動を促進するための有益なアイデアを与えてくれるかもしれません。<br/><br/><br/>熟語・慣用句：<br/><br/>* for one's good health：健康のために<br/>"
   },
@@ -203,6 +367,19 @@
     "id": "17-4A-6",
     "html": "The findings of this study show the importance of investigating the potential of various environments and features in schoolyards.<br/><br/>この研究の結果は、学校の校庭における様々な環境と特徴の可能性を調査することの重要性を示しています。<br/><br/><br/>To promote students' health, it is also beneficial to observe how varieties of games Children and Adolescents play affect the length of time spent taking part in physical activity.<br/><br/>生徒の健康増進のためには、子どもや青少年が遊ぶ様々なゲームが、身体活動に従事する時間の長さにどのように影響するかを観察することも有益です。<br/><br/><br/>Let us now take a look at these relationships.<br/><br/>それでは、これらの関係を見てみましょう。<br/><br/><br/>熟語・慣用句：<br/><br/>* take a look at: 見てみる<br/>"
   },
+  {
+    "id": "17-4A-7",
+    "html": "According to the passage, what is the difference between Multi-court and Solid Surface?<br/>[35]<br/><br/>解説<br/>① Unlike Multi-court, Solid Surface contains artificial grass for younger students to play on.<br/>② Unlike Multi-court, Solid Surface does not contain boundaries marked for students' games.<br/>③ Unlike Solid Surface, Multi-court has a relatively soft surface made of various materials.<br/>④ Unlike Solid Surface, Multi-court is not surrounded by anything, which makes it easy to access.<br/><br/><br/>本文によると、マルチコートとソリッドサーフェスの違いは何ですか？<br/>[35]<br/><br/>解説<br/>① マルチコートとは異なり、ソリッドサーフェスは、低学年の生徒が遊ぶための人工芝が含まれています。<br/>② マルチコートとは異なり、ソリッドサーフェスには生徒のゲーム用に描かれた境界線がありません。<br/>③ ソリッドサーフェスとは異なり、マルチコートは様々な素材で作られた比較的柔らかい表面を持っています。<br/>④ ソリッドサーフェスとは異なり、マルチコートは何にも囲まれていないため、アクセスが容易です。<br/><br/><br/>熟語・慣用句：<br/><br/>* Unlike: ～とは異なり<br/>"
+  },
+  {
+    "id": "17-4A-8",
+    "html": "The main purpose of this passage is to [37] <br/>この文章の主な目的は、[37 ]することである<br/><br/><br/>解説<br/>① discuss the benefits of being physically active at school in childhood<br/><br/>子どもの頃に学校で身体活動をすることの利点を議論すること<br/><br/><br/>② give advice to increase the number of physically active adolescents<br/><br/>身体活動をする青少年の数を増やすための助言をすること<br/><br/><br/>③ introduce schools that encourage students to play on grassed areas<br/><br/>生徒が芝生のある場所で遊ぶことを奨励する学校を紹介すること<br/><br/><br/>④ show that types of schoolyards affect students' behavior there<br/><br/>校庭の種類が生徒の行動に影響を与えることを示すこと<br/><br/><br/>熟語・慣用句は含まれていません。<br/>"
+  },
+  {
+    "id": "17-4A-9",
+    "html": "What topic is most likely to follow the last paragraph?<br/>[38]<br/>最後の段落の次に、どのような話題が続くのが最も自然でしょうか？<br/>解説<br/>① さまざまな学校環境を異なる活動のために研究することの利点<br/><br/>② ゲームの種類と活動時間の長さとの関連性<br/><br/>③ 校庭環境が10代の身体活動に及ぼす影響<br/><br/>④ 校庭の表面が身体活動に費やす時間に影響を与える方法<br/>"
+  },
+
   {
     "id": "17-4B-1",
     "html": "The purpose of the IAYP Video Clip Competition is to provide<br/>[39]<br/><br/>① a place to meet new friends of the same age<br/><br/>② an airplane ticket to Australia to create a video clip<br/><br/>③ instructions to create a video clip on a computer<br/><br/>④ opportunities for young people to exhibit their works<br/><br/><br/>IAYPビデオクリップコンペティションの目的は、以下のものを提供することです。<br/><br/>① 同年代の新しい友達と出会える場<br/><br/>② ビデオクリップを作成するためにオーストラリアへの航空券<br/><br/>③ コンピューターでビデオクリップを作成するための指示<br/><br/>④ 若者たちが自分の作品を発表する機会<br/><br/><br/>*  a place to meet: 出会う場<br/>* an airplane ticket: 航空券<br/>* opportunities for: ～の機会<br/>"
@@ -284,6 +461,26 @@
     "html": "After pausing for a moment, I turned around and went downstairs for breakfast.<br/><br/>少しの間、立ち止まった後、私は振り返って朝食のために階下へ行った。<br/><br/><br/>熟語・慣用句：<br/><br/>* for a moment: しばらくの間<br/>* turned around: 振り返った<br/>* went downstairs: 階下へ行った<br/>* for breakfast: 朝食のために<br/>"
   },
   {
+    "id": "17-5-14",
+    "html": "When Yuji realized that he had turned into a cat, he first felt [42]<br/><br/>解説<br/>① astonished<br/>② embarrassed<br/>③ excited<br/>④ satisfied<br/><br/><br/>雄二が自分が猫に変身したことに気づいたとき、最初に感じたのは[42]でした。<br/><br/>解説<br/>① 驚いた<br/>② 恥ずかしい<br/>③ 興奮した<br/>④ 満足した<br/>"
+  },
+  {
+    "id": "17-5-15",
+    "html": "When Yuji's mother spoke to him, he was annoyed because [43]<br/><br/>解説<br/>① he wanted to please her<br/>② her words disturbed him<br/>③ his mouth was full of food<br/>④ she interrupted his studies<br/><br/><br/>勇治の母が彼に話しかけた時、彼はイライラしていた。なぜなら[43]<br/><br/>解説<br/>① 彼は母親を喜ばせたいと思っていたから<br/>② 彼女の言葉が彼を邪魔したから<br/>③ 口に食べ物が一杯だったから<br/>④ 彼の勉強を邪魔されたから<br/>"
+  },
+  {
+    "id": "17-5-16",
+    "html": "The cat thought, \"I don't like this guy,\" because Yuji<br/><br/>猫は「この男、気に入らない」と思った。なぜなら、雄二は<br/><br/><br/>解説<br/>① could not recall the taste of food he had eaten at breakfast<br/>② tried to hide his efforts to study for the final exams<br/>③ was making fun of his mother's concern for his future<br/>④ was not showing respect for people or things around him<br/><br/>解説<br/>① 朝食で食べたものの味が思い出せなかったから<br/>② 期末試験の勉強を隠そうとしていたから<br/>③ 母親の将来への心配をからかっていたから<br/>④ 周りの人や物に対して敬意を払っていなかったから<br/>"
+  },
+  {
+    "id": "17-5-17",
+    "html": "At the end of the story, Yuji did not pick up his smartphone because he<br/>[45]<br/><br/><br/>物語の終わりに、勇治はスマートフォンを手に取らなかった。なぜなら彼は<br/><br/><br/>解説<br/>① decided it was time to improve his attitude<br/>② realized that it was not yet fully charged<br/>③ wanted to stick to his old priorities<br/>④ was afraid of being scolded by his mother<br/><br/><br/>① 態度の改善の時だと決めたから<br/>② まだ充電が完了していなかったことに気づいたから<br/>③ 以前の優先順位を維持したかったから<br/>④ 母に叱られるのが怖かったから<br/><br/><br/>熟語・慣用句：<br/><br/>stick to:  固執する、維持する<br/>be scolded by~: ～に叱られる<br/>"
+  },
+  {
+    "id": "17-5-18",
+    "html": "What is the theme of this story?<br/>[46]<br/><br/>この物語のテーマは何ですか？<br/><br/><br/>解説<br/>① Cats have much better senses than humans.<br/>猫は人間よりもはるかに優れた感覚を持っている。<br/><br/>② Observing yourself can lead to self-change.<br/>自分を観察することは自己変容につながる可能性がある。<br/><br/>③ People using smartphones look strange.<br/>スマートフォンを使っている人は奇妙に見える。<br/><br/>④ Unbelievable things can happen in dreams.<br/>夢の中では信じられないようなことが起こる可能性がある。<br/>"
+  },
+  {
     "id": "17-6-1",
     "html": "For most people, their friendships are a valuable and important part of who they are.<br/><br/>ほとんどの人にとって、友情は自分自身を構成する上で貴重な、そして重要な一部です。<br/><br/><br/>Psychologists have pointed out that well-established friendships lead us to a better understanding of ourselves.<br/><br/>心理学者は、しっかりとした友情が私たち自身へのより良い理解へと導くことを指摘しています。<br/><br/><br/>They have also noted that we might face conflicts not only with acquaintances but even with our good friends, which could result in ends to some of our friendships.<br/><br/>彼らはまた、私たちが知人だけでなく親しい友人とも対立に直面する可能性があり、それがいくつかの友情の終焉につながる可能性があることにも言及しています。<br/><br/><br/>Fortunately, even when such conflicts occur, it is possible to find ways to maintain or save the friendships.<br/><br/>幸いなことに、そのような対立が起こったとしても、友情を維持したり、修復したりする方法を見つけることは可能です。<br/><br/><br/>熟語・慣用句：<br/><br/>* lead us to a better understanding of ourselves：私たち自身へのより良い理解へと導く<br/>* result in ends to some of our friendships：いくつかの友情の終焉につながる<br/>* maintain or save the friendships：友情を維持したり、修復したりする<br/>"
   },
@@ -306,6 +503,30 @@
   {
     "id": "17-6-6",
     "html": "We all know that friendships are precious, but we also understand that friendships are not always stable.<br/><br/>私たちは皆、友情が貴重なものであることを知っていますが、友情が常に安定しているわけではないことも理解しています。<br/><br/><br/>The challenge in maintaining friendships is keeping the connections strong during the ups and downs that happen in all relationships.<br/><br/>友情を維持することの課題は、あらゆる人間関係で起こる浮き沈みの間、繋がりを強く保つことです。<br/><br/><br/>When things are going well, we enjoy our friendships. If things go bad, we should remember the points above.<br/><br/>物事がうまくいっている時は、友情を楽しんでいます。もし物事がうまくいかなくなったら、上記の点を思い出すべきです。<br/><br/><br/>Sometimes we can get the relationship back on track, but at other times we should accept and appreciate that relationships can change.<br/><br/>時には関係を軌道に戻すことができますが、他の時には、人間関係は変化することを受け入れ、感謝するべきです。<br/><br/><br/>However, regardless of the states of our friendships, they will continue to be an important part of our lives.<br/><br/>しかし、友情の状態に関係なく、友情は私たちの生活の重要な部分を占め続けます。<br/><br/><br/>* ups and downs：浮き沈み<br/>* get the relationship back on track：関係を軌道に戻す<br/>* regardless of：～に関係なく<br/><br/><br/>"
+  },
+  {
+    "id": "17-6-7",
+    "html": "According to paragraph (1), what do psychologists say about friendships?<br/><br/>(1)段落によると、心理学者は友情について何と述べていますか？<br/><br/><br/>解説<br/>① They are frequently compared to one's possessions.<br/>それらはしばしば自分の所有物と比較される。<br/><br/><br/>② They are impossible to fix when they become unstable.<br/>それらは不安定になると修復不可能である。<br/><br/><br/>③ They can lead us to have conflicts with our acquaintances.<br/>それらは私たちが知人との衝突につながる可能性がある。<br/><br/><br/>④ They help us know about ourselves but can have problems.<br/>それらは私たち自身について知るのを助けるが、問題を抱える可能性もある。<br/>"
+  },
+  {
+    "id": "17-6-8",
+    "html": "Which of the following is closest to the meaning of \"swallow our pride\" in paragraph (2)?<br/><br/>[48]<br/><br/>解説<br/>① Give our thanks to someone<br/><br/>② Hold back our feelings<br/><br/>③ Realize that problems happen<br/><br/>④ Stop seeing someone<br/><br/><br/>(2)段落における「swallow our pride」の意味に最も近いのはどれですか？<br/><br/>[48]<br/><br/>解説<br/>① 誰かに感謝する<br/><br/>② 感情を抑える<br/><br/>③ 問題が起こることを悟る<br/><br/>④ 誰かと付き合うのをやめる<br/><br/><br/>熟語・慣用句:<br/><br/>* swallow our pride:  プライドを飲み込む（感情を抑える）<br/>"
+  },
+  {
+    "id": "17-6-9",
+    "html": "According to paragraph (5), research found it is important to<br/><br/>[5]によると、研究では、～することが重要であることがわかった。① hesitate to express one's true feelings<br/>自分の本当の気持ちを表現することにためらう<br/><br/><br/>② ignore misunderstandings and disputes<br/>誤解や争いを無視する<br/><br/><br/>③ put up with problems whenever one can<br/>できる限り問題を我慢する<br/><br/><br/>④ solve problems while they are small<br/>問題が小さいうちに解決する<br/><br/><br/>熟語・慣用句：<br/><br/>* put up with:我慢する<br/><br/><br/>"
+  },
+  {
+    "id": "17-6-10",
+    "html": "According to paragraph (6), what is difficult about maintaining friendships?<br/><br/>(6)段落によると、友情を維持することにおいて何が難しいですか？<br/>"
+  },
+  {
+    "id": "17-6-11",
+    "html": "What would be the best title for this passage?<br/><br/><br/>この文章の最適なタイトルは何でしょうか？<br/><br/>① Advice for Friendships That Will Last<br/>長く続く友情のためのアドバイス<br/><br/><br/>② Defending Yourself and Your Friends<br/>自分自身と友人を守ること<br/><br/><br/>③ Strength as the Key to Friendships<br/>強さが友情の鍵<br/><br/><br/>④ The Changing Nature of Friendships<br/>友情の変わりゆく性質<br/>"
+  },
+  {
+    "id": "17-6-12",
+    "html": "① A report about the results of a study on long-term friendships<br/>長期にわたる友情に関する研究結果の報告書<br/><br/><br/>② The importance of looking at a situation from our friend's perspective<br/>友人の視点から状況を見ることの重要性<br/><br/><br/>③ The significance of understanding that friendships undergo transformations<br/>友情が変化していくことを理解することの重要性<br/><br/><br/>④ The value of staying in contact and interacting with your friends<br/>友人と連絡を取り合い、交流することの価値<br/>"
   },
   {
     "id": "18-2B-1",
@@ -1113,11 +1334,27 @@
   },
   {
     "id": "21-6A-4",
-    "html": "What is ice hockey?<br/><br/>アイスホッケーとは何ですか？<br/><br/><br/>Players score by putting a \"puck\" in the other team's net.<br/><br/>選手たちは「パック」を相手のチームのネットに入れることで得点します。<br/><br/><br/>Six players on each team.<br/><br/>各チーム6人の選手です。<br/><br/><br/>Sport played on ice at a high speed.<br/><br/>氷上で行われる高速のスポーツです。<br/><br/><br/>"
+    "html": "In addition to not realizing the seriousness of the injury, players tend to worry about what their coach will think.<br/><br/>怪我の深刻さを認識していないことに加え、選手たちは監督がどう思うかを心配しがちです。<br/><br/><br/>In the past, coaches preferred tough players who played in spite of the pain.<br/><br/>過去には、監督は痛みを感じながらもプレーするタフな選手を好んでいました。<br/><br/><br/>In other words, while it would seem logical for an injured player to stop playing after getting hurt, many did not.<br/><br/>つまり、怪我をした選手がプレーをやめるのが論理的と思われる一方、多くはそうしませんでした。<br/><br/><br/>Recently, however, it has been found that concussions can have serious effects that last a lifetime. People with a history of concussion may have trouble concentrating or sleeping. Moreover, they may suffer from psychological problems such as depression and mood changes. In some cases, players may develop smell and taste disorders.<br/><br/>しかし最近になって、脳震盪は生涯にわたる深刻な影響を与える可能性があることが分かりました。脳震盪の経験のある人は、集中力や睡眠に問題を抱える可能性があります。さらに、うつ病や気分の変化などの精神的な問題に苦しむ可能性もあります。場合によっては、嗅覚や味覚障害を発症する選手もいます。<br/><br/><br/>* in addition to: ～に加えて<br/>* in spite of: ～にもかかわらず<br/>* in other words: つまり<br/>* suffer from: ～に苦しむ<br/><br/><br/>"
   },
   {
     "id": "21-6A-5",
-    "html": "脳震盪の定義<br/><br/>An injury to the brain that affects the way it functions<br/><br/>脳の機能に影響を与える損傷<br/><br/><br/>* affects the way it functions: 機能に影響を与える<br/>"
+    "html": "The National Hockey League (NHL), consisting of teams in Canada and the United States, has been making stricter rules and guidelines to deal with concussions.<br/><br/>カナダとアメリカ合衆国のチームで構成されるナショナルホッケーリーグ（NHL）は、脳震盪に対処するために、より厳しい規則とガイドラインを設けてきました。<br/><br/><br/>For example, in 2001, the NHL introduced the wearing of visors—pieces of clear plastic attached to the helmet that protect the face. At first, it was optional and many players chose not to wear them. Since 2013, however, it has been required.<br/><br/>例えば、2001年にNHLはバイザーの着用を導入しました。バイザーとは、ヘルメットに取り付けられた透明なプラスチック製の部品で、顔を保護するものです。当初は任意であり、多くの選手が着用しませんでした。しかし、2013年以降は義務付けられています。<br/><br/><br/>In addition, in 2004, the NHL began to give more severe penalties, such as suspensions and fines, to players who hit another player in the head deliberately.<br/><br/>さらに、2004年には、NHLは故意に他の選手の頭を打った選手に対して、出場停止や罰金などのより厳しいペナルティを与えるようになりました。<br/><br/><br/>熟語・慣用句：<br/><br/>* deal with: 対処する<br/>* at first: 最初は<br/>* in addition: さらに<br/><br/><br/>"
+  },
+  {
+    "id": "21-6A-6",
+    "html": "The NHL also introduced a concussion spotters system in 2015.<br/><br/>NHLは2015年に脳震盪スポットターシステムも導入しました。<br/><br/><br/>In this system, NHL officials with access to live streaming and video watch for visible indications of concussion during each game.<br/><br/>このシステムでは、ライブストリーミングとビデオにアクセスできるNHLの職員が、各試合で脳震盪の目に見える兆候を監視します。<br/><br/><br/>At first, two concussion spotters, who had no medical training, monitored the game in the arena.<br/><br/>当初、医療訓練を受けていない2人の脳震盪スポットターがアリーナで試合を監視していました。<br/><br/><br/>The following year, one to four concussion spotters with medical training were added. They monitored each game from the League's head office in New York.<br/><br/>翌年には、医療訓練を受けた1～4人の脳震盪スポットターが追加されました。彼らはニューヨークのリーグ本部から各試合を監視しました。<br/><br/><br/>If a spotter thinks that a player has suffered a concussion, the player is removed from the game and is taken to a \"quiet room\" for an examination by a medical doctor.<br/><br/>スポットターが選手が脳震盪を起こしたと思われる場合、その選手は試合から外され、「静室」に連れて行かれ、医師による検査を受けます。<br/><br/><br/>The player is not allowed to return to the game until the doctor gives permission.<br/><br/>医師の許可が出るまで、選手は試合に復帰することは許可されません。<br/><br/><br/>熟語・慣用句：<br/><br/>* access to: ～へのアクセス<br/>* at first: 最初は<br/>* the following year: 翌年<br/>"
+  },
+  {
+    "id": "21-6A-7",
+    "html": "The NHL has made much progress in making ice hockey a safer sport.<br/><br/>NHLはアイスホッケーをより安全なスポーツにする上で大きな進歩を遂げている。<br/><br/><br/>As more is learned about the causes and effects of concussions, the NHL will surely take further measures to ensure player safety.<br/><br/>脳震盪の原因と影響についてさらに多くのことが明らかになるにつれて、NHLは間違いなく選手安全を確保するためのさらなる措置を講じるだろう。<br/><br/><br/>Better safety might lead to an increase in the number of ice hockey players and fans.<br/><br/>より良い安全対策は、アイスホッケーの選手とファンの数の増加につながる可能性がある。<br/><br/><br/>熟語・慣用句：<br/><br/>* make much progress: 大きな進歩を遂げる<br/>* ensure player safety: 選手の安全を確保する<br/>* lead to: ～につながる<br/>"
+  },
+  {
+    "id": "21-6A-8",
+    "html": "What is ice hockey?<br/><br/>アイスホッケーとは何ですか？<br/><br/><br/>Players score by putting a \"puck\" in the other team's net.<br/><br/>選手たちは「パック」を相手のチームのネットに入れることで得点します。<br/><br/><br/>Six players on each team.<br/><br/>各チーム6人の選手です。<br/><br/><br/>Sport played on ice at a high speed.<br/><br/>氷上で行われる高速のスポーツです。<br/><br/><br/>"
+  },
+  {
+    "id": "21-6A-9",
+    "html": "Definition of a concussion<br/>脳震盪の定義<br/><br/>An injury to the brain that affects the way it functions<br/><br/>脳の機能に影響を与える損傷<br/><br/><br/>* affects the way it functions: 機能に影響を与える<br/>"
   },
   {
     "id": "21-6B-0",
@@ -2060,6 +2297,22 @@
     "html": "In modern society, people are always busy and this fast pace of living can be stressful.<br/><br/>現代社会では、人々は常に忙しく、この速いペースの生活はストレスになる可能性がある。<br/><br/><br/>The movement toward a slow life has shown us that you don't have to be busy all the time. Instead, you can slow down and notice things that are truly meaningful to you.<br/><br/>スローライフへの動きは、常に忙しくいる必要はないということを私たちに示しました。代わりに、ペースを落とし、あなたにとって本当に意味のあることに気づけるのです。<br/><br/><br/>By taking your time and being completely focused on these things, you can improve the quality of your work and life.<br/><br/>時間をかけて、それらのことに完全に集中することで、仕事と人生の質を向上させることができます。<br/><br/><br/>This essay will describe some ways to do this.<br/><br/>このエッセイでは、それを行うためのいくつかの方法を説明します。<br/><br/><br/>熟語・慣用句：<br/><br/>* fast pace of living：速いペースの生活<br/>* slow down：ペースを落とす<br/>* meaningful：意味のある<br/>* take your time：時間をかける<br/><br/><br/>"
   },
   {
+    "id": "25-4-1B",
+    "html": "Add an appropriate connecting word.<br/>適切な接続詞を加えてください。<br/>"
+  },
+  {
+    "id": "25-4-2B",
+    "html": "Add a concluding sentence to improve this paragraph.<br/>この段落を改善するために結論の文を加えてください。<br/>"
+  },
+  {
+    "id": "25-4-3B",
+    "html": "he underlined part isn't your main argument. Rewrite it.<br/>下線部はあなたの主要な主張ではありません。書き直してください。<br/>"
+  },
+  {
+    "id": "25-4-4B",
+    "html": "The underlined part doesn't describe your essay content well. Change it.<br/>下線部はあなたのエッセイの内容をうまく説明していません。変更してください。<br/>"
+  },
+  {
     "id": "25-4-3",
     "html": "One key point of the slow life is to own fewer belongings. This makes it easier to concentrate on everyday activities.<br/><br/>スローライフの重要な点は、所有物を少なくすることです。これにより、日々の活動に集中しやすくなります。<br/><br/><br/>Many people today tend to buy more than they can consume. Do you really need five pairs of the latest sneakers? Slow-lifers would recommend reducing possessions and buying only necessary items.<br/><br/>現代の人々は、消費できる以上のものを買いがちです。あなたは本当に最新の運動靴を５足も必要ですか？スローライフを実践する人たちは、所持物を減らし、必要なものだけを買うことを勧めます。<br/><br/><br/>熟語・慣用句：<br/><br/>* concentrate on: 集中する<br/>* tend to: ～しがちである<br/>"
   },
@@ -2078,6 +2331,22 @@
   {
     "id": "25-4-7",
     "html": "You have really improved your essay. Keep working on it. I'm going to follow your suggestions to slow down and hopefully improve the quality of my life.☺<br/><br/>あなたのエッセイは本当に改善されましたね。頑張って続けてください。私はあなたの提案に従ってペースを落とし、人生の質を向上させられるよう努力します。☺<br/><br/><br/>* Keep working on it: 頑張り続ける/努力を続ける<br/>* slow down: ペースを落とす/ゆっくりする<br/>* hopefully: うまくいけば/願わくば<br/>* improve the quality of my life: 人生（の質）を向上させる<br/>"
+  },
+  {
+    "id": "25-4-8",
+    "html": "① However<br/>しかしながら<br/><br/><br/>② Moreover<br/>さらに<br/><br/><br/>③ Otherwise<br/>さもなければ、そうでなければ<br/><br/><br/>④ Therefore<br/>それゆえに、したがって<br/>"
+  },
+  {
+    "id": "25-4-9",
+    "html": "Based on Comment (2), which is the best sentence to add?<br/><br/>コメント(2)に基づいて、追加するのに最適な文はどれですか？<br/><br/>①<br/>Limit the time you spend having conversations with people.<br/>人との会話に費やす時間を制限しましょう。<br/><br/><br/>②<br/>Send messages with your phone just once or twice a day.<br/>1日に1〜2回だけ携帯電話でメッセージを送信しましょう。<br/><br/><br/>③<br/>Try to focus your attention on the person you are talking with.<br/>話している相手に注意を集中するようにしましょう。<br/><br/><br/>④<br/>Use your phone to find real friends through social media.<br/>ソーシャルメディアを通じて、本当の友達を見つけましょう。<br/>"
+  },
+  {
+    "id": "25-4-10",
+    "html": "Based on Comment (3), which is the best phrase to replace the underlined part?<br/><br/>コメント(3)に基づいて、下線部の最適な言い換え表現はどれですか？<br/><br/>①<br/>you can be satisfied at work and in your personal life<br/>仕事でも私生活でも満足することができます。<br/><br/><br/>②<br/>you can complete tasks in a short period of time<br/>短時間でタスクを完了することができます。<br/><br/><br/>③<br/>you can decrease stress by sharing work with others<br/>他の人と仕事を分担することでストレスを軽減することができます。<br/><br/><br/>④<br/>you can focus on the outcome rather than the process<br/>過程ではなく結果に焦点を当てることができます。<br/>"
+  },
+  {
+    "id": "25-4-11",
+    "html": "Based on Comment (4), which is the best phrase to replace the underlined part?<br/><br/>コメント(4)に基づいて、下線を引いた部分の最適な言い回しはどれですか？<br/><br/>①<br/>plan your daily activities as soon as you wake up<br/>起きるやいなや、一日の予定を立てなさい。<br/><br/><br/>②<br/>recall the bad things that happened in your life<br/>人生で起こった嫌なことを思い出してください。<br/><br/><br/>③<br/>think back to the memorable parts of your day<br/>その日の記憶に残る部分を思い出してください。<br/><br/><br/>④<br/>throw away unwanted items before sleeping<br/>寝る前に不要なものを捨ててください。<br/><br/>* Based on: ～に基づいて<br/>* replace the underlined part: 下線を引いた部分を置き換える<br/>"
   },
   {
     "id": "25-5-1",
@@ -2101,11 +2370,27 @@
   },
   {
     "id": "25-5-6",
-    "html": ""
+    "html": "I would like you to confirm the following points:<br/><br/>以下の点をご確認ください。<br/><br/><br/>The conference will start at 9:45 a.m. and end at 4:45 p.m.<br/>会議は午前9時45分に始まり、午後4時45分に終了します。<br/><br/>The registration will close seven days before the event.<br/>登録はイベントの7日前締め切りです。<br/><br/>The conference will be held in the Main Hall.<br/>会議はメインホールで開催されます。<br/><br/>Participants will park in the university parking area.<br/>参加者は大学の駐車場に駐車してください。<br/><br/><br/>熟語・慣用句：<br/>* seven days before the event: イベントの7日前<br/>"
   },
   {
     "id": "25-5-7",
-    "html": ""
+    "html": "Below is a list of things that still need to be decided:<br/><br/>まだ決定されていない事項のリストは以下の通りです。<br/><br/><br/>Can we use the cafeteria for the lunch time reception?<br/>ランチタイムのレセプションにカフェテリアを使用できますか？<br/><br/><br/>Have you received the speech titles for the mayor and the two remaining presenters?<br/>市長と残りの2人の発表者の講演タイトルは届きましたか？<br/><br/><br/>How will we arrange the tables and chairs for the debate?<br/>討論会のためのテーブルと椅子の配置はどうしますか？<br/>"
+  },
+  {
+    "id": "25-5-8",
+    "html": "The number of volunteers that can help with the conference isn't set yet.<br/>I'll send you the list as soon as possible.<br/><br/><br/>会議を手伝ってくれるボランティアの人数はまだ決まっていません。<br/>できるだけ早くリストを送ります。<br/><br/><br/>熟語・慣用句：<br/>as soon as possible:できるだけ早く<br/>"
+  },
+  {
+    "id": "25-5-9",
+    "html": "This is my first time being on a committee like this, and I am rather anxious, so I would appreciate any advice you have.<br/><br/>このような委員会に参加するのは初めてで、かなり不安なので、何かアドバイスをいただければ幸いです。<br/><br/><br/>熟語・慣用句：<br/><br/>* appreciate: ありがたく思う、感謝する<br/>"
+  },
+  {
+    "id": "25-5-10",
+    "html": "I'm looking forward to assisting and attending the presentations.<br/><br/>発表のお手伝いと参加を楽しみにしています。<br/><br/><br/>* looking forward to: ～を楽しみにしている<br/>"
+  },
+  {
+    "id": "25-6-0",
+    "html": "Your friend, Harry, wants to be a professional writer. He has written a story about two new heroes for a writing contest. You read it and then give him feedback.<br/><br/>あなたの友達、ハリーはプロの作家になりたいと思っています。彼は書き物コンテストのために、二人の新しいヒーローに関する物語を書きました。あなたはそれを読んで、それから彼にフィードバックを与えます。<br/>"
   },
   {
     "id": "25-6-1",
@@ -2144,6 +2429,30 @@
     "html": "After the Whiskers incident, I flew back home. My phone buzzed with a notification. It said, \"Melody has decided to leave Team Hero.\" In my home office, I heard someone moving around. When I opened the door, I briefly saw a person's shape before it disappeared. On my desk was a note:<br/><br/><br/>「ウィスカーズ事件」の後、私は家に飛ぶように帰った。すると携帯電話が通知でブルブルと振動した。「メロディーがチーム・ヒーローを脱退することを決めた」とあった。自宅の書斎で、何かが動いている音が聞こえた。ドアを開けると、一瞬人の影が見えたが、すぐに消えた。机の上にはメモがあった：<br/><br/><br/>熟語・慣用句：<br/><br/>* flew back home:  急いで家に帰った<br/>* buzzed with a notification: 通知でブルブルと振動した (擬音語を含む表現)<br/>* moving around:  動き回っている<br/>* briefly saw:  一瞬見た<br/>"
   },
   {
+    "id": "25-6-10",
+    "html": "After reading the note, I understood who Melody was.<br/><br/>メモを読んだ後、私はメロディが誰なのか理解しました。<br/><br/><br/>Since then, working together, Melody and I have made our parents proud.<br/><br/>それ以来、メロディと私は協力して、両親を誇りに思わせてきました。<br/><br/><br/>* Since then: それ以来<br/>* working together: 協力して<br/>* make someone proud: 誰かを誇りに思わせる<br/>"
+  },
+  {
+    "id": "25-6-11",
+    "html": "I loved your story! I really liked how Bluebird passes through various stages in his personal growth (see below).<br/><br/>あなたの物語が大好きでした！ブルーバードが個人的な成長において様々な段階を経験していく様子が本当に気に入りました（下記参照）。<br/><br/><br/>* passes through: 経験する、通過する<br/>"
+  },
+  {
+    "id": "25-6-12",
+    "html": "I found Melody really fascinating with her unique superpowers.<br/><br/>メロディーのユニークな超能力は、本当に魅力的だと私は感じました。<br/><br/><br/>* fascinating: 魅力的な<br/>"
+  },
+  {
+    "id": "25-6-13",
+    "html": "Also, I was moved when Bluebird's mother said, \"We won't let that happen to you.\" She meant, \"We are going to protect you.\"<br/><br/><br/>また、ブルーバードの母親が「そんなことはあなたにさせないわ」と言った時、私は感動しました。彼女は「私たちはあなたを守ります」という意味でした。<br/><br/><br/>* let that happen to you: あなたにそんなことが起こるままにしない<br/>* We are going to protect you: 私たちはあなたを守ります (これは熟語・慣用句というよりは、前文の言い換え説明です。)<br/>"
+  },
+  {
+    "id": "25-6-14",
+    "html": "On the other hand, I think you can still make the story a little better by adding a few details. You could write about [30] and [31], which are not mentioned or suggested. These details would give your characters depth and make your story more interesting.<br/><br/>一方、いくつかの詳細を追加することで、物語をもう少し良くできると思います。[30]と[31]については言及も示唆もされていませんが、それらについて書くことができます。これらの詳細は、登場人物たちに深みを与え、物語をより面白くします。<br/><br/><br/>熟語・慣用句：<br/><br/>* make the story a little better: 物語をもう少し良くする<br/>* add a few details: いくつかの詳細を追加する<br/>* give your characters depth: 登場人物に深みを与える<br/>* make your story more interesting: 物語をより面白くする<br/><br/>"
+  },
+  {
+    "id": "25-7-0",
+    "html": "You are preparing a presentation for a science project on animal habits. You found some interesting information in the article below and are now making your outline.<br/><br/>あなたは動物の習性に関する科学プロジェクトのプレゼンテーションの準備をしています。あなたは下記の記事で興味深い情報を見つけ、現在アウトラインを作成しています。<br/>"
+  },
+  {
     "id": "25-7-1",
     "html": "If you ever spend all day at home, you might notice that your pet cat sleeps a lot during the day and is quite active in the evening and early morning. Humans, on the other hand, are awake during most of the daylight hours and then sleep for a long time at night.<br/><br/>もし一日中家にいることがあれば、ペットの猫が日中はたくさん寝て、夕方と早朝は活発であることに気づくかもしれません。一方、人間は日中のほとんどの時間目を覚ましており、そして夜に長時間眠ります。<br/><br/><br/>熟語・慣用句：<br/><br/>* on the other hand: 一方では<br/>"
   },
@@ -2176,6 +2485,18 @@
     "html": "As shown above, sleep plays an important role in the lives of animals and it is much more complex than simply closing the eyes.<br/><br/>上記のように、睡眠は動物の生活において重要な役割を果たしており、単に目を閉じることよりもはるかに複雑です。<br/><br/><br/>熟語・慣用句：<br/>* play an important role: 重要な役割を果たす<br/>* simply closing the eyes: 単に目を閉じること<br/>"
   },
   {
+    "id": "25-7-9",
+    "html": "A. To alter body temperature<br/>体温を変えるため<br/><br/><br/>B. To maintain overall health<br/>全体的な健康を維持するため<br/><br/><br/>C. To refresh the animal's body<br/>動物の体をリフレッシュするため<br/><br/><br/>D. To reset the brain neurons<br/>脳のニューロンをリセットするため<br/>"
+  },
+  {
+    "id": "25-7-10",
+    "html": "Black bear hibernation<br/>クマの冬眠<br/><br/><br/>Jellyfish relaxation<br/>クラゲの休息<br/>"
+  },
+  {
+    "id": "25-8-0",
+    "html": "You are working on an essay about space exploration. You will follow the steps below:<br/><br/>あなたは宇宙探査に関する論文に取り組んでいます。以下の手順に従ってください。<br/><br/><br/>Step 1: Read a range of opinions gathered from the Internet about exploring outer space.<br/><br/>ステップ１：インターネットから集めた、宇宙探査に関する様々な意見を読んでください。<br/><br/><br/>Step 2: Take a position on space exploration.<br/><br/>ステップ２：宇宙探査について自分の立場を表明してください。<br/><br/><br/>Step 3: Create an outline of your essay using additional sources.<br/><br/>ステップ３：追加の資料を用いて、論文のアウトラインを作成してください。<br/>"
+  },
+  {
     "id": "25-8-1",
     "html": "The exploration of space requires a lot of research time and money.<br/><br/>宇宙探査には、膨大な研究時間とお金が必要です。<br/><br/><br/>All this research has led to many new inventions and boosted humanity's scientific and technical knowledge.<br/><br/>こうした研究は、多くの新しい発明を生み出し、人類の科学技術知識を飛躍的に向上させました。<br/><br/><br/>While laser eye surgery, solar cells, freeze-dried food, and wireless headsets are just a few examples that have come out of space research, perhaps the invention that has proven the most useful in modern life is the computer mouse.<br/><br/>レーザー手術、太陽電池、フリーズドライ食品、ワイヤレスヘッドセットなどは、宇宙研究から生まれたほんの一例ですが、現代生活で最も有用であると証明された発明は、おそらくコンピューターマウスでしょう。<br/><br/><br/>This was developed in the 1960s on a NASA research project.<br/><br/>これは1960年代にNASAの研究プロジェクトで開発されました。<br/><br/><br/>* a lot of: たくさんの<br/>* led to: ～につながる、～をもたらす<br/>* boosted: 向上させた、押し上げた<br/>* come out of: ～から生まれる、～の結果として生じる<br/>* proven the most useful: 最も有用であると証明された<br/><br/><br/>"
   },
@@ -2202,5 +2523,21 @@
   {
     "id": "25-8-7",
     "html": "Space exploration is getting more and more costly; in 2022 it was reported that the total amount of money spent by all the governments around the world was more than US$100 billion. The graph below compares this cost with the annual budgets, estimated by international institutions, that would be required to address some of the world's most important issues.<br/><br/>宇宙探査はますます高価になっています。2022年には、世界中のすべての政府が支出総額が1000億米ドルを超えたと報告されました。下のグラフは、この費用と、国際機関が推定した、世界で最も重要な問題のいくつかに対処するために必要とされる年間予算を比較したものです。<br/><br/><br/>熟語・慣用句：<br/><br/>* more and more costly: ますます高価になる<br/>* address some of the world's most important issues: 世界で最も重要な問題のいくつかに対処する<br/>"
+  },
+  {
+    "id": "25-8-8",
+    "html": "pace exploration is without doubt on the frontline of science, but it should not be a priority for the following three reasons<br/><br/><br/>宇宙探査は疑いなく科学の最前線にあるが、以下の3つの理由から優先事項としてはならない。<br/><br/><br/>* on the frontline of: 最前線で<br/>* for the following three reasons: 以下の3つの理由から<br/>"
+  },
+  {
+    "id": "25-8-9",
+    "html": "REASON 1 from Step 2, based on evidence from the opinions in Step 1<br/>理由1は、ステップ1の見解からの証拠に基づいて、ステップ2からです。<br/><br/><br/>REASON 2 (43), based on evidence from Source A<br/>理由2は、資料Aからの証拠に基づいて（43）からです。<br/><br/><br/>REASON 3, based on evidence (44) from Source B<br/>理由3は、資料Bからの証拠（44）に基づいてからです。<br/>"
+  },
+  {
+    "id": "25-8-10",
+    "html": "Upon consideration of all its aspects, we should perhaps prioritize other things over exploring space.<br/><br/>すべての側面を考慮すると、私たちは宇宙探査よりも他のことを優先するべきなのかもしれません。<br/><br/><br/>熟語・慣用句：<br/><br/>* upon consideration of: ～を考慮して<br/>* prioritize: 優先する<br/>* over: ～よりも<br/><br/><br/>"
+  },
+  {
+    "id": "25-8-11",
+    "html": ""
   }
 ]

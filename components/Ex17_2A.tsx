@@ -24,7 +24,7 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解①"],
+      explanation: ["正解は① freeze at .. で凍る"],
     },
     {
       questionId: "2A-2",
@@ -38,7 +38,7 @@ const JapaneseTestQuestion = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解②"],
+      explanation: ["正解は② the young 若者、the 形容詞で、〜の人たちの例"],
     },
     {
       questionId: "2A-3",
@@ -51,7 +51,7 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "4",
       answerString: "",
       points: 2,
-      explanation: ["正解④"],
+      explanation: ["正解は④ turn yellow 黄色になる"],
     },
     {
       questionId: "2A-4",
@@ -64,7 +64,9 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: [
+        "正解は① far more economical より経済的、比較の強調はfar , match , a lotを使う",
+      ],
     },
     {
       questionId: "2A-5",
@@ -77,7 +79,10 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "2",
       answerString: "",
       points: 2,
-      explanation: ["正解②"],
+      explanation: [
+        "正解は②",
+        "having been chosen 主演男優に選ばれて、分子構文",
+      ],
     },
     {
       questionId: "2A-6",
@@ -90,7 +95,10 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "3",
       answerString: "",
       points: 2,
-      explanation: ["正解③"],
+      explanation: [
+        "正解は③ あなたが入手する情報ならなんでも",
+        "whatever A SV.. 「Sが〜するどんなAでも」",
+      ],
     },
     {
       questionId: "2A-7",
@@ -103,7 +111,7 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "4",
       answerString: "",
       points: 2,
-      explanation: ["正解④"],
+      explanation: ["正解は④ which 、全文の内容を受ける関係代名詞"],
     },
     {
       questionId: "2A-8",
@@ -116,7 +124,10 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: [
+        "正解は①、got his umbrella caught ドアに傘をはさまれた",
+        "get A + 過去分詞、「Aを〜させる」",
+      ],
     },
     {
       questionId: "2A-9",
@@ -129,7 +140,10 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "3",
       answerString: "",
       points: 2,
-      explanation: ["正解③"],
+      explanation: [
+        "正解は③、Nobody in this class is as kind as Abbie",
+        "アビーほど親切な人はいない、否定と比較",
+      ],
     },
     {
       questionId: "2A-10",
@@ -142,7 +156,10 @@ const JapaneseTestQuestion = () => {
       rightAnswerString: "1",
       answerString: "",
       points: 2,
-      explanation: ["正解①"],
+      explanation: [
+        "正解は①、Angelina asked me whether I had enjoyed the festival",
+        "「アンジェリーナは私にその祭りを楽しんだかどうか尋ねた」askedに対して一つ前の時制 had enjoyedが対応",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -417,7 +434,7 @@ const JapaneseTestQuestion = () => {
                 He ( A ) his umbrella ( B ) in the door by
               </span>
               <span className="mr-2">
-                accident when he boarded the rush hour.
+                accident when he boarded the rush hour
               </span>
               <span className="mr-2">train.</span>
               {renderSelect("15", 4, answers, setAnswers)}

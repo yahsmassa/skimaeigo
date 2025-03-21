@@ -147,7 +147,7 @@ const Ex22_5 = () => {
       {/* Main article container */}
       <div className="border border-gray-300 p-3 text-base">
         {/* First paragraph - full width */}
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           Who invented television? It is not an easy question to answer. In the
           early years of the 20th century, there was something called a
           mechanical television system, but it was not a success. Inventors were
@@ -177,7 +177,7 @@ const Ex22_5 = () => {
           </div>
 
           {/* Text that wraps around the image */}
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             Philo Taylor Farnsworth was born in a log cabin in Utah in 1906. His
             family did not have electricity until he was 12 years old, and he
             was excited to find a generator—a machine that produces
@@ -189,7 +189,7 @@ const Ex22_5 = () => {
             {Kaisetsu(showResults, "22-5-2")}
           </p>
 
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             One day, while working in his father&apos;s potato field, he looked
             behind him and saw all the straight parallel rows of soil that he
             had made. Suddenly, it occurred to him that it might be possible to
@@ -203,7 +203,7 @@ const Ex22_5 = () => {
             {Kaisetsu(showResults, "22-5-3")}
           </p>
 
-          <p className="mb-4">
+          <p className="mb-4 indent-7">
             On September 7, 1927, Farnsworth succeeded in sending his first
             electronic image. In the following years, he further improved the
             system so that it could successfully broadcast live images. The US
@@ -213,7 +213,7 @@ const Ex22_5 = () => {
 
           {/* Rest of the paragraphs */}
           <div className="clear-both">
-            <p className="mb-4">
+            <p className="mb-4 indent-7">
               However, Farnsworth was not the only one working on such a system.
               A giant company, RCA (Radio Corporation of America), also saw a
               bright future for television and did not want to miss the
@@ -226,7 +226,7 @@ const Ex22_5 = () => {
               {Kaisetsu(showResults, "22-5-5")}
             </p>
 
-            <p className="mb-4">
+            <p className="mb-4 indent-7">
               The company took legal action against Farnsworth, claiming that
               Zworykin&apos;s 1923 patent had priority even though he had never
               made a working version of his system. Farnsworth lost the first
@@ -240,7 +240,7 @@ const Ex22_5 = () => {
               {Kaisetsu(showResults, "22-5-6")}
             </p>
 
-            <p className="mb-4">
+            <p className="mb-4 indent-7">
               Farnsworth died in 1971 at the age of 64. He held about 300 US and
               foreign patents, mostly in radio and television, and in 1999, TIME
               magazine included Farnsworth in Time 100: The Most Important

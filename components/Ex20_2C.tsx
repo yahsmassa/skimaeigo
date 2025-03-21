@@ -141,7 +141,9 @@ const JapaneseExamQuestion = () => {
             },
           ].map((item, index) => (
             <React.Fragment key={index}>
-              <div className={cn("md:col-span-1 text-right pr-2", item.align)}>
+              <div
+                className={cn("md:col-span-1 md:text-right pr-2", item.align)}
+              >
                 {item.speaker}:
               </div>
               <div className="md:col-span-10">{item.text}</div>
@@ -269,7 +271,9 @@ const JapaneseExamQuestion = () => {
           },
         ].map((conv, index) => (
           <React.Fragment key={index}>
-            <div className="md:col-span-1 text-right pr-2">{conv.speaker}:</div>
+            <div className="md:col-span-1 md:text-right pr-2">
+              {conv.speaker}:
+            </div>
             <div className="md:col-span-10">{conv.text}</div>
             <div className="md:col-span-1"></div>
           </React.Fragment>

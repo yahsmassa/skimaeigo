@@ -26,9 +26,12 @@ const JapaneseExam3 = () => {
       ],
       rightAnswerString: "51",
       answerString: "",
-      isCorrect: false,
+      isCorrect: true,
       points: 2,
-      explanation: ["正解⑤と①"],
+      explanation: [
+        "正解⑤と① we're wondering if you could tell",
+        "I wonder if は丁寧な依頼をあらわす",
+      ],
     },
     {
       questionId: "2B-2",
@@ -44,9 +47,12 @@ const JapaneseExam3 = () => {
       ],
       rightAnswerString: "35",
       answerString: "",
-      isCorrect: false,
+      isCorrect: true,
       points: 2,
-      explanation: ["正解③と⑤"],
+      explanation: [
+        "正解③と⑤ let me send you the details by ",
+        "* let A + 動詞の原型 「Aに（望み通り）〜させてやる」、* send A B 「AにBを送る」",
+      ],
     },
     {
       questionId: "2B-3",
@@ -62,9 +68,12 @@ const JapaneseExam3 = () => {
       ],
       rightAnswerString: "46",
       answerString: "",
-      isCorrect: false,
+      isCorrect: true,
       points: 2,
-      explanation: ["正解④と⑥"],
+      explanation: [
+        "正解④と⑥ came to realize the need to manage",
+        "* came to不定詞 「〜するようになる」、* the need to不定詞 「〜する必要性」",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);

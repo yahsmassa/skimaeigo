@@ -24,7 +24,10 @@ const JapaneseTestNewFormat = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解⑤"],
+      explanation: [
+        "正解は⑤ remember to turn it in by five o'clock 忘れずに５時までに提出",
+        "* turn in 提出する、tillは「Aまで（ずっと）」という継続の意味で使う",
+      ],
     },
     {
       questionId: "2C-2",
@@ -38,7 +41,10 @@ const JapaneseTestNewFormat = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解②"],
+      explanation: [
+        "正解② If you knew the rules, it would be really interesting",
+        "仮定法過去完了 If S +過去.. would + 動詞の原形..",
+      ],
     },
     {
       questionId: "2C-3",
@@ -52,7 +58,10 @@ const JapaneseTestNewFormat = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: ["正解⑦"],
+      explanation: [
+        "正解⑦ how we can prevent it from spreading どうすれば噂が広まるのを止められる",
+        "wonder + 疑問視で「・・・かなと思う」, prevent A from 〜ing 「Aが〜するのと防ぐ」",
+      ],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -107,14 +116,14 @@ const JapaneseTestNewFormat = () => {
                   )}
                 >
                   <span>Well, the monthly report is very important and</span>
-                  {renderSelect("24", 4, answers, setAnswers)}
+                  {renderSelect("24", 8, answers, setAnswers)}
                 </div>
               ),
             },
           ].map((item, index) => (
             <React.Fragment key={index}>
-              <div className="md:col-span-2">{item.speaker}:</div>
-              <div className="md:col-span-9">{item.text}</div>
+              <div className="md:col-span-2 md:text-right">{item.speaker}:</div>
+              <div className="md:col-span-9 md:ml-2">{item.text}</div>
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}
@@ -222,15 +231,15 @@ const JapaneseTestNewFormat = () => {
                   )}
                 >
                   <span>I love cricket, and this is a great match.</span>
-                  {renderSelect("25", 4, answers, setAnswers)}
+                  {renderSelect("25", 8, answers, setAnswers)}
                   <span>for you, too.</span>
                 </div>
               ),
             },
           ].map((item, index) => (
             <React.Fragment key={index}>
-              <div className="md:col-span-2">{item.speaker}:</div>
-              <div className="md:col-span-9">{item.text}</div>
+              <div className="md:col-span-1 md:text-right">{item.speaker}:</div>
+              <div className="md:col-span-10 md:ml-2">{item.text}</div>
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}
@@ -338,14 +347,14 @@ const JapaneseTestNewFormat = () => {
                   )}
                 >
                   <span>I heard it, too, but it's false. I wonder</span>
-                  {renderSelect("26", 4, answers, setAnswers)}
+                  {renderSelect("26", 8, answers, setAnswers)}
                 </div>
               ),
             },
           ].map((item, index) => (
             <React.Fragment key={index}>
-              <div className="md:col-span-2">{item.speaker}:</div>
-              <div className="md:col-span-9">{item.text}</div>
+              <div className="md:col-span-1 md:text-right">{item.speaker}:</div>
+              <div className="md:col-span-10 md:ml-2">{item.text}</div>
               <div className="md:col-span-1"></div>
             </React.Fragment>
           ))}

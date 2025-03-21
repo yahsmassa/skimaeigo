@@ -32,6 +32,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning={true} //サーバ、クライアント間のHTMLレンダリングチェック警告を非表示に
+        // className="font-serif antialiased max-w-[1150px] mx-auto"
         className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[1150px] mx-auto`}
       >
         <AuthProvider>{children}</AuthProvider>

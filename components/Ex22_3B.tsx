@@ -111,7 +111,7 @@ const Ex22_3B = () => {
 
       {/* Main content with map float */}
       <div className="relative">
-        <div className="mb-4">
+        <div className="mb-4 indent-7">
           Last September, a team of 12 of us, 10 climbers and two minibus
           drivers, participated in the Three Peaks Challenge, which is well
           known for its difficulty among climbers in Britain.
@@ -130,7 +130,7 @@ const Ex22_3B = () => {
         </div>
 
         <div className="space-y-4">
-          <p>
+          <p className="">
             The goal is to climb the highest mountain in Scotland (Ben Nevis),
             in England (Scafell Pike), and in Wales (Snowdon) within 24 hours,
             including approximately 10 hours of driving between the mountains.
@@ -140,7 +140,7 @@ const Ex22_3B = () => {
             {Kaisetsu(showResults, "22-3B-2")}
           </p>
 
-          <p>
+          <p className="indent-7">
             We began our first climb at six o&apos;clock on a beautiful autumn
             morning. Thanks to our training, we reached the summit in under
             three hours. On the way down, however, I realised I had dropped my
@@ -149,7 +149,7 @@ const Ex22_3B = () => {
             {Kaisetsu(showResults, "22-3B-3")}
           </p>
 
-          <p>
+          <p className="indent-7">
             We reached our next destination, Scafell Pike, early that evening.
             After six hours of rest in the minibus, we started our second climb
             full of energy. As it got darker, though, we had to slow down. It
@@ -161,15 +161,12 @@ const Ex22_3B = () => {
             {Kaisetsu(showResults, "22-3B-4")}
           </p>
 
-          <p>
+          <p className="indent-7">
             Unfortunately, soon after we started the final climb, it began to
             rain heavily and we had to slow down again. It was slippery and very
             difficult to see ahead. At 4:30 am, we realised that we could no
             longer finish in 24 hours.
             {Kaisetsu(showResults, "22-3B-5")}
-          </p>
-
-          <p>
             Nevertheless, we were still determined to climb the final mountain.
             The rain got heavier and heavier, and two members of the team
             decided to return to the minibus. Exhausted and miserable, the rest

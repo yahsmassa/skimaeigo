@@ -116,7 +116,7 @@ const Ex24_6A = () => {
         <h2 className="text-xl font-bold text-center">Perceptions of Time</h2>
 
         <div className="space-y-4">
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             When you hear the word &quot;time,&quot; it is probably hours,
             minutes, and seconds that immediately come to mind. In the late 19th
             century, however, philosopher Henri Bergson described how people
@@ -128,7 +128,7 @@ const Ex24_6A = () => {
             {Kaisetsu(showResults, "24-6A-1")}
           </p>
 
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             If you were asked how long it had taken to finish your homework, you
             probably would not know exactly. You would think back and make an
             estimate. In a 1975 experiment, participants were shown either
@@ -143,7 +143,7 @@ const Ex24_6A = () => {
             {Kaisetsu(showResults, "24-6A-2")}
           </p>
 
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             Another process to measure psychological time is called{" "}
             <span className="font-semibold">prospective timing</span>. It is
             used when you are actively keeping track of time while doing
@@ -154,14 +154,12 @@ const Ex24_6A = () => {
             the people doing more challenging mental activities which required
             them to place more focus on the task than on time.
             {Kaisetsu(showResults, "24-6A-3")}
-          </p>
-          <p className="leading-relaxed">
             Time felt longer for the participants who did simpler tasks and the
             longest for those who were waiting or doing nothing.
             {Kaisetsu(showResults, "24-6A-4")}
           </p>
 
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             Your emotional state can influence your awareness of time, too. For
             example, you can be enjoying a concert so much that you forget about
             time. Afterwards, you are shocked that hours have passed by in what
@@ -177,7 +175,7 @@ const Ex24_6A = () => {
             {Kaisetsu(showResults, "24-6A-5")}
           </p>
 
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             Psychological time also seems to move differently during life
             stages. Children constantly encounter new information and have new
             experiences, which makes each day memorable and seem longer when
@@ -193,7 +191,7 @@ const Ex24_6A = () => {
             {Kaisetsu(showResults, "24-6A-6")}
           </p>
 
-          <p className="leading-relaxed">
+          <p className="leading-relaxed indent-7">
             Knowledge of psychological time can be helpful in our daily lives,
             as it may help us deal with boredom. Because time passes slowly when
             we are not mentally focused and thinking about time, changing to a

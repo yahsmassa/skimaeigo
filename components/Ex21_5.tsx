@@ -142,7 +142,7 @@ const Ex21_5 = () => {
 
       {/* Main content box */}
       <div className="border border-gray-300 p-6 space-y-4">
-        <p className="text-base leading-relaxed">
+        <p className="text-base leading-relaxed indent-7">
           Five years ago, Mrs. Sabine Rouas lost her horse. She had spent 20
           years with the horse before he died of old age. At that time, she felt
           that she could never own another horse. Out of loneliness, she spent
@@ -151,7 +151,7 @@ const Ex21_5 = () => {
           {Kaisetsu(showResults, "21-5-1")}
         </p>
 
-        <p className="text-base leading-relaxed">
+        <p className="text-base leading-relaxed indent-7">
           The farmer agreed, and Sabine started work. She quickly developed a
           friendship with one of the cows. As the cow was pregnant, she spent
           more time with it than with the others. After the cow&apos;s baby was
@@ -169,7 +169,7 @@ const Ex21_5 = () => {
           {Kaisetsu(showResults, "21-5-2")}
         </p>
 
-        <p className="text-base leading-relaxed">
+        <p className="text-base leading-relaxed indent-7">
           Soon after, Sabine was offered a pony. At first, she wasn&apos;t sure
           if she wanted to have him, but the memory of her horse was no longer
           painful, so she accepted the pony and named him Leon. She then decided
@@ -190,7 +190,7 @@ const Ex21_5 = () => {
           {Kaisetsu(showResults, "21-5-3")}
         </p>
 
-        <p className="text-base leading-relaxed">
+        <p className="text-base leading-relaxed indent-7">
           Now Sabine and Aston go to weekend fairs and horse shows around Europe
           to show off his skills. Sabine says, &quot;We get a good reaction.
           Mostly, people are really surprised, and at first, they can be a bit
@@ -201,7 +201,7 @@ const Ex21_5 = () => {
           {Kaisetsu(showResults, "21-5-4")}
         </p>
 
-        <p className="text-base leading-relaxed">
+        <p className="text-base leading-relaxed indent-7">
           &quot;Look!&quot; And Sabine shows a photo of Aston on her smartphone.
           She then continues, &quot;When Aston was very young, I used to take
           him out for walks on a lead, like a dog, so that he would get used to
@@ -211,7 +211,7 @@ const Ex21_5 = () => {
           {Kaisetsu(showResults, "21-5-5")}
         </p>
 
-        <p className="text-base leading-relaxed">
+        <p className="text-base leading-relaxed indent-7">
           Over the last few years, news of the massive show-jumping bull has
           spread rapidly; now, Aston is a major attraction with a growing number
           of online followers. Aston and Sabine sometimes need to travel 200 or
@@ -221,7 +221,7 @@ const Ex21_5 = () => {
           {Kaisetsu(showResults, "21-5-6")}
         </p>
 
-        <p className="text-base leading-relaxed">
+        <p className="text-base leading-relaxed indent-7">
           &quot;He doesn&apos;t like it. I have to sleep with him in the
           box,&quot; says Sabine. &quot;But you know, when he wakes up and
           changes position, he is very careful not to crush me. He really is

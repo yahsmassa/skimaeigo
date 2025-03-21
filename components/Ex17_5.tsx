@@ -23,7 +23,7 @@ const Ex17_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は①、翻訳参照", ""],
     },
     {
       questionId: "5-2",
@@ -37,7 +37,7 @@ const Ex17_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は②、翻訳参照", ""],
     },
     {
       questionId: "5-3",
@@ -51,7 +51,7 @@ const Ex17_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は④、翻訳参照", ""],
     },
     {
       questionId: "5-4",
@@ -66,7 +66,7 @@ const Ex17_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は①", ""],
     },
     {
       questionId: "5-5",
@@ -80,7 +80,7 @@ const Ex17_5 = () => {
       answerString: "",
       isCorrect: false,
       points: 6,
-      explanation: [],
+      explanation: ["正解は②", ""],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -114,9 +114,9 @@ const Ex17_5 = () => {
 
       {/* Story Content */}
       <div className="space-y-6 leading-relaxed">
-        <p className="ml-6 mb-6">Ahhhhhhhhhh!</p>
+        <p className="mb-6 indent-7">Ahhhhhhhhhh!</p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           With a big yawn I woke up. What a fresh morning! I felt very sharp,
           much sharper than usual. I was able to hear the singing of birds more
           clearly than ever before. I noticed the smell of coffee coming up from
@@ -124,16 +124,13 @@ const Ex17_5 = () => {
           back; it felt so good. I sat up straight, licked my hand, and started
           to clean my face with it....
           {Kaisetsu(showResults, "17-5-1")}
-        </p>
-
-        <p className="mb-4">
           Huh?... Something was strange. Why was I licking my hand with my
           tongue? Why was my body covered with fur? I tried to say something,
           but the sound that came out of my mouth was... &quot;Meow.&quot;
           {Kaisetsu(showResults, "17-5-2")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           It was certainly my bedroom that I was in. It was certainly my bed
           that I was sitting on. Everything was as usual except that... I seemed
           to have changed into a different creature. I was so surprised that I
@@ -145,7 +142,7 @@ const Ex17_5 = () => {
           {Kaisetsu(showResults, "17-5-3")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           As I went down the stairs, the smell of coffee grew stronger and I
           could tell what was for breakfast. Maybe the senses of a cat are
           sharper than those of a human. When I got to the dining room, what I
@@ -154,7 +151,7 @@ const Ex17_5 = () => {
           <em>myself</em>.{Kaisetsu(showResults, "17-5-4")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           The human <em>I</em> was absorbed in a smartphone, maybe writing
           responses to friends&apos; messages or playing an online game. Bending{" "}
           <em>my</em> head down toward the phone, <em>I</em> was sitting with
@@ -163,7 +160,7 @@ const Ex17_5 = () => {
           {Kaisetsu(showResults, "17-5-5")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           <em>I</em> sometimes took a little bite of toast, but it appeared that{" "}
           <em>I</em> was not noticing any taste in <em>my</em> mouth. Actually,
           the taste of toast in my memory was vague. I couldn&apos;t remember
@@ -176,20 +173,20 @@ const Ex17_5 = () => {
           {Kaisetsu(showResults, "17-5-6")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           &quot;Yuji, you never study these days. Are you ready for your final
           exams? You&apos;re making me a little bit worried,&quot; said Mom.
           {Kaisetsu(showResults, "17-5-7")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           &quot;Mmm,&quot; said <em>I</em>. A sign of frustration briefly
           appeared on <em>my</em> face, but it disappeared in an instant.{" "}
           <em>My</em> face was again as expressionless as it had been before.
           {Kaisetsu(showResults, "17-5-8")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           <span className="underline">
             &quot;I don&apos;t like this guy,&quot;
           </span>{" "}
@@ -198,13 +195,13 @@ const Ex17_5 = () => {
           {Kaisetsu(showResults, "17-5-9")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           Then, as <em>I</em> started to leave the table, our eyes met.
           &quot;Wow! Mom, look! There&apos;s a cat in the dining room!&quot;
           {Kaisetsu(showResults, "17-5-10")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           I didn&apos;t know why, but I was running. I felt I had to escape.
           Running up the stairs, I found the window in my room was open. I
           jumped! I had a strange feeling. The world suddenly seemed to have
@@ -212,9 +209,9 @@ const Ex17_5 = () => {
           {Kaisetsu(showResults, "17-5-11")}
         </p>
 
-        <p className="mb-4">Bump!</p>
+        <p className="mb-4 indent-7">Bump!</p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           I was awake, lying on the floor of my room. I slowly sat up and looked
           around. Everything looked like it usually did. I looked at my hands. I
           was relieved to see they were no longer covered with fur. I stood up
@@ -225,7 +222,7 @@ const Ex17_5 = () => {
           {Kaisetsu(showResults, "17-5-12")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-4 indent-7">
           After pausing for a moment, I turned around and went downstairs for
           breakfast.
           {Kaisetsu(showResults, "17-5-13")}
@@ -243,6 +240,7 @@ const Ex17_5 = () => {
             </span>
             {renderSelect("42", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-1" />}
+            {Kaisetsu(showResults, "17-5-14")}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -262,6 +260,7 @@ const Ex17_5 = () => {
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-2" />}
+            {Kaisetsu(showResults, "17-5-15")}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -283,6 +282,7 @@ const Ex17_5 = () => {
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-3" />}
+            {Kaisetsu(showResults, "17-5-16")}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -307,6 +307,7 @@ const Ex17_5 = () => {
             </span>
             {renderSelect("45", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-4" />}
+            {Kaisetsu(showResults, "17-5-17")}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -324,6 +325,7 @@ const Ex17_5 = () => {
             <span>What is the theme of this story?</span>
             {renderSelect("46", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-5" />}
+            {Kaisetsu(showResults, "17-5-18")}
           </div>
 
           <div className="ml-8 space-y-2">

@@ -267,14 +267,14 @@ const Ex21_2A = () => {
           Judges&apos; shared evaluation (summarised by Mr Hobbs)
         </div>
         <div className="p-4 space-y-4">
-          <p>
+          <p className="indent-7">
             Each band&apos;s total score is the same, but each band is very
             different. Ms Leigh and I agreed that performance is the most
             important quality for a band. Ms Wells also agreed. Therefore, first
             place is easily determined.
             {Kaisetsu(showResults, "21-2A-4")}
           </p>
-          <p>
+          <p className="indent-7">
             To decide between second and third places, Ms Wells suggested that
             song originality should be more important than good singing. Ms
             Leigh and I agreed on this opinion.
