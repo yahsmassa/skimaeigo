@@ -96,7 +96,7 @@ export default function SignIn() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        ローディング中...
+        認証中...
       </div>
     );
   }

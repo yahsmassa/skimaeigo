@@ -28,7 +28,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       try {
         if (firebaseUser) {
-          // ユーザーがログインしている場合
+          // ユーザーがログインしている場合( auth から取得)
           const userData = await getUserData(firebaseUser);
           setUser(userData);
 

@@ -33,33 +33,36 @@ export default function Home() {
   const [user, setUser] = useAtom(userAtom, { store });
   const { loading } = useAuth();
 
-  useEffect(() => {
-    if (!user?.uid) return;
-    // ユーザーのプレミアムステータスを監視、支払いが終わったあとトリガー
-    const unsubscribePremium = onSnapshot(
-      doc(db, "users", user.uid),
-      (docSnapshot) => {
-        if (docSnapshot.exists()) {
-          const userData = docSnapshot.data();
-          if (!user.isPremium && userData.premiumStatus) {
-            setUser({ ...user, isPremium: true });
-            Swal.fire({
-              title: "有料会員登録完了",
-              html: "購入ありがとうございます</br>過去１０年分の問題を解けるようになりました！",
-              icon: "success",
-            });
-          }
-        }
-      },
-      (error) => {
-        console.error("情報更新監視エラー:", error);
-      }
-    );
-    // クリーンアップ関数
-    return () => {
-      unsubscribePremium();
-    };
-  }, [user?.uid]);
+  // useEffect(() => {
+  //   if (!user?.uid) return;
+  //   // ユーザーのプレミアムステータスを監視、支払いが終わったあとトリガー
+  //   const unsubscribePremium = onSnapshot(
+  //     doc(db, "users", user.uid),
+  //     (docSnapshot) => {
+  //       if (docSnapshot.exists()) {
+  //         const userData = docSnapshot.data();
+  //         console.log("userData", userData);
+  //         console.log("user", user);
+
+  //         if (!user.isPremium && userData.premiumStatus) {
+  //           setUser({ ...user, isPremium: true });
+  //           Swal.fire({
+  //             title: "有料会員登録完了",
+  //             html: "購入ありがとうございます</br>過去１０年分の問題を解けるようになりました！",
+  //             icon: "success",
+  //           });
+  //         }
+  //       }
+  //     },
+  //     (error) => {
+  //       console.error("情報更新監視エラー:", error);
+  //     }
+  //   );
+  //   // クリーンアップ関数
+  //   return () => {
+  //     unsubscribePremium();
+  //   };
+  // }, [user?.uid]);
 
   // ユーザーがログインしていない場合、サインインページにリダイレクト
   useEffect(() => {
@@ -100,12 +103,17 @@ export default function Home() {
       // Ctrl + R で音声読み上げ
       if (e.ctrlKey && e.key === "r") {
         e.preventDefault();
-        console.log("read selection", selection);
+        // console.log("read selection", selection);
         readSentence(selection);
+      }
+      // Ctrl + u でユーザー情報表示
+      if (e.ctrlKey && e.key === "u") {
+        e.preventDefault();
+        console.log("user", user);
       }
       // Ctrl + t で翻訳
       const isMac = navigator.userAgent.toUpperCase().indexOf("MAC") >= 0;
-      console.log("isMac", isMac);
+      // console.log("isMac", isMac);
 
       if (
         (isMac && e.ctrlKey && e.key === "t") ||
@@ -164,7 +172,7 @@ export default function Home() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        ローディング中...
+        ユーザー認証中...
       </div>
     );
   }

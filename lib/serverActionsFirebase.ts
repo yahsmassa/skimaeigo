@@ -19,21 +19,21 @@ export const setPremiumStatus = async (uid: string) => {
   // Custom Claimsを設定
   await adminAuth.setCustomUserClaims(uid, { premium: true });
 
-  try {
-    // ユーザーのトークンを更新するために、データベースに更新時間を記録
-    await adminDb.collection("users").doc(uid).set(
-      {
-        premiumStatus: true,
-        updatedAt: FieldValue.serverTimestamp(),
-      },
-      { merge: true }
-    );
+  // try {
+  //   // ユーザーのトークンを更新するために、データベースに更新時間を記録
+  //   await adminDb.collection("users").doc(uid).set(
+  //     {
+  //       premiumStatus: true,
+  //       updatedAt: FieldValue.serverTimestamp(),
+  //     },
+  //     { merge: true }
+  //   );
 
-    return { success: true };
-  } catch (error) {
-    console.error("Firestoreエラー:", error);
-    return { success: false };
-  }
+  //   return { success: true };
+  // } catch (error) {
+  //   console.error("Firestoreエラー:", error);
+  //   return { success: false };
+  // }
 };
 
 export const setTransaction = async (transaction: WebhookResponse) => {

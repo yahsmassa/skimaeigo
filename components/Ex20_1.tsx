@@ -125,10 +125,10 @@ const JapaneseTestQuestion = () => {
       {
         questionNumber: 2,
         options: [
-          "ar<u>i</u>se",
-          "des<u>i</u>re",
-          "lo<u>o</u>se",
-          "res<u>e</u>mble",
+          "ari<u>s</u>e",
+          "de<u>s</u>ire",
+          "loo<u>s</u>e",
+          "re<u>s</u>emble",
         ],
       },
       {
@@ -187,7 +187,7 @@ const JapaneseTestQuestion = () => {
       className={cn("mb-8", showResults && qaFormat(qa, `1-${questionNumber}`))}
     >
       <div className="flex items-center mb-4">
-        <span className="font-bold mr-4">問 {index + 1}</span>
+        <span className="font-bold mr-4 font-sans">問 {index + 1}</span>
         {renderSelect(String(questionNumber), 4, answers, setAnswers)}
         {showResults && <Explain qa={qa} questionId={`1-${questionNumber}`} />}
       </div>
@@ -199,8 +199,8 @@ const JapaneseTestQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第1問"}</h1>
-          <span className="text-gray-600">(配点 {14})</span>
+          <h1 className="text-lg font-bold font-sans">{"第1問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {14})</span>
         </div>
         <Saiten
           qa={qa}
@@ -241,7 +241,7 @@ const JapaneseTestQuestion = () => {
       {/* Section B */}
       <div className="mb-8">
         <div className="mb-6 flex items-start">
-          <span className="font-bold text-lg mr-4">B</span>
+          <span className="font-bold text-lg mr-4 font-sans">B</span>
           <div>
             <p className="mb-4">
               次の問い(問1～4)において、第一アクセント(第一強勢)の位置がほかの三つ
