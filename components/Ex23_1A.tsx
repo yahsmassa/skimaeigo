@@ -186,6 +186,8 @@ const Ex23_1A = () => {
               <span>What are you told to do after reading the handout?</span>
               {renderSelect("1", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="1A-1" />}
+              <span className="mr-2"></span>
+              {Kaisetsu(showResults, "23-1A-5")}
             </div>
           </div>
           <ol className="list-none space-y-2">
@@ -213,6 +215,7 @@ const Ex23_1A = () => {
             </div>
             {renderSelect("2", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1A-2" />}
+            {Kaisetsu(showResults, "23-1A-6")}
           </div>
           <ol className="list-none space-y-2">
             {[

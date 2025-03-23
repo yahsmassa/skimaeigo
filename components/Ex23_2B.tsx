@@ -208,6 +208,8 @@ const Ex23_2B = () => {
             </span>
             {renderSelect("11", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-2B-8")}
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -235,6 +237,8 @@ const Ex23_2B = () => {
             </span>
             {renderSelect("12", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-2" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-2B-9")}
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -261,6 +265,8 @@ const Ex23_2B = () => {
             {renderSelect("13", 4, answers, setAnswers)}
             <span>were activities reported by participants.</span>
             {showResults && <Explain qa={qa} questionId="2B-3" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-2B-10")}
           </div>
           <div className="mb-4 ml-4 space-y-1">
             <p>A : keeping study records</p>
@@ -297,6 +303,8 @@ const Ex23_2B = () => {
             </span>
             {renderSelect("14", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-4" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-2B-11")}
           </div>
           {[
             "it could have included students who walk to school",
@@ -320,6 +328,8 @@ const Ex23_2B = () => {
             <span>The author&apos;s question is answered by</span>
             {renderSelect("15", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-5" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-2B-12")}
           </div>
           {["HS", "JH", "KF", "MN", "SS"].map((answer, index) => (
             <div key={index} className="flex items-start">

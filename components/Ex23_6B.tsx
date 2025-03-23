@@ -264,6 +264,8 @@ const Ex23_6B = () => {
           </span>
           {renderSelect("44", 5, answers, setAnswers)}.<span>?</span>
           {showResults && <Explain qa={qa} questionId="6B-1" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "23-6B-9")}
         </div>
         <div className="space-y-2 ml-2 md:ml-8">
           {[
@@ -295,6 +297,8 @@ const Ex23_6B = () => {
           <span>・</span>
           {renderSelect("46", 5, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="6B-2" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "23-6B-10")}
         </div>
         <div className="space-y-2 ml-2 md:ml-8">
           {[
@@ -323,6 +327,8 @@ const Ex23_6B = () => {
           </span>
           {renderSelect("47", 5, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="6B-3" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "23-6B-11")}
         </div>
         <div className="space-y-2 ml-2 md:ml-8">
           {[1, 2, 3, 4, 5].map((num, index) => (
@@ -384,6 +390,9 @@ const Ex23_6B = () => {
           <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>Which is the best statement for the final slide?</span>
           {renderSelect("48", 5, answers, setAnswers)}
+          {showResults && <Explain qa={qa} questionId="6B-4" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "23-6B-12")}
         </div>
         <div className="space-y-4 ml-2 md:ml-8">
           {[
@@ -410,6 +419,8 @@ const Ex23_6B = () => {
           </span>
           {renderSelect("49", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="6B-5" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "23-6B-13")}
         </div>
         <div className="space-y-4 ml-2 md:ml-8">
           {[

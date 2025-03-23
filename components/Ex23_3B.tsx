@@ -200,6 +200,8 @@ const Ex23_3B = () => {
             <span className="mx-2">→</span>
             {renderSelect("21", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3B-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-3B-6")}
           </div>
           {[
             "The children ate food they are not fond of.",
@@ -226,6 +228,7 @@ const Ex23_3B = () => {
             </span>
             {renderSelect("22", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="3B-2" />}
+            {Kaisetsu(showResults, "23-3B-7")}
           </div>
           {[
             "concentrate on three-letter words",
@@ -249,6 +252,7 @@ const Ex23_3B = () => {
             <span>From this story, you understand that the father</span>
             {renderSelect("23", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="3B-3" />}
+            {Kaisetsu(showResults, "23-3B-8")}
           </div>
           {[
             "became focused on searching for the sweets",

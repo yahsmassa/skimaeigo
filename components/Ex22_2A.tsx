@@ -24,7 +24,8 @@ const Ex22_2A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "⑤：図書館で行える2つのことについて正しい組み合わせを選ぶ問題。見出しのすぐ下にある Library Cards: Your student ID card is also your library card and photocopy card.（図書館カード：学生証は，図書館カードやコピーカードにもなります。）という記述から D の use your ID to make photocopies（コピーをするのに学生証を使う）が，また，Using Computers の項目にある &quot;Students may bring their own laptop computers and tablets into the library, but may use them only in the Study Area on the second floor.&quot;（学生は自分のノートパソコンやタブレット端末の持ち込みはできますが，3階のスタディエリアでのみ使用することができます。）という記述から，E の use your laptop in the Study Area が正しいとわかるので，⑤ D and E が正解。",
+        "正解は⑤ D (自習室であなたのラップトップを使う）と E (コピーをするにはあなたのIDを使う )",
+        "翻訳参照",
       ],
     },
     {
@@ -39,9 +40,7 @@ const Ex22_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [
-        "③：今自分が図書館の正面玄関にいて，オリエンテーションに行きたい場合，どの階に行く必要があるかを問う問題。「図書館の正面玄関」が何階にあるのかと，オリエンテーションが何階で行われているかを把握する必要がある。前者は Using Computers の項目に &quot;Computers with Internet connections are in the Computer Workstations by the main entrance on the first floor.&quot;（インターネットに接続できるコンピューターは2階正面玄関脇のコンピューター・ワークステーションに設置されています。）とあることから the first floor（2階）だとわかる。後者は Library Orientations の項目に &quot;On Tuesdays at 10 am, 20-minute library orientations are held in the Reading Room on the third floor. &quot;（毎週火曜日午前10時から，4階閲覧室で20分間の図書館オリエンテーションを開催しています。）とあるので4階に行けばいいとわかる。よって，③ go up two floors（2階分上がる）が正解。",
-      ],
+      explanation: ["正解は③ 2階分上がる", "翻訳参照"],
     },
     {
       questionId: "2A-3",
@@ -55,9 +54,7 @@ const Ex22_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [
-        "①：図書館の正面玄関のそばにあるのは何かを問う問題。問2で用いた&quot;Computers with Internet connections are in the Computer Workstations by the main entrance on the first floor.&quot;（インターネットに接続できるコンピューターは2階正面玄関脇のコンピューター・ワークステーションに設置されています。）という情報から，① The Computer Workstations are が正解。",
-      ],
+      explanation: ["正解は① コンピューターワークステーションは", "翻訳参照"],
     },
     {
       questionId: "2A-4",
@@ -71,9 +68,7 @@ const Ex22_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [
-        "③：「8月2日に3冊の本を借り，8月10日に返却したとしたら，どうなるか」を問う問題。本の貸し出しと返却については Borrowing Books の項目に &quot;You can borrow a maximum of eight books at one time for seven days. To check books out, go to the Information Desk, which is on the first floor. If books are not returned by the due date, you will not be allowed to borrow library books again for three days from the day the books are returned.&quot;（一度に7日間，最大8冊まで借りることができます。貸出手続きは2階のインフォメーションデスクに行ってください。本が返却期限までに返却されない場合，返却された日から3日間，再び図書館の本を借りることができなくなります。）と書かれている。8月2日に借りたなら返却期限は9日なので，10日に返却した場合，その日から3日間，図書館の本を借りることができない。よって，③ not borrow any more books before 13 August（8月13日までこれ以上本を借りられない）が正解。",
-      ],
+      explanation: ["正解は③ 8月13日までこれ以上本を借りられない", "翻訳参照"],
     },
     {
       questionId: "2A-5",
@@ -87,9 +82,7 @@ const Ex22_2A = () => {
       answerString: "",
       isCorrect: false,
       points: 2,
-      explanation: [
-        "①：以前の学生が述べた一つの「事実」はどれかを選ぶ問題。Comments from Past Students の項目を参照して該当するものを探す。① headphones or earphones are necessary when watching videos（ビデオを見る際はヘッドフォンかイヤフォンが必要である）は &quot;When watching videos, you need to use your own earphones or headphones.&quot; と書かれているが，これはこの学生の主観的な判断ではないため，「事実」であると言える。よって，①が正解となる。② the library is open until 9 pm（図書館は夜9時まで開いている）は見出しのところに &quot;Open from 8 am to 9 pm&quot; とあるので「事実」と言えるが，過去の学生が述べているわけではないので誤り。③ the library orientation handouts are wonderful（図書館のオリエンテーションの資料は素晴らしい）は &quot;The library orientation was really good. The materials were great, too!&quot; と書かれてはいるが，これはこの学生の主観的な「意見（opinion）」であって，客観的な「事実」ではないので誤り。④ the Study Area is often empty（学習エリアはたびたび人がいない）は，&quot;The Study Area can get really crowded.&quot; と矛盾するので誤り。",
-      ],
+      explanation: ["正解は① ヘッドフォンかイヤフォンが必要である", "翻訳参照"],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -248,6 +241,8 @@ const Ex22_2A = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             {renderSelect("6", 5, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="2A-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "22-2A-9")}
           </div>
         </div>
 
@@ -280,6 +275,8 @@ const Ex22_2A = () => {
           </span>
           {renderSelect("7", 4, answers, setAnswers)}.
           {showResults && <Explain qa={qa} questionId="2A-2" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "22-2A-10")}
         </div>
 
         <div className="ml-4 space-y-2">
@@ -296,9 +293,11 @@ const Ex22_2A = () => {
       >
         <div className="flex flex-wrap items-center">
           <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
-          {renderSelect("8", 4, answers, setAnswers)}.
+          {renderSelect("8", 4, answers, setAnswers)}
           <span>near the main entrance to the library.</span>
           {showResults && <Explain qa={qa} questionId="2A-3" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "22-2A-11")}
         </div>
 
         <div className="ml-4 space-y-2">
@@ -320,6 +319,8 @@ const Ex22_2A = () => {
           </span>
           {renderSelect("9", 4, answers, setAnswers)}.
           {showResults && <Explain qa={qa} questionId="2A-4" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "22-2A-12")}
         </div>
 
         <div className="ml-4 space-y-2">
@@ -342,6 +343,8 @@ const Ex22_2A = () => {
           </span>
           {renderSelect("10", 4, answers, setAnswers)}.
           {showResults && <Explain qa={qa} questionId="2A-5" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "22-2A-13")}
         </div>
 
         <div className="ml-4 space-y-2">

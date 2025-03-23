@@ -364,6 +364,7 @@ const Ex23_5 = () => {
           <span>Choose the best option for</span>
           {renderSelect("30", 4, answers, setAnswers)}.
           {showResults && <Explain qa={qa} questionId="5-1" />}
+          {Kaisetsu(showResults, "23-5-10")}
         </div>
 
         <div className="space-y-3 ml-2 md:ml-8">
@@ -387,6 +388,7 @@ const Ex23_5 = () => {
           <span>Choose the best option for</span>
           {renderSelect("31", 4, answers, setAnswers)}.
           {showResults && <Explain qa={qa} questionId="5-2" />}
+          {Kaisetsu(showResults, "23-5-11")}
         </div>
 
         <div className="space-y-3 ml-2 md:ml-8">
@@ -424,6 +426,7 @@ const Ex23_5 = () => {
           <span>→</span>
           {renderSelect("35", 5, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="5-3" />}
+          {Kaisetsu(showResults, "23-5-12")}
         </div>
 
         <div className="space-y-3 ml-2 md:ml-8">
@@ -448,6 +451,7 @@ const Ex23_5 = () => {
           <span>Choose the best option for</span>
           {renderSelect("36", 4, answers, setAnswers)}.
           {showResults && <Explain qa={qa} questionId="5-4" />}
+          {Kaisetsu(showResults, "23-5-13")}
         </div>
 
         <div className="space-y-3 ml-2 md:ml-8">
@@ -474,6 +478,7 @@ const Ex23_5 = () => {
           {renderSelect("38", 5, answers, setAnswers)}
           <span>. (The order does not matter.)</span>
           {showResults && <Explain qa={qa} questionId="5-5" />}
+          {Kaisetsu(showResults, "23-5-14")}
         </div>
 
         <div className="space-y-3 ml-2 md:ml-8">

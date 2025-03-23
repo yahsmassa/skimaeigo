@@ -138,6 +138,8 @@ const Ex23_3A = () => {
             </span>
             {renderSelect("16", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="3A-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-3A-4")}
           </div>
           <div className="mb-6">
             <Image
@@ -158,6 +160,8 @@ const Ex23_3A = () => {
             {renderSelect("17", 4, answers, setAnswers)}.
             <span>is the best method to stay warm all night.</span>
             {showResults && <Explain qa={qa} questionId="3A-2" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-3A-5")}
           </div>
           {[
             "avoiding going out of your tent",

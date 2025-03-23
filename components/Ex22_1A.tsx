@@ -25,7 +25,7 @@ const Ex22_1A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "①：4つの果物のうちcupuacu と buriti の2つについて，どのようなものに用いられることができるかを問う問題。cupuacu と buriti の説明から共通する要素を探すことが求められている。cakes と書かれているので①が正解。 ",
+        "正解は①：cakes と書かれているので、cupuacu と buriti の説明から共通する要素を探すことが求められている",
       ],
     },
     {
@@ -41,7 +41,7 @@ const Ex22_1A = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "③：「酸味のあるケーキを作りたい場合，使うべき最善の果物はどれか」を問う問題。sour という単語が含まれているのは jabuticaba と pitanga だが，pitanga は only for jams and jellies となっていて，jabuticaba は After they get sour, use them for making jams, jellies, and cakes. とあるので③が正解。",
+        "正解は③ jabuticaba：「酸味のあるケーキを作りたい場合，使うべき最善の果物はどれか」、sour という単語が含まれているのは jabuticaba と pitanga だが，pitanga は only for jams and jellies となっている ",
       ],
     },
   ];
@@ -179,6 +179,8 @@ const Ex22_1A = () => {
             Both <i>cupuaçu</i> and <i>buriti</i> can be used to make{" "}
             {renderSelect("1", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1A-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "22-1A-5")}
           </div>
           <ol className="space-y-2 pl-2 md:pl-8">
             {["a cake", "chocolate", "ice cream", "yogurt"].map(
@@ -203,6 +205,8 @@ const Ex22_1A = () => {
             </span>
             {renderSelect("2", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1A-2" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "22-1A-6")}
           </div>
           <ol className="space-y-2 pl-2 md:pl-8">
             {["buriti", "cupuaçu", "jabuticaba", "pitanga"].map(

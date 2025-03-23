@@ -279,6 +279,8 @@ const Ex23_4 = () => {
             <span>Oxford believes that</span>
             {renderSelect("24", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="4-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-4-8")}
           </div>
           {[
             "continuous drilling is boring",
@@ -302,6 +304,8 @@ const Ex23_4 = () => {
             <span>In the study discussed by Lee, students took a test</span>
             {renderSelect("25", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="4-2" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-4-9")}
           </div>
           {["four weeks", "immediately", "one day", "one week"].map(
             (answer, index) => (
@@ -330,6 +334,8 @@ const Ex23_4 = () => {
               from options ①～⑥.)
             </span>
             {showResults && <Explain qa={qa} questionId="4-3" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-4-10")}
           </div>
           {[
             "contextual",
@@ -356,6 +362,8 @@ const Ex23_4 = () => {
             {renderSelect("28", 4, answers, setAnswers)}.
             <span>is helpful for remembering new information.</span>
             {showResults && <Explain qa={qa} questionId="4-4" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-4-11")}
           </div>
           {[
             "experiential learning",
@@ -382,6 +390,8 @@ const Ex23_4 = () => {
             </span>
             {renderSelect("29", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="4-5" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "23-4-12")}
           </div>
           {[
             "The main factor that makes a science class attractive",

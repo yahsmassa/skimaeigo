@@ -23,9 +23,7 @@ const Ex22_3A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [
-        "①：Emily のブログから読み取れたことを選ぶ問題。第2パラグラフの最終2文 &quot;For me, the other two, the taiko and the koto, were the highlights. The taiko were powerful, and the koto was relaxing.&quot;（私にとって，その他の2つ，つまり，太鼓と琴がハイライトでした。太鼓は迫力があり，琴はゆったりとした気分になれました）という内容と，該当するイラストの見出しにある &quot;Traditional Performances&quot; という表現から，① enjoyed Japanese traditional music（伝統的な日本の音楽を楽しんだ）が正解となる。②のように太鼓の演奏の仕方を学んだことや，③のように素麺流し用の竹製の滑り台を作ったとは書かれていない。また，第1パラグラフ後半で屋台の話は書かれているが，緑茶アイス，タコ焼き，焼き鳥のうち彼女が食べたのは緑茶アイスとたこ焼きだけなので，④の「全ての屋台の食べ物を試せた」も誤り。",
-      ],
+      explanation: ["正解は① 日本の伝統音楽を楽しんだ", "翻訳参照"],
     },
     {
       questionId: "3A-2",
@@ -39,9 +37,7 @@ const Ex22_3A = () => {
       answerString: "",
       isCorrect: false,
       points: 3,
-      explanation: [
-        "①：Emily が落語を聞いた時，どのように感じたかを推測する問題。設問に most likely と書かれていることから，本文にそのものずばりの表現が書かれていない可能性を予測して問題を解く必要がある。第2パラグラフ2文目と3文目の &quot;One of them was a rakugo comedy given in English. Some people were laughing, but somehow I didn&apos;t find it funny. It may be because I don&apos;t know much about Japanese culture.&quot;（その中の一つに英語で行われた落語がありました。笑っている人もいましたが，私はどういうわけか面白いと思えませんでした。それは私が日本の文化をあまり知らないからかもしれません）という内容から，① confused（戸惑った，困惑した）が正解となる。② convinced（納得した），③ excited（興奮した），④ relaxed（くつろいだ）はいずれも当てはまらない。",
-      ],
+      explanation: ["正解は① 混乱している", "翻訳参照"],
     },
   ];
   const [qa, setQA] = useState<QandA[]>(question);
@@ -143,6 +139,8 @@ const Ex22_3A = () => {
             <span>In Emily&apos;s blog, you read that she </span>
             {renderSelect("16", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="3A-1" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "22-3A-5")}
           </div>
           <div className="space-y-2 ml-2 md:ml-8">
             {[
@@ -169,11 +167,13 @@ const Ex22_3A = () => {
           <div className="flex flex-wrap items-center mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>{" "}
             <span>Emily was most likely </span>
-            {renderSelect("17", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="3A-2" />}
+            {renderSelect("17", 4, answers, setAnswers)}
             <span className="ml-2">
               when she was listening to the <i>rakugo</i> comedy.
             </span>
+            {showResults && <Explain qa={qa} questionId="3A-2" />}
+            <span className="mr-2"></span>
+            {Kaisetsu(showResults, "22-3A-6")}
           </div>
           <div className="space-y-2 ml-2 md:ml-8">
             {["confused", "convinced", "excited", "relaxed"].map(

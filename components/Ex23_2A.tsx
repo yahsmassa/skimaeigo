@@ -243,6 +243,7 @@ const Ex23_2A = () => {
           </span>
           {renderSelect("6", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="2A-1" />}
+          {Kaisetsu(showResults, "23-2A-5")}
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -271,6 +272,7 @@ const Ex23_2A = () => {
           </span>
           {renderSelect("7", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="2A-2" />}
+          {Kaisetsu(showResults, "23-2A-6")}
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -299,6 +301,7 @@ const Ex23_2A = () => {
           </span>
           {renderSelect("8", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="2A-3" />}
+          {Kaisetsu(showResults, "23-2A-7")}
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -328,6 +331,7 @@ const Ex23_2A = () => {
           </span>
           {renderSelect("9", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="2A-4" />}
+          {Kaisetsu(showResults, "23-2A-8")}
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -355,6 +359,8 @@ const Ex23_2A = () => {
           {renderSelect("10", 4, answers, setAnswers)}
           <span>is recommended.</span>
           {showResults && <Explain qa={qa} questionId="2A-5" />}
+          <span className="mr-2"></span>
+          {Kaisetsu(showResults, "23-2A-9")}
         </div>
         <ol className="list-none space-y-2">
           {[

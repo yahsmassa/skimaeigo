@@ -42,7 +42,8 @@ const Ex22_6B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "②：本文で説明されているプラスチックリサイクルマークの表すものを選ぶ問題。第1パラグラフ最終文 &quot;It only shows what type of plastic it is made from and that it might be recyclable.&quot;（それが示すのは，それがどんな種類のプラスチックから作られているかと，それがリサイクル可能であるかもしれないということだけである）から，② They provide information on the chemical make-up and recycling options of the plastic（それらはプラスチックの化学成分やリサイクルの選択肢に関する情報を提供する）が正解。",
+        "正解は② （それらはプラスチックの化学成分やリサイクルの選択肢に関する情報を提供する",
+        "第1パラグラフ最終文 「それが示すのは，それがどんな種類のプラスチックから作られているかと，それがリサイクル可能であるかもしれないということだけである」から",
       ],
     },
     {
@@ -63,9 +64,9 @@ const Ex22_6B = () => {
       isCorrect: false,
       points: 6,
       explanation: [
-        "[45] ②・[46] ①：Type 2 と Type 3 のプラスチックの説明をそれぞれ1つずつ選ぶ問題。",
-        "Type 2 に関しては，第3パラグラフ第3文の &quot;It is strong and can be used at temperatures as low as -40℃ and as high as 100℃&quot;（それは頑丈で，-40℃の低い温度でも100℃の高い温度でも使える）から，[45]は② and used at a wide range of temperatures（そして，非常に広い範囲の温度で使われる）が正解。",
-        "Type 3 に関しては，第6パラグラフ第7文と第8文の &quot;PVC, Type 3, is thought to be one of the least recyclable plastics known. It should only be disposed of by professionals and never set fire to at home or in the garden.&quot;（タイプ3のPVCは，最もリサイクル性の低いプラスチックのひとつと考えられています。それは専門家によってしか処分すべきではなく，家庭や庭で燃やされてはいけません）から，[46]は① difficult to recycle and should not be burned in the yard（リサイクルしにくく，庭で燃やしてはいけない）が正解。",
+        "正解は [45] ②・[46] ① ",
+        "[45]の② そして，非常に広い範囲の温度で使われる  Type 2 に関しては，第3パラグラフ第3文の 「それは頑丈で，-40℃の低い温度でも100℃の高い温度でも使える」から，",
+        "[46]の① リサイクルしにくく，庭で燃やしてはいけない Type 3 に関しては，第6パラグラフ第7文と第8文の 「タイプ3のPVCは，最もリサイクル性の低いプラスチックのひとつと考えられています。それは専門家によってしか処分すべきではなく，家庭や庭で燃やされてはいけません」から，",
       ],
     },
     {
@@ -86,15 +87,9 @@ const Ex22_6B = () => {
       isCorrect: false,
       points: 3,
       explanation: [
-        "[47]・[48] ③・④：共通の特徴を持ったプラスチックについて，本文を参考に正しいものを6つの選択肢から2つ選ぶもの。",
-        "Type 1（PETE）については，第4パラグラフ第3文に &quot;Recycle-type 1 plastic is commonly known as PETE (Polyethylene Terephthalate), and is used mainly in food and beverage containers.&quot;（リサイクルタイプ1のプラスチックは一般にPETE（ポリエチレンテレフタレート）として知られ，主に食品や飲料の容器に使用されています）と書かれている。",
-        "Type 2（HDPE）については，第3パラグラフ第4文に &quot;HDPE can be reused without any harm and is also suitable for beer-bottle cases, milk jugs, chairs, and toys.&quot;（DPEは何の害もなく再利用でき，ビール瓶のケース，牛乳瓶，椅子，玩具などにも適しています）と書かれている。",
-        "Type 4（LDPE）については第3パラグラフ第8文に &quot;LDPE is used for squeezable bottles, and bread wrapping&quot;（LDPEはスクイーズボトルやパンの包装に使われている）と書かれている。",
-        "Type 5（PP）については第3パラグラフ第12文に &quot;It is suitable for furniture, food containers, and polymer banknotes such as the Australian dollar.&quot;（それは家具や食品容器，オーストラリアドルなどのポリマー紙幣［プラスチック紙幣］に適しています）と書かれている。",
-        "Type 6（PS）については第4パラグラフ第12文に &quot;It is used for disposable drinking cups, instant noodle containers, and other food packaging.&quot;（それは使い捨ての飲料用カップやインスタントラーメンの容器，その他食品包装に使用されています）と書かれている。",
-        "一方，Type 3（PVC）については，第4パラグラフ第9文に &quot;Type 3 plastic is found in shower curtains, pipes, and flooring.&quot;（タイプ3のプラスチックは，シャワーカーテン，パイプ，フローリングで見られる）とある。また，TYPE 7（OTHER）については第4パラグラフ最終文に &quot;Type 7 plastics are often used in the manufacture of vehicle parts such as seats, dashboards, and bumpers. &quot;（タイプ7のプラスチックは，シート，ダッシュボード，バンパーなどの自動車部品によく使われている）とあり，どちらも飲食物には使われていないことがわかる。",
-        "よって，③ Products with the symbols 1, 2, 4, 5, and 6 are suitable for food or drink containers.（1，2，4，5，6のマークの付いた製品は飲食物の容器に適している）が一つ目の正解。",
-        "第3パラグラフ第10文・第11文の &quot;Polypropylene (PP), a Type 5 material, is the second-most widely produced plastic in the world.  It is light, non-stretching, and has a high resistance to impact, heat, and freezing.&quot;（ポリプロピレン（PP）はタイプ5の素材で，世界で2番目に多く生産されているプラスチックであす。軽くて伸びず，衝撃や熱，凍結に強いという特徴がある）と，第4パラグラフ第10・第11文の &quot;Type 6, Polystyrene (PS) or Styrofoam as it is often called, is hard to recycle and catches fire easily. However, it is cheap to produce and lightweight.&quot;（ポリスチレン（PS），あるいは発泡スチロールと呼ばれることも多いが，これはリサイクルしにくく，発火しやすいという。しかし，製造コストが安く，軽量である）から④ Products with Type 5 and Type 6 markings are light in weight.（タイプ5とタイプ6の印がついた製品は重さが軽い）が二つ目の正解。",
+        "正解は[47]③・[48]④ 翻訳参照",
+        "③ 1，2，4，5，6のマークの付いた製品は飲食物の容器に適している",
+        "④ タイプ5とタイプ6の印がついた製品は重さが軽い",
       ],
     },
   ];
@@ -353,6 +348,7 @@ const Ex22_6B = () => {
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6B-1" />}
+            {Kaisetsu(showResults, "22-6B-7")}
           </div>
           <div className="">
             {[
@@ -382,6 +378,7 @@ const Ex22_6B = () => {
             {renderSelect("45", 4, answers, setAnswers)} and{" "}
             {renderSelect("46", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="6B-2" />}
+            {Kaisetsu(showResults, "22-6B-8")}
           </div>
 
           {/* Type 2 Options */}
@@ -447,6 +444,7 @@ const Ex22_6B = () => {
             {renderSelect("47", 4, answers, setAnswers)}・
             {renderSelect("48", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6B-3" />}
+            {Kaisetsu(showResults, "22-6B-9")}
           </div>
           <div className="">
             {[

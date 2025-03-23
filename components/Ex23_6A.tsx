@@ -314,15 +314,14 @@ const Ex23_6A = () => {
         </Card>
       </div>
       {/* Multiple Choice Questions */}
-      <div
-        className={cn("mt-12 space-y-8", showResults && qaFormat(qa, "6A-1"))}
-      >
-        <div className="space-y-4">
+      <div className={cn("mt-12 space-y-8")}>
+        <div className={cn(" space-y-4", showResults && qaFormat(qa, "6A-1"))}>
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Choose the best option for </span>
             {renderSelect("39", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6A-1" />}
+            {Kaisetsu(showResults, "23-6A-7")}
           </div>
           <div className="ml-2 md:ml-8 space-y-3">
             {[
@@ -341,12 +340,13 @@ const Ex23_6A = () => {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Choose the best option for </span>
             {renderSelect("40", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6A-2" />}
+            {Kaisetsu(showResults, "23-6A-8")}
           </div>
           <div className="ml-2 md:ml-8 space-y-3">
             <div>
@@ -375,6 +375,7 @@ const Ex23_6A = () => {
             {renderSelect("42", 6, answers, setAnswers)}
             <span> (The order does not matter.)</span>
             {showResults && <Explain qa={qa} questionId="6A-3" />}
+            {Kaisetsu(showResults, "23-6A-9")}
           </div>
           <div className="ml-2 md:ml-8 space-y-3">
             <div>
@@ -403,6 +404,7 @@ const Ex23_6A = () => {
             <span>Choose the best option for </span>
             {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6A-4" />}
+            {Kaisetsu(showResults, "23-6A-10")}
           </div>
           <div className="ml-2 md:ml-8 space-y-3">
             <div>

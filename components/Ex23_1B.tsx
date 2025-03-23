@@ -216,6 +216,7 @@ const Ex23_1B = () => {
             <span>All GIS instructors have</span>
             {renderSelect("3", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-1" />}
+            {Kaisetsu(showResults, "23-1B-7")}
           </div>
           {[
             "been in Japan since 1989",
@@ -239,6 +240,7 @@ const Ex23_1B = () => {
             <span>On the last day of the camp, campers will</span>
             {renderSelect("4", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-2" />}
+            {Kaisetsu(showResults, "23-1B-8")}
           </div>
           {[
             "assess each other&apos;s performances",
@@ -264,6 +266,7 @@ const Ex23_1B = () => {
             </span>
             {renderSelect("5", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-3" />}
+            {Kaisetsu(showResults, "23-1B-9")}
           </div>
           {[
             "You will call the English instructors.",

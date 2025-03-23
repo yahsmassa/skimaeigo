@@ -25,7 +25,8 @@ const Ex22_1B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "②：コンテストの応募期間を問う問題。How to Enter の2つ目の項目にある日付をそのまま選ぶだけ。",
+        "正解は②：コンテストの応募期間",
+        "How to Enter の2つ目の項目にある日付を選ぶ",
       ],
     },
     {
@@ -41,7 +42,8 @@ const Ex22_1B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "②：名前のアイディアを応募する際にしなくてはならないことを選ぶ問題。How to Enter の4つ目の項目にある Each submission fee is 5$.（応募料金は1通5ドル）という表現から，②の pay the submission fee（応募料を支払う）が正解。",
+        "正解は②：（応募料を支払う）",
+        "How to Enter の4つ目の項目にある （応募料金は1通5ドル）という表現から",
       ],
     },
     {
@@ -57,7 +59,8 @@ const Ex22_1B = () => {
       isCorrect: false,
       points: 2,
       explanation: [
-        "①：自分が応募した名前が5名のファイナリストに選ばれた場合，どうなるかを選ぶ問題。Prizes の1文目にある &quot;All five contest finalists will receive free one-day zoo passes valid until the end of July.&quot;（最終選考に残った5名全員に，7月末まで有効な動物園の1日フリーパスが贈られます）から，①の get free entry to the zoo for a day（動物園に1日無料で入場できる）が正解。",
+        "正解は①：動物園に1日無料で入場できる",
+        "Prizes の1文目で（最終選考に残った5名全員に，7月末まで有効な動物園の1日フリーパスが贈られます）とある",
       ],
     },
   ];
@@ -208,6 +211,7 @@ const Ex22_1B = () => {
             <span>You can enter this contest between </span>
             {renderSelect("3", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1B-1" />}
+            {Kaisetsu(showResults, "22-1B-5")}
           </div>
           {[
             "May 26 and May 31",
@@ -234,6 +238,7 @@ const Ex22_1B = () => {
             </span>
             {renderSelect("4", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1B-2" />}
+            <span className="ml-2">{Kaisetsu(showResults, "22-1B-6")}</span>
           </div>
           {[
             "buy a day pass",
@@ -260,6 +265,7 @@ const Ex22_1B = () => {
             </span>
             {renderSelect("5", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1B-3" />}
+            <span className="ml-2">{Kaisetsu(showResults, "22-1B-7")}</span>
           </div>
           {[
             "get free entry to the zoo for a day",
