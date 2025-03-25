@@ -248,6 +248,7 @@ const Ex21_5 = () => {
           <span>Which is the best title for your presentation?</span>
           {renderSelect("30", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="5-1" />}
+          {Kaisetsu(showResults, "21-5-8")}
         </div>
 
         <div className="space-y-2 pl-2 md:pl-8">
@@ -280,6 +281,7 @@ const Ex21_5 = () => {
           </span>
           {renderSelect("31", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="5-2" />}
+          {Kaisetsu(showResults, "21-5-9")}
         </div>
 
         <div className="grid grid-cols-2 gap-8 pl-0 md:pl-8 text-xs md:text-base">
@@ -330,6 +332,7 @@ const Ex21_5 = () => {
           {renderSelect("34", 5, answers, setAnswers)}
           {renderSelect("35", 5, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="5-3" />}
+          {Kaisetsu(showResults, "21-5-10")}
         </div>
 
         <div className="space-y-2 pl-2 md:pl-8">
@@ -371,6 +374,7 @@ const Ex21_5 = () => {
           {renderSelect("36", 5, answers, setAnswers)}
           {renderSelect("37", 5, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="5-4" />}
+          {Kaisetsu(showResults, "21-5-11")}
         </div>
 
         <div className="space-y-2 pl-2 md:pl-8">
@@ -408,6 +412,7 @@ const Ex21_5 = () => {
           </span>
           {renderSelect("38", 5, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="5-5" />}
+          {Kaisetsu(showResults, "21-5-12")}
         </div>
 
         <div className="space-y-2 pl-2 md:pl-8">

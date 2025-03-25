@@ -117,8 +117,8 @@ const Ex25_5 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第５問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {16})</span>
         </div>
         <Saiten
           qa={qa}
@@ -363,13 +363,14 @@ const Ex25_5 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 1</span>
+            <span className="whitespace-nowrap font-sans">問 1</span>
             <span>
               Based on your email, what is your overall worry about being on the
               volunteer program?
             </span>
             {renderSelect("18", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-1" />}
+            {Kaisetsu(showResults, "25-5-11")}
           </div>
           <div className="space-y-2 pl-8">
             <div className="flex gap-2">
@@ -398,7 +399,7 @@ const Ex25_5 = () => {
               showResults && qaFormat(qa, "5-2")
             )}
           >
-            <span className="whitespace-nowrap">問 2</span>
+            <span className="whitespace-nowrap font-sans">問 2</span>
             <span>
               Which of these titles best match Professor Ryan&apos;s
               descriptions for Presentation 2
@@ -412,6 +413,7 @@ const Ex25_5 = () => {
             <span>)</span>
             <span>based on the morning and afternoon themes?</span>
             {showResults && <Explain qa={qa} questionId="5-2" />}
+            {Kaisetsu(showResults, "25-5-12")}
           </div>
           <div className="space-y-2 pl-8">
             <div className="flex gap-2">
@@ -443,13 +445,14 @@ const Ex25_5 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 3</span>
+            <span className="whitespace-nowrap font-sans">問 3</span>
             <span>
               Referring to Professor Ryan&apos;s reply, which of the following
               needs to be reconsidered?
             </span>
             {renderSelect("21", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-3" />}
+            {Kaisetsu(showResults, "25-5-13")}
           </div>
           <div className="space-y-2 pl-8">
             <div className="flex gap-2">
@@ -473,13 +476,14 @@ const Ex25_5 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 4</span>
+            <span className="whitespace-nowrap font-sans">問 4</span>
             <span>
               Which diagram best represents Professor Ryan&apos;s seating plan
               for the debate?
             </span>
             {renderSelect("22", 6, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-4" />}
+            {Kaisetsu(showResults, "25-5-14")}
           </div>
           <div className="ml-3">
             <Image
@@ -501,6 +505,7 @@ const Ex25_5 = () => {
             </span>
             {renderSelect("23", 6, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-5" />}
+            {Kaisetsu(showResults, "25-5-15")}
           </div>
           <div className="space-y-2 pl-8">
             <div className="space-y-2 mb-4">

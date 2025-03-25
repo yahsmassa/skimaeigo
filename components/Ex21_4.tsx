@@ -353,6 +353,7 @@ export default function Ex21_4() {
             {renderSelect("25", 6, answers, setAnswers)}
             <span> train back to their hotel.</span>
             {showResults && <Explain qa={qa} questionId="4-1" />}
+            {Kaisetsu(showResults, "21-4-12")}
           </div>
 
           <div className="grid grid-cols-3 gap-4 mt-4 font-sans">
@@ -371,6 +372,7 @@ export default function Ex21_4() {
             <span>Which best completes the draft schedule?</span>
             {renderSelect("26", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4-2" />}
+            {Kaisetsu(showResults, "21-4-13")}
           </div>
 
           <div className="grid grid-cols-2 gap-4 mb-4">
@@ -403,6 +405,7 @@ export default function Ex21_4() {
             {renderSelect("27", 4, answers, setAnswers)}
             <span>.</span>
             {showResults && <Explain qa={qa} questionId="4-3" />}
+            {Kaisetsu(showResults, "21-4-14")}
           </div>
 
           <div className="ml-2 md:ml-8">
@@ -423,6 +426,7 @@ export default function Ex21_4() {
             {renderSelect("28", 4, answers, setAnswers)}
             <span> on that day.</span>
             {showResults && <Explain qa={qa} questionId="4-4" />}
+            {Kaisetsu(showResults, "21-4-15")}
           </div>
 
           <div className="ml-2 md:ml-8">
@@ -443,6 +447,7 @@ export default function Ex21_4() {
             </span>
             {renderSelect("29", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4-5" />}
+            {Kaisetsu(showResults, "21-4-16")}
           </div>
 
           <div className="ml-2 md:ml-8">

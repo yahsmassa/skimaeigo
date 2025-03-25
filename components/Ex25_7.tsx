@@ -117,8 +117,8 @@ const Ex25_7 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第７問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第７問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {16})</span>
         </div>
         <Saiten
           qa={qa}
@@ -329,7 +329,7 @@ const Ex25_7 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "7-1"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 1</span>
+            <span className="whitespace-nowrap font-sans">問 1</span>
             <span>
               Under the heading, &quot;Importance of Sleep,&quot; you spotted an
               error in your presentation outline. Which of the following should
@@ -337,6 +337,7 @@ const Ex25_7 = () => {
             </span>
             {renderSelect("32", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="7-1" />}
+            {Kaisetsu(showResults, "25-7-11")}
           </div>
           <div className="space-y-2 ml-8">
             <div>① A</div>
@@ -349,13 +350,14 @@ const Ex25_7 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "7-2"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 2</span>
+            <span className="whitespace-nowrap font-sans">問 2</span>
             <span>
               You want to use a figure for the biphasic sleep pattern mentioned
               in the article. Choose the best option for{" "}
             </span>
             {renderSelect("33", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="7-2" />}
+            {Kaisetsu(showResults, "25-7-12")}
           </div>
           <div className="ml-8">
             <Image
@@ -371,13 +373,14 @@ const Ex25_7 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "7-3"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 3</span>
+            <span className="whitespace-nowrap font-sans">問 3</span>
             <span>Choose the best options for </span>
             {renderSelect("34", 5, answers, setAnswers)}
             <span>and </span>
             {renderSelect("35", 5, answers, setAnswers)}. (The order does not
             matter.)
             {showResults && <Explain qa={qa} questionId="7-3" />}
+            {Kaisetsu(showResults, "25-7-13")}
           </div>
           <div className="space-y-2 ml-8">
             <div>① which burn up energy rapidly tend to sleep more often</div>
@@ -395,10 +398,11 @@ const Ex25_7 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "7-4"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 4</span>
+            <span className="whitespace-nowrap font-sans">問 4</span>
             <span>Choose the best option for </span>
             {renderSelect("36", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="7-4" />}
+            {Kaisetsu(showResults, "25-7-14")}
           </div>
           <div className="space-y-2 ml-8">
             <div>
@@ -418,10 +422,11 @@ const Ex25_7 = () => {
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "7-5"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 5</span>
+            <span className="whitespace-nowrap font-sans">問 5</span>
             <span>Choose the best heading for </span>
             {renderSelect("37", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="7-5" />}
+            {Kaisetsu(showResults, "25-7-15")}
           </div>
           <div className="space-y-2 ml-8">
             <div>① Common Patterns of Sleep</div>

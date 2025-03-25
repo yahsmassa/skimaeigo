@@ -132,6 +132,7 @@ const Ex24_6B = () => {
       <div className="mb-4">
         You are preparing a presentation for your science club, using the
         following passage from a science website.
+        {Kaisetsu(showResults, "24-6B-0")}
       </div>
 
       <div className="text-center font-bold mb-4">
@@ -316,6 +317,7 @@ const Ex24_6B = () => {
               </span>
               {renderSelect("44", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId={"6B-1"} />}
+              {Kaisetsu(showResults, "24-6B-9")}
             </div>
             <div className="mt-4 space-y-2 ml-6">
               <div>
@@ -344,6 +346,7 @@ const Ex24_6B = () => {
               </span>
               {renderSelect("45", 5, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId={"6B-2"} />}
+              {Kaisetsu(showResults, "24-6B-10")}
             </div>
             <div className="mt-4 space-y-2 ml-6">
               <div>
@@ -368,6 +371,7 @@ const Ex24_6B = () => {
               {renderSelect("46", 5, answers, setAnswers)}・
               {renderSelect("47", 5, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId={"6B-3"} />}
+              {Kaisetsu(showResults, "24-6B-11")}
             </div>
             <div className="mt-4 space-y-2 ml-6">
               <div>
@@ -396,6 +400,7 @@ const Ex24_6B = () => {
               </span>
               {renderSelect("48", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId={"6B-4"} />}
+              {Kaisetsu(showResults, "24-6B-12")}
             </div>
             <div className="mt-4 space-y-3 ml-6">
               <div>
@@ -422,6 +427,7 @@ const Ex24_6B = () => {
               <span>Choose the most appropriate remark for Slide 6.</span>
               {renderSelect("49", 5, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId={"6B-5"} />}
+              {Kaisetsu(showResults, "24-6B-13")}
             </div>
             <div className="mt-4 space-y-3 ml-6">
               <div>

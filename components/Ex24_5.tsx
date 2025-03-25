@@ -523,7 +523,15 @@ const Ex24_5 = () => {
                 </React.Fragment>
               ))}
               {showResults && (
+                <>
                 <Explain qa={qa} questionId={"5-" + question.id} />
+                <span className="mr-2"></span>
+                {question.id === 1 && Kaisetsu(showResults, "24-5-21")}
+                {question.id === 2 && Kaisetsu(showResults, "24-5-22")}
+                {question.id === 3 && Kaisetsu(showResults, "24-5-23")}
+                {question.id === 4 && Kaisetsu(showResults, "24-5-24")}
+                {question.id === 5 && Kaisetsu(showResults, "24-5-25")}
+                </>
               )}
             </div>
 

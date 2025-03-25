@@ -188,6 +188,7 @@ const Ex21_1B = () => {
             <span>A New Member&apos;s Pack</span>
             {renderSelect("3", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-1" />}
+            {Kaisetsu(showResults, "21-1B-4")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             {[
@@ -213,6 +214,7 @@ const Ex21_1B = () => {
             <span>What will you get if you become a new Pacer member?</span>
             {renderSelect("4", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-2" />}
+            {Kaisetsu(showResults, "21-1B-5")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             {[
@@ -238,11 +240,12 @@ const Ex21_1B = () => {
             <span>After being a fan club member for one year, you can</span>
             {renderSelect("5", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1B-3" />}
+            {Kaisetsu(showResults, "21-1B-6")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             {[
               "become a Zoomer for a $50 fee",
-              "get a New Member&apos;s Pack for $4",
+              "get a New Member's Pack for $4",
               "renew your membership at half price",
               "upgrade your membership for free",
             ].map((text, index) => (

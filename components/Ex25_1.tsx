@@ -68,8 +68,8 @@ export default function Ex25_1() {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第１問"}</h1>
-          <span className="text-gray-600">(配点 6)</span>
+          <h1 className="text-lg font-bold font-sans">{"第１問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 6)</span>
         </div>
         <Saiten
           qa={qa}
@@ -182,6 +182,8 @@ export default function Ex25_1() {
               </span>
               {renderSelect("1", 4, answers, setAnswers)}.
               {showResults && <Explain qa={qa} questionId="1-1" />}
+              {Kaisetsu(showResults, "25-1-4")}
+
             </div>
             <div className="pl-2 md:pl-8 space-y-2">
               {[
@@ -210,6 +212,8 @@ export default function Ex25_1() {
               </span>
               {renderSelect("2", 4, answers, setAnswers)}.
               {showResults && <Explain qa={qa} questionId="1-2" />}
+              {Kaisetsu(showResults, "25-1-5")}
+
             </div>
             <div className="pl-2 md:pl-8 space-y-2">
               {[
@@ -237,6 +241,8 @@ export default function Ex25_1() {
               </span>
               {renderSelect("3", 4, answers, setAnswers)}.
               {showResults && <Explain qa={qa} questionId="1-3" />}
+              {Kaisetsu(showResults, "25-1-6")}
+
             </div>
             {/* Four aquarium illustrations */}
             <div className="w-full mx-auto md:w-full">

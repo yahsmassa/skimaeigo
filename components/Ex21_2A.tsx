@@ -293,6 +293,7 @@ const Ex21_2A = () => {
             </span>
             {renderSelect("6", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2A-1" />}
+            {Kaisetsu(showResults, "21-2A-6")}
           </div>
           <div>
             {[
@@ -317,6 +318,7 @@ const Ex21_2A = () => {
             <span>Which judge gave both positive and critical comments?</span>
             {renderSelect("7", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2A-2" />}
+            {Kaisetsu(showResults, "21-2A-7")}
           </div>
           <div className="pl-2 md:pl-8 space-y-1">
             {["Mr Hobbs", "Ms Leigh", "Ms Wells", "None of them"].map(
@@ -341,10 +343,11 @@ const Ex21_2A = () => {
             </span>
             {renderSelect("8", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2A-3" />}
+            {Kaisetsu(showResults, "21-2A-8")}
           </div>
           <div className="pl-2 md:pl-8 space-y-1">
             {[
-              "all the judges praised Green Forest&apos;s song",
+              "all the judges praised Green Forest's song",
               "Green Forest need to practice more",
               "Mountain Pear can sing very well",
               "Silent Hill have a promising future",
@@ -368,13 +371,14 @@ const Ex21_2A = () => {
             </span>
             {renderSelect("9", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2A-4" />}
+            {Kaisetsu(showResults, "21-2A-9")}
           </div>
           <div className="pl-2 md:pl-8 space-y-1">
             {[
               "each evaluated band received the same total score",
-              "Ms Wells&apos; suggestion about originality was agreed on",
+              "Ms Wells' suggestion about originality was agreed on",
               "Silent Hill really connected with the audience",
-              "the judges&apos; comments determined the rankings",
+              "the judges' comments determined the rankings",
             ].map((text, index) => (
               <div key={index} className="flex items-start">
                 <span className="w-6 h-6 flex items-center justify-center mr-2">
@@ -395,6 +399,7 @@ const Ex21_2A = () => {
             </span>
             {renderSelect("10", 6, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2A-5" />}
+            {Kaisetsu(showResults, "21-2A-10")}
           </div>
           <div className="pl-8">
             <table className="w-full max-w-xl">

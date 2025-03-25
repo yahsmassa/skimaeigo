@@ -232,6 +232,7 @@ const Ex24_3B = () => {
             <div className="mx-1">→</div>
             {renderSelect("21", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"3B-1"} />}
+            {Kaisetsu(showResults, "24-3B-7")}
           </div>
         </div>
 
@@ -240,6 +241,7 @@ const Ex24_3B = () => {
             <div key={key} className="p-3 border rounded-lg bg-white">
               <div className="text-sm mb-1">{"①②③④"[index]}</div>
               <div className="text-sm">{text}</div>
+              {Kaisetsu(showResults, "24-3B-" + (index + 8))}
             </div>
           ))}
         </div>
@@ -254,6 +256,7 @@ const Ex24_3B = () => {
             {renderSelect("22", 4, answers, setAnswers)}
             <span>of the south sea island.</span>
             {showResults && <Explain qa={qa} questionId={"3B-2"} />}
+            {Kaisetsu(showResults, "24-3B-12")}
           </div>
 
           <div className="space-y-1">
@@ -273,6 +276,7 @@ const Ex24_3B = () => {
             {renderSelect("23", 4, answers, setAnswers)}
             <span>in the night sky.</span>
             {showResults && <Explain qa={qa} questionId={"3B-3"} />}
+            {Kaisetsu(showResults, "24-3B-13")}
           </div>
 
           <div className="space-y-1">

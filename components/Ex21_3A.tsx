@@ -152,6 +152,7 @@ export default function Ex21_3A() {
             <span>From Alex&apos;s answer, you learn that Alex</span>
             {renderSelect("16", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3A-1" />}
+            {Kaisetsu(showResults, "21-3A-6")}
           </div>
 
           <div className="pl-2 md:pl-8 space-y-1">
@@ -181,6 +182,7 @@ export default function Ex21_3A() {
             </span>
             {renderSelect("17", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3A-2" />}
+            {Kaisetsu(showResults, "21-3A-7")}
           </div>
 
           <div className="pl-2 md:pl-8 space-y-1">

@@ -118,8 +118,8 @@ const Ex25_8 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第８問"}</h1>
-          <span className="text-gray-600">(配点 {17})</span>
+          <h1 className="text-lg font-bold font-sans">{"第８問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {17})</span>
         </div>
         <Saiten
           qa={qa}
@@ -256,6 +256,7 @@ const Ex25_8 = () => {
             </span>
             {renderSelect("38", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="8-1" />}
+            {Kaisetsu(showResults, "25-8-11")}
           </div>
 
           <div className="space-y-2 ml-2 md:ml-8">
@@ -286,11 +287,12 @@ const Ex25_8 = () => {
             </span>
             {renderSelect("39", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="8-2" />}
+            {Kaisetsu(showResults, "25-8-12")}
             <span>.</span>
           </div>
 
           <div className="space-y-4 ml-2 md:ml-8">
-            <div>
+            {/* <div> */}
               {[
                 "has economic impacts and provides opportunities for private corporations to make money",
                 "is gaining popularity and that salaries for people working in the industry are above average",
@@ -304,7 +306,7 @@ const Ex25_8 = () => {
                   <p>{text}</p>
                 </div>
               ))}
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </div>
@@ -367,16 +369,19 @@ const Ex25_8 = () => {
                 </div>
               </div>
             </div>
+            <div className="flex flex-row gap-2">
+              {Kaisetsu(showResults, "25-8-13")}
+              {showResults && <Explain qa={qa} questionId="8-3" />}
+            </div>
 
             {/* Options for 40 and 41 */}
             <div className="space-y-2">
-              {showResults && <Explain qa={qa} questionId="8-3" />}
               <p className="flex items-center gap-2 flex-wrap">
                 Options for {renderSelect("40", 5, answers, setAnswers)} and
                 {renderSelect("41", 5, answers, setAnswers)} (the order does not
                 matter):
               </p>
-
+              {Kaisetsu(showResults, "25-8-14")}
               <div className="ml-2 md:ml-4 space-y-2">
                 {[
                   "Apu's",
@@ -399,6 +404,7 @@ const Ex25_8 = () => {
             <div className="space-y-2">
               <p className="flex items-center gap-2 flex-wrap">
                 Options for {renderSelect("42", 4, answers, setAnswers)}.
+                {Kaisetsu(showResults, "25-8-14")}
               </p>
               <div className="ml-2 md:ml-4 space-y-3">
                 {[
@@ -532,6 +538,7 @@ const Ex25_8 = () => {
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="8-4" />}
+            {Kaisetsu(showResults, "25-8-15")}
           </div>
 
           <div className="space-y-4 ml-2 md:ml-6">
@@ -568,6 +575,7 @@ const Ex25_8 = () => {
                 Based on Source B, which option best supports this statement?
                 {renderSelect("44", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="8-5" />}
+                {Kaisetsu(showResults, "25-8-16")}
               </div>
             </div>
           </div>

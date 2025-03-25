@@ -85,8 +85,8 @@ const TheContest = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問"}</h1>
-          <span className="text-gray-600">(配点 {9})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {9})</span>
         </div>
         <Saiten
           qa={qa}
@@ -169,6 +169,7 @@ const TheContest = () => {
             <span>Which person is telling the story? </span>
             {renderSelect("8", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3-1" />}
+            {Kaisetsu(showResults, "25-3-6")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             <p>① Kei</p>
@@ -195,6 +196,7 @@ const TheContest = () => {
             <span className="mx-2">→</span>
             {renderSelect("12", 5, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3-2" />}
+            {Kaisetsu(showResults, "25-3-7")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             <p>① The band changed its attitude.</p>
@@ -214,6 +216,7 @@ const TheContest = () => {
             <span className="mr-2">the competition? </span>
             {renderSelect("13", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3-3" />}
+            {Kaisetsu(showResults, "25-3-8")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             <p>① Awful</p>

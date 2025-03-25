@@ -191,8 +191,8 @@ const Ex24_2A = () => {
       {/* 問題番号とシチュエーション */}
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 A"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {10})</span>
         </div>
         <Saiten
           qa={qa}
@@ -288,6 +288,7 @@ const Ex24_2A = () => {
               {showResults && (
                 <Explain qa={qa} questionId={"2A-" + String(index + 1)} />
               )}
+              {Kaisetsu(showResults, "24-2A-" + String(index + 4))}
             </div>
             <ol className="list-none space-y-2 ml-6">
               {question.options.map((option, optIndex) => (

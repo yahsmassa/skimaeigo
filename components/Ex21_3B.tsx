@@ -188,6 +188,7 @@ const Ex21_3B = () => {
                 </React.Fragment>
               ))}
               {showResults && <Explain qa={qa} questionId="3B-1" />}
+              {Kaisetsu(showResults, "21-3B-6")}
             </div>
           </div>
           <div className="space-y-2 ml-2 md:ml-4">
@@ -217,6 +218,7 @@ const Ex21_3B = () => {
             </span>
             {renderSelect("22", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3B-2" />}
+            {Kaisetsu(showResults, "21-3B-7")}
           </div>
           <div className="space-y-2 ml-2 md:ml-4">
             {[
@@ -245,6 +247,7 @@ const Ex21_3B = () => {
             </span>
             {renderSelect("23", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3B-3" />}
+            {Kaisetsu(showResults, "21-3B-8")}
           </div>
           <div className="space-y-2 ml-2 md:ml-4">
             {[

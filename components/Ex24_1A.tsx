@@ -231,6 +231,7 @@ export default function Ex24_1A() {
               {showResults && (
                 <Explain qa={qa} questionId={"1A-" + String(index + 1)} />
               )}
+              {Kaisetsu(showResults, "24-1A-" + String(index + 6))}
             </div>
             <ol className="list-none space-y-2 ml-6">
               {question.options.map((option: string, optIndex: number) => (

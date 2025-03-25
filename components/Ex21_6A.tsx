@@ -321,6 +321,7 @@ const Ex21_6A = () => {
             {renderSelect("39", 4, answers, setAnswers)}
             <span>on your poster.</span>
             {showResults && <Explain qa={qa} questionId="6A-1" />}
+            {Kaisetsu(showResults, "21-6A-10")}
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
             {[
@@ -347,6 +348,7 @@ const Ex21_6A = () => {
             {renderSelect("40", 4, answers, setAnswers)}
             <span>on your poster.</span>
             {showResults && <Explain qa={qa} questionId="6A-2" />}
+            {Kaisetsu(showResults, "21-6A-11")}
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
             {[
@@ -373,6 +375,7 @@ const Ex21_6A = () => {
             {renderSelect("41", 4, answers, setAnswers)}
             <span>on your poster.</span>
             {showResults && <Explain qa={qa} questionId="6A-3" />}
+            {Kaisetsu(showResults, "21-6A-12")}
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
             {[
@@ -399,6 +402,7 @@ const Ex21_6A = () => {
             {renderSelect("42", 4, answers, setAnswers)}
             <span>on your poster.</span>
             {showResults && <Explain qa={qa} questionId="6A-4" />}
+            {Kaisetsu(showResults, "21-6A-13")}
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
             {[

@@ -300,6 +300,7 @@ const Ex24_6A = () => {
             {renderSelect("39", 6, answers, setAnswers)} and
             {renderSelect("40", 6, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"6A-1"} />}
+            {Kaisetsu(showResults, "24-6A-8")}
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -326,6 +327,7 @@ const Ex24_6A = () => {
             <span>Choose the best option for</span>
             {renderSelect("41", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"6A-2"} />}
+            {Kaisetsu(showResults, "24-6A-9")}
           </div>
           {[
             "major lifestyle change at any age will likely make time slow down",
@@ -347,6 +349,7 @@ const Ex24_6A = () => {
             <span>Choose the best option for</span>
             {renderSelect("42", 6, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"6A-3"} />}
+            {Kaisetsu(showResults, "24-6A-10")}
           </div>
           {[
             "anticipating a message from a classmate",
@@ -369,6 +372,7 @@ const Ex24_6A = () => {
             <span>Choose the best option for</span>
             {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"6A-4"} />}
+            {Kaisetsu(showResults, "24-6A-11")}
           </div>
           {[
             "guessing how long you&apos;ve been jogging so far",

@@ -243,6 +243,7 @@ const Ex24_1B = () => {
               {showResults && (
                 <Explain qa={qa} questionId={"1B-" + String(index + 1)} />
               )}
+              {Kaisetsu(showResults, "24-1B-" + String(index + 4))}
             </div>
             <ol className="list-none space-y-2 ml-6">
               {question.options.map((option, optIndex) => (

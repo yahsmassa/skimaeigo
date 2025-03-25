@@ -260,7 +260,7 @@ const Ex24_4 = () => {
             text: "The majority of members",
             numberBoxes: ["27", "28"],
             additionalText:
-              "the room as 's comment mentioned. How can we solve this?",
+              "'s comment mentioned. How can we solve this?",
           },
           {
             text: "Based on both the graph and",
@@ -446,7 +446,7 @@ const Ex24_4 = () => {
     ],
   };
   const NumberBox = ({ number }: { number: string }) => (
-    <span className="text-center inline-block align-middle border-2 border-gray-400 w-12 h-8 mx-1">
+    <span className="font-sans text-center inline-block align-middle border-2 border-gray-400 w-12 h-8 mx-1">
       {number}
     </span>
   );
@@ -618,6 +618,7 @@ const Ex24_4 = () => {
 
             {section.items && (
               <div className="space-y-2 pl-4">
+                {Kaisetsu(showResults, "24-4-10")}
                 {section.items.map((item, itemIndex) => (
                   <div key={itemIndex} className="whitespace-normal">
                     - {item.text}
@@ -634,11 +635,13 @@ const Ex24_4 = () => {
                     {"additionalText" in item && item.additionalText}
                   </div>
                 ))}
+
               </div>
             )}
 
             {section.subsections && (
               <div className="space-y-4 pl-4">
+                {Kaisetsu(showResults, "24-4-9")}
                 {section.subsections.map((subsection, subIndex) => (
                   <div key={subIndex}>
                     <p>- {subsection.title}:</p>
@@ -684,7 +687,13 @@ const Ex24_4 = () => {
                   setAnswers
                 )}
               {question.numberBox && showResults && (
-                <Explain qa={qa} questionId={"4-" + question.id} />
+                <>
+                  <Explain qa={qa} questionId={"4-" + question.id} />
+                  <span className="mr-2"></span>
+                  { question.id === 1  &&  Kaisetsu(showResults, "24-4-11")}
+                  { question.id === 2  &&  Kaisetsu(showResults, "24-4-12")}
+                  { question.id === 3  &&  Kaisetsu(showResults, "24-4-13")}
+                </>
               )}
               {/* 27,28 は 3,4 に対応 */}
               {question.numberBoxes?.map((num, index) => (
@@ -699,7 +708,12 @@ const Ex24_4 = () => {
                 </React.Fragment>
               ))}
               {question.numberBoxes && showResults && (
-                <Explain qa={qa} questionId={"4-" + question.id} />
+                <>
+                  <Explain qa={qa} questionId={"4-" + question.id} />
+                  <span className="mr-2"></span>
+                  {Kaisetsu(showResults, "24-4-14")}
+                </>
+
               )}
             </div>
 

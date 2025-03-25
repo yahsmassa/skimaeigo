@@ -203,6 +203,7 @@ const Ex21_6B = () => {
             {renderSelect("43", 4, answers, setAnswers)}
             <span>.</span>
             {showResults && <Explain qa={qa} questionId="6B-1" />}
+            {Kaisetsu(showResults, "21-6B-7")}
           </div>
 
           <div className="ml-2 md:ml-8 space-y-2">
@@ -234,6 +235,7 @@ const Ex21_6B = () => {
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6B-2" />}
+            {Kaisetsu(showResults, "21-6B-8")}
           </div>
 
           {/* Table */}
@@ -355,6 +357,7 @@ const Ex21_6B = () => {
             <span>・</span>
             {renderSelect("46", 5, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6B-3" />}
+            {Kaisetsu(showResults, "21-6B-9")}
           </div>
 
           <div className="ml-2 md:ml-8 space-y-2">
@@ -399,6 +402,7 @@ const Ex21_6B = () => {
             </span>
             {renderSelect("47", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6B-4" />}
+            {Kaisetsu(showResults, "21-6B-10")}
           </div>
 
           <div className="ml-2 md:ml-8 space-y-2">

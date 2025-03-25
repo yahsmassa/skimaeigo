@@ -124,6 +124,7 @@ const Ex21_1A = () => {
             <span>What was Julie&apos;s request?</span>
             {renderSelect("1", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1A-1" />}
+            {Kaisetsu(showResults, "21-1A-4")}
           </div>
           <div className="space-y-2 pl-4">
             {[
@@ -149,6 +150,7 @@ const Ex21_1A = () => {
             <span>How will you reply to Julie&apos;s second text message?</span>
             {renderSelect("2", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="1A-2" />}
+            {Kaisetsu(showResults, "21-1A-5")}
           </div>
           <div className="space-y-2 pl-4">
             {[

@@ -114,8 +114,8 @@ const Ex25_6 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問"}</h1>
-          <span className="text-gray-600">(配点 {12})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -334,12 +334,13 @@ const Ex25_6 = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
           <div className="flex gap-2 items-center flex-wrap justify-between">
             <div className="flex gap-2 items-center">
-              <span className="whitespace-nowrap">問 1</span>
+              <span className="whitespace-nowrap font-sans">問 1</span>
               <div>
                 Choose <span className="underline">four</span> out of the five
                 descriptions (①〜⑤) and put them in the order they occurred.
                 &nbsp; &nbsp;
                 {showResults && <Explain qa={qa} questionId="6-1" />}
+                {Kaisetsu(showResults, "25-6-15")}
               </div>
             </div>
           </div>
@@ -366,12 +367,13 @@ const Ex25_6 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 2</span>
+            <span className="whitespace-nowrap font-sans">問 2</span>
             <div>
               Choose the correct combination of Melody&apos;s superpowers.
             </div>
             {renderSelect("28", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-2" />}
+            {Kaisetsu(showResults, "25-6-16")}
           </div>
 
           <div className="space-y-2 ml-8">
@@ -394,10 +396,11 @@ const Ex25_6 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 3</span>
+            <span className="whitespace-nowrap font-sans">問 3</span>
             <span>Choose the best option for </span>
             {renderSelect("29", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="6-3" />}
+            {Kaisetsu(showResults, "25-6-17")}
           </div>
 
           <div className="space-y-2 ml-8">
@@ -411,13 +414,14 @@ const Ex25_6 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="whitespace-nowrap">問 4</span>
+            <span className="whitespace-nowrap font-sans">問 4</span>
             <span>Choose the best options for </span>
             {renderSelect("30", 5, answers, setAnswers)}
             <span>and</span>
             {renderSelect("31", 5, answers, setAnswers)}
             <span>. (The order does not matter.)</span>
             {showResults && <Explain qa={qa} questionId="6-4" />}
+            {Kaisetsu(showResults, "25-6-18")}
           </div>
 
           <div className="space-y-2 ml-8">

@@ -226,6 +226,7 @@ const Ex21_2B = () => {
             <span>Ken thinks the new policy</span>{" "}
             {renderSelect("11", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-1" />}
+            {Kaisetsu(showResults, "21-2B-5")}
           </div>
           <div>
             <div className="list-none pl-2 md:pl-6 space-y-1">
@@ -255,12 +256,13 @@ const Ex21_2B = () => {
             </span>
             {renderSelect("12", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-2" />}
+            {Kaisetsu(showResults, "21-2B-6")}
           </div>
           <div>
             <div className="pl-2 md:pl-6 space-y-1">
               {[
                 "more discussion is needed about the policy",
-                "the Head Teacher&apos;s experience is improving the school",
+                "the Head Teacher's experience is improving the school",
                 "the school should think about students' activities",
                 "there are students who do not welcome the new policy",
               ].map((text, index) => (
@@ -281,6 +283,7 @@ const Ex21_2B = () => {
             <span>Who thinks the aim of the policy is to save energy? </span>
             {renderSelect("13", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-3" />}
+            {Kaisetsu(showResults, "21-2B-7")}
           </div>
           <div>
             <div className="pl-2 md:pl-6 space-y-1">
@@ -306,6 +309,7 @@ const Ex21_2B = () => {
             <span> that</span>
             {renderSelect("14", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-4" />}
+            {Kaisetsu(showResults, "21-2B-8")}
           </div>
           <div className="pl-2 md:pl-6 space-y-1">
             {[
@@ -332,6 +336,7 @@ const Ex21_2B = () => {
             </span>
             {renderSelect("15", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="2B-5" />}
+            {Kaisetsu(showResults, "21-2B-9")}
           </div>
           <div className="pl-2 md:pl-6 space-y-1">
             {[

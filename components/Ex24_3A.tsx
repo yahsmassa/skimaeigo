@@ -275,6 +275,7 @@ const Ex24_3A: React.FC = () => {
               {showResults && (
                 <Explain qa={qa} questionId={"3A-" + String(index + 1)} />
               )}
+              {Kaisetsu(showResults, "24-3A-" + String(index + 6))}
             </div>
             {index === 1 ? (
               <ol className="list-none space-y-2 ml-6">
