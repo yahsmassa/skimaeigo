@@ -98,8 +98,8 @@ const Ex20_5 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第５問"}</h1>
-          <span className="text-gray-600">(配点 {30})</span>
+          <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {30})</span>
         </div>
         <Saiten
           qa={qa}
@@ -114,11 +114,11 @@ const Ex20_5 = () => {
       <div className="flex items-center gap-2 mb-5">
         <div className="flex items-center flex-wrap gap-1 ">
           次の文章を読み、下の問い(問1～5)の
-          <div className="inline-flex border border-black w-11 justify-center  py-1 mx-1">
+          <div className="font-sans inline-flex border border-black w-11 justify-center  py-1 mx-1">
             41
           </div>
           ～
-          <div className="inline-flex border border-black w-11 justify-center  py-1 mx-1">
+          <div className="font-sans inline-flex border border-black w-11 justify-center  py-1 mx-1">
             45
           </div>
           に入れるのに
@@ -251,10 +251,11 @@ const Ex20_5 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>The author kept returning to the mountain because</span>
             {renderSelect("41", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-1" />}
+            {Kaisetsu(showResults, "20-5-14")}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -288,13 +289,14 @@ const Ex20_5 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               Which of the following happened first on the author's most recent
               trip?
             </span>
             {renderSelect("42", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-2" />}
+            {Kaisetsu(showResults, "20-5-15")}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -328,13 +330,14 @@ const Ex20_5 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               What similarity between the author's dog and the old man was
               talked about?
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-3" />}
+            {Kaisetsu(showResults, "20-5-16")}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -368,7 +371,7 @@ const Ex20_5 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               Which of the following is closest to the meaning of the underlined
               phrase
@@ -377,6 +380,7 @@ const Ex20_5 = () => {
             <span>as used in the text?</span>
             {renderSelect("44", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-4" />}
+            {Kaisetsu(showResults, "20-5-17")}
           </div>
 
           <div className="ml-8 space-y-2">
@@ -412,13 +416,14 @@ const Ex20_5 = () => {
           className={cn("space-y-4 mt-8", showResults && qaFormat(qa, "5-5"))}
         >
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>
               How did the author's feelings change over the course of the last
               hiking experience?
             </span>
             {renderSelect("45", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-5" />}
+            {Kaisetsu(showResults, "20-5-18")}
           </div>
 
           <div className="ml-8 space-y-2">

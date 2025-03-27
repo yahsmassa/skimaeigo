@@ -69,8 +69,8 @@ const ExamQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
-          <span className="text-gray-600">(配点 {18})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {18})</span>
         </div>
         <Saiten
           qa={qa}
@@ -83,8 +83,8 @@ const ExamQuestion = () => {
       </div>
       {/* Question Number */}
       <div className="flex flex-wrap items-center mb-4">
-        <h2 className="md:text-xl font-bold mr-4">第3問</h2>
-        <p className="text-base">次の問い（A・B）に答えよ。（配点 33）</p>
+        <h2 className="md:text-xl font-bold mr-4 font-sans">第3問</h2>
+        <p className="text-base font-sans">次の問い（A・B）に答えよ。（配点 33）</p>
       </div>
 
       {/* Part A Instructions */}

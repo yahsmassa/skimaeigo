@@ -136,8 +136,8 @@ const Ex19_6 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問"}</h1>
-          <span className="text-gray-600">(配点 {36})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {36})</span>
         </div>
 
         <Saiten
@@ -277,7 +277,7 @@ const Ex19_6 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               Which of the following is closest to the meaning of the underlined
               word{" "}
@@ -286,6 +286,7 @@ const Ex19_6 = () => {
             <span> in paragraph (1)?</span>
             {renderSelect("46", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-1" />}
+            {Kaisetsu(showResults, "19-6-7")}
           </div>
           <div className="pl-8 space-y-2">
             <p>① accidental</p>
@@ -298,13 +299,14 @@ const Ex19_6 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               According to paragraph (2), which of the following statements is
               true?
             </span>
             {renderSelect("47", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-2" />}
+            {Kaisetsu(showResults, "19-6-8")}
           </div>
           <div className="pl-8 space-y-2">
             <p>
@@ -329,10 +331,11 @@ const Ex19_6 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>Why is the example of Edo introduced in paragraph (3)?</span>
             {renderSelect("48", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-3" />}
+            {Kaisetsu(showResults, "19-6-9")}
           </div>
           <div className="pl-8 space-y-2">
             <p>① To describe the difficulty of creating routes on the water</p>
@@ -349,9 +352,11 @@ const Ex19_6 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>What does paragraph (5) tell us about routes?</span>
             {renderSelect("49", 4, answers, setAnswers)}
+            {showResults && <Explain qa={qa} questionId="6-4" />}
+            {Kaisetsu(showResults, "19-6-10")}
           </div>
           <div className="pl-8 space-y-2">
             <p>
@@ -366,10 +371,11 @@ const Ex19_6 = () => {
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans   ">問 5</span>
             <span>What is the main point of this article?</span>
             {renderSelect("50", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-5" />}
+            {Kaisetsu(showResults, "19-6-11")}
           </div>
           <div className="pl-8 space-y-2">
             <p>
@@ -408,6 +414,7 @@ const Ex19_6 = () => {
                 {renderSelect("53", 4, answers, setAnswers)}
                 {renderSelect("54", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="6-6" />}
+                {Kaisetsu(showResults, "19-6-12")}
               </span>
             </p>
           </div>

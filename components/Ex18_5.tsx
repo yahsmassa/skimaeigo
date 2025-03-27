@@ -99,8 +99,8 @@ const Ex18_5 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第５問"}</h1>
-          <span className="text-gray-600">(配点 {30})</span>
+          <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {30})</span>
         </div>
         <Saiten
           qa={qa}
@@ -257,10 +257,11 @@ const Ex18_5 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>What was the purpose of the explorers&apos; journey?</span>
             {renderSelect("41", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-1" />}
+            {Kaisetsu(showResults, "18-5-9")}
           </div>
 
           <div className="pl-8 space-y-4">
@@ -294,13 +295,14 @@ const Ex18_5 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               When the explorers were observing the planet from space, they
               imagined that the intelligent creatures on it would
             </span>
             {renderSelect("42", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-2" />}
+            {Kaisetsu(showResults, "18-5-10")}
           </div>
 
           <div className="pl-8 space-y-4">
@@ -334,14 +336,15 @@ const Ex18_5 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               The word{" "}
               <span className="border-b-2 border-black">reservations</span> as
               used in DAY 9 is closest in meaning to
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-3" />}.
+            {showResults && <Explain qa={qa} questionId="5-3" />}
+            {Kaisetsu(showResults, "18-5-11")}
           </div>
 
           <div className="pl-8 space-y-4">
@@ -375,12 +378,13 @@ const Ex18_5 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               Which of the following best describes the author of the journal?
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-4" />}
+            {Kaisetsu(showResults, "18-5-12")}
           </div>
 
           <div className="pl-8 space-y-4">
@@ -414,13 +418,14 @@ const Ex18_5 = () => {
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>
               The explorers incorrectly assumed that all intelligent creatures
               would
             </span>
             {renderSelect("45", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-5" />}.
+            {showResults && <Explain qa={qa} questionId="5-5" />}
+            {Kaisetsu(showResults, "18-5-13")}
           </div>
 
           <div className="pl-8 space-y-4">

@@ -85,8 +85,8 @@ const Ex18_4B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {20})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {20})</span>
         </div>
         <Saiten
           qa={qa}
@@ -112,7 +112,7 @@ const Ex18_4B = () => {
       {/* Question 1 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 1</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>
             What inspired Ralph Bearison to start Papa Bear Cooking School?
           </span>
@@ -141,7 +141,7 @@ const Ex18_4B = () => {
       {/* Question 2 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 2</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
           <span>
             Tony is going to participate in the French Course and use the
             discount coupon provided. He will also buy an apron-and-towel set
@@ -162,7 +162,7 @@ const Ex18_4B = () => {
       {/* Question 3 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 3</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span>
             Ed hopes to expand the variety of food he can cook for his family.
             He has no free time on weekends or mornings. Which cooking course
@@ -183,7 +183,7 @@ const Ex18_4B = () => {
       {/* Question 4 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4B-4"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 4</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>The advertisement suggests that</span>
           {renderSelect("40", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4B-4" />}

@@ -69,8 +69,8 @@ const TestQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
-          <span className="text-gray-600">(配点 {18})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {18})</span>
         </div>
         <Saiten
           qa={qa}
@@ -82,7 +82,7 @@ const TestQuestion = () => {
         />
       </div>
       <div className="mb-8">
-        <h2 className="md:text-2xl font-bold mb-4">
+        <h2 className="md:text-2xl font-bold mb-4 font-sans">
           第3問 次の問い(A・B)に答えよ。(配点 33)
         </h2>
 
@@ -99,7 +99,7 @@ const TestQuestion = () => {
                 showResults && qaFormat(qa, "3A-1")
               )}
             >
-              <span className="font-bold mr-2">問1</span>
+              <span className="font-bold mr-2 font-sans">問1</span>
               {renderSelect("27", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="3A-1" />}
               <span className="mr-2"></span>
@@ -150,7 +150,7 @@ const TestQuestion = () => {
                 showResults && qaFormat(qa, "3A-2")
               )}
             >
-              <span className="font-bold mr-2">問2</span>
+              <span className="font-bold mr-2 font-sans">問2</span>
               {renderSelect("28", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="3A-2" />}
               <span className="mr-2"></span>
@@ -201,7 +201,7 @@ const TestQuestion = () => {
                 showResults && qaFormat(qa, "3A-3")
               )}
             >
-              <span className="font-bold mr-2">問3</span>
+              <span className="font-bold mr-2 font-sans">問3</span>
               {renderSelect("29", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="3A-3" />}
               <span className="mr-2"></span>

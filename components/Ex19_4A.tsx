@@ -88,8 +88,8 @@ const Ex19_4A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {16})</span>
         </div>
         <Saiten
           qa={qa}
@@ -102,7 +102,7 @@ const Ex19_4A = () => {
       </div>{" "}
       {/* Question Number and Points */}
       <div className="mb-6">
-        <h2 className="text-lg mb-4">
+        <h2 className="text-lg mb-4 font-sans">
           第4問 次の問い(A・B)に答えよ。(配点 40)
         </h2>
       </div>
@@ -111,8 +111,8 @@ const Ex19_4A = () => {
         <p className="mb-4 gap-1 leading-relaxed">
           A
           次の文章はある説明文の一部である。この文章と表を読み、下の問い(問1～4)の
-          <span className="inline-block px-4 border border-black">33</span>～
-          <span className="inline-block px-4 border border-black">36</span>
+          <span className="font-sans inline-block px-4 border border-black">33</span>～
+          <span className="font-sans inline-block px-4 border border-black">36</span>
           に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
         </p>
       </div>
@@ -231,7 +231,7 @@ const Ex19_4A = () => {
         {/* Question 1 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-bold font-sans">問 1</span>
             <span>
               For the category &quot;Apples&quot; in this research, a painting
               with two whole apples and one apple cut in half would be labeled
@@ -239,6 +239,7 @@ const Ex19_4A = () => {
             </span>
             {renderSelect("33", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4A-1" />}
+            {Kaisetsu(showResults, "19-4A-5")}
           </div>
           <div className="space-y-2 ml-8">
             <p>① 0</p>
@@ -251,10 +252,11 @@ const Ex19_4A = () => {
         {/* Question 2 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-bold font-sans">問 2</span>
             <span>According to Table 1, the paintings from </span>
             {renderSelect("34", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4A-2" />}
+            {Kaisetsu(showResults, "19-4A-6")}
           </div>
           <div className="space-y-2 ml-8">
             <p>
@@ -279,10 +281,11 @@ const Ex19_4A = () => {
         {/* Question 3 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-bold font-sans">問 3</span>
             <span>According to the passage and Table 1, </span>
             {renderSelect("35", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4A-3" />}
+            {Kaisetsu(showResults, "19-4A-7")}
           </div>
           <div className="space-y-2 ml-8">
             <p>
@@ -307,10 +310,11 @@ const Ex19_4A = () => {
         {/* Question 4 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-bold font-sans">問 4</span>
             <span>According to the passage, foods in these paintings can </span>
             {renderSelect("36", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4A-4" />}
+            {Kaisetsu(showResults, "19-4A-8")}
           </div>
           <div className="space-y-2 ml-8">
             <p>① demonstrate the painters&apos; knowledge of history</p>

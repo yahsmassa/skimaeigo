@@ -150,8 +150,8 @@ const JapaneseExamQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 A"}</h1>
-          <span className="text-gray-600">(配点 {20})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {20})</span>
         </div>
         <Saiten
           qa={qa}
@@ -163,7 +163,7 @@ const JapaneseExamQuestion = () => {
         />
       </div>{" "}
       <div className="mb-8">
-        <h2 className="md:text-xl font-bold mb-6">
+        <h2 className="md:text-xl font-bold font-sans mb-6">
           第2問 次の問い（A～C）に答えよ。（配点 47）
         </h2>
 
@@ -205,7 +205,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-1")
             )}
           >
-            <div className="font-bold mr-4">問1</div>
+            <div className="font-bold font-sans mr-4">問1</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 Jeff didn't accept the job offer because
@@ -235,7 +235,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-2")
             )}
           >
-            <div className="font-bold mr-4">問2</div>
+            <div className="font-bold font-sans mr-4">問2</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Brenda went</span>
               {renderSelect("9", 4, answers, setAnswers)}
@@ -268,7 +268,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-3")
             )}
           >
-            <div className="font-bold mr-4">問3</div>
+            <div className="font-bold font-sans mr-4">問3</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 After I injured my elbow, I had to quit
@@ -300,7 +300,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-4")
             )}
           >
-            <div className="font-bold mr-4">問4</div>
+            <div className="font-bold font-sans mr-4">問4</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">It's</span>
               {renderSelect("11", 4, answers, setAnswers)}
@@ -330,7 +330,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-5")
             )}
           >
-            <div className="font-bold mr-4">問5</div>
+            <div className="font-bold font-sans mr-4">問5</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Nicole</span>
               {renderSelect("12", 4, answers, setAnswers)}
@@ -365,7 +365,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-6")
             )}
           >
-            <div className="font-bold mr-4">問6</div>
+            <div className="font-bold font-sans mr-4">問6</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Our boss was sick at home, so we did</span>
               {renderSelect("13", 4, answers, setAnswers)}
@@ -393,7 +393,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-7")
             )}
           >
-            <div className="font-bold mr-4">問7</div>
+            <div className="font-bold font-sans mr-4">問7</div>
             <div className="flex flex-wrap items-center">
               {renderSelect("14", 4, answers, setAnswers)}
               <span className="mr-2">
@@ -423,7 +423,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-8")
             )}
           >
-            <div className="font-bold mr-4">問8</div>
+            <div className="font-bold font-sans mr-4">問8</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 Rafael（ A ）a pair of swallows（ B ）a nest
@@ -459,7 +459,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-9")
             )}
           >
-            <div className="font-bold mr-4">問9</div>
+            <div className="font-bold font-sans mr-4">問9</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 It（ A ）be long（ B ）the plum blossoms come out. They may even
@@ -496,7 +496,7 @@ const JapaneseExamQuestion = () => {
               showResults && qaFormat(qa, "2A-10")
             )}
           >
-            <div className="font-bold mr-4">問10</div>
+            <div className="font-bold font-sans mr-4">問10</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 Melissa said she（ A ）rather go snowboarding next weekend

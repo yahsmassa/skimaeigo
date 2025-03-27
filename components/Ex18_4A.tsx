@@ -86,8 +86,8 @@ const Ex18_4A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {16})</span>
         </div>
         <Saiten
           qa={qa}
@@ -100,17 +100,17 @@ const Ex18_4A = () => {
       </div>{" "}
       {/* 問題番号とポイント */}
       <div className="mb-6 text-lg">
-        <span className="font-bold">第4問</span>
-        <span className="ml-4">次の問い(A・B)に答えよ。(配点 40)</span>
+        <span className="font-bold font-sans">第4問</span>
+        <span className="ml-4 font-sans">次の問い(A・B)に答えよ。(配点 40)</span>
       </div>
       {/* A問題の説明部分 */}
       <div className="mb-6">
-        <div className="font-bold mb-2">A</div>
+        <div className="font-bold font-sans mb-2">A</div>
         <div className="mb-4 leading-relaxed">
           次の文章にある説明文の一部である。この文章とグラフを読み、下の問い(問1～4)の
           <span className="inline-flex items-center mx-2">
-            <div className="border border-black px-4 py-1 mx-1">33</div>～
-            <div className="border border-black px-4 py-1 mx-1">36</div>
+            <div className="font-sans border border-black px-4 py-1 mx-1">33</div>～
+            <div className="font-sans border border-black px-4 py-1 mx-1">36</div>
           </span>
           に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
         </div>
@@ -200,13 +200,14 @@ const Ex18_4A = () => {
             {/* 問1 */}
             <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
               <div className="flex items-center flex-wrap gap-2 mb-3">
-                <span className="whitespace-nowrap mr-2">問 1</span>
+                <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
                 <span>
                   The passage mentions that it is difficult to understand which
                   colors consumers like better because
                 </span>
                 {renderSelect("33", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4A-1" />}.
+                {showResults && <Explain qa={qa} questionId="4A-1" />}
+                {Kaisetsu(showResults, "18-4A-7")}
               </div>
               <div className="ml-8 space-y-2">
                 <div>
@@ -225,13 +226,14 @@ const Ex18_4A = () => {
             {/* 問2 */}
             <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
               <div className="flex items-center flex-wrap gap-2 mb-3">
-                <span className="whitespace-nowrap mr-2">問 2</span>
+                <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
                 <span>
                   In Figure 1, which of the following do (A), (B), (C), and (D)
                   refer to?
                 </span>
                 {renderSelect("34", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="4A-2" />}
+                {Kaisetsu(showResults, "18-4A-8")}
               </div>
               <div className="ml-8 space-y-2">
                 <div>
@@ -252,13 +254,14 @@ const Ex18_4A = () => {
             {/* 問3 */}
             <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
               <div className="flex items-center flex-wrap gap-2 mb-3">
-                <span className="whitespace-nowrap mr-2">問 3</span>
+                <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
                 <span>
                   Which of the following statements is correct according to the
                   passage?
                 </span>
                 {renderSelect("35", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="4A-3" />}
+                {Kaisetsu(showResults, "18-4A-9")}
               </div>
               <div className="ml-8 space-y-2">
                 <div>
@@ -283,12 +286,13 @@ const Ex18_4A = () => {
             {/* 問4 */}
             <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
               <div className="flex items-center flex-wrap gap-2 mb-3">
-                <span className="whitespace-nowrap mr-2">問 4</span>
+                <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
                 <span>
                   What topic is most likely to follow the last paragraph?
                 </span>
                 {renderSelect("36", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="4A-4" />}
+                {Kaisetsu(showResults, "18-4A-10")}
               </div>
               <div className="ml-8 space-y-2">
                 <div>

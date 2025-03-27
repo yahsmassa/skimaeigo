@@ -213,8 +213,8 @@ const JapaneseTestQuestion = () => {
       </div>{" "}
       {/* Question Header */}
       <div className="mb-6 md:text-lg font-bold flex md:items-center">
-        <span className="w-12">第1問</span>
-        <span className="ml-4">次の問い(A・B)に答えよ。(配点 14)</span>
+        <span className="w-12 font-sans">第1問</span>
+        <span className="ml-4 font-sans">次の問い(A・B)に答えよ。(配点 14)</span>
       </div>
       {/* Section A */}
       <div className="mb-8">

@@ -137,8 +137,8 @@ const Ex20_6 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問"}</h1>
-          <span className="text-gray-600">(配点 {36})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {36})</span>
         </div>
 
         <Saiten
@@ -278,13 +278,14 @@ const Ex20_6 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="font-bold mr-4 whitespace-nowrap">問1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問1</span>
             <span>
               According to paragraph (2), what was the first vending machine
               capable of doing?
             </span>
             {renderSelect("46", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-1" />}
+            {Kaisetsu(showResults, "20-6-7")}
           </div>
           <div className="pl-8 space-y-2">
             <p>① Allowing people to acquire a fixed amount of liquid from it</p>
@@ -299,13 +300,14 @@ const Ex20_6 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="font-bold mr-4 whitespace-nowrap">問2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問2</span>
             <span>
               According to paragraph (3), which of the following statements
               about vending machines is true?
             </span>
             {renderSelect("47", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-2" />}
+            {Kaisetsu(showResults, "20-6-8")}
           </div>
           <div className="pl-8 space-y-2">
             <p>
@@ -328,7 +330,7 @@ const Ex20_6 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="font-bold mr-4 whitespace-nowrap">問3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問3</span>
             <span>
               Which of the following is closest to the meaning of the underlined
               word{" "}
@@ -337,6 +339,7 @@ const Ex20_6 = () => {
             <span> in paragraph (4)?</span>
             {renderSelect("48", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-3" />}
+            {Kaisetsu(showResults, "20-6-9")}
           </div>
           <div className="pl-8 space-y-2">
             <p>① accept illegal exchanges</p>
@@ -349,13 +352,14 @@ const Ex20_6 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
           <div className="flex items-start flex-wrap gap-2 mb-4">
-            <span className="font-bold mr-4 whitespace-nowrap">問4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問4</span>
             <span className="mb-2">
               According to paragraph (5), what is true about vending machines in
               Japan?
             </span>
             {renderSelect("49", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-4" />}
+            {Kaisetsu(showResults, "20-6-10")}
           </div>
           <div className="pl-8 space-y-2">
             <p>① Foreign tourists hesitate to make purchases from them.</p>
@@ -368,10 +372,11 @@ const Ex20_6 = () => {
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="font-bold mr-4">問5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問5</span>
             <span>What would be the best title for this passage?</span>
             {renderSelect("50", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-5" />}
+            {Kaisetsu(showResults, "20-6-11")}
           </div>
           <div className="pl-8 space-y-2">
             <p>
@@ -400,8 +405,8 @@ const Ex20_6 = () => {
             次の表は、本文のパラグラフ(段落)の構成と内容をまとめたものである。
           </p>
           <p className="flex items-center my-2 flex-wrap">
-            <span className="border border-black px-4 py-1">51</span>～
-            <span className="border border-black px-4 py-1">54</span>
+            <span className="font-sans border border-black px-4 py-1">51</span>～
+            <span className="font-sans border border-black px-4 py-1">54</span>
             に入れるのに最も適当なものを、下の①～④のうちから一つずつ選び、表を完成させよ。
             ただし、同じものを繰り返し選んではいけない。
             <span className="flex flex-wrap gap-2 mt-1">
@@ -410,6 +415,7 @@ const Ex20_6 = () => {
               {renderSelect("53", 4, answers, setAnswers)}
               {renderSelect("54", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-6" />}
+              {Kaisetsu(showResults, "20-6-12")}
             </span>
           </p>
         </div>
@@ -433,25 +439,33 @@ const Ex20_6 = () => {
               <tr>
                 <td className="border border-black p-3 text-center">(2)</td>
                 <td className="border border-black p-3 text-center">
-                  <span className="border border-black px-4 py-1">51</span>
+                  <span className="font-sans border border-black px-4 py-1">
+                    51
+                  </span>
                 </td>
               </tr>
               <tr>
                 <td className="border border-black p-3 text-center">(3)</td>
                 <td className="border border-black p-3 text-center">
-                  <span className="border border-black px-4 py-1">52</span>
+                  <span className="font-sans border border-black px-4 py-1">
+                    52
+                  </span>
                 </td>
               </tr>
               <tr>
                 <td className="border border-black p-3 text-center">(4)</td>
                 <td className="border border-black p-3 text-center">
-                  <span className="border border-black px-4 py-1">53</span>
+                  <span className="font-sans border border-black px-4 py-1">
+                    53
+                  </span>
                 </td>
               </tr>
               <tr>
                 <td className="border border-black p-3 text-center">(5)</td>
                 <td className="border border-black p-3 text-center">
-                  <span className="border border-black px-4 py-1">54</span>
+                  <span className="font-sans border border-black px-4 py-1">
+                    54
+                  </span>
                 </td>
               </tr>
               <tr>

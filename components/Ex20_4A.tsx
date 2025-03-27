@@ -92,8 +92,8 @@ const Ex20_4A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {16})</span>
         </div>
         <Saiten
           qa={qa}
@@ -105,7 +105,7 @@ const Ex20_4A = () => {
         />
       </div>
       <div className="mb-6">
-        <span className="ml-4">次の問い(A・B)に答えよ。(配点 40)</span>
+        <span className="ml-4 font-sans">次の問い(A・B)に答えよ。(配点 40)</span>
       </div>
 
       <div className="mb-6">
@@ -113,8 +113,8 @@ const Ex20_4A = () => {
           <p className="mb-4 gap-1 leading-relaxed">
             A
             次の文章はある説明文の一部である。この文章を読み、下の問い(問1～4)の
-            <div className="inline-block px-4 border border-black">33</div>～
-            <div className="inline-block px-4 border border-black">36</div>
+            <div className="font-sans inline-block px-4 border border-black">33</div>～
+            <div className="font-sans inline-block px-4 border border-black">36</div>
             に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
           </p>
         </div>
@@ -188,12 +188,13 @@ const Ex20_4A = () => {
       {/* Question 1 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 1</span>
-          <span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
+          <span className="font-sans">
             What is the total score achieved by the five throws in this figure?
           </span>
           {renderSelect("33", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4A-1" />}
+          {Kaisetsu(showResults, "20-4A-5")}
         </div>
 
         <div className="flex">
@@ -239,12 +240,13 @@ const Ex20_4A = () => {
       {/* Question 2 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 2</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
           <span>
             Which of the following statements is true about the experiment?
           </span>
           {renderSelect("34", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4A-2" />}
+          {Kaisetsu(showResults, "20-4A-6")}
         </div>
 
         <div className="space-y-6">
@@ -290,12 +292,13 @@ const Ex20_4A = () => {
       {/* Question 3 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 3</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span>
             Which of the following statements is true about the results?
           </span>
           {renderSelect("35", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4A-3" />}
+          {Kaisetsu(showResults, "20-4A-7")}
         </div>
 
         <div className="space-y-6">
@@ -341,10 +344,11 @@ const Ex20_4A = () => {
       {/* Question 4 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 4</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>What will most likely be discussed next in this report?</span>
           {renderSelect("36", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4A-4" />}
+          {Kaisetsu(showResults, "20-4A-8")}
         </div>
 
         <div className="space-y-6">

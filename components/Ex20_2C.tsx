@@ -69,8 +69,8 @@ const JapaneseExamQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 C"}</h1>
-          <span className="text-gray-600">(配点 {15})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 C"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}
@@ -85,11 +85,11 @@ const JapaneseExamQuestion = () => {
         <p className="mb-4">
           <span className="font-bold">C</span>{" "}
           次の問い(問1～3)の会話が最も適当なやりとりとなるように
-          <span className="inline-block border-2 border-black px-2 text-sm md:text-base md:px-3 py-1 mx-1">
+          <span className="font-sans inline-block border-2 border-black px-2 text-sm md:text-base md:px-3 py-1 mx-1">
             24
           </span>{" "}
           ～
-          <span className="inline-block border-2 border-black px-2 text-sm md:text-base md:px-3 py-1 mx-1">
+          <span className="font-sans inline-block border-2 border-black px-2 text-sm md:text-base md:px-3 py-1 mx-1">
             26
           </span>
           を埋めるには、(A)と(B)をどのように組み合わせればよいか、それぞれ下

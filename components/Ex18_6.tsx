@@ -134,8 +134,8 @@ const Ex18_6 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第６問"}</h1>
-          <span className="text-gray-600">(配点 {36})</span>
+          <h1 className="text-lg font-bold font-sans">{"第６問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {36})</span>
         </div>
 
         <Saiten
@@ -278,7 +278,7 @@ const Ex18_6 = () => {
       {/* Section A Questions */}
       <div className="mt-8 space-y-8">
         <div className="space-y-4">
-          <p className="text-lg">
+          <p className=" font-sans">
             A 次の問い(問1～5)の{" "}
             <span className="border border-black px-4 py-1 mx-1">46</span> ～{" "}
             <span className="border border-black px-4 py-1 mx-1">50</span>{" "}
@@ -288,7 +288,7 @@ const Ex18_6 = () => {
           {/* Question 1 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 1</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
               <p>
                 Which of the following is closest to the meaning of{" "}
                 <span className="underline">archaic</span> as used in paragraph
@@ -296,6 +296,7 @@ const Ex18_6 = () => {
               </p>
               {renderSelect("46", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-1" />}
+              {Kaisetsu(showResults, "18-6-7")}
             </div>
             <div className="ml-8 space-y-2">
               <p>① advanced</p>
@@ -308,13 +309,14 @@ const Ex18_6 = () => {
           {/* Question 2 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 2</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
               <p>
                 According to paragraph (3), what did people learn by using
                 microscopes?
               </p>
               {renderSelect("47", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-2" />}
+              {Kaisetsu(showResults, "18-6-8")}
             </div>
             <div className="ml-8 space-y-2">
               <p>① Cells were too small to be seen with microscopes.</p>
@@ -327,12 +329,13 @@ const Ex18_6 = () => {
           {/* Question 3 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 3</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
               <p>
                 According to paragraph (4), what do cameras enable us to do?
               </p>
               {renderSelect("48", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-3" />}
+              {Kaisetsu(showResults, "18-6-9")}
             </div>
             <div className="ml-8 space-y-2">
               <p>① To capture moments in time accurately</p>
@@ -345,10 +348,11 @@ const Ex18_6 = () => {
           {/* Question 4 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 4</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
               <p>According to paragraph (5), how are X-rays used?</p>
               {renderSelect("49", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-4" />}
+              {Kaisetsu(showResults, "18-6-10")}
             </div>
             <div className="ml-8 space-y-2">
               <p>① To find the locations of problems in the body</p>
@@ -361,10 +365,11 @@ const Ex18_6 = () => {
           {/* Question 5 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-5"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="whitespace-nowrap mr-2">問 5</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
               <p>What is the main idea of this passage?</p>
               {renderSelect("50", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-5" />}
+              {Kaisetsu(showResults, "18-6-11")}
             </div>
             <div className="ml-8 space-y-2">
               <p>
@@ -390,8 +395,8 @@ const Ex18_6 = () => {
             </p>
 
             <p className="leading-relaxed">
-              <span className="border border-black px-2 py-1">51</span> ～{" "}
-              <span className="border border-black px-2 py-1">54</span>{" "}
+              <span className="font-sans border border-black px-2 py-1">51</span> ～{" "}
+              <span className="font-sans border border-black px-2 py-1">54</span>{" "}
               に入れるのに最も適当なものを、下の①～④のうちから一つずつ選び、表を完成させよ。ただし、同じものを繰り返し選んではいけない。
               <span className="flex flex-wrap gap-2 mt-1">
                 {renderSelect("51", 4, answers, setAnswers)}
@@ -399,6 +404,7 @@ const Ex18_6 = () => {
                 {renderSelect("53", 4, answers, setAnswers)}
                 {renderSelect("54", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="6-6" />}
+                {Kaisetsu(showResults, "18-6-12")}
               </span>
             </p>
           </div>

@@ -99,8 +99,8 @@ const Ex19_5 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第５問"}</h1>
-          <span className="text-gray-600">(配点 {30})</span>
+          <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {30})</span>
         </div>
         <Saiten
           qa={qa}
@@ -226,12 +226,13 @@ const Ex19_5 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               Christine originally said she would do the gardening because she
             </span>
             {renderSelect("41", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-1" />}
+            {Kaisetsu(showResults, "19-5-10")}
           </div>
           <div className="space-y-2 ml-8">
             <p>① knew it was important to her father</p>
@@ -244,10 +245,11 @@ const Ex19_5 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Which of the following was a problem in the garden?</span>
             {renderSelect("42", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-2" />}
+            {Kaisetsu(showResults, "19-5-11")}
           </div>
           <div className="space-y-2 ml-8">
             <p>① Animals often dug in the garden.</p>
@@ -260,13 +262,14 @@ const Ex19_5 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               Christine could secretly make the salad from store-bought
               vegetables because
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-3" />}
+            {Kaisetsu(showResults, "19-5-12")}
           </div>
           <div className="space-y-2 ml-8">
             <p>① her father couldn&apos;t see the garden&apos;s progress</p>
@@ -279,8 +282,7 @@ const Ex19_5 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
-            <span>Which of the following is closest to the meaning of the</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               Which of the following is closest to the meaning of the underlined
               word <span className="underline">bug-free</span>
@@ -288,6 +290,7 @@ const Ex19_5 = () => {
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-4" />}
+            {Kaisetsu(showResults, "19-5-13")}
           </div>
           <div className="space-y-2 ml-8">
             <p>① All bugs have been killed.</p>
@@ -300,12 +303,13 @@ const Ex19_5 = () => {
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>
               What did Christine learn through her experience of gardening?
             </span>
             {renderSelect("45", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-5" />}
+            {Kaisetsu(showResults, "19-5-14")}
           </div>
           <div className="space-y-2 ml-8">
             <p>① Always prepare for a rainy day.</p>

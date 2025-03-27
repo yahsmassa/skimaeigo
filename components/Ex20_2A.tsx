@@ -175,8 +175,8 @@ const JapaneseTestQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 A"}</h1>
-          <span className="text-gray-600">(配点 {20})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {20})</span>
         </div>
         <Saiten
           qa={qa}
@@ -188,7 +188,7 @@ const JapaneseTestQuestion = () => {
         />
       </div>{" "}
       <div className="mb-8">
-        <h2 className="md:text-xl font-bold mb-6">
+        <h2 className="md:text-xl font-bold mb-6 font-sans">
           第2問 次の問い（A）に答えよ。（配点 20）
         </h2>
 
@@ -197,11 +197,11 @@ const JapaneseTestQuestion = () => {
             <span className="font-bold mr-4">A</span>
             <span className="mr-2">次の問い（問1～10）の</span>
             <span className="flex flex-row items-center">
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 mr-1 text-sm md:text-base">
+              <div className="font-sans inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 mr-1 text-sm md:text-base">
                 8
               </div>
               <span className="mx-1">～</span>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 text-sm md:text-base">
+              <div className="font-sans inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 text-sm md:text-base">
                 17
               </div>
             </span>
@@ -209,11 +209,11 @@ const JapaneseTestQuestion = () => {
               に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。ただし、
             </span>
             <div>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 text-sm md:text-base mx-2">
+              <div className="font-sans inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 text-sm md:text-base mx-2">
                 15
               </div>
               <span className="mx-1">～</span>
-              <div className="inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 text-sm md:text-base mx-2">
+              <div className="font-sans inline-block border border-black w-8 md:w-12 md:h-8 text-center py-1 text-sm md:text-base mx-2">
                 17
               </div>
             </div>

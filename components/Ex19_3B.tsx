@@ -69,8 +69,8 @@ const ExamQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 B"}</h1>
-          <span className="text-gray-600">(配点 {9})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {9})</span>
         </div>
         <Saiten
           qa={qa}
@@ -215,6 +215,7 @@ const ExamQuestion = () => {
                   {renderSelect("31", 4, answers, setAnswers)}
                   <span className="mr-2">when we buy her present.</span>
                   {showResults && <Explain qa={qa} questionId="3B-2" />}
+                  <span className="mr-2"></span>
                   {Kaisetsu(showResults, "19-3B-7")}
                 </div>
               </div>

@@ -86,8 +86,8 @@ const Ex20_4B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第４問"}</h1>
-          <span className="text-gray-600">(配点 {20})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {20})</span>
         </div>
         <Saiten
           qa={qa}
@@ -104,8 +104,8 @@ const Ex20_4B = () => {
           <span className="font-bold mr-2">B</span>
           次のページにあるフリーマーケットの出店申請の説明を読み、次の問い(問
           1～4)の
-          <span className="mx-2 border border-black px-3 py-1">37</span>～
-          <span className="mx-2 border border-black px-3 py-1">40</span>
+          <span className="font-sans inline-block border border-black px-2 text-sm md:text-base md:px-3 py-1 mx-1">37</span>～
+          <span className="font-sans inline-block border border-black px-2 text-sm md:text-base md:px-3 py-1 mx-1">40</span>
           に入れるのに最も適当なものを、それぞれ下の①～④のうちから一つずつ選べ。
         </p>
       </div>
@@ -113,13 +113,14 @@ const Ex20_4B = () => {
       {/* Question 1 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 1</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>
             Fran will sell her handmade jewelry on both days. She needs only a
             small space. How much will it cost?
           </span>
           {renderSelect("37", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4B-1" />}
+          {Kaisetsu(showResults, "20-4B-4")}
         </div>
         <div className="flex gap-8 ml-6">
           <p>① $14</p>
@@ -132,7 +133,7 @@ const Ex20_4B = () => {
       {/* Question 2 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 2</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
           <span>
             Pat wants to sell some big household items, including a
             refrigerator, so she needs an outdoor space. What offer can she take
@@ -140,6 +141,7 @@ const Ex20_4B = () => {
           </span>
           {renderSelect("38", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4B-2" />}
+          {Kaisetsu(showResults, "20-4B-5")}
         </div>
         <div className="flex flex-col gap-2 ml-6">
           <p>① Free assistance in setting up her tent</p>
@@ -152,13 +154,14 @@ const Ex20_4B = () => {
       {/* Question 3 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 3</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span>
             Mark makes herbal soaps and candles. He has chosen an indoor space.
             Which of the following will he be allowed to do?
           </span>
           {renderSelect("39", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4B-3" />}
+          {Kaisetsu(showResults, "20-4B-6")}
         </div>
         <div className="flex flex-col gap-2 ml-6">
           <p>① Choose a space close to the sink to get water easily</p>
@@ -171,10 +174,11 @@ const Ex20_4B = () => {
       {/* Question 4 */}
       <div className={cn("mb-8", showResults && qaFormat(qa, "4B-4"))}>
         <div className="flex items-center flex-wrap gap-2 mb-3">
-          <span className="whitespace-nowrap mr-2">問 4</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>Which of the following is true about this flea market?</span>
           {renderSelect("40", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="4B-4" />}
+          {Kaisetsu(showResults, "20-4B-7")}
         </div>
         <div className="flex flex-col gap-2 ml-6">
           <p>① People are discouraged from selling items they created.</p>

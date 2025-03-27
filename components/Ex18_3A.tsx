@@ -69,8 +69,8 @@ const JapaneseExamQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第３問 A"}</h1>
-          <span className="text-gray-600">(配点 {18})</span>
+          <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {18})</span>
         </div>
         <Saiten
           qa={qa}
@@ -83,7 +83,7 @@ const JapaneseExamQuestion = () => {
       </div>
       {/* Question number and instruction */}
       <div className="mb-6">
-        <h2 className="md:text-xl font-bold mb-2">
+        <h2 className="md:text-xl font-bold font-sans mb-2">
           第3問 次の問い(A・B)に答えよ。（配点 33）
         </h2>
       </div>
@@ -106,7 +106,7 @@ const JapaneseExamQuestion = () => {
             showResults && qaFormat(qa, "3A-1")
           )}
         >
-          <h4 className="text-lg font-bold mr-4">問1</h4>
+          <h4 className="text-lg font-bold font-sans mr-4">問1</h4>
           {renderSelect("27", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-1" />}
           <span className="mr-2"></span>
@@ -159,7 +159,7 @@ const JapaneseExamQuestion = () => {
             showResults && qaFormat(qa, "3A-2")
           )}
         >
-          <h4 className="text-lg font-bold mr-4">問2</h4>
+          <h4 className="text-lg font-bold font-sans mr-4">問2</h4>
           {renderSelect("28", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-2" />}
           <span className="mr-2"></span>
@@ -210,7 +210,7 @@ const JapaneseExamQuestion = () => {
             showResults && qaFormat(qa, "3A-3")
           )}
         >
-          <h4 className="text-lg font-bold mr-4">問3</h4>
+          <h4 className="text-lg font-bold font-sans mr-4">問3</h4>
           {renderSelect("29", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-3" />}
           <span className="mr-2"></span>
