@@ -58,7 +58,7 @@ const Ex16_4B = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {15})</span>
         </div>
@@ -73,7 +73,7 @@ const Ex16_4B = () => {
       </div>
       {/* Original test questions section */}
       <div className="mb-8">
-        <div className="flex items-center mb-4">
+        <div className="flex  mb-4 font-sans">
           <span className="font-bold mr-2">B</span>
           <p className="text-sm">
             次のページの美術館に関するウェブサイトを読み、次の問い(問1～3)の
@@ -88,8 +88,8 @@ const Ex16_4B = () => {
         <div className="space-y-8">
           {/* Question 1 */}
           <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
-            <div className="flex items-center flex-wrap gap-2 mb-3">
-              <span className="whitespace-nowrap mr-2">問 1</span>
+            <div className="flex items-center flex-wrap gap-2 mb-3 font-sans">
+              <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
 
               <div className="flex flex-wrap gap-2">
                 Kazuko, a 19-year-old shop assistant, wants to participate in a
@@ -111,7 +111,7 @@ const Ex16_4B = () => {
           {/* Question 2 */}
           <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
             <div className="flex items-center flex-wrap gap-2 mb-3">
-              <span className="whitespace-nowrap mr-2">問 2</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
               <div className="flex flex-wrap gap-2">
                 A retired couple and their 6-year-old grandchild wish to
                 participate together in a weekday afternoon activity. Which
@@ -133,7 +133,7 @@ const Ex16_4B = () => {
           {/* Question 3 */}
           <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
             <div className="flex items-center flex-wrap gap-2 mb-3">
-              <span className="whitespace-nowrap mr-2">問 3</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
               <span>
                 Which of the following is true according to the website?
               </span>

@@ -22,7 +22,6 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は③ 私たちの町の住民は、ここに新しい職場ができることで恩恵を受けるでしょう。",
@@ -39,7 +38,6 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: ["正解は④ 町の経済と利便性を向上させる", "翻訳参照"],
     },
@@ -53,7 +51,6 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: ["正解は② 住民の家庭生活を考慮する", "翻訳参照"],
     },
@@ -62,7 +59,7 @@ const JapaneseTestQuestion = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第３問 C"}</h1>
           <span className="text-gray-600">(配点 {18})</span>
         </div>
@@ -75,7 +72,7 @@ const JapaneseTestQuestion = () => {
           setAnswers={setAnswers}
         />
       </div>{" "}
-      <div className="mb-6">
+      <div className="mb-6 font-sans">
         <p className="flex items-start mb-4">
           <span className="font-bold mr-2">C</span>
           <span>

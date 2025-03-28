@@ -22,7 +22,6 @@ const Ex20_5 = () => {
       ],
       rightAnswerString: "1",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "回答は①で彼女は説明できない衝動を感じた。* an urge: 衝動",
@@ -39,7 +38,6 @@ const Ex20_5 = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: ["回答は④ 彼女は老人に助けられた。"],
     },
@@ -53,7 +51,6 @@ const Ex20_5 = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は④ 彼らは公共の安全を守るために働いた。 犬も、老人も警察で働いていたので",
@@ -70,7 +67,6 @@ const Ex20_5 = () => {
       rightAnswerString: "2",
       isOrderFree: true,
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: ["正解は② 印象を残した"],
     },
@@ -84,7 +80,6 @@ const Ex20_5 = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は② 彼女は断固としていた、そしてそれから慰められた。",

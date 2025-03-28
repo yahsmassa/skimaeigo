@@ -114,7 +114,7 @@ const Ex19_5 = () => {
 
       {/* Question Header */}
       <div className="flex items-center gap-4 mb-6">
-        <p className="text-base leading-relaxed">
+        <p className="text-base leading-relaxed font-sans">
           次の文章を読み、下の問い(問1～5)の
           <span className="inline-flex items-center justify-center border border-black w-12 h-8 mx-2">
             41

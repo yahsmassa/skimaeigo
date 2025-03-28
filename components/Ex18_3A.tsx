@@ -22,8 +22,7 @@ const JapaneseExamQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は② 彼は、自分が一人っ子だったから、両親が自分をとても恋しがっていることを知っていた。",
         "他の選択肢は、新しい友達との関係を示している、翻訳を参照",
@@ -39,8 +38,7 @@ const JapaneseExamQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は③ 例として、いくつかの国ではトマトは「黄金のリンゴ」や「恋のリンゴ」のような名前で呼ばれています。",
         "他の選択肢では、一般的にトマトは野菜として扱われているという内容になっているので、不自然、翻訳を参照",
@@ -56,8 +54,7 @@ const JapaneseExamQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は② 昆虫は数百万年もの間存在し、恐竜やその後の人類の初期の段階から共に生きてきた。",
         "他の選択肢は、「代用食としての昆虫について」語っている、翻訳を参照",
@@ -70,7 +67,7 @@ const JapaneseExamQuestion = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {18})</span>
+          <span className="text-gray-600 font-sans">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}

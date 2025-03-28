@@ -167,7 +167,7 @@ const JapaneseExamQuestion = () => {
           第2問 次の問い（A～C）に答えよ。（配点 47）
         </h2>
 
-        <div className="mb-6">
+        <div className="mb-6 font-sans">
           <div className="flex flex-wrap md:items-center mb-4 leading-8">
             <span className="font-bold mr-4">A</span>
             <span className="mr-2">次の問い（問1～10）の</span>

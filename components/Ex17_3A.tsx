@@ -22,8 +22,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 4,
       explanation: [
         "正解は② 明日の放課後、あなたのオフィスにお伺いしてもよろしいでしょうか？",
       ],
@@ -38,8 +37,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 4,
       explanation: ["正解は③ それは高すぎます。"],
     },
   ];
@@ -49,7 +47,7 @@ const JapaneseTestQuestion = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第３問 A"}</h1>
-          <span className="text-gray-600">(配点 {18})</span>
+          <span className="text-gray-600">(配点 {8})</span>
         </div>
         <Saiten
           qa={qa}
@@ -60,13 +58,13 @@ const JapaneseTestQuestion = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="mb-6">
+      <div className="mb-6 font-sans">
         <span className="text-xl font-bold font-sans">第3問</span>
         <span className="ml-4">次の問い(A～C)に答えよ。(配点　41)</span>
       </div>
 
       <div className="mb-8 ml-6">
-        <div className="mb-4 flex items-start">
+        <div className="mb-4 flex items-start font-sans">
           <span className="font-bold mr-4">A</span>
           <div>
             <p className="mb-2">

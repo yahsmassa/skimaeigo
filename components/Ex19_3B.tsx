@@ -22,7 +22,6 @@ const ExamQuestion = () => {
       ],
       rightAnswerString: "1",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は① 彼女がかなり頻繁に使用できる（なにか）。",
@@ -39,7 +38,6 @@ const ExamQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は③ 余暇",
@@ -56,7 +54,6 @@ const ExamQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は③ いくつかの屋外用家具",
@@ -70,7 +67,7 @@ const ExamQuestion = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {9})</span>
+          <span className="text-gray-600 font-sans">(配点 {18})</span>
         </div>
         <Saiten
           qa={qa}

@@ -92,8 +92,8 @@ const Ex20_4A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {20})</span>
         </div>
         <Saiten
           qa={qa}
@@ -105,7 +105,7 @@ const Ex20_4A = () => {
         />
       </div>
       <div className="mb-6">
-        <span className="ml-4 font-sans">次の問い(A・B)に答えよ。(配点 40)</span>
+        <span className="ml-4 font-sans">次の問い(A)に答えよ。(配点 20)</span>
       </div>
 
       <div className="mb-6">

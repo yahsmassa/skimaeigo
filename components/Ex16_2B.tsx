@@ -27,7 +27,7 @@ const JapaneseExam3 = () => {
       rightAnswerString: "51",
       answerString: "",
       isCorrect: true,
-      points: 2,
+      points: 4,
       explanation: [
         "正解⑤と① we're wondering if you could tell",
         "I wonder if は丁寧な依頼をあらわす",
@@ -48,7 +48,7 @@ const JapaneseExam3 = () => {
       rightAnswerString: "35",
       answerString: "",
       isCorrect: true,
-      points: 2,
+      points: 4,
       explanation: [
         "正解③と⑤ let me send you the details by ",
         "* let A + 動詞の原型 「Aに（望み通り）〜させてやる」、* send A B 「AにBを送る」",
@@ -69,7 +69,7 @@ const JapaneseExam3 = () => {
       rightAnswerString: "46",
       answerString: "",
       isCorrect: true,
-      points: 2,
+      points: 4,
       explanation: [
         "正解④と⑥ came to realize the need to manage",
         "* came to不定詞 「〜するようになる」、* the need to不定詞 「〜する必要性」",

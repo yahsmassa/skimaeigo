@@ -22,7 +22,6 @@ const Ex20_6 = () => {
       ],
       rightAnswerString: "1",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は① 一定量の液体を取得できるようにすること",
@@ -40,7 +39,6 @@ const Ex20_6 = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は③ 自動販売機の技術は、アジアでは数世紀も前に見られていた。",
@@ -57,8 +55,6 @@ const Ex20_6 = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は② 無許可の模倣品を作成する",
@@ -75,7 +71,6 @@ const Ex20_6 = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は④ 様々な品揃えが、それらを世界で唯一のものにしている。",
@@ -92,7 +87,6 @@ const Ex20_6 = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は② 自動販売機の通史",

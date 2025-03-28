@@ -26,7 +26,7 @@ const EnglishTestQuestions = () => {
       ],
       rightAnswerString: "25",
       answerString: "",
-      isCorrect: false,
+      isCorrect: true,
       points: 4,
       explanation: ["正解②と⑤", "wonder how much it will cost"],
     },
@@ -44,7 +44,7 @@ const EnglishTestQuestions = () => {
       ],
       rightAnswerString: "62",
       answerString: "",
-      isCorrect: false,
+      isCorrect: true,
       points: 4,
       explanation: [
         "正解⑥と②",
@@ -65,7 +65,7 @@ const EnglishTestQuestions = () => {
       ],
       rightAnswerString: "26",
       answerString: "",
-      isCorrect: false,
+      isCorrect: true,
       points: 4,
       explanation: [
         "正解②と⑥",

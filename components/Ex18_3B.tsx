@@ -22,8 +22,7 @@ const ConversationImage = () => {
       ],
       rightAnswerString: "1",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 6,
       explanation: [
         "正解は① 観客は、成功を収める人々の物語を見るのを楽しむ。",
         "自分が感動したドキュメンタリー映画のようなものを作りたいことが文脈からわかる、翻訳参照",
@@ -39,8 +38,7 @@ const ConversationImage = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 6,
       explanation: [
         "正解は③ 平均的な人が共感できる状況を有する",
         "会話では日常性や平均性について評価している、翻訳参照",
@@ -56,8 +54,7 @@ const ConversationImage = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 6,
       explanation: [
         "正解は④ 観客の好みを考慮して",
         "それぞれ違う主張だが、顧客に受け入れられることを共通して意識している",
@@ -70,7 +67,7 @@ const ConversationImage = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {9})</span>
+          <span className="text-gray-600 font-sans">(配点 {18})</span>
         </div>
         <Saiten
           qa={qa}

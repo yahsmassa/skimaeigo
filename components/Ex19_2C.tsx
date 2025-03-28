@@ -22,8 +22,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "6",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      points: 5,
       explanation: [
         "正解⑥",
         "it can't be helped that there are fewer people while ...",
@@ -40,8 +39,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      points: 5,
       explanation: [
         "正解②",
         "I was barely able to chath the last train ",
@@ -58,8 +56,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      points: 5,
       explanation: [
         "正解③",
         "I'm afraid the meeting will have to be put off until next week",
@@ -73,7 +70,7 @@ const JapaneseTestQuestion = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第２問 C"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {10})</span>
+          <span className="text-gray-600 font-sans">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}
@@ -104,7 +101,7 @@ const JapaneseTestQuestion = () => {
       <div className="mb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
-            <span className="font-bold">問１</span>
+            <span className="font-bold font-sans">問１</span>
           </div>
           {[
             {
@@ -221,7 +218,7 @@ const JapaneseTestQuestion = () => {
       </div>
       {/* 問2 */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
-        <div className="md:col-span-1 font-bold">問２</div>
+        <div className="md:col-span-1 font-bold font-sans">問２</div>
         {[
           {
             speaker: "Masa",
@@ -341,7 +338,7 @@ const JapaneseTestQuestion = () => {
       {/* 問3 */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
         <div className="md:col-span-1">
-          <span className="font-bold">問３</span>
+          <span className="font-bold font-sans">問３</span>
         </div>
         {[
           {

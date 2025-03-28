@@ -22,8 +22,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      points: 5,
       explanation: [
         "正解②",
         "be going to ... 〜する予定、be wrong 間違っている",
@@ -39,8 +38,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      points: 5,
       explanation: [
         "正解④",
         "I wouldn't have taken the train without your suggestion",
@@ -56,8 +54,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "8",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      points: 5,
       explanation: [
         "正解⑧",
         "That's why we had to cancel out our trip to Mt.Fuji. unfortunately",
@@ -71,7 +68,7 @@ const JapaneseTestQuestion = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第２問 C"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {10})</span>
+          <span className="text-gray-600 font-sans">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}

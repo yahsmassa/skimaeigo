@@ -82,9 +82,9 @@ const Ex17_4A = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第４問 A"}</h1>
-          <span className="text-gray-600">(配点 {16})</span>
+          <span className="text-gray-600">(配点 {20})</span>
         </div>
         <Saiten
           qa={qa}
@@ -96,13 +96,13 @@ const Ex17_4A = () => {
         />
       </div>{" "}
       {/* Question Header */}
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-4 mb-6 font-sans">
         <h2 className=" font-bold">第4問 A</h2>
-        <p>次の問い（A・B）に答えよ。（配点 35）</p>
+        <p>次の問い（A・B）に答えよ。（配点 20）</p>
       </div>
       {/* Section A */}
       <div className="space-y-4">
-        <div className="mb-6">
+        <div className="mb-6 font-sans">
           <p className="mb-4">
             A
             次の文章はある説明文の一部である。この文章と図を読み、下の問い（問1～4）の
@@ -218,7 +218,7 @@ const Ex17_4A = () => {
             {/* Question 1 */}
             <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
               <div className="flex items-center flex-wrap gap-2 mb-3">
-                <span className="whitespace-nowrap mr-2">問 1</span>
+                <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
                 <span>
                   According to the passage, what is the difference between
                   Multi-court and Solid Surface?
@@ -250,7 +250,7 @@ const Ex17_4A = () => {
             {/* Question 2 */}
             <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
               <div className="flex items-center flex-wrap gap-2 mb-3">
-                <span className="whitespace-nowrap mr-2">問 2</span>
+                <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
                 <span>
                   In Figure 1, which of the following do (A), (B), (C), and (D)
                   refer to?
@@ -317,7 +317,7 @@ const Ex17_4A = () => {
             {/* Question 3 */}
             <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
               <div className="flex items-center flex-wrap gap-2 mb-3">
-                <span className="whitespace-nowrap mr-2">問 3</span>
+                <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
                 <span>The main purpose of this passage is to</span>
                 {renderSelect("37", 4, answers, setAnswers)}
                 {showResults && <Explain qa={qa} questionId="4A-3" />}
@@ -346,7 +346,7 @@ const Ex17_4A = () => {
             {/* Question 4 */}
             <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
               <div className="flex items-center flex-wrap gap-2 mb-3">
-                <span className="whitespace-nowrap mr-2">問 4</span>
+                <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
                 <span>
                   What topic is most likely to follow the last paragraph?
                 </span>

@@ -20,7 +20,6 @@ const Ex16_4A = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: ["正解は② ", "翻訳参照"],
     },
@@ -34,7 +33,6 @@ const Ex16_4A = () => {
       ],
       rightAnswerString: "1",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は① ネーブルオレンジはバレンシアオレンジよりも種が少ない",
@@ -51,7 +49,6 @@ const Ex16_4A = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は③ アメリカ合衆国におけるオレンジの生産量と輸入量の関係を示す",
@@ -68,7 +65,6 @@ const Ex16_4A = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は② その他の果物の輸入における季節変化を示す統計",
@@ -81,7 +77,7 @@ const Ex16_4A = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {20})</span>
         </div>
@@ -95,7 +91,7 @@ const Ex16_4A = () => {
         />
       </div>{" "}
       {/* Question Header */}
-      <div className="mb-6">
+      <div className="mb-6 font-sans">
         <p className="text-lg">
           <span className="mr-4">第4問</span>
           次の問い(A・B)に答えよ。(配点 35)
@@ -103,7 +99,7 @@ const Ex16_4A = () => {
       </div>
       {/* Section A */}
       <div className="mb-6">
-        <p className="mb-4">
+        <p className="mb-4 font-sans">
           A
           次の文章はある説明文の一部である。この文章とグラフを読み、下の問い(問
           1～4)の <span className="mx-2 border border-black px-4">35</span> ～{" "}
@@ -227,7 +223,7 @@ const Ex16_4A = () => {
         <div>
           <div className={cn("mb-8", showResults && qaFormat(qa, "4A-1"))}>
             <div className="flex items-center flex-wrap gap-2 mb-3">
-              <span className="whitespace-nowrap mr-2">問 1</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
               <span>
                 In Figure 1, which of the following do (A), (B), (C), and (D)
                 refer to?
@@ -290,7 +286,7 @@ const Ex16_4A = () => {
           {/* Question 2 */}
           <div className={cn("mb-8", showResults && qaFormat(qa, "4A-2"))}>
             <div className="flex items-center flex-wrap gap-2 mb-3">
-              <span className="whitespace-nowrap mr-2">問 2</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
               <span>
                 According to the passage, which of the following correctly
                 describes one difference between navel oranges and Valencia
@@ -321,7 +317,7 @@ const Ex16_4A = () => {
           {/* Question 3 */}
           <div className={cn("mb-8", showResults && qaFormat(qa, "4A-3"))}>
             <div className="flex items-center flex-wrap gap-2 mb-3">
-              <span className="whitespace-nowrap mr-2">問 3</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
               <span>What is the main purpose of this passage?</span>
               {renderSelect("37", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="4A-3" />}
@@ -346,7 +342,7 @@ const Ex16_4A = () => {
           {/* Question 4 */}
           <div className={cn("mb-8", showResults && qaFormat(qa, "4A-4"))}>
             <div className="flex items-center flex-wrap gap-2 mb-3">
-              <span className="whitespace-nowrap mr-2">問 4</span>
+              <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
               <span>
                 What topic is most likely to follow the last paragraph?
               </span>

@@ -22,8 +22,7 @@ const JapaneseExamQuestions = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は③ いくつかのブランド物の革靴は、その流行のデザインゆえに有名です。",
         "他の選択肢は、靴の機能性について記述している",
@@ -39,8 +38,7 @@ const JapaneseExamQuestions = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は② バスは多くの乗客を乗せることができ、日常生活に便利である。",
         "他の選択肢は、物流について話している",
@@ -56,8 +54,7 @@ const JapaneseExamQuestions = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は③ 研究者たちは単語のリストを注意深く選び、ダイバーたちはダイビング場所を選んだ。",
         "文脈は「記憶した場所にいけば思い出しやすい実験の話」",
@@ -68,9 +65,9 @@ const JapaneseExamQuestions = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
-          <span className="text-gray-600">(配点 {18})</span>
+          <span className="text-gray-600">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}
@@ -82,7 +79,7 @@ const JapaneseExamQuestions = () => {
         />
       </div>
       {/* Section B Instructions */}
-      <div className="mb-6">
+      <div className="mb-6 font-sans">
         <p className="md:text-lg mb-4">
           <span className="font-bold mr-2">B</span>
           次の問い（問１～３）のパラグラフ（段落）には、まとまりをよくするために取り
@@ -99,7 +96,7 @@ const JapaneseExamQuestions = () => {
             showResults && qaFormat(qa, "3B-1")
           )}
         >
-          <p className="font-bold mr-4">問１</p>
+          <p className="font-bold mr-4 font-sans">問１</p>
           {renderSelect("29", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3B-1" />}
           <span className="mr-2"></span>
@@ -147,7 +144,7 @@ const JapaneseExamQuestions = () => {
             showResults && qaFormat(qa, "3B-2")
           )}
         >
-          <p className="font-bold mr-4">問２</p>
+          <p className="font-bold mr-4 font-sans">問２</p>
           {renderSelect("30", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3B-2" />}
           <span className="mr-2"></span>
@@ -196,7 +193,7 @@ const JapaneseExamQuestions = () => {
             showResults && qaFormat(qa, "3B-3")
           )}
         >
-          <p className="font-bold mr-4">問３</p>
+          <p className="font-bold mr-4 font-sans">問３</p>
           {renderSelect("31", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3B-3" />}
           <span className="mr-2"></span>

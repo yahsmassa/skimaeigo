@@ -171,8 +171,8 @@ const JapaneseTestAlternate = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第２問 A"}</h1>
-          <span className="text-gray-600">(配点 {20})</span>
+          <h1 className="text-lg font-bold font-sans">{"第２問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {20})</span>
         </div>
         <Saiten
           qa={qa}
@@ -184,7 +184,7 @@ const JapaneseTestAlternate = () => {
         />
       </div>
       <div className="mb-8">
-        <h2 className="md:text-xl font-bold mb-6">
+        <h2 className="md:text-xl font-bold mb-6 font-sans">
           第2問 次の問い(A)に答えよ。(配点 20)
         </h2>
 
@@ -227,7 +227,7 @@ const JapaneseTestAlternate = () => {
               showResults && qaFormat(qa, "2A-1")
             )}
           >
-            <div className="font-bold mr-4">問 1</div>
+            <div className="font-bold mr-4 font-sans">問 1</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">The train</span>
               {renderSelect("8", 4, answers, setAnswers)}
@@ -262,7 +262,7 @@ const JapaneseTestAlternate = () => {
               showResults && qaFormat(qa, "2A-2")
             )}
           >
-            <div className="font-bold mr-4">問 2</div>
+            <div className="font-bold mr-4 font-sans">問 2</div>
             <div className="flex flex-wrap items-center">
               {renderSelect("9", 4, answers, setAnswers)}
               <span className="mr-2">Tokyo has a relatively</span>
@@ -290,7 +290,7 @@ const JapaneseTestAlternate = () => {
               showResults && qaFormat(qa, "2A-3")
             )}
           >
-            <div className="font-bold mr-4">問 3</div>
+            <div className="font-bold mr-4 font-sans">問 3</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Children</span>
               {renderSelect("10", 4, answers, setAnswers)}
@@ -324,7 +324,7 @@ const JapaneseTestAlternate = () => {
               showResults && qaFormat(qa, "2A-4")
             )}
           >
-            <div className="font-bold mr-4">問 4</div>
+            <div className="font-bold mr-4 font-sans">問 4</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 My sister was not a serious high school
@@ -358,7 +358,7 @@ const JapaneseTestAlternate = () => {
               showResults && qaFormat(qa, "2A-5")
             )}
           >
-            <div className="font-bold mr-4">問 5</div>
+            <div className="font-bold mr-4 font-sans">問 5</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Before the movie begins, please</span>
               {renderSelect("12", 4, answers, setAnswers)}
@@ -386,7 +386,7 @@ const JapaneseTestAlternate = () => {
               showResults && qaFormat(qa, "2A-6")
             )}
           >
-            <div className="font-bold mr-4">問 6</div>
+            <div className="font-bold mr-4 font-sans">問 6</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 We have made good progress, so we are
@@ -417,7 +417,7 @@ const JapaneseTestAlternate = () => {
               showResults && qaFormat(qa, "2A-7")
             )}
           >
-            <div className="font-bold mr-4">問 7</div>
+            <div className="font-bold mr-4 font-sans">問 7</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Thanks to their</span>
               {renderSelect("14", 4, answers, setAnswers)}
@@ -449,7 +449,7 @@ const JapaneseTestAlternate = () => {
                 showResults && qaFormat(qa, "2A-8")
               )}
             >
-              <div className="font-bold mr-4">問 8</div>
+              <div className="font-bold mr-4 font-sans">問 8</div>
               <span className="mr-2">
                 ( A ) you've completed this required class,
               </span>
@@ -485,7 +485,7 @@ const JapaneseTestAlternate = () => {
                 showResults && qaFormat(qa, "2A-9")
               )}
             >
-              <div className="font-bold mr-4">問 9</div>
+              <div className="font-bold mr-4 font-sans">問 9</div>
               <span className="mr-2">
                 Wood ( A ) be used as the main fuel, but nowadays fossil fuels (
                 B ) widely.
@@ -521,7 +521,7 @@ const JapaneseTestAlternate = () => {
                 showResults && qaFormat(qa, "2A-10")
               )}
             >
-              <div className="font-bold mr-4">問10</div>
+              <div className="font-bold mr-4 font-sans">問10</div>
               <span className="mr-2">
                 ( A ) so considerate ( B ) him to come and see his grandmother
                 in the hospital every day.

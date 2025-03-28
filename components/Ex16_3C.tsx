@@ -68,7 +68,7 @@ const JapaneseTestQuestion = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第３問 C"}</h1>
           <span className="text-gray-600">(配点 {18})</span>
         </div>
@@ -82,11 +82,11 @@ const JapaneseTestQuestion = () => {
         />
       </div>{" "}
       <div className="mb-6">
-        <div className="flex items-start mb-4">
+        <div className="flex items-start mb-4 font-sans">
           <span className="font-bold mr-2">C</span>
           <p className="text-base">
             次の会話は，「異文化理解」をテーマとして，ある大学で行われた授業でのやりとりの一部である。
-            <span className="inline-flex items-center mx-1">
+            <span className="inline-flex items-center mx-1 font-sans">
               <span className="border border-black px-4 py-1 mx-1">32</span>
               <span>〜</span>
               <span className="border border-black px-4 py-1 mx-1">34</span>

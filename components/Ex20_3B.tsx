@@ -22,8 +22,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 6,
       explanation: ["正解は③", "odd jobsとrandom jobsが同じ意味と判断する"],
     },
     {
@@ -36,8 +35,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 6,
       explanation: [
         "正解は③ 地域内で働くことにはほとんどリスクがない。",
         "他の選択肢の内容は文章にない",
@@ -53,8 +51,7 @@ const JapaneseTestQuestion = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 6,
       explanation: [
         "正解は④ 私たちの地域に有効な計画を立てる",
         "他の選択肢の内容は文章にない",
@@ -67,7 +64,7 @@ const JapaneseTestQuestion = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {9})</span>
+          <span className="text-gray-600 font-sans">(配点 {18})</span>
         </div>
         <Saiten
           qa={qa}

@@ -166,7 +166,7 @@ const JapaneseTestQuestion = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第２問 A"}</h1>
           <span className="text-gray-600">(配点 {20})</span>
         </div>
@@ -180,12 +180,12 @@ const JapaneseTestQuestion = () => {
         />
       </div>{" "}
       <div className="mb-8">
-        <h2 className="md:text-xl font-bold mb-6">
+        <h2 className="md:text-xl font-bold mb-6 font-sans">
           第2問 次の問い(A～C)に答えよ。(配点 44)
         </h2>
 
         <div className="mb-6">
-          <div className="flex flex-wrap md:items-center mb-4 leading-8">
+          <div className="flex flex-wrap md:items-center mb-4 leading-8 font-sans">
             <span className="font-bold mr-4">A</span>
             <span className="mr-2">次の問い(問1～10)の</span>
             <span className="flex flex-row items-center">
@@ -223,7 +223,7 @@ const JapaneseTestQuestion = () => {
               showResults && qaFormat(qa, "2A-1")
             )}
           >
-            <div className="font-bold mr-4">問 1</div>
+            <div className="font-bold mr-4 font-sans">問 1</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 Today, in science class, I learned that salt
@@ -252,7 +252,7 @@ const JapaneseTestQuestion = () => {
               showResults && qaFormat(qa, "2A-2")
             )}
           >
-            <div className="font-bold mr-4">問 2</div>
+            <div className="font-bold mr-4 font-sans">問 2</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 Many experts think that we need to create
@@ -283,7 +283,7 @@ const JapaneseTestQuestion = () => {
               showResults && qaFormat(qa, "2A-3")
             )}
           >
-            <div className="font-bold mr-4">問 3</div>
+            <div className="font-bold mr-4 font-sans">問 3</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">
                 The leaves in my neighborhood have recently
@@ -311,7 +311,7 @@ const JapaneseTestQuestion = () => {
               showResults && qaFormat(qa, "2A-4")
             )}
           >
-            <div className="font-bold mr-4">問 4</div>
+            <div className="font-bold mr-4 font-sans">問 4</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">I think eating at home is often</span>
               {renderSelect("11", 4, answers, setAnswers)}
@@ -339,7 +339,7 @@ const JapaneseTestQuestion = () => {
               showResults && qaFormat(qa, "2A-5")
             )}
           >
-            <div className="font-bold mr-4">問 5</div>
+            <div className="font-bold mr-4 font-sans">問 5</div>
             <div className="flex flex-wrap items-center">
               {renderSelect("12", 4, answers, setAnswers)}
               <span className="mr-2">as the leading actor </span>
@@ -372,7 +372,7 @@ const JapaneseTestQuestion = () => {
               showResults && qaFormat(qa, "2A-6")
             )}
           >
-            <div className="font-bold mr-4">問 6</div>
+            <div className="font-bold mr-4 font-sans">問 6</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">Please give me</span>
               {renderSelect("13", 4, answers, setAnswers)}
@@ -401,7 +401,7 @@ const JapaneseTestQuestion = () => {
               showResults && qaFormat(qa, "2A-7")
             )}
           >
-            <div className="font-bold mr-4">問 7</div>
+            <div className="font-bold mr-4 font-sans">問 7</div>
             <div className="flex flex-wrap items-center">
               <span className="mr-2">The typhoon suddenly became weaker,</span>
               {renderSelect("14", 4, answers, setAnswers)}
@@ -429,7 +429,7 @@ const JapaneseTestQuestion = () => {
                 showResults && qaFormat(qa, "2A-8")
               )}
             >
-              <div className="font-bold mr-4">問 8</div>
+              <div className="font-bold mr-4 font-sans">問 8</div>
               <span className="mr-2">
                 He ( A ) his umbrella ( B ) in the door by
               </span>
@@ -468,7 +468,7 @@ const JapaneseTestQuestion = () => {
                 showResults && qaFormat(qa, "2A-9")
               )}
             >
-              <div className="font-bold mr-4">問 9</div>
+              <div className="font-bold mr-4 font-sans">問 9</div>
               <span className="mr-2">
                 ( A ) in this class is as kind ( B ) Abbie.
               </span>
@@ -504,7 +504,7 @@ const JapaneseTestQuestion = () => {
                 showResults && qaFormat(qa, "2A-10")
               )}
             >
-              <div className="font-bold mr-4">問10</div>
+              <div className="font-bold mr-4 font-sans">問10</div>
               <span className="mr-2">
                 Angelina ( A ) me whether I ( B ) enjoyed the
               </span>

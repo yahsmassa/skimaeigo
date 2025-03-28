@@ -26,8 +26,8 @@ const JapaneseExam = () => {
       ],
       rightAnswerString: "32",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      isCorrect: true,
+      points: 4,
       explanation: [
         "正解③と②",
         "can get to know each other",
@@ -48,8 +48,8 @@ const JapaneseExam = () => {
       ],
       rightAnswerString: "42",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      isCorrect: true,
+      points: 4,
       explanation: [
         "正解④と②",
         "was the seconde highest score on the team",
@@ -70,8 +70,8 @@ const JapaneseExam = () => {
       ],
       rightAnswerString: "32",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      isCorrect: true,
+      points: 4,
       explanation: [
         "正解③と②",
         "to those who aren't familiar with",
@@ -98,7 +98,7 @@ const JapaneseExam = () => {
       </div>{" "}
       {/* タイトル部分 */}
       <div className="mb-6 leading-8">
-        <p className="text-base md:text-lg mb-4">
+        <p className="text-base md:text-lg mb-4 font-sans">
           B
           次の問い(問１～３)において、それぞれ下の①～⑥の語句を並べかえて空所を補い、最も適当な文を完成させよ。解答は
           <span className="inline-block border border-black px-2 text-sm md:text-base md:px-6 py-1 mx-2 font-bold font-sans">

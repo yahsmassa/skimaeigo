@@ -98,7 +98,7 @@ const Ex18_4B = () => {
         />
       </div>
       {/* Section B Header */}
-      <div className="mb-6 flex items-center">
+      <div className="mb-6 flex items-center font-sans">
         <span className="font-bold mr-2">B</span>
         <p className="text-sm">
           次のページの料理教室に関する広告を読み、次の問い(問1～4)の

@@ -22,8 +22,7 @@ const JapaneseTestNewFormat = () => {
       ],
       rightAnswerString: "5",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      points: 4,
       explanation: [
         "正解は⑤ remember to turn it in by five o'clock 忘れずに５時までに提出",
         "* turn in 提出する、tillは「Aまで（ずっと）」という継続の意味で使う",
@@ -39,8 +38,7 @@ const JapaneseTestNewFormat = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      points: 4,
       explanation: [
         "正解② If you knew the rules, it would be really interesting",
         "仮定法過去完了 If S +過去.. would + 動詞の原形..",
@@ -56,8 +54,7 @@ const JapaneseTestNewFormat = () => {
       ],
       rightAnswerString: "7",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      points: 4,
       explanation: [
         "正解⑦ how we can prevent it from spreading どうすれば噂が広まるのを止められる",
         "wonder + 疑問視で「・・・かなと思う」, prevent A from 〜ing 「Aが〜するのと防ぐ」",
@@ -68,9 +65,9 @@ const JapaneseTestNewFormat = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第２問 C"}</h1>
-          <span className="text-gray-600">(配点 {10})</span>
+          <span className="text-gray-600">(配点 {12})</span>
         </div>
         <Saiten
           qa={qa}
@@ -82,7 +79,7 @@ const JapaneseTestNewFormat = () => {
         />
       </div>{" "}
       {/* Section C instruction */}
-      <div className="mb-6 leading-8">
+      <div className="mb-6 leading-8 font-sans">
         <p className="mb-4">
           <span className="font-bold">C</span> 次の問い（問1～3）の会話の
           <span className="inline-block border-2 border-black px-2 text-sm md:text-base md:px-3 py-1 mx-1">
@@ -99,7 +96,7 @@ const JapaneseTestNewFormat = () => {
       <div className="mb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
-            <span className="font-bold">問 1</span>
+            <span className="font-bold font-sans">問 1</span>
           </div>
           {[
             {
@@ -214,7 +211,7 @@ const JapaneseTestNewFormat = () => {
       <div className="mb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
-            <span className="font-bold">問 2</span>
+            <span className="font-bold font-sans">問 2</span>
           </div>
           {[
             {
@@ -330,7 +327,7 @@ const JapaneseTestNewFormat = () => {
       <div className="mb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
-            <span className="font-bold">問 3</span>
+            <span className="font-bold font-sans">問 3</span>
           </div>
           {[
             {

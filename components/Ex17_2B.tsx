@@ -26,8 +26,8 @@ const JapaneseExam2 = () => {
       ],
       rightAnswerString: "26",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      isCorrect: true,
+      points: 4,
       explanation: [
         "正解②と⑥",
         "I find it difficult to keep it 〜しておくことが難しいと思う",
@@ -47,8 +47,8 @@ const JapaneseExam2 = () => {
       ],
       rightAnswerString: "51",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      isCorrect: true,
+      points: 4,
       explanation: [
         "正解⑤と①",
         "it may cost you a few hours ",
@@ -69,8 +69,8 @@ const JapaneseExam2 = () => {
       ],
       rightAnswerString: "62",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      isCorrect: true,
+      points: 4,
       explanation: [
         "正解⑥と②",
         "how come you are leaving earlier than どうしていつもより早く帰るの？",
@@ -82,7 +82,7 @@ const JapaneseExam2 = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第２問 B"}</h1>
           <span className="text-gray-600">(配点 {12})</span>
         </div>
@@ -96,7 +96,7 @@ const JapaneseExam2 = () => {
         />
       </div>{" "}
       {/* タイトル部分 */}
-      <div className="mb-6 leading-8">
+      <div className="mb-6 leading-8 font-sans">
         <p className="text-base md:text-lg mb-4">
           B
           次の問い(問１～３)において、それぞれ下の①～⑥の語句を並べかえて空所を補い、最も適当な文を完成させよ。解答は
@@ -114,7 +114,7 @@ const JapaneseExam2 = () => {
       <div className="mb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
-            <span className="font-bold">問１</span>
+            <span className="font-bold font-sans">問１</span>
           </div>
           <div className="md:col-span-1">Keita:</div>
           <div className="md:col-span-10">
@@ -158,7 +158,7 @@ const JapaneseExam2 = () => {
       <div className="mb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
-            <span className="font-bold">問２</span>
+            <span className="font-bold font-sans">問２</span>
           </div>
           <div className="md:col-span-1">Ted:</div>
           <div className="md:col-span-10">
@@ -206,7 +206,7 @@ const JapaneseExam2 = () => {
       <div className="mb-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2 mb-4">
           <div className="md:col-span-1">
-            <span className="font-bold">問３</span>
+            <span className="font-bold font-sans">問３</span>
           </div>
           <div className="md:col-span-1">Rita:</div>
           <div className="md:col-span-10">

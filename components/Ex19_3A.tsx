@@ -22,8 +22,7 @@ const ExamQuestion = () => {
       ],
       rightAnswerString: "1",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は① 矢は非常に成功したと見なされたため、大西洋に矢を浮かべることを提案する者さえいた。",
         "「パイロットにとっていかに役立っていたか」という文脈から外れている",
@@ -39,8 +38,7 @@ const ExamQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は② 研究者たちは、鳥のグループ間の違いを調べるため、いくつかの実験の準備をしました。",
         "「都会と田舎の鳥の比較」という文脈から外れている",
@@ -56,8 +54,7 @@ const ExamQuestion = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は④ チューダー朝時代の宴の催し方は、様々な映画で豊かに描かれている。",
         "「チューダー朝時代の宴のマナー」という文脈から外れて、映画の話になっている",
@@ -70,7 +67,7 @@ const ExamQuestion = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {18})</span>
+          <span className="text-gray-600 font-sans">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}
@@ -84,7 +81,7 @@ const ExamQuestion = () => {
       {/* Question Number */}
       <div className="flex flex-wrap items-center mb-4">
         <h2 className="md:text-xl font-bold mr-4 font-sans">第3問</h2>
-        <p className="text-base font-sans">次の問い（A・B）に答えよ。（配点 33）</p>
+        <p className="text-base font-sans">次の問い（A）に答えよ。（配点 15）</p>
       </div>
 
       {/* Part A Instructions */}
@@ -109,7 +106,7 @@ const ExamQuestion = () => {
             showResults && qaFormat(qa, "3A-1")
           )}
         >
-          <span className="font-bold mr-4">問 1</span>
+          <span className="font-bold mr-4 font-sans">問 1</span>
           {renderSelect("27", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-1" />}
           <span className="mr-2"></span>
@@ -163,7 +160,7 @@ const ExamQuestion = () => {
             showResults && qaFormat(qa, "3A-2")
           )}
         >
-          <span className="font-bold mr-4">問 2</span>
+          <span className="font-bold mr-4 font-sans">問 2</span>
           {renderSelect("28", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-2" />}
           <span className="mr-2"></span>
@@ -217,7 +214,7 @@ const ExamQuestion = () => {
             showResults && qaFormat(qa, "3A-3")
           )}
         >
-          <span className="font-bold mr-4">問 3</span>
+          <span className="font-bold mr-4 font-sans">問 3</span>
           {renderSelect("29", 4, answers, setAnswers)}
           {showResults && <Explain qa={qa} questionId="3A-3" />}
           <span className="mr-2"></span>

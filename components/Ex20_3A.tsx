@@ -22,8 +22,7 @@ const TestQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は② 翻訳参照",
         "ミスの話は、ルール変更でExcitingするようになった文脈とあってない",
@@ -39,8 +38,7 @@ const TestQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は② 翻訳参照",
         "正しい姿勢についての文脈のなかで、体の構造の話になっているところが不自然",
@@ -56,8 +54,7 @@ const TestQuestion = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
-      points: 3,
+      points: 5,
       explanation: [
         "正解は② 翻訳参照",
         "ハムについての保存のなかで、コショウに違和感",
@@ -70,7 +67,7 @@ const TestQuestion = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {18})</span>
+          <span className="text-gray-600 font-sans">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}
@@ -87,7 +84,7 @@ const TestQuestion = () => {
         </h2>
 
         <div className="ml-4 mb-6 leading-6 md:leading-8">
-          <p className="md:font-bold mb-4">
+          <p className="md:font-bold mb-4 font-sans">
             A
             次の問い(問1～3)のパラグラフ(段落)には、まとまりをよくするために取り除いた方がよい文が一つある。取り除く文として最も適当なものを、それぞれ下線部①～④のうちから一つずつ選べ。
           </p>

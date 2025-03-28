@@ -53,7 +53,7 @@ const JapaneseExamQuestion = () => {
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold">{"第３問 A"}</h1>
-          <span className="text-gray-600">(配点 {18})</span>
+          <span className="text-gray-600">(配点 {8})</span>
         </div>
         <Saiten
           qa={qa}
@@ -65,7 +65,7 @@ const JapaneseExamQuestion = () => {
         />
       </div>
       {/* Question Header */}
-      <div className="flex items-center mb-6">
+      <div className="flex items-center mb-6 font-sans">
         <h2 className="text-xl font-bold mr-2">第3問</h2>
         <p className="text-base md:text-lg">次の問い(A)に答えよ。（配点 8）</p>
       </div>
@@ -73,7 +73,7 @@ const JapaneseExamQuestion = () => {
       <div className="mb-8">
         <p className="flex  mb-4">
           <span className="font-bold text-lg mr-2">A</span>
-          <span className="text-base">
+          <span className="text-base font-sans">
             次の問い(問1・問2)の会話の
             <span className="inline-flex items-center mx-1">
               <div className="border border-black w-10 h-8 flex items-center justify-center mx-1">

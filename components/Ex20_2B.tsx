@@ -26,8 +26,8 @@ const EnglishTest = () => {
       ],
       rightAnswerString: "42",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      isCorrect: true,
+      points: 4,
       explanation: [
         "正解④と②",
         "would not have been completed by the time ",
@@ -48,8 +48,8 @@ const EnglishTest = () => {
       ],
       rightAnswerString: "43",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      isCorrect: true,
+      points: 4,
       explanation: [
         "正解④と③",
         "youngest of whom is studying music in Longon ",
@@ -70,8 +70,8 @@ const EnglishTest = () => {
       ],
       rightAnswerString: "52",
       answerString: "",
-      isCorrect: false,
-      points: 2,
+      isCorrect: true,
+      points: 4,
       explanation: [
         "正解⑤と②",
         "as planned of put it off",

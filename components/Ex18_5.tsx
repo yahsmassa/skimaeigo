@@ -22,7 +22,6 @@ const Ex18_5 = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は③ 彼らの故郷の惑星以外で生命を探すこと 翻訳参照",
@@ -39,7 +38,6 @@ const Ex18_5 = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: ["正解は② 高度な技術を持つ", "DAY4 翻訳参照、"],
     },
@@ -53,7 +51,6 @@ const Ex18_5 = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は② 懸念、ためらい",
@@ -71,7 +68,6 @@ const Ex18_5 = () => {
       rightAnswerString: "1",
       isOrderFree: true,
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: ["正解は① タコのような形をした生き物", "DAY19 翻訳参照、"],
     },
@@ -112,7 +108,7 @@ const Ex18_5 = () => {
         />
       </div>
       {/* Question Header */}
-      <div className="mb-8">
+      <div className="mb-8 font-sans">
         <p className="text-base">
           次の日誌の抜粋を読み、下の問い(問1～5)の
           <span className="inline-block mx-2 border border-black px-4">41</span>

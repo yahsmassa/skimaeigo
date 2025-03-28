@@ -65,9 +65,9 @@ const JapaneseTestComponent = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第３問 B"}</h1>
-          <span className="text-gray-600">(配点 {18})</span>
+          <span className="text-gray-600">(配点 {15})</span>
         </div>
         <Saiten
           qa={qa}

@@ -132,7 +132,7 @@ const Ex16_6 = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第６問"}</h1>
           <span className="text-gray-600">(配点 {36})</span>
         </div>
@@ -148,7 +148,7 @@ const Ex16_6 = () => {
       </div>
       {/* Question Header */}
       <div className="mb-8">
-        <p className="text-lg mb-4">
+        <p className="text-lg mb-4 font-sans">
           次の文章を読み、下の問い（A・B）に答えよ。なお、文章の左にある(1)～(6)はパラグラフ（段落）の番号を表している。（配点
           36）
         </p>
@@ -260,7 +260,7 @@ const Ex16_6 = () => {
 
       {/* Question Section */}
       <div className="mt-8 space-y-6">
-        <div className="flex ">
+        <div className="flex font-sans">
           <div className="font-bold mr-2">A</div>
           <div>
             次の問い（問１～５）の
@@ -278,7 +278,7 @@ const Ex16_6 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="mr-2 whitespace-nowrap">問1</span>
+            <span className="mr-2 whitespace-nowrap font-sans">問1</span>
             <p>Which of these statements is true according to paragraph (2)?</p>
             {renderSelect("47", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-1" />}
@@ -296,7 +296,7 @@ const Ex16_6 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="mr-2 whitespace-nowrap">問2</span>
+            <span className="mr-2 whitespace-nowrap font-sans">問2</span>
             <p>
               <span>
                 In paragraph (3), what is another way of asking the question{" "}
@@ -320,7 +320,7 @@ const Ex16_6 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="mr-2 whitespace-nowrap">問3</span>
+            <span className="mr-2 whitespace-nowrap font-sans">問3</span>
             <p>According to paragraphs (3) and (4), which statement is true?</p>
             {renderSelect("49", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-3" />}
@@ -337,7 +337,7 @@ const Ex16_6 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="mr-2 whitespace-nowrap">問4</span>
+            <span className="mr-2 whitespace-nowrap font-sans">問4</span>
             <span>
               Which statement best expresses the author's opinion in paragraph
               (5)?
@@ -361,7 +361,7 @@ const Ex16_6 = () => {
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="mr-2 whitespace-nowrap">問5</span>
+            <span className="mr-2 whitespace-nowrap font-sans">問5</span>
             <p>What would be the best title for this passage?</p>
             {renderSelect("51", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6-5" />}

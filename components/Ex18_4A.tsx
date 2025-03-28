@@ -21,7 +21,6 @@ const Ex18_4A = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は② 消費者は、商品の色によって異なる好みを持っている",
@@ -38,7 +37,6 @@ const Ex18_4A = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は③  (A) Footwear (B) Bags (C) Cellphones (D) Music pl",
@@ -55,7 +53,6 @@ const Ex18_4A = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は② ドイツの消費者は、一つの色の中に複数のイメージが含まれていると認識している。",
@@ -72,7 +69,6 @@ const Ex18_4A = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は④ 他の国の消費者にとっての色の重要性",
@@ -86,8 +82,8 @@ const Ex18_4A = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
-          <span className="text-gray-600 font-sans">(配点 {16})</span>
+          <h1 className="text-lg font-bold font-sans">{"第４問 A"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {20})</span>
         </div>
         <Saiten
           qa={qa}
@@ -101,10 +97,10 @@ const Ex18_4A = () => {
       {/* 問題番号とポイント */}
       <div className="mb-6 text-lg">
         <span className="font-bold font-sans">第4問</span>
-        <span className="ml-4 font-sans">次の問い(A・B)に答えよ。(配点 40)</span>
+        <span className="ml-4 font-sans">次の問い(A)に答えよ。(配点 20)</span>
       </div>
       {/* A問題の説明部分 */}
-      <div className="mb-6">
+      <div className="mb-6 font-sans">
         <div className="font-bold font-sans mb-2">A</div>
         <div className="mb-4 leading-relaxed">
           次の文章にある説明文の一部である。この文章とグラフを読み、下の問い(問1～4)の

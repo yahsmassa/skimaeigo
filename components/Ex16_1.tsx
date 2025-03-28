@@ -194,7 +194,7 @@ const JapaneseTestQuestion = () => {
       className={cn("mb-8", showResults && qaFormat(qa, `1-${questionNumber}`))}
     >
       <div className="flex items-center mb-4">
-        <span className="font-bold mr-4">問 {index + 1}</span>
+        <span className="font-bold mr-4 font-sans">問 {index + 1}</span>
         {renderSelect(String(questionNumber), 4, answers, setAnswers)}
         {showResults && <Explain qa={qa} questionId={`1-${questionNumber}`} />}
       </div>
@@ -206,8 +206,8 @@ const JapaneseTestQuestion = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold">{"第1問"}</h1>
-          <span className="text-gray-600">(配点 {14})</span>
+          <h1 className="text-lg font-bold font-sans">{"第1問"}</h1>
+          <span className="text-gray-600 font-sans">(配点 {14})</span>
         </div>
         <Saiten
           qa={qa}
@@ -220,8 +220,8 @@ const JapaneseTestQuestion = () => {
       </div>{" "}
       {/* Question Header */}
       <div className="mb-6 md:text-lg font-bold flex md:items-center">
-        <span className="w-12">第1問</span>
-        <span className="ml-4">次の問い(A・B)に答えよ。(配点 14)</span>
+        <span className="w-12 font-sans">第1問</span>
+        <span className="ml-4 font-sans">次の問い(A・B)に答えよ。(配点 14)</span>
       </div>
       {/* Section A */}
       <div className="mb-8">

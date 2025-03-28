@@ -95,7 +95,7 @@ const Ex16_5 = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第５問"}</h1>
           <span className="text-gray-600">(配点 {30})</span>
         </div>
@@ -109,7 +109,7 @@ const Ex16_5 = () => {
         />
       </div>
       {/* Question Header */}
-      <div className="mb-6">
+      <div className="mb-6 font-sans">
         <p>
           次の物語を読み、下の問い(問1～5)の
           <span className="inline-block mx-2 border border-black px-4">42</span>
@@ -220,8 +220,8 @@ const Ex16_5 = () => {
       <div className="mt-12 space-y-8">
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4 font-sans">
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>At the beginning of the story, Uncle John was</span>
             {renderSelect("42", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-1" />}
@@ -242,7 +242,7 @@ const Ex16_5 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               Uncle John&apos;s father began working in the city because
             </span>
@@ -261,8 +261,8 @@ const Ex16_5 = () => {
 
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4 font-sans">
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               Why were Uncle John&apos;s parents and teachers worried about his
               future?
@@ -280,8 +280,8 @@ const Ex16_5 = () => {
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4 font-sans">
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>What helped to change Uncle John&apos;s life the most?</span>
             {renderSelect("45", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-4" />}
@@ -299,8 +299,8 @@ const Ex16_5 = () => {
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-5"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+          <div className="flex items-center flex-wrap gap-2 mb-4 font-sans">
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>What does Uncle John find most rewarding?</span>
             {renderSelect("46", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-5" />}

@@ -68,7 +68,7 @@ const Ex17_4B = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {15})</span>
         </div>
@@ -84,7 +84,7 @@ const Ex17_4B = () => {
       {/* Part 1: Exam Questions */}
       <div className="mb-12">
         <div className="mb-8">
-          <p className="mb-4">
+          <p className="mb-4 font-sans">
             <span className="font-bold">B</span>{" "}
             次のページのビデオ制作コンテストに関するウェブサイトを読み、次の問い
             (問1～3)の <span className="border border-black px-2 mx-1">39</span>{" "}
@@ -96,7 +96,7 @@ const Ex17_4B = () => {
 
         <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               The purpose of the IAYP Video Clip Competition is to provide{" "}
             </span>
@@ -114,7 +114,7 @@ const Ex17_4B = () => {
 
         <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               Members of a high school baseball team will submit a four-minute
               video clip about their bonds with players from a sister school
@@ -134,7 +134,7 @@ const Ex17_4B = () => {
 
         <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               Which of the following meets the submission requirements for this
               competition?{" "}

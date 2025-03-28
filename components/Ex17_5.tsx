@@ -88,7 +88,7 @@ const Ex17_5 = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第５問"}</h1>
           <span className="text-gray-600">(配点 {30})</span>
         </div>
@@ -102,7 +102,7 @@ const Ex17_5 = () => {
         />
       </div>
       {/* Question Header */}
-      <div className="mb-8">
+      <div className="mb-8 font-sans">
         <p className="text-base leading-relaxed">
           次の物語を読み、下の問い(問1～5)の
           <span className="inline-block mx-2 border border-black px-4">42</span>
@@ -234,7 +234,7 @@ const Ex17_5 = () => {
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               When Yuji realized that he had turned into a cat, he first felt
             </span>
@@ -254,7 +254,7 @@ const Ex17_5 = () => {
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               When Yuji&apos;s mother spoke to him, he was annoyed because
             </span>
@@ -274,7 +274,7 @@ const Ex17_5 = () => {
         {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               The cat thought,{" "}
               <span className="underline">"I don&apos;t like this guy,"</span>{" "}
@@ -300,7 +300,7 @@ const Ex17_5 = () => {
         {/* Question 4 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               At the end of the story, Yuji did not pick up his smartphone
               because he
@@ -321,7 +321,7 @@ const Ex17_5 = () => {
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "5-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>What is the theme of this story?</span>
             {renderSelect("46", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="5-5" />}

@@ -115,7 +115,7 @@ const Ex17_6 = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第６問"}</h1>
           <span className="text-gray-600">(配点 {36})</span>
         </div>
@@ -130,7 +130,7 @@ const Ex17_6 = () => {
         />
       </div>
       {/* Question Header */}
-      <div className="mb-6">
+      <div className="mb-6 font-sans">
         <p className="text-lg mb-4">
           次の文章を読み、下の問い(A・B)に答えよ。なお、文章の左にある(1)～
           (6)はパラグラフ(段落)の番号を表している。(配点 36)
@@ -260,7 +260,7 @@ const Ex17_6 = () => {
       {/* Section A Questions */}
       <div className="mt-8 space-y-8">
         <div className="space-y-4">
-          <p className="text-lg">
+          <p className="text-lg font-sans">
             A 次の問い(問1～5)の{" "}
             <span className="border border-black px-4 py-1 mx-1">47</span> ～{" "}
             <span className="border border-black px-4 py-1 mx-1">51</span>{" "}
@@ -270,7 +270,7 @@ const Ex17_6 = () => {
           {/* Question 1 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="mr-2 whitespace-nowrap">問1</span>
+              <span className="mr-2 whitespace-nowrap font-sans">問1</span>
               <p>
                 According to paragraph (1), what do psychologists say about
                 friendships?
@@ -292,7 +292,7 @@ const Ex17_6 = () => {
           {/* Question 2 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-2"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="mr-2 whitespace-nowrap">問2</span>
+              <span className="mr-2 whitespace-nowrap font-sans">問2</span>
               <p>
                 Which of the following is closest to the meaning of{" "}
                 <span className="underline">swallow our pride</span> in
@@ -313,7 +313,7 @@ const Ex17_6 = () => {
           {/* Question 3 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-3"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="mr-2 whitespace-nowrap">問3</span>
+              <span className="mr-2 whitespace-nowrap font-sans">問3</span>
               <p>
                 According to paragraph (5), research found it is important to
               </p>
@@ -332,7 +332,7 @@ const Ex17_6 = () => {
           {/* Question 4 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-4"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="mr-2 whitespace-nowrap">問4</span>
+              <span className="mr-2 whitespace-nowrap font-sans">問4</span>
               <p>
                 According to paragraph (6), what is difficult about maintaining
                 friendships?
@@ -352,7 +352,7 @@ const Ex17_6 = () => {
           {/* Question 5 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "6-5"))}>
             <div className="flex items-center flex-wrap gap-2 mb-4">
-              <span className="mr-2 whitespace-nowrap">問5</span>
+              <span className="mr-2 whitespace-nowrap font-sans">問5</span>
               <p>What would be the best title for this passage?</p>
               {renderSelect("51", 4, answers, setAnswers)}
               {showResults && <Explain qa={qa} questionId="6-5" />}
@@ -369,7 +369,7 @@ const Ex17_6 = () => {
 
         {/* Section B */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6-6"))}>
-          <div className="mb-6">
+          <div className="mb-6 font-sans">
             <p className="flex items-center flex-wrap">
               <span className="font-bold mr-4">B</span>
               次の表は、本文のパラグラフ(段落)の構成と内容をまとめたものである。
@@ -413,25 +413,25 @@ const Ex17_6 = () => {
                 <tr>
                   <td className="border border-black p-3 text-center">(2)</td>
                   <td className="border border-black p-3 text-center">
-                    <span className="border border-black px-4 py-1">52</span>
+                    <span className="font-sans border border-black px-4 py-1">52</span>
                   </td>
                 </tr>
                 <tr>
                   <td className="border border-black p-3 text-center">(3)</td>
                   <td className="border border-black p-3 text-center">
-                    <span className="border border-black px-4 py-1">53</span>
+                    <span className="font-sans border border-black px-4 py-1">53</span>
                   </td>
                 </tr>
                 <tr>
                   <td className="border border-black p-3 text-center">(4)</td>
                   <td className="border border-black p-3 text-center">
-                    <span className="border border-black px-4 py-1">54</span>
+                    <span className="font-sans border border-black px-4 py-1">54</span>
                   </td>
                 </tr>
                 <tr>
                   <td className="border border-black p-3 text-center">(5)</td>
                   <td className="border border-black p-3 text-center">
-                    <span className="border border-black px-4 py-1">55</span>
+                    <span className="font-sans border border-black px-4 py-1">55</span>
                   </td>
                 </tr>
                 <tr>

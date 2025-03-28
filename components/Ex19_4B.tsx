@@ -21,7 +21,6 @@ const Ex19_4B = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は③ 500年以上の歴史",
@@ -38,7 +37,6 @@ const Ex19_4B = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は② Holmsted Castle",
@@ -55,7 +53,6 @@ const Ex19_4B = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は② Crestvale CastleとKing's Castle",
@@ -73,7 +70,6 @@ const Ex19_4B = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 5,
       explanation: [
         "正解は② 17ユーロ",
@@ -86,7 +82,7 @@ const Ex19_4B = () => {
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
-        <div className="flex items-center space-x-4 mb-2">
+        <div className="flex items-center space-x-4 mb-2 font-sans">
           <h1 className="text-lg font-bold">{"第４問"}</h1>
           <span className="text-gray-600">(配点 {20})</span>
         </div>
@@ -101,7 +97,7 @@ const Ex19_4B = () => {
       </div>
       <div className="mb-24">
         {/* Quiz Questions */}
-        <div className="mb-6">
+        <div className="mb-6 font-sans">
           <p className="mb-4">
             <span className="font-bold mr-2">B</span>
             次のページの、ある地域の城に関する案内を読み、次の問い(問1～4)の
@@ -114,7 +110,7 @@ const Ex19_4B = () => {
         {/* Question 1 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 1</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>What is a common characteristic of all four castles?</span>
             {renderSelect("37", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4B-1" />}
@@ -131,7 +127,7 @@ const Ex19_4B = () => {
         {/* Question 2 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 2</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               Three guitar club members from Grandlefolk University want to give
               a concert one afternoon in April. Which castle are they most
@@ -152,7 +148,7 @@ const Ex19_4B = () => {
         {/* Question 3 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 3</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               Teachers at one school want to take their students to Grandlefolk
               one Saturday in May. The purpose is to expand the students&apos;
@@ -176,7 +172,7 @@ const Ex19_4B = () => {
         {/* Question 4 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4B-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-3">
-            <span className="whitespace-nowrap mr-2">問 4</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               A mother, father, and their two children, ages 4 and 8, will visit
               one of the castles in Grandlefolk for one day in September and

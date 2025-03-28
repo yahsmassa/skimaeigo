@@ -22,7 +22,6 @@ const Ex19_6 = () => {
       ],
       rightAnswerString: "2",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は② 必要である",
@@ -39,7 +38,6 @@ const Ex19_6 = () => {
       ],
       rightAnswerString: "3",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は③ 陸路の発展は、社会の多くの分野で進歩をもたらした。",
@@ -56,8 +54,6 @@ const Ex19_6 = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は④ 都市における水路の重要な役割を説明するために 江戸が紹介された",
@@ -74,7 +70,6 @@ const Ex19_6 = () => {
       ],
       rightAnswerString: "1",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は① ルートは、世界に目に見えない形で存在すると考えることができる。",
@@ -91,7 +86,6 @@ const Ex19_6 = () => {
       ],
       rightAnswerString: "4",
       answerString: "",
-      isCorrect: false,
       points: 6,
       explanation: [
         "正解は④ 人類の発展は、ルートの発展によって促された。いろいろなルートが開発され、人類が発展した文脈から",
@@ -120,7 +114,7 @@ const Ex19_6 = () => {
       ],
       rightAnswerString: "1423",
       answerString: "",
-      isCorrect: false,
+      isCorrect: true,
       points: 6,
       explanation: [
         "正解は[51]① [52]④ [53]② [54]③ 翻訳参照",
