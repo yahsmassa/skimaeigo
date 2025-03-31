@@ -11,16 +11,16 @@ const CLIENT_ID = String(process.env.NEXT_PUBLIC_PAYPAY_CLIENT_ID);
 const timeStamp = () => new Date().getTime() / 1000; // 秒単位
 
 PAYPAY.Configure({
-  //   clientId: CLIENT_ID,
-  clientId: API_KEY,
+  clientId: CLIENT_ID,
+  // clientId: API_KEY,
   clientSecret: API_SECRET,
   merchantId: MERCHANT_ID,
   /* production_mode : サンドボックス環境/本番環境の接続先を設定します。
    * デフォルトのfalse設定ではサンドボックス環境に接続します。
    * True設定では本番環境に接続します。
    */
-  productionMode: true,
-  // productionMode: process.env.NEXT_PUBLIC_DEBUG === "true" ? false : true,
+  // productionMode: true,
+  productionMode: process.env.NEXT_PUBLIC_DEBUG === "true" ? false : true,
 });
 
 // エラーハンドリングのためのヘルパー関数
