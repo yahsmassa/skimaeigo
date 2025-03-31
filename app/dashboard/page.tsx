@@ -33,36 +33,40 @@ export default function Home() {
   const [user, setUser] = useAtom(userAtom, { store });
   const { loading } = useAuth();
 
-  // useEffect(() => {
-  //   if (!user?.uid) return;
-  //   // ユーザーのプレミアムステータスを監視、支払いが終わったあとトリガー
-  //   const unsubscribePremium = onSnapshot(
-  //     doc(db, "users", user.uid),
-  //     (docSnapshot) => {
-  //       if (docSnapshot.exists()) {
-  //         const userData = docSnapshot.data();
-  //         console.log("userData", userData);
-  //         console.log("user", user);
-
-  //         if (!user.isPremium && userData.premiumStatus) {
-  //           setUser({ ...user, isPremium: true });
-  //           Swal.fire({
-  //             title: "有料会員登録完了",
-  //             html: "購入ありがとうございます</br>過去１０年分の問題を解けるようになりました！",
-  //             icon: "success",
-  //           });
-  //         }
-  //       }
-  //     },
-  //     (error) => {
-  //       console.error("情報更新監視エラー:", error);
-  //     }
-  //   );
-  //   // クリーンアップ関数
-  //   return () => {
-  //     unsubscribePremium();
-  //   };
-  // }, [user?.uid]);
+  useEffect(() => {
+    if (!user?.uid) return;
+    // ユーザーのプレミアムステータスを監視、支払いが終わったあとトリガー
+    const unsubscribePremium = onSnapshot(
+      doc(db, "users", user.uid),
+      (docSnapshot) => {
+        if (docSnapshot.exists()) {
+          // console.log("userData", userData);
+          // console.log("user", user);
+          const userData = docSnapshot.data();
+          if (!user.isPremium && userData.orderAt) {
+            setUser({ ...user, isPremium: true }); // Web内での変数を更新
+            const now = new Date().getTime();
+            const orderTime = new Date(userData.orderAt).getTime();
+            const timeDiff = now - orderTime;
+            if (timeDiff <= 10000) { // 10秒 = 10000ミリ秒
+              Swal.fire({
+                title: "プレミアム会員登録完了",
+                html: "購入ありがとうございます</br>過去１０年分の問題を解けるようになりました！",
+                icon: "success",
+              });
+            }
+          }
+        }
+      },
+      (error) => {
+        console.error("情報更新監視エラー:", error);
+      }
+    );
+    // クリーンアップ関数
+    return () => {
+      unsubscribePremium();
+    };
+  }, [user?.uid]);
 
   // ユーザーがログインしていない場合、サインインページにリダイレクト
   useEffect(() => {

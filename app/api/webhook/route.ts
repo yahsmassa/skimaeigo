@@ -7,12 +7,13 @@ export async function POST(req: Request) {
     const rawBody = await req.text();
     const body = JSON.parse(rawBody);
     const uid = body.merchant_order_id.split("_")[0];
+    const orderId = body.order_id;
     // 支払い完了 (`PAYMENT_COMPLETED`) の場合のみ処理
     if (
       body.state.toUpperCase() === "COMPLETED" &&
       body.notification_type.toUpperCase() === "TRANSACTION"
     ) {
-      await setPremiumStatus(uid);
+      await setPremiumStatus(uid, orderId);
       await setTransaction(body);
       // console.log("Received PayPay Webhook:", body);
 

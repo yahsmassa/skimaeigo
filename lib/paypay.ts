@@ -18,7 +18,7 @@ PAYPAY.Configure({
    * デフォルトのfalse設定ではサンドボックス環境に接続します。
    * True設定では本番環境に接続します。
    */
-  productionMode: false,
+  productionMode: process.env.NEXT_PUBLIC_DEBUG === "true" ? false : true,
 });
 
 // エラーハンドリングのためのヘルパー関数
@@ -71,8 +71,8 @@ export const qrCodeCreate = async (
       "お支払い後に、有料会員となり、１０年分の試験データを利用できます",
     requestedAt: timeStamp(),
     isAuthorization: false,
-    // redirectUrl: "https://52c3-220-102-49-135.ngrok-free.app/dashboard",
-    redirectUrl: "http://localhost:3000/dashboard",
+    redirectUrl: "https://e21c-133-205-204-86.ngrok-free.app/dashboard",
+    // redirectUrl: "http://localhost:3000/dashboard",
     // redirectUrl: "https://kyoutuu.com/dashboard",
     redirectType: "WEB_LINK",
     userAgent:
