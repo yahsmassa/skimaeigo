@@ -7,6 +7,7 @@ const API_SECRET = String(process.env.NEXT_PUBLIC_PAYPAY_API_SECRET);
 const MERCHANT_ID = String(process.env.NEXT_PUBLIC_PAYPAY_MERCHANT_ID);
 const CLIENT_ID = String(process.env.NEXT_PUBLIC_PAYPAY_CLIENT_ID);
 
+
 const timeStamp = () => new Date().getTime() / 1000; // 秒単位
 
 PAYPAY.Configure({
