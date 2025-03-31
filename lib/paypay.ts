@@ -19,7 +19,8 @@ PAYPAY.Configure({
    * デフォルトのfalse設定ではサンドボックス環境に接続します。
    * True設定では本番環境に接続します。
    */
-  productionMode: process.env.NEXT_PUBLIC_DEBUG === "true" ? false : true,
+  productionMode: true,
+  // productionMode: process.env.NEXT_PUBLIC_DEBUG === "true" ? false : true,
 });
 
 // エラーハンドリングのためのヘルパー関数
