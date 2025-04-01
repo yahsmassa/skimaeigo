@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { qrCodeCreate } from "@/lib/paypay";
+import { qrCodeCreate, processPayment } from "@/lib/paypay";
 import { type ClassValue, clsx } from "clsx";
 import React from "react";
 import Swal from "sweetalert2";
@@ -199,8 +199,13 @@ export const cmpOrderId = (uid: string) => {
 export const getPaymentUrl = async (uid: string) => {
   if (uid.length === 0) return;
   try {
+    console.log("uid", uid);
+
     const orderId = cmpOrderId(uid);
-    const result = await qrCodeCreate(orderId);
+    // const result = await qrCodeCreate(orderId);
+    // console.log("result", result);
+    const result = await processPayment(orderId);
+    console.log("new result", result);
     const url = result.data?.url;
     return url;
   } catch (error) {

@@ -59,6 +59,37 @@ const handlePayPayResponse = (
   }
 };
 
+// Next.jsのサーバーアクション内
+export async function processPayment(merchantPaymentId: string) {
+  const payload: CreatePayload = {
+    merchantPaymentId: merchantPaymentId,
+    amount: {
+      amount: 100,
+      currency: "JPY",
+    },
+    codeType: "ORDER_QR",
+    orderDescription:
+      "お支払い後に、有料会員となり、１０年分の試験データを利用できます",
+    requestedAt: timeStamp(),
+    isAuthorization: false,
+    // redirectUrl: "https://e21c-133-205-204-86.ngrok-free.app/dashboard",
+    // redirectUrl: "http://localhost:3000/dashboard",
+    redirectUrl: "https://kyoutuu.com/dashboard",
+    redirectType: "WEB_LINK",
+    userAgent:
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1",
+  };
+
+  const response = await fetch('http://143.198.222.97:3000/v2/codes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload)
+  });
+  // console.log("response", response.json());
+  return response.json();
+}
 // QRコード作成
 export const qrCodeCreate = async (
   merchantPaymentId: string
