@@ -9,7 +9,7 @@ const MERCHANT_ID = String(process.env.NEXT_PUBLIC_PAYPAY_MERCHANT_ID);
 const CLIENT_ID = String(process.env.NEXT_PUBLIC_PAYPAY_CLIENT_ID);
 
 
-const timeStamp = () => new Date().getTime() / 1000; // 秒単位
+const timeStamp = () => Math.floor(new Date().getTime() / 1000); // 秒単位
 
 PAYPAY.Configure({
   // clientId: CLIENT_ID,
@@ -73,8 +73,8 @@ export async function processPayment(merchantPaymentId: string) {
     requestedAt: timeStamp(),
     isAuthorization: false,
     // redirectUrl: "https://e21c-133-205-204-86.ngrok-free.app/dashboard",
-    // redirectUrl: "http://localhost:3000/dashboard",
-    redirectUrl: "https://kyoutuu.com/dashboard",
+    redirectUrl: "http://localhost:3000/dashboard",
+    // redirectUrl: "https://kyoutuu.com/dashboard",
     redirectType: "WEB_LINK",
     userAgent:
       "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1",
@@ -113,7 +113,7 @@ export const qrCodeCreate = async (
     userAgent:
       "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1",
   };
-  console.log("payload", payload);
+  // console.log("payload", payload);
 
   return new Promise((resolve, reject) => {
     PAYPAY.QRCodeCreate(payload, (response: any) => {
