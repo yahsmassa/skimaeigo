@@ -202,10 +202,14 @@ export const getPaymentUrl = async (uid: string) => {
     console.log("uid", uid);
 
     const orderId = cmpOrderId(uid);
-    // const result = await qrCodeCreate(orderId);
+    let result;
+    if (process.env.NEXT_PUBLIC_DEBUG === "true") {
+      result = await qrCodeCreate(orderId);
+    } else {
+      result = await processPayment(orderId);
+    }
     // console.log("result", result);
-    const result = await processPayment(orderId);
-    console.log("new result", result);
+    // console.log("new result", result);
     const url = result.data?.url;
     return url;
   } catch (error) {

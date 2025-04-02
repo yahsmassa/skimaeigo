@@ -7,9 +7,10 @@ const API_KEY = String(process.env.NEXT_PUBLIC_PAYPAY_API_KEY);
 const API_SECRET = String(process.env.NEXT_PUBLIC_PAYPAY_API_SECRET);
 const MERCHANT_ID = String(process.env.NEXT_PUBLIC_PAYPAY_MERCHANT_ID);
 const CLIENT_ID = String(process.env.NEXT_PUBLIC_PAYPAY_CLIENT_ID);
-
+const PAYPAY_URL = String(process.env.NEXT_PUBLIC_PAYPAY_URL);
 
 const timeStamp = () => Math.floor(new Date().getTime() / 1000); // 秒単位
+const paypayAmount = 100;
 
 PAYPAY.Configure({
   // clientId: CLIENT_ID,
@@ -64,7 +65,7 @@ export async function processPayment(merchantPaymentId: string) {
   const payload: CreatePayload = {
     merchantPaymentId: merchantPaymentId,
     amount: {
-      amount: 100,
+      amount: paypayAmount,
       currency: "JPY",
     },
     codeType: "ORDER_QR",
@@ -72,15 +73,13 @@ export async function processPayment(merchantPaymentId: string) {
       "お支払い後に、有料会員となり、１０年分の試験データを利用できます",
     requestedAt: timeStamp(),
     isAuthorization: false,
-    // redirectUrl: "https://e21c-133-205-204-86.ngrok-free.app/dashboard",
-    redirectUrl: "http://localhost:3000/dashboard",
-    // redirectUrl: "https://kyoutuu.com/dashboard",
+    redirectUrl: "https://kyoutuu.com/dashboard",
     redirectType: "WEB_LINK",
     userAgent:
       "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1",
   };
 
-  const response = await fetch('http://143.198.222.97:3000/v2/codes', {
+  const response = await fetch(PAYPAY_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -98,7 +97,7 @@ export const qrCodeCreate = async (
   const payload: CreatePayload = {
     merchantPaymentId: merchantPaymentId,
     amount: {
-      amount: 100,
+      amount: paypayAmount,
       currency: "JPY",
     },
     codeType: "ORDER_QR",
@@ -107,8 +106,7 @@ export const qrCodeCreate = async (
     requestedAt: timeStamp(),
     isAuthorization: false,
     // redirectUrl: "https://e21c-133-205-204-86.ngrok-free.app/dashboard",
-    // redirectUrl: "http://localhost:3000/dashboard",
-    redirectUrl: "https://kyoutuu.com/dashboard",
+    redirectUrl: "http://localhost:3000/dashboard",
     redirectType: "WEB_LINK",
     userAgent:
       "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1",
