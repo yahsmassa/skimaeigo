@@ -1,4 +1,4 @@
-import {QA} from '@/utils/types';
+import { QA } from "@/lib/types";
 
 export const qanda: QA[] = [
   {
