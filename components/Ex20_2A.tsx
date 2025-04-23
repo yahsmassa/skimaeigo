@@ -7,169 +7,170 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const JapaneseTestQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2A-1",
-      qa: [
-        {
-          questionNumber: "8",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解③ be far from A：Aには程遠い",
-        "be apart from A：Aから離れている",
-        "be different from A：Aとは違う",
-        "be free from A：A（心配など）のない",
-      ],
-    },
-    {
-      questionId: "2A-2",
-      qa: [
-        {
-          questionNumber: "9",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解① both",
-        "通りの両側にバス停がある",
-        "each:それぞれ、either:片方の、neithr:どちらの〜も・・ない",
-      ],
-    },
-    {
-      questionId: "2A-3",
-      qa: [
-        {
-          questionNumber: "10",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 2,
-      explanation: ["正解③", "wheter SV... 「・・・かどうか」"],
-    },
-    {
-      questionId: "2A-4",
-      qa: [
-        {
-          questionNumber: "11",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 2,
-      explanation: [
-        "正解③",
-        "Marcoも話せる",
-        "so + 助動詞[be動詞]＋Sで前の工程分に対して、「Sもそうである」",
-      ],
-    },
-    {
-      questionId: "2A-5",
-      qa: [
-        {
-          questionNumber: "12",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 2,
-      explanation: [
-        "正解①",
-        "A is one thing , but B is another で「AとBは違うことだ",
-      ],
-    },
-    {
-      questionId: "2A-6",
-      qa: [
-        {
-          questionNumber: "13",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 2,
-      explanation: ["正解①", "get along with A 「Aとうまくやる」"],
-    },
-    {
-      questionId: "2A-7",
-      qa: [
-        {
-          questionNumber: "14",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 2,
-      explanation: ["正解①", "It happens that SV ... 「たまたま・・・である」"],
-    },
-    {
-      questionId: "2A-8",
-      qa: [
-        {
-          questionNumber: "15",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 2,
-      explanation: [
-        "正解④",
-        "..as logn as ..していれば、clear （道が）すいていれば",
-        "...as far as ... している限り",
-      ],
-    },
-    {
-      questionId: "2A-9",
-      qa: [
-        {
-          questionNumber: "16",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 2,
-      explanation: ["正解②", "..give A a second thought ..を考え直す"],
-    },
-    {
-      questionId: "2A-10",
-      qa: [
-        {
-          questionNumber: "17",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 2,
-      explanation: [
-        "正解①",
-        "否定語と一緒に使うany",
-        "except for を除いて",
-        "in the back row の後ろの列に",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "20_2A")?.qanda || [];
+  // const question: QandA[] = [
+  //   {
+  //     questionId: "2A-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "8",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 2,
+  //     explanation: [
+  //       "正解③ be far from A：Aには程遠い",
+  //       "be apart from A：Aから離れている",
+  //       "be different from A：Aとは違う",
+  //       "be free from A：A（心配など）のない",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "2A-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "9",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 2,
+  //     explanation: [
+  //       "正解① both",
+  //       "通りの両側にバス停がある",
+  //       "each:それぞれ、either:片方の、neithr:どちらの〜も・・ない",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "2A-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "10",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解③", "wheter SV... 「・・・かどうか」"],
+  //   },
+  //   {
+  //     questionId: "2A-4",
+  //     qa: [
+  //       {
+  //         questionNumber: "11",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: [
+  //       "正解③",
+  //       "Marcoも話せる",
+  //       "so + 助動詞[be動詞]＋Sで前の工程分に対して、「Sもそうである」",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "2A-5",
+  //     qa: [
+  //       {
+  //         questionNumber: "12",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: [
+  //       "正解①",
+  //       "A is one thing , but B is another で「AとBは違うことだ",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "2A-6",
+  //     qa: [
+  //       {
+  //         questionNumber: "13",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解①", "get along with A 「Aとうまくやる」"],
+  //   },
+  //   {
+  //     questionId: "2A-7",
+  //     qa: [
+  //       {
+  //         questionNumber: "14",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解①", "It happens that SV ... 「たまたま・・・である」"],
+  //   },
+  //   {
+  //     questionId: "2A-8",
+  //     qa: [
+  //       {
+  //         questionNumber: "15",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: [
+  //       "正解④",
+  //       "..as logn as ..していれば、clear （道が）すいていれば",
+  //       "...as far as ... している限り",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "2A-9",
+  //     qa: [
+  //       {
+  //         questionNumber: "16",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解②", "..give A a second thought ..を考え直す"],
+  //   },
+  //   {
+  //     questionId: "2A-10",
+  //     qa: [
+  //       {
+  //         questionNumber: "17",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: [
+  //       "正解①",
+  //       "否定語と一緒に使うany",
+  //       "except for を除いて",
+  //       "in the back row の後ろの列に",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

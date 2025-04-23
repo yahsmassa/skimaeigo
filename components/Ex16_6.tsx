@@ -1,132 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex16_6 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "6-1",
-      qa: [
-        {
-          questionNumber: "47",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は① オペラは新たな状況に適応することで発展する",
-        "段落２にオペラの発展についての記述がある、翻訳参照",
-      ],
-    },
-    {
-      questionId: "6-2",
-      qa: [
-        {
-          questionNumber: "48",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は③ オペラ歌手の価値とは何でしょう？",
-        "段落（３）の企業経営者や、スポーツ選手の報酬の話の流れから、翻訳参照",
-      ],
-    },
-    {
-      questionId: "6-3",
-      qa: [
-        {
-          questionNumber: "49",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は① オペラ歌手は経済的に不安定だ",
-        "オペラ歌手の病気での収入がなくなる記述などから、翻訳参照",
-      ],
-    },
-    {
-      questionId: "6-4",
-      qa: [
-        {
-          questionNumber: "50",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は③ オペラ歌手の容姿よりも、声の方がもっと高く評価されるべきである",
-        "体重がある程度ないと、声量がでにくいなどの記述から、翻訳参照",
-      ],
-    },
-    {
-      questionId: "6-5",
-      qa: [
-        {
-          questionNumber: "51",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は③ オペラが直面する困難",
-        "段落（３）に述べられているオペラの深刻な問題についての記述などから、翻訳参照",
-      ],
-    },
-    {
-      questionId: "6-6",
-      qa: [
-        {
-          questionNumber: "52",
-          answer: 0,
-        },
-        {
-          questionNumber: "53",
-          answer: 0,
-        },
-        {
-          questionNumber: "54",
-          answer: 0,
-        },
-        {
-          questionNumber: "55",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3142",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は[52]③ [53]① [54]④ [55]② ",
-        "段落（３）に述べられているオペラの深刻な問題についての記述などから、翻訳参照",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "16_6")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

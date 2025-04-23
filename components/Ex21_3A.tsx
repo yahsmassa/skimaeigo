@@ -7,46 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 export default function Ex21_3A() {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3A-1",
-      qa: [
-        {
-          questionNumber: "16",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解③「そのホテルは値段分の価値があるということ」",
-        "解説・・・Answerの冒頭に、&quot;It’s inexpensive, and the service is brilliant!&quot;「安くてサービスは素晴らしい」とあるので、そこから判断できる。乗り換えやアクセスの不便さを述べているので、①「便利な場所にある」は不可。②「Victoria Stationで迷子になった」という記述はない。④「２回とも同じルート」ではなく、２度目は違う行き方をした。",
-      ],
-    },
-    {
-      questionId: "3A-2",
-      qa: [
-        {
-          questionNumber: "17",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解②「高速バスと徒歩」",
-        "解説・・・Red LineとOrange Lineでの移動は合わせて35分だが、乗り換えに通常は7分かかるとAlexが述べているので、Underground（地下鉄）だと少なくとも42分かかる。従って、空港から駅までは高速バスが良い。また、2021年３月15日だとまだ道路工事をしているはず（&quot;there would be roadworks until summer 2021&quot;）で、３倍の時間がかかるとAlexは述べているので、通常10分だが30分かかるはずである。ということは、徒歩の20分の方がホテルまでは早い。",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "21_3A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

@@ -6,62 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 export default function Ex25_1() {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1-1",
-      qa: [
-        {
-          questionNumber: "1",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は④「水槽について情報を必要としている初心者」、Beginners!（初心者の皆さん！）という呼びかけの見出しより",
-      ],
-    },
-    {
-      questionId: "1-2",
-      qa: [
-        {
-          questionNumber: "2",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は②「適切な空間を確保する」",
-        "自然の装飾品と人工の装飾品は魚を健康に保つために必要であり，水槽内の50〜70％の面積を覆うべきです）と，魚には動き回るためのスペースが必要です。水槽の端の周りに空間を残しましょう",
-      ],
-    },
-    {
-      questionId: "1-3",
-      qa: [
-        {
-          questionNumber: "3",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は④、「背の高い装飾品や植物は後ろに置き，背の低いものは前に置いてください」より",
-        "①は背の高さが逆になっている。②は柔らかい植物がない。③は装飾品の背の高さが前から順に高くなっているのではなく，左右から中心に向け，さらに後に向けて高くなっている。",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "25_1")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

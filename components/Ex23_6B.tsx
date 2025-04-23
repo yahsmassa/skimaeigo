@@ -7,110 +7,12 @@ import Image from "next/image";
 import { Saiten } from "@/components/Saiten";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex23_6B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "6B-1",
-      qa: [
-        {
-          questionNumber: "44",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "解答は④、本文に言及がない。",
-        "①は第4段落2文目（They have ... their bodies.），②は第4段落5文目（All tardigrades ... have eyes.）と6文目（Their eyes ... light sensitive.）",
-        "③は第5段落1文目（Basically, tardigrades ... eat other creatures.），⑤は第5段落4文目（The mouths ... have teeth.）と5文目（They do, ... sucked out.）にそれぞれ該当 ",
-      ],
-    },
-    {
-      questionId: "6B-2",
-      qa: [
-        {
-          questionNumber: "45",
-          answer: 0,
-        },
-        {
-          questionNumber: "46",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "15",
-      answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[45] 正解は①「乾燥した状況では，それらの代謝は通常の1%未満まで低下する」",
-        "①・⑤：第2段落7文目（水が乾いてしまったら，それらも乾燥する）と，8文目（それらは体の水分の3%以外の全てを失い，代謝は通常の速度の0.01%にまで低下する）という内容から ",
-        "[46] 正解は⑤「それらは極端なレベルの放射線に耐える能力がある」",
-        "第3段落4文目 （これが意味するのは，10年間，ほとんどがここ地球上よりも1,000倍濃度の高いX線や紫外線放射エネルギーの中を生き延びることができたということだ）という内容から，",
-      ],
-    },
-    {
-      questionId: "6B-3",
-      qa: [
-        {
-          questionNumber: "47",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[47] 正解は③",
-        "第5段落4文目（The mouths ... have teeth.）、5文目（They do, ... sucked out.）、第6段落2文目（The mouth leads to ... salivary gland.）、4文目（After the pharynx, ... the gut.）、5文目（This tube is called the esophagus.）",
-      ],
-    },
-    {
-      questionId: "6B-4",
-      qa: [
-        {
-          questionNumber: "48",
-          answer: 0,
-        },
-      ],
-      isOrderFree: true,
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は④：全体の内容を要約する問題。④「クマムシは地球上の最も過酷な環境でも生き延び，少なくとも一度は宇宙へも旅したことがある。 この驚くべき生物は人類よりも長生きするかもしれない」。地球上の最も過酷な環境で生き延びる能力については第2段落に，宇宙については第3段落に，それぞれ言及されている。",
-        "①「何千年もの間，クマムシは地球と宇宙の最も過酷な環境の一部を生き延びてきた。彼らは人類より長く生きるであろう」 ",
-        "②「クマムシは宇宙から来て，ホッキョクギツネやフタコブラクダの限界を超える温度で生きることができる。したがって彼らは間違いなく人類より強い」",
-        "③「クマムシは間違いなく，地球上でもっとも頑丈な生物だ。彼らは山頂で生き延びることができる。海底でも生き延びられる。温泉の水の中でも生き延びられる。そして，月でも生きることができる。」",
-      ],
-    },
-    {
-      questionId: "6B-5",
-      qa: [
-        {
-          questionNumber: "49",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "「クマムシを宇宙に送ったことについてどんなことが推測できるか」という設問",
-        "正解は④「クマムシが月面で生き延びられるかどうかをなぜ誰も確かめようとしなかったのか，その理由は筆者の関心を惹きつけた」，第3段落最終文 （これらのクマムシがまだ生きているのかいないのかは知られていない。誰も彼らを集めに行かなかったのだ。これは残念なことだ）という内容から，筆者が「なぜ月のクマムシを集めに行かなかったのだろう」と嘆いている ",
-        "①「クマムシが宇宙で生き延びられるかどうかを理解することは決して重要だと考えられてはいなかった」",
-        "②「クマムシは，何百万年もの間地球上に存在してきた他の生物とともに，X線や紫外線の放射に耐えることができる」",
-        "③「イスラエルの研究者たちは過酷な宇宙の環境でそれほど多くのクマムシが生き延びられることは期待していなかった」",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "23_6B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

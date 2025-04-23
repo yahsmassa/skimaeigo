@@ -7,124 +7,125 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex20_6 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "6-1",
-      qa: [
-        {
-          questionNumber: "46",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は① 一定量の液体を取得できるようにすること",
-        "* Permitting visitors to enter ..: （参拝者が寺に）入ることを許可する",
-        "* Providing a regular income to .. : 定期的な収入を提供する",
-      ],
-    },
-    {
-      questionId: "6-2",
-      qa: [
-        {
-          questionNumber: "47",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は③ 自動販売機の技術は、アジアでは数世紀も前に見られていた。",
-        "* vending machines were common in the world: 自動販売機は1世界中で一般的になった。",
-      ],
-    },
-    {
-      questionId: "6-3",
-      qa: [
-        {
-          questionNumber: "48",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は② 無許可の模倣品を作成する",
-        "① 不正な取引を受け入れる、③ 承認されていない技術を制限する、④ 不要な支援を撤回する",
-      ],
-    },
-    {
-      questionId: "6-4",
-      qa: [
-        {
-          questionNumber: "49",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は④ 様々な品揃えが、それらを世界で唯一のものにしている。",
-        "* hesitate to..: をためらう、* over three quarters of them : それらの3/4以上が、* a variety of  : さまざまな",
-      ],
-    },
-    {
-      questionId: "6-5",
-      qa: [
-        {
-          questionNumber: "50",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は② 自動販売機の通史",
-        "① 日本の社会における自動販売機の文化的利点、③ 国際比較による自動販売機の経済的影響、④ 現代技術による自動販売機のグローバル化",
-      ],
-    },
-    {
-      questionId: "6-6",
-      qa: [
-        {
-          questionNumber: "51",
-          answer: 0,
-        },
-        {
-          questionNumber: "52",
-          answer: 0,
-        },
-        {
-          questionNumber: "53",
-          answer: 0,
-        },
-        {
-          questionNumber: "54",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2431",
-      answerString: "",
-      isCorrect: true,
-      points: 6,
-      explanation: [
-        "正解は順に、② 自動販売機1台の製作と、その装置の使用方法の説明",
-        "④ 過去、様々な場所で販売されていた自動販売機の商品の種類",
-        "③ 異なる通貨を導入した後の自動販売機の製造における困難",
-        "① ある国で自動販売機が広く普及するのを可能にしたある要因",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "20_6")?.qanda || [];
+  //   {
+  //     questionId: "6-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "46",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は① 一定量の液体を取得できるようにすること",
+  //       "* Permitting visitors to enter ..: （参拝者が寺に）入ることを許可する",
+  //       "* Providing a regular income to .. : 定期的な収入を提供する",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "6-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "47",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は③ 自動販売機の技術は、アジアでは数世紀も前に見られていた。",
+  //       "* vending machines were common in the world: 自動販売機は1世界中で一般的になった。",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "6-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "48",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は② 無許可の模倣品を作成する",
+  //       "① 不正な取引を受け入れる、③ 承認されていない技術を制限する、④ 不要な支援を撤回する",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "6-4",
+  //     qa: [
+  //       {
+  //         questionNumber: "49",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は④ 様々な品揃えが、それらを世界で唯一のものにしている。",
+  //       "* hesitate to..: をためらう、* over three quarters of them : それらの3/4以上が、* a variety of  : さまざまな",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "6-5",
+  //     qa: [
+  //       {
+  //         questionNumber: "50",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は② 自動販売機の通史",
+  //       "① 日本の社会における自動販売機の文化的利点、③ 国際比較による自動販売機の経済的影響、④ 現代技術による自動販売機のグローバル化",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "6-6",
+  //     qa: [
+  //       {
+  //         questionNumber: "51",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "52",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "53",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "54",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2431",
+  //     answerString: "",
+  //     isCorrect: true,
+  //     points: 6,
+  //     explanation: [
+  //       "正解は順に、② 自動販売機1台の製作と、その装置の使用方法の説明",
+  //       "④ 過去、様々な場所で販売されていた自動販売機の商品の種類",
+  //       "③ 異なる通貨を導入した後の自動販売機の製造における困難",
+  //       "① ある国で自動販売機が広く普及するのを可能にしたある要因",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

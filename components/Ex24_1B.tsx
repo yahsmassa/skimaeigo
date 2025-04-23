@@ -8,6 +8,7 @@ import { Saiten } from "@/components/Saiten";
 import { qaFormat, renderSelect } from "@/lib/util";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex24_1B = () => {
   const [showResults, setShowResults] = useState(false);
@@ -49,61 +50,7 @@ const Ex24_1B = () => {
       answer: 1,
     },
   ];
-  const question: QandA[] = [
-    {
-      questionId: "1B-1",
-      qa: [
-        {
-          questionNumber: "3",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "④「アートギャラリーとコンサートホールのある芸術エリア」が正解。",
-        "（まずは，欧米の絵画が数多く展示されているアートギャラリーから始めます。昼食後は，通りを挟んだ向かいにあるブルトン・コンサートホールでコンサートを楽しんだ後，少し歩いてアーティスト・アベニューへ）から，",
-      ],
-    },
-    {
-      questionId: "1B-2",
-      qa: [
-        {
-          questionNumber: "4",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "③の「屋内と屋外の両方で時間を過ごす」が正解。。どのツアーにも屋内外での活動が含まれている，",
-        "教会の向かいには，20世紀初頭の市長の家があります。この邸宅と美しい庭のツアーが行われます）と書かれている。",
-        "（アーティストたちがアトリエで制作している様子を見学した後は，公園内を散策し，木々の間にある彫刻を見つけましょう）と書かれている。",
-        "そして，朝一には，郊外の屋外施設でイェントンビル・ライオンズのフットボール・チームの練習を見学できる）と書かれていて，第3文でその展示ホールで，アリーナのユニークなデザインについて学んでみよう）と書かれている",
-      ],
-    },
-    {
-      questionId: "1B-3",
-      qa: [
-        {
-          questionNumber: "5",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "解答は ①「ホッケーアリーナ」、「昨年の秋」で一番新しい",
-        "②の「市長の家」は「20世紀初頭」，③のピースパークは「第二次大戦直後」，④の「彫刻公園」は「数年前」",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "24_1B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

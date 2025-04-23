@@ -5,62 +5,13 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseTestComponent = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3B-1",
-      qa: [
-        {
-          questionNumber: "29",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は① 彼らは世界中の他の生徒と比較して科学で良い成績を収めています。",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "3B-2",
-      qa: [
-        {
-          questionNumber: "30",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は② 彼らはその治療法がどの程度科学的なものなのかを気にする。",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "3B-3",
-      qa: [
-        {
-          questionNumber: "31",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: ["正解は①"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "16_3B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

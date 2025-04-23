@@ -6,80 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex20_4B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4B-1",
-      qa: [
-        {
-          questionNumber: "37",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "回答は①",
-        "両日利用者にはそれぞれの日で２＄割引になるので、８＄が６＄、１０＄が８＄になり１４＄",
-      ],
-    },
-    {
-      questionId: "4B-2",
-      qa: [
-        {
-          questionNumber: "38",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "回答は①",
-        "屋外スペースはテントの設置サービスがある",
-        "払い戻しは８割の返金、スペースは自分で指定できない、トラックは追加料金が必要",
-      ],
-    },
-    {
-      questionId: "4B-3",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "回答は② お客様に石鹸を試してもらえるように、洗面器に水を用意できる",
-        "場所は自分で指定できない、ペットは持ち込めない、火は使えない",
-      ],
-    },
-    {
-      questionId: "4B-4",
-      qa: [
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "回答は④ 主催者はスケジュール変更に関する情報を提供します",
-        "手作り品は問題なし、ゴミは分別、申し込み日に制限なし",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "20_4B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

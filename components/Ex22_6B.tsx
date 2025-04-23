@@ -7,6 +7,8 @@ import Image from "next/image";
 import { Saiten } from "@/components/Saiten";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const RecyclingSymbol = ({ number }: { number: string }) => (
   <div className="relative w-12 h-12">
     <div className="absolute inset-0 flex items-center justify-center">
@@ -28,71 +30,7 @@ const RecyclingSymbol = ({ number }: { number: string }) => (
 const Ex22_6B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "6B-1",
-      qa: [
-        {
-          questionNumber: "44",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は② （それらはプラスチックの化学成分やリサイクルの選択肢に関する情報を提供する",
-        "第1パラグラフ最終文 「それが示すのは，それがどんな種類のプラスチックから作られているかと，それがリサイクル可能であるかもしれないということだけである」から",
-      ],
-    },
-    {
-      questionId: "6B-2",
-      qa: [
-        {
-          questionNumber: "45",
-          answer: 0,
-        },
-        {
-          questionNumber: "46",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "21",
-      answerString: "",
-      isSeparate: true,
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は [45] ②・[46] ① ",
-        "[45]の② そして，非常に広い範囲の温度で使われる  Type 2 に関しては，第3パラグラフ第3文の 「それは頑丈で，-40℃の低い温度でも100℃の高い温度でも使える」から，",
-        "[46]の① リサイクルしにくく，庭で燃やしてはいけない Type 3 に関しては，第6パラグラフ第7文と第8文の 「タイプ3のPVCは，最もリサイクル性の低いプラスチックのひとつと考えられています。それは専門家によってしか処分すべきではなく，家庭や庭で燃やされてはいけません」から，",
-      ],
-    },
-    {
-      questionId: "6B-3",
-      qa: [
-        {
-          questionNumber: "47",
-          answer: 0,
-        },
-        {
-          questionNumber: "48",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "34",
-      answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は[47]③・[48]④ 翻訳参照",
-        "③ 1，2，4，5，6のマークの付いた製品は飲食物の容器に適している",
-        "④ タイプ5とタイプ6の印がついた製品は重さが軽い",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_6B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

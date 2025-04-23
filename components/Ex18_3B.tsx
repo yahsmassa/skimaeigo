@@ -7,60 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const ConversationImage = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3B-1",
-      qa: [
-        {
-          questionNumber: "30",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は① 観客は、成功を収める人々の物語を見るのを楽しむ。",
-        "自分が感動したドキュメンタリー映画のようなものを作りたいことが文脈からわかる、翻訳参照",
-      ],
-    },
-    {
-      questionId: "3B-2",
-      qa: [
-        {
-          questionNumber: "31",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は③ 平均的な人が共感できる状況を有する",
-        "会話では日常性や平均性について評価している、翻訳参照",
-      ],
-    },
-    {
-      questionId: "3B-3",
-      qa: [
-        {
-          questionNumber: "32",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は④ 観客の好みを考慮して",
-        "それぞれ違う主張だが、顧客に受け入れられることを共通して意識している",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "18_3B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

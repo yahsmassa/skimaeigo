@@ -7,60 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseTestNewFormat = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2C-1",
-      qa: [
-        {
-          questionNumber: "24",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "5",
-      answerString: "",
-      points: 4,
-      explanation: [
-        "正解は⑤ remember to turn it in by five o'clock 忘れずに５時までに提出",
-        "* turn in 提出する、tillは「Aまで（ずっと）」という継続の意味で使う",
-      ],
-    },
-    {
-      questionId: "2C-2",
-      qa: [
-        {
-          questionNumber: "25",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 4,
-      explanation: [
-        "正解② If you knew the rules, it would be really interesting",
-        "仮定法過去完了 If S +過去.. would + 動詞の原形..",
-      ],
-    },
-    {
-      questionId: "2C-3",
-      qa: [
-        {
-          questionNumber: "26",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "7",
-      answerString: "",
-      points: 4,
-      explanation: [
-        "正解⑦ how we can prevent it from spreading どうすれば噂が広まるのを止められる",
-        "wonder + 疑問視で「・・・かなと思う」, prevent A from 〜ing 「Aが〜するのと防ぐ」",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "17_2C")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

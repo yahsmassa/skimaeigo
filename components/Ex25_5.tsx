@@ -7,110 +7,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex25_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "5-1",
-      qa: [
-        {
-          questionNumber: "18",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "①「イベント運営経験の不足」が正解",
-        "② あなたのプレゼンテーションスキルに関する懸念",
-        "③ 将来の雇用の可能性",
-        "④ あなたの英語メール作成能力",
-      ],
-    },
-    {
-      questionId: "5-2",
-      qa: [
-        {
-          questionNumber: "19",
-          answer: 0,
-        },
-        {
-          questionNumber: "20",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "64",
-      answerString: "",
-      isCorrect: false,
-      isSeparate: true,
-      points: 4,
-      explanation: [
-        "正解は [19]が6、[20]が4 です。",
-        "⑥「伝統的なビジネスモデルの更新」、④「地元の食材の利点を再発見する」",
-        "① 私たちの町の英雄の記念像を建設すること",
-        "② 地元ボランティアとの連携",
-        "③ 異文化交流イベントの企画",
-        "⑤ 村の教会の改修",
-      ],
-    },
-    {
-      questionId: "5-3",
-      qa: [
-        {
-          questionNumber: "21",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①「会議の登録手続き」、登録を会議の7日前に締め切るのは短すぎます。資料を準備して情報を送る時間が足りませんという内容から",
-        "② メインホールを会場として",
-        "③ 市長のスピーチタイトル",
-        "④ 営業時間",
-      ],
-    },
-    {
-      questionId: "5-4",
-      qa: [
-        {
-          questionNumber: "22",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③、",
-        "モデレーター用の小さな机が中央に必要です。その両側にテーブルを1つずつ配置し，これらのテーブルはわずかに内側を向けてください。チームごとに2人の討論者がいるため，長いテーブルを使用してください）という内容から",
-      ],
-    },
-    {
-      questionId: "5-5",
-      qa: [
-        {
-          questionNumber: "23",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は④、本文でまだ言及されていない内容は、",
-        "B「食事を提供できる地元のレストラン」、C「利用可能なボランティアの名前」",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "25_5")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

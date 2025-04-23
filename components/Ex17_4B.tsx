@@ -6,63 +6,65 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex17_4B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4B-1",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は④、翻訳参照",
-        "This is a great way to share your creations with a wide audience.とあるので、④が自然",
-      ],
-    },
-    {
-      questionId: "4B-2",
-      qa: [
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は②、翻訳参照",
-        "チームという単語があるので、Aと勘違いしやすいが、姉妹校との絆なのでB",
-      ],
-    },
-    {
-      questionId: "4B-3",
-      qa: [
-        {
-          questionNumber: "41",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は④、翻訳参照",
-        "締め切りの制約を満たしている、①でCategory Dがあってるようにも思えるが、ドラマティックなエンディングでないので違う、",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "17_4B")?.qanda || [];
+  // const question: QandA[] = [
+  //   {
+  //     questionId: "4B-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "39",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 5,
+  //     explanation: [
+  //       "正解は④、翻訳参照",
+  //       "This is a great way to share your creations with a wide audience.とあるので、④が自然",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "4B-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "40",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 5,
+  //     explanation: [
+  //       "正解は②、翻訳参照",
+  //       "チームという単語があるので、Aと勘違いしやすいが、姉妹校との絆なのでB",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "4B-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "41",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 5,
+  //     explanation: [
+  //       "正解は④、翻訳参照",
+  //       "締め切りの制約を満たしている、①でCategory Dがあってるようにも思えるが、ドラマティックなエンディングでないので違う、",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

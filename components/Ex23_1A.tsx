@@ -7,47 +7,11 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const Ex23_1A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1A-1",
-      qa: [
-        {
-          questionNumber: "1",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は①「下部を完成させて提出する」",
-        "下部の &quot;Fill in the form below and hand it in to your teacher today.&quot;（下の書式に記入して，今日，教師に提出しなさい）から，",
-      ],
-    },
-    {
-      questionId: "1A-2",
-      qa: [
-        {
-          questionNumber: "2",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は④「劇場で演者に会える」",
-        "Palace Theater の2つ目の項目 &quot;Actors available to talk in the lobby after the performance&quot;（役者と公演の後ロビーで話せます）と，",
-        "The Guitar Queen の2つ目の項目 &quot;Opportunity to greet the cast in their costumes before the show starts&quot;（ショーが始まる前に衣装を着たキャストとあいさつをする機会があります）から，",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "23_1A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

@@ -12,6 +12,8 @@ import {
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex24_2B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
@@ -86,93 +88,7 @@ const Ex24_2B = () => {
       },
     ],
   };
-  const question: QandA[] = [
-    {
-      questionId: "2B-1",
-      qa: [
-        {
-          questionNumber: "11",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "①「最も高いプランでは24時間の医療アシスタンスが利用できる」が正解。",
-        "（このプランは24時間のスマホのアプリと電話サービスを通して医療サポートを提供している）から，→24-hour を day and night と言い換えていることに注意。",
-      ],
-    },
-    {
-      questionId: "2B-2",
-      qa: [
-        {
-          questionNumber: "12",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "①「メールによるサポート」が正解。 一番安いプランについては，第5段落に書かれているが，メールでのサポートについては挙げられていない，",
-      ],
-    },
-    {
-      questionId: "2B-3",
-      qa: [
-        {
-          questionNumber: "13",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "①が正解。",
-        "（どのような支払方法にも対応しており，通常は月単位で支払う）から， Aの「月払いを認めている」が正しい。",
-        "また，第2段落第2文の （私は15分もかからずにオンラインで登録し，すぐにカバーされた）から，Dの「インターネットでの登録システムを提供している」も正しい。",
-      ],
-    },
-    {
-      questionId: "2B-4",
-      qa: [
-        {
-          questionNumber: "14",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "③「コスト削減のオプションは魅力的だった」が正解。（しかし，6か月分の保険料を前払いしたため，オプションで15％の割引を受けられたのはよかった）から，",
-      ],
-    },
-    {
-      questionId: "2B-5",
-      qa: [
-        {
-          questionNumber: "15",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "②「彼女は旅行の準備が大切だと思っている」が正解。",
-        "第1段落では旅の準備について述べており，最終文で （また，旅行保険を購入すべきだ）と述べている。",
-        "さらに，最終段落では友人がけがをしたけれど保険のおかげですべてカバーできたというエピソードを述べたうえで，最終文で （保険がいかに重要かに気づいた。困ったときにサポートしてくれるとわかっているのだから）と述べている",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "24_2B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

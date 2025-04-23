@@ -7,63 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseExamQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2C-1",
-      qa: [
-        {
-          questionNumber: "24",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解③",
-        "according to the experts,it will create more jobs for",
-        "accorcing to .. によると、create （仕事を）創出する",
-      ],
-    },
-    {
-      questionId: "2C-2",
-      qa: [
-        {
-          questionNumber: "25",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解①",
-        "although  he is quite upset,he doesn't object",
-        "although SV... 「・・・だけど」、upset:戸惑っている、 object to 反対する",
-      ],
-    },
-    {
-      questionId: "2C-3",
-      qa: [
-        {
-          questionNumber: "26",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解③",
-        "essential so that we can",
-        "essential:きわめて大切な、不可欠な、so that S can 〜:Sができるように",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "20_2C")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

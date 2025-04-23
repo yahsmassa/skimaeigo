@@ -7,76 +7,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex24_3B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-
-  const question: QandA[] = [
-    {
-      questionId: "3B-1",
-      qa: [
-        {
-          questionNumber: "18",
-          answer: 0,
-        },
-        {
-          questionNumber: "19",
-          answer: 0,
-        },
-        {
-          questionNumber: "20",
-          answer: 0,
-        },
-        {
-          questionNumber: "21",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1234",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[18] ①、[19] ②、[20] ③、[21] ④が正解。",
-        "（するとリーチ先生は，10年前の海の画像を見せてくれた。カメラで見たサンゴ礁もダイナミックだったが，その写真では，サンゴ礁はさらに生命力に溢れていた。たった10年で，こんなにも違って見えるものなんだ！リーチ先生は，人間の活動が海に影響を及ぼしており，私たちが今すぐ行動を起こさなければ，海は完全にダメになってしまうかもしれないと話した）という内容から，これについてのコメントに該当するのが，②「以前ははるかに多くの生物がいたことに本当に驚いた。私たちは美しい海を守らねばなりません！」である。",
-        "（私たちは体育館にテントを張り，プロジェクターを使って天井に仮設のプラネタリウムを作った）という内容へのコメントに該当するのが，③「体育館の中にキャンプ場を設定するのはちょっと変な感じだったけれど，とても面白かった！屋外より良かった。だって，虫に刺されなかったのだから」である。 ",
-        "（私たちは満天の星座，流れ星，天の川に魅了された。誰かが最も明るい光のひとつを指さして，リーチ先生にそれが地球に最も近い惑星である金星なのかと尋ねた。彼はうなずき，人間が人工的な光をたくさん作り出したため，私たちの都市の夜空にはほとんど何も見えないのだと説明した）という内容へのコメントに該当するのが，④「私たちは宇宙ショーの間，言葉を失った。そして，たとえそこにあっても私たちは物事に気づかないのだということに気がついた」",
-      ],
-    },
-    {
-      questionId: "3B-2",
-      qa: [
-        {
-          questionNumber: "22",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "③「季節ごとの天候」が正解。本文では南の島の季節ごとの天候については述べられていない",
-      ],
-    },
-    {
-      questionId: "3B-3",
-      qa: [
-        {
-          questionNumber: "23",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "②「わずかな数の星」が正解。",
-        "（放課後の帰り道，天気は回復し，雲ひとつない空になった。私は月のない空を見上げて，リーチ先生が話してくれたことが本当だと気づいた）と，第4段落最終文の「人間が人工的な光をたくさん作り出したため，私たちの都市の夜空にはほとんど何も見えないのだと説明した」という内容から",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "24_3B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   const questionData = {
@@ -175,7 +111,9 @@ const Ex24_3B = () => {
 
       {/* 記事本体 */}
       <div className="mb-4 px-2 sm:px-4">
-        <p className="text-base">{questionData.situation}</p>
+        <p className="text-base">{questionData.situation}
+        </p>
+            {Kaisetsu(showResults, "24-3B-0")}
       </div>
 
       <div className="bg-white rounded-lg shadow-lg mb-8 p-4 sm:p-6 mx-2 sm:mx-0">

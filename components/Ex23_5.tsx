@@ -5,117 +5,11 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const Ex23_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "5-1",
-      qa: [
-        {
-          questionNumber: "30",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は④「チームスポーツをするのを避けたかったから」",
-        "第3段落最終文 &quot;To be honest, ... to play individually.&quot;（正直に言って，私が卓球を選んだのはその方が個人でするのに簡単だろうと思ったからです）という内容から，",
-      ],
-    },
-    {
-      questionId: "5-2",
-      qa: [
-        {
-          questionNumber: "31",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③ 「彼が必要とする社交スキルを学ぶ手助けをした」",
-        "第6段落で兄のパトリックと対話した筆者は第7段落以降で友人とのコミュニケーションの取り方について考えを改めるようになった。",
-      ],
-    },
-    {
-      questionId: "5-3",
-      qa: [
-        {
-          questionNumber: "32",
-          answer: 0,
-        },
-        {
-          questionNumber: "33",
-          answer: 0,
-        },
-        {
-          questionNumber: "34",
-          answer: 0,
-        },
-        {
-          questionNumber: "35",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2453",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[32]の正解は②「より上手に卓球をする方法について教師と話し合った」②→④→⑤→③：第4段落3文目（One day, however ...）～最終文（This made ...）で教師と話し合う場面が書かれているので",
-        "[33]の正解は④「敵を研究し始めた」、第5段落1文目（I deliberately ... opponent's moves）で「敵の動きにより綿密に注意を払った」と書かれている",
-        "[34]の正解は⑤「兄に卓球について話した」、第6段落3文目（We switched ...）で「卓球について話すことに切り替えた」と書かれているので，",
-        "[35]の正解は③「彼を称えるパーティーを拒否した」、第7段落4文目（&quot;Hey, Ben! ...）でジョージから祝賀パーティーを開こうと誘われたことに対して5文目（Without thinking, ...）で「考えることなく『できない』と返答した」と書かれているので， ",
-      ],
-    },
-    {
-      questionId: "5-4",
-      qa: [
-        {
-          questionNumber: "36",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③「友人の観点を適切に理解しようとする（べきであった）」",
-        "第8段落6文目 &quot;If I'd said, ... have been better.&quot;（もし私が「素晴らしい考えだ。ありがとう！トレント先生と話をして練習を少し休めるかどうか確かめさせてよ」と言っていたとしたら，ひょっとしたら結果はもっとよくなっていたであろうに）という内容から， ",
-      ],
-    },
-    {
-      questionId: "5-5",
-      qa: [
-        {
-          questionNumber: "37",
-          answer: 0,
-        },
-        {
-          questionNumber: "38",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "15",
-      isOrderFree: true,
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①と⑤",
-        "①「私たちの周囲の人々からのアドバイスが私たちが変わる手助けになる」、第4段落では教師から，第6段落では兄からのアドバイスを受けて，筆者はそれぞれに応じて自分の行動を変えているので， ",
-        "⑤「私たちは一つのことから学んだことを別のことに応用できる」、第6段落最終文で兄のパトリックが「それは私たちがコミュニケーションを行う時に使うスキルと同じように聞こえる」と述べたことを受け，第8段落で筆者は卓球の技能がコミュニケーションにも応用できることに気が付き，第9段落1文目では自分のコミュニケーション能力に自信を持てるようになったと述べている。",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "23_5")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

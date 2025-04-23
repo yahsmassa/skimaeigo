@@ -7,60 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const TestQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3A-1",
-      qa: [
-        {
-          questionNumber: "27",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② 翻訳参照",
-        "ミスの話は、ルール変更でExcitingするようになった文脈とあってない",
-      ],
-    },
-    {
-      questionId: "3A-2",
-      qa: [
-        {
-          questionNumber: "28",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② 翻訳参照",
-        "正しい姿勢についての文脈のなかで、体の構造の話になっているところが不自然",
-      ],
-    },
-    {
-      questionId: "3A-3",
-      qa: [
-        {
-          questionNumber: "29",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② 翻訳参照",
-        "ハムについての保存のなかで、コショウに違和感",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "20_3A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

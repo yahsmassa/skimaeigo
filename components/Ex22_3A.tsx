@@ -7,39 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex22_3A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3A-1",
-      qa: [
-        {
-          questionNumber: "16",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は① 日本の伝統音楽を楽しんだ", "翻訳参照"],
-    },
-    {
-      questionId: "3A-2",
-      qa: [
-        {
-          questionNumber: "17",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は① 混乱している", "翻訳参照"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_3A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

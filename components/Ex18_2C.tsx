@@ -5,63 +5,13 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseTestQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2C-1",
-      qa: [
-        {
-          questionNumber: "24",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解②",
-        "be going to ... 〜する予定、be wrong 間違っている",
-      ],
-    },
-    {
-      questionId: "2C-2",
-      qa: [
-        {
-          questionNumber: "25",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解④",
-        "I wouldn't have taken the train without your suggestion",
-      ],
-    },
-    {
-      questionId: "2C-3",
-      qa: [
-        {
-          questionNumber: "26",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "8",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解⑧",
-        "That's why we had to cancel out our trip to Mt.Fuji. unfortunately",
-        "That's why 〜が原因で・・・ということになる。、unfortunately 残念ながら",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "18_2C")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

@@ -7,72 +7,11 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const EnglishTestQuestions = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2B-1",
-      qa: [
-        {
-          questionNumber: "18",
-          answer: 0,
-        },
-        {
-          questionNumber: "19",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "25",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: ["正解②と⑤", "wonder how much it will cost"],
-    },
-    {
-      questionId: "2B-2",
-      qa: [
-        {
-          questionNumber: "20",
-          answer: 0,
-        },
-        {
-          questionNumber: "21",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "62",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解⑥と②",
-        "for the rest of my stay、* the rest of A .. Aの残り",
-      ],
-    },
-    {
-      questionId: "2B-3",
-      qa: [
-        {
-          questionNumber: "22",
-          answer: 0,
-        },
-        {
-          questionNumber: "23",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "26",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解②と⑥",
-        "be difficult to make yourself heard、* make yourself heard 自分の話（考え）を聞かせる",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "19_2B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

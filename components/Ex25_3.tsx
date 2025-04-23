@@ -6,79 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const TheContest = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3-1",
-      qa: [
-        {
-          questionNumber: "8",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③ Tomo、",
-        "「トモ，心配しすぎだよ。きっと大丈夫だよ」と，ドラム担当のレンが微笑みながら私に言い，手を振って帰っていきました。「そうだといいけど」と，私は心の中で思いました というやりとりから判断",
-      ],
-    },
-    {
-      questionId: "3-2",
-      qa: [
-        {
-          questionNumber: "9",
-          answer: 0,
-        },
-        {
-          questionNumber: "10",
-          answer: 0,
-        },
-        {
-          questionNumber: "11",
-          answer: 0,
-        },
-        {
-          questionNumber: "12",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "5431",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "時系列で並べると，[9]⑤ [10]④ [11]③ [12]①",
-        "① バンドが態度を改めた。",
-        "② バンドがもっと頻繁に練習することを決めた。(書かれていない）",
-        "③ バンドリーダーが問題を特定した。",
-        "④ バンドリーダーがバンドについて心配していた。",
-        "⑤ バンドがコンテストに登録した。",
-      ],
-    },
-    {
-      questionId: "3-3",
-      qa: [
-        {
-          questionNumber: "13",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は④「満足した」",
-        "そして，「キャッツカレー」はコンテストで優勝しませんでしたが，私たちはこれが人生最高の演奏だったと感じました）から判断",
-        "①は「ひどい，恐ろしい」，②は「困惑した」，③は「独立した，自立心のある」の意味",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "25_3")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

@@ -5,42 +5,42 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseTestQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3A-1",
-      qa: [
-        {
-          questionNumber: "27",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 4,
-      explanation: [
-        "正解は② 明日の放課後、あなたのオフィスにお伺いしてもよろしいでしょうか？",
-      ],
-    },
-    {
-      questionId: "3A-2",
-      qa: [
-        {
-          questionNumber: "28",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 4,
-      explanation: ["正解は③ それは高すぎます。"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "17_3A")?.qanda || [];
+  //   {
+  //     questionId: "3A-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "27",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     points: 4,
+  //     explanation: [
+  //       "正解は② 明日の放課後、あなたのオフィスにお伺いしてもよろしいでしょうか？",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "3A-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "28",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 4,
+  //     explanation: ["正解は③ それは高すぎます。"],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

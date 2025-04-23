@@ -6,87 +6,11 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const Ex24_6A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-
-  const question: QandA[] = [
-    {
-      questionId: "6A-1",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "62",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[39] 正解は ⑥「時間の種類」第1段落で，哲学者のアンリ・ベルクソンによる時間の区分（時計時間と心理的時間）が述べられている",
-        "[40] 正解は ②「私たちの感情の影響」が正解。第4段落で，感情面での状態が時間意識に与える影響について述べられている",
-      ],
-    },
-    {
-      questionId: "6A-2",
-      qa: [
-        {
-          questionNumber: "41",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は ①「どの年齢でも大きなライフスタイルの変化がおそらく時間をゆっくりと進ませる」",
-        "② 年齢に関わらず、生活の大幅な変化は時間の流れを速く感じる可能性が高いでしょう。",
-        "③ 大人の場合、生活の小さな変化は時間の流れを遅く感じる可能性が高いでしょう。",
-        "④ 子供の場合、生活の小さな変化は時間の流れを速く感じる可能性が高いでしょう。",
-      ],
-    },
-    {
-      questionId: "6A-3",
-      qa: [
-        {
-          questionNumber: "42",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は ③「今日，何時間働いたかを振り返る」",
-        "① anticipating a message from a classmate<br/><br/>クラスメイトからのメッセージを待っている<br/><br/><br/>② memorizing your mother's cellphone number<br/><br/>お母さんの携帯電話番号を暗記する<br/><br/><br/>④ remembering that you have a meeting tomorrow<br/><br/>明日会議があることを覚えている",
-      ],
-    },
-    {
-      questionId: "6A-4",
-      qa: [
-        {
-          questionNumber: "43",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は ①「これまでどのくらいの時間ジョギングし続けてきたかを推測する」 you've been jogging という現在完了進行形が用いられており、「何かをしながら積極的に時間を記録しているとき」に相当",
-        "② making a schedule for the basketball team summer camp<br/><br/>バスケットボールチームのサマーキャンプのスケジュールを作成すること<br/><br/><br/>③running into your tennis coach at the railway station<br/><br/>駅でテニスコーチにばったり会うこと<br/><br/><br/>④thinking about your last family vacation to a hot spring<br/><br/>最後の家族旅行で温泉に行ったことを考えていること<br/><br/><br/>熟語・慣用句はありませんでした。<br/>",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "24_6A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

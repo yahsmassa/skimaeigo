@@ -7,68 +7,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex23_1B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1B-1",
-      qa: [
-        {
-          questionNumber: "3",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "3つの情報をまとめる問題。",
-        "正解は③「他の国々で働いた」",
-        "FOREST の2文目 &quot;Your instructors have taught English ... in several countries.&quot;（あなたのインストラクターは20年以上の間いくつかの国で英語を教えてきました）， ",
-        "MOUNTAIN の2文目 &quot;Instructors for this course have worked at theater schools in New York City.&quot;（このコースのインストラクターはニューヨーク市の演劇学校で働いてきました）， ",
-        "SKY の2文目 &quot;Your instructors have been to many countries to coach debate teams&quot;（あなたのインストラクターは多くの国々を訪れてディベートチームをコーチしてきました）から，",
-      ],
-    },
-    {
-      questionId: "1B-2",
-      qa: [
-        {
-          questionNumber: "4",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "3つの情報をまとめる問題。",
-        "正解は④「キャンプで学んだことを見せる」",
-        "FOREST の4文目 &quot;On the final day ... all the other campers listen.&quot;（キャンプの最終日に，あなたは他の全てのキャンパーが聴く中，スピーチコンテストに参加します）",
-        "MOUNTAIN の4文目 &quot;You&apos;ll perform your skit ... on AUgust 14.&quot;（8月14日に全てのキャンパーが楽しめるようにあなたは自分のスキットを演じます）",
-        "SKY の4文目 &quot;You&apos;ll do a short debate ... on the last day.&quot;（あなたは最終日に他の全てのキャンパーの前で短いディベートを行います）から",
-      ],
-    },
-    {
-      questionId: "1B-3",
-      qa: [
-        {
-          questionNumber: "5",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は③「あなたの英語のレベルがチェックされる」",
-        "Step 2 の &quot;We'll contact you ... your course preference&quot;（あなたの英語の能力を査定し，あなたのコースの選択について尋ねるために面接を設定するため連絡します）から，",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "23_1B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

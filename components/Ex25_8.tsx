@@ -6,112 +6,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
 import Image from "next/image";
+import { qanda } from "@/lib/qanda";
+
 const Ex25_8 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "8-1",
-      qa: [
-        {
-          questionNumber: "38",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "①「注意が重要である」が正解。",
-        "地球外の知的生命体に人類の存在を知らせることは危険であると述べている",
-        "②は「発明はかけがえのないものである」，③は「科学は優れている」，④は「信頼は宝である」",
-      ],
-    },
-    {
-      questionId: "8-2",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "①「経済に影響を与え，民間企業が利益を得る機会を提供する」が正解。",
-        "② 人気が高まり(gaining popularity)，業界で働く人々の給与が平均以上である」，③は「異なる政策を持つ国々間の調整を必要とするため，政治的に困難である」，④は「特に国際宇宙ステーションを成功裏に運営するために，世界的な協力が必要である」という意味で，共通に言及していない。",
-      ],
-    },
-    {
-      questionId: "8-3",
-      qa: [
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-        {
-          questionNumber: "41",
-          answer: 0,
-        },
-        {
-          questionNumber: "42",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "342",
-      answerString: "",
-      isTwoOne: true,
-      isCorrect: false,
-      points: 4,
-      explanation: [
-        "[４0]、[41]は３と４が正解（順不問）（宇宙探査に否定的なのはMelinとNaomi）",
-        "[42]は②「宇宙探査は人々を多くの危険にさらし，非常にリスクが高いです」が正解",
-      ],
-    },
-    {
-      questionId: "8-4",
-      qa: [
-        {
-          questionNumber: "43",
-          answer: 0,
-        },
-      ],
-      isOrderFree: true,
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "④「宇宙探査は地球と熱圏の両方の環境を汚染している」が正解 ",
-        "① 宇宙船から排出されるCO₂は膨大であり、宇宙空間を損傷させている。",
-        "② 有害なガスを少なく排出する新しいエンジンで宇宙船を更新するのは難しい。",
-        "③ 宇宙ごみは、航空機との衝突の可能性から、人間にとって危険をもたらす。 * poses risks to: ～にとって危険をもたらす",
-      ],
-    },
-    {
-      questionId: "8-5",
-      qa: [
-        {
-          questionNumber: "44",
-          answer: 0,
-        },
-      ],
-      isOrderFree: true,
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①「世界中の政府が宇宙探査に費やすお金は，飢餓を減らすだけでなく，途上国で初等教育を利用可能にすることもできる」で，グラフによると宇宙探査に費やす金額は $103 billionだが，飢餓を減らす（relieving hunger）には$40 billion，途上国で初等教育を利用可能にする（supplying basic education）には$54 billionが必要なので，$103 billion > $94 billion（$40 billion + $50 billion）となり，この選択肢だけがグラフの数値に合致していることになる。他の選択肢については以下の通り。",
-        "②「データによれば，途上国の人々に清潔な水を確保する費用は，世界中の政府が宇宙探査を行う費用よりも少ない」 →150 < 103なので誤り。",
-        "③「政府が宇宙探査に費やす費用の半分以下で，発展途上国における教育格差の問題に対処することが可能である」 →103×0.5＝51.5で，54に満たないので誤り。",
-        "④「現在宇宙探査に投資されているお金で，発展途上国に十分な食糧，基礎教育，清潔な水を提供することができる」 →150 + 54 + 40 > 103なので誤り。",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "25_8")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (
@@ -381,7 +281,7 @@ const Ex25_8 = () => {
                 {renderSelect("41", 5, answers, setAnswers)} (the order does not
                 matter):
               </p>
-              {Kaisetsu(showResults, "25-8-14")}
+
               <div className="ml-2 md:ml-4 space-y-2">
                 {[
                   "Apu's",

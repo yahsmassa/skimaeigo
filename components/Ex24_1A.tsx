@@ -12,7 +12,7 @@ import {
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 type Activity = {
   title: string;
   description: string;
@@ -51,42 +51,7 @@ export type QuestionData = {
 export default function Ex24_1A() {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1A-1",
-      qa: [
-        {
-          questionNumber: "1",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "④「TELSの生徒である証拠を示す」が正解。",
-        "[1] 本文第1段落第2文の （TELSの生徒は入場料金を支払う必要はない）から，",
-      ],
-    },
-    {
-      questionId: "1A-2",
-      qa: [
-        {
-          questionNumber: "2",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "①「様々な文化のジェスチャーについて学ぶ」が正解。",
-        "[2] イベント解説の2つ目の●の最後の文 （こうした文化の人々がどのようにして表情や手を用いて意思を伝えるかを学ぶ）から， ",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "24_1A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   const questionData: QuestionData = {

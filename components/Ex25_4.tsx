@@ -6,80 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex25_4 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4-1",
-      qa: [
-        {
-          questionNumber: "14",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①「しかしながら」",
-        "「持ち物を少なくすべき」という内容と，「物を買いすぎる」という内容が対立的であると判断する",
-      ],
-    },
-    {
-      questionId: "4-2",
-      qa: [
-        {
-          questionNumber: "15",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③「話している相手に注意を集中するようにする」",
-        "対面状況での人間関係を重視すべきという主張がなされていると捉える",
-      ],
-    },
-    {
-      questionId: "4-3",
-      qa: [
-        {
-          questionNumber: "16",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[16] 最終段落冒頭に &quot;In summary&quot;（要約すると）と書かれていることから，下線部(3)が本文のどの内容をまとめて言い換えているかを考える。第2段落以降の言い換えは最終段落の第3文以降に書かれているため，この第1文・第2文は第1段落の言い換えである可能性が高い。よって，第1段落第3文-第4文 ",
-        "Instead, you can slow down and notice things that are truly meaningful to you. By taking your time and being completely focused on these things, you can improve the quality of your work and life.",
-        "（代わりに，立ち止まって自分にとって本当に意味のあることに気づくことができます。時間をかけ，それらに完全に集中することで，仕事や生活の質を向上させることができます）という内容を言い換えたものにする。したがって，①「仕事と私生活の両方で満足感を得ることができる」が正解。",
-      ],
-    },
-    {
-      questionId: "4-4",
-      qa: [
-        {
-          questionNumber: "17",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①「仕事と私生活の両方で満足感を得ることができる」、下線部(3)が本文のどの内容をまとめて言い換えているかを考える。",
-        "「代わりに，立ち止まって自分にとって本当に意味のあることに気づくことができます。時間をかけ，それらに完全に集中することで，仕事や生活の質を向上させることができます」という内容を言い換えたものにする",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "25_4")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

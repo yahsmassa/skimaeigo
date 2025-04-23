@@ -6,79 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex18_4B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4B-1",
-      qa: [
-        {
-          questionNumber: "37",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は④ 彼は父親たちに、素早く、美味しく、そして健康的な食事を作ることを教えたいと思っていた。",
-        "翻訳参照、短時間で美味しい料理を作るのが難しいと言っている",
-      ],
-    },
-    {
-      questionId: "4B-2",
-      qa: [
-        {
-          questionNumber: "38",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は② ",
-        "フレンチコースの１割引は$225、タオル・エプロンセットは50$なので、$275、 翻訳参照、",
-      ],
-    },
-    {
-      questionId: "4B-3",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は③ 日本",
-        "Weekendsと午前中はダメな条件に合うのは日本だけ",
-      ],
-    },
-    {
-      questionId: "4B-4",
-      qa: [
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は④ Papa Bear Cooking Schoolの生徒たちは、自分が作った料理を食べることができます。",
-        "普通に考えてもそうだが、「An empty stomach!」と書いてあることで、確信できる",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "18_4B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

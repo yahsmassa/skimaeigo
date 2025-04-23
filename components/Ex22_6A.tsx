@@ -6,82 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex22_6A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "6A-1",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③ diurnal",
-        "第1パラグラフ最終文の 「日中に活発な生き物が diurnal で，夜に現れる生き物が nocturnal である」から",
-      ],
-    },
-    {
-      questionId: "6A-2",
-      qa: [
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③ 私たちが一日の中の何時に最もうまく機能するかを変えるのは難しいかもしれない",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "6A-3",
-      qa: [
-        {
-          questionNumber: "41",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は① ある社会は，一日が夜に始まると長い間信じてきたことを説明する",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "6A-4",
-      qa: [
-        {
-          questionNumber: "42",
-          answer: 0,
-        },
-        {
-          questionNumber: "43",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "63",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は[42] ⑥・[43] ③", "翻訳参照"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_6A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

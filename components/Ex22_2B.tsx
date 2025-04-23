@@ -7,96 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex22_2B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2B-1",
-      qa: [
-        {
-          questionNumber: "11",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は② Australia － the US － the UK",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "2B-2",
-      qa: [
-        {
-          questionNumber: "12",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は④ あなたの人生はもっと楽しくなる可能性があります。 ",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "2B-3",
-      qa: [
-        {
-          questionNumber: "13",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は② 私は毎日，ペットと3時間くらい過ごしている。 ",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "2B-4",
-      qa: [
-        {
-          questionNumber: "14",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は④ 屋内でペットを飼って幸せな人もいる。 ",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "2B-5",
-      qa: [
-        {
-          questionNumber: "15",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は② ペットを飼うことで私たちは何を得るのでしょうか？",
-        "翻訳参照",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_2B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

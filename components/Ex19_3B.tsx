@@ -7,60 +7,61 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const ExamQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3B-1",
-      qa: [
-        {
-          questionNumber: "30",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は① 彼女がかなり頻繁に使用できる（なにか）。",
-        "前の文脈で、日常的に使うものなら、みんなの感謝をたびたび感じてもらえると言っている",
-      ],
-    },
-    {
-      questionId: "3B-2",
-      qa: [
-        {
-          questionNumber: "31",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は③ 余暇",
-        "前の文脈で、スポーツやガーデニングなどの彼女の余暇の過ごし方が説明されている",
-      ],
-    },
-    {
-      questionId: "3B-3",
-      qa: [
-        {
-          questionNumber: "32",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は③ いくつかの屋外用家具",
-        "前の文脈で、座って食事したければ、家の中に入らなくてはならないと言っているので",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "19_3B")?.qanda || [];
+  // const question: QandA[] = [
+  //   {
+  //     questionId: "3B-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "30",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は① 彼女がかなり頻繁に使用できる（なにか）。",
+  //       "前の文脈で、日常的に使うものなら、みんなの感謝をたびたび感じてもらえると言っている",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "3B-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "31",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は③ 余暇",
+  //       "前の文脈で、スポーツやガーデニングなどの彼女の余暇の過ごし方が説明されている",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "3B-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "32",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は③ いくつかの屋外用家具",
+  //       "前の文脈で、座って食事したければ、家の中に入らなくてはならないと言っているので",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

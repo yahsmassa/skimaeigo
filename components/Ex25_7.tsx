@@ -7,112 +7,13 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const Ex25_7 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-
-  const question: QandA[] = [
-    {
-      questionId: "7-1",
-      qa: [
-        {
-          questionNumber: "32",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①：「A. 体温を変化させる」は本文に書かれていない",
-        "B. 全体的な健康を維持する",
-        "C. 動物の身体をリフレッシュさせる",
-        "D. 脳のニューロンをリセットする",
-      ],
-    },
-    {
-      questionId: "7-2",
-      qa: [
-        {
-          questionNumber: "33",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は④。長い睡眠と短い睡眠が描かれているから"],
-    },
-    {
-      questionId: "7-3",
-      qa: [
-        {
-          questionNumber: "34",
-          answer: 0,
-        },
-        {
-          questionNumber: "35",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "14",
-      isOrderFree: true,
-      answerString: "",
-      isCorrect: false,
-      points: 4,
-      explanation: [
-        "正解は①と④",
-        "① エネルギーを急速に消費する動物は，より頻繁に眠る傾向がある",
-        "④ 食事が胃を満たす動物は，通常より長く眠る",
-        "② 食べ物を探し続ける動物は，より長い睡眠が必要である",
-        "③ カロリーが少ない食事を摂る動物は，より簡単に眠れる",
-        "⑤ アクセスが難しい巣を持つ動物は，通常より短く眠る",
-      ],
-    },
-    {
-      questionId: "7-4",
-      qa: [
-        {
-          questionNumber: "36",
-          answer: 0,
-        },
-      ],
-      isOrderFree: true,
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①：「飛行中に部分的に眠り，部分的に目覚めている」が正解",
-        "② 脳の半分を眠らせることができ、その結果、心拍数が上昇する。lead to: ～につながる",
-        "③ 常に敵に警戒して目を光らせることができる * constantly: 絶えず、常に、watch out for: ～に注意する、警戒する",
-        "④ 常に敵に警戒して、両目を開けていられる * watch out for: 警戒する",
-        "⑤ グループ内部から外部のメンバーを守ることができる * from inside the group: グループ内部から",
-      ],
-    },
-    {
-      questionId: "7-5",
-      qa: [
-        {
-          questionNumber: "37",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "④「睡眠に類似した状態」が正解。",
-        "① 自然な睡眠方法、② 睡眠の理由、③ 睡眠に似た状態",
-      ],
-    },
-  ];
-
+  const question: QandA[] = qanda.find(q => q.id === "25_7")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
+
   return (
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">

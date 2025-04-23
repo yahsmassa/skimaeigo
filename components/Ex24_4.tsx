@@ -7,97 +7,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex24_4 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4-1",
-      qa: [
-        {
-          questionNumber: "24",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③「教室の環境を計画する際に従うべきモデル」、（SINとはStimulation（刺激），Individualization（個性化），Naturalness（自然さ）の頭文字をとったもので，教室をデザインする際に参考になるフレームワークである）から，",
-      ],
-    },
-    {
-      questionId: "4-2",
-      qa: [
-        {
-          questionNumber: "25",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は ④「掲示されるものを減らす」（さらに，壁にたくさんのものが掲示されていると，視覚的に気が散ってしまう可能性がある）から，",
-      ],
-    },
-    {
-      questionId: "4-3",
-      qa: [
-        {
-          questionNumber: "26",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 4,
-      explanation: [
-        "正解は ④「ソファを壁の近くに置く」、光と温度の話しかなされていないため，",
-      ],
-    },
-    {
-      questionId: "4-4",
-      qa: [
-        {
-          questionNumber: "27",
-          answer: 0,
-        },
-        {
-          questionNumber: "28",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "54",
-      answerString: "",
-      isSeparate: true,
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[27]は⑤「～で昼寝をする」が正解。グラフの解答数が最も多い Sleeping という項目からわかる",
-        "[28]は④が正解。（ソファはみんな気に入っていて，寝心地がいいので，よく寝るときに使っています！）に述べられている",
-      ],
-    },
-    {
-      questionId: "4-5",
-      qa: [
-        {
-          questionNumber: "29",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③。（また，英語のクラブなのに，日本語を話すメンバーが多い）から，",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "24_4")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   const articleData = {
@@ -615,10 +530,10 @@ const Ex24_4 = () => {
         {handoutData.sections.map((section, index) => (
           <div key={index} className="mb-6">
             <h4 className="font-bold mb-4">■ {section.title}</h4>
+            { index === 2 && Kaisetsu(showResults, "24-4-10")}
 
             {section.items && (
               <div className="space-y-2 pl-4">
-                {Kaisetsu(showResults, "24-4-10")}
                 {section.items.map((item, itemIndex) => (
                   <div key={itemIndex} className="whitespace-normal">
                     - {item.text}

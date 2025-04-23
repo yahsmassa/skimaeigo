@@ -5,109 +5,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex25_6 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "6-1",
-      qa: [
-        {
-          questionNumber: "24",
-          answer: 0,
-        },
-        {
-          questionNumber: "25",
-          answer: 0,
-        },
-        {
-          questionNumber: "26",
-          answer: 0,
-        },
-        {
-          questionNumber: "27",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "5421",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③",
-        "① 彼は再びヒーローになる。",
-        "② 彼はパフォーマーである。",
-        "③ 彼はプロの作家である。→本文に書かれていない。",
-        "④ 彼はスーパー・パークレンジャーである。",
-        "⑤ 彼は普通の少年である。",
-      ],
-    },
-    {
-      questionId: "6-2",
-      qa: [
-        {
-          questionNumber: "28",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "④が正解。",
-        "A: 非常に高い高度で飛ぶ （書いてない）",
-        "B: 音を完全に模倣する",
-        "C: 動物や人々の心を読む",
-        "D: 遠くまで見る（書いてない）",
-        "E: テレパシーで人々と話す",
-        "F: 瞬時に異なる場所に移動する",
-      ],
-    },
-    {
-      questionId: "6-3",
-      qa: [
-        {
-          questionNumber: "29",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "③「あなたを私たちと一緒にいさせる」が正解。",
-        "① あなたの力を制御しなさい",
-        "② あなたをスーパーヒーローとして雇う",
-        "④ 犯罪を犯さないようにしなさい。* make sure: 必ず～する、確かめる",
-      ],
-    },
-    {
-      questionId: "6-4",
-      qa: [
-        {
-          questionNumber: "30",
-          answer: 0,
-        },
-        {
-          questionNumber: "31",
-          answer: 0,
-        },
-      ],
-      isOrderFree: true,
-      rightAnswerString: "34",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "③「メロディが超能力に気づいた経緯」と，④「メロディがチームヒーローに加わった理由」が正解で、本文で言及されていない",
-        "⑤の「ブルーバードとメロディの関係」については，直接言及してはいないものの，メロディがブルーバードの姉であることが推測できるため，誤りである。",
-        "①「ブルーバードの幼少時代の経験」、② 青い鳥のリアリティショーに関する見解は、本文で言及されている。",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "25_6")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

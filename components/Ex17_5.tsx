@@ -1,88 +1,88 @@
 "use client";
-import Image from "next/image";
-import { Paperclip } from "lucide-react";
 import React, { useState } from "react";
 import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex17_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "5-1",
-      qa: [
-        {
-          questionNumber: "42",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: ["正解は①、翻訳参照", ""],
-    },
-    {
-      questionId: "5-2",
-      qa: [
-        {
-          questionNumber: "43",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: ["正解は②、翻訳参照", ""],
-    },
-    {
-      questionId: "5-3",
-      qa: [
-        {
-          questionNumber: "44",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: ["正解は④、翻訳参照", ""],
-    },
-    {
-      questionId: "5-4",
-      qa: [
-        {
-          questionNumber: "45",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      isOrderFree: true,
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: ["正解は①", ""],
-    },
-    {
-      questionId: "5-5",
-      qa: [
-        {
-          questionNumber: "46",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: ["正解は②", ""],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "17_5")?.qanda || [];
+  //   {
+  //     questionId: "5-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "42",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 6,
+  //     explanation: ["正解は①、翻訳参照", ""],
+  //   },
+  //   {
+  //     questionId: "5-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "43",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 6,
+  //     explanation: ["正解は②、翻訳参照", ""],
+  //   },
+  //   {
+  //     questionId: "5-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "44",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 6,
+  //     explanation: ["正解は④、翻訳参照", ""],
+  //   },
+  //   {
+  //     questionId: "5-4",
+  //     qa: [
+  //       {
+  //         questionNumber: "45",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     isOrderFree: true,
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 6,
+  //     explanation: ["正解は①", ""],
+  //   },
+  //   {
+  //     questionId: "5-5",
+  //     qa: [
+  //       {
+  //         questionNumber: "46",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 6,
+  //     explanation: ["正解は②", ""],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

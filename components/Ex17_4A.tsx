@@ -6,77 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex17_4A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4A-1",
-      qa: [
-        {
-          questionNumber: "35",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: ["正解は③、翻訳参照"],
-    },
-    {
-      questionId: "4A-2",
-      qa: [
-        {
-          questionNumber: "36",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は①、３段めの翻訳参照",
-        "solid surface、multi-court、glassと続き natural playgroundが同等だが、playgorundの平均が２分を超えていたと説明しているので、グラフをみると、Multi-courtがB、GlassがA、playgroundがDとわかる",
-      ],
-    },
-    {
-      questionId: "4A-3",
-      qa: [
-        {
-          questionNumber: "37",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は④、翻訳参照",
-        "１段落目の内容、や参照論文の題名からわかる",
-      ],
-    },
-    {
-      questionId: "4A-4",
-      qa: [
-        {
-          questionNumber: "38",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 5,
-      explanation: [
-        "正解は②、ゲームの種類と活動時間の長さとの関連性 翻訳参照",
-        "最終段落でgameに関して記述しており、②が自然",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "17_4A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

@@ -7,47 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex23_3A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3A-1",
-      qa: [
-        {
-          questionNumber: "16",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は②",
-        "第1段落3文目（The first thing ... balance the backpack.）～6文目（Most good backpacks ... small easy-to reach items.）の内容，",
-        "特に，5文目の &quot;That means putting ... at the top.&quot;（それが意味しているのは，寝袋を底に，食べ物，調理器具，テントを真ん中に，そして服を上部に置くということです）から，",
-      ],
-    },
-    {
-      questionId: "3A-2",
-      qa: [
-        {
-          questionNumber: "17",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③「寝袋の隙間を埋める」",
-        "第2段落4文目 Then, my friend ... the empty space.（そうしたら，私の友達が，外側の服を外してそれを寝袋の中に詰め込み，空いている空間を埋めるように言いました）という内容から",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "23_3A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

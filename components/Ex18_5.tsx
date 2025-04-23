@@ -7,88 +7,89 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex18_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "5-1",
-      qa: [
-        {
-          questionNumber: "41",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は③ 彼らの故郷の惑星以外で生命を探すこと 翻訳参照",
-        "assist intelligent creatures 知的な生物を助ける、* invade: 侵略する、* expand their colonies: 植民地を拡大する",
-      ],
-    },
-    {
-      questionId: "5-2",
-      qa: [
-        {
-          questionNumber: "42",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 6,
-      explanation: ["正解は② 高度な技術を持つ", "DAY4 翻訳参照、"],
-    },
-    {
-      questionId: "5-3",
-      qa: [
-        {
-          questionNumber: "43",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は② 懸念、ためらい",
-        "* have reservations about: ～についてためらいがある、DAY9 翻訳参照、",
-      ],
-    },
-    {
-      questionId: "5-4",
-      qa: [
-        {
-          questionNumber: "44",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      isOrderFree: true,
-      answerString: "",
-      points: 6,
-      explanation: ["正解は① タコのような形をした生き物", "DAY19 翻訳参照、"],
-    },
-    {
-      questionId: "5-5",
-      qa: [
-        {
-          questionNumber: "45",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は③ ある種の液体の中で暮らす",
-        "incorrectly accumed ..で謝った仮定をしていた、「We, creatures living in liquid」とあるので探索者たち自身が液体の中で生活しているという前提だったことがわかる、DAY40 翻訳参照、",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "18_5")?.qanda || [];
+  //   {
+  //     questionId: "5-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "41",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は③ 彼らの故郷の惑星以外で生命を探すこと 翻訳参照",
+  //       "assist intelligent creatures 知的な生物を助ける、* invade: 侵略する、* expand their colonies: 植民地を拡大する",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "5-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "42",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: ["正解は② 高度な技術を持つ", "DAY4 翻訳参照、"],
+  //   },
+  //   {
+  //     questionId: "5-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "43",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は② 懸念、ためらい",
+  //       "* have reservations about: ～についてためらいがある、DAY9 翻訳参照、",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "5-4",
+  //     qa: [
+  //       {
+  //         questionNumber: "44",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     isOrderFree: true,
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: ["正解は① タコのような形をした生き物", "DAY19 翻訳参照、"],
+  //   },
+  //   {
+  //     questionId: "5-5",
+  //     qa: [
+  //       {
+  //         questionNumber: "45",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 6,
+  //     explanation: [
+  //       "正解は③ ある種の液体の中で暮らす",
+  //       "incorrectly accumed ..で謝った仮定をしていた、「We, creatures living in liquid」とあるので探索者たち自身が液体の中で生活しているという前提だったことがわかる、DAY40 翻訳参照、",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

@@ -7,63 +7,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex22_1B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1B-1",
-      qa: [
-        {
-          questionNumber: "3",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は②：コンテストの応募期間",
-        "How to Enter の2つ目の項目にある日付を選ぶ",
-      ],
-    },
-    {
-      questionId: "1B-2",
-      qa: [
-        {
-          questionNumber: "4",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は②：（応募料を支払う）",
-        "How to Enter の4つ目の項目にある （応募料金は1通5ドル）という表現から",
-      ],
-    },
-    {
-      questionId: "1B-3",
-      qa: [
-        {
-          questionNumber: "5",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は①：動物園に1日無料で入場できる",
-        "Prizes の1文目で（最終選考に残った5名全員に，7月末まで有効な動物園の1日フリーパスが贈られます）とある",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_1B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

@@ -5,146 +5,145 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
-import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseExamQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2A-1",
-      qa: [
-        {
-          questionNumber: "8",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解③"],
-    },
-    {
-      questionId: "2A-2",
-      qa: [
-        {
-          questionNumber: "9",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解②"],
-    },
-    {
-      questionId: "2A-3",
-      qa: [
-        {
-          questionNumber: "10",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 2,
-      explanation: ["正解①"],
-    },
-    {
-      questionId: "2A-4",
-      qa: [
-        {
-          questionNumber: "11",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 2,
-      explanation: ["正解④"],
-    },
-    {
-      questionId: "2A-5",
-      qa: [
-        {
-          questionNumber: "12",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 2,
-      explanation: ["正解①"],
-    },
-    {
-      questionId: "2A-6",
-      qa: [
-        {
-          questionNumber: "13",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 2,
-      explanation: ["正解③"],
-    },
-    {
-      questionId: "2A-7",
-      qa: [
-        {
-          questionNumber: "14",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 2,
-      explanation: ["正解①"],
-    },
-    {
-      questionId: "2A-8",
-      qa: [
-        {
-          questionNumber: "15",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 2,
-      explanation: ["正解③"],
-    },
-    {
-      questionId: "2A-9",
-      qa: [
-        {
-          questionNumber: "16",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 2,
-      explanation: ["正解③"],
-    },
-    {
-      questionId: "2A-10",
-      qa: [
-        {
-          questionNumber: "17",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 2,
-      explanation: ["正解③"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "18_2A")?.qanda || [];
+  //   {
+  //     questionId: "2A-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "8",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 2,
+  //     explanation: ["正解③"],
+  //   },
+  //   {
+  //     questionId: "2A-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "9",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 2,
+  //     explanation: ["正解②"],
+  //   },
+  //   {
+  //     questionId: "2A-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "10",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解①"],
+  //   },
+  //   {
+  //     questionId: "2A-4",
+  //     qa: [
+  //       {
+  //         questionNumber: "11",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解④"],
+  //   },
+  //   {
+  //     questionId: "2A-5",
+  //     qa: [
+  //       {
+  //         questionNumber: "12",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解①"],
+  //   },
+  //   {
+  //     questionId: "2A-6",
+  //     qa: [
+  //       {
+  //         questionNumber: "13",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解③"],
+  //   },
+  //   {
+  //     questionId: "2A-7",
+  //     qa: [
+  //       {
+  //         questionNumber: "14",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解①"],
+  //   },
+  //   {
+  //     questionId: "2A-8",
+  //     qa: [
+  //       {
+  //         questionNumber: "15",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解③"],
+  //   },
+  //   {
+  //     questionId: "2A-9",
+  //     qa: [
+  //       {
+  //         questionNumber: "16",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解③"],
+  //   },
+  //   {
+  //     questionId: "2A-10",
+  //     qa: [
+  //       {
+  //         questionNumber: "17",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 2,
+  //     explanation: ["正解③"],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

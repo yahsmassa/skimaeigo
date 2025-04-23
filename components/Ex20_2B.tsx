@@ -7,79 +7,11 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const EnglishTest = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2B-1",
-      qa: [
-        {
-          questionNumber: "18",
-          answer: 0,
-        },
-        {
-          questionNumber: "19",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "42",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解④と②",
-        "would not have been completed by the time ",
-        "by the time ・・するまでに",
-      ],
-    },
-    {
-      questionId: "2B-2",
-      qa: [
-        {
-          questionNumber: "20",
-          answer: 0,
-        },
-        {
-          questionNumber: "21",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "43",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解④と③",
-        "youngest of whom is studying music in Longon ",
-        "関係代名詞 A of whom 「その人のうちのA」 Aにはmany, mostなどの代名詞や、形容詞の最上級がくる",
-      ],
-    },
-    {
-      questionId: "2B-3",
-      qa: [
-        {
-          questionNumber: "22",
-          answer: 0,
-        },
-        {
-          questionNumber: "23",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "52",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解⑤と②",
-        "as planned of put it off",
-        "as planned:計画どおりに",
-        "put it off:延期する",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "20_2B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

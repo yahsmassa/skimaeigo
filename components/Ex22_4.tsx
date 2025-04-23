@@ -6,90 +6,11 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const Ex22_4 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4-1",
-      qa: [
-        {
-          questionNumber: "24",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は③ それらは学生にとって手頃な価格です", "翻訳参照"],
-    },
-    {
-      questionId: "4-2",
-      qa: [
-        {
-          questionNumber: "25",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は③ 交換保証付きの新品", "翻訳参照"],
-    },
-    {
-      questionId: "4-3",
-      qa: [
-        {
-          questionNumber: "26",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 4,
-      explanation: ["正解は② できるだけ早く家電製品を買いなさい", "翻訳参照"],
-    },
-    {
-      questionId: "4-4",
-      qa: [
-        {
-          questionNumber: "27",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は① Cindyの投稿にあるURLにアクセスしてください",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "4-5",
-      qa: [
-        {
-          questionNumber: "28",
-          answer: 0,
-        },
-        {
-          questionNumber: "29",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "24",
-      answerString: "",
-      isSeparate: true,
-      isCorrect: false,
-      points: 4,
-      explanation: ["正解は[28] ②・[29] ④", "翻訳参照"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_4")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

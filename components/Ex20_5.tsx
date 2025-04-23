@@ -7,86 +7,87 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex20_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "5-1",
-      qa: [
-        {
-          questionNumber: "41",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "回答は①で彼女は説明できない衝動を感じた。* an urge: 衝動",
-        "* find out: みつける、* planned to.. :・・する予定だった",
-      ],
-    },
-    {
-      questionId: "5-2",
-      qa: [
-        {
-          questionNumber: "42",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 6,
-      explanation: ["回答は④ 彼女は老人に助けられた。"],
-    },
-    {
-      questionId: "5-3",
-      qa: [
-        {
-          questionNumber: "43",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は④ 彼らは公共の安全を守るために働いた。 犬も、老人も警察で働いていたので",
-      ],
-    },
-    {
-      questionId: "5-4",
-      qa: [
-        {
-          questionNumber: "44",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      isOrderFree: true,
-      answerString: "",
-      points: 6,
-      explanation: ["正解は② 印象を残した"],
-    },
-    {
-      questionId: "5-5",
-      qa: [
-        {
-          questionNumber: "45",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は② 彼女は断固としていた、そしてそれから慰められた。",
-        "* depressed: 落ち込んだ、* sadder: より悲しい、* miserable: 惨めな、不幸な、* became entertained: 楽しんだ、楽しませてもらった",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "20_5")?.qanda || [];
+  //   {
+  //     questionId: "5-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "41",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "回答は①で彼女は説明できない衝動を感じた。* an urge: 衝動",
+  //       "* find out: みつける、* planned to.. :・・する予定だった",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "5-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "42",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: ["回答は④ 彼女は老人に助けられた。"],
+  //   },
+  //   {
+  //     questionId: "5-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "43",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は④ 彼らは公共の安全を守るために働いた。 犬も、老人も警察で働いていたので",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "5-4",
+  //     qa: [
+  //       {
+  //         questionNumber: "44",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     isOrderFree: true,
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: ["正解は② 印象を残した"],
+  //   },
+  //   {
+  //     questionId: "5-5",
+  //     qa: [
+  //       {
+  //         questionNumber: "45",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は② 彼女は断固としていた、そしてそれから慰められた。",
+  //       "* depressed: 落ち込んだ、* sadder: より悲しい、* miserable: 惨めな、不幸な、* became entertained: 楽しんだ、楽しませてもらった",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

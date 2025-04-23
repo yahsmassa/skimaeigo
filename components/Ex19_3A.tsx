@@ -7,60 +7,11 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const ExamQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3A-1",
-      qa: [
-        {
-          questionNumber: "27",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は① 矢は非常に成功したと見なされたため、大西洋に矢を浮かべることを提案する者さえいた。",
-        "「パイロットにとっていかに役立っていたか」という文脈から外れている",
-      ],
-    },
-    {
-      questionId: "3A-2",
-      qa: [
-        {
-          questionNumber: "28",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② 研究者たちは、鳥のグループ間の違いを調べるため、いくつかの実験の準備をしました。",
-        "「都会と田舎の鳥の比較」という文脈から外れている",
-      ],
-    },
-    {
-      questionId: "3A-3",
-      qa: [
-        {
-          questionNumber: "29",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は④ チューダー朝時代の宴の催し方は、様々な映画で豊かに描かれている。",
-        "「チューダー朝時代の宴のマナー」という文脈から外れて、映画の話になっている",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "19_3A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

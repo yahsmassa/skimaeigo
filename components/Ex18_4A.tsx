@@ -6,76 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex18_4A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4A-1",
-      qa: [
-        {
-          questionNumber: "33",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② 消費者は、商品の色によって異なる好みを持っている",
-        "翻訳参照、①は世代による好みのカラー、③ マーケターが選ぶカラー、④はカラーのことを言ってない",
-      ],
-    },
-    {
-      questionId: "4A-2",
-      qa: [
-        {
-          questionNumber: "34",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は③  (A) Footwear (B) Bags (C) Cellphones (D) Music pl",
-        "翻訳参照、バッグが５０％をわずかに超えるから、Bがバッグ、36.4％が携帯なので、Cが携帯とわかる",
-      ],
-    },
-    {
-      questionId: "4A-3",
-      qa: [
-        {
-          questionNumber: "35",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② ドイツの消費者は、一つの色の中に複数のイメージが含まれていると認識している。",
-        "赤、緑、白それぞれで、いろいろな意味を説明している。翻訳参照 ",
-      ],
-    },
-    {
-      questionId: "4A-4",
-      qa: [
-        {
-          questionNumber: "36",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は④ 他の国の消費者にとっての色の重要性",
-        "翻訳参照、最後にグローバルで色を考慮する必然性について言っている",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "18_4A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

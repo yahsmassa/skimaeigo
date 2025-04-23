@@ -6,53 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex16_4B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4B-1",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: ["正解は② デッサン教室", "翻訳参照"],
-    },
-    {
-      questionId: "4B-2",
-      qa: [
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 5,
-      explanation: ["正解は③ ショートツアー、20ドル", "翻訳参照"],
-    },
-    {
-      questionId: "4B-3",
-      qa: [
-        {
-          questionNumber: "41",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は① 事前予約は「アートトーク」には必要ありません。",
-        "翻訳参照",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "16_4B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

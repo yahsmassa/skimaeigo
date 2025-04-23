@@ -14,6 +14,7 @@ import { qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 export interface HeaderText {
   title: string;
   description: string;
@@ -173,46 +174,8 @@ const Ex24_3A: React.FC = () => {
       answer: 1,
     },
   ];
-  const question: QandA[] = [
-    {
-      questionId: "3A-1",
-      qa: [
-        {
-          questionNumber: "16",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "②が正解、",
-        "（しかし，最後の目標である有名な侍の像に向かう途中で私たちは道に迷った。時間切れになりつつあり，2時間以上歩いたので私の足は痛くなった。ペットの猿を連れた男性を呼び止めて助けを求めたが，私たちの日本語も彼の英語も十分上手ではなかった。彼が身振り手振りを交えて道を説明してくれた後，私たちは，そこにたどり着くには時間が足りず，あきらめるしかないと悟った。私たちは彼と写真を撮って別れた。私たちがサクラ市役所に到着した時，勝利したチームは19のチェックポイントを回ったと聞いて私たちは驚いた）という内容と， ",
-        "本文最終文の 「それが私に思い出させてくれるのは，その男性の暖かさと優しさだ。」という内容から，その写真には猿を連れた男性が写っており，かつ，市役所に着いたのは男性と別れた後であることからわかる。",
-      ],
-    },
-    {
-      questionId: "3A-2",
-      qa: [
-        {
-          questionNumber: "17",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は②「あなたはベストを尽くしたよ。日本に戻ってもう一度挑戦して！」。",
-        "（あなたの英語のALTの妹であるスーザンは先月あなたのクラスを訪れた。今はイギリスに戻ったが，彼女はブログに自分が参加したイベントについて書いた）とあることが根拠となる。このように，設問の前書きの部分にもヒントが書かれていることがあるので，注意。",
-        "自分のチームは勝利していないことがわかるため，①の「金メダルをつけている写真を見たい」は誤り。",
-        "19チーム回ったのは自分たちではなく別のチームのことだとわかるので、③「3時間で19のチェックポイントに着いたの？」も誤り。",
-        "④を選んだ受験生もいたかもしれないが，（携帯電話は無し）とあるので，④の「あなたの写真は素晴らしい！電話をアップグレードしたの？」も誤り。 ",
-      ],
-    },
-  ];
+
+  const question: QandA[] = qanda.find(q => q.id === "24_3A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

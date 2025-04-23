@@ -7,40 +7,41 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex21_1A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1A-1",
-      qa: [
-        {
-          questionNumber: "1",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解①「USBメモリーを持ってきてほしい」"],
-    },
-    {
-      questionId: "1A-2",
-      qa: [
-        {
-          questionNumber: "2",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解②「それを聞いて嬉しい」"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "21_1A")?.qanda || [];
+  //   {
+  //     questionId: "1A-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "1",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 2,
+  //     explanation: ["正解①「USBメモリーを持ってきてほしい」"],
+  //   },
+  //   {
+  //     questionId: "1A-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "2",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 2,
+  //     explanation: ["正解②「それを聞いて嬉しい」"],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

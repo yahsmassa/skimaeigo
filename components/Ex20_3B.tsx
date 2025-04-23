@@ -7,57 +7,58 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const JapaneseTestQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3B-1",
-      qa: [
-        {
-          questionNumber: "30",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 6,
-      explanation: ["正解は③", "odd jobsとrandom jobsが同じ意味と判断する"],
-    },
-    {
-      questionId: "3B-2",
-      qa: [
-        {
-          questionNumber: "31",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は③ 地域内で働くことにはほとんどリスクがない。",
-        "他の選択肢の内容は文章にない",
-      ],
-    },
-    {
-      questionId: "3B-3",
-      qa: [
-        {
-          questionNumber: "32",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は④ 私たちの地域に有効な計画を立てる",
-        "他の選択肢の内容は文章にない",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "20_3B")?.qanda || [];
+  // const question: QandA[] = [
+  //   {
+  //     questionId: "3B-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "30",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: ["正解は③", "odd jobsとrandom jobsが同じ意味と判断する"],
+  //   },
+  //   {
+  //     questionId: "3B-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "31",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は③ 地域内で働くことにはほとんどリスクがない。",
+  //       "他の選択肢の内容は文章にない",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "3B-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "32",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     points: 6,
+  //     explanation: [
+  //       "正解は④ 私たちの地域に有効な計画を立てる",
+  //       "他の選択肢の内容は文章にない",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

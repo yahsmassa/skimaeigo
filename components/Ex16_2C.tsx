@@ -5,65 +5,13 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseTestThirdVersion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2C-1",
-      qa: [
-        {
-          questionNumber: "24",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 4,
-      explanation: [
-        "正解は② I don't think our teachers will allow us to light a fire",
-        "* don't think SV ..「〜でないと思う」、* allow A .. to不定詞 「Aが〜するのを許す」",
-      ],
-    },
-    {
-      questionId: "2C-2",
-      qa: [
-        {
-          questionNumber: "25",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 4,
-      explanation: [
-        "正解は② No one is more talented than you",
-        "否定＋比較級で最上級の意味になる例",
-      ],
-    },
-    {
-      questionId: "2C-3",
-      qa: [
-        {
-          questionNumber: "26",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解は④ should get someone else to teach him",
-        "* get A to不定詞 「Aに〜してもらう」",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "16_2C")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

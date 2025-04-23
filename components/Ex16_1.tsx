@@ -11,107 +11,11 @@ import {
 } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
-import { Kaisetsu } from "@/components/Kaisetsu";
-
+import { qanda } from "@/lib/qanda";
 const JapaneseTestQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1-1",
-      qa: [
-        {
-          questionNumber: "1",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解②"],
-    },
-    {
-      questionId: "1-2",
-      qa: [
-        {
-          questionNumber: "2",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解④"],
-    },
-    {
-      questionId: "1-3",
-      qa: [
-        {
-          questionNumber: "3",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 2,
-      explanation: ["正解②"],
-    },
-    {
-      questionId: "1-4",
-      qa: [
-        {
-          questionNumber: "4",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 2,
-      explanation: ["正解③"],
-    },
-    {
-      questionId: "1-5",
-      qa: [
-        {
-          questionNumber: "5",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 2,
-      explanation: ["正解③"],
-    },
-    {
-      questionId: "1-6",
-      qa: [
-        {
-          questionNumber: "6",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 2,
-      explanation: ["正解④"],
-    },
-    {
-      questionId: "1-7",
-      qa: [
-        {
-          questionNumber: "7",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 2,
-      explanation: ["正解①"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "16_1")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question); // 日本語の番号文字
   const japaneseNumbers = ["①", "②", "③", "④"];
 

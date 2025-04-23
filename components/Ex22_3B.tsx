@@ -7,71 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex22_3B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3B-1",
-      qa: [
-        {
-          questionNumber: "18",
-          answer: 0,
-        },
-        {
-          questionNumber: "19",
-          answer: 0,
-        },
-        {
-          questionNumber: "20",
-          answer: 0,
-        },
-        {
-          questionNumber: "21",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1432",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は [18]① → [19]④ → [20]③ → [21]② 翻訳参照",
-        "① スコットランドで一番高い山の頂上に、全員が到達した",
-        "④ チームメンバーは著者の携帯電話を見つけるのを手伝った。",
-        "③ そのグループはミニバスでウェールズへ旅行した。 ",
-        "② 一部のメンバーはスノードンの登山を諦めた。",
-      ],
-    },
-    {
-      questionId: "3B-2",
-      qa: [
-        {
-          questionNumber: "22",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は② 暗闇の中を進むのは困難だった。 ", "翻訳参照"],
-    },
-    {
-      questionId: "3B-3",
-      qa: [
-        {
-          questionNumber: "23",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は② 三つの山の頂上に到達した。", "翻訳参照"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_3B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

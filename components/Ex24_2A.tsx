@@ -8,96 +8,12 @@ import { qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex24_2A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2A-1",
-      qa: [
-        {
-          questionNumber: "6",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "①「全くの素人は歓迎される」が正解。（入部の時，私は完全に素人でしたが，問題ありませんでした）とある，",
-        "本文第5文・第6文  （このクラブは本校のすべての生徒に対して開かれています。スキルのレベルに関係なく入部を歓迎します）と，メンバーからのコメントの最後に I was a complete beginner when I joined, and I had no problem! とある。",
-      ],
-    },
-    {
-      questionId: "2A-2",
-      qa: [
-        {
-          questionNumber: "7",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "解答は ②「コンピュータと対戦する」に該当する内容は書かれていない ",
-        "なお①の「部員以外と対戦する」は最後の●の、（地域や全国トーナメントに参加する）を指していると思われる",
-      ],
-    },
-    {
-      questionId: "2A-3",
-      qa: [
-        {
-          questionNumber: "8",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "①「様々なゲームを比べるのは興味深い」が正解、メンバーのコメントの二つ目にある （いくつかのゲームがどのように似ているかを学ぶのはイケてる）という内容から。",
-        "③ の「メンバーは競技会でコツを学ぶ」はopinion（意見）ではなくfact（事実）であり，かつ，学ぶのは競技会ではなくクラブのウェブページなので誤り。",
-      ],
-    },
-    {
-      questionId: "2A-4",
-      qa: [
-        {
-          questionNumber: "9",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "④「戦略ゲームは集中力を高める手助けになる」が正解。",
-        "（論理的に考えたり，気を散らすことなく深く考えたりするといった技能を学べる） と，メンバーのコメントの一つ目にある （授業中，私の心はより明晰で，穏やかで，集中している）から，",
-      ],
-    },
-    {
-      questionId: "2A-5",
-      qa: [
-        {
-          questionNumber: "10",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "②「戦略ゲームを行うスキルのレベルを上げる」が正解。",
-        "（部員にょるデモンストレーションから基本的な動きを学ぶ）（部のウェブページでコツを共有する）（コンピュータソフトを使ってゲームを分析する）という内容から判断",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "24_2A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   const questionData = {
@@ -247,13 +163,14 @@ const Ex24_2A = () => {
                       ))}
                     </ul>
                   </div>
-                  {index === 9 && Kaisetsu(showResults, "24-2A-2")}
+                  {index === 8 && Kaisetsu(showResults, "24-2A-2")}
                   {index === 16 && Kaisetsu(showResults, "24-2A-3")}
                 </div>
               ) : (
                 <p>
                   {paragraph}
                   {index === 0 && Kaisetsu(showResults, "24-2A-1")}
+                  {index === 2 && Kaisetsu(showResults, "24-2A-1B")}
                 </p>
               )}
             </div>

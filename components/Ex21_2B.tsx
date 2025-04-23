@@ -7,96 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex21_2B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2B-1",
-      qa: [
-        {
-          questionNumber: "11",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解①「放課後の時間を短くしてしまう」",
-        "解説・・・Kenの投稿した文面に&quot;~ made the schedule an hour and a half shorter?&quot;とあるので、そこから判断する。Kenは、暗くなると光熱費がかかり、それを学校側が節約するために放課後の活動時間を短くしようとしていると考えているのである。",
-      ],
-    },
-    {
-      questionId: "2B-2",
-      qa: [
-        {
-          questionNumber: "12",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解④「新しい方針を歓迎していない生徒がいる」",
-        "解説・・・Kenの投稿した文面の下から３行目に、&quot;A number of students told me that they want to stay at school until 6:00 as they have always done.&quot;「多くの生徒たちが、今まで通り６時まで学校に居たいと伝えてきた」とあるので、そこから判断できる。他の選択肢は、「もっと議論が必要だ」「校長の経験は学校を良くしている」「学校は生徒の活動を考えるべき」など、「意見」である。",
-      ],
-    },
-    {
-      questionId: "2B-3",
-      qa: [
-        {
-          questionNumber: "13",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解②Ken",
-        "解説・・・方針を変更する理由として校長は「犯罪抑止」を挙げており、「エネルギーの節約」という理由はあくまでもKenの憶測である。実際には、校長は&quot;The new policy has nothing to do with saving energy 「その新しい方針はエネルギーの節約とは無関係だ」と述べている。",
-      ],
-    },
-    {
-      questionId: "2B-4",
-      qa: [
-        {
-          questionNumber: "14",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解②「街の安全が低下している」",
-        "解説・・・校長の投稿した文面によると、&quot;our city has become less safe ~. I would like to protect our students&quot;「街が安全ではなくなってきている。生徒たちを守りたい」とある。つまり、校長は下校時間を早めることで生徒たちを犯罪から守ろうとして、方針を変更しようとしているのである。",
-      ],
-    },
-    {
-      questionId: "2B-5",
-      qa: [
-        {
-          questionNumber: "15",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解①「犯罪率および犯罪率と地元地域との関係」",
-        "解説・・・Kenが校長に反論するには、犯罪率の低下が本当かどうかを調べればよい。もし「街の安全性の低下」という校長の主張が間違っていれば、新しい方針は導入されないはずである。budget（予算）やstudy hour（勉強時間）については、校長は一言も述べていないので、それについてリサーチしたところで新しい方針とは無関係である。",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "21_2B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

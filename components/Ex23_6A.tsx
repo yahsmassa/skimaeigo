@@ -8,7 +8,7 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
 import Image from "next/image";
-
+import { qanda } from "@/lib/qanda";
 const Ex23_6A = () => {
   const HolePunch = () => (
     <div className="w-2 h-2 rounded-full border border-gray-300" />
@@ -16,82 +16,7 @@ const Ex23_6A = () => {
 
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-
-  const question: QandA[] = [
-    {
-      questionId: "6A-1",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[39] 正解は③「一人の人間にとって重要ではないものが他の誰かにとって価値があるかもしれない」",
-        "第1段落8文目 （一人の人間のごみが別の人の宝物になりうる）という内容から，",
-      ],
-    },
-    {
-      questionId: "6A-2",
-      qa: [
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は④「およそ30%の人々が大人になっても収集を続けている」、第2段落4文目（この分野の研究者は，およそ3分の1の大人がこの行動を維持するということに一般的に同意している）という内容から，",
-      ],
-    },
-    {
-      questionId: "6A-3",
-      qa: [
-        {
-          questionNumber: "41",
-          answer: 0,
-        },
-        {
-          questionNumber: "42",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "46",
-      answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は[41] ④「大切なイベントを思い出させるもの」、[42] ⑥「何らかの種類の利益を求める」",
-        "第3段落7文目 （友達や家族からのグリーティングカード，特別なイベントでもらったドライフラワー，浜辺で過ごした日の貝殻などを貯めている人もいる）",
-        "第4段落4文目後半 （一方で，特に投資としてものを集める人もいる）という内容から，5文目（While it is ... worth a lot.）ではその内容が具体的に説明されている。",
-      ],
-    },
-    {
-      questionId: "6A-4",
-      qa: [
-        {
-          questionNumber: "43",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①「収集はおそらく大きさや形が変わり続けるであろう」",
-        '第6段落3文目 "As technology can ... 30 years ago."（テクノロジーが物理的制約を取り除けるので，30年前には想像もできなかったであろう膨大な音楽や美術のデジタルライブラリーを今では個人が所有できる）という内容から',
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "23_6A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

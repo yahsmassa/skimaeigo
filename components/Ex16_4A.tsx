@@ -6,72 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex16_4A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4A-1",
-      qa: [
-        {
-          questionNumber: "35",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: ["正解は② ", "翻訳参照"],
-    },
-    {
-      questionId: "4A-2",
-      qa: [
-        {
-          questionNumber: "36",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は① ネーブルオレンジはバレンシアオレンジよりも種が少ない",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "4A-3",
-      qa: [
-        {
-          questionNumber: "37",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は③ アメリカ合衆国におけるオレンジの生産量と輸入量の関係を示す",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "4A-4",
-      qa: [
-        {
-          questionNumber: "38",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② その他の果物の輸入における季節変化を示す統計",
-        "翻訳参照",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "16_4A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

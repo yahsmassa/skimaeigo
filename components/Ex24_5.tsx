@@ -7,113 +7,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex24_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "5-1",
-      qa: [
-        {
-          questionNumber: "30",
-          answer: 0,
-        },
-        {
-          questionNumber: "31",
-          answer: 0,
-        },
-        {
-          questionNumber: "32",
-          answer: 0,
-        },
-        {
-          questionNumber: "33",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4512",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[30] ④ 、[31] ⑤、[32] ①、[33] ② が正解 ",
-        "[30] 第1場第2文で（マキは19歳のとき，父親が病気になったので家業に入った）と述べている。→④「マキが家業で働き始める」 ",
-        "[31] 第3場の後半で （マキの励ましがタクヤに刺激を与えた）とある。第3場では，第2段落で卒業してからちょうど1年後にタクヤが俳優になる夢に破れてカワナカ町に戻り，マキに電話をかけたと述べている。第3場の第2段落第3文 （マキが家業のレストランを経営せざるを得なくなって大学に通う計画をあきらめてしまっていたと知って彼は驚いた）とあることから，④の後に，⑤「タクヤが自分のビジネスを始める刺激を受ける」が続くことになる。 ",
-        "[32]・[33] 第4場の第4段落最終文 （それ以来，彼女は着実に出世し，今年，ボーテラの副社長に任命された）で，カスミが会社の副社長になったことが述べられている。さらに，第4場の最終段落で （「マキがいなかったら，私は今，副社長になってはいない」と彼女は思った。「私が悩んでいたときに彼女は助けてくれたのに，私はイシジマでの仕事に夢中で，彼女が予備校を辞めなければならなくなったときにサポートしてあげられなかった。」その記事をちらりと見返し。彼女は拓也に電話することにした」とあるので，①「カスミが会社の副社長になる」の後に，②「カスミがタクヤに連絡する」が続くことになる。",
-      ],
-    },
-    {
-      questionId: "5-2",
-      qa: [
-        {
-          questionNumber: "34",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "②「30代後半」が正解。高校を18歳で卒業し，その20年後が現代とわかるので",
-      ],
-    },
-    {
-      questionId: "5-3",
-      qa: [
-        {
-          questionNumber: "35",
-          answer: 0,
-        },
-        {
-          questionNumber: "36",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "12",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "[35]は①「その製品を人々に知られるようにした」が正解。（マキは，「私たちはタクヤの珈琲を自信をもってお出ししています」という看板を店内に掲げ，この宣伝はタクヤの珈琲がカワナカで評判になる手助けとなった）とある",
-        "[36]は②「成功するビジネスのアイディアを提案した」が正解。",
-      ],
-    },
-    {
-      questionId: "5-4",
-      qa: [
-        {
-          questionNumber: "37",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③「自分たちの友人にもっと価値を置かなかったことを悔やんでいる」、第4場のタクヤとカスミの以下のやり取りから，彼らが恩人であるマキに感謝の気持ちが伝えられていないことを悔やんでいることがうかがえる。",
-      ],
-    },
-    {
-      questionId: "5-5",
-      qa: [
-        {
-          questionNumber: "38",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は ②「彼女自身の才能を認識する」",
-        "&quot;No. The opposite. You understand people incredibly well. You can identify others&apos; strengths and show them how to make use of them. We&apos;re proof of this. You made us aware of our gifts,&quot; said Takuya. &quot;The irony is that you couldn&apos;t do the same for yourself,&quot; added Kasumi.",
-        "いや，その逆だよ。君は信じられないほど人のことをちゃんと理解している。他人の長所を見極め，それを活かす方法を教えることができる。ぼくたちがその証拠だよ。君はぼくたちに自分の才能を気づかせてくれた」とタクヤは言った。 「皮肉なことに，あなた自身には同じことができなかったのね」とカスミが付け加えた。",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "24_5")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   const questionsData = {

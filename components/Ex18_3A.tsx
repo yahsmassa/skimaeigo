@@ -5,62 +5,14 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
+
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseExamQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3A-1",
-      qa: [
-        {
-          questionNumber: "27",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② 彼は、自分が一人っ子だったから、両親が自分をとても恋しがっていることを知っていた。",
-        "他の選択肢は、新しい友達との関係を示している、翻訳を参照",
-      ],
-    },
-    {
-      questionId: "3A-2",
-      qa: [
-        {
-          questionNumber: "28",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は③ 例として、いくつかの国ではトマトは「黄金のリンゴ」や「恋のリンゴ」のような名前で呼ばれています。",
-        "他の選択肢では、一般的にトマトは野菜として扱われているという内容になっているので、不自然、翻訳を参照",
-      ],
-    },
-    {
-      questionId: "3A-3",
-      qa: [
-        {
-          questionNumber: "29",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② 昆虫は数百万年もの間存在し、恐竜やその後の人類の初期の段階から共に生きてきた。",
-        "他の選択肢は、「代用食としての昆虫について」語っている、翻訳を参照",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "18_3A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

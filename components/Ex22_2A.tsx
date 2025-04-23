@@ -7,84 +7,11 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 const Ex22_2A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2A-1",
-      qa: [
-        {
-          questionNumber: "6",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "5",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は⑤ D (自習室であなたのラップトップを使う）と E (コピーをするにはあなたのIDを使う )",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "2A-2",
-      qa: [
-        {
-          questionNumber: "7",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解は③ 2階分上がる", "翻訳参照"],
-    },
-    {
-      questionId: "2A-3",
-      qa: [
-        {
-          questionNumber: "8",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解は① コンピューターワークステーションは", "翻訳参照"],
-    },
-    {
-      questionId: "2A-4",
-      qa: [
-        {
-          questionNumber: "9",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解は③ 8月13日までこれ以上本を借りられない", "翻訳参照"],
-    },
-    {
-      questionId: "2A-5",
-      qa: [
-        {
-          questionNumber: "10",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: ["正解は① ヘッドフォンかイヤフォンが必要である", "翻訳参照"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_2A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

@@ -5,65 +5,13 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseTestQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3C-1",
-      qa: [
-        {
-          questionNumber: "32",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は④ 私たちは、文化的な誤解をもっと簡単に、スムーズに処理できる。",
-        "* cope with: 対処する、* more easily and smoothly: より簡単に、より円滑に、翻訳参照",
-      ],
-    },
-    {
-      questionId: "3C-2",
-      qa: [
-        {
-          questionNumber: "33",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は④ 共有された行動が、あなたをある文化集団の一員にする可能性があります。",
-        "翻訳参照",
-      ],
-    },
-    {
-      questionId: "3C-3",
-      qa: [
-        {
-          questionNumber: "34",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 6,
-      explanation: [
-        "正解は① 一つの大きな集団を構成する複数の集団が、文化に含まれている。",
-        "翻訳参照",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "16_3C")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

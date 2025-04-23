@@ -7,81 +7,82 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex21_6A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "6A-1",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解④「不明瞭な視界」",
-        "解説 第３パラグラフに、&quot;In less serious cases, for a short time, players may be unable to walk straight or see clearly, ~.&quot;「比較的軽症の場合、短い時間の間、選手は真っすぐに歩けなかったり明瞭に見えなくなったりするかもしれない」とあるので、そこから判断できる。",
-      ],
-    },
-    {
-      questionId: "6A-2",
-      qa: [
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解③「睡眠障害」",
-        "解説 第４パラグラフで脳震盪の長期的な影響が言及されている。それは、&quot;concussions can have serious effects that last a lifelong.&quot;「脳震盪は生涯にわたって続く深刻な影響を及ぼす可能性がある」という個所から読み取れる。そして、その直後に、&quot;People with a history concussion may have trouble concentrating or sleeping.&quot;「脳震盪になったことのある人は集中することや睡眠に困難が生じるかもしれない」とあるので、そこから判断できる。",
-      ],
-    },
-    {
-      questionId: "6A-3",
-      qa: [
-        {
-          questionNumber: "41",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解④「脳震盪の兆候を示す選手を特定する」",
-        "解説 concussion spottersの説明は、第６パラグラフにある。&quot;NHL officials with ~ watch for visible indications of concussion during each game.&quot;「～なNHLの職員が各試合中に脳震盪の目に見える兆候を見張る」と書かれているので、そこから判断できる。また、このパラグラフの中盤以降にも、&quot;If a spotter thinks that a player has suffered a concussion, ~.&quot;「選手が脳震盪を起こしているとspotterが判断した場合」とあるので、ここからも分かる。他の選択肢は、①「選手が試合に戻ることを許可する」、②「脳震盪を起こしている選手を検査する」、③「脳震盪を誘発した選手に罰金を科す」であり、いずれも記述はない。",
-      ],
-    },
-    {
-      questionId: "6A-4",
-      qa: [
-        {
-          questionNumber: "42",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解②「新しいルールとガイドラインを施行した」",
-        "解説 最終パラグラフに該当箇所を捜した人もいると思うが、実は第５パラグラフの冒頭に記述がある。&quot;The National Hockey League (NHL), ~, has been making stricter rules and guidelines to deal with concussions.&quot;「NHLは脳震盪に対処するためにより厳しいルールとガイドラインを導入してきている」とあるので、そこから判断できる。他の選択肢は、①「選手にもっと屈強になるよう望んでいる」、③「監督らに医療トレーニングを与えている」、④「フェイスガードの着用を選択性とした」であり、いずれも記述はない。",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "21_6A")?.qanda || [];
+  //   {
+  //     questionId: "6A-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "39",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 3,
+  //     explanation: [
+  //       "正解④「不明瞭な視界」",
+  //       "解説 第３パラグラフに、&quot;In less serious cases, for a short time, players may be unable to walk straight or see clearly, ~.&quot;「比較的軽症の場合、短い時間の間、選手は真っすぐに歩けなかったり明瞭に見えなくなったりするかもしれない」とあるので、そこから判断できる。",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "6A-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "40",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "3",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 3,
+  //     explanation: [
+  //       "正解③「睡眠障害」",
+  //       "解説 第４パラグラフで脳震盪の長期的な影響が言及されている。それは、&quot;concussions can have serious effects that last a lifelong.&quot;「脳震盪は生涯にわたって続く深刻な影響を及ぼす可能性がある」という個所から読み取れる。そして、その直後に、&quot;People with a history concussion may have trouble concentrating or sleeping.&quot;「脳震盪になったことのある人は集中することや睡眠に困難が生じるかもしれない」とあるので、そこから判断できる。",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "6A-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "41",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "4",
+  //     answerString: "",
+  //     isOrderFree: true,
+  //     isCorrect: false,
+  //     points: 3,
+  //     explanation: [
+  //       "正解④「脳震盪の兆候を示す選手を特定する」",
+  //       "解説 concussion spottersの説明は、第６パラグラフにある。&quot;NHL officials with ~ watch for visible indications of concussion during each game.&quot;「～なNHLの職員が各試合中に脳震盪の目に見える兆候を見張る」と書かれているので、そこから判断できる。また、このパラグラフの中盤以降にも、&quot;If a spotter thinks that a player has suffered a concussion, ~.&quot;「選手が脳震盪を起こしているとspotterが判断した場合」とあるので、ここからも分かる。他の選択肢は、①「選手が試合に戻ることを許可する」、②「脳震盪を起こしている選手を検査する」、③「脳震盪を誘発した選手に罰金を科す」であり、いずれも記述はない。",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "6A-4",
+  //     qa: [
+  //       {
+  //         questionNumber: "42",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 3,
+  //     explanation: [
+  //       "正解②「新しいルールとガイドラインを施行した」",
+  //       "解説 最終パラグラフに該当箇所を捜した人もいると思うが、実は第５パラグラフの冒頭に記述がある。&quot;The National Hockey League (NHL), ~, has been making stricter rules and guidelines to deal with concussions.&quot;「NHLは脳震盪に対処するためにより厳しいルールとガイドラインを導入してきている」とあるので、そこから判断できる。他の選択肢は、①「選手にもっと屈強になるよう望んでいる」、③「監督らに医療トレーニングを与えている」、④「フェイスガードの着用を選択性とした」であり、いずれも記述はない。",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

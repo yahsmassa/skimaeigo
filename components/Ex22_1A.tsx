@@ -7,44 +7,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex22_1A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "1A-1",
-      qa: [
-        {
-          questionNumber: "1",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は①：cakes と書かれているので、cupuacu と buriti の説明から共通する要素を探すことが求められている",
-      ],
-    },
-    {
-      questionId: "1A-2",
-      qa: [
-        {
-          questionNumber: "2",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は③ jabuticaba：「酸味のあるケーキを作りたい場合，使うべき最善の果物はどれか」、sour という単語が含まれているのは jabuticaba と pitanga だが，pitanga は only for jams and jellies となっている ",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_1A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (
@@ -176,7 +144,8 @@ const Ex22_1A = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1A-1"))}>
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
-            Both <i>cupuaçu</i> and <i>buriti</i> can be used to make{" "}
+            Both &nbsp;<i>cupuaçu</i>&nbsp;
+            and &nbsp;<i>buriti</i>&nbsp; can be used to make{" "}
             {renderSelect("1", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1A-1" />}
             <span className="mr-2"></span>

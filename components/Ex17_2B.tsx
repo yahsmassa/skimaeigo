@@ -5,79 +5,13 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseExam2 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2B-1",
-      qa: [
-        {
-          questionNumber: "18",
-          answer: 0,
-        },
-        {
-          questionNumber: "19",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "26",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解②と⑥",
-        "I find it difficult to keep it 〜しておくことが難しいと思う",
-      ],
-    },
-    {
-      questionId: "2B-2",
-      qa: [
-        {
-          questionNumber: "20",
-          answer: 0,
-        },
-        {
-          questionNumber: "21",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "51",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解⑤と①",
-        "it may cost you a few hours ",
-        "* cost A B .. A（人）にB（時間・労力）がかかる",
-      ],
-    },
-    {
-      questionId: "2B-3",
-      qa: [
-        {
-          questionNumber: "22",
-          answer: 0,
-        },
-        {
-          questionNumber: "23",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "62",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解⑥と②",
-        "how come you are leaving earlier than どうしていつもより早く帰るの？",
-        "how come S V... で「なぜ・・？」という意味",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "17_2B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

@@ -7,89 +7,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 export default function Ex25_2() {
-  const correctAnswerArray = [2, 4, 4, 4];
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2-1",
-      qa: [
-        {
-          questionNumber: "4",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は②「空飛ぶ車は緊急対応を改善するだろう」",
-        "① 飛行車は緊急事態への対応を改善するだろう。",
-        "③ 現代の交通問題は解決が難しい。",
-        "④ ゼロエミッション技術は飛行車両には適用できない。",
-      ],
-    },
-    {
-      questionId: "2-2",
-      qa: [
-        {
-          questionNumber: "5",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は④「適切な評価と規制を必要とする」、",
-        "最後に，安全性の観点から，空飛ぶ技術は空中での事故を防ぐために十分にテストされ，制御される必要があると述べられました）という内容から",
-        "① 小さな町で、大都市ではなく使われる rather than: ～ではなく",
-        "② 病院周辺の交通渋滞の数を増加させる",
-        "③ 環境問題の解決策を妨げる",
-      ],
-    },
-    {
-      questionId: "2-3",
-      qa: [
-        {
-          questionNumber: "6",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は④「空飛ぶタクシーは運営コストが高すぎる」",
-        "①「空飛ぶタクシーの拠点が地方に設立されるであろう」（書かれていない）",
-        "②「空飛ぶタクシー技術はすでにテストされている」（意見出なく事実）",
-        "③「空飛ぶタクシーはすでに広く普及している」は第3段落の内容に反する",
-      ],
-    },
-    {
-      questionId: "2-4",
-      qa: [
-        {
-          questionNumber: "7",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は④「空飛ぶタクシーサービスの都市での試験運用」",
-        "そのうちのいくつかの国では，大都市の中心部で空飛ぶタクシーサービスをテストしているところもあります）より",
-        "①飛行救急サービスのコスト、② 太陽光発電を利用した飛行輸送、③ 空飛ぶタクシーの駐車場",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "25_2")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (
@@ -181,6 +104,7 @@ export default function Ex25_2() {
           <p className="mb-8">
             Next week&apos;s blog is about self-driving cars. It&apos;s going to
             be a fantastic post!
+            {Kaisetsu(showResults, "25-2-5")}
           </p>
         </div>
       </article>

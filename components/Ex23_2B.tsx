@@ -6,104 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex23_2B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2B-1",
-      qa: [
-        {
-          questionNumber: "11",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は④「彼らの時間をより上手に使う」",
-        "第1段落4文目 We started this activity to help students use their commuting time more effectively.",
-        "（私たちがこの活動を始めたのは，生徒たちが自分たちの通学時間をより効率的に使う手助けをするためです）という内容から，",
-      ],
-    },
-    {
-      questionId: "2B-2",
-      qa: [
-        {
-          questionNumber: "12",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は①「参加者の10%にも満たない生徒が1年生だった」",
-        "第1段落6文目 A total of 300 students participated: ... only 15 first-years participated.",
-        "（合計300人の生徒が参加した。…1年生は15人しか参加しなかった）という内容から，",
-      ],
-    },
-    {
-      questionId: "2B-3",
-      qa: [
-        {
-          questionNumber: "13",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は①",
-        "Feedback from participants の HS の1文目 Thanks to this project, I got ... vocabulary test.",
-        "（このプロジェクトのおかげで，私は英語の語彙テストで史上最高の点数を取りました）という内容が B: learning language（言語を学習する）",
-        " JHの1文目 I kept a study log（私は勉強記録をつけていました）という内容が A: keeping study records（学習記録をつける）に言い換えられている。",
-      ],
-    },
-    {
-      questionId: "2B-4",
-      qa: [
-        {
-          questionNumber: "14",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "①「学校まで歩いていく生徒を含むこともできたであろうに」が正解",
-        " Feedback from participants の KF の1文目～3文目 （私の友達は参加できなかったので悲しんでいました。彼女は近くに住んでいて，学校まで歩いているのです。参加する他の方法があるべきではなかったでしょうか）から， ",
-        " could have included は仮定法過去完了で，実際にはできなかったことに対して残念であった気持ちを表している。",
-        "④の watching videos for fun helped time pass quickly ",
-        "（娯楽のためにビデオを見ると，時間が速く過ぎる手助けになった）については MN の （私はバスでビデオを見て時間の大半を費やし，そのおかげで授業をよりよく理解できました）という内容から，ビデオは娯楽のためではなく勉強のために見ていたと判断できるため，誤りだと言える。",
-      ],
-    },
-    {
-      questionId: "2B-5",
-      qa: [
-        {
-          questionNumber: "15",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 2,
-      explanation: [
-        "正解は②：「筆者の疑問」とは，第1段落8文目 How come so few first-years participated? （なぜそんなに参加した1年生が少なかったのか？）のこと。",
-        "これに対する説明と考えられるのは JH の2文目  For some reason ... about this challenge.",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "23_2B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

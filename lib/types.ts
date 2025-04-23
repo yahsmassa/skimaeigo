@@ -8,6 +8,11 @@ export type SubQuestion = {
   answer: number;
 };
 
+export type QA = {
+  id: string;
+  qanda: QandA[];
+};
+
 export type Answers = {
   [key: string]: number;
 };

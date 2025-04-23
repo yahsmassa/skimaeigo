@@ -6,77 +6,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex19_4B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4B-1",
-      qa: [
-        {
-          questionNumber: "37",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は③ 500年以上の歴史",
-        "Crestvale Castle: 13世紀の城、Holmsted Castle: 12世紀の城、King&apos;s Castle: 11世紀の城、Rosebush Castle: 15世紀の城",
-      ],
-    },
-    {
-      questionId: "4B-2",
-      qa: [
-        {
-          questionNumber: "38",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② Holmsted Castle",
-        "広々とした空間が、公演に適していると書いてある、* suitable for: ～に適している",
-      ],
-    },
-    {
-      questionId: "4B-3",
-      qa: [
-        {
-          questionNumber: "39",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② Crestvale CastleとKing's Castle",
-        "土曜日にガイドから歴史説明を聞けるのは二つ、Resebushは月ー金のみ営業",
-        "Historyという単語がないのでKing's Casleを外しそうになるが、営業日がポイントになっている",
-      ],
-    },
-    {
-      questionId: "4B-4",
-      qa: [
-        {
-          questionNumber: "40",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解は② 17ユーロ",
-        "see fine arts、９月、大人２、子供１（５歳より小さい子供は無料）から、King's Castleで計算 7x2 + 3 で１７",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "19_4B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

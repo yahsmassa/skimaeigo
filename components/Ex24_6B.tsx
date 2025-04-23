@@ -7,110 +7,12 @@ import Image from "next/image";
 import { Saiten } from "@/components/Saiten";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const Ex24_6B = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-
-  const question: QandA[] = [
-    {
-      questionId: "6B-1",
-      qa: [
-        {
-          questionNumber: "44",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は ④「軽い化合物」",
-        "（唐辛子のスパイスには耐えられないが，ワサビ味の食品なら食べられるという人がいる理由は，ワサビに含まれるスパイス化合物の濃度が低いからである。ワサビに含まれる化合物は気化しやすく，食べたときに鼻に抜けるような辛さをもたらす）の内容から",
-      ],
-    },
-    {
-      questionId: "6B-2",
-      qa: [
-        {
-          questionNumber: "45",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は④ Dの「ストレスを感じさせなくなる」という内容は利点には述べられていない。",
-        "Aの「痛みを減らす」については（不思議なことに，カプサイシンは痛みを消すこともできる）に一致している。",
-        "Bの「あなたにより多くのエネルギーを与える」は（これは，辛い食べ物が心拍数を上げ，筋肉により多くのエネルギーを送り，脂肪をエネルギーに変えるからである）に一致する。",
-        "Cの「新陳代謝を加速させる」は（唐辛子を食べることのもう一つの利点は，新陳代謝を促進することである）に一致する",
-        "Eの「食中毒を減らす」は（また，唐辛子は食品の安全性とも関係があり， より健康的な生活につながるかもしれないと考えられている）と，（唐辛子に含まれるカプサイシンやその他の化学物質には抗菌作用があり，微生物の繁殖を遅らせたり，止めたりすることさえできるという研究結果がある。その結果，食べ物がより長持ちし，食中毒が少なくなる）に一致する。",
-      ],
-    },
-    {
-      questionId: "6B-3",
-      qa: [
-        {
-          questionNumber: "46",
-          answer: 0,
-        },
-        {
-          questionNumber: "47",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "23",
-      answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "②「胃の痛みを経験するかもしれない」と，③「手の感触を失うかもしれない」が正解。",
-        "④の「指が火が付いたように感じられるかもしれない」は（100万SHUを含むゴースト・ペッパーは，触ると皮膚が火傷することさえある）のことと考えられるが，設問では「あまりにも強力な唐辛子を短時間に食べた時」に起きることが問われているので，誤り。",
-      ],
-    },
-    {
-      questionId: "6B-4",
-      qa: [
-        {
-          questionNumber: "48",
-          answer: 0,
-        },
-      ],
-      isOrderFree: true,
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "③「唐辛子への耐性が低い人でも，その辛さに慣れることができる」が正解。",
-        "④「ワサビへの耐性が低い人は高いSHUに耐えることができない」が紛らわしいが，あくまでも「1,000SHUにたとえる」と述べているだけであって，実際にワサビへの耐性が低い人が高いSHUに耐えられるかどうかについては言及していないため，誤りだと考えられる。",
-      ],
-    },
-    {
-      questionId: "6B-5",
-      qa: [
-        {
-          questionNumber: "49",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "5",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "⑤「誰かがあなたに辛い食べ物を勧めた時，それには何らかの利点があるということを思い出そう」が正解 ",
-        "① Don&apos;t be afraid. Eating spicy foods will boost your confidence. 「恐れてはいけない。辛い食べ物を食べると自信が増す」 →このような内容は本文に含まれていない。 ",
-        "② Next time you eat chili chicken, remember its punch only stays for a second. 「次にチリチキンを食べるときには，そのパンチが一瞬しか残らないことを覚えておこう」 →「一瞬しか残らない」とは述べていない。 ",
-        "③ Personality plays a big role in our spice preference, so don&apos;t worry. 「個性（性格）はスパイスの好みで大きな役割を果たす。だから心配しないで」 →人の個性（性格）とスパイスの関係については本文で言及されていない。 ",
-        "④ Unfortunately, there are no cures for a low wasabi tolerance. 「残念ながら，ワサビの低い耐性には治療法は存在しない」 →ワサビの耐性に関する治療法の話は本文でなされていない。 ",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "24_6B")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

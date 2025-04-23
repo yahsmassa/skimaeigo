@@ -7,109 +7,12 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex22_5 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "5-1",
-      qa: [
-        {
-          questionNumber: "30",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は① ある巨大会社と戦った一人の若き発明家",
-        "本文を読み，Sequence of Key Events と Outcome の部分に相当する内容を埋めると，ファーンズワースが RCA という企業と特許権を巡って争った話をしていることがわかる",
-        "問3の時系列整序問題の選択肢を読んだだけでもわかってしまう",
-      ],
-    },
-    {
-      questionId: "5-2",
-      qa: [
-        {
-          questionNumber: "31",
-          answer: 0,
-        },
-        {
-          questionNumber: "32",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "45",
-      answerString: "",
-      isOrderFree: true,
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は[31] ④・[32] ⑤",
-        "④ 家族のために，家庭の機械を修理したり改良した、第2パラグラフ最終文 彼はよく古い発電機を修理し，母親の手回し洗濯機を電気で動くものに替えたことさえあった」から，",
-        "⑤ 畑作業をしながら電子テレビ装置のアイディアを思いついた、第3パラグラフ第2文「ふと，畑の畝のように平行な線を使って，スクリーンに電子画像を作ることができるのではないかと思いついた」から",
-      ],
-    },
-    {
-      questionId: "5-3",
-      qa: [
-        {
-          questionNumber: "33",
-          answer: 0,
-        },
-        {
-          questionNumber: "34",
-          answer: 0,
-        },
-        {
-          questionNumber: "35",
-          answer: 0,
-        },
-        {
-          questionNumber: "36",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2541",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は[33] ②→[34] ⑤→[35] ④→[36] ", "翻訳参照"],
-    },
-    {
-      questionId: "5-4",
-      qa: [
-        {
-          questionNumber: "37",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: ["正解は③ 彼の先生が長年保管していたスケッチ ", "翻訳参照"],
-    },
-    {
-      questionId: "5-5",
-      qa: [
-        {
-          questionNumber: "38",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      isOrderFree: true,
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は③ 彼の発明のおかげで、私たちは歴史的な出来事を生で観ることができるようになりました。 第7パラグラフ第3文・第4文 の翻訳参照",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "22_5")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

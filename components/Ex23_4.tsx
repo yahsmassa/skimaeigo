@@ -6,102 +6,104 @@ import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
+
 const Ex23_4 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "4-1",
-      qa: [
-        {
-          questionNumber: "24",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①「継続的な練習は退屈だ」",
-        "Tim Oxford の第1段落6文目 &quot;Also, this sort ... dull and demotivating.&quot; （また，この種の反復的な学習は退屈でやる気をなくさせる）という内容から，",
-      ],
-    },
-    {
-      questionId: "4-2",
-      qa: [
-        {
-          questionNumber: "25",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①「4週間」",
-        "Cheng Lee の第3段落4文目 &quot;As the figure ... learning group.&quot;（右の図が示すように，最後の学習セッションの28日後，テストで思い出した名前の率は間隔をあけて学習したグループの方が高くなった）という内容から",
-      ],
-    },
-    {
-      questionId: "4-3",
-      qa: [
-        {
-          questionNumber: "26",
-          answer: 0,
-        },
-        {
-          questionNumber: "27",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "25",
-      answerString: "",
-      isCorrect: false,
-      isSeparate: true,
-      points: 4,
-      explanation: [
-        "正解：[26] ②・[27] ⑤",
-        "Cheng Lee の第1段落最終文 &quot;There is ... longer intervals.&quot;（「間隔をあけた学習」と呼ばれる，別の種類の反復学習があり，そこでは生徒たちは新しい情報を記憶してからより長い期間を開けてそれを復習する）という内容から，[26]には②「長期の」が入る。 ",
-        "また，Tim Oxford の方法について，Cheng Lee は第1段落 3文目 &quot;However, the repetitive ... is not effective.&quot;（しかし，彼が論じていた反復学習の戦略は，「集中的な学習」と呼ばれるものだが，効率的ではない）と述べているので，[27]には⑤「集中的な」が入る。",
-      ],
-    },
-    {
-      questionId: "4-4",
-      qa: [
-        {
-          questionNumber: "28",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "1",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は①「経験に基づく学習」",
-        "Tim Oxford は第2段落1文目（To help them ...）・2文目（In this kind ...）で「彼らが学習するのを手助けするために，私は試しに「文脈的学習」を使ってみた。この種の学習では，新しい知識が生徒たち自身の経験を通じて構築される）と述べている。また，Cheng Lee は第1段落1文目（Mr. Oxford&apos;s thoughts ...）・2文目（I agree that ...）で「オックスフォード氏の文脈的学習に関する考え方は見識のあるものだった。私はそれが役に立つということに同意する」という内容から",
-      ],
-    },
-    {
-      questionId: "4-5",
-      qa: [
-        {
-          questionNumber: "29",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      isCorrect: false,
-      points: 3,
-      explanation: [
-        "正解は②「最も効率的な学習感覚の長さ」",
-        "Cheng Lee は「間隔をあけた学習」の方が効率的であるということを，第3段落で過去の研究を挙げて論じている。ここでは28日後のデータしか使われておらず，何日が最も効果的なのかは述べられていない",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "23_4")?.qanda || [];
+  //   {
+  //     questionId: "4-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "24",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 3,
+  //     explanation: [
+  //       "正解は①「継続的な練習は退屈だ」",
+  //       "Tim Oxford の第1段落6文目 &quot;Also, this sort ... dull and demotivating.&quot; （また，この種の反復的な学習は退屈でやる気をなくさせる）という内容から，",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "4-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "25",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 3,
+  //     explanation: [
+  //       "正解は①「4週間」",
+  //       "Cheng Lee の第3段落4文目 &quot;As the figure ... learning group.&quot;（右の図が示すように，最後の学習セッションの28日後，テストで思い出した名前の率は間隔をあけて学習したグループの方が高くなった）という内容から",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "4-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "26",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "27",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "25",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     isSeparate: true,
+  //     points: 4,
+  //     explanation: [
+  //       "正解：[26] ②・[27] ⑤",
+  //       "Cheng Lee の第1段落最終文 &quot;There is ... longer intervals.&quot;（「間隔をあけた学習」と呼ばれる，別の種類の反復学習があり，そこでは生徒たちは新しい情報を記憶してからより長い期間を開けてそれを復習する）という内容から，[26]には②「長期の」が入る。 ",
+  //       "また，Tim Oxford の方法について，Cheng Lee は第1段落 3文目 &quot;However, the repetitive ... is not effective.&quot;（しかし，彼が論じていた反復学習の戦略は，「集中的な学習」と呼ばれるものだが，効率的ではない）と述べているので，[27]には⑤「集中的な」が入る。",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "4-4",
+  //     qa: [
+  //       {
+  //         questionNumber: "28",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "1",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 3,
+  //     explanation: [
+  //       "正解は①「経験に基づく学習」",
+  //       "Tim Oxford は第2段落1文目（To help them ...）・2文目（In this kind ...）で「彼らが学習するのを手助けするために，私は試しに「文脈的学習」を使ってみた。この種の学習では，新しい知識が生徒たち自身の経験を通じて構築される）と述べている。また，Cheng Lee は第1段落1文目（Mr. Oxford&apos;s thoughts ...）・2文目（I agree that ...）で「オックスフォード氏の文脈的学習に関する考え方は見識のあるものだった。私はそれが役に立つということに同意する」という内容から",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "4-5",
+  //     qa: [
+  //       {
+  //         questionNumber: "29",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "2",
+  //     answerString: "",
+  //     isCorrect: false,
+  //     points: 3,
+  //     explanation: [
+  //       "正解は②「最も効率的な学習感覚の長さ」",
+  //       "Cheng Lee は「間隔をあけた学習」の方が効率的であるということを，第3段落で過去の研究を挙げて論じている。ここでは28日後のデータしか使われておらず，何日が最も効果的なのかは述べられていない",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (

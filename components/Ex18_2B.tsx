@@ -5,80 +5,80 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseExam = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2B-1",
-      qa: [
-        {
-          questionNumber: "18",
-          answer: 0,
-        },
-        {
-          questionNumber: "19",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "32",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解③と②",
-        "can get to know each other",
-        "get to know .. 知り合いになる、each other お互い",
-      ],
-    },
-    {
-      questionId: "2B-2",
-      qa: [
-        {
-          questionNumber: "20",
-          answer: 0,
-        },
-        {
-          questionNumber: "21",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "42",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解④と②",
-        "was the seconde highest score on the team",
-        "「the second 最上級 」２番目に最高の",
-      ],
-    },
-    {
-      questionId: "2B-3",
-      qa: [
-        {
-          questionNumber: "22",
-          answer: 0,
-        },
-        {
-          questionNumber: "23",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "32",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解③と②",
-        "to those who aren't familiar with",
-        "be familiar with..  に精通している、those who 〜の人たち",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "18_2B")?.qanda || [];
+  //   {
+  //     questionId: "2B-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "18",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "19",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "32",
+  //     answerString: "",
+  //     isCorrect: true,
+  //     points: 4,
+  //     explanation: [
+  //       "正解③と②",
+  //       "can get to know each other",
+  //       "get to know .. 知り合いになる、each other お互い",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "2B-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "20",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "21",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "42",
+  //     answerString: "",
+  //     isCorrect: true,
+  //     points: 4,
+  //     explanation: [
+  //       "正解④と②",
+  //       "was the seconde highest score on the team",
+  //       "「the second 最上級 」２番目に最高の",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "2B-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "22",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "23",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "32",
+  //     answerString: "",
+  //     isCorrect: true,
+  //     points: 4,
+  //     explanation: [
+  //       "正解③と②",
+  //       "to those who aren't familiar with",
+  //       "be familiar with..  に精通している、those who 〜の人たち",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

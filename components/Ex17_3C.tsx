@@ -5,56 +5,13 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseTestQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "3C-1",
-      qa: [
-        {
-          questionNumber: "32",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 6,
-      explanation: [
-        "正解は③ 私たちの町の住民は、ここに新しい職場ができることで恩恵を受けるでしょう。",
-        "人口が増えると、地元のお店に人が増え、隣街に働きに行っている人々にとっては家族と過ごす時間が増えるという文脈から",
-      ],
-    },
-    {
-      questionId: "3C-2",
-      qa: [
-        {
-          questionNumber: "33",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "4",
-      answerString: "",
-      points: 6,
-      explanation: ["正解は④ 町の経済と利便性を向上させる", "翻訳参照"],
-    },
-    {
-      questionId: "3C-3",
-      qa: [
-        {
-          questionNumber: "34",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 6,
-      explanation: ["正解は② 住民の家庭生活を考慮する", "翻訳参照"],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "17_3C")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

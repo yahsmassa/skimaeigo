@@ -5,77 +5,77 @@ import { Saiten } from "@/components/Saiten";
 import { cn, exPageFormat, qaFormat, renderSelect } from "@/lib/util";
 import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
-import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseExam3 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2B-1",
-      qa: [
-        {
-          questionNumber: "18",
-          answer: 0,
-        },
-        {
-          questionNumber: "19",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "51",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解⑤と① we're wondering if you could tell",
-        "I wonder if は丁寧な依頼をあらわす",
-      ],
-    },
-    {
-      questionId: "2B-2",
-      qa: [
-        {
-          questionNumber: "20",
-          answer: 0,
-        },
-        {
-          questionNumber: "21",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "35",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解③と⑤ let me send you the details by ",
-        "* let A + 動詞の原型 「Aに（望み通り）〜させてやる」、* send A B 「AにBを送る」",
-      ],
-    },
-    {
-      questionId: "2B-3",
-      qa: [
-        {
-          questionNumber: "22",
-          answer: 0,
-        },
-        {
-          questionNumber: "23",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "46",
-      answerString: "",
-      isCorrect: true,
-      points: 4,
-      explanation: [
-        "正解④と⑥ came to realize the need to manage",
-        "* came to不定詞 「〜するようになる」、* the need to不定詞 「〜する必要性」",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "16_2B")?.qanda || [];
+  //   {
+  //     questionId: "2B-1",
+  //     qa: [
+  //       {
+  //         questionNumber: "18",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "19",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "51",
+  //     answerString: "",
+  //     isCorrect: true,
+  //     points: 4,
+  //     explanation: [
+  //       "正解⑤と① we're wondering if you could tell",
+  //       "I wonder if は丁寧な依頼をあらわす",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "2B-2",
+  //     qa: [
+  //       {
+  //         questionNumber: "20",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "21",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "35",
+  //     answerString: "",
+  //     isCorrect: true,
+  //     points: 4,
+  //     explanation: [
+  //       "正解③と⑤ let me send you the details by ",
+  //       "* let A + 動詞の原型 「Aに（望み通り）〜させてやる」、* send A B 「AにBを送る」",
+  //     ],
+  //   },
+  //   {
+  //     questionId: "2B-3",
+  //     qa: [
+  //       {
+  //         questionNumber: "22",
+  //         answer: 0,
+  //       },
+  //       {
+  //         questionNumber: "23",
+  //         answer: 0,
+  //       },
+  //     ],
+  //     rightAnswerString: "46",
+  //     answerString: "",
+  //     isCorrect: true,
+  //     points: 4,
+  //     explanation: [
+  //       "正解④と⑥ came to realize the need to manage",
+  //       "* came to不定詞 「〜するようになる」、* the need to不定詞 「〜する必要性」",
+  //     ],
+  //   },
+  // ];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>

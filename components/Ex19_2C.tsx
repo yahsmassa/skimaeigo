@@ -7,63 +7,12 @@ import { Answers, QandA } from "@/lib/types";
 import { Explain } from "@/components/Explain";
 import Image from "next/image";
 import { Kaisetsu } from "@/components/Kaisetsu";
+import { qanda } from "@/lib/qanda";
 
 const JapaneseTestQuestion = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
-  const question: QandA[] = [
-    {
-      questionId: "2C-1",
-      qa: [
-        {
-          questionNumber: "24",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "6",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解⑥",
-        "it can't be helped that there are fewer people while ...",
-        "* it can't be helped.. [しかたがない」、duringは前置詞、whileは接続詞でSVと続く",
-      ],
-    },
-    {
-      questionId: "2C-2",
-      qa: [
-        {
-          questionNumber: "25",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "2",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解②",
-        "I was barely able to chath the last train ",
-        "barely かろうじて、seldom  めったに〜しない",
-      ],
-    },
-    {
-      questionId: "2C-3",
-      qa: [
-        {
-          questionNumber: "26",
-          answer: 0,
-        },
-      ],
-      rightAnswerString: "3",
-      answerString: "",
-      points: 5,
-      explanation: [
-        "正解③",
-        "I'm afraid the meeting will have to be put off until next week",
-        "I'm afraid (that) SV 「残念ながら・・・だと思う」、put off 延期する",
-      ],
-    },
-  ];
+  const question: QandA[] = qanda.find(q => q.id === "19_2C")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
   return (
     <div className={exPageFormat}>
