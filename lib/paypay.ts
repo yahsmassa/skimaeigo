@@ -10,7 +10,7 @@ const CLIENT_ID = String(process.env.NEXT_PUBLIC_PAYPAY_CLIENT_ID);
 const PAYPAY_URL = String(process.env.NEXT_PUBLIC_PAYPAY_URL);
 
 const timeStamp = () => Math.floor(new Date().getTime() / 1000); // 秒単位
-const paypayAmount = 100;
+const paypayAmount = 1000;
 
 PAYPAY.Configure({
   // clientId: CLIENT_ID,
