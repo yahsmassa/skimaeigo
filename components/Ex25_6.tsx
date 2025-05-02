@@ -72,7 +72,7 @@ const Ex25_6 = () => {
             street drain. I was flying through the air, when I heard a girl
             crying. In an instant, I flew down to her. In tears, she told me
             that her cat, Whiskers, had gotten into the drain. The truth was, a
-            member of the television crew was standing in the underground drain
+            member of the television crew was waiting in the underground drain
             with the cat.
           </p>
           {Kaisetsu(showResults, "25-6-3")}
