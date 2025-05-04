@@ -32,6 +32,15 @@ const Ex22_1B = () => {
         />
       </div>
       {/* Contest Announcement */}
+      <div className="mb-6 md:px-8">
+          <div className="leading-6 md:leading-8 md:text-[20px] md:mb-2">
+            You are looking at the website for the City Zoo in Toronto, Canada
+            and you find an interesting contest announcement. You are thinking
+            about entering the contest.
+          </div>
+          {Kaisetsu(showResults, "22-1B-0")}
+        </div>
+
       <div className="max-w-3xl mx-auto border border-gray-800 p-6 space-y-4">
         {/* Header Section */}
         <div className="flex items-center space-x-4 border-b border-gray-800 pb-4">
