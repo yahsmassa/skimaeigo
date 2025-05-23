@@ -142,8 +142,68 @@ export const translateSentence = async (selectedText: string) => {
   }
 };
 
+export const explainWord = async (selectedText: string) => {
+
+  if (!selectedText) {
+    Swal.fire({
+      title: "エラー",
+      text: "単語が選択されていません",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+  const n = selectedText.trim().split(" ").length;
+  if (n > 1) {
+    Swal.fire({
+      title: "エラー",
+      text: "一つの単語を選択してください",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
+  // ローディング表示
+  Swal.fire({
+    title: "解説中...",
+    text: "Requesting...",
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+  });
+
+  try {
+    const prompt = "あなたは優秀な英語教師です、以下の単語に関して、他の形式でよく使われるものがある場合（例えば動詞・副詞・名詞・形容詞など）はそれを表示し、違う単語を用いてよく表現されるものがあれば、改行してリストしてください。日本語で解説してください" +
+      selectedText;
+    const result = await translateTextGemini(prompt);
+
+    const formattedResult = result.replace(/\n/g, "<br/>")
+    .replace(/\*\*/g, "").replace(/\* /g, "⚫︎ "); // 改行を<br/>に変換
+    console.log("formatResult", formattedResult);
+    Swal.fire({
+      title: "単語解説",
+      // text: result,
+      html: formattedResult,
+      confirmButtonText: "OK",
+      width: "500px",
+    });
+  } catch (error) {
+    Swal.fire({
+      title: "エラー",
+      text: "単語解説に失敗しました",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+  }
+};
+
 export const readSentence = (selectedText: string) => {
   if (!selectedText) return;
+
+  const trimmedText = selectedText.trim();
+  if (!trimmedText) return;
 
   // 音声リストが利用可能になるのを待つ
   const waitForVoices = () => {
@@ -160,7 +220,7 @@ export const readSentence = (selectedText: string) => {
   };
 
   waitForVoices().then(() => {
-    const utterance = new SpeechSynthesisUtterance(selectedText);
+    const utterance = new SpeechSynthesisUtterance(trimmedText);
     utterance.lang = "en-US";
 
     // Safari用に音声を明示的に選択
@@ -179,6 +239,12 @@ export const readSentence = (selectedText: string) => {
 
     speechSynthesis.speak(utterance);
   });
+};
+
+export const stopReading = () => {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+  }
 };
 
 export function formatDate(date = new Date()) {

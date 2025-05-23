@@ -37,7 +37,7 @@ const Ex23_6A = () => {
       </div>{" "}
       {/* Question Label */}
       <div className="flex gap-2 mb-6">
-        <p className="text-justify indent-7">
+        <p className="text-justify indent-7 md:text-xl mb-2">
           You are in a discussion group in school. You have been asked to
           summarize the following article. You will speak about it, using only
           notes.
@@ -78,7 +78,7 @@ const Ex23_6A = () => {
           baseball cards, comic books, dolls, or miniature cars that they have
           kept since they were small.
           {Kaisetsu(showResults, "23-6A-2")}
-          Others have an attachment to history; they seek and hold onto
+          {' '}Others have an attachment to history; they seek and hold onto
           historical documents, signed letters and autographs from famous
           people, and so forth.
           {Kaisetsu(showResults, "23-6A-3")}

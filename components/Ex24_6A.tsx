@@ -277,7 +277,7 @@ const Ex24_6A = () => {
           </div>
           {[
             "anticipating a message from a classmate",
-            "memorizing your mother&apos;s cellphone number",
+            "memorizing your mother's cellphone number",
             "reflecting on how many hours you worked today",
             "remembering that you have a meeting tomorrow",
           ].map((text, index) => (
@@ -299,7 +299,7 @@ const Ex24_6A = () => {
             {Kaisetsu(showResults, "24-6A-11")}
           </div>
           {[
-            "guessing how long you&apos;ve been jogging so far",
+            "guessing how long you've been jogging so far",
             "making a schedule for the basketball team summer camp",
             "running into your tennis coach at the railway station",
             "thinking about your last family vacation to a hot spring",

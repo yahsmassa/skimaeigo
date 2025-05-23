@@ -34,7 +34,7 @@ const Ex23_6B = () => {
       <div className="space-y-6">
         {/* Question Header */}
         <div className="flex gap-4">
-          <p className="text-justify indent-7">
+          <p className="text-justify indent-7 md:text-xl mb-2">
             You are in a student group preparing for an international science
             presentation contest. You are using the following passage to create
             your part of the presentation on extraordinary creatures.
@@ -206,7 +206,7 @@ const Ex23_6B = () => {
           {[
             "In dry conditions, their metabolism drops to less than one percent of normal.",
             "Tardigrades in a state of tun are able to survive in temperatures exceeding 151℃.",
-            "The state of tun will cease when the water in a tardigrade&apos;s body is above 0.01%.",
+            "The state of tun will cease when the water in a tardigrade's body is above 0.01%.",
             "Their shark-like mouths allow them to more easily eat other creatures.",
             "They have an ability to withstand extreme levels of radiation.",
           ].map((text, index) => (
@@ -329,7 +329,7 @@ const Ex23_6B = () => {
             "Finding out whether the tardigrades can survive in space was never thought to be important.",
             "Tardigrades, along with other creatures that have been on earth for millions of years, can withstand X-rays and ultraviolet radiation.",
             "The Israeli researchers did not expect so many tardigrades to survive the harsh environment of space.",
-            "The reason why no one has been to see if tardigrades can survive on the moon&apos;s surface attracted the author&apos;s attention.",
+            "The reason why no one has been to see if tardigrades can survive on the moon's surface attracted the author's attention.",
           ].map((text, index) => (
             <div key={index} className="flex items-start">
               <span className="w-6 h-6 flex items-center justify-center mr-2">

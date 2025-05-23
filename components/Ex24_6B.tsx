@@ -308,7 +308,7 @@ const Ex24_6B = () => {
               <div>
                 {[
                   "People with a high tolerance to chili peppers pay attention to the spices used in their food.",
-                  "People with a high tolerance to wasabi are scared of chili peppers&apos; negative effects.",
+                  "People with a high tolerance to wasabi are scared of chili peppers' negative effects.",
                   "People with a low tolerance to chili peppers can get used to their heat.",
                   "People with a low tolerance to wasabi cannot endure high SHU levels.",
                 ].map((text, index) => (

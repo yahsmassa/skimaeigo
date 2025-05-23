@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Swal from "sweetalert2";
-import { translateSentence, readSentence, getPaymentUrl } from "@/lib/util";
+import { translateSentence, readSentence, getPaymentUrl, stopReading, explainWord } from "@/lib/util";
 import { ReadTranslate } from "@/components/ReadTranslate";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
@@ -91,6 +91,20 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const handleSelectionChange = () => {
+      const selectedText = window.getSelection()?.toString() || '';
+      if (selectedText.length === 0) {
+        stopReading();
+      }
+    };
+
+    document.addEventListener('selectionchange', handleSelectionChange);
+    return () => {
+      document.removeEventListener('selectionchange', handleSelectionChange);
+    };
+  }, []);
+
+  useEffect(() => {
     // 音声リストが利用可能になるのを待つ
 
     const loadVoices = () => {
@@ -109,6 +123,11 @@ export default function Home() {
         e.preventDefault();
         // console.log("read selection", selection);
         readSentence(selection);
+      }
+      if (e.ctrlKey && e.key === "w") {
+        e.preventDefault();
+        // console.log("read selection", selection);
+        explainWord(selection);
       }
       // Ctrl + u でユーザー情報表示
       if (e.ctrlKey && e.key === "u") {

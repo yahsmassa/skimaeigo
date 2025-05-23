@@ -168,8 +168,7 @@ const Ex17_5 = () => {
           <em>I</em> was just mindlessly putting in <em>my</em> mouth anything
           that was on the plate while handling the phone. <em>I</em> was so
           focused on the text messages or games that <em>I</em> took little
-          interest in what was happening around
-          <em>me</em>. In fact, <em>my</em> face had no expression on it at all.
+          interest in what was happening around <em>me</em>. In fact, <em>my</em> face had no expression on it at all.
           {Kaisetsu(showResults, "17-5-6")}
         </p>
 
