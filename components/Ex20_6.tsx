@@ -476,19 +476,19 @@ const Ex20_6 = () => {
         {/* Choices */}
         <div className="mt-8 space-y-4">
           <div className="pl-4">
-            <p>
+            <p className="mb-2">
               ① A certain factor that has allowed vending machines to exist
               widely in one country
             </p>
-            <p>
+            <p className="mb-2">
               ② Creation of one vending machine and a description of how the
               device was used
             </p>
-            <p>
+            <p className="mb-2">
               ③ Difficulties in building vending machines after introducing a
               different form of money
             </p>
-            <p>
+            <p className="mb-2">
               ④ Types of vending machine goods sold at different locations in
               the past
             </p>

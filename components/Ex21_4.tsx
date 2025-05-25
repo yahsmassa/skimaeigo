@@ -31,7 +31,7 @@ export default function Ex21_4() {
         />
       </div>
       {/* Context text */}
-      <p className="text-gray-600 mb-6 leading-relaxed">
+      <p className="text-gray-600 mb-6 leading-relaxed md:text-xl md:mb-6">
         Your English teacher, Emma, has asked you and your classmate, Natsuki,
         to help her plan the day&apos;s schedule for hosting students from your
         sister school. You&apos;re reading the email exchanges between Natsuki

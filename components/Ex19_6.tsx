@@ -353,10 +353,10 @@ const Ex19_6 = () => {
           {/* Choices */}
           <div className="mt-8 space-y-4">
             <div className="pl-4">
-              <p>① Creation of roads used by people, animals, and vehicles</p>
-              <p>② Developing ways for people to fly from place to place</p>
-              <p>③ Establishment of global paths for information transfer</p>
-              <p>④ Opening of lanes for ships to travel and transport things</p>
+              <p className="mb-2">① Creation of roads used by people, animals, and vehicles</p>
+              <p className="mb-2">② Developing ways for people to fly from place to place</p>
+              <p className="mb-2">③ Establishment of global paths for information transfer</p>
+              <p className="mb-2">④ Opening of lanes for ships to travel and transport things</p>
             </div>
           </div>
         </div>

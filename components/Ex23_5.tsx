@@ -30,7 +30,7 @@ const Ex23_5 = () => {
       </div>{" "}
       {/* Context */}
       <div className="mb-8">
-        <p className="text-gray-700 leading-relaxed">
+        <p className="text-gray-700 leading-relaxed md:text-xl mb-2">
           Your English teacher has told everyone in your class to find an
           inspirational story and present it to a discussion group, using notes.
           You have found a story written by a high school student in the UK.
@@ -352,7 +352,7 @@ const Ex23_5 = () => {
           {[
             "asked his friend questions to find out more about his motivation",
             "invited Mr Trent and other classmates to the party to show appreciation",
-            "tried to understand his friend&apos;s point of view to act appropriately",
+            "tried to understand his friend's point of view to act appropriately",
             "worked hard to be a better team player for successful communication",
           ].map((text, index) => (
             <div key={index} className="flex gap-4">

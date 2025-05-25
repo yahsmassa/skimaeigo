@@ -30,7 +30,7 @@ const Ex22_4 = () => {
         />
       </div>
       {/* Context text */}
-      <p className="text-base mb-8">
+      <p className="text-base mb-8 md:text-xl">
         You are a new student at Robinson University in the US. You are reading
         the blogs of two students, Len and Cindy, to find out where you can buy
         things for your apartment.

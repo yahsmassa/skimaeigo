@@ -32,7 +32,7 @@ const Ex21_6B = () => {
         />
       </div>
       {/* Question label */}
-      <div className="mb-6">
+      <div className="mb-6 md:text-xl">
         <span className="font-bold mr-2">B</span>
         <span className="leading-relaxed">
           You are studying nutrition in health class. You are going to read the
