@@ -15,9 +15,21 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "共通テスト",
+  title: "共通テスト英語対策アプリ",
   description:
-    "電車のなかや公園のベンチ、どこにいても共通テストがとける！スキマ時間学習に最適！",
+    "共通テスト英語対策アプリ、ふだんタブレット、スキマ時間はスマホで学習！ 採点・翻訳ボタンで完全理解、読み上げ機能で音読学習、繰り返し学習で最強英語教材！、１０年分で完璧！",
+  openGraph: {
+    title: '共通テスト英語対策アプリ どこでもテスト、いつでも復習！',
+    description:
+    "共通テスト英語対策アプリ、ふだんタブレット、スキマ時間はスマホで学習！ 採点・翻訳ボタンで完全理解、読み上げ機能で音読学習、繰り返し学習で最強英語教材！、１０年分で完璧！",
+    url: 'https://kyoutuu.com',
+    siteName: '共通テスト英語対策アプリ',
+    images: [{
+      url: 'https://kyoutuu.com/og-image.webp',
+      width: 1200,
+      height: 630,
+    }],
+  },
 };
 
 export default function RootLayout({
