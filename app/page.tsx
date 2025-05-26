@@ -701,7 +701,35 @@ export default function Home() {
                 共通テスト英語の過去問題を最高の英語教材にする実用アプリ
               </p>
               <div className="flex gap-4 mt-3">
-                <div className="ml-4">
+                <div className="ml-2">
+                  <a
+                    href="https://apps.apple.com/jp/app/%E5%85%B1%E9%80%9A%E3%83%86%E3%82%B9%E3%83%88%E8%8B%B1%E8%AA%9E%E5%AF%BE%E7%AD%96%E3%82%A2%E3%83%97%E3%83%AA/id6744387725"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/icons/appstore.webp"
+                      alt="TicTok"
+                      className="mt-1 w-16"
+                    />
+                    <p className="text-xs mt-1 ml-2">iOS版</p>
+                  </a>
+                </div>
+                <div className="ml-2">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.kyoutuu&hl=ja"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/icons/google-play.png"
+                      alt="google-play"
+                      className="mt-0 w-20"
+                    />
+                    <p className="text-xs ml-2">Android版</p>
+                  </a>
+                </div>
+                <div className="ml-2">
                   <a
                     href="https://www.instagram.com/kuotore/"
                     target="_blank"
@@ -712,9 +740,10 @@ export default function Home() {
                       alt="Instagram"
                       className="w-8 h-8 hover:opacity-80 transition-opacity"
                     />
+                    <p className="text-xs -ml-3">Instagram</p>
                   </a>
                 </div>
-                <div className="-mt-2 ml-4">
+                <div className="ml-2">
                   <a
                     href="https://www.tiktok.com/@kuotore/"
                     target="_blank"
@@ -723,10 +752,12 @@ export default function Home() {
                     <img
                       src="/icons/tiktok.png"
                       alt="TicTok"
-                      className="w-12 h-12"
+                      className="w-8 h-8"
                     />
+                    <p className="text-xs -ml-1">TicTok</p>
                   </a>
                 </div>
+
               </div>
             </div>
 
