@@ -9,13 +9,15 @@ import Link from "next/link";
 
 import {
   ChevronDown,
-  Clock,
+  Computer,
+  BookOpenText,
   Check,
+  Calculator,
+  Languages,
   Smartphone,
   Tablet,
   Laptop,
-  Headphones,
-  CreditCard,
+  Database,
   ArrowRight,
 } from "lucide-react";
 
@@ -41,9 +43,14 @@ export default function Home() {
       <nav className="sticky top-0 bg-white shadow-md z-50">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center">
-            <span className="text-blue-600 font-bold text-2xl">
-              英語共通テスト対策アプリ
+            <span className="text-orange-500 font-bold text-2xl">
+              共通テスト英語対策アプリ
             </span>
+            <img
+              src="/icons/icon-192x192.png"
+              alt="アプリアイコン"
+              className="h-8 w-8 ml-2"
+            />
           </div>
 
           <div className="hidden md:flex space-x-8">
@@ -57,7 +64,7 @@ export default function Home() {
               href="#comparison"
               className="hover:text-blue-600 transition-colors"
             >
-              従来との違い
+              アプリが最強な理由
             </a>
             <a
               href="#testimonials"
@@ -102,7 +109,7 @@ export default function Home() {
                 href="#comparison"
                 className="hover:text-blue-600 transition-colors py-2"
               >
-                従来との違い
+                アプリが最強な理由
               </a>
               <a
                 href="#testimonials"
@@ -181,8 +188,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-              <div className="text-blue-600 mb-4">
-                <Clock size={32} />
+              <div className="text-blue-600 mb-4 w-10 h-10">
+                {/* <Clock size={32} /> */}
+                <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"></path>
+                </svg>
               </div>
               <h3 className="text-xl font-bold mb-3">
                 選択部分の読み上げ
@@ -195,7 +205,7 @@ export default function Home() {
             {/* Feature 2 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
               <div className="text-blue-600 mb-4">
-                <Check size={32} />
+                <Database size={32} />
               </div>
               <h3 className="text-xl font-bold mb-3">ランダムにアクセス</h3>
               <p>
@@ -205,8 +215,10 @@ export default function Home() {
 
             {/* Feature 3 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-              <div className="text-blue-600 mb-4">
-                <Clock size={32} />
+              <div className="text-blue-600 mb-4 w-10 h-10">
+              <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+              </svg>
               </div>
               <h3 className="text-xl font-bold mb-3">タイマー機能</h3>
               <p>
@@ -216,8 +228,9 @@ export default function Home() {
 
             {/* Feature 4 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-              <div className="text-blue-600 mb-4">
-                <Headphones size={32} />
+              <div className="text-blue-600 mb-4 flex gap-2">
+                <Calculator size={32} />
+                <Languages size={32} />
               </div>
               <h3 className="text-xl font-bold mb-3">採点・翻訳機能</h3>
               <p>
@@ -227,7 +240,9 @@ export default function Home() {
 
             {/* Feature 5 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-              <div className="text-blue-600 mb-4">
+              <div className="text-blue-600 mb-4 flex gap-2">
+                <Computer size={32} />
+                <Tablet size={32} />
                 <Smartphone size={32} />
               </div>
               <h3 className="text-xl font-bold mb-3">マルチデバイス対応</h3>
@@ -239,11 +254,11 @@ export default function Home() {
             {/* Feature 6 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
               <div className="text-blue-600 mb-4">
-                <CreditCard size={32} />
+                <BookOpenText size={32} />
               </div>
               <h3 className="text-xl font-bold mb-3">過去問を英語教材にする</h3>
               <p>
-                ２０２５年の試験は無料でお試しいただけます。有料会員（１,０００円）になると１０年分の過去問題学習ができます。過去問題を使って英語学習したい学生様には強くオススメします。
+                ２０２５年の試験は無料でお試しいただけます。有料会員（１,０００円）になると１０年分の過去問題で学習できます。過去問題を教材に英語学習したい学生様には強くオススメします。
               </p>
             </div>
           </div>
@@ -272,15 +287,15 @@ export default function Home() {
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>ノートにはさまざまな詳細メモ、網羅的な内容になるのでボリュームが増えます、量をこなすとさらに肥大化します</span>
+                    <span>手書きノートにはさまざまな詳細メモ、網羅的な内容になるのでボリュームが増えます、量をこなすたび肥大化します</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>発音の確認やリスニングの練習は別に時間をとることに</span>
+                    <span>発音の確認やリスニングの練習は別に対応する必要があります</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>参考書や教科書を段階的に学習して、その後、模擬試験を受けるなど、実戦までの過程が長くなります、モチベーションの維持も大変です。</span>
+                    <span>参考書や教科書での学習は順番に進み、その後には模擬試験を受けるなど、必然的に過程が長くなります、モチベーションの維持も大変です。</span>
                   </li>
                 </ul>
               </div>
@@ -295,7 +310,7 @@ export default function Home() {
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>最初にアプリで過去問題に接します。講義・参考書・模擬試験はおのずと相互補完になります。<span className="text-blue-600 font-bold">最も実践的！</span></span>
+                    <span>最初から過去問題に接します。講義・参考書・模擬試験はおのずと相互補完になります。<span className="text-blue-600 font-bold">最も実践的！</span></span>
                   </li>
                   <li className="flex items-start">
                     <Check
@@ -309,7 +324,7 @@ export default function Home() {
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>ノートには、24-6-1の表現復讐！（2024年の問題６の設問１）みたいな記述が多くなり、<span className="text-blue-600 font-bold">従来のノートより機能的でコンパクト</span>になります</span>
+                    <span>手書きノートには、24-6-1の表現復讐！（2024年の問題６の設問１）みたいな記述が多くなり、<span className="text-blue-600 font-bold">従来のノートより機能的でコンパクト</span>になります</span>
                   </li>
                   <li className="flex items-start">
                     <Check
@@ -323,7 +338,7 @@ export default function Home() {
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>全く英語力がない生徒でも、音読から始め、問題１だけを１０年分学習するなど、<span className="text-blue-600 font-bold">最初から実戦学習</span>ができます</span>
+                    <span>全く英語力がない生徒でも、音読から始め、問題１だけを１０年分学習するなど、<span className="text-blue-600 font-bold">最初から本試験に近い学習</span>ができます</span>
                   </li>
                 </ul>
               </div>
@@ -336,7 +351,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            ３つのデバイスを最大活用
+            状況ごとにデバイスを選ぶ！
           </h2>
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
@@ -526,7 +541,7 @@ export default function Home() {
       <section id="pricing" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            まずは無料体験で！
+            まずは無料で体験！
           </h2>
 
           <div className="flex flex-col lg:flex-row justify-center gap-8 max-w-5xl mx-auto">
@@ -536,7 +551,7 @@ export default function Home() {
                 無料プラン
               </h3>
               <p className="text-center text-gray-600 mb-6">
-                まずは試してみたい方向け
+                まずは共通テストを体験
               </p>
 
               <div className="text-center mb-8">
@@ -572,15 +587,6 @@ export default function Home() {
                   />
                   <span>アプリでどう学習できるのか試したい学生様</span>
                 </li>
-                {/* <li className="flex items-start">
-                  <Check
-                    size={20}
-                    className="text-green-500 mr-2 flex-shrink-0 mt-1"
-                  />
-                  <span>
-                    メール以外に、Google・Appleアカウントでログインできます
-                  </span>
-                </li> */}
               </ul>
 
               <Link
@@ -661,12 +667,12 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            今すぐ始めて、共通テスト対策を効率化しよう
+            共通テスト英語対策は早く始めるほど有利
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            スキマ時間を活用して、毎日少しずつ。
+            早い段階で過去問に多く接して、他の教材とも相互補完しながら
             <br />
-            時間内に解く力を身につけて、本番で実力を発揮しましょう。
+            時間をかけて完璧にマスターするのって実戦的ですよね
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
@@ -690,10 +696,38 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-10">
             <div className="ml-3">
-              <h3 className="text-xl font-bold mb-4">英語共通テスト練習</h3>
+              <h3 className="text-xl font-bold mb-4 text-orange-500">共通テスト英語対策アプリ</h3>
               <p className="text-gray-400">
-                時間内に解く力・英語の基礎体力を身につけるための最適なアプリ
+                共通テスト英語の過去問題を最高の英語教材にする実用アプリ
               </p>
+              <div className="flex gap-4 mt-3">
+                <div className="ml-4">
+                  <a
+                    href="https://www.instagram.com/kuotore/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/icons/instagram_glyph_white.png"
+                      alt="Instagram"
+                      className="w-8 h-8 hover:opacity-80 transition-opacity"
+                    />
+                  </a>
+                </div>
+                <div className="-mt-2 ml-4">
+                  <a
+                    href="https://www.tiktok.com/@kuotore/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/icons/tiktok.png"
+                      alt="TicTok"
+                      className="w-12 h-12"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div>
@@ -712,7 +746,7 @@ export default function Home() {
                     href="#comparison"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    従来との違い
+                    アプリが最強な理由
                   </a>
                 </li>
                 <li>
@@ -774,7 +808,13 @@ export default function Home() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
-            <p>© 2025 英語共通テスト対策アプリ. All rights reserved.</p>
+            <p>© 2025 共通テスト英語対策アプリ. presented by             <Link
+              href="https://kuotore.com"
+              className="hover:text-white"
+            >
+              クオトレ
+            </Link>
+</p>
           </div>
         </div>
       </footer>
