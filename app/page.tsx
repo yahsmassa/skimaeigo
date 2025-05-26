@@ -78,6 +78,12 @@ export default function Home() {
             >
               料金
             </a>
+            <a
+              href="/about"
+              className="hover:text-blue-600 transition-colors"
+            >
+              ABOUT
+            </a>
           </div>
 
           <div className="md:hidden">
@@ -198,7 +204,7 @@ export default function Home() {
                 選択部分の読み上げ
               </h3>
               <p>
-                英語に自信がなくても、何度も読み上げを聞いて、真似をすることで、英語力はつきます。選択したところだけ読み上げ、途中で止めることもできます。
+                記憶への定着や、文章構成の理解に、読み上げにかぶせるように発音すること（シャドーイング）は最高の学習方法です。選択した部分だけを読み上げ、選択を解除すると止めることができるのが嬉しい機能です。
               </p>
             </div>
 
@@ -207,9 +213,9 @@ export default function Home() {
               <div className="text-blue-600 mb-4">
                 <Database size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3">ランダムにアクセス</h3>
+              <h3 className="text-xl font-bold mb-3">問題単位でランダムアクセス</h3>
               <p>
-                ２０２１年から２０２５年までの「問題５」だけを解くようなことができます。過去問を自分なりに分析することで高い応用力がつきます。
+                ２０２１年から２０２５年までの「問題５」だけを解くようなことができます。反復学習とパターン分析に圧倒的に有利な機能です。
               </p>
             </div>
 
@@ -222,7 +228,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold mb-3">タイマー機能</h3>
               <p>
-                共通テストは、時間との戦いです。最も長い長文問題でも１５分以内に解く！を意識して、学習できます。
+                共通テストは、時間との戦いです。最も長い長文問題でも１５分以内に解く！を意識して、学習できます。回答時間以外の時間の計測にも応用できます。
               </p>
             </div>
 
@@ -698,7 +704,7 @@ export default function Home() {
             <div className="ml-3">
               <h3 className="text-xl font-bold mb-4 text-orange-500">共通テスト英語対策アプリ</h3>
               <p className="text-gray-400">
-                共通テスト英語の過去問題を最高の英語教材にする実用アプリ
+                共通テスト英語の過去問題を最高の英語教材にするアプリ
               </p>
               <div className="flex gap-4 mt-3">
                 <div className="ml-2">
@@ -794,6 +800,14 @@ export default function Home() {
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     料金
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/about"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    ABOUT
                   </a>
                 </li>
               </ul>
