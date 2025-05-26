@@ -526,7 +526,7 @@ export default function Home() {
       <section id="pricing" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            料金プラン
+            まずは無料体験で！
           </h2>
 
           <div className="flex flex-col lg:flex-row justify-center gap-8 max-w-5xl mx-auto">
@@ -556,23 +556,23 @@ export default function Home() {
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>基本的な機能、全て利用可能</span>
+                  <span>タイマー・読み上げ・採点・翻訳機能、全て利用可能</span>
                 </li>
                 <li className="flex items-start">
                   <Check
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>タイマー・読み上げ・採点・翻訳・解説機能</span>
+                  <span>自分の今の実力を試したい・共通テストの難しさを確認したい学生様</span>
                 </li>
                 <li className="flex items-start">
                   <Check
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>マルチデバイス対応</span>
+                  <span>アプリでどう学習できるのか試したい学生様</span>
                 </li>
-                <li className="flex items-start">
+                {/* <li className="flex items-start">
                   <Check
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
@@ -580,7 +580,7 @@ export default function Home() {
                   <span>
                     メール以外に、Google・Appleアカウントでログインできます
                   </span>
-                </li>
+                </li> */}
               </ul>
 
               <Link
@@ -601,7 +601,7 @@ export default function Home() {
                 有料プラン
               </h3>
               <p className="text-center text-blue-100 mb-6">
-                本格的に対策したい方向け
+                過去問題を本格教材として活用したい学生様向け
               </p>
 
               <div className="text-center mb-8">
@@ -622,7 +622,7 @@ export default function Home() {
                     size={20}
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>無制限の問題アクセス</span>
+                    環境・技術・友情・セミナーなど設問のテーマを意識して解くと、繰り返しでてくるテーマなどが確認できます。５年分とくだけで実感できます。
                 </li>
                 <li className="flex items-start">
                   <Check
@@ -630,7 +630,7 @@ export default function Home() {
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
                   <span>
-                    全ての問題をアプリの機能を使って理解することで、かなり英語力がつきます。
+                    単語にもパターンがあることがわかります。同じ意味なのに、フォーマル・カジュアルで違った表現になり、読解が難しくなっていることも確認できます。
                   </span>
                 </li>
                 <li className="flex items-start">
@@ -638,15 +638,8 @@ export default function Home() {
                     size={20}
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>１０年分の問題を備えた参考書アプリになります</span>
+                  <span>グラフ解釈型・プレゼン資料型の設問形式に慣れると問題を回答するスピードが早くなります</span>
                 </li>
-                {/* <li className="flex items-start">
-                  <Check
-                    size={20}
-                    className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
-                  />
-                  <span>14日間の返金保証</span>
-                </li> */}
               </ul>
 
               <Link
