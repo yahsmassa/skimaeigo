@@ -82,7 +82,7 @@ export default function Home() {
               href="/about"
               className="hover:text-blue-600 transition-colors"
             >
-              ABOUT
+              アプリについて
             </a>
           </div>
 
@@ -807,7 +807,7 @@ export default function Home() {
                     href="/about"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    ABOUT
+                    アプリについて
                   </a>
                 </li>
               </ul>
