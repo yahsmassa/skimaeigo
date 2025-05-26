@@ -126,10 +126,10 @@ export default function Home() {
         <div className="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              共通テストは、時間内に解くのが超難しい！
+              共通テストは、最高の英語教材です！
             </h1>
             <p className="text-xl md:text-2xl mb-8">
-              過去問に慣れて、時間内に解く練習をすることが大事です
+              共通テストは総合的な英語力を試すために作られた問題です。高得点をとることは至難の業ですが、過去問を完全理解し、繰り返し学習することで、最高の英語教材になり、高得点を狙う実力がつきます。
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
@@ -185,10 +185,10 @@ export default function Home() {
                 <Clock size={32} />
               </div>
               <h3 className="text-xl font-bold mb-3">
-                スキマ時間で共通テスト対策
+                選択部分の読み上げ
               </h3>
               <p>
-                実戦では１問に費やせる時間は５分から１０分です。SNSをチェックする感覚で共通テストをピンポイントリアル体験。
+                英語に自信がなくても、何度も読み上げを聞いて、真似をすることで、英語力はつきます。選択したところだけ読み上げ、途中で止めることもできます。
               </p>
             </div>
 
@@ -197,9 +197,9 @@ export default function Home() {
               <div className="text-blue-600 mb-4">
                 <Check size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3">瞬時にアクセス・確認</h3>
+              <h3 className="text-xl font-bold mb-3">ランダムにアクセス</h3>
               <p>
-                問１、問２、という順番以外にも、各年の問５をまとめて解くなど、その都度、ランダムな選択で、瞬時に過去問題にアクセスできます。
+                ２０２１年から２０２５年までの「問題５」だけを解くようなことができます。過去問を自分なりに分析することで高い応用力がつきます。
               </p>
             </div>
 
@@ -210,7 +210,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold mb-3">タイマー機能</h3>
               <p>
-                タイマーで時間を計測できるので、自分の解答スピードがわかります。時間内に解くことが重要なスキルです。
+                共通テストは、時間との戦いです。最も長い長文問題でも１５分以内に解く！を意識して、学習できます。
               </p>
             </div>
 
@@ -219,9 +219,9 @@ export default function Home() {
               <div className="text-blue-600 mb-4">
                 <Headphones size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3">読み上げ・翻訳機能</h3>
+              <h3 className="text-xl font-bold mb-3">採点・翻訳機能</h3>
               <p>
-                選択した文章の読み上げ、翻訳・イディオム解説機能で深掘り学習、問題がそのまま教材になります。
+                採点と正解、わからなかった単語・イディオムの確認も、ボタンで即座に確認。反復学習には最適な機能です。何度も復習することで知識が完璧になります。
               </p>
             </div>
 
@@ -232,7 +232,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold mb-3">マルチデバイス対応</h3>
               <p>
-                電車ではスマホ、カフェではタブレット、家ではPCで学習など、全てのデバイスに対応しています。
+                最も心地よく学習できるのはPCですが、タブレットで十分です。じっくりやるのはタブレット、スキマ時間の反復学習はスマホというように、使い分けるのが最適です。
               </p>
             </div>
 
@@ -241,9 +241,9 @@ export default function Home() {
               <div className="text-blue-600 mb-4">
                 <CreditCard size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3">お得な料金プラン</h3>
+              <h3 className="text-xl font-bold mb-3">過去問を英語教材にする</h3>
               <p>
-                会員登録で２０２５年の試験は無料で使えます。有料会員になると、２０１６年から１０年分の過去問題を全て使えます。有料会員は1000円、お支払いはPayPayで
+                ２０２５年の試験は無料でお試しいただけます。有料会員（１,０００円）になると１０年分の過去問題学習ができます。過去問題を使って英語学習したい学生様には強くオススメします。
               </p>
             </div>
           </div>
@@ -254,44 +254,40 @@ export default function Home() {
       <section id="comparison" className="py-16 md:py-24 bg-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            従来のアプリとの違い
+            アプリを使った学習が最強な５つの理由
           </h2>
 
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="p-6 md:p-8 bg-blue-600 text-white">
-                <h3 className="text-2xl font-bold mb-6">従来のアプリ</h3>
+                <h3 className="text-2xl font-bold mb-6">従来の学習方法</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>年度単位での学習が基本</span>
+                    <span>参考書での学習や講義、模擬試験を経て、本番試験前になって実力確認のために過去問題を解きます。</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>まとまった時間が必要</span>
+                    <span>家や図書館で紙ベースの勉強、時間・場所・物理的な制約が多い</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>問題集・ノートなど文房具が必要</span>
+                    <span>ノートにはさまざまな詳細メモ、網羅的な内容になるのでボリュームが増えます、量をこなすとさらに肥大化します</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>問題単位で使える機能がない</span>
+                    <span>発音の確認やリスニングの練習は別に時間をとることに</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>発音や翻訳は別途確認が必要</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 mt-1">•</span>
-                    <span>一人での学習がベース</span>
+                    <span>参考書や教科書を段階的に学習して、その後、模擬試験を受けるなど、実戦までの過程が長くなります、モチベーションの維持も大変です。</span>
                   </li>
                 </ul>
               </div>
 
               <div className="p-6 md:p-8">
                 <h3 className="text-2xl font-bold mb-6 text-blue-600">
-                  私たちのアプリ
+                  アプリを使った学習方法
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
@@ -299,42 +295,35 @@ export default function Home() {
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>大問題を５分から１０分で解く訓練に最適</span>
+                    <span>最初にアプリで過去問題に接します。講義・参考書・模擬試験はおのずと相互補完になります。<span className="text-blue-600 font-bold">最も実践的！</span></span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>スキマ時間を活用したSNS世代向け学習</span>
+                    <span>アプリのランダムアクセス性や採点・翻訳機能を使い、<span className="text-blue-600 font-bold">時間と場所を問わない学習が可能に！</span></span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>文房具不要、スマホのみで学習可能</span>
+                    <span>ノートには、24-6-1の表現復讐！（2024年の問題６の設問１）みたいな記述が多くなり、<span className="text-blue-600 font-bold">従来のノートより機能的でコンパクト</span>になります</span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>ボタンタップだけで、読み上げ・翻訳・採点</span>
+                    <span>読み上げ機能があるから、<span className="text-blue-600 font-bold">長文リスニングもピンポイント確認も簡単！</span>シャドーイングの練習にも最適です！</span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>スマホ・タブレット・パソコンで学習可能</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check
-                      size={20}
-                      className="text-green-500 mr-2 flex-shrink-0 mt-1"
-                    />
-                    <span>長文問題も段落単位ピンポイント解説</span>
+                    <span>全く英語力がない生徒でも、音読から始め、問題１だけを１０年分学習するなど、<span className="text-blue-600 font-bold">最初から実戦学習</span>ができます</span>
                   </li>
                 </ul>
               </div>
@@ -347,33 +336,33 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            あらゆるデバイスで利用可能
+            ３つのデバイスを最大活用
           </h2>
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-            <div className="flex flex-col items-center">
-              <Smartphone size={64} className="text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">スマートフォン</h3>
+          <div className="flex flex-col items-center">
+              <Laptop size={64} className="text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-2">パソコン</h3>
               <p className="text-center max-w-xs">
-                電車や待ち時間など、どこでも手軽に学習できます
+                画面が大きく、文書の選択もマウスで簡単、集中学習に最適です
               </p>
             </div>
-
             <div className="flex flex-col items-center">
               <Tablet size={64} className="text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">タブレット</h3>
               <p className="text-center max-w-xs">
-                カフェやリビングでじっくり学習できます
+                実際の試験と似た表示になり、ストレスなく学習できます。リビングやカフェでも。
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Smartphone size={64} className="text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-2">スマートフォン</h3>
+              <p className="text-center max-w-xs">
+                いつでもどこでも学習できるので、スキマ時間の反復学習に向いてます。
               </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <Laptop size={64} className="text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">パソコン</h3>
-              <p className="text-center max-w-xs">
-                自宅で集中して長時間の学習に最適です
-              </p>
-            </div>
+
           </div>
         </div>
       </section>
