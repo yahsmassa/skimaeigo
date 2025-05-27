@@ -19,6 +19,12 @@ export default function sitemap() {
         priority: 0.8,
       },
       {
+        url: 'https://kyoutuu.com/refund',
+        lastModified: new Date('2025-05-26'),
+        changeFrequency: 'yearly',
+        priority: 0.8,
+      },
+      {
         url: 'https://kyoutuu.com/kiyaku',
         lastModified: new Date('2025-05-26'),
         changeFrequency: 'yearly',
@@ -27,6 +33,12 @@ export default function sitemap() {
       {
         url: 'https://kyoutuu.com/tokushoho',
         lastModified: new Date('2025-05-26'),
+        changeFrequency: 'yearly',
+        priority: 0.8,
+      },
+      {
+        url: 'https://kyoutuu.com/about',
+        lastModified: new Date('2025-05-27'),
         changeFrequency: 'yearly',
         priority: 0.8,
       },

@@ -14,6 +14,20 @@ const ShareIcon = () => {
     </div>
   );
 };
+const HomeAddIcon = () => {
+  return (
+    <div className="w-5 h-5 inline-block pt-1">
+      <svg viewBox="0 0 1020 1020" xmlns="http://www.w3.org/2000/svg" xmlns-xlink="http://www.w3.org/1999/xlink">
+          <path id="path1" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="200" stroke-linecap="round" stroke-linejoin="round" d="M 258 130 L 856 130"/>
+          <path id="-" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="200" stroke-linecap="round" stroke-linejoin="round" d="M 257 909 L 855 909"/>
+          <path id="path2" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" d="M 905.999756 135 L 906.002747 898.999939"/>
+          <path id="path3" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="97" stroke-linecap="round" stroke-linejoin="round" d="M 1517.999878 60 L 1262 -195.999878"/>
+          <path id="path4" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="35" stroke-linecap="round" stroke-linejoin="round" d="M 503.098267 271.65509 L 551.375427 480.38678 L 449.941132 411.53302 L 198.453705 782.020508 L 141.234329 743.179932 L 392.721741 372.692444 L 291.287415 303.838684 Z"/>
+      </svg>
+
+    </div>
+  );
+};
 
 const SquarePlusIcon = () => {
   return (
@@ -63,7 +77,7 @@ const HowToUse: NextPage = () => {
                   iPhone、iPadでは、SafariかChromeブラウザで <ShareIcon />「共有アイコン」をタップ、でてきたメニューから「ホーム画面に追加 <SquarePlusIcon />」を選んでください
                 </li>
                 <li className="text-gray-700">
-                  Androidでは、Chromeブラウザの「ホーム画面に追加」をタップすると。インストールボタンが出てきます。
+                  Androidでは、Chromeブラウザの「ホーム画面に追加<HomeAddIcon />」をタップすると。インストールボタンが出てきます。
                 </li>
                 <li className="text-gray-700">
                   ホーム画面にアイコンが追加されます
