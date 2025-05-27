@@ -86,7 +86,8 @@ const HowToUse: NextPage = () => {
               </h2>
               <p className="text-gray-700 mb-2">
                 キーボードが使えるPCでは、ショートカットを使うと便利です
-                <ul className="list-disc pl-6 space-y-2">
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
                 <li className="text-gray-700">
                   Ctrl＋ r：読み上げを行います
                 </li>
@@ -97,8 +98,6 @@ const HowToUse: NextPage = () => {
                 Ctrl＋ t：選択部分の翻訳（AI）
                 </li>
               </ul>
-
-              </p>
             </section>
             <section className="mb-8">
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
