@@ -121,75 +121,7 @@ const Ex24_4 = () => {
       },
     },
   };
-  const handoutData = {
-    title: "Room Improvement Project",
-    sections: [
-      {
-        title: "SIN Framework",
-        items: [
-          {
-            text: "What it is",
-            numberBox: "24",
-          },
-          {
-            text: "SIN = Stimulation, Individualization, Naturalness",
-          },
-        ],
-      },
-      {
-        title: "Design Recommendations Based on SIN and Questionnaire Results",
-        subsections: [
-          {
-            title: "Stimulation",
-            content: {
-              text: "Cover the floor with a colorful rug and",
-              numberBox: "25",
-            },
-          },
-          {
-            title: "Individualization",
-            content: {
-              text: "Replace room furniture.",
-              note: "(tables with wheels → easy to move around)",
-            },
-          },
-          {
-            title: "Naturalness",
-            content: {
-              numberBox: "26",
-              list: [
-                "Install blinds on windows.",
-                "Make temperature control possible.",
-                "Move projector screen away from windows.",
-                "Place sofas near walls.",
-                "Put floor lamp in darker corner.",
-              ],
-            },
-          },
-        ],
-      },
-      {
-        title: "Other Issues to Discuss",
-        items: [
-          {
-            text: "The majority of members",
-            numberBoxes: ["27", "28"],
-            additionalText:
-              "'s comment mentioned. How can we solve this?",
-          },
-          {
-            text: "Based on both the graph and",
-            numberBox: "29",
-            additionalText:
-              "'s comment, should we set a language rule in the room to motivate members to speak English more?",
-          },
-          {
-            text: "S 5 doesn't like the location, but we can't change the room, so let's think about how to encourage members to visit more often.",
-          },
-        ],
-      },
-    ],
-  };
+
   const questionsData = {
     questions: [
       {
@@ -483,7 +415,7 @@ const Ex24_4 = () => {
 
         {/* Q1 Section */}
         <div className="mb-8">
-          <h3 className="font-medium mb-4">
+          <h3 className="font-medium mb-4 font-sans">
             {questionnaireData.questions.q1.question}
           </h3>
           <div className="border border-gray-200 rounded-lg p-4">
@@ -499,7 +431,7 @@ const Ex24_4 = () => {
 
         {/* Q2 Section */}
         <div>
-          <h3 className="font-medium mb-2">
+          <h3 className="font-medium mb-2 font-sans">
             {questionnaireData.questions.q2.question}
           </h3>
           <p className="font-medium mb-4">
@@ -507,8 +439,8 @@ const Ex24_4 = () => {
           </p>
           <div className="space-y-4">
             {questionnaireData.questions.q2.comments.map((comment, index) => (
-              <div key={index} className="text-sm">
-                <span className="font-medium">{comment.student}:</span>{" "}
+              <div key={index} className="text-sm md:text-base">
+                <span className="font-medium font-sans">{comment.student}:</span>{" "}
                 <span>
                   {comment.text}{" "}
                   {index === 2 && Kaisetsu(showResults, "24-4-7")}
@@ -524,49 +456,73 @@ const Ex24_4 = () => {
 
       <div className="border-2 border-gray-300 rounded-lg p-6">
         <h3 className="text-xl font-bold text-center mb-6">
-          {handoutData.title}
+          Room Improvement Project
         </h3>
 
-        {handoutData.sections.map((section, index) => (
-          <div key={index} className="mb-6">
-            <h4 className="font-bold mb-4">■ {section.title}</h4>
-            { index === 2 && Kaisetsu(showResults, "24-4-10")}
-
-            {section.items && (
-              <div className="space-y-2 pl-4">
-                {section.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="whitespace-normal">
-                    - {item.text}
-                    {item.numberBox && <NumberBox number={item.numberBox} />}
-                    {"numberBoxes" in item &&
-                      item.numberBoxes?.map((num, numIndex) => (
-                        <React.Fragment key={numIndex}>
-                          <NumberBox number={num} />
-                          {numIndex === 0 &&
-                            item.text.includes("majority") &&
-                            "the room as"}
-                        </React.Fragment>
-                      ))}
-                    {"additionalText" in item && item.additionalText}
-                  </div>
-                ))}
-
-              </div>
-            )}
-
-            {section.subsections && (
-              <div className="space-y-4 pl-4">
-                {Kaisetsu(showResults, "24-4-9")}
-                {section.subsections.map((subsection, subIndex) => (
-                  <div key={subIndex}>
-                    <p>- {subsection.title}:</p>
-                    {renderContent(subsection.content)}
-                  </div>
-                ))}
-              </div>
-            )}
+        <div className="mb-6">
+          <h4 className="font-bold mb-4">■ SIN Framework</h4>
+          <div className="space-y-2 pl-4">
+            <div className="whitespace-normal">
+              - What it is :
+              <span className="font-sans text-center inline-block align-middle border-2 border-gray-400 w-12 h-8 mx-1">24</span>
+            </div>
+            <div className="whitespace-normal">
+              - SIN = Stimulation, Individualization, Naturalness
+            </div>
           </div>
-        ))}
+        </div>
+
+        <div className="mb-6">
+          <h4 className="font-bold mb-4">■ Design Recommendations Based on SIN and Questionnaire Results</h4>
+          <div className="space-y-4 pl-4">
+            <div>
+              <p>- Stimulation:</p>
+              <p className="pl-4">
+                Cover the floor with a colorful rug and
+                <span className="font-sans text-center inline-block align-middle border-2 border-gray-400 w-12 h-8 mx-1">25</span>
+              </p>
+            </div>
+            <div>
+              <p>- Individualization:</p>
+              <p className="pl-4">
+                Replace room furniture.
+                <span> (tables with wheels → easy to move around)</span>
+              </p>
+            </div>
+            <div>
+              <p>- Naturalness:</p>
+              <span className="font-sans text-center inline-block align-middle border-2 border-gray-400 w-12 h-8 mx-1">26</span>
+              <div className="pl-4 space-y-1">
+                <p> A. Install blinds on windows. </p>
+                <p>B. Make temperature control possible.</p>
+                <p>C. Move projector screen away from windows.</p>
+                <p>D. Place sofas near walls.</p>
+                <p>E. Put floor lamp in darker corner.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-6">
+          <h4 className="font-bold mb-4">■ Other Issues to Discuss</h4>
+          <div className="space-y-2 pl-4">
+            <div className="whitespace-normal">
+              - The majority of members
+              <span className="font-sans text-center inline-block align-middle border-2 border-gray-400 w-12 h-8 mx-1">27</span>
+              the room as
+              <span className="font-sans text-center inline-block align-middle border-2 border-gray-400 w-12 h-8 mx-1">28</span>
+              's comment mentioned. How can we solve this?
+            </div>
+            <div className="whitespace-normal">
+              - Based on both the graph and
+              <span className="font-sans text-center inline-block align-middle border-2 border-gray-400 w-12 h-8 mx-1">29</span>
+              's comment, should we set a language rule in the room to motivate members to speak English more?
+            </div>
+            <div className="whitespace-normal">
+              - <span className="font-sans">S 5</span> doesn't like the location, but we can't change the room, so let's think about how to encourage members to visit more often.
+            </div>
+          </div>
+        </div>
       </div>
       {/* ここから解答欄 */}
       <div className="max-w-3xl p-4 space-y-8">
@@ -597,7 +553,7 @@ const Ex24_4 = () => {
                   question.numberBox || "",
                   question.numberBox === "24" || question.numberBox === "25"
                     ? 4
-                    : 5,
+                    : (question.numberBox === "26" || question.numberBox === "27" ? 5 : 6),
                   answers,
                   setAnswers
                 )}

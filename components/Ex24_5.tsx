@@ -100,12 +100,10 @@ const Ex24_5 = () => {
         />
       </div>
       {/* Introduction text - double spaced */}
-      <div className="mb-8 leading-loose">
+      <div className="mb-8 leading-loose ">
         <p>
           You are in an English discussion group, and it is your turn to
           introduce a story.
-        </p>
-        <p>
           You have found a story in an English language magazine in Japan. You
           are preparing notes for your presentation.{" "}
           {Kaisetsu(showResults, "24-5-1")}

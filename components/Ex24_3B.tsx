@@ -24,10 +24,9 @@ const Ex24_3B = () => {
       title: "Virtual Field Trip to a South Sea Island",
       content: [
         "This year, for our English Day, we participated in a virtual science tour. The winter weather had been terrible, so we were excited to see the tropical scenery of the volcanic island projected on the screen.",
-        "First, we 'took a road trip' to learn about the geography of the island, using navigation software to view the route. We \"got into the car,\" which our teacher, Mr Leach, sometimes stopped so we could look out of the window and get a better sense of the rainforest. Afterwards, we asked Mr Leach about what we'd seen.",
-        "Later, we 'dived into the ocean' and learnt about the diversity of marine creatures. We observed a coral reef via a live camera. Mr Leach asked us if we could count the number of creatures, but there were too many! Then he showed us an image of the ocean 10 years ago. The reef we'd seen on camera was dynamic, but in the photo it was even more full of life. It looked so different after only 10 years! Mr Leach told us human activity was affecting the ocean and it could be totally ruined if we didn't act now.",
-        "In the evening, we studied astronomy under a 'perfect starry sky.' We put up tents in the gymnasium and created a temporary planetarium on the ceiling using a projector. We were fascinated by the sky full of constellations, shooting stars, and the Milky Way. Someone pointed out one of the brightest lights and asked Mr Leach if it was Venus, a planet close to Earth.",
-        "He nodded and explained that humans have created so much artificial light that hardly anything is visible in our city's night sky.",
+        "First, we \"took a road trip\" to learn about the geography of the island, using navigation software to view the route. We \"got into the car,\" which our teacher, Mr Leach, sometimes stopped so we could look out of the window and get a better sense of the rainforest. Afterwards, we asked Mr Leach about what we'd seen.",
+        "Later, we \"dived into the ocean\" and learnt about the diversity of marine creatures. We observed a coral reef via a live camera. Mr Leach asked us if we could count the number of creatures, but there were too many! Then he showed us an image of the ocean 10 years ago. The reef we'd seen on camera was dynamic, but in the photo it was even more full of life. It looked so different after only 10 years! Mr Leach told us human activity was affecting the ocean and it could be totally ruined if we didn't act now.",
+        "In the evening, we studied astronomy under a \"perfect starry sky.\" We put up tents in the gymnasium and created a temporary planetarium on the ceiling using a projector. We were fascinated by the sky full of constellations, shooting stars, and the Milky Way. Someone pointed out one of the brightest lights and asked Mr Leach if it was Venus, a planet close to Earth. He nodded and explained that humans have created so much artificial light that hardly anything is visible in our city's night sky.",
         "On my way home after school, the weather had improved and the sky was now cloudless. I looked up at the moonless sky and realised what Mr Leach had told us was true.",
       ],
     },
@@ -155,9 +154,9 @@ const Ex24_3B = () => {
       {/* 設問部分 */}
       <div className="w-full max-w-2xl mx-auto px-2 sm:px-4">
         <div className={cn("mb-6", showResults && qaFormat(qa, "3B-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-2">
+          <div className="flex items-center flex-wrap mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問1</span>
-            <span>
+            <span className="mb-2">
               Yuzu&apos;s article also included student comments (⓪~④)
               describing the events in the virtual tour. Put the comments in the
               order in which the events happened.
@@ -170,6 +169,7 @@ const Ex24_3B = () => {
             <div className="mx-1">→</div>
             {renderSelect("21", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId={"3B-1"} />}
+            <span className="ml-2">{' '}</span>
             {Kaisetsu(showResults, "24-3B-7")}
           </div>
         </div>
