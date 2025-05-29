@@ -7517,7 +7517,7 @@ export const qanda: QA[] = [
         isCorrect: false,
         points: 3,
         explanation: [
-          '正解は③',
+          '正解は ⑤④②①',
           '① 彼は再びヒーローになる。',
           '② 彼はパフォーマーである。',
           '③ 彼はプロの作家である。→本文に書かれていない。',

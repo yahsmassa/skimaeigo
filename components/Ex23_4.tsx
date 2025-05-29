@@ -304,7 +304,8 @@ const Ex23_4 = () => {
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>In the study discussed by Lee, students took a test</span>
-            {renderSelect("25", 4, answers, setAnswers)}.
+            {renderSelect("25", 4, answers, setAnswers)}
+            <span>after their final session.</span>
             {showResults && <Explain qa={qa} questionId="4-2" />}
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-4-9")}
@@ -361,7 +362,7 @@ const Ex23_4 = () => {
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Both writers agree that</span>
-            {renderSelect("28", 4, answers, setAnswers)}.
+            {renderSelect("28", 4, answers, setAnswers)}
             <span>is helpful for remembering new information.</span>
             {showResults && <Explain qa={qa} questionId="4-4" />}
             <span className="mr-2"></span>
@@ -388,9 +389,9 @@ const Ex23_4 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>
               Which additional information would be the best to further support
-              Lee&apos;s argument for spaced learning?
+              Lee's argument for spaced learning?
             </span>
-            {renderSelect("29", 4, answers, setAnswers)}.
+            {renderSelect("29", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="4-5" />}
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-4-12")}
@@ -398,8 +399,8 @@ const Ex23_4 = () => {
           {[
             "The main factor that makes a science class attractive",
             "The most effective length of intervals for spaced learning",
-            "Whether students&apos; workbooks include visuals or not",
-            "Why Oxford&apos;s students could not memorize information well",
+            "Whether students' workbooks include visuals or not",
+            "Why Oxford's students could not memorize information well",
           ].map((answer, index) => (
             <div key={index} className="flex items-start">
               <span className="w-6 h-6 flex items-center justify-center mr-2">
