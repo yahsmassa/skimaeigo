@@ -172,7 +172,7 @@ const Ex23_6A = () => {
                   <span className="text-lg">♦</span>
                   <span>
                     The yard sale story tells us that{" "}
-                    <span className="border border-gray-300 px-2">39</span>.
+                    <span className="border border-gray-300 px-2 font-sans">39</span>.
                   </span>
                 </li>
               </ul>
@@ -183,7 +183,7 @@ const Ex23_6A = () => {
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="text-lg">♦</span>
-                  <span className="border border-gray-300 px-2">40</span>
+                  <span className="border border-gray-300 px-2 font-sans">40</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-lg">♦</span>
@@ -192,11 +192,11 @@ const Ex23_6A = () => {
                     <ul className="ml-6 space-y-1">
                       <li className="flex items-start gap-2">
                         <span className="text-lg">◇</span>
-                        <span>Sperl: 3,724 hamburger-related items</span>
+                        <span className="font-sans">Sperl: 3,724 hamburger-related items</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-lg">◇</span>
-                        <span>Liu: 11,087 sets of playing cards</span>
+                        <span className="font-sans">Liu: 11,087 sets of playing cards</span>
                       </li>
                     </ul>
                   </div>
@@ -217,8 +217,8 @@ const Ex23_6A = () => {
                   <span className="text-lg">♦</span>
                   <span>
                     Various reasons mentioned:{" "}
-                    <span className="border border-gray-300 px-2">41</span>,{" "}
-                    <span className="border border-gray-300 px-2">42</span>,
+                    <span className="border border-gray-300 px-2 font-sans">41</span>,{" "}
+                    <span className="border border-gray-300 px-2 font-sans">42</span>,
                     interest in history, childhood excitement, becoming famous,
                     sharing, etc.
                   </span>
@@ -231,7 +231,7 @@ const Ex23_6A = () => {
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="text-lg">♦</span>
-                  <span className="border border-gray-300 px-2">43</span>
+                  <span className="border border-gray-300 px-2 font-sans">43</span>
                 </li>
               </ul>
             </div>
