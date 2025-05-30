@@ -34,7 +34,7 @@ const Ex22_6B = () => {
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (
-    <div className={exPageFormat}>
+    <div className={cn(exPageFormat,"font-times md:text-[17px]")}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第６問 B"}</h1>
@@ -214,8 +214,16 @@ const Ex22_6B = () => {
               <tr className="border-b">
                 <td className="p-2 border-r text-center">1</td>
                 <td className="p-2 border-r">
-                  <RecyclingSymbol number="1" />
-                  <div className="text-xs text-center">PETE (PET)</div>
+                  <Image
+                    src="/images/recycle1.webp"
+                    alt="Recycling symbols PETE"
+                    width={300}
+                    height={359}
+                    className="h-auto w-10"
+                  />
+
+                  {/* <RecyclingSymbol number="1" />
+                  <div className="text-xs text-center">PETE (PET)</div> */}
                 </td>
                 <td className="p-2 border-r">
                   This type of plastic is common and generally easy to recycle.
@@ -225,8 +233,13 @@ const Ex22_6B = () => {
               <tr className="border-b">
                 <td className="p-2 border-r text-center">2</td>
                 <td className="p-2 border-r">
-                  <RecyclingSymbol number="2" />
-                  <div className="text-xs text-center">HDPE</div>
+                  <Image
+                      src="/images/recycle2.webp"
+                      alt="Recycling symbols HDPE"
+                      width={300}
+                      height={359}
+                      className="h-auto w-10"
+                    />
                 </td>
                 <td className="p-2 border-r">
                   This type of plastic is easily recycled
@@ -242,8 +255,14 @@ const Ex22_6B = () => {
               <tr>
                 <td className="p-2 border-r text-center">3</td>
                 <td className="p-2 border-r">
-                  <RecyclingSymbol number="3" />
-                  <div className="text-xs text-center">PVC</div>
+                <Image
+                    src="/images/recycle3.webp"
+                    alt="Recycling symbols PVC"
+                    width={300}
+                    height={359}
+                    className="h-auto w-10"
+                  />
+
                 </td>
                 <td className="p-2 border-r">
                   This type of plastic is

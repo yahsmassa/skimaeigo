@@ -336,7 +336,7 @@ const Ex22_5 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               <span className="ml-2">Choose </span>
-              <span className="underline">four</span>
+              <span className="underline">four</span>{' '}
               out of the five events (1～5) in the order they happened to
               complete <span className="underline">Sequence of Key Events</span>
               .

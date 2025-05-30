@@ -5361,7 +5361,7 @@ export const qanda: QA[] = [
         answerString: '',
         isCorrect: false,
         points: 3,
-        explanation: ['正解は[33] ②→[34] ⑤→[35] ④→[36] ', '翻訳参照'],
+        explanation: ['正解は[33]② →[34]⑤ → [35]④→[36]① ', '翻訳参照'],
       },
       {
         questionId: '5-4',

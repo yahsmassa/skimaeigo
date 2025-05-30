@@ -13,6 +13,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+        fontFamily: {
+          georgia: ['Georgia', 'serif'],
+          times: ['"Times New Roman"', 'Times', 'serif'],
+          eb: ['var(--font-ebgaramond)', 'serif'],
+        },
     },
   },
   plugins: [],

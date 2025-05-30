@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AuthProvider } from "@/components/AuthProvider";
+import { EB_Garamond } from 'next/font/google';
+
+const ebGaramond = EB_Garamond({
+  subsets: ['latin'],
+  variable: '--font-ebgaramond', // Tailwindで使えるようにする
+  display: 'swap',
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,7 +52,7 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true} //サーバ、クライアント間のHTMLレンダリングチェック警告を非表示に
         // className="font-serif antialiased max-w-[1150px] mx-auto"
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[1150px] mx-auto`}
+        className={`${ebGaramond.variable} ${geistSans.variable} ${geistMono.variable} antialiased max-w-[1150px] mx-auto`}
       >
         <AuthProvider>{children}</AuthProvider>
       </body>
