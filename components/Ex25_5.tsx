@@ -16,7 +16,7 @@ const Ex25_5 = () => {
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (
-    <div className={exPageFormat}>
+    <div className={cn(exPageFormat, "font-times md:text-[17px]")}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>

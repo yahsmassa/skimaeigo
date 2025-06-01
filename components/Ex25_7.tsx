@@ -31,7 +31,7 @@ const Ex25_7 = () => {
         />
       </div>
       {/* Introduction text */}
-      <p className="mb-6">
+      <p className="mb-6 md:text-lg">
         You are preparing a presentation for a science project on animal habits.
         You found some interesting information in the article below and are now
         making your outline.

@@ -126,7 +126,6 @@ const Ex22_6B = () => {
             High-density Polyethylene is a recycle-type 2 plastic and is
             commonly called HDPE. It is non-toxic and can be used in the human
             body for heart
-            {Kaisetsu(showResults, "22-6B-3")}
             valves and artificial joints. It is strong and can be used at
             temperatures as low as -40°C and as high as 100°C. HDPE can be
             reused without any harm and is also suitable for beer-bottle cases,
@@ -398,8 +397,8 @@ const Ex22_6B = () => {
               properties. According to the article, which two of the following
               are appropriate? (The order does not matter.)
             </span>
-            {renderSelect("47", 4, answers, setAnswers)}・
-            {renderSelect("48", 4, answers, setAnswers)}
+            {renderSelect("47", 6, answers, setAnswers)}・
+            {renderSelect("48", 6, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="6B-3" />}
             {Kaisetsu(showResults, "22-6B-9")}
           </div>

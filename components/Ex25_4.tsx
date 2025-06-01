@@ -30,7 +30,7 @@ const Ex25_4 = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="mb-8 text-gray-800">
+      <div className="mb-8 text-gray-800 md:text-lg">
         In English class, you are writing an essay on a topic related to
         lifestyle in modern society. This is your most recent draft. You are now
         working on improvements based on comments from your teacher.
@@ -68,10 +68,13 @@ const Ex25_4 = () => {
                   <p className="indent-7">
                     One key point of the slow life is to own fewer belongings.
                     This makes it easier to concentrate on everyday activities.
-                    <sup>(1)</sup>^ Many people today tend to buy more than they
-                    can consume. Do you <i>really</i> need five pairs of the
-                    latest sneakers? Slow-lifers would recommend reducing
-                    possessions and buying only necessary items.
+                    <sup className="text-base">
+                      (1)
+                    </sup>
+                    Many people today tend to buy more than they can consume. Do
+                    you <i>really</i> need five pairs of the latest sneakers?
+                    Slow-lifers would recommend reducing possessions and buying
+                    only necessary items.
                     {Kaisetsu(showResults, "25-4-3")}
                   </p>
 
@@ -80,7 +83,10 @@ const Ex25_4 = () => {
                     style and manner in your public and private life. Sadly, one
                     study has found that around 90% of people check smartphones
                     during face-to-face conversations, which may appear impolite
-                    and affect relationships negatively.<sup>(2)</sup>^
+                    and affect relationships negatively.<sup className="text-base">
+                      (2)
+                    </sup>
+                    ^
                     {Kaisetsu(showResults, "25-4-4")}
                   </p>
 
@@ -93,15 +99,15 @@ const Ex25_4 = () => {
                   </p>
 
                   <p className="indent-7">
-                    In summary, through a slow life,{" "}
+                    In summary, through a slow life,{" "}<sup className="text-base">(3)</sup>
                     <u>
-                      <sup>(3)</sup>you can relax
+                      you can relax
                     </u>
                     . Even small changes can improve your life. Avoid having
                     non- essential items, spend quality time with people around
-                    you, and{" "}
+                    you, and{" "}<sup className="text-base">(4)</sup>
                     <u>
-                      <sup>(4)</sup>remember what you talked about with your
+                      remember what you talked about with your
                       friends
                     </u>
                     . By doing these things, you will have a chance to live a
