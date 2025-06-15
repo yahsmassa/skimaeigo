@@ -275,10 +275,18 @@ const Ex22_2A = () => {
         </div>
 
         <div className="ml-4 space-y-2">
-          <p>① headphones or earphones are necessary when watching videos</p>
-          <p>② the library is open until 9 pm</p>
-          <p>③ the library orientation handouts are wonderful</p>
-          <p>④ the Study Area is often empty</p>
+          {["headphones or earphones are necessary when watching videos",
+          "the library is open until 9 pm",
+          "the library orientation handouts are wonderful",
+          "the Study Area is often empty"
+          ].map((text, idx) => (
+            <div key={idx} className="flex ">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④"[idx]}
+              </span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

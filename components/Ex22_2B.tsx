@@ -118,9 +118,14 @@ const Ex22_2B = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-1"))}>
           <div className="mb-4 flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
-            In terms of the ratios for homes with pets, which shows the
-            countries&apos; ranking from{" "}
-            <span className="underline">highest to lowest</span>?
+            <span>
+              In terms of the ratios for homes with pets, which shows the&nbsp;
+            </span>
+            <span>
+              countries&apos; ranking from&nbsp;
+            </span>
+            <span className="underline">highest to lowest</span>
+            <span>?</span>
             {renderSelect("11", 6, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="2B-1" />}
             <span className="mr-2"></span>

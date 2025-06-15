@@ -58,13 +58,11 @@ const Ex21_5 = () => {
           farmer wasn&apos;t interested in keeping a bull—a male cow—on a milk
           farm. The farmer planned to sell the baby bull, which he called
           Three-oh-nine (309), to a meat market. Sabine decided she wasn&apos;t
-          (309), to a meat market. Sabine decided she wasn&apos;t going to let
-          that happen, so she asked the farmer if she could buy him and his
-          mother. The farmer agreed, and she bought them. Sabine then started
-          taking 309 for walks to town. About nine months later, when at last
-          she had permission to move the animals, they moved to Sabine&apos;s
-          farm. for walks to town. About nine months later, when at last she had
-          permission to move the animals, they moved to Sabine&apos;s farm.
+          going to let that happen, so she asked the farmer if she could buy him
+          and his mother. The farmer agreed, and she bought them. Sabine then
+          started taking 309 for walks to town. About nine months later, when at
+          last she had permission to move the animals, they moved to
+          Sabine&apos;s farm.
           {Kaisetsu(showResults, "21-5-2")}
         </p>
 

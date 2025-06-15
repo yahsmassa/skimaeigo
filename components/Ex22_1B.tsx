@@ -54,6 +54,7 @@ const Ex22_1B = () => {
           <div className="text-center flex-grow">
             <h1 className="text-2xl font-bold mb-2">Contest!</h1>
             <h2 className="text-xl font-bold mb-2">Name a Baby Giraffe</h2>
+
             <p className="text-lg">
               Let&apos;s welcome our newest animal to the City Zoo!
             </p>
@@ -117,7 +118,7 @@ const Ex22_1B = () => {
         {/* Contest Schedule Section */}
         <div className="border-b border-gray-800 pb-4">
           <h3 className="font-bold mb-2">Contest Schedule</h3>
-          <div className="grid grid-cols-[100px_1fr] gap-4">
+          <div className="grid grid-cols-[60px_1fr] md:grid-cols-[100px_1fr] gap-4">
             <div className="font-bold">June 8</div>
             <div>
               <p>
@@ -164,10 +165,11 @@ const Ex22_1B = () => {
       <div className="max-w-3xl mx-auto mt-4 space-y-8">
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-1"))}>
-          <div className="flex items-start space-x-2">
+          <div className="flex items-start space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>You can enter this contest between </span>
-            {renderSelect("3", 4, answers, setAnswers)}.
+            {renderSelect("3", 4, answers, setAnswers)}
+            <span>.</span>
             {showResults && <Explain qa={qa} questionId="1B-1" />}
             {Kaisetsu(showResults, "22-1B-5")}
           </div>
@@ -191,8 +193,10 @@ const Ex22_1B = () => {
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
-              When submitting your idea for the baby giraffe&apos;s name, you
-              must
+              When submitting your idea for the baby{' '}
+            </span>
+            <span>
+              giraffe&apos;s name, you must
             </span>
             {renderSelect("4", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1B-2" />}
@@ -218,8 +222,10 @@ const Ex22_1B = () => {
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
-              If the name you submitted is included among the five finalists,
-              you will
+              If the name you submitted is included among{' '}
+            </span>
+            <span>
+              the five finalists, you will
             </span>
             {renderSelect("5", 4, answers, setAnswers)}.
             {showResults && <Explain qa={qa} questionId="1B-3" />}
