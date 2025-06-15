@@ -251,10 +251,19 @@ const Ex22_2A = () => {
         </div>
 
         <div className="ml-4 space-y-2">
-          <p>① borrow eight more books on 10 August</p>
-          <p>② borrow seven more books on 10 August</p>
-          <p>③ not borrow any more books before 13 August</p>
-          <p>④ not borrow any more books before 17 August</p>
+          {[
+            "borrow eight more books on 10 August",
+            "borrow seven more books on 10 August",
+            "not borrow any more books before 13 August",
+            "not borrow any more books before 17 August"
+          ].map((text, idx) => (
+            <div key={idx} className="flex">
+              <span className="w-6 h-6 flex items-center mr-1">
+                {"①②③④"[idx]}
+              </span>
+              <span>{text}</span>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -281,7 +290,7 @@ const Ex22_2A = () => {
           "the Study Area is often empty"
           ].map((text, idx) => (
             <div key={idx} className="flex ">
-              <span className="w-6 h-6 flex items-center justify-center mr-2">
+              <span className="w-6 h-6  mr-1">
                 {"①②③④"[idx]}
               </span>
               <span>{text}</span>

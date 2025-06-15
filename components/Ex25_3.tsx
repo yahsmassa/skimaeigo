@@ -131,12 +131,21 @@ const TheContest = () => {
             {showResults && <Explain qa={qa} questionId="3-2" />}
             {Kaisetsu(showResults, "25-3-7")}
           </div>
-          <div className="pl-2 md:pl-8 space-y-2">
-            <p>① The band changed its attitude.</p>
-            <p>② The band decided to practise more often.</p>
-            <p>③ The band leader identified the problem.</p>
-            <p>④ The band leader was concerned about the band.</p>
-            <p>⑤ The band registered for a contest.</p>
+          <div className="ml-4 space-y-2">
+            {[
+              "The band changed its attitude.",
+              "The band decided to practise more often.",
+              "The band leader identified the problem.",
+              "The band leader was concerned about the band.",
+              "The band registered for a contest."
+            ].map((text, idx) => (
+              <div key={idx} className="flex ">
+                <span className="w-6 h-6 flex items-center  mr-2">
+                  {"①②③④⑤"[idx]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 

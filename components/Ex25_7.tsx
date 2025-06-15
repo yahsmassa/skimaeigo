@@ -283,16 +283,21 @@ const Ex25_7 = () => {
             {showResults && <Explain qa={qa} questionId="7-3" />}
             {Kaisetsu(showResults, "25-7-13")}
           </div>
-          <div className="space-y-2 ml-8">
-            <div>① which burn up energy rapidly tend to sleep more often</div>
-            <div>② which continually search for food need longer sleep</div>
-            <div>③ whose diet has fewer calories can sleep more easily</div>
-            <div>
-              ④ whose food keeps their stomachs full usually sleep longer
-            </div>
-            <div>
-              ⑤ whose homes are difficult to get to typically sleep less
-            </div>
+          <div className="ml-4 space-y-2">
+            {[
+              "which burn up energy rapidly tend to sleep more often",
+              "which continually search for food need longer sleep",
+              "whose diet has fewer calories can sleep more easily",
+              "whose food keeps their stomachs full usually sleep longer",
+              "whose homes are difficult to get to typically sleep less"
+            ].map((text, idx) => (
+              <div key={idx} className="flex">
+                <span className="w-6 h-6 flex items-center mr-2">
+                  {"①②③④⑤"[idx]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -305,18 +310,22 @@ const Ex25_7 = () => {
             {showResults && <Explain qa={qa} questionId="7-4" />}
             {Kaisetsu(showResults, "25-7-14")}
           </div>
-          <div className="space-y-2 ml-8">
-            <div>
-              ① can be partially asleep and partially awake while in flight
+          <div className="space-y-2">
+            <div className="ml-4 space-y-2">
+              {[
+                "can be partially asleep and partially awake while in flight",
+                "can have half of their brain sleep, leading to increased heart rate",
+                "can keep both eyes open constantly to watch out for enemies",
+                "can protect the outside members from inside the group"
+              ].map((text, idx) => (
+                <div key={idx} className="flex">
+                  <span className="w-6 h-6 flex items-center mr-2">
+                    {"①②③④"[idx]}
+                  </span>
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
-            <div>
-              ② can have half of their brain sleep, leading to increased heart
-              rate
-            </div>
-            <div>
-              ③ can keep both eyes open constantly to watch out for enemies
-            </div>
-            <div>④ can protect the outside members from inside the group</div>
           </div>
         </div>
 
@@ -329,7 +338,7 @@ const Ex25_7 = () => {
             {showResults && <Explain qa={qa} questionId="7-5" />}
             {Kaisetsu(showResults, "25-7-15")}
           </div>
-          <div className="space-y-2 ml-8">
+          <div className="space-y-2 ml-4">
             <div>① Common Patterns of Sleep</div>
             <div>② Natural Sleep Methods</div>
             <div>③ Reasons for Sleep</div>

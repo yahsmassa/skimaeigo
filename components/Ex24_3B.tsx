@@ -161,13 +161,17 @@ const Ex24_3B = () => {
               describing the events in the virtual tour. Put the comments in the
               order in which the events happened.
             </span>
-            {renderSelect("18", 4, answers, setAnswers)}
-            <div className="mx-1">→</div>
-            {renderSelect("19", 4, answers, setAnswers)}
-            <div className="mx-1">→</div>
-            {renderSelect("20", 4, answers, setAnswers)}
-            <div className="mx-1">→</div>
-            {renderSelect("21", 4, answers, setAnswers)}
+            <div className="flex flex-row mb-2">
+              {renderSelect("18", 4, answers, setAnswers)}
+              <div className="mx-1">→</div>
+              {renderSelect("19", 4, answers, setAnswers)}
+              <div className="mx-1">→</div>
+            </div>
+            <div className="flex flex-row  mb-2">
+              {renderSelect("20", 4, answers, setAnswers)}
+              <div className="mx-1">→</div>
+              {renderSelect("21", 4, answers, setAnswers)}
+            </div>
             {showResults && <Explain qa={qa} questionId={"3B-1"} />}
             <span className="ml-2">{' '}</span>
             {Kaisetsu(showResults, "24-3B-7")}
@@ -210,7 +214,8 @@ const Ex24_3B = () => {
         <div className={cn("mb-6", showResults && qaFormat(qa, "3B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問3</span>
-            <span>On the way home, Yuzu looked up and most likely saw</span>
+            <span>On the way home, Yuzu looked up and most</span>
+            <span>likely saw</span>
             {renderSelect("23", 4, answers, setAnswers)}
             <span>in the night sky.</span>
             {showResults && <Explain qa={qa} questionId={"3B-3"} />}

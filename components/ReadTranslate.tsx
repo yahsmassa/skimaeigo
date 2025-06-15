@@ -15,7 +15,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         onClick={() => readSentence(selectedText)}
         disabled={!isSelected}
         className={cn(
-          "ml-2 px-2 py-1 text-white rounded w-[160px] text-sm",
+          "ml-1 px-2 py-1 text-white rounded w-[145px] text-sm",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >

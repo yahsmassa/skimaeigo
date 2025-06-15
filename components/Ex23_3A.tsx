@@ -101,7 +101,7 @@ const Ex23_3A = () => {
               If you take Kaitlyn&apos;s advice, how should you fill your
               backpack?
             </span>
-            {renderSelect("16", 4, answers, setAnswers)}.
+            {renderSelect("16", 4, answers, setAnswers)}
             {showResults && <Explain qa={qa} questionId="3A-1" />}
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-3A-4")}
@@ -122,8 +122,9 @@ const Ex23_3A = () => {
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>According to Kaitlyn,</span>
-            {renderSelect("17", 4, answers, setAnswers)}.
-            <span>is the best method to stay warm all night.</span>
+            {renderSelect("17", 4, answers, setAnswers)}
+            <span>is the best method</span>
+            <span>to stay warm all night.</span>
             {showResults && <Explain qa={qa} questionId="3A-2" />}
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-3A-5")}
