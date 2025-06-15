@@ -279,13 +279,22 @@ const Ex25_6 = () => {
             {Kaisetsu(showResults, "25-6-16")}
           </div>
 
-          <div className="space-y-2 ml-8">
-            <div>A : fly at very high altitudes</div>
-            <div>B : imitate sounds perfectly</div>
-            <div>C : read the minds of animals and people</div>
-            <div>D : see extremely long distances</div>
-            <div>E : speak to people using telepathy</div>
-            <div>F : transport herself to different places instantly</div>
+          <div className="ml-4 space-y-2">
+            {[
+              "fly at very high altitudes",
+              "imitate sounds perfectly",
+              "read the minds of animals and people",
+              "see extremely long distances",
+              "speak to people using telepathy",
+              "transport herself to different places instantly"
+            ].map((text, idx) => (
+              <div key={idx} className="flex">
+                <span className="w-6 h-6 flex items-center mr-1">
+                  {"ABCDEF"[idx]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
 
           <div className="space-y-2 ml-8 mt-4">
@@ -328,11 +337,20 @@ const Ex25_6 = () => {
           </div>
 
           <div className="space-y-2 ml-8">
-            <div>① Bluebird&apos;s childhood experiences</div>
-            <div>② Bluebird&apos;s view on the reality show</div>
-            <div>③ how Melody learned she had superpowers</div>
-            <div>④ the reason why Melody joined Team Hero</div>
-            <div>⑤ the relationship between Bluebird and Melody</div>
+            {[
+              "Bluebird's childhood experiences",
+              "Bluebird's view on the reality show",
+              "how Melody learned she had superpowers",
+              "the reason why Melody joined Team Hero",
+              "the relationship between Bluebird and Melody"
+            ].map((text, idx) => (
+              <div key={idx} className="flex">
+                <span className="w-6 h-6 flex  mr-1">
+                  {"①②③④⑤"[idx]}
+                </span>
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

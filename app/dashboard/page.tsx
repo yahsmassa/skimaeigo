@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Swal from "sweetalert2";
-import { translateSentence, readSentence, getPaymentUrl, stopReading, explainWord } from "@/lib/util";
+import { translateSentence, readSentence, getPaymentUrl, stopReading, explainWord, explainGrammer } from "@/lib/util";
 import { ReadTranslate } from "@/components/ReadTranslate";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
@@ -133,6 +133,11 @@ export default function Home() {
       if (e.ctrlKey && e.key === "u") {
         e.preventDefault();
         console.log("user", user);
+      }
+      // Ctrl + g でユーザー情報表示
+      if (e.ctrlKey && e.key === "g") {
+        e.preventDefault();
+        explainGrammer(selection);
       }
       // Ctrl + t で翻訳
       const isMac = navigator.userAgent.toUpperCase().indexOf("MAC") >= 0;

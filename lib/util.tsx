@@ -117,12 +117,6 @@ export const translateSentence = async (selectedText: string) => {
       selectedText;
     const result = await translateTextGemini(prompt);
 
-    // const prompt =
-    //   "あなたは優秀な英語教師です、以下の英文を日本語に翻訳し、センテンスごとに、原文、翻訳文と表示し、その後熟語・慣用句が含まれていたら、箇条書きで指摘してください、箇条書きは 英語：日本語 の形式で指摘してください" +
-    //   selectedText;
-    // const result = await translateTextCohere(prompt);
-    // const result = (await translateTextDeepseek(prompt)) || "";
-    // console.log("formattedResult", formattedResult);
     const formattedResult = result.replace(/\n/g, "<br/>"); // 改行を<br/>に変換
     console.log("formatResult", formattedResult);
     Swal.fire({
@@ -166,7 +160,7 @@ export const explainWord = async (selectedText: string) => {
 
   // ローディング表示
   Swal.fire({
-    title: "解説中...",
+    title: selectedText + "について",
     text: "Requesting...",
     allowOutsideClick: false,
     didOpen: () => {
@@ -175,7 +169,8 @@ export const explainWord = async (selectedText: string) => {
   });
 
   try {
-    const prompt = "あなたは優秀な英語教師です、以下の単語に関して、他の形式でよく使われるものがある場合（例えば動詞・副詞・名詞・形容詞など）はそれを表示し、違う単語を用いてよく表現されるものがあれば、改行してリストしてください。日本語で解説してください" +
+    const prompt = "以下の単語に関して、他の形式でよく使われるものがある場合（例えば動詞・副詞・名詞・形容詞など）はそれを表示し、違う単語を用いてよく表現されるものがあれば、改行してリストしてください。日本語で解説してください" +
+    // const prompt = "あなたは優秀な英語教師です、以下の単語に関して、他の形式でよく使われるものがある場合（例えば動詞・副詞・名詞・形容詞など）はそれを表示し、違う単語を用いてよく表現されるものがあれば、改行してリストしてください。日本語で解説してください" +
       selectedText;
     const result = await translateTextGemini(prompt);
 
@@ -183,7 +178,7 @@ export const explainWord = async (selectedText: string) => {
     .replace(/\*\*/g, "").replace(/\* /g, "⚫︎ "); // 改行を<br/>に変換
     console.log("formatResult", formattedResult);
     Swal.fire({
-      title: "単語解説",
+      title: selectedText + "の解説",
       // text: result,
       html: formattedResult,
       confirmButtonText: "OK",
@@ -193,6 +188,64 @@ export const explainWord = async (selectedText: string) => {
     Swal.fire({
       title: "エラー",
       text: "単語解説に失敗しました",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+  }
+};
+
+export const explainGrammer= async (selectedText: string) => {
+
+  if (!selectedText) {
+    Swal.fire({
+      title: "エラー",
+      text: "単語が選択されていません",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+  const n = selectedText.length;
+  if (n > 300 || n < 10) {
+    Swal.fire({
+      title: "エラー",
+      text: "10文字以上300文字以内で選択してください",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
+
+  // ローディング表示
+  Swal.fire({
+    title: "文法の解説",
+    text: "Requesting...",
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+  });
+
+  try {
+    const prompt = "以下の文章の文法を説明してください。改行して、簡単な例文を示してください。" +
+    // const prompt = "あなたは優秀な英語教師です、以下の単語に関して、他の形式でよく使われるものがある場合（例えば動詞・副詞・名詞・形容詞など）はそれを表示し、違う単語を用いてよく表現されるものがあれば、改行してリストしてください。日本語で解説してください" +
+      selectedText;
+    const result = await translateTextGemini(prompt);
+
+    const formattedResult = result.replace(/\n/g, "<br/>")
+    .replace(/\*\*/g, "").replace(/\* /g, "⚫︎ "); // 改行を<br/>に変換
+    console.log("formatResult", formattedResult);
+    Swal.fire({
+      title: "文法の解説",
+      // text: result,
+      html: formattedResult,
+      confirmButtonText: "OK",
+      width: "500px",
+    });
+  } catch (error) {
+    Swal.fire({
+      title: "エラー",
+      text: "文法解説に失敗しました",
       icon: "error",
       confirmButtonText: "OK",
     });

@@ -152,7 +152,7 @@ const TheContest = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
-            <span className="mr-2">
+            <span className="">
               How did the band most likely feel after
             </span>
             <span className="mr-2">the competition? </span>

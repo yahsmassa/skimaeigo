@@ -1,7 +1,9 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { cn } from "@/lib/util";
-import { translateSentence, readSentence } from "@/lib/util";
+import { translateSentence, readSentence, explainWord, explainGrammer } from "@/lib/util";
+import { Volume2, BookA, BookOpenCheck, Languages, BookMarked } from "lucide-react";
+
 type props = {
   isSelected: boolean;
   selectedText: string;
@@ -15,23 +17,41 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         onClick={() => readSentence(selectedText)}
         disabled={!isSelected}
         className={cn(
-          "ml-1 px-2 py-1 text-white rounded w-[145px] text-sm",
+          "ml-1 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
-        選択部分の読み上げ
+        <Volume2 className="w-4 h-4" />
       </button>
-      <button
-        // onMouseDown={(e) => e.preventDefault()}
+      {/* <button
         onClick={() => translateSentence(selectedText)}
         disabled={!isSelected}
         className={cn(
-          "ml-2 px-2 py-1 text-white rounded w-[60px]",
-          process.env.NEXT_PUBLIC_DEBUG === "true" ? "hidden" : "hidden",
+          "ml-1 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
-        翻訳
+        <Languages className="w-4 h-4" />
+      </button> */}
+      <button
+        onClick={() => explainWord(selectedText)}
+        disabled={!isSelected}
+        className={cn(
+          "ml-1 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
+          isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
+        )}
+      >
+        <BookMarked className="w-4 h-4" />
+      </button>
+      <button
+        onClick={() => explainGrammer(selectedText)}
+        disabled={!isSelected}
+        className={cn(
+          "ml-1 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
+          isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
+        )}
+      >
+        <BookOpenCheck className="w-4 h-4" />
       </button>
     </div>
   );
