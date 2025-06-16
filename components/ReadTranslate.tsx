@@ -21,7 +21,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
-        <Volume2 className="w-4 h-4" />
+        <Volume2 className="w-6 h-6" />
       </button>
       {/* <button
         onClick={() => translateSentence(selectedText)}
@@ -41,7 +41,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
-        <BookOpenCheck className="w-4 h-4" />
+        <BookOpenCheck className="w-6 h-6" />
       </button>
       <button
         onClick={() => explainGrammer(selectedText)}
@@ -51,7 +51,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
-        <GraduationCap className="w-4 h-4" />
+        <GraduationCap className="w-6 h-6" />
       </button>
     </div>
   );

@@ -103,13 +103,13 @@ export function Saiten({
           onClick={handleQA}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold h-8 py-1 px-3 rounded text-sm w-[60px] mb-3"
         >
-          採点
+          表示
         </button>
         <button
           onClick={handleClear}
           className="bg-gray-500 hover:bg-gray-700 text-white  h-8 py-1 px-2 rounded text-base mb-3"
         >
-          Reset
+          非表示
         </button>
         <div className="ml-2 text-base font-semibold w-[130px] font-sans">
           得点: {showResults && score !== null ? score : "-"} / {totalPoints}点
