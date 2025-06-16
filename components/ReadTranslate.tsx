@@ -37,7 +37,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         onClick={() => explainWord(selectedText)}
         disabled={!isSelected}
         className={cn(
-          "ml-1 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
+          "ml-3 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
@@ -47,7 +47,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         onClick={() => explainGrammer(selectedText)}
         disabled={!isSelected}
         className={cn(
-          "ml-1 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
+          "ml-3 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
