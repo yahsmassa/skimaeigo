@@ -169,10 +169,13 @@ export const explainWord = async (selectedText: string) => {
   });
 
   try {
-    const prompt = "以下の単語に関して、他の形式でよく使われるものがある場合（例えば動詞・副詞・名詞・形容詞など）はそれを表示し、違う単語を用いてよく表現されるものがあれば、改行してリストしてください。日本語で解説してください" +
+    const prompt = "あなたは英語教師、以下の単語に関して、他の形式でよく使われるものがある場合（例えば動詞・副詞・名詞・形容詞など）はそれを表示し、違う英単語を用いてよく表現されるものがあれば、改行してリストしてください。日本語で解説してください" +
     // const prompt = "あなたは優秀な英語教師です、以下の単語に関して、他の形式でよく使われるものがある場合（例えば動詞・副詞・名詞・形容詞など）はそれを表示し、違う単語を用いてよく表現されるものがあれば、改行してリストしてください。日本語で解説してください" +
       selectedText;
+    // const result = await translateTextDeepseek(prompt);
+    // if (!result)  return;
     const result = await translateTextGemini(prompt);
+
 
     const formattedResult = result.replace(/\n/g, "<br/>")
     .replace(/\*\*/g, "").replace(/\* /g, "⚫︎ "); // 改行を<br/>に変換

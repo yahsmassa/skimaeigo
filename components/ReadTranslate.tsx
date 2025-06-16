@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import { cn } from "@/lib/util";
 import { translateSentence, readSentence, explainWord, explainGrammer } from "@/lib/util";
-import { Volume2, BookA, BookOpenCheck, Languages, BookMarked } from "lucide-react";
+import { Volume2, BookA, BookOpenCheck, Languages, BookMarked, GraduationCap } from "lucide-react";
 
 type props = {
   isSelected: boolean;
@@ -41,7 +41,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
-        <BookMarked className="w-4 h-4" />
+        <BookOpenCheck className="w-4 h-4" />
       </button>
       <button
         onClick={() => explainGrammer(selectedText)}
@@ -51,7 +51,7 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
           isSelected ? " bg-blue-500 hover:bg-blue-600" : "bg-gray-500"
         )}
       >
-        <BookOpenCheck className="w-4 h-4" />
+        <GraduationCap className="w-4 h-4" />
       </button>
     </div>
   );
