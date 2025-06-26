@@ -281,10 +281,10 @@ export default function Home() {
           <select
             value={selectedYear}
             onChange={handleYearChange}
-            disabled={!user?.isPremium}
+            // disabled={!user?.isPremium}
             className={cn(
-              "ml-5 p-2 border rounded",
-              !user?.isPremium && "bg-gray-200 text-black"
+              "ml-5 p-2 border rounded"
+              // , !user?.isPremium && "bg-gray-200 text-black"
             )}
           >
             {(Object.keys(groupedComponents) as Year[])

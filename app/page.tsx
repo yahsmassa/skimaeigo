@@ -3,6 +3,8 @@ import Navigation from "@/app/components/Navigation";
 import AuthRedirect from "@/app/components/AuthRedirect";
 import {
   Computer,
+  BookOpenCheck,
+  GraduationCap,
   BookOpenText,
   Check,
   Calculator,
@@ -30,6 +32,12 @@ export default function Home() {
             <p className="text-xl md:text-2xl mb-8">
               共通テストは総合的な英語力を試すために作られた問題です。高得点をとることは至難の業ですが、過去問を完全理解し、繰り返し学習することで、最高の英語教材になり、高得点を狙う実力がつきます。
             </p>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-orange-400">
+              緊急キャンペーン！７月末まで
+            </h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-orange-400">
+              有料機能が無料で使える！
+            </h1>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
                 href="/signin"
@@ -97,36 +105,37 @@ export default function Home() {
             {/* Feature 2 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
               <div className="text-blue-600 mb-4">
-                <Database size={32} />
+                <BookOpenCheck size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3">問題単位でランダムアクセス</h3>
+              <h3 className="text-xl font-bold mb-3">単語の詳細（Web版限定）</h3>
               <p>
-                ２０２１年から２０２５年までの「問題５」だけを解くようなことができます。反復学習とパターン分析に圧倒的に有利な機能です。
+                選択した単語に関する詳細な説明をAIを使って表示します。動詞や形容詞などの他の品詞や、同じ意味の類義語などが確認できます。共通テストのように類似表現が多い問題に最適な機能です。
               </p>
             </div>
 
             {/* Feature 3 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-              <div className="text-blue-600 mb-4 w-10 h-10">
-              <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
-              </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">タイマー機能</h3>
+              <GraduationCap size={32} className="text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-3">文法解説（Web版限定）</h3>
               <p>
-                共通テストは、時間との戦いです。最も長い長文問題でも１５分以内に解く！を意識して、学習できます。回答時間以外の時間の計測にも応用できます。
+                選択した文章に関する文法をAIを使って解説します。文法書を探すことなく、ピンポイントで文法が理解できます。選択できる文章は３００文字までです。
               </p>
             </div>
 
             {/* Feature 4 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
               <div className="text-blue-600 mb-4 flex gap-2">
+              <div className="text-blue-600 w-8 h-8">
+              <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+              </svg>
+              </div>
                 <Calculator size={32} />
                 <Languages size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3">採点・翻訳機能</h3>
+              <h3 className="text-xl font-bold mb-3">タイマー・採点・翻訳機能</h3>
               <p>
-                採点と正解、わからなかった単語・イディオムの確認も、ボタンで即座に確認。反復学習には最適な機能です。何度も復習することで知識が完璧になります。
+                解答するまでの時間計測・採点と正解、わからなかった単語・イディオムの確認も、ボタンで即座に確認。反復学習には最適な機能です。
               </p>
             </div>
 
@@ -444,6 +453,12 @@ export default function Home() {
               </h3>
               <p className="text-center text-gray-600 mb-6">
                 まずは共通テストを体験
+              </p>
+              <p className="text-center text-red-500 mb-6 text-bold text-2xl">
+                緊急キャンペーン！
+              </p>
+              <p className="text-center text-red-500 mb-6 text-bold text-xl">
+                ７月末まで有料機能を無料開放！
               </p>
 
               <div className="text-center mb-8">

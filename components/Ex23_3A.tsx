@@ -123,7 +123,7 @@ const Ex23_3A = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>According to Kaitlyn,</span>
             {renderSelect("17", 4, answers, setAnswers)}
-            <span>is the best method</span>
+            <span>is the best method&nbsp;</span>
             <span>to stay warm all night.</span>
             {showResults && <Explain qa={qa} questionId="3A-2" />}
             <span className="mr-2"></span>

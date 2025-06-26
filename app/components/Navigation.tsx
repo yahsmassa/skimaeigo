@@ -11,7 +11,7 @@ export default function Navigation() {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
           <span className="text-orange-500 font-bold text-2xl">
-            共通テスト英語対策アプリ
+            共通テスト英語対策アプリ（Web版）
           </span>
           <img
             src="/icons/icon-192x192.png"
