@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { cn } from "@/lib/util";
-import { translateSentence, readSentence, explainWord, explainGrammer } from "@/lib/util";
+import { translateSentence, readSentence,  explainGrammer } from "@/lib/util";
 import { Volume2, BookA, BookOpenCheck, Languages, BookMarked, GraduationCap } from "lucide-react";
 
 type props = {

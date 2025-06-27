@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Swal from "sweetalert2";
-import { translateSentence, readSentence, getPaymentUrl, stopReading, explainWord, explainGrammer } from "@/lib/util";
+import { translateSentence, readSentence, getPaymentUrl, stopReading,  explainGrammer } from "@/lib/util";
 import { ReadTranslate } from "@/components/ReadTranslate";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
@@ -127,7 +127,7 @@ export default function Home() {
       if (e.ctrlKey && e.key === "w") {
         e.preventDefault();
         // console.log("read selection", selection);
-        explainWord(selection);
+        explainGrammer(selection);
       }
       // Ctrl + u でユーザー情報表示
       if (e.ctrlKey && e.key === "u") {
