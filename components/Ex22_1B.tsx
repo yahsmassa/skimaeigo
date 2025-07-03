@@ -235,7 +235,7 @@ const Ex22_1B = () => {
             "get free entry to the zoo for a day",
             "have free access to the live website",
             "meet and feed the baby giraffe",
-            "take a picture with the giraffe&apos;s family",
+            "take a picture with the giraffe's family",
           ].map((text, index) => (
             <div key={index} className="flex items-start pl-2 md:pl-8">
               <span className="w-6 h-6 flex items-center justify-center mr-2">

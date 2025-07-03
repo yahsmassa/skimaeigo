@@ -187,7 +187,7 @@ const Ex23_1B = () => {
             {Kaisetsu(showResults, "23-1B-8")}
           </div>
           {[
-            "assess each other&apos;s performances",
+            "assess each other's performances",
             "compete to receive the best prize",
             "make presentations about the future",
             "show what they learned at the camp",
