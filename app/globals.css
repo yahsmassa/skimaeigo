@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /* SweetAlert２のカスタムCSS */
+.swal2-container {
+    z-index: 9999 !important; /* 選択部分より上に表示 */
+}
+
 .swal2-modal {
     font-size: 13px; /* 全体のフォントサイズを小さくする */
 }
