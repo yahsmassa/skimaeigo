@@ -90,6 +90,28 @@ export const renderSelect = (
   </div>
 );
 
+// 選択範囲を保存・復元するためのグローバル変数
+let savedSelectionRange: Range | null = null;
+
+// 選択範囲を保存する関数
+const saveSelection = () => {
+  const selection = window.getSelection();
+  if (selection && selection.rangeCount > 0) {
+    savedSelectionRange = selection.getRangeAt(0).cloneRange();
+  }
+};
+
+// 選択範囲を復元する関数
+const restoreSelection = () => {
+  if (savedSelectionRange) {
+    const selection = window.getSelection();
+    if (selection) {
+      selection.removeAllRanges();
+      selection.addRange(savedSelectionRange);
+    }
+  }
+};
+
 export const translateSentence = async (selectedText: string) => {
   if (!selectedText) {
     Swal.fire({
@@ -101,11 +123,18 @@ export const translateSentence = async (selectedText: string) => {
     return;
   }
 
+  // 選択範囲を保存
+  saveSelection();
+
   // ローディング表示
   Swal.fire({
     title: "翻訳中...",
     text: "Requesting...",
     allowOutsideClick: false,
+    willClose: () => {
+      // モーダルが閉じられる前に選択範囲を復元
+      setTimeout(restoreSelection, 100);
+    },
     didOpen: () => {
       Swal.showLoading();
     },
@@ -125,6 +154,10 @@ export const translateSentence = async (selectedText: string) => {
       html: formattedResult,
       confirmButtonText: "OK",
       width: "500px",
+      willClose: () => {
+        // モーダルが閉じられる前に選択範囲を復元
+        setTimeout(restoreSelection, 100);
+      },
     });
   } catch (error) {
     Swal.fire({
@@ -132,6 +165,10 @@ export const translateSentence = async (selectedText: string) => {
       text: "翻訳に失敗しました",
       icon: "error",
       confirmButtonText: "OK",
+      willClose: () => {
+        // モーダルが閉じられる前に選択範囲を復元
+        setTimeout(restoreSelection, 100);
+      },
     });
   }
 };
@@ -167,11 +204,19 @@ export const explainGrammer= async (selectedText: string) => {
   let title = "文章の解説";
 
   if (wordCount === 1) title = selectedText + "について";
+
+  // 選択範囲を保存
+  saveSelection();
+
   // ローディング表示
   Swal.fire({
     title: title,
     text: "Requesting...",
     allowOutsideClick: false,
+    willClose: () => {
+      // モーダルが閉じられる前に選択範囲を復元
+      setTimeout(restoreSelection, 100);
+    },
     didOpen: () => {
       Swal.showLoading();
     },
@@ -189,6 +234,10 @@ export const explainGrammer= async (selectedText: string) => {
       html: formattedResult,
       confirmButtonText: "OK",
       width: "500px",
+      willClose: () => {
+        // モーダルが閉じられる前に選択範囲を復元
+        setTimeout(restoreSelection, 100);
+      },
     });
   } catch (error) {
     Swal.fire({
@@ -196,6 +245,10 @@ export const explainGrammer= async (selectedText: string) => {
       text: "解説に失敗しました",
       icon: "error",
       confirmButtonText: "OK",
+      willClose: () => {
+        // モーダルが閉じられる前に選択範囲を復元
+        setTimeout(restoreSelection, 100);
+      },
     });
   }
 };
