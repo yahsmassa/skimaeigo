@@ -19,4 +19,33 @@ font-size: 14px; /* サイズを大きくする */
 
 .swal2-html-container {
     text-align: left !important;
-  }
+}
+
+/* SweetAlert2のダイアログを最前面に表示 */
+.swal2-container {
+    z-index: 9999 !important;
+}
+
+.swal2-popup {
+    z-index: 10000 !important;
+}
+
+/* スマホでの選択範囲表示制御 */
+@media (max-width: 768px) {
+    /* SweetAlert2が表示されている間は選択範囲を非表示にするクラス */
+    .swal2-active ::selection {
+        background-color: transparent !important;
+    }
+
+    .swal2-active ::-moz-selection {
+        background-color: transparent !important;
+    }
+
+    /* SweetAlert2が表示されている間は選択範囲を無効化 */
+    .swal2-active * {
+        user-select: none !important;
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+    }
+}

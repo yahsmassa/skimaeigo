@@ -262,6 +262,80 @@ export default function Home() {
     }
   }, [isMobile]);
 
+  // SweetAlert2のダイアログ表示時とダイアログ閉じた時の処理
+  useEffect(() => {
+    const handleSwalOpen = () => {
+      // ダイアログ表示時に選択範囲を一時的に非表示にする
+      if (isMobile && lastSelectionRangeRef.current) {
+        const selection = window.getSelection();
+        if (selection) {
+          selection.removeAllRanges();
+        }
+      }
+      // bodyにクラスを追加してCSSで選択範囲を制御
+      document.body.classList.add('swal2-active');
+    };
+
+    const handleSwalClose = () => {
+      // ダイアログ閉じた時に選択範囲を復元
+      if (isMobile && lastSelectionRangeRef.current && savedSelectionRef.current) {
+        setTimeout(() => {
+          const selection = window.getSelection();
+          if (selection) {
+            selection.removeAllRanges();
+            selection.addRange(lastSelectionRangeRef.current!);
+          }
+        }, 100);
+      }
+      // bodyからクラスを削除
+      document.body.classList.remove('swal2-active');
+    };
+
+    // SweetAlert2のイベントを監視
+    if (isMobile) {
+      // SweetAlert2のイベントリスナーを追加
+      document.addEventListener('swal:open', handleSwalOpen);
+      document.addEventListener('swal:close', handleSwalClose);
+
+      // SweetAlert2のモーダル要素を監視
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'childList') {
+            mutation.addedNodes.forEach((node) => {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                const element = node as Element;
+                if (element.classList.contains('swal2-container')) {
+                  handleSwalOpen();
+                }
+              }
+            });
+            mutation.removedNodes.forEach((node) => {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                const element = node as Element;
+                if (element.classList.contains('swal2-container')) {
+                  handleSwalClose();
+                }
+              }
+            });
+          }
+        });
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+
+      return () => {
+        document.removeEventListener('swal:open', handleSwalOpen);
+        document.removeEventListener('swal:close', handleSwalClose);
+        observer.disconnect();
+        // クリーンアップ時にクラスを削除
+        document.body.classList.remove('swal2-active');
+      };
+    }
+  }, [isMobile]);
+
   const refund = async () => {
     const result = await paymentRefund(
       "QneWLYorhTQljQlwJf02amMAqub2_20250304194630",
