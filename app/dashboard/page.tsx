@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Swal from "sweetalert2";
 import { translateSentence, readSentence, getPaymentUrl, stopReading,  explainGrammer } from "@/lib/util";
 import { ReadTranslate } from "@/components/ReadTranslate";
@@ -32,6 +32,11 @@ export default function Home() {
   const [selection, setSelection] = useState("");
   const [user, setUser] = useAtom(userAtom, { store });
   const { loading } = useAuth();
+
+  // 選択されたテキストを一時的に保存するためのref
+  const savedSelectionRef = useRef("");
+  const isButtonClickedRef = useRef(false);
+  const lastSelectionRangeRef = useRef<Range | null>(null);
 
   useEffect(() => {
     if (!user?.uid) return;
@@ -160,9 +165,26 @@ export default function Home() {
 
   const handleSelection = useCallback(() => {
     const selectedText = window.getSelection()?.toString() || "";
-    setIsSelected(!!selectedText && selectedText.length > 0);
-    if (selectedText) {
-      setSelection(selectedText);
+
+    // ボタンがクリックされた直後でない場合のみ選択状態を更新
+    if (!isButtonClickedRef.current) {
+      setIsSelected(!!selectedText && selectedText.length > 0);
+      if (selectedText) {
+        setSelection(selectedText);
+        savedSelectionRef.current = selectedText;
+        // 選択範囲を保存
+        const selection = window.getSelection();
+        if (selection && selection.rangeCount > 0) {
+          lastSelectionRangeRef.current = selection.getRangeAt(0).cloneRange();
+        }
+      } else {
+        setSelection("");
+        savedSelectionRef.current = "";
+        lastSelectionRangeRef.current = null;
+      }
+    } else {
+      // ボタンクリック後の選択解除を無視し、保存されたテキストを使用
+      isButtonClickedRef.current = false;
     }
   }, []);
 
@@ -172,6 +194,73 @@ export default function Home() {
       document.removeEventListener("selectionchange", handleSelection);
     };
   }, [handleSelection]);
+
+  // ボタンクリック時の処理を追加
+  const handleButtonClick = useCallback(() => {
+    isButtonClickedRef.current = true;
+    // 保存されたテキストがある場合はそれを使用
+    if (savedSelectionRef.current) {
+      setSelection(savedSelectionRef.current);
+      setIsSelected(true);
+
+      // 選択範囲を復元
+      if (lastSelectionRangeRef.current) {
+        const selection = window.getSelection();
+        if (selection) {
+          selection.removeAllRanges();
+          selection.addRange(lastSelectionRangeRef.current);
+        }
+      }
+    }
+
+    // 少し遅延させてからフラグをリセット（選択解除イベントが処理されるのを待つ）
+    setTimeout(() => {
+      isButtonClickedRef.current = false;
+    }, 100);
+  }, []);
+
+  // タッチデバイスでの選択範囲維持のための追加処理
+  useEffect(() => {
+    const handleTouchStart = () => {
+      // タッチ開始時に選択範囲を保存
+      const currentSelection = window.getSelection()?.toString() || "";
+      if (currentSelection) {
+        savedSelectionRef.current = currentSelection;
+        const selection = window.getSelection();
+        if (selection && selection.rangeCount > 0) {
+          lastSelectionRangeRef.current = selection.getRangeAt(0).cloneRange();
+        }
+      }
+    };
+
+    const handleTouchEnd = () => {
+      // タッチ終了時に選択範囲が解除されても、保存されたテキストを維持
+      if (savedSelectionRef.current && !window.getSelection()?.toString()) {
+        setSelection(savedSelectionRef.current);
+        setIsSelected(true);
+
+        // 選択範囲を復元
+        if (lastSelectionRangeRef.current) {
+          const selection = window.getSelection();
+          if (selection) {
+            selection.removeAllRanges();
+            selection.addRange(lastSelectionRangeRef.current);
+          }
+        }
+      }
+    };
+
+    // タッチデバイスの場合のみイベントリスナーを追加
+    if (isMobile) {
+      document.addEventListener('touchstart', handleTouchStart, { passive: true });
+      document.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+      return () => {
+        document.removeEventListener('touchstart', handleTouchStart);
+        document.removeEventListener('touchend', handleTouchEnd);
+      };
+    }
+  }, [isMobile]);
 
   const refund = async () => {
     const result = await paymentRefund(
@@ -308,7 +397,11 @@ export default function Home() {
               </option>
             ))}
           </select>
-          <ReadTranslate isSelected={isSelected} selectedText={selection} />
+          <ReadTranslate
+            isSelected={isSelected}
+            selectedText={selection}
+            onButtonClick={handleButtonClick}
+          />
         </div>
       </div>
       <main className="gap-8 row-start-2 items-center sm:items-start">

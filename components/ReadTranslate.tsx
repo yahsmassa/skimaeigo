@@ -7,14 +7,24 @@ import { Volume2, BookA, BookOpenCheck, Languages, BookMarked, GraduationCap } f
 type props = {
   isSelected: boolean;
   selectedText: string;
+  onButtonClick?: () => void;
 };
 
-export function ReadTranslate({ isSelected, selectedText }: props) {
+export function ReadTranslate({ isSelected, selectedText, onButtonClick }: props) {
+  const handleButtonClick = () => {
+    onButtonClick?.();
+  };
+
   return (
     <div className="ml-2 md:ml-5 flex items-center ">
       <button
         onMouseDown={(e) => e.preventDefault()}
-        onClick={() => readSentence(selectedText)}
+        onTouchStart={(e) => e.preventDefault()}
+        onClick={(e) => {
+          e.preventDefault();
+          handleButtonClick();
+          readSentence(selectedText);
+        }}
         disabled={!isSelected}
         className={cn(
           "ml-1 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
@@ -24,7 +34,12 @@ export function ReadTranslate({ isSelected, selectedText }: props) {
         <Volume2 className="w-6 h-6" />
       </button>
       <button
-        onClick={() => explainGrammer(selectedText)}
+        onTouchStart={(e) => e.preventDefault()}
+        onClick={(e) => {
+          e.preventDefault();
+          handleButtonClick();
+          explainGrammer(selectedText);
+        }}
         disabled={!isSelected}
         className={cn(
           "ml-3 px-2 py-1 text-white text-sm cursor-pointer rounded-md",
