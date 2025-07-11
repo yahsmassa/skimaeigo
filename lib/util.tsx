@@ -133,7 +133,9 @@ export const translateSentence = async (selectedText: string) => {
     allowOutsideClick: false,
     willClose: () => {
       // モーダルが閉じられる前に選択範囲を復元
-      setTimeout(restoreSelection, 100);
+      setTimeout(() => {
+        restoreSelection();
+      }, 100);
     },
     didOpen: () => {
       Swal.showLoading();
@@ -167,7 +169,11 @@ export const translateSentence = async (selectedText: string) => {
       confirmButtonText: "OK",
       willClose: () => {
         // モーダルが閉じられる前に選択範囲を復元
-        setTimeout(restoreSelection, 100);
+        setTimeout(() => {
+          restoreSelection();
+        }, 100);
+      },
+      didOpen: () => {
       },
     });
   }
@@ -182,6 +188,14 @@ export const explainGrammer= async (selectedText: string) => {
       text: "単語が選択されていません",
       icon: "error",
       confirmButtonText: "OK",
+      willClose: () => {
+        // モーダルが閉じられる前に選択範囲を復元
+        setTimeout(() => {
+          restoreSelection();
+        }, 100);
+      },
+      didOpen: () => {
+      },
     });
     return;
   }
@@ -194,6 +208,14 @@ export const explainGrammer= async (selectedText: string) => {
       text: "500文字以内で選択してください",
       icon: "error",
       confirmButtonText: "OK",
+      willClose: () => {
+        // モーダルが閉じられる前に選択範囲を復元
+        setTimeout(() => {
+          restoreSelection();
+        }, 100);
+      },
+      didOpen: () => {
+      },
     });
     return;
   }
@@ -215,7 +237,9 @@ export const explainGrammer= async (selectedText: string) => {
     allowOutsideClick: false,
     willClose: () => {
       // モーダルが閉じられる前に選択範囲を復元
-      setTimeout(restoreSelection, 100);
+      setTimeout(() => {
+        restoreSelection();
+      }, 100);
     },
     didOpen: () => {
       Swal.showLoading();
@@ -236,7 +260,11 @@ export const explainGrammer= async (selectedText: string) => {
       width: "500px",
       willClose: () => {
         // モーダルが閉じられる前に選択範囲を復元
-        setTimeout(restoreSelection, 100);
+        setTimeout(() => {
+          restoreSelection();
+        }, 100);
+      },
+      didOpen: () => {
       },
     });
   } catch (error) {
@@ -247,7 +275,11 @@ export const explainGrammer= async (selectedText: string) => {
       confirmButtonText: "OK",
       willClose: () => {
         // モーダルが閉じられる前に選択範囲を復元
-        setTimeout(restoreSelection, 100);
+        setTimeout(() => {
+          restoreSelection();
+        }, 100);
+      },
+      didOpen: () => {
       },
     });
   }
