@@ -112,6 +112,14 @@ const restoreSelection = () => {
   }
 };
 
+// 選択範囲を一時的にクリアする関数
+const clearSelection = () => {
+  const selection = window.getSelection();
+  if (selection) {
+    selection.removeAllRanges();
+  }
+};
+
 export const translateSentence = async (selectedText: string) => {
   if (!selectedText) {
     Swal.fire({
@@ -139,6 +147,7 @@ export const translateSentence = async (selectedText: string) => {
     },
     didOpen: () => {
       Swal.showLoading();
+      clearSelection();
     },
   });
 
@@ -158,7 +167,12 @@ export const translateSentence = async (selectedText: string) => {
       width: "500px",
       willClose: () => {
         // モーダルが閉じられる前に選択範囲を復元
-        setTimeout(restoreSelection, 100);
+        setTimeout(() => {
+          restoreSelection();
+        }, 100);
+      },
+      didOpen: () => {
+        clearSelection();
       },
     });
   } catch (error) {
@@ -174,6 +188,7 @@ export const translateSentence = async (selectedText: string) => {
         }, 100);
       },
       didOpen: () => {
+        clearSelection();
       },
     });
   }
@@ -195,6 +210,7 @@ export const explainGrammer= async (selectedText: string) => {
         }, 100);
       },
       didOpen: () => {
+        clearSelection();
       },
     });
     return;
@@ -215,6 +231,7 @@ export const explainGrammer= async (selectedText: string) => {
         }, 100);
       },
       didOpen: () => {
+        clearSelection();
       },
     });
     return;
@@ -243,6 +260,7 @@ export const explainGrammer= async (selectedText: string) => {
     },
     didOpen: () => {
       Swal.showLoading();
+      clearSelection();
     },
   });
 
@@ -265,6 +283,7 @@ export const explainGrammer= async (selectedText: string) => {
         }, 100);
       },
       didOpen: () => {
+        clearSelection();
       },
     });
   } catch (error) {
@@ -280,6 +299,7 @@ export const explainGrammer= async (selectedText: string) => {
         }, 100);
       },
       didOpen: () => {
+        clearSelection();
       },
     });
   }
