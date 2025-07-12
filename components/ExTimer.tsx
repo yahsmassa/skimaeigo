@@ -1,41 +1,60 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { cn } from "@/lib/util";
 
 export function ExTimer() {
   const [isRunning, setIsRunning] = useState(false);
   const [time, setTime] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timeRef = useRef(0); // レンダリングを避けるためrefで管理
 
-  const startTimer = () => {
+  // タイマーを開始/停止する関数
+  const startTimer = useCallback(() => {
     if (!isRunning) {
       timerRef.current = setInterval(() => {
-        setTime((prevTime) => prevTime + 1);
+        timeRef.current += 1;
+        // 1秒ごとにレンダリング（パフォーマンス向上）
+        if (timeRef.current % 1 === 0) {
+          setTime(timeRef.current);
+        }
       }, 1000);
       setIsRunning(true);
     } else {
       if (timerRef.current) {
         clearInterval(timerRef.current);
+        timerRef.current = null;
       }
       setIsRunning(false);
     }
-  };
+  }, [isRunning]);
 
-  const resetTimer = () => {
+  // タイマーをリセットする関数
+  const resetTimer = useCallback(() => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
+      timerRef.current = null;
     }
+    timeRef.current = 0;
     setTime(0);
     setIsRunning(false);
-  };
+  }, []);
 
-  const formatTime = (time: number) => {
+  // コンポーネントのアンマウント時にタイマーをクリア
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, []);
+
+  const formatTime = useCallback((time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
     return `${minutes.toString().padStart(2, "0")}:${seconds
       .toString()
       .padStart(2, "0")}`;
-  };
+  }, []);
 
   return (
     <div className="flex items-center ">

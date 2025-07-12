@@ -37,16 +37,23 @@ export default function Home() {
   const savedSelectionRef = useRef("");
   const isButtonClickedRef = useRef(false);
   const lastSelectionRangeRef = useRef<Range | null>(null);
+  // デバウンス用のref
+  const selectionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // 音声合成の初期化状態を管理
+  const [voicesLoaded, setVoicesLoaded] = useState(false);
 
   useEffect(() => {
     if (!user?.uid) return;
+
+    // プレミアムユーザーの場合は監視を停止（既にプレミアムなので変更の可能性が低い）
+    if (user.isPremium) return;
+
     // ユーザーのプレミアムステータスを監視、支払いが終わったあとトリガー
     const unsubscribePremium = onSnapshot(
       doc(db, "users", user.uid),
       (docSnapshot) => {
         if (docSnapshot.exists()) {
-          // console.log("userData", userData);
-          // console.log("user", user);
           const userData = docSnapshot.data();
           if (!user.isPremium && userData.orderAt) {
             setUser({ ...user, isPremium: true }); // Web内での変数を更新
@@ -60,6 +67,8 @@ export default function Home() {
                 icon: "success",
               });
             }
+            // プレミアムになったら監視を停止
+            unsubscribePremium();
           }
         }
       },
@@ -71,7 +80,7 @@ export default function Home() {
     return () => {
       unsubscribePremium();
     };
-  }, [user?.uid]);
+  }, [user?.uid, user?.isPremium]);
 
   // ユーザーがログインしていない場合、サインインページにリダイレクト
   useEffect(() => {
@@ -97,41 +106,51 @@ export default function Home() {
 
   useEffect(() => {
     const handleSelectionChange = () => {
-      const selectedText = window.getSelection()?.toString() || '';
-      if (selectedText.length === 0) {
-        stopReading();
+      // デバウンス処理（100ms）
+      if (selectionTimeoutRef.current) {
+        clearTimeout(selectionTimeoutRef.current);
       }
+
+      selectionTimeoutRef.current = setTimeout(() => {
+        const selectedText = window.getSelection()?.toString() || '';
+        if (selectedText.length === 0) {
+          stopReading();
+        }
+      }, 100);
     };
 
     document.addEventListener('selectionchange', handleSelectionChange);
     return () => {
       document.removeEventListener('selectionchange', handleSelectionChange);
+      if (selectionTimeoutRef.current) {
+        clearTimeout(selectionTimeoutRef.current);
+      }
     };
   }, []);
 
   useEffect(() => {
-    // 音声リストが利用可能になるのを待つ
-
+    // 音声リストが利用可能になるのを待つ（遅延初期化）
     const loadVoices = () => {
       const voices = speechSynthesis.getVoices();
-      if (voices.length > 0) {
-        // 音声が利用可能
+      if (voices.length > 0 && !voicesLoaded) {
+        setVoicesLoaded(true);
       }
     };
 
-    speechSynthesis.onvoiceschanged = loadVoices;
-    loadVoices();
+    // 初回のみ実行
+    if (!voicesLoaded) {
+      speechSynthesis.onvoiceschanged = loadVoices;
+      loadVoices();
+    }
 
     const handleKeyDown = async (e: KeyboardEvent) => {
       // Ctrl + R で音声読み上げ
       if (e.ctrlKey && e.key === "r") {
         e.preventDefault();
-        // console.log("read selection", selection);
         readSentence(selection);
       }
       if (e.ctrlKey && e.key === "w") {
         e.preventDefault();
-        // console.log("read selection", selection);
         explainGrammer(selection);
       }
       // Ctrl + u でユーザー情報表示
@@ -146,7 +165,6 @@ export default function Home() {
       }
       // Ctrl + t で翻訳
       const isMac = navigator.userAgent.toUpperCase().indexOf("MAC") >= 0;
-      // console.log("isMac", isMac);
 
       if (
         (isMac && e.ctrlKey && e.key === "t") ||
@@ -161,15 +179,21 @@ export default function Home() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selection]);
+  }, [selection, voicesLoaded]);
 
   const handleSelection = useCallback(() => {
     const selectedText = window.getSelection()?.toString() || "";
 
     // ボタンがクリックされた直後でない場合のみ選択状態を更新
     if (!isButtonClickedRef.current) {
-      setIsSelected(!!selectedText && selectedText.length > 0);
-      if (selectedText) {
+      const newIsSelected = !!selectedText && selectedText.length > 0;
+
+      // 状態が変更された場合のみ更新（レンダリング削減）
+      if (newIsSelected !== isSelected) {
+        setIsSelected(newIsSelected);
+      }
+
+      if (selectedText && selectedText !== selection) {
         setSelection(selectedText);
         savedSelectionRef.current = selectedText;
         // 選択範囲を保存
@@ -177,7 +201,7 @@ export default function Home() {
         if (selection && selection.rangeCount > 0) {
           lastSelectionRangeRef.current = selection.getRangeAt(0).cloneRange();
         }
-      } else {
+      } else if (!selectedText && selection !== "") {
         setSelection("");
         savedSelectionRef.current = "";
         lastSelectionRangeRef.current = null;
@@ -186,7 +210,7 @@ export default function Home() {
       // ボタンクリック後の選択解除を無視し、保存されたテキストを使用
       isButtonClickedRef.current = false;
     }
-  }, []);
+  }, [isSelected, selection]);
 
   useEffect(() => {
     document.addEventListener("selectionchange", handleSelection);
@@ -221,7 +245,14 @@ export default function Home() {
 
   // タッチデバイスでの選択範囲維持のための追加処理
   useEffect(() => {
-    const handleTouchStart = () => {
+    // モバイルデバイスでのみ実行
+    if (!isMobile) return;
+
+    let touchStartTime = 0;
+    const TOUCH_THRESHOLD = 200; // 200ms以上のタッチのみ処理
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartTime = Date.now();
       // タッチ開始時に選択範囲を保存
       const currentSelection = window.getSelection()?.toString() || "";
       if (currentSelection) {
@@ -233,7 +264,12 @@ export default function Home() {
       }
     };
 
-    const handleTouchEnd = () => {
+    const handleTouchEnd = (e: TouchEvent) => {
+      const touchDuration = Date.now() - touchStartTime;
+
+      // 短いタッチは無視（スクロールなどの誤動作を防ぐ）
+      if (touchDuration < TOUCH_THRESHOLD) return;
+
       // タッチ終了時に選択範囲が解除されても、保存されたテキストを維持
       if (savedSelectionRef.current && !window.getSelection()?.toString()) {
         setSelection(savedSelectionRef.current);
@@ -250,16 +286,14 @@ export default function Home() {
       }
     };
 
-    // タッチデバイスの場合のみイベントリスナーを追加
-    if (isMobile) {
-      document.addEventListener('touchstart', handleTouchStart, { passive: true });
-      document.addEventListener('touchend', handleTouchEnd, { passive: true });
+    // パッシブリスナーを使用してパフォーマンス向上
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchend', handleTouchEnd, { passive: true });
 
-      return () => {
-        document.removeEventListener('touchstart', handleTouchStart);
-        document.removeEventListener('touchend', handleTouchEnd);
-      };
-    }
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchend', handleTouchEnd);
+    };
   }, [isMobile]);
 
   const refund = async () => {
