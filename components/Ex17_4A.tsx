@@ -167,7 +167,7 @@ const Ex17_4A = () => {
                 <div>
                   {[
                     "Unlike Multi-court, Solid Surface contains artificial grass for younger students to play on.",
-                    "Unlike Multi-court, Solid Surface does not contain boundaries marked for students&apos; games.",
+                    "Unlike Multi-court, Solid Surface does not contain boundaries marked for students' games.",
                     "Unlike Solid Surface, Multi-court has a relatively soft surface made of various materials.",
                     "Unlike Solid Surface, Multi-court is not surrounded by anything, which makes it easy to access.",
                   ].map((text, index) => (
@@ -265,7 +265,7 @@ const Ex17_4A = () => {
                     "discuss the benefits of being physically active at school in childhood",
                     "give advice to increase the number of physically active adolescents",
                     "introduce schools that encourage students to play on grassed areas",
-                    "show that types of schoolyards affect students&apos; behavior there",
+                    "show that types of schoolyards affect students' behavior there",
                   ].map((text, index) => (
                     <div key={index} className="flex my-2">
                       <span className="mr-2 text-xl w-[20px]">
@@ -295,7 +295,7 @@ const Ex17_4A = () => {
                   {[
                     "The benefits of studying various school environments for different activities",
                     "The connections between types of games and lengths of time being active",
-                    "The influence of the schoolyard environment on Adolescents&apos; physical activity",
+                    "The influence of the schoolyard environment on Adolescents' physical activity",
                     "The way schoolyard surfaces affect the time spent doing physical activity",
                   ].map((text, index) => (
                     <div key={index} className="flex my-2">

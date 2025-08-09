@@ -129,7 +129,7 @@ const Ex23_2A = () => {
             "I love my pair now, but it took me several days to get used to them.",
             "As they don't slip in the rain, I wear mine all year round.",
             "They are so light and comfortable I even wear them when cycling.",
-            "Easy to get around! I don&apos;t need to worry about getting lost.",
+            "Easy to get around! I don't need to worry about getting lost.",
             "They look great. The app's basic features are easy to use, but I wouldn't pay for the optional advanced ones.",
           ].map((comment, index) => (
             <li key={index} className="flex items-start">

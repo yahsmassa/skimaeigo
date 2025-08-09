@@ -32,12 +32,12 @@ export default function Home() {
             <p className="text-xl md:text-2xl mb-8">
               共通テストは総合的な英語力を試すために作られた問題です。高得点をとることは至難の業ですが、過去問を完全理解し、繰り返し学習することで、最高の英語教材になり、高得点を狙う実力がつきます。
             </p>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-orange-400">
+            {/* <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-orange-400">
               緊急キャンペーン！７月末まで
             </h1>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-orange-400">
               有料機能が無料で使える！
-            </h1>
+            </h1> */}
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
                 href="/signin"
@@ -454,12 +454,12 @@ export default function Home() {
               <p className="text-center text-gray-600 mb-6">
                 まずは共通テストを体験
               </p>
-              <p className="text-center text-red-500 mb-6 text-bold text-2xl">
+              {/* <p className="text-center text-red-500 mb-6 text-bold text-2xl">
                 緊急キャンペーン！
               </p>
               <p className="text-center text-red-500 mb-6 text-bold text-xl">
                 ７月末まで有料機能を無料開放！
-              </p>
+              </p> */}
 
               <div className="text-center mb-8">
                 <span className="text-4xl font-bold">¥0</span>

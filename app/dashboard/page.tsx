@@ -369,7 +369,7 @@ export default function Home() {
   return (
     <div className="mt-5 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
       {/* ヘッダー */}
-      <h1 className="text-blue-500 text-xl font-bold mb-2 bg-blue-100 p-2 rounded-md">７月末まで有料機能を無料開放！</h1>
+      {/* <h1 className="text-blue-500 text-xl font-bold mb-2 bg-blue-100 p-2 rounded-md">７月末まで有料機能を無料開放！</h1> */}
       <div className="flex justify-end gap-2 mb-5 w-full pr-5">
         <button
           onClick={handleSignOut}
@@ -384,8 +384,8 @@ export default function Home() {
             user?.isPremium && "hidden"
           )}
         >
-          有料会員登録
-          {/* {isMobile ? "有料会員登録" : "有料会員になって１０年分の問題を解く"} */}
+          {/* 有料会員登録 */}
+          {isMobile ? "有料会員登録" : "有料会員になって１０年分の問題を解く"}
         </button>
         {/* <button
           onClick={test}
@@ -406,10 +406,10 @@ export default function Home() {
           <select
             value={selectedYear}
             onChange={handleYearChange}
-            // disabled={!user?.isPremium}
+            disabled={!user?.isPremium}
             className={cn(
               "ml-5 p-2 border rounded"
-              // , !user?.isPremium && "bg-gray-200 text-black"
+              , !user?.isPremium && "bg-gray-200 text-black"
             )}
           >
             {(Object.keys(groupedComponents) as Year[])
