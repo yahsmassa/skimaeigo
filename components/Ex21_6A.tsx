@@ -186,10 +186,10 @@ const Ex21_6A = () => {
               <ul className="list-disc pl-6">
                 <li>Loss of consciousness</li>
                 <li>Difficulty walking straight</li>
-                <li className="flex items-center">
-                  <div className="border border-gray-700 px-2 mx-2 font-sans">
+                <li className="items-center">
+                  <span className="border border-gray-700 px-2 mx-2 font-sans">
                     39
-                  </div>
+                  </span>
                 </li>
                 <li>Ringing in the ears</li>
               </ul>
@@ -198,10 +198,10 @@ const Ex21_6A = () => {
               <h3 className="font-bold mb-2">Long-term</h3>
               <ul className="list-disc pl-6">
                 <li>Problems with concentration</li>
-                <li className="flex items-center">
-                  <div className="border border-gray-700 px-2 mx-2 font-sans">
+                <li className="items-center">
+                  <span className="border border-gray-700 px-2 mx-2 font-sans">
                     40
-                  </div>
+                  </span>
                 </li>
                 <li>Psychological problems</li>
                 <li>Smell and taste disorders</li>
@@ -218,11 +218,11 @@ const Ex21_6A = () => {
             <ul className="list-disc pl-6">
               <li>Requires helmets with visors</li>
               <li>Gives severe penalties to dangerous players</li>
-              <li className="flex items-center">
+              <li className="items-center">
                 Has introduced concussion spotters to
-                <div className="border border-gray-700 px-2 mx-2 font-sans">
+                <span className="border border-gray-700 px-2 mx-2 font-sans">
                   41
-                </div>
+                </span>
               </li>
             </ul>
           </div>
