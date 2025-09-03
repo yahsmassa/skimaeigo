@@ -67,7 +67,7 @@ export function ExTimer() {
             : "bg-blue-500 hover:bg-blue-600"
         )}
       >
-        {isRunning ? "Stop" : "Start"}
+        {isRunning ? "Stop" : "Time"}
       </button>
       <button
         onClick={resetTimer}
