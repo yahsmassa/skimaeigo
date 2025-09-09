@@ -62,7 +62,7 @@ const Ex23_3A = () => {
             </div>
             <div className="w-32 mx-auto md:absolute md:top-0 md:right-0">
               <Image
-                src="/images/Ex23-3A-1.jpg"
+                src="/images/Ex23-3A-1.webp"
                 alt="Backpack diagram showing brain, top section, middle section, and bottom section"
                 className="w-full"
                 width={112}
@@ -108,7 +108,7 @@ const Ex23_3A = () => {
           </div>
           <div className="mb-6">
             <Image
-              src="/images/Ex23-3A-2.jpg"
+              src="/images/Ex23-3A-2.webp"
               alt="Four backpack diagrams showing different arrangements of items"
               className="mx-auto"
               width={500}

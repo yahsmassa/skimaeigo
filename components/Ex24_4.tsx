@@ -420,7 +420,7 @@ const Ex24_4 = () => {
           </h3>
           <div className="border border-gray-200 rounded-lg p-4">
             <Image
-              src="/images/Ex24-4-2.jpg"
+              src="/images/Ex24-4-2.webp"
               alt="Bar graph showing club room usage"
               width={800}
               height={600}

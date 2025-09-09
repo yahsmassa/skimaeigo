@@ -419,7 +419,7 @@ const Ex25_8 = () => {
           </p>
           {Kaisetsu(showResults, "25-8-7")}
           <Image
-            src="/images/Ex25-8-1.jpg"
+            src="/images/Ex25-8-1.webp"
             alt="Bar graph comparing government investment in space exploration with potential annual budgets needed for providing clean water, supplying basic education, and relieving hunger in developing countries"
             width={800}
             height={600}
