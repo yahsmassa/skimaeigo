@@ -262,7 +262,7 @@ const Ex23_4 = () => {
             {/* Graph */}
             <div className="w-full md:w-1/3 mt-4 md:mt-0">
               <Image
-                src="/images/Ex23-4-2.jpg"
+                src="/images/Ex23-4-2.webp"
                 alt="Bar graph showing The Average Ratio of Recalled Names: Group A around 55%, Group B around 90%"
                 className="border border-gray-800 p-2"
                 width={250}

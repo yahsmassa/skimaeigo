@@ -151,7 +151,7 @@ const Ex24_6B = () => {
         <div className="grid grid-cols-2 gap-4">
           <div className="border border-gray-300 p-4">
             <Image
-              src="/images/Ex24-6B-1.jpg"
+              src="/images/Ex24-6B-1.webp"
               alt="Chili Peppers: The Spice of Life"
               width={500}
               height={300}
@@ -161,7 +161,7 @@ const Ex24_6B = () => {
 
           <div className="border border-gray-300 p-4">
             <Image
-              src="/images/Ex24-6B-2.jpg"
+              src="/images/Ex24-6B-2.webp"
               alt="Characteristics comparison between chili peppers and wasabi"
               width={500}
               height={300}
@@ -171,7 +171,7 @@ const Ex24_6B = () => {
 
           <div className="border border-gray-300 p-4">
             <Image
-              src="/images/Ex24-6B-3.jpg"
+              src="/images/Ex24-6B-3.webp"
               alt="Positive Effects of Capsaicin"
               width={500}
               height={300}
@@ -181,7 +181,7 @@ const Ex24_6B = () => {
 
           <div className="border border-gray-300 p-4">
             <Image
-              src="/images/Ex24-6B-4.jpg"
+              src="/images/Ex24-6B-4.webp"
               alt="Negative Effects of eating too many chili peppers"
               width={500}
               height={300}
@@ -191,7 +191,7 @@ const Ex24_6B = () => {
 
           <div className="border border-gray-300 p-4">
             <Image
-              src="/images/Ex24-6B-5.jpg"
+              src="/images/Ex24-6B-5.webp"
               alt="Spice Tolerance"
               width={500}
               height={300}
@@ -201,7 +201,7 @@ const Ex24_6B = () => {
 
           <div className="border border-gray-300 p-4">
             <Image
-              src="/images/Ex24-6B-6.jpg"
+              src="/images/Ex24-6B-6.webp"
               alt="Closing Remark"
               width={500}
               height={300}
