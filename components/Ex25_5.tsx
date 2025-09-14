@@ -32,7 +32,7 @@ const Ex25_5 = () => {
         />
       </div>
       {/* Introduction text */}
-      <div className="mb-6 text-lg">
+      <div className="mb-2 text-lg">
         <p className="mb-4">
           You are an exchange student in the US. As part of your
           university&apos;s community volunteer program, you will help organize
@@ -49,7 +49,7 @@ const Ex25_5 = () => {
           <p>October 15, 2024</p>
         </div>
 
-        <div className="mb-6">
+        <div className="mb-2">
           <h2 className="font-bold mb-4">Event Plan</h2>
 
           <p className="mb-4">Dear Professor Ryan,</p>
@@ -154,7 +154,7 @@ const Ex25_5 = () => {
         </div>
 
         {/* Confirmation Points */}
-        <p className="mb-2">
+        <p className="mb-1">
           I would like you to confirm the following points:
           {Kaisetsu(showResults, "25-5-6")}
         </p>
@@ -166,7 +166,7 @@ const Ex25_5 = () => {
         </ul>
 
         {/* To Be Decided List */}
-        <p className="mb-2">
+        <p className="mb-1">
           Below is a list of things that still need to be decided:
           {Kaisetsu(showResults, "25-5-7")}
         </p>
@@ -180,19 +180,19 @@ const Ex25_5 = () => {
         </ul>
 
         {/* Closing Paragraphs */}
-        <p className="mb-4">
+        <p className="mb-1">
           The number of volunteers that can help with the conference isn&apos;t
           set yet. I&apos;ll send you the list as soon as possible.
           {Kaisetsu(showResults, "25-5-8")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-1">
           This is my first time being on a committee like this, and I am rather
           anxious, so I would appreciate any advice you have.
           {Kaisetsu(showResults, "25-5-9")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-1">
           I&apos;m looking forward to assisting and attending the presentations.
           {Kaisetsu(showResults, "25-5-10")}
         </p>
@@ -218,7 +218,7 @@ const Ex25_5 = () => {
           Thank you for making the draft. You&apos;ve done a really good job.
         </p>
 
-        <p className="mb-6">
+        <p className="mb-2">
           The time schedule and order of events look good to me. The Main Hall
           worked really well as a venue last time. It has a good capacity for
           this type of event. As a university staff member, I can reserve it for
@@ -229,7 +229,7 @@ const Ex25_5 = () => {
           a permit.
           {Kaisetsu(showResults, "25-5-3")}
         </p>
-        <p className="mb-6">
+        <p className="mb-2">
           With regard to the information you requested, I have received the
           remaining two presentation titles. One presenter is a local
           businessperson, who will talk about changes she has made in her
@@ -242,7 +242,7 @@ const Ex25_5 = () => {
           {Kaisetsu(showResults, "25-5-4")}
         </p>
 
-        <p className="mb-6">
+        <p className="mb-2">
           I have attached a diagram for the debate seating arrangements. You
           will notice that there needs to be a small desk for the moderator in
           the center. There should be one table on each side of the moderator,
@@ -253,7 +253,7 @@ const Ex25_5 = () => {
           {Kaisetsu(showResults, "25-5-5")}
         </p>
 
-        <p className="mb-4">Thank you for your assistance.</p>
+        <p className="mb-1">Thank you for your assistance.</p>
         <p>Henry Ryan</p>
 
         <div className="mt-4 pt-4 border-t border-gray-300 text-gray-600 flex items-center gap-2">

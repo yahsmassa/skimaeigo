@@ -30,7 +30,7 @@ const Ex25_4 = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="mb-8 text-gray-800 md:text-lg">
+      <div className="mb-4 text-gray-800 md:text-lg">
         In English class, you are writing an essay on a topic related to
         lifestyle in modern society. This is your most recent draft. You are now
         working on improvements based on comments from your teacher.
@@ -52,7 +52,7 @@ const Ex25_4 = () => {
           <tbody>
             <tr>
               <td className="w-2/3 p-6 align-top border-r border-gray-300">
-                <div className="space-y-4">
+                <div className="space-y-1">
                   <p className="indent-7">
                     In modern society, people are always busy and this fast pace
                     of living can be stressful. The movement toward a slow life

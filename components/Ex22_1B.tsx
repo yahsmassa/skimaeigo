@@ -170,7 +170,7 @@ const Ex22_1B = () => {
             <span>You can enter this contest between </span>
             {renderSelect("3", 4, answers, setAnswers)}
             <span>.</span>
-            {showResults && <Explain qa={qa} questionId="1B-1" />}
+            <Explain qa={qa} questionId="1B-1" isShow={showResults} />
             {Kaisetsu(showResults, "22-1B-5")}
           </div>
           {[
@@ -199,7 +199,7 @@ const Ex22_1B = () => {
               giraffe&apos;s name, you must
             </span>
             {renderSelect("4", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="1B-2" />}
+            <Explain qa={qa} questionId="1B-2" isShow={showResults} />
             <span className="ml-2">{Kaisetsu(showResults, "22-1B-6")}</span>
           </div>
           {[
@@ -228,7 +228,7 @@ const Ex22_1B = () => {
               the five finalists, you will
             </span>
             {renderSelect("5", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="1B-3" />}
+            <Explain qa={qa} questionId="1B-3" isShow={showResults} />
             <span className="ml-2">{Kaisetsu(showResults, "22-1B-7")}</span>
           </div>
           {[

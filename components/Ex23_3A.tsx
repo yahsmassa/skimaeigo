@@ -102,7 +102,7 @@ const Ex23_3A = () => {
               backpack?
             </span>
             {renderSelect("16", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="3A-1" />}
+            <Explain qa={qa} questionId="3A-1" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-3A-4")}
           </div>
@@ -125,7 +125,7 @@ const Ex23_3A = () => {
             {renderSelect("17", 4, answers, setAnswers)}
             <span>is the best method&nbsp;</span>
             <span>to stay warm all night.</span>
-            {showResults && <Explain qa={qa} questionId="3A-2" />}
+            <Explain qa={qa} questionId="3A-2" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-3A-5")}
           </div>

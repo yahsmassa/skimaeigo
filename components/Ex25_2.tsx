@@ -31,7 +31,7 @@ export default function Ex25_2() {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="mb-8">
+      <div className="mb-2">
         <p className="text-gray-600 mb-4">
           Your teacher asks you to write a report about the future of
           transportation. To prepare, you read a blog written by a British
@@ -64,7 +64,7 @@ export default function Ex25_2() {
         </div>
 
         {/* Article content */}
-        <div className="space-y-4">
+        <div className="space-y-2">
           <p>
             Yesterday, I attended a forum in northern Japan called{" "}
             <span className="italic">Flying Vehicles: Today and Tomorrow</span>.
@@ -118,7 +118,7 @@ export default function Ex25_2() {
             <span className="flex gap-1">
               Which of the following did all the guest speakers agree on?{" "}
             </span>
-            {renderSelect("4", 4, answers, setAnswers)}.
+            {renderSelect("4", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
             {showResults && <Explain qa={qa} questionId="2-1" />}
             {Kaisetsu(showResults, "25-2-6")}
           </div>
@@ -146,7 +146,7 @@ export default function Ex25_2() {
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span className="flex gap-1">Flying vehicles will most likely</span>
-            {renderSelect("5", 4, answers, setAnswers)}.
+            {renderSelect("5", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
             {showResults && <Explain qa={qa} questionId="2-2" />}
             {Kaisetsu(showResults, "25-2-7")}
           </div>
@@ -175,7 +175,7 @@ export default function Ex25_2() {
               One guest speaker&apos;s{" "}
               <span className="border-b border-black">opinion</span> is that{" "}
             </span>
-            {renderSelect("6", 4, answers, setAnswers)}.
+            {renderSelect("6", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
             {showResults && <Explain qa={qa} questionId="2-3" />}
             {Kaisetsu(showResults, "25-2-8")}
           </div>
@@ -203,7 +203,7 @@ export default function Ex25_2() {
             <span className="flex gap-1">
               Which of the following is mentioned in the blog?{" "}
             </span>
-            {renderSelect("7", 4, answers, setAnswers)}
+            {renderSelect("7", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
             {showResults && <Explain qa={qa} questionId="2-4" />}
             {Kaisetsu(showResults, "25-2-9")}
           </div>

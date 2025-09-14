@@ -144,7 +144,7 @@ const Ex21_5 = () => {
           <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>Which is the best title for your presentation?</span>
           {renderSelect("30", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="5-1" />}
+          <Explain qa={qa} questionId="5-1" isShow={showResults} />
           {Kaisetsu(showResults, "21-5-8")}
         </div>
 
@@ -177,7 +177,7 @@ const Ex21_5 = () => {
             <span className="italic font-bold">Who&apos;s Who?</span> slide?
           </span>
           {renderSelect("31", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="5-2" />}
+          <Explain qa={qa} questionId="5-2" isShow={showResults} />
           {Kaisetsu(showResults, "21-5-9")}
         </div>
 
@@ -228,7 +228,7 @@ const Ex21_5 = () => {
           {renderSelect("33", 5, answers, setAnswers)}
           {renderSelect("34", 5, answers, setAnswers)}
           {renderSelect("35", 5, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="5-3" />}
+          <Explain qa={qa} questionId="5-3" isShow={showResults} />
           {Kaisetsu(showResults, "21-5-10")}
         </div>
 
@@ -270,7 +270,7 @@ const Ex21_5 = () => {
           </span>
           {renderSelect("36", 5, answers, setAnswers)}
           {renderSelect("37", 5, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="5-4" />}
+          <Explain qa={qa} questionId="5-4" isShow={showResults} />
           {Kaisetsu(showResults, "21-5-11")}
         </div>
 
@@ -308,7 +308,7 @@ const Ex21_5 = () => {
             the most appropriate item.
           </span>
           {renderSelect("38", 5, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="5-5" />}
+          <Explain qa={qa} questionId="5-5" isShow={showResults} />
           {Kaisetsu(showResults, "21-5-12")}
         </div>
 

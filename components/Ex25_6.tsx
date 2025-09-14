@@ -30,7 +30,7 @@ const Ex25_6 = () => {
         />
       </div>
       {/* Introduction text */}
-      <p className="mb-4">
+      <p className="mb-2">
         Your friend, Harry, wants to be a professional writer. He has written a
         story about two new heroes for a writing contest. You read it and then
         give him feedback.
@@ -46,7 +46,7 @@ const Ex25_6 = () => {
           <p className="text-center text-base">By Harry Okazaki</p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-1">
           <p className="indent-8">
             Everyone knows me as Bluebird, the world-famous superhero. Before, I
             was only a superhero in name, but now, I deserve my title. Let me
@@ -163,7 +163,7 @@ const Ex25_6 = () => {
       <div className="mt-8 space-y-4">
         <p className="font-medium">Your email feedback to Harry</p>
         <div className="border border-gray-300 p-6">
-          <div className="space-y-4">
+          <div className="space-y-1">
             <p>Hey Harry,</p>
 
             <p>
@@ -234,21 +234,23 @@ const Ex25_6 = () => {
       {/* Questions section */}
       <div className="mt-8 space-y-8">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "6-1"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "6-1"))}>
           <div className="flex gap-2 items-center flex-wrap justify-between">
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2">
               <span className="whitespace-nowrap font-sans">問 1</span>
               <div>
                 Choose <span className="underline">four</span> out of the five
                 descriptions (①〜⑤) and put them in the order they occurred.
-                &nbsp; &nbsp;
-                {showResults && <Explain qa={qa} questionId="6-1" />}
-                {Kaisetsu(showResults, "25-6-15")}
+
+                <div className="flex flex-row gap-2">
+                  <Explain qa={qa} questionId="6-1" isShow={showResults} />
+                  {Kaisetsu(showResults, "25-6-15")}
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 my-4 ml-8 flex-wrap">
+          <div className="flex items-center gap-1 md:gap-2 my-4 ml-8 flex-wrap">
             {renderSelect("24", 5, answers, setAnswers)}
             <span>→</span>
             {renderSelect("25", 5, answers, setAnswers)}
@@ -275,7 +277,7 @@ const Ex25_6 = () => {
               Choose the correct combination of Melody&apos;s superpowers.
             </div>
             {renderSelect("28", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-2" />}
+            <Explain qa={qa} questionId="6-2" isShow={showResults} />
             {Kaisetsu(showResults, "25-6-16")}
           </div>
 
@@ -310,8 +312,8 @@ const Ex25_6 = () => {
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap font-sans">問 3</span>
             <span>Choose the best option for </span>
-            {renderSelect("29", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="6-3" />}
+            {renderSelect("29", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+            <Explain qa={qa} questionId="6-3" isShow={showResults} />
             {Kaisetsu(showResults, "25-6-17")}
           </div>
 
@@ -332,7 +334,7 @@ const Ex25_6 = () => {
             <span>and</span>
             {renderSelect("31", 5, answers, setAnswers)}
             <span>. (The order does not matter.)</span>
-            {showResults && <Explain qa={qa} questionId="6-4" />}
+            <Explain qa={qa} questionId="6-4" isShow={showResults} />
             {Kaisetsu(showResults, "25-6-18")}
           </div>
 

@@ -167,7 +167,7 @@ const Ex22_2A = () => {
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             {renderSelect("6", 5, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="2A-1" />}
+            <Explain qa={qa} questionId="2A-1" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "22-2A-9")}
           </div>
@@ -201,7 +201,7 @@ const Ex22_2A = () => {
             orientation. You need to
           </span>
           {renderSelect("7", 4, answers, setAnswers)}.
-          {showResults && <Explain qa={qa} questionId="2A-2" />}
+          <Explain qa={qa} questionId="2A-2" isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "22-2A-10")}
         </div>
@@ -222,7 +222,7 @@ const Ex22_2A = () => {
           <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           {renderSelect("8", 4, answers, setAnswers)}
           <span>near the main entrance to the library.</span>
-          {showResults && <Explain qa={qa} questionId="2A-3" />}
+          <Explain qa={qa} questionId="2A-3" isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "22-2A-11")}
         </div>
@@ -245,7 +245,7 @@ const Ex22_2A = () => {
             August, you could
           </span>
           {renderSelect("9", 4, answers, setAnswers)}.
-          {showResults && <Explain qa={qa} questionId="2A-4" />}
+          <Explain qa={qa} questionId="2A-4" isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "22-2A-12")}
         </div>
@@ -278,7 +278,7 @@ const Ex22_2A = () => {
             student is that
           </span>
           {renderSelect("10", 4, answers, setAnswers)}.
-          {showResults && <Explain qa={qa} questionId="2A-5" />}
+          <Explain qa={qa} questionId="2A-5" isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "22-2A-13")}
         </div>

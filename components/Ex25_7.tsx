@@ -31,7 +31,7 @@ const Ex25_7 = () => {
         />
       </div>
       {/* Introduction text */}
-      <p className="mb-6 md:text-lg">
+      <p className="mb-2 md:text-lg">
         You are preparing a presentation for a science project on animal habits.
         You found some interesting information in the article below and are now
         making your outline.
@@ -44,7 +44,7 @@ const Ex25_7 = () => {
           Animal Sleep Patterns
         </h2>
 
-        <div className="space-y-4">
+        <div className="space-y-1">
           <p className="indent-8">
             If you ever spend all day at home, you might notice that your pet
             cat sleeps a lot during the day and is quite active in the evening
@@ -146,7 +146,7 @@ const Ex25_7 = () => {
         <div className="border border-gray-300 p-8">
           <h2 className="text-center text-xl italic mb-8">How Animals Sleep</h2>
 
-          <div className="space-y-6">
+          <div className="space-y-1">
             <div>
               <div className="flex gap-2 items-center mb-2">
                 <h3 className="text-lg italic">Importance of Sleep</h3>
@@ -237,7 +237,7 @@ const Ex25_7 = () => {
               you <span className="underline">remove</span>?
             </span>
             {renderSelect("32", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="7-1" />}
+            <Explain qa={qa} questionId="7-1" isShow={showResults} />
             {Kaisetsu(showResults, "25-7-11")}
           </div>
           <div className="space-y-2 ml-8">
@@ -254,11 +254,16 @@ const Ex25_7 = () => {
             <span className="whitespace-nowrap font-sans">問 2</span>
             <span>
               You want to use a figure for the biphasic sleep pattern mentioned
-              in the article. Choose the best option for{" "}
+              in the article. Choose the best{" "}
             </span>
-            {renderSelect("33", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="7-2" />}
-            {Kaisetsu(showResults, "25-7-12")}
+            <span>
+              option for
+            </span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("33", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="7-2" isShow={showResults} />
+              {Kaisetsu(showResults, "25-7-12")}
+            </div>
           </div>
           <div className="ml-8">
             <Image
@@ -280,7 +285,7 @@ const Ex25_7 = () => {
             <span>and </span>
             {renderSelect("35", 5, answers, setAnswers)}. (The order does not
             matter.)
-            {showResults && <Explain qa={qa} questionId="7-3" />}
+            <Explain qa={qa} questionId="7-3" isShow={showResults} />
             {Kaisetsu(showResults, "25-7-13")}
           </div>
           <div className="ml-4 space-y-2">
@@ -306,8 +311,8 @@ const Ex25_7 = () => {
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap font-sans">問 4</span>
             <span>Choose the best option for </span>
-            {renderSelect("36", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="7-4" />}
+            {renderSelect("36", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+            <Explain qa={qa} questionId="7-4" isShow={showResults} />
             {Kaisetsu(showResults, "25-7-14")}
           </div>
           <div className="space-y-2">
@@ -334,8 +339,8 @@ const Ex25_7 = () => {
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap font-sans">問 5</span>
             <span>Choose the best heading for </span>
-            {renderSelect("37", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="7-5" />}
+            {renderSelect("37", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+            <Explain qa={qa} questionId="7-5" isShow={showResults} />
             {Kaisetsu(showResults, "25-7-15")}
           </div>
           <div className="space-y-2 ml-4">

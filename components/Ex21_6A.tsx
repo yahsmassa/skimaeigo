@@ -251,7 +251,7 @@ const Ex21_6A = () => {
             <span>Choose the best option for</span>
             {renderSelect("39", 4, answers, setAnswers)}
             <span>on your poster.</span>
-            {showResults && <Explain qa={qa} questionId="6A-1" />}
+            <Explain qa={qa} questionId="6A-1" isShow={showResults} />
             {Kaisetsu(showResults, "21-6A-10")}
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
@@ -278,7 +278,7 @@ const Ex21_6A = () => {
             <span>Choose the best option for</span>
             {renderSelect("40", 4, answers, setAnswers)}
             <span>on your poster.</span>
-            {showResults && <Explain qa={qa} questionId="6A-2" />}
+            <Explain qa={qa} questionId="6A-2" isShow={showResults} />
             {Kaisetsu(showResults, "21-6A-11")}
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
@@ -305,7 +305,7 @@ const Ex21_6A = () => {
             <span>Choose the best option for</span>
             {renderSelect("41", 4, answers, setAnswers)}
             <span>on your poster.</span>
-            {showResults && <Explain qa={qa} questionId="6A-3" />}
+            <Explain qa={qa} questionId="6A-3" isShow={showResults} />
             {Kaisetsu(showResults, "21-6A-12")}
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
@@ -332,7 +332,7 @@ const Ex21_6A = () => {
             <span>Choose the best option for</span>
             {renderSelect("42", 4, answers, setAnswers)}
             <span>on your poster.</span>
-            {showResults && <Explain qa={qa} questionId="6A-4" />}
+            <Explain qa={qa} questionId="6A-4" isShow={showResults} />
             {Kaisetsu(showResults, "21-6A-13")}
           </div>
           <div className="space-y-2 pl-2 md:pl-8">

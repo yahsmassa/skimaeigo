@@ -52,8 +52,8 @@ export const CardContent: React.FC<CardProps> = ({
 
 export const qaFormat = (qa: QandA[], questionId: string) => {
   return qa.find((q) => q.questionId === questionId)?.isCorrect
-    ? "bg-green-100 p-2 rounded-lg"
-    : "bg-red-100 p-2 rounded-lg";
+    ? "bg-green-100  rounded-lg"
+    : "bg-red-100  rounded-lg";
 };
 
 export const handleChange = (

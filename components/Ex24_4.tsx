@@ -557,9 +557,9 @@ const Ex24_4 = () => {
                   answers,
                   setAnswers
                 )}
-              {question.numberBox && showResults && (
+              {question.numberBox && (
                 <>
-                  <Explain qa={qa} questionId={"4-" + question.id} />
+                  <Explain qa={qa} questionId={"4-" + question.id} isShow={showResults} />
                   <span className="mr-2"></span>
                   { question.id === 1  &&  Kaisetsu(showResults, "24-4-11")}
                   { question.id === 2  &&  Kaisetsu(showResults, "24-4-12")}
@@ -578,13 +578,12 @@ const Ex24_4 = () => {
                   {index === 0 && <span className="mx-1">and</span>}
                 </React.Fragment>
               ))}
-              {question.numberBoxes && showResults && (
+              {question.numberBoxes && (
                 <>
-                  <Explain qa={qa} questionId={"4-" + question.id} />
+                  <Explain qa={qa} questionId={"4-" + question.id} isShow={showResults} />
                   <span className="mr-2"></span>
                   {Kaisetsu(showResults, "24-4-14")}
                 </>
-
               )}
             </div>
 

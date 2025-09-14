@@ -127,7 +127,7 @@ const Ex22_2B = () => {
             <span className="underline">highest to lowest</span>
             <span>?</span>
             {renderSelect("11", 6, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="2B-1" />}
+            <Explain qa={qa} questionId="2B-1" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "22-2B-4")}
           </div>
@@ -162,7 +162,7 @@ const Ex22_2B = () => {
               that
             </span>
             {renderSelect("12", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="2B-2" />}
+            <Explain qa={qa} questionId="2B-2" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "22-2B-5")}
           </div>
@@ -194,7 +194,7 @@ const Ex22_2B = () => {
               The statement that best reflects one finding from the survey is
             </span>
             {renderSelect("13", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="2B-3" />}
+            <Explain qa={qa} questionId="2B-3" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "22-2B-6")}
           </div>
@@ -227,7 +227,7 @@ const Ex22_2B = () => {
               Japan?
             </span>
             {renderSelect("14", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="2B-4" />}
+            <Explain qa={qa} questionId="2B-4" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "22-2B-7")}
           </div>
@@ -257,7 +257,7 @@ const Ex22_2B = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>Which is the most suitable title for the article?</span>
             {renderSelect("15", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="2B-5" />}
+            <Explain qa={qa} questionId="2B-5" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "22-2B-8")}
           </div>

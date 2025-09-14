@@ -264,7 +264,7 @@ const Ex23_4 = () => {
               <Image
                 src="/images/Ex23-4-2.webp"
                 alt="Bar graph showing The Average Ratio of Recalled Names: Group A around 55%, Group B around 90%"
-                className="border border-gray-800 p-2"
+                className=""
                 width={250}
                 height={300}
               />
@@ -280,7 +280,7 @@ const Ex23_4 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Oxford believes that</span>
             {renderSelect("24", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="4-1" />}
+            <Explain qa={qa} questionId="4-1" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-4-8")}
           </div>
@@ -306,7 +306,7 @@ const Ex23_4 = () => {
             <span>In the study discussed by Lee, students took a test</span>
             {renderSelect("25", 4, answers, setAnswers)}
             <span>after their final session.</span>
-            {showResults && <Explain qa={qa} questionId="4-2" />}
+            <Explain qa={qa} questionId="4-2" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-4-9")}
           </div>
@@ -336,7 +336,7 @@ const Ex23_4 = () => {
               learning that Oxford discussed. (Choose the best one for each box
               from options ①～⑥.)
             </span>
-            {showResults && <Explain qa={qa} questionId="4-3" />}
+            <Explain qa={qa} questionId="4-3" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-4-10")}
           </div>
@@ -364,7 +364,7 @@ const Ex23_4 = () => {
             <span>Both writers agree that</span>
             {renderSelect("28", 4, answers, setAnswers)}
             <span>is helpful for remembering new information.</span>
-            {showResults && <Explain qa={qa} questionId="4-4" />}
+            <Explain qa={qa} questionId="4-4" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-4-11")}
           </div>
@@ -392,7 +392,7 @@ const Ex23_4 = () => {
               Lee's argument for spaced learning?
             </span>
             {renderSelect("29", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4-5" />}
+            <Explain qa={qa} questionId="4-5" isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "23-4-12")}
           </div>

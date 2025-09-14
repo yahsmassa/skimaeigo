@@ -92,23 +92,23 @@ const Ex22_6B = () => {
 
           <div className="my-8">
             <p className="italic mb-4">Figure 1. Plastic recycling symbols</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="w-full md:w-[50%]">
+            <div className="md:flex md:flex-row justify-center">
+              <div className="">
                 <Image
                   src="/images/Ex22-6B-1.webp"
                   alt="Recycling symbols 1-4"
                   width={400}
                   height={80}
-                  className="h-auto max-w-full"
+                  className="h-auto w-[300px]"
                 />
               </div>
-              <div className="w-full md:w-[39%]">
+              <div className="">
                 <Image
                   src="/images/Ex22-6B-2.webp"
                   alt="Recycling symbols 5-7"
                   width={300}
                   height={80}
-                  className="h-auto max-w-full"
+                  className="h-auto w-[222px]"
                 />
               </div>
             </div>
@@ -303,7 +303,7 @@ const Ex22_6B = () => {
               the following is the most appropriate?
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6B-1" />}
+            <Explain qa={qa} questionId="6B-1" isShow={showResults} />
             {Kaisetsu(showResults, "22-6B-7")}
           </div>
           <div className="">
@@ -333,7 +333,7 @@ const Ex22_6B = () => {
             </span>
             {renderSelect("45", 4, answers, setAnswers)} and{" "}
             {renderSelect("46", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="6B-2" />}
+            <Explain qa={qa} questionId="6B-2" isShow={showResults} />
             {Kaisetsu(showResults, "22-6B-8")}
           </div>
 
@@ -399,7 +399,7 @@ const Ex22_6B = () => {
             </span>
             {renderSelect("47", 6, answers, setAnswers)}・
             {renderSelect("48", 6, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6B-3" />}
+            <Explain qa={qa} questionId="6B-3" isShow={showResults} />
             {Kaisetsu(showResults, "22-6B-9")}
           </div>
           <div className="">

@@ -31,7 +31,7 @@ export default function Ex25_1() {
         />
       </div
       >
-      <div className="p-3 md:p-7">
+      <div className="p-3 md:p-6">
           <div className="mb-4 leading-6 md:leading-8 md:text-[20px]">
             Your host family in the US is planning to buy a small aquarium. You
             found this helpful pamphlet.
@@ -49,7 +49,7 @@ export default function Ex25_1() {
         steps!
       </p>
 
-      <div className="space-y-6">
+      <div className="">
         {/* Section 1 */}
         <div>
           <h3 className="text-lg font-bold mb-3">
@@ -131,16 +131,16 @@ export default function Ex25_1() {
         </div>
 
         {/* Questions Section */}
-        <div className="mt-8 space-y-6">
+        <div className="mt-8 space-y-3">
           {/* Question 1 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "1-1"))}>
-            <div className="flex items-center flex-wrap gap-2 mb-4">
+            <div className="flex items-center flex-wrap gap-2 mb-0">
               <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
               <span>
                 The customers most likely to benefit from this pamphlet are{" "}
               </span>
-              {renderSelect("1", 4, answers, setAnswers)}.
-              {showResults && <Explain qa={qa} questionId="1-1" />}
+              {renderSelect("1", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+              <Explain qa={qa} questionId="1-1" isShow={showResults} />
               {Kaisetsu(showResults, "25-1-4")}
 
             </div>
@@ -166,12 +166,16 @@ export default function Ex25_1() {
             <div className="flex items-center flex-wrap gap-2 mb-4">
               <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
               <span className="flex gap-1">
-                When arranging decorations to keep your fish in good health, it
+                When arranging decorations to keep your fish in good health, it{' '}
+              </span>
+              <span className="flex gap-1">
                 is a good idea to
               </span>
-              {renderSelect("2", 4, answers, setAnswers)}.
-              {showResults && <Explain qa={qa} questionId="1-2" />}
-              {Kaisetsu(showResults, "25-1-5")}
+              {renderSelect("2", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+              <div className="flex flex-row gap-2">
+                <Explain qa={qa} questionId="1-2" isShow={showResults} />
+                {Kaisetsu(showResults, "25-1-5")}
+              </div>
 
             </div>
             <div className="pl-2 md:pl-8 space-y-2">
@@ -198,8 +202,8 @@ export default function Ex25_1() {
                 According to the pamphlet, which picture best shows how to
                 decorate for fish from slow-moving water?
               </span>
-              {renderSelect("3", 4, answers, setAnswers)}.
-              {showResults && <Explain qa={qa} questionId="1-3" />}
+              {renderSelect("3", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+              <Explain qa={qa} questionId="1-3" isShow={showResults} />
               {Kaisetsu(showResults, "25-1-6")}
 
             </div>

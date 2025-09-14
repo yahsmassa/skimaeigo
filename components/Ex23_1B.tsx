@@ -159,7 +159,7 @@ const Ex23_1B = () => {
             <span className="whitespace-nowrap mr-1 font-sans">問 1</span>
             <span>All GIS instructors have</span>
             {renderSelect("3", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-1" />}
+            <Explain qa={qa} questionId="1B-1" isShow={showResults} />
             {Kaisetsu(showResults, "23-1B-7")}
           </div>
           {[
@@ -183,7 +183,7 @@ const Ex23_1B = () => {
             <span className="whitespace-nowrap mr-1 font-sans">問 2</span>
             <span>On the last day of the camp, campers will</span>
             {renderSelect("4", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-2" />}
+            <Explain qa={qa} questionId="1B-2" isShow={showResults} />
             {Kaisetsu(showResults, "23-1B-8")}
           </div>
           {[
@@ -209,7 +209,7 @@ const Ex23_1B = () => {
               What will happen after submitting your camp application?
             </span>
             {renderSelect("5", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1B-3" />}
+            <Explain qa={qa} questionId="1B-3" isShow={showResults} />
             {Kaisetsu(showResults, "23-1B-9")}
           </div>
           {[

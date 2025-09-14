@@ -151,7 +151,7 @@ const Ex23_2A = () => {
             new shoes?
           </span>
           {renderSelect("6", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="2A-1" />}
+          <Explain qa={qa} questionId="2A-1" isShow={showResults} />
           {Kaisetsu(showResults, "23-2A-5")}
         </div>
         <ol className="list-none space-y-2">
@@ -180,7 +180,7 @@ const Ex23_2A = () => {
             Which benefit offered by the shoes is most likely to appeal to you?
           </span>
           {renderSelect("7", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="2A-2" />}
+          <Explain qa={qa} questionId="2A-2" isShow={showResults} />
           {Kaisetsu(showResults, "23-2A-6")}
         </div>
         <ol className="list-none space-y-2">
@@ -209,7 +209,7 @@ const Ex23_2A = () => {
             One <u>opinion</u> stated by a customer is that
           </span>
           {renderSelect("8", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="2A-3" />}
+          <Explain qa={qa} questionId="2A-3" isShow={showResults} />
           {Kaisetsu(showResults, "23-2A-7")}
         </div>
         <ol className="list-none space-y-2">
@@ -239,7 +239,7 @@ const Ex23_2A = () => {
             benefit is this comment based on?
           </span>
           {renderSelect("9", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="2A-4" />}
+          <Explain qa={qa} questionId="2A-4" isShow={showResults} />
           {Kaisetsu(showResults, "23-2A-8")}
         </div>
         <ol className="list-none space-y-2">
@@ -267,7 +267,7 @@ const Ex23_2A = () => {
           <span>According to one customer&apos;s opinion,</span>
           {renderSelect("10", 4, answers, setAnswers)}
           <span>is recommended.</span>
-          {showResults && <Explain qa={qa} questionId="2A-5" />}
+          <Explain qa={qa} questionId="2A-5" isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "23-2A-9")}
         </div>

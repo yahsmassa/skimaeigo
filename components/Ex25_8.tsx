@@ -55,7 +55,7 @@ const Ex25_8 = () => {
       </div>
 
       {/* Step 1 Section */}
-      <div className="space-y-4">
+      <div className="space-y-2">
         <p className="font-medium">▶ [Step 1] Read a range of opinions</p>
 
         {/* Opinion Cards */}
@@ -155,7 +155,7 @@ const Ex25_8 = () => {
               Which of the following best expresses Meilin&apos;s opinion?
             </span>
             {renderSelect("38", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="8-1" />}
+            <Explain qa={qa} questionId="8-1" isShow={showResults} />
             {Kaisetsu(showResults, "25-8-11")}
           </div>
 
@@ -185,10 +185,12 @@ const Ex25_8 = () => {
             <span>
               Both Christine and Victor mention that space exploration
             </span>
-            {renderSelect("39", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="8-2" />}
-            {Kaisetsu(showResults, "25-8-12")}
-            <span>.</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("39", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="8-2" isShow={showResults} />
+              {Kaisetsu(showResults, "25-8-12")}
+            </div>
+            <span className="-ml-1 mr-1">.</span>
           </div>
 
           <div className="space-y-4 ml-2 md:ml-8">
@@ -271,7 +273,7 @@ const Ex25_8 = () => {
             </div>
             <div className="flex flex-row gap-2">
               {Kaisetsu(showResults, "25-8-13")}
-              {showResults && <Explain qa={qa} questionId="8-3" />}
+              <Explain qa={qa} questionId="8-3" isShow={showResults} />
             </div>
 
             {/* Options for 40 and 41 */}
@@ -303,7 +305,7 @@ const Ex25_8 = () => {
             {/* Options for 42 */}
             <div className="space-y-2">
               <p className="flex items-center gap-2 flex-wrap">
-                Options for {renderSelect("42", 4, answers, setAnswers)}.
+                Options for {renderSelect("42", 4, answers, setAnswers)}<span className="-ml-1 mr-1">.</span>
                 {Kaisetsu(showResults, "25-8-14")}
               </p>
               <div className="ml-2 md:ml-4 space-y-3">
@@ -437,7 +439,7 @@ const Ex25_8 = () => {
               for REASON 2?
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="8-4" />}
+            <Explain qa={qa} questionId="8-4" isShow={showResults} />
             {Kaisetsu(showResults, "25-8-15")}
           </div>
 
@@ -473,9 +475,11 @@ const Ex25_8 = () => {
               </div>
               <div className="flex flex-wrap items-center">
                 Based on Source B, which option best supports this statement?
-                {renderSelect("44", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="8-5" />}
-                {Kaisetsu(showResults, "25-8-16")}
+                <div className="flex flex-row gap-2">
+                  {renderSelect("44", 4, answers, setAnswers)}
+                  <Explain qa={qa} questionId="8-5" isShow={showResults} />
+                  {Kaisetsu(showResults, "25-8-16")}
+                </div>
               </div>
             </div>
           </div>

@@ -145,69 +145,17 @@ const Ex24_6B = () => {
         </p>
       </div>
 
-      <div className="mt-8 space-y-8">
-        <div className="font-bold mb-4">Presentation slides:</div>
+      <div className="mt-8">
+        <div className="font-bold">Presentation slides:</div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <div className="border border-gray-300 p-4">
-            <Image
-              src="/images/Ex24-6B-1.webp"
-              alt="Chili Peppers: The Spice of Life"
-              width={500}
-              height={300}
-              className="w-full"
-            />
-          </div>
-
-          <div className="border border-gray-300 p-4">
-            <Image
-              src="/images/Ex24-6B-2.webp"
-              alt="Characteristics comparison between chili peppers and wasabi"
-              width={500}
-              height={300}
-              className="w-full"
-            />
-          </div>
-
-          <div className="border border-gray-300 p-4">
-            <Image
-              src="/images/Ex24-6B-3.webp"
-              alt="Positive Effects of Capsaicin"
-              width={500}
-              height={300}
-              className="w-full"
-            />
-          </div>
-
-          <div className="border border-gray-300 p-4">
-            <Image
-              src="/images/Ex24-6B-4.webp"
-              alt="Negative Effects of eating too many chili peppers"
-              width={500}
-              height={300}
-              className="w-full"
-            />
-          </div>
-
-          <div className="border border-gray-300 p-4">
-            <Image
-              src="/images/Ex24-6B-5.webp"
-              alt="Spice Tolerance"
-              width={500}
-              height={300}
-              className="w-full"
-            />
-          </div>
-
-          <div className="border border-gray-300 p-4">
-            <Image
-              src="/images/Ex24-6B-6.webp"
-              alt="Closing Remark"
-              width={500}
-              height={300}
-              className="w-full"
-            />
-          </div>
+        <div className="">
+          <Image
+            src="/images/Ex24-6BW.webp"
+            alt="Chili Peppers: The Spice of Life"
+            width={500}
+            height={300}
+            className="w-full"
+          />
         </div>
 
         <div className="space-y-8 ">
@@ -218,7 +166,7 @@ const Ex24_6B = () => {
                 What is the first characteristic of wasabi on Slide 2?
               </span>
               {renderSelect("44", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId={"6B-1"} />}
+              <Explain qa={qa} questionId={"6B-1"} isShow={showResults} />
               {Kaisetsu(showResults, "24-6B-9")}
             </div>
             <div className="mt-4 space-y-2 ml-6">
@@ -247,7 +195,7 @@ const Ex24_6B = () => {
                 Which is an <u>error</u> you found on Slide 3?
               </span>
               {renderSelect("45", 5, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId={"6B-2"} />}
+              <Explain qa={qa} questionId={"6B-2"} isShow={showResults} />
               {Kaisetsu(showResults, "24-6B-10")}
             </div>
             <div className="mt-4 space-y-2 ml-6">
@@ -272,7 +220,7 @@ const Ex24_6B = () => {
               </span>
               {renderSelect("46", 5, answers, setAnswers)}・
               {renderSelect("47", 5, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId={"6B-3"} />}
+              <Explain qa={qa} questionId={"6B-3"} isShow={showResults} />
               {Kaisetsu(showResults, "24-6B-11")}
             </div>
             <div className="mt-4 space-y-2 ml-6">
@@ -301,7 +249,7 @@ const Ex24_6B = () => {
                 What can be inferred about tolerance for spices for Slide 5?
               </span>
               {renderSelect("48", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId={"6B-4"} />}
+              <Explain qa={qa} questionId={"6B-4"} isShow={showResults} />
               {Kaisetsu(showResults, "24-6B-12")}
             </div>
             <div className="mt-4 space-y-3 ml-6">
@@ -328,7 +276,7 @@ const Ex24_6B = () => {
               <span className="flex-none mr-2 font-sans">問 5</span>
               <span>Choose the most appropriate remark for Slide 6.</span>
               {renderSelect("49", 5, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId={"6B-5"} />}
+              <Explain qa={qa} questionId={"6B-5"} isShow={showResults} />
               {Kaisetsu(showResults, "24-6B-13")}
             </div>
             <div className="mt-4 space-y-3 ml-6">

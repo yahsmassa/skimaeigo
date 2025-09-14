@@ -159,7 +159,7 @@ const Ex17_4A = () => {
                   Multi-court and Solid Surface?
                 </span>
                 {renderSelect("35", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4A-1" />}
+                <Explain qa={qa} questionId="4A-1" isShow={showResults} />
                 {Kaisetsu(showResults, "17-4A-7")}
               </div>
 
@@ -191,7 +191,7 @@ const Ex17_4A = () => {
                   refer to?
                 </span>
                 {renderSelect("36", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4A-2" />}
+                <Explain qa={qa} questionId="4A-2" isShow={showResults} />
               </div>
 
               <div className="space-y-4 md:pl-8">
@@ -255,7 +255,7 @@ const Ex17_4A = () => {
                 <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
                 <span>The main purpose of this passage is to</span>
                 {renderSelect("37", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4A-3" />}
+                <Explain qa={qa} questionId="4A-3" isShow={showResults} />
                 {Kaisetsu(showResults, "17-4A-8")}
               </div>
 
@@ -286,7 +286,7 @@ const Ex17_4A = () => {
                   What topic is most likely to follow the last paragraph?
                 </span>
                 {renderSelect("38", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4A-4" />}
+                <Explain qa={qa} questionId="4A-4" isShow={showResults} />
                 {Kaisetsu(showResults, "17-4A-9")}
               </div>
 

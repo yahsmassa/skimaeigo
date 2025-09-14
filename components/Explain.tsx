@@ -4,9 +4,10 @@ import { QandA } from "@/lib/types";
 type ExplainProps = {
   qa: QandA[];
   questionId: string;
+  isShow?: boolean;
 };
 
-export const Explain = ({ qa, questionId }: ExplainProps) => {
+export const Explain = ({ qa, questionId, isShow = true }: ExplainProps) => {
   return (
     <button
       onClick={() => {
@@ -21,7 +22,10 @@ export const Explain = ({ qa, questionId }: ExplainProps) => {
           });
         }
       }}
-      className="px-2 py-1 text-sm   bg-blue-500 text-white rounded hover:bg-blue-600"
+      className={
+        `px-2 py-1 text-sm   bg-blue-500 text-white rounded hover:bg-blue-600 block ` +
+        (isShow ? "visible" : "invisible")
+      }
     >
       解説
     </button>

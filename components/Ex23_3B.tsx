@@ -140,7 +140,7 @@ const Ex23_3B = () => {
             </div>
           </div>
           <div className="flex flex-row gap-2">
-            {showResults && <Explain qa={qa} questionId="3B-1" />}
+            <Explain qa={qa} questionId="3B-1" isShow={showResults} />
             {Kaisetsu(showResults, "23-3B-6")}
           </div>
           {[
@@ -167,7 +167,7 @@ const Ex23_3B = () => {
               &quot;adventure room,&quot; you should
             </span>
             {renderSelect("22", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="3B-2" />}
+            <Explain qa={qa} questionId="3B-2" isShow={showResults} />
             {Kaisetsu(showResults, "23-3B-7")}
           </div>
           {[
@@ -191,7 +191,7 @@ const Ex23_3B = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>From this story, you understand that the father</span>
             {renderSelect("23", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="3B-3" />}
+            <Explain qa={qa} questionId="3B-3" isShow={showResults} />
             {Kaisetsu(showResults, "23-3B-8")}
           </div>
           {[

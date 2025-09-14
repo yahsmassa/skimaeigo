@@ -30,7 +30,7 @@ const TheContest = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <p className="mb-8 text-gray-800">
+      <p className="mb-2 text-gray-800">
         You are an exchange student at a UK high school, and your teacher asked
         you to find an interesting story. You found this story to share in class
         next week.
@@ -44,7 +44,7 @@ const TheContest = () => {
           &quot;One more time, with feeling!&quot; I encouraged my band.
         </p>
 
-        <p className="mb-4">
+        <p className="mb-2">
           We are capable musicians. In fact, our keyboardist, Yuki, is a
           classically-trained pianist who regularly performs in front of
           audiences. Kei, our bassist, has a huge number of followers because of
@@ -60,7 +60,7 @@ const TheContest = () => {
           {Kaisetsu(showResults, "25-3-2")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-2">
           Back at home, I watched the video I had taken of our rehearsal. As I
           listened to <i>Sayonara, and Thanks for Everything</i>, I thought my
           ears were playing tricks on me. I carefully listened a few more times.
@@ -71,7 +71,7 @@ const TheContest = () => {
           {Kaisetsu(showResults, "25-3-3")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-2">
           At the next practice, I played back the recording and waited for
           everyone&apos;s reaction.
           <br />
@@ -83,7 +83,7 @@ const TheContest = () => {
           {Kaisetsu(showResults, "25-3-4")}
         </p>
 
-        <p className="mb-4">
+        <p className="mb-0">
           They didn&apos;t understand the problem, so I explained my discovery,
           &quot;Each of us is showing off. We&apos;re playing for ourselves, not
           for the band!&quot; From that day on, our focus shifted and the band
@@ -101,7 +101,7 @@ const TheContest = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Which person is telling the story? </span>
             {renderSelect("8", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="3-1" />}
+            <Explain qa={qa} questionId="3-1" isShow={showResults} />
             {Kaisetsu(showResults, "25-3-6")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
@@ -128,8 +128,10 @@ const TheContest = () => {
             {renderSelect("11", 5, answers, setAnswers)}
             <span className="mx-2">→</span>
             {renderSelect("12", 5, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="3-2" />}
-            {Kaisetsu(showResults, "25-3-7")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="3-2" isShow={showResults} />
+              {Kaisetsu(showResults, "25-3-7")}
+            </div>
           </div>
           <div className="ml-4 space-y-2">
             {[
@@ -157,8 +159,11 @@ const TheContest = () => {
             </span>
             <span className="mr-2">the competition? </span>
             {renderSelect("13", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="3-3" />}
-            {Kaisetsu(showResults, "25-3-8")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="3-3" isShow={showResults} />
+              {Kaisetsu(showResults, "25-3-8")}
+            </div>
+
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             <p>① Awful</p>
