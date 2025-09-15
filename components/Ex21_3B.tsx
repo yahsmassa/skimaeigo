@@ -19,6 +19,10 @@ const Ex21_3B = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
           <span className="text-gray-600 font-sans">(配点 {9})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 5分 300単語強】
+          </span>
+
         </div>
         <Saiten
           qa={qa}
@@ -31,8 +35,7 @@ const Ex21_3B = () => {
       </div>
       {/* Part 1: Newsletter */}
       <div>
-        <div className="mb-4 text-gray-700">
-          <span className="font-bold mr-2">B</span>
+        <div className="mb-2 text-gray-700 px-2">
           Your classmate showed you the following message in your school&apos;s
           newsletter, written by an exchange student from the UK.
           {Kaisetsu(showResults, "21-3B-0")}
@@ -43,7 +46,7 @@ const Ex21_3B = () => {
             Volunteers Wanted!
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-1">
             <p className="indent-7">
               Hello, everyone. I&apos;m Sarah King, an exchange student from
               London. I&apos;d like to share something important with you today.
@@ -107,8 +110,8 @@ const Ex21_3B = () => {
       {/* Part 2: Questions */}
       <div className="space-y-8 mt-7">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-1"))}>
+          <div className="flex items-center flex-wrap gap-2">
             <div className="flex items-center flex-wrap gap-2">
               <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
               <p>
@@ -116,15 +119,17 @@ const Ex21_3B = () => {
                 happened.
               </p>
             </div>
-            <div className="flex items-center flex-wrap gap-1 mb-4">
+            <div className="flex items-center flex-wrap gap-1">
               {[18, 19, 20, 21].map((num, index) => (
                 <React.Fragment key={num}>
                   {renderSelect(String(num), 4, answers, setAnswers)}
-                  {index < 3 && <span>→</span>}
+                  {index < 3 && <span className="-mx-1.5">→</span>}
                 </React.Fragment>
               ))}
-              <Explain qa={qa} questionId="3B-1"  isShow={showResults} />
-              {Kaisetsu(showResults, "21-3B-6")}
+              <div className="flex flex-row gap-2">
+                <Explain qa={qa} questionId="3B-1"  isShow={showResults} />
+                {Kaisetsu(showResults, "21-3B-6")}
+              </div>
             </div>
           </div>
           <div className="space-y-2 ml-2 md:ml-4">
@@ -145,16 +150,18 @@ const Ex21_3B = () => {
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-2"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-2"))}>
+          <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               From Sarah&apos;s message, you learn that the Sakura International
               Centre
             </span>
-            {renderSelect("22", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-3B-7")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("22", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-3B-7")}
+            </div>
           </div>
           <div className="space-y-2 ml-2 md:ml-4">
             {[
@@ -174,16 +181,21 @@ const Ex21_3B = () => {
         </div>
 
         {/* Question 3 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-3"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               You have decided to help with the campaign after reading
-              Sarah&apos;s message. What should you do first?
+              Sarah&apos;s message.{' '}
             </span>
-            {renderSelect("23", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="3B-3"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-3B-8")}
+            <span>
+                 What should you do first?
+            </span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("23", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="3B-3"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-3B-8")}
+            </div>
           </div>
           <div className="space-y-2 ml-2 md:ml-4">
             {[

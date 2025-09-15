@@ -13,35 +13,6 @@ const Ex21_1A = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
   const question: QandA[] = qanda.find(q => q.id === "21_1A")?.qanda || [];
-  //   {
-  //     questionId: "1A-1",
-  //     qa: [
-  //       {
-  //         questionNumber: "1",
-  //         answer: 0,
-  //       },
-  //     ],
-  //     rightAnswerString: "1",
-  //     answerString: "",
-  //     isCorrect: false,
-  //     points: 2,
-  //     explanation: ["正解①「USBメモリーを持ってきてほしい」"],
-  //   },
-  //   {
-  //     questionId: "1A-2",
-  //     qa: [
-  //       {
-  //         questionNumber: "2",
-  //         answer: 0,
-  //       },
-  //     ],
-  //     rightAnswerString: "2",
-  //     answerString: "",
-  //     isCorrect: false,
-  //     points: 2,
-  //     explanation: ["正解②「それを聞いて嬉しい」"],
-  //   },
-  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (
@@ -50,6 +21,9 @@ const Ex21_1A = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第１問 A"}</h1>
           <span className="text-gray-600 font-sans">(配点 {4})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 5分 約150単語】
+          </span>
         </div>
         <Saiten
           qa={qa}
@@ -61,9 +35,9 @@ const Ex21_1A = () => {
         />
       </div>
       {/* Letter A and description */}
-      <div className="mb-6">
-        <p className="mb-4">
-          <span className="font-bold">A</span> Your dormitory roommate Julie has
+      <div className="mb-2">
+        <p className="">
+          Your dormitory roommate Julie has
           sent a text message to your mobile phone with a request.
           {Kaisetsu(showResults, "21-1A-0")}
         </p>
@@ -76,7 +50,7 @@ const Ex21_1A = () => {
           <div className="max-w-[90%]">
             <div className="bg-gray-100 rounded-2xl p-4">
               <p className="font-bold mb-2">Help!!!</p>
-              <p className="mb-2">
+              <p className="">
                 Last night I saved my history homework on a USB memory stick. I
                 was going to print it in the university library this afternoon,
                 but I forgot to bring the USB with me. I need to give a copy to
@@ -123,9 +97,11 @@ const Ex21_1A = () => {
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>What was Julie&apos;s request?</span>
-            {renderSelect("1", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="1A-1"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-1A-4")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("1", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="1A-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-1A-4")}
+            </div>
           </div>
           <div className="space-y-2 pl-4">
             {[
@@ -149,9 +125,11 @@ const Ex21_1A = () => {
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>How will you reply to Julie&apos;s second text message?</span>
-            {renderSelect("2", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="1A-2"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-1A-5")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("2", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="1A-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-1A-5")}
+            </div>
           </div>
           <div className="space-y-2 pl-4">
             {[

@@ -20,6 +20,9 @@ export default function Ex21_3A() {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
           <span className="text-gray-600 font-sans">(配点 {6})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 5分 200単語強】
+          </span>
         </div>
         <Saiten
           qa={qa}
@@ -31,8 +34,7 @@ export default function Ex21_3A() {
         />
       </div>
       {/* Section A Header */}
-      <div className="flex gap-2 mb-4">
-        <span className="font-serif">A</span>
+      <div className="flex gap-2 mb-2 px-2">
         <p className="text-gray-800">
           You are planning to stay at a hotel in the UK. You found useful
           information in the Q&A section of a travel advice website.
@@ -43,7 +45,7 @@ export default function Ex21_3A() {
       {/* Q&A Box */}
       <div className="border border-gray-300 p-6 space-y-4">
         {/* Question */}
-        <div className="space-y-2">
+        <div className="space-y-1">
           <p className="text-gray-800">
             I&apos;m considering staying at the Hollytree Hotel in Castleton in
             March 2021. Would you recommend this hotel, and is it easy to get
@@ -54,8 +56,8 @@ export default function Ex21_3A() {
         </div>
 
         {/* Answer */}
-        <div className="border-t border-gray-200 pt-4 space-y-4">
-          <p className="font-medium">Answer</p>
+        <div className="border-t border-gray-200 pt-4 space-y-1">
+          <p className="font-medium mb-2">Answer</p>
 
           <p className="text-gray-800">
             Yes, I strongly recommend the Hollytree. I&apos;ve stayed there
@@ -90,7 +92,7 @@ export default function Ex21_3A() {
             {Kaisetsu(showResults, "21-3A-5")}
           </p>
 
-          <div className="flex justify-between items-center pt-2">
+          <div className="flex justify-between items-center pt-0">
             <p className="text-gray-800">Enjoy your stay!</p>
             <p className="text-gray-600">(Alex)</p>
           </div>
@@ -113,15 +115,17 @@ export default function Ex21_3A() {
       <div className="space-y-8">
         {/* Question 1 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "3A-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap gap-2 ">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>From Alex&apos;s answer, you learn that Alex</span>
-            {renderSelect("16", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="3A-1"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-3A-6")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("16", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="3A-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-3A-6")}
+            </div>
           </div>
 
-          <div className="pl-2 md:pl-8 space-y-1">
+          <div className="pl-2 md:pl-8 space-y-2">
             {[
               "appreciates the convenient location of the hotel",
               "got lost in Victoria Station on his first visit to Castleton",
@@ -140,18 +144,23 @@ export default function Ex21_3A() {
 
         {/* Question 2 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "3A-2"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               You are departing on public transport from the airport at 2.00 pm
-              on 15 March 2021. What is the fastest way to get to the hotel?
+              on 15 March 2021.{' '}
             </span>
-            {renderSelect("17", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="3A-2"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-3A-7")}
+            <span>
+              What is the fastest way to get to the hotel?
+            </span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("17", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="3A-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-3A-7")}
+            </div>
           </div>
 
-          <div className="pl-2 md:pl-8 space-y-1">
+          <div className="pl-2 md:pl-8 space-y-2">
             {[
               "By express bus and city bus",
               "By express bus and on foot",

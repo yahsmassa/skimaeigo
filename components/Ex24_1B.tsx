@@ -58,6 +58,10 @@ const Ex24_1B = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第１問 B"}</h1>
           <span className="text-gray-600 font-sans">(配点 {6})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 4分 200単語強】
+          </span>
+
         </div>
         <Saiten
           qa={qa}

@@ -20,6 +20,9 @@ const Ex21_1B = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第１問 B"}</h1>
           <span className="text-gray-600 font-sans">(配点 {6})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 5分 200単語強】
+          </span>
         </div>
         <Saiten
           qa={qa}
@@ -31,9 +34,9 @@ const Ex21_1B = () => {
         />
       </div>
       {/* Header section "B" */}
-      <div className="mb-6">
-        <p className="text-lg">
-          <span className="font-bold">B</span> Your favorite musician will have
+      <div className="mb-2">
+        <p className="text-lg px-2">
+          Your favorite musician will have
           a concert tour in Japan, and you are thinking of joining the fan club.
           You visit the official fan club website.
           {Kaisetsu(showResults, "21-1B-0")}
@@ -41,10 +44,10 @@ const Ex21_1B = () => {
       </div>
 
       {/* Fan Club Content */}
-      <div className="border border-gray-300 p-6 space-y-4">
+      <div className="border border-gray-300 p-6 space-y-1">
         <h1 className="text-xl font-bold">TYLER QUICK FAN CLUB</h1>
 
-        <p className="mb-4 indent-7">
+        <p className="indent-7">
           Being a member of the{" "}
           <span className="font-bold">TYLER QUICK (TQ)</span> fan club is so
           much fun! You can keep up with the latest news, and take part in many
@@ -57,7 +60,7 @@ const Ex21_1B = () => {
           {Kaisetsu(showResults, "21-1B-1")}
         </p>
 
-        <p className="mb-4 indent-7">
+        <p className="indent-7">
           <span className="font-bold">TQ</span> is loved all around the world.
           You can join from any country, and you can use the membership card for
           one year. The <span className="font-bold">TQ</span> fan club has three
@@ -133,10 +136,12 @@ const Ex21_1B = () => {
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
-            <span>A New Member&apos;s Pack</span>
-            {renderSelect("3", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="1B-1"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-1B-4")}
+            <span className="-mr-2">A New Member&apos;s Pack</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("3", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="1B-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-1B-4")}
+            </div>
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             {[
@@ -160,9 +165,11 @@ const Ex21_1B = () => {
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>What will you get if you become a new Pacer member?</span>
-            {renderSelect("4", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="1B-2"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-1B-5")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("4", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="1B-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-1B-5")}
+            </div>
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             {[
@@ -185,10 +192,12 @@ const Ex21_1B = () => {
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "1B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
-            <span>After being a fan club member for one year, you can</span>
-            {renderSelect("5", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="1B-3"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-1B-6")}
+            <span className="-mr-2">After being a fan club member for one year, you can</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("5", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="1B-3"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-1B-6")}
+            </div>
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             {[

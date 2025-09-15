@@ -21,6 +21,10 @@ const Ex25_5 = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
           <span className="text-gray-600 font-sans">(配点 {16})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 10分 約500単語】
+          </span>
+
         </div>
         <Saiten
           qa={qa}

@@ -39,6 +39,10 @@ const Ex22_6B = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第６問 B"}</h1>
           <span className="text-gray-600 font-sans">(配点 {12})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 10分 700単語弱】
+          </span>
+
         </div>
         <Saiten
           qa={qa}
@@ -52,7 +56,7 @@ const Ex22_6B = () => {
       {/* Instructions */}
       <div className="mb-2">
         <p className="mb-2">
-          <span className="font-bold">B</span> You are in a student group
+          You are in a student group
           preparing a poster for a scientific presentation contest with the
           theme &quot;What we should know in order to protect the
           environment.&quot; You have been using the following passage to create

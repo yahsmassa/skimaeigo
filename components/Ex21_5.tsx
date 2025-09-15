@@ -21,6 +21,9 @@ const Ex21_5 = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
           <span className="text-gray-600 font-sans">(配点 {15})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 10分 約700単語】
+          </span>
         </div>
         <Saiten
           qa={qa}
@@ -32,7 +35,7 @@ const Ex21_5 = () => {
         />
       </div>
       {/* Instructions paragraph */}
-      <p className="text-base leading-relaxed mb-2 md:text-xl md:mb-6">
+      <p className="text-base leading-relaxed mb-2 md:text-xl">
         Using an international news report, you are going to take part in an
         English oral presentation contest. Read the following news story from
         France in preparation for your talk.
@@ -40,7 +43,7 @@ const Ex21_5 = () => {
       </p>
 
       {/* Main content box */}
-      <div className="border border-gray-300 p-6 space-y-4">
+      <div className="border border-gray-300 p-6 space-y-1">
         <p className="text-base leading-relaxed indent-7">
           Five years ago, Mrs. Sabine Rouas lost her horse. She had spent 20
           years with the horse before he died of old age. At that time, she felt
@@ -139,13 +142,15 @@ const Ex21_5 = () => {
       </div>
       {/* 問セクション */}
       {/* Question 1 */}
-      <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
-        <div className="flex items-center flex-wrap gap-2 mb-4">
+      <div className={cn("space-y-2", showResults && qaFormat(qa, "5-1"))}>
+        <div className="flex items-center flex-wrap">
           <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>Which is the best title for your presentation?</span>
-          {renderSelect("30", 4, answers, setAnswers)}
-          <Explain qa={qa} questionId="5-1" isShow={showResults} />
-          {Kaisetsu(showResults, "21-5-8")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("30", 4, answers, setAnswers)}
+            <Explain qa={qa} questionId="5-1" isShow={showResults} />
+            {Kaisetsu(showResults, "21-5-8")}
+          </div>
         </div>
 
         <div className="space-y-2 pl-2 md:pl-8">
@@ -170,19 +175,21 @@ const Ex21_5 = () => {
 
       {/* Question 2 */}
       <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-2"))}>
-        <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className="flex items-center flex-wrap">
           <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
           <span>
             Which is the best combination for the{" "}
             <span className="italic font-bold">Who&apos;s Who?</span> slide?
           </span>
-          {renderSelect("31", 4, answers, setAnswers)}
-          <Explain qa={qa} questionId="5-2" isShow={showResults} />
-          {Kaisetsu(showResults, "21-5-9")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("31", 4, answers, setAnswers)}
+            <Explain qa={qa} questionId="5-2" isShow={showResults} />
+            {Kaisetsu(showResults, "21-5-9")}
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 pl-0 md:pl-8 text-xs md:text-base">
-          <div>
+        <div className="grid grid-cols-2 gap-8 pl-0 md:pl-8  text-xs md:text-base">
+          <div className="">
             <div className="underline mb-2 ml-5">Main figures</div>
             <div className="space-y-2 w-[200px] md:w-auto">
               <div className="flex gap-2 md:gap-4">
@@ -204,7 +211,7 @@ const Ex21_5 = () => {
             </div>
           </div>
 
-          <div>
+          <div className="text-xs md:text-base">
             <div className="underline mb-2">Minor figures</div>
             <div className="space-y-2 w-[200px] md:w-auto">
               <div>Sabine, the pony</div>
@@ -218,18 +225,28 @@ const Ex21_5 = () => {
 
       {/* Question 3 */}
       <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-3"))}>
-        <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className="flex items-center flex-wrap">
           <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span>
-            Choose the four events in the order they happened to complete the
+            Choose the four events in the order they happened to complete the&nbsp;
           </span>
-          <span className="italic font-bold">Pre-fame Storyline</span> slide.
-          {renderSelect("32", 5, answers, setAnswers)}
-          {renderSelect("33", 5, answers, setAnswers)}
-          {renderSelect("34", 5, answers, setAnswers)}
-          {renderSelect("35", 5, answers, setAnswers)}
-          <Explain qa={qa} questionId="5-3" isShow={showResults} />
-          {Kaisetsu(showResults, "21-5-10")}
+          <span className="italic font-bold">Pre-fame Storyline </span>
+          <span>&nbsp;slide.</span>
+          <div className="flex flex-row flex-wrap gap-2 mt-2">
+            <div className="flex flex-row ">
+              {renderSelect("32", 5, answers, setAnswers)}
+              {renderSelect("33", 5, answers, setAnswers)}
+              {renderSelect("34", 5, answers, setAnswers)}
+            </div>
+            <div className="flex flex-row ">
+              {renderSelect("35", 5, answers, setAnswers)}
+            {renderSelect("35", 5, answers, setAnswers)}
+            </div>
+          <div className="flex flex-row gap-2">
+            <Explain qa={qa} questionId="5-3" isShow={showResults} />
+            {Kaisetsu(showResults, "21-5-10")}
+          </div>
+          </div>
         </div>
 
         <div className="space-y-2 pl-2 md:pl-8">
@@ -259,7 +276,7 @@ const Ex21_5 = () => {
       </div>
       {/* Question 4 */}
       <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-4"))}>
-        <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className="flex items-center flex-wrap">
           <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>
             Choose the two best items for the &nbsp;
@@ -268,10 +285,14 @@ const Ex21_5 = () => {
             </span>{" "}
             &nbsp;slide. (The order does not matter.)
           </span>
-          {renderSelect("36", 5, answers, setAnswers)}
-          {renderSelect("37", 5, answers, setAnswers)}
-          <Explain qa={qa} questionId="5-4" isShow={showResults} />
-          {Kaisetsu(showResults, "21-5-11")}
+          <div className="flex flex-row flex-wrap mt-2">
+            {renderSelect("36", 5, answers, setAnswers)}
+            {renderSelect("37", 5, answers, setAnswers)}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="5-4" isShow={showResults} />
+              {Kaisetsu(showResults, "21-5-11")}
+            </div>
+          </div>
         </div>
 
         <div className="space-y-2 pl-2 md:pl-8">
@@ -300,16 +321,18 @@ const Ex21_5 = () => {
 
       {/* Question 5 */}
       <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-5"))}>
-        <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className="flex items-center flex-wrap">
           <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
           <span>
             Complete the &nbsp;
             <span className="italic font-bold">Aston Now</span> &nbsp;slide with
             the most appropriate item.
           </span>
-          {renderSelect("38", 5, answers, setAnswers)}
-          <Explain qa={qa} questionId="5-5" isShow={showResults} />
-          {Kaisetsu(showResults, "21-5-12")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("38", 5, answers, setAnswers)}
+            <Explain qa={qa} questionId="5-5" isShow={showResults} />
+            {Kaisetsu(showResults, "21-5-12")}
+          </div>
         </div>
 
         <div className="space-y-2 pl-2 md:pl-8">

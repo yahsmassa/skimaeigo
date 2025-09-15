@@ -21,6 +21,10 @@ const Ex21_6B = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第６問 B"}</h1>
           <span className="text-gray-600 font-sans">(配点 {12})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 10分 約550単語】
+          </span>
+
         </div>
         <Saiten
           qa={qa}
@@ -32,8 +36,7 @@ const Ex21_6B = () => {
         />
       </div>
       {/* Question label */}
-      <div className="mb-6 md:text-xl">
-        <span className="font-bold mr-2">B</span>
+      <div className="mb-2 md:text-xl px-2">
         <span className="leading-relaxed">
           You are studying nutrition in health class. You are going to read the
           following passage from a textbook to learn more about various
@@ -44,7 +47,7 @@ const Ex21_6B = () => {
 
       {/* Main textbook content */}
       <div className="border border-gray-300 p-8 leading-relaxed text-justify">
-        <p className="mb-6 indent-7">
+        <p className="indent-7">
           Cake, candy, soft drinks—most of us love sweet things. In fact, young
           people say &quot;Sweet!&quot; to mean something is &quot;good&quot; in
           English. When we think of sweetness, we imagine ordinary white sugar
@@ -58,7 +61,7 @@ const Ex21_6B = () => {
           have developed a wide variety of artificial sweeteners.
           {Kaisetsu(showResults, "21-6B-1")}
         </p>
-        <p className="mb-6 indent-7">
+        <p className="indent-7">
           A recent US National Health and Nutrition Examination Survey concluded
           that 14.6% of the average American&apos;s energy intake is from
           &quot;added sugar,&quot; which refers to sugar that is not derived
@@ -70,7 +73,7 @@ const Ex21_6B = () => {
           substitutes for drinks, snacks, and desserts.
           {Kaisetsu(showResults, "21-6B-2")}
         </p>
-        <p className="mb-6 indent-7">
+        <p className="indent-7">
           Natural alternatives to white sugar include brown sugar, honey, and
           maple syrup, but they also tend to be high in calories. Consequently,
           alternative &quot;low-calorie sweeteners&quot; (LCSs), mostly
@@ -79,7 +82,7 @@ const Ex21_6B = () => {
           are artificial—stevia comes from plant leaves.
           {Kaisetsu(showResults, "21-6B-3")}
         </p>
-        <p className="mb-6 indent-7">
+        <p className="indent-7">
           Alternative sweeteners can be hard to use in cooking because some
           cannot be heated and most are far sweeter than white sugar. Aspartame
           and Ace-K are 200 times sweeter than sugar. Stevia is 300 times
@@ -90,7 +93,7 @@ const Ex21_6B = () => {
           something.
           {Kaisetsu(showResults, "21-6B-4")}
         </p>
-        <p className="mb-6 indent-7">
+        <p className="indent-7">
           When choosing sweeteners, it is important to consider health issues.
           Making desserts with lots of white sugar, for example, results in
           high-calorie dishes that could lead to weight gain. There are those
@@ -105,7 +108,7 @@ const Ex21_6B = () => {
           slowly, so consuming large amounts can cause stomach trouble.
           {Kaisetsu(showResults, "21-6B-5")}
         </p>
-        <p className="mb-6 indent-7">
+        <p className="indent-7">
           When people want something sweet, even with all the information, it is
           difficult for them to decide whether to stick to common higher calorie
           sweeteners like sugar or to use LCSs. Many varieties of gum and candy
@@ -121,16 +124,18 @@ const Ex21_6B = () => {
       <div className="mt-8">
         {/* Question 1 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "6B-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               You learn that modern science has changed the world of sweeteners
               by
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
-            <span>.</span>
-            <Explain qa={qa} questionId="6B-1"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-6B-7")}
+            <span className="mt-1  -ml-1 mr-2">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6B-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-6B-7")}
+            </div>
           </div>
 
           <div className="ml-2 md:ml-8 space-y-2">
@@ -154,15 +159,17 @@ const Ex21_6B = () => {
 
         {/* Question 2 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "6B-2"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap mb-3">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               You are summarizing the information you have just studied. How
               should the table be finished?
             </span>
-            {renderSelect("44", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="6B-2"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-6B-8")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("44", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="6B-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-6B-8")}
+            </div>
           </div>
 
           {/* Table */}
@@ -217,7 +224,7 @@ const Ex21_6B = () => {
           <div className="ml-2 md:ml-8 space-y-4">
             {[1, 2, 3, 4].map((num) => (
               <div key={num} className="grid grid-cols-2 gap-8">
-                <div className="flex gap-8">
+                <div className="flex gap-3">
                   <span>
                     {num === 1 ? "①" : num === 2 ? "②" : num === 3 ? "③" : "④"}
                   </span>
@@ -273,18 +280,22 @@ const Ex21_6B = () => {
 
         {/* Question 3 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "6B-3"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               According to the article you read, which of the following are
               true?
             </span>
             <span>(Choose two options. The order does not matter.)</span>
-            {renderSelect("45", 5, answers, setAnswers)}
-            <span>・</span>
-            {renderSelect("46", 5, answers, setAnswers)}
-            <Explain qa={qa} questionId="6B-3"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-6B-9")}
+            <div className="flex flex-row">
+              {renderSelect("45", 5, answers, setAnswers)}
+              <span className="-mx-2">・</span>
+              {renderSelect("46", 5, answers, setAnswers)}
+              <div className="flex flex-row gap-2">
+                <Explain qa={qa} questionId="6B-3"  isShow={showResults} />
+                {Kaisetsu(showResults, "21-6B-9")}
+              </div>
+            </div>
           </div>
 
           <div className="ml-2 md:ml-8 space-y-2">
@@ -327,9 +338,11 @@ const Ex21_6B = () => {
               To describe the author&apos;s position, which of the following is
               most appropriate?
             </span>
-            {renderSelect("47", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="6B-4"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-6B-10")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("47", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="6B-4"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-6B-10")}
+            </div>
           </div>
 
           <div className="ml-2 md:ml-8 space-y-2">

@@ -20,6 +20,10 @@ export default function Ex25_1() {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第１問"}</h1>
           <span className="text-gray-600 font-sans">(配点 6)</span>
+          <span className="text-gray-600 font-sans">
+            【目標時間 5分 200単語弱】
+          </span>
+
         </div>
         <Saiten
           qa={qa}

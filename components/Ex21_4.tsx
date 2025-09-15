@@ -20,6 +20,9 @@ export default function Ex21_4() {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第４問"}</h1>
           <span className="text-gray-600 font-sans">(配点 {16})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 10分 500単語弱】
+          </span>
         </div>
         <Saiten
           qa={qa}
@@ -31,7 +34,7 @@ export default function Ex21_4() {
         />
       </div>
       {/* Context text */}
-      <p className="text-gray-600 mb-6 leading-relaxed md:text-xl md:mb-6">
+      <p className="text-gray-600 mb-2 leading-relaxed md:text-xl">
         Your English teacher, Emma, has asked you and your classmate, Natsuki,
         to help her plan the day&apos;s schedule for hosting students from your
         sister school. You&apos;re reading the email exchanges between Natsuki
@@ -43,7 +46,7 @@ export default function Ex21_4() {
       <div className="border border-gray-300 p-6 rounded mb-8">
         <p className="mb-4">Hi Emma,</p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           We have some ideas and questions about the schedule for the day out
           with our 12 guests next month. As you told us, the students from both
           schools are supposed to give presentations in our assembly hall from
@@ -53,14 +56,14 @@ export default function Ex21_4() {
           {Kaisetsu(showResults, "21-4-1")}
         </p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           We have also been discussing the afternoon activities. How about
           seeing something related to science? We have two ideas, but if you
           need a third, please let me know.
           {Kaisetsu(showResults, "21-4-2")}
         </p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           Have you heard about the special exhibition that is on at Westside
           Aquarium next month? It&apos;s about a new food supplement made from
           sea plankton. We think it would be a good choice. Since it&apos;s
@@ -69,7 +72,7 @@ export default function Ex21_4() {
           {Kaisetsu(showResults, "21-4-3")}
         </p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           Eastside Botanical Garden, together with our local university, has
           been developing an interesting way of producing electricity from
           plants. Luckily, the professor in charge will give a short talk about
@@ -77,14 +80,14 @@ export default function Ex21_4() {
           {Kaisetsu(showResults, "21-4-4")}
         </p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           Everyone will want to get some souvenirs, won&apos;t they? I think
           West Mall, next to Hibari Station, would be best, but we don&apos;t
           want to carry them around with us all day.
           {Kaisetsu(showResults, "21-4-5")}
         </p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           Finally, every visitor to Azuma should see the town&apos;s symbol, the
           statue in Azuma Memorial Park next to our school, but we can&apos;t
           work out a good schedule. Also, could you tell us what the plan is for
@@ -100,14 +103,14 @@ export default function Ex21_4() {
       <div className="border border-gray-300 p-6 rounded mb-8">
         <p className="mb-4">Hi Natsuki,</p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           Thank you for your email! You&apos;ve been working hard. In answer to
           your question, they&apos;ll arrive at the station at 9:20 a.m. and
           then catch the school bus.
           {Kaisetsu(showResults, "21-4-7")}
         </p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           The two main afternoon locations, the aquarium and botanical garden,
           are good ideas because both schools place emphasis on science
           education, and the purpose of this program is to improve the
@@ -116,7 +119,7 @@ export default function Ex21_4() {
           {Kaisetsu(showResults, "21-4-8")}
         </p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           Let&apos;s get souvenirs at the end of the day. We can take the bus to
           the mall arriving there at 5:00 p.m. This will allow almost an hour
           for shopping and our guests can still be back at the hotel by 6:30
@@ -125,14 +128,14 @@ export default function Ex21_4() {
           {Kaisetsu(showResults, "21-4-9")}
         </p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           About lunch, the school cafeteria will provide boxed lunches. We can
           eat under the statue you mentioned. If it rains, let&apos;s eat
           inside.
           {Kaisetsu(showResults, "21-4-10")}
         </p>
 
-        <p className="mb-4 leading-relaxed">
+        <p className="leading-relaxed">
           Thank you so much for your suggestions. Could you two make a draft for
           the schedule?
           {Kaisetsu(showResults, "21-4-11")}
@@ -143,7 +146,7 @@ export default function Ex21_4() {
       </div>
 
       {/* Timetable */}
-      <div className="border border-gray-300 p-6 rounded">
+      <div className="p-6">
         <p className="font-medium text-center mb-4">Attached timetable:</p>
         <p className="text-center font-medium mb-2">Train Timetable</p>
         <p className="text-center mb-4">Kaede — Hibari — Azuma</p>
@@ -253,7 +256,7 @@ export default function Ex21_4() {
       <div className="mt-8">
         {/* Question 1 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap gap-0">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               The guests from the sister school will arrive on the number
@@ -261,9 +264,11 @@ export default function Ex21_4() {
             {renderSelect("24", 6, answers, setAnswers)}
             <span> train and catch the number</span>
             {renderSelect("25", 6, answers, setAnswers)}
-            <span> train back to their hotel.</span>
-            <Explain qa={qa} questionId="4-1"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-4-12")}
+            <span className="mr-2"> train back to their hotel.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="4-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-4-12")}
+            </div>
           </div>
 
           <div className="grid grid-cols-3 gap-4 mt-4 font-sans">
@@ -277,12 +282,14 @@ export default function Ex21_4() {
         </div>
         {/* Question 2 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-2"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Which best completes the draft schedule?</span>
-            {renderSelect("26", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="4-2"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-4-13")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("26", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="4-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-4-13")}
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 mb-4">
@@ -299,7 +306,7 @@ export default function Ex21_4() {
             width={800}
             height={200}
           />
-          <div className="ml-2 md:ml-8">
+          <div className="ml-2 md:ml-8 space-y-2">
             <p>① D→A→B→C</p>
             <p>② D→B→A→C</p>
             <p>③ D→B→C→A</p>
@@ -309,16 +316,18 @@ export default function Ex21_4() {
 
         {/* Question 3 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-3"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
-            <span>Unless it rains, the guests will eat lunch in the</span>
+            <span className="-mr-2">Unless it rains, the guests will eat lunch in the</span>
             {renderSelect("27", 4, answers, setAnswers)}
-            <span>.</span>
-            <Explain qa={qa} questionId="4-3"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-4-14")}
+            <span className="mt-1 -ml-2 mr-2">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="4-3"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-4-14")}
+            </div>
           </div>
 
-          <div className="ml-2 md:ml-8">
+          <div className="ml-2 md:ml-8 space-y-2">
             <p>① botanical garden</p>
             <p>② park next to the school</p>
             <p>③ park next to the station</p>
@@ -328,18 +337,20 @@ export default function Ex21_4() {
 
         {/* Question 4 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-4"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
               The guests will <span className="underline">not</span> get around
             </span>
             {renderSelect("28", 4, answers, setAnswers)}
-            <span> on that day.</span>
-            <Explain qa={qa} questionId="4-4"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-4-15")}
+            <span className="mr-2"> on that day.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="4-4"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-4-15")}
+            </div>
           </div>
 
-          <div className="ml-2 md:ml-8">
+          <div className="ml-2 md:ml-8 space-y-2">
             <p>① by bus</p>
             <p>② by taxi</p>
             <p>③ by train</p>
@@ -349,18 +360,20 @@ export default function Ex21_4() {
 
         {/* Question 5 */}
         <div className={cn("mb-8", showResults && qaFormat(qa, "4-5"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>
               As a third option, which would be the most suitable for your
               program?
             </span>
-            {renderSelect("29", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="4-5"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-4-16")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("29", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="4-5"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-4-16")}
+            </div>
           </div>
 
-          <div className="ml-2 md:ml-8">
+          <div className="ml-2 md:ml-8 space-y-2">
             <p>① Hibari Amusement Park</p>
             <p>② Hibari Art Museum</p>
             <p>③ Hibari Castle</p>

@@ -69,6 +69,9 @@ const Ex21_2A = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第２問 A"}</h1>
           <span className="text-gray-600 font-sans">(配点 {10})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 5分 200単語強】
+          </span>
         </div>
         <Saiten
           qa={qa}
@@ -79,7 +82,7 @@ const Ex21_2A = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="text-sm md:text-base mb-6">
+      <div className="text-sm md:text-base mb-2 px2">
         As the student in charge of a UK school festival band competition, you
         are examining all of the scores and the comments from three judges to
         understand and explain the rankings.
@@ -182,7 +185,7 @@ const Ex21_2A = () => {
         <div className="text-center font-medium p-2 border-b border-black">
           Judges&apos; shared evaluation (summarised by Mr Hobbs)
         </div>
-        <div className="p-4 space-y-4">
+        <div className="p-4 space-y-1">
           <p className="indent-7">
             Each band&apos;s total score is the same, but each band is very
             different. Ms Leigh and I agreed that performance is the most
@@ -201,17 +204,19 @@ const Ex21_2A = () => {
 
       <div className="space-y-6">
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               Based on the judges&apos; final average scores, which band sang
               the best?
             </span>
-            {renderSelect("6", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="2A-1"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-2A-6")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("6", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2A-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-2A-6")}
+            </div>
           </div>
-          <div>
+          <div className="space-y-2">
             {[
               "Green Forest",
               "Mountain Pear",
@@ -229,14 +234,16 @@ const Ex21_2A = () => {
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-2"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Which judge gave both positive and critical comments?</span>
-            {renderSelect("7", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="2A-2"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-2A-7")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("7", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2A-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-2A-7")}
+            </div>
           </div>
-          <div className="pl-2 md:pl-8 space-y-1">
+          <div className="pl-2 md:pl-8 space-y-2">
             {["Mr Hobbs", "Ms Leigh", "Ms Wells", "None of them"].map(
               (text, index) => (
                 <div key={index} className="flex items-start">
@@ -251,15 +258,17 @@ const Ex21_2A = () => {
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-3"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
-            <span>
+            <span className="-mr-2">
               One <span className="underline">fact</span> from the judges&apos;
               individual comments is that
             </span>
-            {renderSelect("8", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="2A-3"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-2A-8")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("8", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2A-3"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-2A-8")}
+            </div>
           </div>
           <div className="pl-2 md:pl-8 space-y-1">
             {[
@@ -279,17 +288,19 @@ const Ex21_2A = () => {
         </div>
 
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-4"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
-            <span>
+            <span className="-mr-2">
               One <span className="underline">opinion</span> from the
               judges&apos; comments and shared evaluation is that
             </span>
-            {renderSelect("9", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="2A-4"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-2A-9")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("9", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2A-4"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-2A-9")}
+            </div>
           </div>
-          <div className="pl-2 md:pl-8 space-y-1">
+          <div className="pl-2 md:pl-8 space-y-2">
             {[
               "each evaluated band received the same total score",
               "Ms Wells' suggestion about originality was agreed on",
@@ -313,9 +324,11 @@ const Ex21_2A = () => {
               Which of the following is the final ranking based on the
               judges&apos; shared evaluation?
             </span>
-            {renderSelect("10", 6, answers, setAnswers)}
-            <Explain qa={qa} questionId="2A-5"  isShow={showResults} />
-            {Kaisetsu(showResults, "21-2A-10")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("10", 6, answers, setAnswers)}
+              <Explain qa={qa} questionId="2A-5"  isShow={showResults} />
+              {Kaisetsu(showResults, "21-2A-10")}
+            </div>
           </div>
           <div className="pl-8">
             <table className="w-full max-w-xl">

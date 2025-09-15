@@ -21,6 +21,9 @@ const Ex21_6A = () => {
         <div className="flex items-center space-x-4 mb-2">
           <h1 className="text-lg font-bold font-sans">{"第６問 A"}</h1>
           <span className="text-gray-600 font-sans">(配点 {12})</span>
+          <span className="text-gray-600 font-sans">
+          【目標時間 10分 700単語強】
+          </span>
         </div>
         <Saiten
           qa={qa}
@@ -33,8 +36,7 @@ const Ex21_6A = () => {
       </div>
       {/* Original Article Section */}
       <div>
-        <div className="mb-6 md:text-xl">
-          <span className="font-bold">A</span>
+        <div className="mb-2 md:text-xl px-2">
           <span className="ml-4">
             You are working on a class project about safety in sports and found
             the following article. You are reading it and making a poster to
@@ -48,7 +50,7 @@ const Ex21_6A = () => {
             Making Ice Hockey Safer
           </h1>
 
-          <div className="space-y-4">
+          <div className="space-y-1">
             <p className="indent-7">
               Ice hockey is a team sport enjoyed by a wide variety of people
               around the world. The object of the sport is to move a hard rubber
@@ -144,7 +146,7 @@ const Ex21_6A = () => {
         {/* What is ice hockey? section */}
         <div className="border border-gray-300 p-4 mb-6 relative">
           <h2 className="text-lg mb-3">What is ice hockey?</h2>
-          <ul className="list-disc pl-6 mb-3">
+          <ul className="list-disc pl-6 ">
             <li>
               Players score by putting a &quot;puck&quot; in the other
               team&apos;s net
@@ -170,7 +172,7 @@ const Ex21_6A = () => {
 
           <div className="border border-gray-300 p-4 mb-4">
             <h3 className="mb-2">Definition of a concussion</h3>
-            <p className="mb-2">
+            <p className="">
               An injury to the brain that affects the way it functions
             </p>
             {Kaisetsu(showResults, "21-6A-9")}
@@ -245,14 +247,16 @@ const Ex21_6A = () => {
       {/* Multiple Choice Questions Section */}
       <div className="space-y-8 mt-8">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-1"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "6A-1"))}>
+          <div className="flex items-center flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Choose the best option for</span>
             {renderSelect("39", 4, answers, setAnswers)}
-            <span>on your poster.</span>
-            <Explain qa={qa} questionId="6A-1" isShow={showResults} />
-            {Kaisetsu(showResults, "21-6A-10")}
+            <span className="mr-2">on your poster.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6A-1" isShow={showResults} />
+              {Kaisetsu(showResults, "21-6A-10")}
+            </div>
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
             {[
@@ -272,14 +276,16 @@ const Ex21_6A = () => {
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-2"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "6A-2"))}>
+          <div className="flex items-center flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Choose the best option for</span>
             {renderSelect("40", 4, answers, setAnswers)}
-            <span>on your poster.</span>
-            <Explain qa={qa} questionId="6A-2" isShow={showResults} />
-            {Kaisetsu(showResults, "21-6A-11")}
+            <span className="mr-2">on your poster.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6A-2" isShow={showResults} />
+              {Kaisetsu(showResults, "21-6A-11")}
+            </div>
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
             {[
@@ -299,14 +305,16 @@ const Ex21_6A = () => {
         </div>
 
         {/* Question 3 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-3"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "6A-3"))}>
+          <div className="flex items-center flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>Choose the best option for</span>
             {renderSelect("41", 4, answers, setAnswers)}
-            <span>on your poster.</span>
-            <Explain qa={qa} questionId="6A-3" isShow={showResults} />
-            {Kaisetsu(showResults, "21-6A-12")}
+            <span className="mr-2">on your poster.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6A-3" isShow={showResults} />
+              {Kaisetsu(showResults, "21-6A-12")}
+            </div>
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
             {[
@@ -326,14 +334,16 @@ const Ex21_6A = () => {
         </div>
 
         {/* Question 4 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-4"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "6A-4"))}>
+          <div className="flex items-center flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Choose the best option for</span>
             {renderSelect("42", 4, answers, setAnswers)}
-            <span>on your poster.</span>
-            <Explain qa={qa} questionId="6A-4" isShow={showResults} />
-            {Kaisetsu(showResults, "21-6A-13")}
+            <span className="mr-2">on your poster.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6A-4" isShow={showResults} />
+              {Kaisetsu(showResults, "21-6A-13")}
+            </div>
           </div>
           <div className="space-y-2 pl-2 md:pl-8">
             {[
