@@ -156,7 +156,7 @@ const Ex25_4 = () => {
           </tbody>
         </table>
       </div>
-
+      {/* Question 1 */}
       <div className="space-y-4 mt-4">
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
@@ -164,9 +164,11 @@ const Ex25_4 = () => {
             <span className="mr-2">
               Based on Comment (1), which is the best word to add?
             </span>
-            {renderSelect("14", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4-1" />}
-            {Kaisetsu(showResults, "25-4-8")}
+            <div className="flex flex-row items-center gap-2">
+              {renderSelect("14", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="4-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "25-4-8")}
+            </div>
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             <div>
@@ -183,16 +185,18 @@ const Ex25_4 = () => {
             </div>
           </div>
         </div>
-
+        {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span className="mr-2">
               Based on Comment (2), which is the best sentence to add?
             </span>
-            {renderSelect("15", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4-2" />}
-            {Kaisetsu(showResults, "25-4-9")}
+            <div className="flex flex-row items-center gap-2">
+              {renderSelect("15", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="4-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "25-4-9")}
+            </div>
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             <div>
@@ -212,7 +216,7 @@ const Ex25_4 = () => {
             </div>
           </div>
         </div>
-
+        {/* Question 3 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "4-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
@@ -220,9 +224,11 @@ const Ex25_4 = () => {
               Based on Comment (3), which is the best phrase to replace the
               underlined part?{" "}
             </span>
-            {renderSelect("16", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4-3" />}
-            {Kaisetsu(showResults, "25-4-10")}
+            <div className="flex flex-row items-center gap-2">
+              {renderSelect("16", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="4-3"  isShow={showResults} />
+              {Kaisetsu(showResults, "25-4-10")}
+            </div>
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             <div>
@@ -248,11 +254,13 @@ const Ex25_4 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span className="flex gap-1">
               Based on Comment (4), which is the best phrase to replace the
-              underlined part?{" "}
+              underlined part?
             </span>
-            {renderSelect("17", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4-4" />}
-            {Kaisetsu(showResults, "25-4-11")}
+            <div className="flex flex-row items-center gap-2">
+              {renderSelect("17", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="4-4"  isShow={showResults} />
+              {Kaisetsu(showResults, "25-4-11")}
+            </div>
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             <div>

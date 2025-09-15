@@ -41,7 +41,7 @@ const Ex24_6B = () => {
         Chili Peppers: The Spice of Life
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-1">
         <p className="indent-7">
           Tiny pieces of red spice in chili chicken add a nice touch of color,
           but biting into even a small piece can make a person&apos;s mouth burn
@@ -165,9 +165,11 @@ const Ex24_6B = () => {
               <span>
                 What is the first characteristic of wasabi on Slide 2?
               </span>
-              {renderSelect("44", 4, answers, setAnswers)}
-              <Explain qa={qa} questionId={"6B-1"} isShow={showResults} />
-              {Kaisetsu(showResults, "24-6B-9")}
+              <div className="flex flex-row gap-2">
+                {renderSelect("44", 4, answers, setAnswers)}
+                <Explain qa={qa} questionId={"6B-1"} isShow={showResults} />
+                {Kaisetsu(showResults, "24-6B-9")}
+              </div>
             </div>
             <div className="mt-4 space-y-2 ml-6">
               <div>
@@ -194,9 +196,11 @@ const Ex24_6B = () => {
               <span>
                 Which is an <u>error</u> you found on Slide 3?
               </span>
-              {renderSelect("45", 5, answers, setAnswers)}
-              <Explain qa={qa} questionId={"6B-2"} isShow={showResults} />
-              {Kaisetsu(showResults, "24-6B-10")}
+              <div className="flex flex-row gap-2">
+                {renderSelect("45", 5, answers, setAnswers)}
+                <Explain qa={qa} questionId={"6B-2"} isShow={showResults} />
+                {Kaisetsu(showResults, "24-6B-10")}
+              </div>
             </div>
             <div className="mt-4 space-y-2 ml-6">
               <div>
@@ -218,10 +222,13 @@ const Ex24_6B = () => {
               <span>
                 Choose two options for Slide 4. (The order does not matter.)
               </span>
-              {renderSelect("46", 5, answers, setAnswers)}・
+              {renderSelect("46", 5, answers, setAnswers)}
+              <span className="-mx-2">・</span>
               {renderSelect("47", 5, answers, setAnswers)}
-              <Explain qa={qa} questionId={"6B-3"} isShow={showResults} />
-              {Kaisetsu(showResults, "24-6B-11")}
+              <div className="flex flex-row gap-2">
+                <Explain qa={qa} questionId={"6B-3"} isShow={showResults} />
+                {Kaisetsu(showResults, "24-6B-11")}
+              </div>
             </div>
             <div className="mt-4 space-y-2 ml-6">
               <div>
@@ -248,9 +255,11 @@ const Ex24_6B = () => {
               <span>
                 What can be inferred about tolerance for spices for Slide 5?
               </span>
-              {renderSelect("48", 4, answers, setAnswers)}
-              <Explain qa={qa} questionId={"6B-4"} isShow={showResults} />
-              {Kaisetsu(showResults, "24-6B-12")}
+              <div className="flex flex-row gap-2">
+                {renderSelect("48", 4, answers, setAnswers)}
+                <Explain qa={qa} questionId={"6B-4"} isShow={showResults} />
+                {Kaisetsu(showResults, "24-6B-12")}
+              </div>
             </div>
             <div className="mt-4 space-y-3 ml-6">
               <div>
@@ -275,9 +284,11 @@ const Ex24_6B = () => {
             <div className="flex items-center flex-wrap gap-2">
               <span className="flex-none mr-2 font-sans">問 5</span>
               <span>Choose the most appropriate remark for Slide 6.</span>
-              {renderSelect("49", 5, answers, setAnswers)}
-              <Explain qa={qa} questionId={"6B-5"} isShow={showResults} />
-              {Kaisetsu(showResults, "24-6B-13")}
+              <div className="flex flex-row gap-2">
+                {renderSelect("49", 5, answers, setAnswers)}
+                <Explain qa={qa} questionId={"6B-5"} isShow={showResults} />
+                {Kaisetsu(showResults, "24-6B-13")}
+              </div>
             </div>
             <div className="mt-4 space-y-3 ml-6">
               <div>

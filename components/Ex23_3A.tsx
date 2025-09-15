@@ -31,9 +31,9 @@ const Ex23_3A = () => {
         />
       </div>{" "}
       {/* Context */}
-      <div className="mb-6">
+      <div className="mb-2">
         <p className="text-gray-700">
-          <span className="font-bold">A</span> You are studying at Camberford
+          You are studying at Camberford
           University, Sydney. You are going on a class camping trip and are
           reading the camping club&apos;s newsletter to prepare.
           {Kaisetsu(showResults, "23-3A-0")}
@@ -43,11 +43,11 @@ const Ex23_3A = () => {
       <div className="border border-gray-800 p-8">
         <h1 className="text-xl text-center mb-6">Going camping? Read me!!!</h1>
 
-        <div className="space-y-6">
+        <div className="space-y-1">
           {/* First Paragraph with Image */}
           <div className="flex flex-col md:relative">
             <div className="pr-0 md:pr-32">
-              <p className="mb-4">
+              <p className="mb-0">
                 Hi, I&apos;m Kaitlyn. I want to share two practical camping
                 lessons from my recent club trip. The first thing is to divide
                 your backpack into three main parts and put the heaviest items
@@ -97,14 +97,15 @@ const Ex23_3A = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-1"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
-            <span>
+            <span className="mr-2">
               If you take Kaitlyn&apos;s advice, how should you fill your
               backpack?
             </span>
-            {renderSelect("16", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="3A-1" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-3A-4")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("16", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="3A-1" isShow={showResults} />
+              {Kaisetsu(showResults, "23-3A-4")}
+            </div>
           </div>
           <div className="mb-6">
             <Image
@@ -124,10 +125,11 @@ const Ex23_3A = () => {
             <span>According to Kaitlyn,</span>
             {renderSelect("17", 4, answers, setAnswers)}
             <span>is the best method&nbsp;</span>
-            <span>to stay warm all night.</span>
-            <Explain qa={qa} questionId="3A-2" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-3A-5")}
+            <span className="mr-2">to stay warm all night.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="3A-2" isShow={showResults} />
+              {Kaisetsu(showResults, "23-3A-5")}
+            </div>
           </div>
           {[
             "avoiding going out of your tent",

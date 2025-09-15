@@ -100,7 +100,7 @@ const JapaneseExamQuestion = () => {
             </React.Fragment>
           ))}
           <div className="flex flex-row md:w-[400px]">
-            {showResults && <Explain qa={qa} questionId="2C-1" />}
+            <Explain qa={qa} questionId="2C-1"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "20-2C-1")}
           </div>
@@ -228,7 +228,7 @@ const JapaneseExamQuestion = () => {
           </React.Fragment>
         ))}
         <div className="flex flex-row md:w-[400px]">
-          {showResults && <Explain qa={qa} questionId="2C-2" />}
+          <Explain qa={qa} questionId="2C-2"  isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "20-2C-2")}
         </div>
@@ -350,7 +350,7 @@ const JapaneseExamQuestion = () => {
           </React.Fragment>
         ))}
         <div className="flex flex-row md:w-[400px]">
-          {showResults && <Explain qa={qa} questionId="2C-3" />}
+          <Explain qa={qa} questionId="2C-3"  isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "20-2C-3")}
         </div>

@@ -32,7 +32,7 @@ const Ex22_1A = () => {
         />
       </div>
       {/* Introduction Text */}
-      <div className="mb-6">
+      <div className="mb-2">
         <p className="text-lg leading-relaxed">
           You are studying about Brazil in the international club at your senior
           high school. Your teacher asked you to do research on food in Brazil.
@@ -139,17 +139,18 @@ const Ex22_1A = () => {
       </div>
 
       {/* Questions Section */}
-      <div className="space-y-8">
+      <div className="space-y-6">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "1A-1"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "1A-1"))}>
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             Both &nbsp;<i>cupuaçu</i>&nbsp;
             and &nbsp;<i>buriti</i>&nbsp; can be used to make{" "}
-            {renderSelect("1", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="1A-1" />}
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-1A-5")}
+            {renderSelect("1", 4, answers, setAnswers)}<span className="-ml-1 mr-2">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="1A-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-1A-5")}
+            </div>
           </div>
           <ol className="space-y-2 pl-2 md:pl-8">
             {["a cake", "chocolate", "ice cream", "yogurt"].map(
@@ -166,16 +167,17 @@ const Ex22_1A = () => {
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "1A-2"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "1A-2"))}>
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               If you want to make a sour cake, the best fruit to use is{" "}
             </span>
-            {renderSelect("2", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="1A-2" />}
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-1A-6")}
+            {renderSelect("2", 4, answers, setAnswers)}<span className="-ml-1 mr-2">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="1A-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-1A-6")}
+            </div>
           </div>
           <ol className="space-y-2 pl-2 md:pl-8">
             {["buriti", "cupuaçu", "jabuticaba", "pitanga"].map(

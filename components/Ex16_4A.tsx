@@ -169,7 +169,7 @@ const Ex16_4A = () => {
                 refer to?
               </span>
               {renderSelect("35", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="4A-1" />}
+              <Explain qa={qa} questionId="4A-1"  isShow={showResults} />
             </div>
             <div className="space-y-4 pl-8">
               <div>
@@ -233,7 +233,7 @@ const Ex16_4A = () => {
                 oranges?
               </span>
               {renderSelect("36", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="4A-2" />}
+              <Explain qa={qa} questionId="4A-2"  isShow={showResults} />
               {Kaisetsu(showResults, "16-4A-8")}
             </div>
             <div className="space-y-4 md:pl-8">
@@ -260,7 +260,7 @@ const Ex16_4A = () => {
               <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
               <span>What is the main purpose of this passage?</span>
               {renderSelect("37", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="4A-3" />}
+              <Explain qa={qa} questionId="4A-3"  isShow={showResults} />
               {Kaisetsu(showResults, "16-4A-9")}
             </div>
             <div className="space-y-4 md:pl-8">
@@ -287,7 +287,7 @@ const Ex16_4A = () => {
                 What topic is most likely to follow the last paragraph?
               </span>
               {renderSelect("38", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="4A-4" />}
+              <Explain qa={qa} questionId="4A-4"  isShow={showResults} />
               {Kaisetsu(showResults, "16-4A-10")}
             </div>
             <div className="space-y-4 md:pl-8">

@@ -194,7 +194,7 @@ const Ex20_4A = () => {
             What is the total score achieved by the five throws in this figure?
           </span>
           {renderSelect("33", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4A-1" />}
+          <Explain qa={qa} questionId="4A-1"  isShow={showResults} />
           {Kaisetsu(showResults, "20-4A-5")}
         </div>
 
@@ -246,7 +246,7 @@ const Ex20_4A = () => {
             Which of the following statements is true about the experiment?
           </span>
           {renderSelect("34", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4A-2" />}
+          <Explain qa={qa} questionId="4A-2"  isShow={showResults} />
           {Kaisetsu(showResults, "20-4A-6")}
         </div>
 
@@ -298,7 +298,7 @@ const Ex20_4A = () => {
             Which of the following statements is true about the results?
           </span>
           {renderSelect("35", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4A-3" />}
+          <Explain qa={qa} questionId="4A-3"  isShow={showResults} />
           {Kaisetsu(showResults, "20-4A-7")}
         </div>
 
@@ -348,7 +348,7 @@ const Ex20_4A = () => {
           <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>What will most likely be discussed next in this report?</span>
           {renderSelect("36", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4A-4" />}
+          <Explain qa={qa} questionId="4A-4"  isShow={showResults} />
           {Kaisetsu(showResults, "20-4A-8")}
         </div>
 

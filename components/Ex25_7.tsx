@@ -233,12 +233,16 @@ const Ex25_7 = () => {
             <span className="whitespace-nowrap font-sans">問 1</span>
             <span>
               Under the heading, &quot;Importance of Sleep,&quot; you spotted an
-              error in your presentation outline. Which of the following should
-              you <span className="underline">remove</span>?
+              error in your presentation outline.{' '}
             </span>
-            {renderSelect("32", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="7-1" isShow={showResults} />
-            {Kaisetsu(showResults, "25-7-11")}
+            <span>
+              Which of the following should you <span className="underline">remove</span>?
+            </span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("32", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="7-1" isShow={showResults} />
+              {Kaisetsu(showResults, "25-7-11")}
+            </div>
           </div>
           <div className="space-y-2 ml-8">
             <div>① A</div>
@@ -285,8 +289,10 @@ const Ex25_7 = () => {
             <span>and </span>
             {renderSelect("35", 5, answers, setAnswers)}. (The order does not
             matter.)
-            <Explain qa={qa} questionId="7-3" isShow={showResults} />
-            {Kaisetsu(showResults, "25-7-13")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="7-3" isShow={showResults} />
+              {Kaisetsu(showResults, "25-7-13")}
+            </div>
           </div>
           <div className="ml-4 space-y-2">
             {[
@@ -312,8 +318,10 @@ const Ex25_7 = () => {
             <span className="whitespace-nowrap font-sans">問 4</span>
             <span>Choose the best option for </span>
             {renderSelect("36", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
-            <Explain qa={qa} questionId="7-4" isShow={showResults} />
-            {Kaisetsu(showResults, "25-7-14")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="7-4" isShow={showResults} />
+              {Kaisetsu(showResults, "25-7-14")}
+            </div>
           </div>
           <div className="space-y-2">
             <div className="ml-4 space-y-2">
@@ -338,7 +346,7 @@ const Ex25_7 = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "7-5"))}>
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap font-sans">問 5</span>
-            <span>Choose the best heading for </span>
+            <span className="-mr-2">Choose the best heading for </span>
             {renderSelect("37", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
             <Explain qa={qa} questionId="7-5" isShow={showResults} />
             {Kaisetsu(showResults, "25-7-15")}

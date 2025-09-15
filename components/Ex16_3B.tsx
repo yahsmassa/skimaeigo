@@ -42,7 +42,7 @@ const JapaneseTestComponent = () => {
         <div className="flex items-center mb-2">
           <span className="font-bold mr-4">問１</span>
           {renderSelect("29", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="3B-1" />}
+          <Explain qa={qa} questionId="3B-1"  isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "16-3B-1")}
         </div>
@@ -85,7 +85,7 @@ const JapaneseTestComponent = () => {
         <div className="flex items-center mb-2">
           <span className="font-bold mr-4">問２</span>
           {renderSelect("30", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="3B-2" />}
+          <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "16-3B-2")}
         </div>

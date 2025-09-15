@@ -126,7 +126,7 @@ const Ex24_3A: React.FC = () => {
           {item.content}
           <span className="underline">{item.link}</span>
           {item.endContent}
-          {Kaisetsu(showResults, "24-3A-" + (index + 1))}
+          <div className="">{Kaisetsu(showResults, "24-3A-" + (index + 1))}</div>
         </p>
       );
     }
@@ -134,7 +134,7 @@ const Ex24_3A: React.FC = () => {
     return (
       <p key={index} className="mb-4">
         {item.content}
-        {Kaisetsu(showResults, "24-3A-" + (index + 1))}
+        <div className="-mb-3">{Kaisetsu(showResults, "24-3A-" + (index + 1))}</div>
       </p>
     );
   };
@@ -195,7 +195,7 @@ const Ex24_3A: React.FC = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="mb-4">
+      <div className="mb-1">
         <p className="text-base">
           {headerText.title} {headerText.description}
           {Kaisetsu(showResults, "24-3A-1")}
@@ -234,11 +234,11 @@ const Ex24_3A: React.FC = () => {
                 問{question.number}
               </span>
               <span className="text-left">{question.prompt}</span>
-              {renderSelect(String(index + 16), 4, answers, setAnswers)}
-              {showResults && (
-                <Explain qa={qa} questionId={"3A-" + String(index + 1)} />
-              )}
-              {Kaisetsu(showResults, "24-3A-" + String(index + 6))}
+              <div className="flex flex-row gap-2">
+                {renderSelect(String(index + 16), 4, answers, setAnswers)}
+                <Explain qa={qa} questionId={"3A-" + String(index + 1)} isShow={showResults} />
+                {Kaisetsu(showResults, "24-3A-" + String(index + 6))}
+              </div>
             </div>
             {index === 1 ? (
               <ol className="list-none space-y-2 ml-6">

@@ -214,7 +214,7 @@ const ExamQuestion = () => {
                 {renderSelect("8", 4, answers, setAnswers)}
               </span>
               <span className="mr-2">schedule.</span>
-              {showResults && <Explain qa={qa} questionId="2A-1" />}
+              <Explain qa={qa} questionId="2A-1"  isShow={showResults} />
             </div>
           </div>
 
@@ -245,7 +245,7 @@ const ExamQuestion = () => {
                 {renderSelect("9", 4, answers, setAnswers)}
               </span>
               <span className="mr-2">time.</span>
-              {showResults && <Explain qa={qa} questionId="2A-2" />}
+              <Explain qa={qa} questionId="2A-2"  isShow={showResults} />
             </div>
           </div>
 
@@ -274,7 +274,7 @@ const ExamQuestion = () => {
               </span>
               <span>dropping the expensive glass</span>
               <span className="mr-2">vase, James decided not to</span>
-              {showResults && <Explain qa={qa} questionId="2A-3" />}
+              <Explain qa={qa} questionId="2A-3"  isShow={showResults} />
             </div>
           </div>
 
@@ -302,7 +302,7 @@ const ExamQuestion = () => {
               </span>
               {renderSelect("11", 4, answers, setAnswers)}
               <span className="mr-2">out of time.</span>
-              {showResults && <Explain qa={qa} questionId="2A-4" />}
+              <Explain qa={qa} questionId="2A-4"  isShow={showResults} />
             </div>
           </div>
 
@@ -331,7 +331,7 @@ const ExamQuestion = () => {
               {renderSelect("12", 4, answers, setAnswers)}
               <span className="mr-2">everyone's</span>
               <span className="mr-2">demands about the new project.</span>
-              {showResults && <Explain qa={qa} questionId="2A-5" />}
+              <Explain qa={qa} questionId="2A-5"  isShow={showResults} />
             </div>
           </div>
 
@@ -358,7 +358,7 @@ const ExamQuestion = () => {
               <span className="mr-2">for the camping trip.</span>
               {renderSelect("13", 4, answers, setAnswers)}
               <span className="mr-2">, you</span>
-              {showResults && <Explain qa={qa} questionId="2A-6" />}
+              <Explain qa={qa} questionId="2A-6"  isShow={showResults} />
             </div>
           </div>
 
@@ -386,7 +386,7 @@ const ExamQuestion = () => {
               <span className="mr-2">Text messaging has become a common</span>
               {renderSelect("14", 4, answers, setAnswers)}
               <span className="mr-2">of communication</span>
-              {showResults && <Explain qa={qa} questionId="2A-7" />}
+              <Explain qa={qa} questionId="2A-7"  isShow={showResults} />
             </div>
           </div>
 
@@ -412,7 +412,7 @@ const ExamQuestion = () => {
               <span>I was （ A ） when I watched the completely</span>
               <span>（ B ） ending of the movie.</span>
               {renderSelect("15", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="2A-8" />}
+              <Explain qa={qa} questionId="2A-8"  isShow={showResults} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">
@@ -446,7 +446,7 @@ const ExamQuestion = () => {
               <span className="mr-2">traffic on this highway</span>
               {renderSelect("16", 4, answers, setAnswers)}
               <span className="mr-2">during</span>
-              {showResults && <Explain qa={qa} questionId="2A-9" />}
+              <Explain qa={qa} questionId="2A-9"  isShow={showResults} />
             </div>
           </div>
 
@@ -480,7 +480,7 @@ const ExamQuestion = () => {
               <span className="mr-2">the situation as （ B ） as</span>
               {renderSelect("17", 4, answers, setAnswers)}
               <span className="mr-2">possible.</span>
-              {showResults && <Explain qa={qa} questionId="2A-10" />}
+              <Explain qa={qa} questionId="2A-10"  isShow={showResults} />
             </div>
           </div>
 

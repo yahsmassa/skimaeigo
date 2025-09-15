@@ -31,7 +31,7 @@ const Ex22_3A = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="mb-6 font-serif">
+      <div className="mb-2 font-serif">
         <p>
           A You are interested in how Japanese culture is represented in other
           countries.
@@ -55,7 +55,7 @@ const Ex22_3A = () => {
           </div>
         </div>
 
-        <div className="space-y-4 text-gray-700 font-serif leading-relaxed">
+        <div className="space-y-1 text-gray-700 font-serif leading-relaxed">
           <p>
             On the first two Sundays in July every year, there is an
             intercultural event in Winsfield called &quot;A Slice of
@@ -105,15 +105,17 @@ const Ex22_3A = () => {
         height={400}
       />
 
-      <div className=" space-y-8">
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-1"))}>
-          <div className="flex flex-wrap items-center mb-4">
+      <div className=" space-y-6">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3A-1"))}>
+          <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>{" "}
             <span>In Emily&apos;s blog, you read that she </span>
-            {renderSelect("16", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="3A-1" />}
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-3A-5")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("16", 4, answers, setAnswers)}
+              <span className="-ml-3 mt-1 mr-1">.</span>
+              <Explain qa={qa} questionId="3A-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-3A-5")}
+            </div>
           </div>
           <div className="space-y-2 ml-2 md:ml-8">
             {[
@@ -137,16 +139,17 @@ const Ex22_3A = () => {
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-2"))}>
-          <div className="flex flex-wrap items-center mb-4">
+          <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>{" "}
             <span>Emily was most likely </span>
             {renderSelect("17", 4, answers, setAnswers)}
-            <span className="ml-2">
+            <span className="ml-2 mr-2">
               when she was listening to the <i>rakugo</i> comedy.
             </span>
-            {showResults && <Explain qa={qa} questionId="3A-2" />}
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-3A-6")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="3A-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-3A-6")}
+            </div>
           </div>
           <div className="space-y-2 ml-2 md:ml-8">
             {["confused", "convinced", "excited", "relaxed"].map(

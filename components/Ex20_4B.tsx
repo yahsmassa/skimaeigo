@@ -51,7 +51,7 @@ const Ex20_4B = () => {
             small space. How much will it cost?
           </span>
           {renderSelect("37", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4B-1" />}
+          <Explain qa={qa} questionId="4B-1"  isShow={showResults} />
           {Kaisetsu(showResults, "20-4B-4")}
         </div>
         <div className="flex gap-8 ml-6">
@@ -72,7 +72,7 @@ const Ex20_4B = () => {
             advantage of?
           </span>
           {renderSelect("38", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4B-2" />}
+          <Explain qa={qa} questionId="4B-2"  isShow={showResults} />
           {Kaisetsu(showResults, "20-4B-5")}
         </div>
         <div className="flex flex-col gap-2 ml-6">
@@ -92,7 +92,7 @@ const Ex20_4B = () => {
             Which of the following will he be allowed to do?
           </span>
           {renderSelect("39", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4B-3" />}
+          <Explain qa={qa} questionId="4B-3"  isShow={showResults} />
           {Kaisetsu(showResults, "20-4B-6")}
         </div>
         <div className="flex flex-col gap-2 ml-6">
@@ -109,7 +109,7 @@ const Ex20_4B = () => {
           <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>Which of the following is true about this flea market?</span>
           {renderSelect("40", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4B-4" />}
+          <Explain qa={qa} questionId="4B-4"  isShow={showResults} />
           {Kaisetsu(showResults, "20-4B-7")}
         </div>
         <div className="flex flex-col gap-2 ml-6">

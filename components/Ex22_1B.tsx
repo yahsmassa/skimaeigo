@@ -164,14 +164,16 @@ const Ex22_1B = () => {
       {/* Quiz Section */}
       <div className="max-w-3xl mx-auto mt-4 space-y-8">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-1"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "1B-1"))}>
           <div className="flex items-start space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>You can enter this contest between </span>
             {renderSelect("3", 4, answers, setAnswers)}
-            <span>.</span>
-            <Explain qa={qa} questionId="1B-1" isShow={showResults} />
-            {Kaisetsu(showResults, "22-1B-5")}
+            <span className="-ml-1 mr-2">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="1B-1" isShow={showResults} />
+              {Kaisetsu(showResults, "22-1B-5")}
+            </div>
           </div>
           {[
             "May 26 and May 31",
@@ -183,13 +185,13 @@ const Ex22_1B = () => {
               <span className="w-6 h-6 flex items-center justify-center mr-2">
                 {"①②③④⑤⑥"[index]}
               </span>
-              <span>{text}</span>
+              <span className="font-sans">{text}</span>
             </div>
           ))}
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-2"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "1B-2"))}>
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
@@ -198,9 +200,11 @@ const Ex22_1B = () => {
             <span>
               giraffe&apos;s name, you must
             </span>
-            {renderSelect("4", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="1B-2" isShow={showResults} />
-            <span className="ml-2">{Kaisetsu(showResults, "22-1B-6")}</span>
+            {renderSelect("4", 4, answers, setAnswers)}<span className="-ml-1 mr-2">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="1B-2" isShow={showResults} />
+              {Kaisetsu(showResults, "22-1B-6")}
+            </div>
           </div>
           {[
             "buy a day pass",
@@ -218,7 +222,7 @@ const Ex22_1B = () => {
         </div>
 
         {/* Question 3 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-3"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "1B-3"))}>
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
@@ -227,9 +231,11 @@ const Ex22_1B = () => {
             <span>
               the five finalists, you will
             </span>
-            {renderSelect("5", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="1B-3" isShow={showResults} />
-            <span className="ml-2">{Kaisetsu(showResults, "22-1B-7")}</span>
+            {renderSelect("5", 4, answers, setAnswers)}<span className="-ml-1 mr-2">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="1B-3" isShow={showResults} />
+              {Kaisetsu(showResults, "22-1B-7")}
+            </div>
           </div>
           {[
             "get free entry to the zoo for a day",

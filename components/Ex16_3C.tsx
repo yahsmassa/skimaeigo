@@ -86,7 +86,7 @@ const JapaneseTestQuestion = () => {
             <span className="mr-2">because</span>{" "}
             {renderSelect("32", 4, answers, setAnswers)}
             <span className="mr-2">.</span>
-            {showResults && <Explain qa={qa} questionId="3C-1" />}
+            <Explain qa={qa} questionId="3C-1"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "16-3C-3")}
           </p>
@@ -148,7 +148,7 @@ const JapaneseTestQuestion = () => {
             <span className="mr-2">That's a good explanation. That means</span>
             {renderSelect("33", 4, answers, setAnswers)}
             <span className="mr-2">.</span>
-            {showResults && <Explain qa={qa} questionId="3C-2" />}
+            <Explain qa={qa} questionId="3C-2"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "16-3C-6")}
           </p>
@@ -257,7 +257,7 @@ const JapaneseTestQuestion = () => {
             <span className="mr-2">So, am I right in thinking that</span>
             {renderSelect("34", 4, answers, setAnswers)}
             <span className="mr-2">?</span>
-            {showResults && <Explain qa={qa} questionId="3C-3" />}
+            <Explain qa={qa} questionId="3C-3"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "16-3C-13")}
           </p>

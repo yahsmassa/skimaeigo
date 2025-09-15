@@ -103,7 +103,7 @@ const Ex17_4B = () => {
               The purpose of the IAYP Video Clip Competition is to provide{" "}
             </span>
             {renderSelect("39", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4B-1" />}
+            <Explain qa={qa} questionId="4B-1"  isShow={showResults} />
             {Kaisetsu(showResults, "17-4B-1")}
             <div className="pl-8 space-y-2">
               <p>① a place to meet new friends of the same age</p>
@@ -123,7 +123,7 @@ const Ex17_4B = () => {
               abroad. Under which category should the video clip be entered?{" "}
             </span>
             {renderSelect("40", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4B-2" />}
+            <Explain qa={qa} questionId="4B-2"  isShow={showResults} />
             {Kaisetsu(showResults, "17-4B-2")}
           </div>
           <div className="pl-8 space-y-2">
@@ -142,7 +142,7 @@ const Ex17_4B = () => {
               competition?{" "}
             </span>
             {renderSelect("41", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4B-3" />}
+            <Explain qa={qa} questionId="4B-3"  isShow={showResults} />
             {Kaisetsu(showResults, "17-4B-3")}
           </div>
           <div className="pl-8 space-y-2">

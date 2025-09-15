@@ -123,7 +123,7 @@ const Ex21_3B = () => {
                   {index < 3 && <span>→</span>}
                 </React.Fragment>
               ))}
-              {showResults && <Explain qa={qa} questionId="3B-1" />}
+              <Explain qa={qa} questionId="3B-1"  isShow={showResults} />
               {Kaisetsu(showResults, "21-3B-6")}
             </div>
           </div>
@@ -153,7 +153,7 @@ const Ex21_3B = () => {
               Centre
             </span>
             {renderSelect("22", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="3B-2" />}
+            <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
             {Kaisetsu(showResults, "21-3B-7")}
           </div>
           <div className="space-y-2 ml-2 md:ml-4">
@@ -182,7 +182,7 @@ const Ex21_3B = () => {
               Sarah&apos;s message. What should you do first?
             </span>
             {renderSelect("23", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="3B-3" />}
+            <Explain qa={qa} questionId="3B-3"  isShow={showResults} />
             {Kaisetsu(showResults, "21-3B-8")}
           </div>
           <div className="space-y-2 ml-2 md:ml-4">

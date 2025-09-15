@@ -48,7 +48,7 @@ const Ex19_4B = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>What is a common characteristic of all four castles?</span>
             {renderSelect("37", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4B-1" />}
+            <Explain qa={qa} questionId="4B-1"  isShow={showResults} />
             {Kaisetsu(showResults, "19-4B-1")}
           </div>
           <ol className="list-none pl-8">
@@ -69,7 +69,7 @@ const Ex19_4B = () => {
               likely to choose?
             </span>
             {renderSelect("38", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4B-2" />}
+            <Explain qa={qa} questionId="4B-2"  isShow={showResults} />
             {Kaisetsu(showResults, "19-4B-2")}
           </div>
           <ol className="list-none pl-8">
@@ -92,7 +92,7 @@ const Ex19_4B = () => {
               are the teachers most likely to select?
             </span>
             {renderSelect("39", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4B-3" />}
+            <Explain qa={qa} questionId="4B-3"  isShow={showResults} />
             {Kaisetsu(showResults, "19-4B-3")}
           </div>
 
@@ -114,7 +114,7 @@ const Ex19_4B = () => {
               want to see fine arts. How much will it cost?
             </span>
             {renderSelect("40", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4B-4" />}
+            <Explain qa={qa} questionId="4B-4"  isShow={showResults} />
             {Kaisetsu(showResults, "19-4B-4")}
           </div>
           <ol className="list-none pl-8">

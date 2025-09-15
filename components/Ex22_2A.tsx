@@ -30,7 +30,7 @@ const Ex22_2A = () => {
         />
       </div>
       {/* Context Header */}
-      <div className="mb-4">
+      <div className="mb-2">
         <p className="text-base">
           A You are on a <span className="italic">Future Leader</span> summer
           programme, which is taking place on a university campus in the UK. You
@@ -64,7 +64,7 @@ const Ex22_2A = () => {
         {/* Two Column Layout */}
         <div className="grid grid-cols-2 gap-6">
           {/* Left Column */}
-          <div className="space-y-6">
+          <div className="space-y-1">
             {/* Borrowing Books Section */}
             <div>
               <h2 className="text-lg font-bold mb-2">Borrowing Books</h2>
@@ -109,7 +109,7 @@ const Ex22_2A = () => {
             <h2 className="text-lg font-bold mb-2">
               Comments from Past Students
             </h2>
-            <ul className="space-y-4">
+            <ul className="space-y-1">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 <p>
@@ -163,17 +163,19 @@ const Ex22_2A = () => {
         className={cn("mt-8 space-y-8", showResults && qaFormat(qa, "2A-1"))}
       >
         {/* Question 1 */}
-        <div className="space-y-4">
+        <div className="-mb-4">
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
-            {renderSelect("6", 5, answers, setAnswers)}.
-            <Explain qa={qa} questionId="2A-1" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-2A-9")}
+            {renderSelect("6", 5, answers, setAnswers)}
+            <span className="-ml-1 mr-2">are two things you can do at the library.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="2A-1" isShow={showResults} />
+              {Kaisetsu(showResults, "22-2A-9")}
+            </div>
           </div>
         </div>
 
-        <div className="space-y-2 mb-4 ml-4">
+        <div className="space-y-2 mb-2 ml-4">
           <p>A : bring in coffee from the coffee shop</p>
           <p>B : save seats for others in the Study Area</p>
           <p>C : use the photocopiers on the second floor</p>
@@ -192,18 +194,23 @@ const Ex22_2A = () => {
 
       {/* Question 2 */}
       <div
-        className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-2"))}
+        className={cn("space-y-2 mt-4", showResults && qaFormat(qa, "2A-2"))}
       >
         <div className="flex flex-wrap items-center">
           <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
           <span>
             You are at the main entrance of the library and want to go to the
-            orientation. You need to
+            orientation.{' '}
           </span>
-          {renderSelect("7", 4, answers, setAnswers)}.
-          <Explain qa={qa} questionId="2A-2" isShow={showResults} />
-          <span className="mr-2"></span>
-          {Kaisetsu(showResults, "22-2A-10")}
+          <span>
+            You need to
+          </span>
+          <div className="flex flex-row gap-2">
+            {renderSelect("7", 4, answers, setAnswers)}
+            <span className="-ml-2 mt-1 mr-2">.</span>
+            <Explain qa={qa} questionId="2A-2" isShow={showResults} />
+            {Kaisetsu(showResults, "22-2A-10")}
+          </div>
         </div>
 
         <div className="ml-4 space-y-2">
@@ -216,15 +223,16 @@ const Ex22_2A = () => {
 
       {/* Question 3 */}
       <div
-        className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-3"))}
+        className={cn("space-y-2 mt-4", showResults && qaFormat(qa, "2A-3"))}
       >
         <div className="flex flex-wrap items-center">
           <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           {renderSelect("8", 4, answers, setAnswers)}
-          <span>near the main entrance to the library.</span>
-          <Explain qa={qa} questionId="2A-3" isShow={showResults} />
-          <span className="mr-2"></span>
-          {Kaisetsu(showResults, "22-2A-11")}
+          <span className="mr-2">near the main entrance to the library.</span>
+          <div className="flex flex-row gap-2">
+            <Explain qa={qa} questionId="2A-3" isShow={showResults} />
+            {Kaisetsu(showResults, "22-2A-11")}
+          </div>
         </div>
 
         <div className="ml-4 space-y-2">
@@ -236,18 +244,22 @@ const Ex22_2A = () => {
       </div>
       {/* Question 4 */}
       <div
-        className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-4"))}
+        className={cn("space-y-2 mt-4", showResults && qaFormat(qa, "2A-4"))}
       >
         <div className="flex flex-wrap items-center">
           <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>
-            If you borrowed three books on 2 August and returned them on 10
-            August, you could
+            If you borrowed three books on 2 August and returned them on 10 {' '}
           </span>
-          {renderSelect("9", 4, answers, setAnswers)}.
-          <Explain qa={qa} questionId="2A-4" isShow={showResults} />
-          <span className="mr-2"></span>
-          {Kaisetsu(showResults, "22-2A-12")}
+          <span>
+          August , you could
+          </span>
+          {renderSelect("9", 4, answers, setAnswers)}
+          <span className="-ml-1 mr-2">.</span>
+          <div className="flex flex-row gap-2">
+            <Explain qa={qa} questionId="2A-4" isShow={showResults} />
+            {Kaisetsu(showResults, "22-2A-12")}
+          </div>
         </div>
 
         <div className="ml-4 space-y-2">
@@ -269,7 +281,7 @@ const Ex22_2A = () => {
 
       {/* Question 5 */}
       <div
-        className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "2A-5"))}
+        className={cn("space-y-2 mt-4", showResults && qaFormat(qa, "2A-5"))}
       >
         <div className="flex flex-wrap items-center">
           <span className="whitespace-nowrap mr-2 font-sans">問 5</span>

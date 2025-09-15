@@ -79,7 +79,7 @@ const JapaneseTestQuestion = () => {
               <span className="mr-2">water doesn't freeze</span>
               {renderSelect("8", 4, answers, setAnswers)}
               <span className="mr-2">0℃.</span>
-              {showResults && <Explain qa={qa} questionId="2A-1" />}
+              <Explain qa={qa} questionId="2A-1"  isShow={showResults} />
             </div>
           </div>
 
@@ -108,7 +108,7 @@ const JapaneseTestQuestion = () => {
               <span className="mr-2">more job opportunities for</span>
               {renderSelect("9", 4, answers, setAnswers)}
               <span className="mr-2">.</span>
-              {showResults && <Explain qa={qa} questionId="2A-2" />}
+              <Explain qa={qa} questionId="2A-2"  isShow={showResults} />
             </div>
           </div>
 
@@ -138,7 +138,7 @@ const JapaneseTestQuestion = () => {
               </span>
               {renderSelect("10", 4, answers, setAnswers)}
               <span className="mr-2">yellow.</span>
-              {showResults && <Explain qa={qa} questionId="2A-3" />}
+              <Explain qa={qa} questionId="2A-3"  isShow={showResults} />
             </div>
           </div>
 
@@ -166,7 +166,7 @@ const JapaneseTestQuestion = () => {
               <span className="mr-2">
                 more economical than eating at a restaurant.
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-4" />}
+              <Explain qa={qa} questionId="2A-4"  isShow={showResults} />
             </div>
           </div>
 
@@ -194,7 +194,7 @@ const JapaneseTestQuestion = () => {
               <span className="mr-2">
                 in the film, Ramesh soon became a star.
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-5" />}
+              <Explain qa={qa} questionId="2A-5"  isShow={showResults} />
             </div>
           </div>
 
@@ -226,7 +226,7 @@ const JapaneseTestQuestion = () => {
               {renderSelect("13", 4, answers, setAnswers)}
               <span className="mr-2">information you get</span>
               <span className="mr-2">as soon as possible.</span>
-              {showResults && <Explain qa={qa} questionId="2A-6" />}
+              <Explain qa={qa} questionId="2A-6"  isShow={showResults} />
             </div>
           </div>
 
@@ -255,7 +255,7 @@ const JapaneseTestQuestion = () => {
               {renderSelect("14", 4, answers, setAnswers)}
               <span className="mr-2">was good news</span>
               <span className="mr-2">for the village.</span>
-              {showResults && <Explain qa={qa} questionId="2A-7" />}
+              <Explain qa={qa} questionId="2A-7"  isShow={showResults} />
             </div>
           </div>
 
@@ -286,7 +286,7 @@ const JapaneseTestQuestion = () => {
               </span>
               <span className="mr-2">train.</span>
               {renderSelect("15", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="2A-8" />}
+              <Explain qa={qa} questionId="2A-8"  isShow={showResults} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">
@@ -322,7 +322,7 @@ const JapaneseTestQuestion = () => {
               </span>
               <span>She always helps people who are in trouble.</span>
               {renderSelect("16", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="2A-9" />}
+              <Explain qa={qa} questionId="2A-9"  isShow={showResults} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">
@@ -358,7 +358,7 @@ const JapaneseTestQuestion = () => {
               </span>
               <span>festival last Saturday.</span>
               {renderSelect("17", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="2A-10" />}
+              <Explain qa={qa} questionId="2A-10"  isShow={showResults} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">

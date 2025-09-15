@@ -30,7 +30,7 @@ const Ex22_4 = () => {
         />
       </div>
       {/* Context text */}
-      <p className="text-base mb-8 md:text-xl">
+      <p className="text-base mb-2 md:text-xl">
         You are a new student at Robinson University in the US. You are reading
         the blogs of two students, Len and Cindy, to find out where you can buy
         things for your apartment.
@@ -48,7 +48,7 @@ const Ex22_4 = () => {
         </div>
 
         {/* Blog content */}
-        <div className="space-y-4">
+        <div className="space-y-1">
           <p className="text-base indent-7">
             Getting ready for college? Do you need some home appliances or
             electronics, but don&apos;t want to spend too much money?
@@ -95,7 +95,7 @@ const Ex22_4 = () => {
         </div>
 
         {/* Blog content */}
-        <div className="space-y-4">
+        <div className="space-y-1">
           <p className="text-base indent-7">
             Are you starting at Robinson University soon? You may be preparing
             to buy some household appliances or electronics for your new life.
@@ -157,13 +157,16 @@ const Ex22_4 = () => {
       {/* Questions section */}
       <div className="space-y-8 mt-8">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-1"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-1"))}>
           <div className="flex items-center flex-wrap space-x-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Len recommends buying used goods because</span>
-            {renderSelect("24", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="4-1" />}
-            {Kaisetsu(showResults, "22-4-8")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("24", 4, answers, setAnswers)}
+              <span className="-ml-3 mt-1 mr-1">.</span>
+              <Explain qa={qa} questionId="4-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-4-8")}
+            </div>
           </div>
           {[
             "it will help the university",
@@ -181,13 +184,16 @@ const Ex22_4 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-2"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-2"))}>
           <div className="flex items-center space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span className="text-base">Cindy suggests buying</span>
-            {renderSelect("25", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="4-2" />}
-            {Kaisetsu(showResults, "22-4-9")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("25", 4, answers, setAnswers)}
+              <span className="-ml-3 mt-1 mr-1">.</span>
+              <Explain qa={qa} questionId="4-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-4-9")}
+            </div>
           </div>
           {[
             "from a single big chain store because it saves time",
@@ -205,15 +211,18 @@ const Ex22_4 = () => {
         </div>
 
         {/* Question 3 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-3"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-3"))}>
           <div className="flex items-center space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span className="text-base">
               Both Len and Cindy recommend that you
             </span>
-            {renderSelect("26", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="4-3" />}
-            {Kaisetsu(showResults, "22-4-10")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("26", 4, answers, setAnswers)}
+              <span className="-ml-3 mt-1 mr-1">.</span>
+              <Explain qa={qa} questionId="4-3"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-4-10")}
+            </div>
           </div>
           {[
             "buy from the store near your university",
@@ -231,16 +240,19 @@ const Ex22_4 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-4"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-4"))}>
           <div className="flex items-center space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span className="text-base">
               If you want to buy new appliances at the best possible prices, you
               should
             </span>
-            {renderSelect("27", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="4-4" />}
-            {Kaisetsu(showResults, "22-4-11")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("27", 4, answers, setAnswers)}
+              <span className="-ml-3 mt-1 mr-1">.</span>
+              <Explain qa={qa} questionId="4-4"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-4-11")}
+            </div>
           </div>
           <div className="mt-4 space-y-2">
             {[
@@ -260,7 +272,7 @@ const Ex22_4 = () => {
         </div>
 
         {/* Question 5 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-5"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-5"))}>
           <div className="flex items-center space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>You have decided to buy a microwave from</span>
@@ -274,8 +286,10 @@ const Ex22_4 = () => {
             <div className="text-base">
               (Choose one for each box from options 1~4.)
             </div>
-            {showResults && <Explain qa={qa} questionId="4-5" />}
-            {Kaisetsu(showResults, "22-4-12")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="4-5"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-4-12")}
+            </div>
           </div>
           {["Cut Price", "Great Buy", "Second Hand", "Value Saver"].map(
             (text, index) => (

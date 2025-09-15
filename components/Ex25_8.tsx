@@ -151,12 +151,14 @@ const Ex25_8 = () => {
         <div className="space-y-4">
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap font-sans">問 1</span>
-            <span>
+            <span className="-mr-2">
               Which of the following best expresses Meilin&apos;s opinion?
             </span>
-            {renderSelect("38", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="8-1" isShow={showResults} />
-            {Kaisetsu(showResults, "25-8-11")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("38", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="8-1" isShow={showResults} />
+              {Kaisetsu(showResults, "25-8-11")}
+            </div>
           </div>
 
           <div className="space-y-2 ml-2 md:ml-8">
@@ -182,7 +184,7 @@ const Ex25_8 = () => {
         <div className="space-y-4">
           <div className="flex gap-2 items-center flex-wrap">
             <span className="whitespace-nowrap font-sans">問 2</span>
-            <span>
+            <span className="-mr-2">
               Both Christine and Victor mention that space exploration
             </span>
             <div className="flex flex-row gap-2">

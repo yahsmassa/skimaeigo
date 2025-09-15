@@ -137,7 +137,7 @@ const JapaneseExam3 = () => {
             {renderSelect("19", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">us how to get to the theater.</span>
-            {showResults && <Explain qa={qa} questionId="2B-1" />}
+            <Explain qa={qa} questionId="2B-1"  isShow={showResults} />
           </div>
         </div>
 
@@ -183,7 +183,7 @@ const JapaneseExam3 = () => {
             {renderSelect("21", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">email.</span>
-            {showResults && <Explain qa={qa} questionId="2B-2" />}
+            <Explain qa={qa} questionId="2B-2"  isShow={showResults} />
           </div>
         </div>
 
@@ -228,7 +228,7 @@ const JapaneseExam3 = () => {
             {renderSelect("23", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">my time more effectively.</span>
-            {showResults && <Explain qa={qa} questionId="2B-3" />}
+            <Explain qa={qa} questionId="2B-3"  isShow={showResults} />
           </div>
         </div>
 

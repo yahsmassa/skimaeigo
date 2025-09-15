@@ -250,7 +250,7 @@ const Ex20_5 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>The author kept returning to the mountain because</span>
             {renderSelect("41", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-1" />}
+            <Explain qa={qa} questionId="5-1"  isShow={showResults} />
             {Kaisetsu(showResults, "20-5-14")}
           </div>
 
@@ -291,7 +291,7 @@ const Ex20_5 = () => {
               trip?
             </span>
             {renderSelect("42", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-2" />}
+            <Explain qa={qa} questionId="5-2"  isShow={showResults} />
             {Kaisetsu(showResults, "20-5-15")}
           </div>
 
@@ -332,7 +332,7 @@ const Ex20_5 = () => {
               talked about?
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-3" />}
+            <Explain qa={qa} questionId="5-3"  isShow={showResults} />
             {Kaisetsu(showResults, "20-5-16")}
           </div>
 
@@ -375,7 +375,7 @@ const Ex20_5 = () => {
             <span className="border-b border-black">rang in the air</span>
             <span>as used in the text?</span>
             {renderSelect("44", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-4" />}
+            <Explain qa={qa} questionId="5-4"  isShow={showResults} />
             {Kaisetsu(showResults, "20-5-17")}
           </div>
 
@@ -418,7 +418,7 @@ const Ex20_5 = () => {
               hiking experience?
             </span>
             {renderSelect("45", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-5" />}
+            <Explain qa={qa} questionId="5-5"  isShow={showResults} />
             {Kaisetsu(showResults, "20-5-18")}
           </div>
 

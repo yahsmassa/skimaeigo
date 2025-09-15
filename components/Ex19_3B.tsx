@@ -145,7 +145,7 @@ const ExamQuestion = () => {
                   <span className="mr-2"> her something</span>
                   {renderSelect("30", 4, answers, setAnswers)}
                   <span className="mr-2">would be appropriate, right?</span>
-                  {showResults && <Explain qa={qa} questionId="3B-1" />}
+                  <Explain qa={qa} questionId="3B-1"  isShow={showResults} />
                   <span className="mr-2"></span>
                   {Kaisetsu(showResults, "19-3B-3")}
                 </div>
@@ -212,7 +212,7 @@ const ExamQuestion = () => {
                   <span>Ms. Guillot's</span>
                   {renderSelect("31", 4, answers, setAnswers)}
                   <span className="mr-2">when we buy her present.</span>
-                  {showResults && <Explain qa={qa} questionId="3B-2" />}
+                  <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
                   <span className="mr-2"></span>
                   {Kaisetsu(showResults, "19-3B-7")}
                 </div>
@@ -299,7 +299,7 @@ const ExamQuestion = () => {
                     will be best as it seems to match what everyone has said
                     about Ms. Guillot.
                   </span>
-                  {showResults && <Explain qa={qa} questionId="3B-3" />}
+                  <Explain qa={qa} questionId="3B-3"  isShow={showResults} />
                   <span className="mr-2"></span>
                   {Kaisetsu(showResults, "19-3B-12")}
                 </div>

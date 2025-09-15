@@ -166,7 +166,7 @@ const Ex19_6 = () => {
             <span className="underline">imperative</span>
             <span> in paragraph (1)?</span>
             {renderSelect("46", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-1" />}
+            <Explain qa={qa} questionId="6-1"  isShow={showResults} />
             {Kaisetsu(showResults, "19-6-7")}
           </div>
           <div className="pl-8 space-y-2">
@@ -186,7 +186,7 @@ const Ex19_6 = () => {
               true?
             </span>
             {renderSelect("47", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-2" />}
+            <Explain qa={qa} questionId="6-2"  isShow={showResults} />
             {Kaisetsu(showResults, "19-6-8")}
           </div>
           <div className="pl-8 space-y-2">
@@ -215,7 +215,7 @@ const Ex19_6 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>Why is the example of Edo introduced in paragraph (3)?</span>
             {renderSelect("48", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-3" />}
+            <Explain qa={qa} questionId="6-3"  isShow={showResults} />
             {Kaisetsu(showResults, "19-6-9")}
           </div>
           <div className="pl-8 space-y-2">
@@ -236,7 +236,7 @@ const Ex19_6 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>What does paragraph (5) tell us about routes?</span>
             {renderSelect("49", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-4" />}
+            <Explain qa={qa} questionId="6-4"  isShow={showResults} />
             {Kaisetsu(showResults, "19-6-10")}
           </div>
           <div className="pl-8 space-y-2">
@@ -255,7 +255,7 @@ const Ex19_6 = () => {
             <span className="whitespace-nowrap mr-2 font-sans   ">問 5</span>
             <span>What is the main point of this article?</span>
             {renderSelect("50", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-5" />}
+            <Explain qa={qa} questionId="6-5"  isShow={showResults} />
             {Kaisetsu(showResults, "19-6-11")}
           </div>
           <div className="pl-8 space-y-2">
@@ -294,7 +294,7 @@ const Ex19_6 = () => {
                 {renderSelect("52", 4, answers, setAnswers)}
                 {renderSelect("53", 4, answers, setAnswers)}
                 {renderSelect("54", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="6-6" />}
+                <Explain qa={qa} questionId="6-6"  isShow={showResults} />
                 {Kaisetsu(showResults, "19-6-12")}
               </span>
             </p>

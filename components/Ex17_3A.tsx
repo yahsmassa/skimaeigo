@@ -109,7 +109,7 @@ const JapaneseTestQuestion = () => {
                   >
                     <span>I see. Well . . . </span>
                     {renderSelect("27", 4, answers, setAnswers)}
-                    {showResults && <Explain qa={qa} questionId="3A-1" />}
+                    <Explain qa={qa} questionId="3A-1"  isShow={showResults} />
                     <span className="mr-2"></span>
                     {Kaisetsu(showResults, "17-3A-1")}
                   </div>
@@ -189,7 +189,7 @@ const JapaneseTestQuestion = () => {
                     <span className="mr-2">. Let's find</span>
                     <span className="mr-2">somewhere else</span>
                     <span className="mr-2">to go.</span>
-                    {showResults && <Explain qa={qa} questionId="3A-2" />}
+                    <Explain qa={qa} questionId="3A-2"  isShow={showResults} />
                     <span className="mr-2"></span>
                     {Kaisetsu(showResults, "17-3A-2")}
                   </div>

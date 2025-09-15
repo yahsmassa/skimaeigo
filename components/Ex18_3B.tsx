@@ -101,7 +101,7 @@ const ConversationImage = () => {
             <span>So, are you saying that</span>
             {renderSelect("30", 4, answers, setAnswers)}
             <span className="mr-2">?</span>
-            {showResults && <Explain qa={qa} questionId="3B-1" />}
+            <Explain qa={qa} questionId="3B-1"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "18-3B-3")}
           </div>
@@ -178,7 +178,7 @@ const ConversationImage = () => {
             </span>
             {renderSelect("31", 4, answers, setAnswers)}
             <span className="mr-2">.</span>
-            {showResults && <Explain qa={qa} questionId="3B-2" />}
+            <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "18-3B-6")}
           </div>
@@ -270,7 +270,7 @@ const ConversationImage = () => {
               {renderSelect("32", 4, answers, setAnswers)}
               <span className="mr-2">is important</span>
               <span className="mr-2">when making our film.</span>
-              {showResults && <Explain qa={qa} questionId="3B-3" />}
+              <Explain qa={qa} questionId="3B-3"  isShow={showResults} />
               <span className="mr-2"></span>
               {Kaisetsu(showResults, "18-3B-10")}
             </div>

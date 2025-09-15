@@ -279,7 +279,7 @@ const Ex20_6 = () => {
               capable of doing?
             </span>
             {renderSelect("46", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-1" />}
+            <Explain qa={qa} questionId="6-1"  isShow={showResults} />
             {Kaisetsu(showResults, "20-6-7")}
           </div>
           <div className="pl-8 space-y-2">
@@ -301,7 +301,7 @@ const Ex20_6 = () => {
               about vending machines is true?
             </span>
             {renderSelect("47", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-2" />}
+            <Explain qa={qa} questionId="6-2"  isShow={showResults} />
             {Kaisetsu(showResults, "20-6-8")}
           </div>
           <div className="pl-8 space-y-2">
@@ -333,7 +333,7 @@ const Ex20_6 = () => {
             <span className="underline">counterfeit</span>
             <span> in paragraph (4)?</span>
             {renderSelect("48", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-3" />}
+            <Explain qa={qa} questionId="6-3"  isShow={showResults} />
             {Kaisetsu(showResults, "20-6-9")}
           </div>
           <div className="pl-8 space-y-2">
@@ -353,7 +353,7 @@ const Ex20_6 = () => {
               Japan?
             </span>
             {renderSelect("49", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-4" />}
+            <Explain qa={qa} questionId="6-4"  isShow={showResults} />
             {Kaisetsu(showResults, "20-6-10")}
           </div>
           <div className="pl-8 space-y-2">
@@ -370,7 +370,7 @@ const Ex20_6 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問5</span>
             <span>What would be the best title for this passage?</span>
             {renderSelect("50", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6-5" />}
+            <Explain qa={qa} questionId="6-5"  isShow={showResults} />
             {Kaisetsu(showResults, "20-6-11")}
           </div>
           <div className="pl-8 space-y-2">
@@ -409,7 +409,7 @@ const Ex20_6 = () => {
               {renderSelect("52", 4, answers, setAnswers)}
               {renderSelect("53", 4, answers, setAnswers)}
               {renderSelect("54", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="6-6" />}
+              <Explain qa={qa} questionId="6-6"  isShow={showResults} />
               {Kaisetsu(showResults, "20-6-12")}
             </span>
           </p>

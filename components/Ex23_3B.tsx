@@ -32,9 +32,9 @@ const Ex23_3B = () => {
         />
       </div>{" "}
       {/* Context */}
-      <div className="mb-6">
+      <div className="mb-2">
         <p className="text-gray-700">
-          <span className="font-bold">B</span> Your English club will make an
+          Your English club will make an
           &quot;adventure room&quot; for the school festival. To get some ideas,
           you are reading a blog about a room a British man created.
           {Kaisetsu(showResults, "23-3B-0")}
@@ -46,7 +46,7 @@ const Ex23_3B = () => {
           Create Your Own &quot;Home Adventure&quot;
         </h1>
 
-        <div className="space-y-6">
+        <div className="space-y-1">
           <p>
             Last year, I took part in an &quot;adventure room&quot; experience.
             I really enjoyed it, so I created one for my children. Here are some
@@ -70,7 +70,7 @@ const Ex23_3B = () => {
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-1">
             <p>
               First, pick a theme. My sons are huge Sherlock Holmes fans, so I
               decided on a detective mystery. I rearranged the furniture in our
@@ -118,9 +118,9 @@ const Ex23_3B = () => {
       </div>
       <div className="text-center text-gray-500 mt-4 mb-8">— 16 —</div>
       {/* Questions Section */}
-      <div className="mt-8 space-y-12">
+      <div className="mt-8 space-y-7">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-1"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-1"))}>
           <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>
             Put the following events (①～④) into the order in which they
@@ -138,10 +138,10 @@ const Ex23_3B = () => {
               <span className="md:mx-1">→</span>
               {renderSelect("21", 4, answers, setAnswers)}
             </div>
-          </div>
-          <div className="flex flex-row gap-2">
-            <Explain qa={qa} questionId="3B-1" isShow={showResults} />
-            {Kaisetsu(showResults, "23-3B-6")}
+            <div className="flex flex-row gap-2 h-7">
+              <Explain qa={qa} questionId="3B-1" isShow={showResults} />
+              {Kaisetsu(showResults, "23-3B-6")}
+            </div>
           </div>
           {[
             "The children ate food they are not fond of.",
@@ -159,40 +159,44 @@ const Ex23_3B = () => {
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-2"))}>
-          <div className="flex items-start gap-2 mb-4 flex-wrap">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-2"))}>
+          <div className="flex items-start gap-2 mb-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
-            <span>
+            <span className="-mr-2">
               If you follow the father&apos;s advice to create your own
               &quot;adventure room,&quot; you should
             </span>
-            {renderSelect("22", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="3B-2" isShow={showResults} />
-            {Kaisetsu(showResults, "23-3B-7")}
-          </div>
-          {[
-            "concentrate on three-letter words",
-            "leave secret messages under the lamps",
-            "make the challenges gradually harder",
-            "practise acting like Sherlock Holmes",
-          ].map((answer, index) => (
-            <div key={index} className="flex items-start">
-              <span className="w-6 h-6 flex items-center justify-center mr-2">
-                {"①②③④⑤⑥"[index]}
-              </span>
-              <span>{answer}</span>
+            {renderSelect("22", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+            <div className="flex flex-row gap-2 ">
+              <Explain qa={qa} questionId="3B-2" isShow={showResults} />
+              {Kaisetsu(showResults, "23-3B-7")}
             </div>
-          ))}
+          </div>
+            {[
+              "concentrate on three-letter words",
+              "leave secret messages under the lamps",
+              "make the challenges gradually harder",
+              "practise acting like Sherlock Holmes",
+            ].map((answer, index) => (
+              <div key={index} className="flex items-start">
+                <span className="w-6 h-6 flex items-center justify-center mr-2">
+                  {"①②③④⑤⑥"[index]}
+                </span>
+                <span>{answer}</span>
+              </div>
+            ))}
         </div>
 
         {/* Question 3 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-3"))}>
-          <div className="flex items-center mb-4 flex-wrap gap-2">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-3"))}>
+          <div className="flex items-center mb-2 flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>From this story, you understand that the father</span>
-            {renderSelect("23", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="3B-3" isShow={showResults} />
-            {Kaisetsu(showResults, "23-3B-8")}
+            {renderSelect("23", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="3B-3" isShow={showResults} />
+              {Kaisetsu(showResults, "23-3B-8")}
+            </div>
           </div>
           {[
             "became focused on searching for the sweets",

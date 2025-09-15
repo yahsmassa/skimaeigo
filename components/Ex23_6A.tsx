@@ -36,7 +36,7 @@ const Ex23_6A = () => {
         />
       </div>{" "}
       {/* Question Label */}
-      <div className="flex gap-2 mb-6">
+      <div className="flex gap-2 mb-2">
         <p className="text-justify indent-7 md:text-xl mb-2">
           You are in a discussion group in school. You have been asked to
           summarize the following article. You will speak about it, using only
@@ -47,7 +47,7 @@ const Ex23_6A = () => {
       {/* Article Title */}
       <h1 className="text-center font-bold text-xl mb-8">Collecting</h1>
       {/* Article Content */}
-      <div className="space-y-6 text-justify">
+      <div className="space-y-1 text-justify">
         <p className="indent-7">
           Collecting has existed at all levels of society, across cultures and
           age groups since early times. Museums are proof that things have been
@@ -239,14 +239,17 @@ const Ex23_6A = () => {
         </Card>
       </div>
       {/* Multiple Choice Questions */}
-      <div className={cn("mt-12 space-y-8")}>
-        <div className={cn(" space-y-4", showResults && qaFormat(qa, "6A-1"))}>
+      {/* Question 1 */}
+      <div className={cn("mt-12 space-y-6")}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "6A-1"))}>
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Choose the best option for </span>
-            {renderSelect("39", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6A-1" />}
-            {Kaisetsu(showResults, "23-6A-7")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("39", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="6A-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "23-6A-7")}
+            </div>
           </div>
           <div className="ml-2 md:ml-8 space-y-3">
             {[
@@ -265,16 +268,16 @@ const Ex23_6A = () => {
           </div>
         </div>
 
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-2"))}>
+        {/* Question 2 */}
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Choose the best option for </span>
             {renderSelect("40", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6A-2" />}
+            <Explain qa={qa} questionId="6A-2"  isShow={showResults} />
             {Kaisetsu(showResults, "23-6A-8")}
           </div>
           <div className="ml-2 md:ml-8 space-y-3">
-            <div>
               {[
                 "About two thirds of children do not collect ordinary things.",
                 "Almost one third of adults start collecting things for pleasure.",
@@ -289,21 +292,21 @@ const Ex23_6A = () => {
                 </div>
               ))}
             </div>
-          </div>
         </div>
 
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-3"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex flex-wrap items-center gap-2 ">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>Choose the best options for</span>{" "}
             {renderSelect("41", 6, answers, setAnswers)} and{" "}
             {renderSelect("42", 6, answers, setAnswers)}
             <span> (The order does not matter.)</span>
-            {showResults && <Explain qa={qa} questionId="6A-3" />}
-            {Kaisetsu(showResults, "23-6A-9")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6A-3"  isShow={showResults} />
+              {Kaisetsu(showResults, "23-6A-9")}
+            </div>
           </div>
-          <div className="ml-2 md:ml-8 space-y-3">
-            <div>
+          <div className="ml-2 md:ml-8 space-y-2">
               {[
                 "desire to advance technology",
                 "fear of missing unexpected opportunities",
@@ -319,7 +322,6 @@ const Ex23_6A = () => {
                   <span>{text}</span>
                 </div>
               ))}
-            </div>
           </div>
         </div>
 
@@ -327,12 +329,13 @@ const Ex23_6A = () => {
           <div className="flex flex-wrap items-center gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Choose the best option for </span>
-            {renderSelect("43", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6A-4" />}
-            {Kaisetsu(showResults, "23-6A-10")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("43", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="6A-4"  isShow={showResults} />
+              {Kaisetsu(showResults, "23-6A-10")}
+            </div>
           </div>
-          <div className="ml-2 md:ml-8 space-y-3">
-            <div>
+          <div className="ml-2 md:ml-8 space-y-2">
               {[
                 "Collections will likely continue to change in size and shape.",
                 "Collectors of mint-condition games will have more digital copies of them.",
@@ -346,7 +349,6 @@ const Ex23_6A = () => {
                   <span>{text}</span>
                 </div>
               ))}
-            </div>
           </div>
         </div>
       </div>

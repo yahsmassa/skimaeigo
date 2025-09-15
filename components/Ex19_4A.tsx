@@ -240,7 +240,7 @@ const Ex19_4A = () => {
               as{" "}
             </span>
             {renderSelect("33", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4A-1" />}
+            <Explain qa={qa} questionId="4A-1"  isShow={showResults} />
             {Kaisetsu(showResults, "19-4A-5")}
           </div>
           <div className="space-y-2 ml-8">
@@ -257,7 +257,7 @@ const Ex19_4A = () => {
             <span className="whitespace-nowrap mr-2 font-bold font-sans">問 2</span>
             <span>According to Table 1, the paintings from </span>
             {renderSelect("34", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4A-2" />}
+            <Explain qa={qa} questionId="4A-2"  isShow={showResults} />
             {Kaisetsu(showResults, "19-4A-6")}
           </div>
           <div className="space-y-2 ml-8">
@@ -286,7 +286,7 @@ const Ex19_4A = () => {
             <span className="whitespace-nowrap mr-2 font-bold font-sans">問 3</span>
             <span>According to the passage and Table 1, </span>
             {renderSelect("35", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4A-3" />}
+            <Explain qa={qa} questionId="4A-3"  isShow={showResults} />
             {Kaisetsu(showResults, "19-4A-7")}
           </div>
           <div className="space-y-2 ml-8">
@@ -315,7 +315,7 @@ const Ex19_4A = () => {
             <span className="whitespace-nowrap mr-2 font-bold font-sans">問 4</span>
             <span>According to the passage, foods in these paintings can </span>
             {renderSelect("36", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4A-4" />}
+            <Explain qa={qa} questionId="4A-4"  isShow={showResults} />
             {Kaisetsu(showResults, "19-4A-8")}
           </div>
           <div className="space-y-2 ml-8">

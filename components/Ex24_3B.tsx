@@ -109,7 +109,7 @@ const Ex24_3B = () => {
       </div>
 
       {/* 記事本体 */}
-      <div className="mb-4 px-2 sm:px-4">
+      <div className="mb-0 px-2 sm:px-4">
         <p className="text-base">{questionData.situation}
         </p>
             {Kaisetsu(showResults, "24-3B-0")}
@@ -120,11 +120,11 @@ const Ex24_3B = () => {
           {questionData.passage.title}
         </h3>
 
-        <div className="space-y-4">
+        <div className="space-y-1">
           {questionData.passage.content.map((paragraph, index) => (
             <div key={index}>
               {index === 3 ? (
-                <div className="flex flex-col md:flex-row gap-4 my-6">
+                <div className="flex flex-col md:flex-row gap-4 my-1">
                   <div className="flex-grow">
                     <p>
                       {paragraph}{" "}
@@ -172,9 +172,10 @@ const Ex24_3B = () => {
               <div className="mx-1">→</div>
               {renderSelect("21", 4, answers, setAnswers)}
             </div>
-            <Explain qa={qa} questionId={"3B-1"} isShow={showResults} />
-            <span className="ml-2">{' '}</span>
-            {Kaisetsu(showResults, "24-3B-7")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId={"3B-1"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-3B-7")}
+            </div>
           </div>
         </div>
 
@@ -197,8 +198,10 @@ const Ex24_3B = () => {
             </span>
             {renderSelect("22", 4, answers, setAnswers)}
             <span>of the south sea island.</span>
-            <Explain qa={qa} questionId={"3B-2"} isShow={showResults} />
-            {Kaisetsu(showResults, "24-3B-12")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId={"3B-2"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-3B-12")}
+            </div>
           </div>
 
           <div className="space-y-1">
@@ -218,8 +221,10 @@ const Ex24_3B = () => {
             <span>likely saw</span>
             {renderSelect("23", 4, answers, setAnswers)}
             <span>in the night sky.</span>
-            <Explain qa={qa} questionId={"3B-3"} isShow={showResults} />
-            {Kaisetsu(showResults, "24-3B-13")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId={"3B-3"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-3B-13")}
+            </div>
           </div>
 
           <div className="space-y-1">

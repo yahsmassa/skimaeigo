@@ -117,7 +117,7 @@ export default function Ex21_3A() {
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>From Alex&apos;s answer, you learn that Alex</span>
             {renderSelect("16", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="3A-1" />}
+            <Explain qa={qa} questionId="3A-1"  isShow={showResults} />
             {Kaisetsu(showResults, "21-3A-6")}
           </div>
 
@@ -147,7 +147,7 @@ export default function Ex21_3A() {
               on 15 March 2021. What is the fastest way to get to the hotel?
             </span>
             {renderSelect("17", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="3A-2" />}
+            <Explain qa={qa} questionId="3A-2"  isShow={showResults} />
             {Kaisetsu(showResults, "21-3A-7")}
           </div>
 

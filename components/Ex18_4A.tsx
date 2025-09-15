@@ -138,7 +138,7 @@ const Ex18_4A = () => {
                   colors consumers like better because
                 </span>
                 {renderSelect("33", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4A-1" />}
+                <Explain qa={qa} questionId="4A-1"  isShow={showResults} />
                 {Kaisetsu(showResults, "18-4A-7")}
               </div>
               <div className="ml-8 space-y-2">
@@ -164,7 +164,7 @@ const Ex18_4A = () => {
                   refer to?
                 </span>
                 {renderSelect("34", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4A-2" />}
+                <Explain qa={qa} questionId="4A-2"  isShow={showResults} />
                 {Kaisetsu(showResults, "18-4A-8")}
               </div>
               <div className="ml-8 space-y-2">
@@ -192,7 +192,7 @@ const Ex18_4A = () => {
                   passage?
                 </span>
                 {renderSelect("35", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4A-3" />}
+                <Explain qa={qa} questionId="4A-3"  isShow={showResults} />
                 {Kaisetsu(showResults, "18-4A-9")}
               </div>
               <div className="ml-8 space-y-2">
@@ -223,7 +223,7 @@ const Ex18_4A = () => {
                   What topic is most likely to follow the last paragraph?
                 </span>
                 {renderSelect("36", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4A-4" />}
+                <Explain qa={qa} questionId="4A-4"  isShow={showResults} />
                 {Kaisetsu(showResults, "18-4A-10")}
               </div>
               <div className="ml-8 space-y-2">

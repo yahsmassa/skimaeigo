@@ -47,7 +47,7 @@ const Ex24_2B = () => {
         </h2>
       </div>
       <div className="bg-white rounded-lg border-2 border-black mb-8 p-6">
-        <div className="space-y-4">
+        <div className="space-y-1">
           <div>
             <div className="space-y-6">
               <div>
@@ -105,9 +105,11 @@ const Ex24_2B = () => {
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問1</span>
             <span>According to the review, which of the following is true?</span>
-            {renderSelect("11", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-1" />}
-            {Kaisetsu(showResults, "24-2B-7")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("11", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2B-1" isShow={showResults} />
+              {Kaisetsu(showResults, "24-2B-7")}
+            </div>
           </div>
           <ol className="list-none space-y-2 ml-6">
             <li className="flex items-start space-x-2">
@@ -133,9 +135,11 @@ const Ex24_2B = () => {
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問2</span>
             <span>Which is not included in the cheapest option?</span>
-            {renderSelect("12", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-2" />}
-            {Kaisetsu(showResults, "24-2B-8")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("12", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2B-2" isShow={showResults} />
+              {Kaisetsu(showResults, "24-2B-8")}
+            </div>
           </div>
           <ol className="list-none space-y-2 ml-6">
             <li className="flex items-start space-x-2">
@@ -161,9 +165,11 @@ const Ex24_2B = () => {
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問3</span>
             <span>Which is the best combination that describes TravSafer International?</span>
-            {renderSelect("13", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-3" />}
-            {Kaisetsu(showResults, "24-2B-9")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("13", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2B-3" isShow={showResults} />
+              {Kaisetsu(showResults, "24-2B-9")}
+            </div>
           </div>
           <ol className="list-none space-y-2 ml-6 mb-3">
             <li className="flex items-start space-x-2">
@@ -215,9 +221,11 @@ const Ex24_2B = () => {
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問4</span>
             <span>The writer's opinion of her chosen plan is that</span>
-            {renderSelect("14", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-4" />}
-            {Kaisetsu(showResults, "24-2B-10")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("14", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2B-4" isShow={showResults} />
+              {Kaisetsu(showResults, "24-2B-10")}
+            </div>
           </div>
           <ol className="list-none space-y-2 ml-6">
             <li className="flex items-start space-x-2">
@@ -243,9 +251,11 @@ const Ex24_2B = () => {
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問5</span>
             <span>Which of the following best describes the writer's attitude?</span>
-            {renderSelect("15", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-5" />}
-            {Kaisetsu(showResults, "24-2B-11")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("15", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2B-5" isShow={showResults} />
+              {Kaisetsu(showResults, "24-2B-11")}
+            </div>
           </div>
           <ol className="list-none space-y-2 ml-6">
             <li className="flex items-start space-x-2">

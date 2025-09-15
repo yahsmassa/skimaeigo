@@ -78,7 +78,7 @@ const EnglishTest = () => {
             {renderSelect("19", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">all the guests arrive this afternoon.</span>
-            {showResults && <Explain qa={qa} questionId="2B-1" />}
+            <Explain qa={qa} questionId="2B-1"  isShow={showResults} />
           </div>
         </div>
 
@@ -125,7 +125,7 @@ const EnglishTest = () => {
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">London.</span>
             <span className="mr-2">I don’t think you’ve met her yet.</span>
-            {showResults && <Explain qa={qa} questionId="2B-2" />}
+            <Explain qa={qa} questionId="2B-2"  isShow={showResults} />
           </div>
         </div>
 
@@ -178,7 +178,7 @@ const EnglishTest = () => {
                 until some day next week. We should have thought about the
                 chance of rain.
               </span>
-              {showResults && <Explain qa={qa} questionId="2B-3" />}
+              <Explain qa={qa} questionId="2B-3"  isShow={showResults} />
             </span>
           </div>
         </div>

@@ -32,7 +32,7 @@ const Ex22_5 = () => {
         />
       </div>
       {/* Introduction text */}
-      <p className="mb-6 text-lg">
+      <p className="mb-2 text-lg">
         In your English class, you will give a presentation about a great
         inventor. You found the following article and prepared notes for your
         presentation.
@@ -42,7 +42,7 @@ const Ex22_5 = () => {
       {/* Main article container */}
       <div className="border border-gray-300 p-3 text-base">
         {/* First paragraph - full width */}
-        <p className="mb-4 indent-7">
+        <p className="mb-0 indent-7">
           Who invented television? It is not an easy question to answer. In the
           early years of the 20th century, there was something called a
           mechanical television system, but it was not a success. Inventors were
@@ -72,7 +72,7 @@ const Ex22_5 = () => {
           </div>
 
           {/* Text that wraps around the image */}
-          <p className="mb-4 indent-7">
+          <p className="mb-0 indent-7">
             Philo Taylor Farnsworth was born in a log cabin in Utah in 1906. His
             family did not have electricity until he was 12 years old, and he
             was excited to find a generator—a machine that produces
@@ -84,7 +84,7 @@ const Ex22_5 = () => {
             {Kaisetsu(showResults, "22-5-2")}
           </p>
 
-          <p className="mb-4 indent-7">
+          <p className="mb-0 indent-7">
             One day, while working in his father&apos;s potato field, he looked
             behind him and saw all the straight parallel rows of soil that he
             had made. Suddenly, it occurred to him that it might be possible to
@@ -98,7 +98,7 @@ const Ex22_5 = () => {
             {Kaisetsu(showResults, "22-5-3")}
           </p>
 
-          <p className="mb-4 indent-7">
+          <p className="mb-0 indent-7">
             On September 7, 1927, Farnsworth succeeded in sending his first
             electronic image. In the following years, he further improved the
             system so that it could successfully broadcast live images. The US
@@ -108,7 +108,7 @@ const Ex22_5 = () => {
 
           {/* Rest of the paragraphs */}
           <div className="clear-both">
-            <p className="mb-4 indent-7">
+            <p className="mb-0 indent-7">
               However, Farnsworth was not the only one working on such a system.
               A giant company, RCA (Radio Corporation of America), also saw a
               bright future for television and did not want to miss the
@@ -121,7 +121,7 @@ const Ex22_5 = () => {
               {Kaisetsu(showResults, "22-5-5")}
             </p>
 
-            <p className="mb-4 indent-7">
+            <p className="mb-0 indent-7">
               The company took legal action against Farnsworth, claiming that
               Zworykin&apos;s 1923 patent had priority even though he had never
               made a working version of his system. Farnsworth lost the first
@@ -135,7 +135,7 @@ const Ex22_5 = () => {
               {Kaisetsu(showResults, "22-5-6")}
             </p>
 
-            <p className="mb-4 indent-7">
+            <p className="mb-0 indent-7">
               Farnsworth died in 1971 at the age of 64. He held about 300 US and
               foreign patents, mostly in radio and television, and in 1999, TIME
               magazine included Farnsworth in Time 100: The Most Important
@@ -247,7 +247,7 @@ const Ex22_5 = () => {
 
             {/* Achievements and Recognition section */}
             <div>
-              <h4 className="text-lg underline mb-2">
+              <h4 className="text-lg underline">
                 Achievements and Recognition
               </h4>
               {Kaisetsu(showResults, "22-5-8")}
@@ -273,13 +273,15 @@ const Ex22_5 = () => {
       {/* Questions section */}
       <div className="mt-8">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "5-1"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "5-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Which is the best subtitle for your presentation?</span>
-            {renderSelect("30", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-1" />}
-            {Kaisetsu(showResults, "22-5-9")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("30", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="5-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-5-9")}
+            </div>
           </div>
           {[
             "A Young Inventor Against a Giant Company",
@@ -298,19 +300,23 @@ const Ex22_5 = () => {
 
         {/* Question 2 */}
         <div
-          className={cn("space-y-4 mt-5", showResults && qaFormat(qa, "5-2"))}
+          className={cn("space-y-2 mt-5", showResults && qaFormat(qa, "5-2"))}
         >
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
-            <span className="ml-2">Choose the best two options for </span>
-            {renderSelect("31", 5, answers, setAnswers)}
-            <span> and </span>
-            {renderSelect("32", 5, answers, setAnswers)}
-            <span> to complete </span>
+            <span className="ml-2 -mr-2">Choose the best two options for</span>
+            <div className="flex flex-row gap-2 items-center">
+              {renderSelect("31", 5, answers, setAnswers)}
+              <span className="-mx-2"> and </span>
+              {renderSelect("32", 5, answers, setAnswers)}
+            </div>
+            <span>to complete</span>
             <span className="underline">Early Days</span>
             <span className="ml-2">(The order does not matter)</span>
-            {showResults && <Explain qa={qa} questionId="5-2" />}
-            {Kaisetsu(showResults, "22-5-10")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="5-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-5-10")}
+            </div>
           </div>
           {[
             "bought a generator to provide his family with electricity",
@@ -330,7 +336,7 @@ const Ex22_5 = () => {
 
         {/* Question 3 */}
         <div
-          className={cn("space-y-4 mt-5", showResults && qaFormat(qa, "5-3"))}
+          className={cn("space-y-2 mt-5", showResults && qaFormat(qa, "5-3"))}
         >
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
@@ -342,16 +348,22 @@ const Ex22_5 = () => {
               .
             </span>
           </div>
-          <div className="flex items-start flex-wrap gap-1 mb-4">
-            {renderSelect("33", 5, answers, setAnswers)}
-            <span>→</span>
-            {renderSelect("34", 5, answers, setAnswers)}
-            <span>→</span>
-            {renderSelect("35", 5, answers, setAnswers)}
-            <span>→</span>
-            {renderSelect("36", 5, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-3" />}
-            {Kaisetsu(showResults, "22-5-11")}
+          <div className="flex flex-row  flex-wrap ">
+            <div className="flex flex-row">
+              {renderSelect("33", 5, answers, setAnswers)}
+              <span className="-mx-1">→</span>
+              {renderSelect("34", 5, answers, setAnswers)}
+              <span className="-mx-1">→</span>
+            </div>
+            <div className="flex flex-row">
+              {renderSelect("35", 5, answers, setAnswers)}
+              <span className="-mx-1">→</span>
+              {renderSelect("36", 5, answers, setAnswers)}
+            </div>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="5-3"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-5-11")}
+            </div>
           </div>
           {[
             "Farnsworth rejected RCA's offer.",
@@ -371,16 +383,19 @@ const Ex22_5 = () => {
 
         {/* Question 4 */}
         <div
-          className={cn("space-y-4 mt-7", showResults && qaFormat(qa, "5-4"))}
+          className={cn("space-y-2 mt-7", showResults && qaFormat(qa, "5-4"))}
         >
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Choose the best option for</span>
             {renderSelect("37", 4, answers, setAnswers)}
             <span>to complete</span>
-            <span className="underline ml-1">Outcome</span>.
-            {showResults && <Explain qa={qa} questionId="5-4" />}
-            {Kaisetsu(showResults, "22-5-12")}
+            <span className="underline ml-1">Outcome</span>
+            <span className="-ml-1 mr-1">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="5-4"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-5-12")}
+            </div>
           </div>
           {[
             "the acceptance of his rival's technological inferiority",
@@ -399,7 +414,7 @@ const Ex22_5 = () => {
 
         {/* Question 5 */}
         <div
-          className={cn("space-y-4 mt-7", showResults && qaFormat(qa, "5-5"))}
+          className={cn("space-y-2 mt-7", showResults && qaFormat(qa, "5-5"))}
         >
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
@@ -407,8 +422,11 @@ const Ex22_5 = () => {
             {renderSelect("38", 4, answers, setAnswers)}
             <span>to complete</span>
             <span className="underline ml-1">Achievements and Recognition</span>
-            .{showResults && <Explain qa={qa} questionId="5-5" />}
-            {Kaisetsu(showResults, "22-5-13")}
+            <span className="-ml-2 mr-1">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="5-5"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-5-13")}
+            </div>
           </div>
           {[
             "He and his wife were given an award for their work with RCA.",

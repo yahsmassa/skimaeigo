@@ -50,7 +50,7 @@ const Ex18_4B = () => {
             What inspired Ralph Bearison to start Papa Bear Cooking School?
           </span>
           {renderSelect("37", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4B-1" />}
+          <Explain qa={qa} questionId="4B-1"  isShow={showResults} />
           {Kaisetsu(showResults, "18-4B-1")}
         </div>
         <ol className="list-none pl-4">
@@ -81,7 +81,7 @@ const Ex18_4B = () => {
             from the school. How much will he pay in total?
           </span>
           {renderSelect("38", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4B-2" />}
+          <Explain qa={qa} questionId="4B-2"  isShow={showResults} />
           {Kaisetsu(showResults, "18-4B-2")}
         </div>
         <div className="flex gap-8 pl-4">
@@ -102,7 +102,7 @@ const Ex18_4B = () => {
             would he most likely take?
           </span>
           {renderSelect("39", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4B-3" />}
+          <Explain qa={qa} questionId="4B-3"  isShow={showResults} />
           {Kaisetsu(showResults, "18-4B-3")}
         </div>
         <ol className="list-none pl-4">
@@ -119,7 +119,7 @@ const Ex18_4B = () => {
           <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>The advertisement suggests that</span>
           {renderSelect("40", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="4B-4" />}
+          <Explain qa={qa} questionId="4B-4"  isShow={showResults} />
           {Kaisetsu(showResults, "18-4B-4")}
         </div>
         <ol className="list-none pl-4">

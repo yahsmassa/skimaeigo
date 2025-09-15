@@ -118,9 +118,11 @@ export default function Ex25_2() {
             <span className="flex gap-1">
               Which of the following did all the guest speakers agree on?{" "}
             </span>
-            {renderSelect("4", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
-            {showResults && <Explain qa={qa} questionId="2-1" />}
-            {Kaisetsu(showResults, "25-2-6")}
+            <div className="flex flex-row items-center gap-2">
+              {renderSelect("4", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+              <Explain qa={qa} questionId="2-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "25-2-6")}
+            </div>
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
             <div>
@@ -147,7 +149,7 @@ export default function Ex25_2() {
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span className="flex gap-1">Flying vehicles will most likely</span>
             {renderSelect("5", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
-            {showResults && <Explain qa={qa} questionId="2-2" />}
+            <Explain qa={qa} questionId="2-2"  isShow={showResults} />
             {Kaisetsu(showResults, "25-2-7")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
@@ -176,7 +178,7 @@ export default function Ex25_2() {
               <span className="border-b border-black">opinion</span> is that{" "}
             </span>
             {renderSelect("6", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
-            {showResults && <Explain qa={qa} questionId="2-3" />}
+            <Explain qa={qa} questionId="2-3"  isShow={showResults} />
             {Kaisetsu(showResults, "25-2-8")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">
@@ -204,7 +206,7 @@ export default function Ex25_2() {
               Which of the following is mentioned in the blog?{" "}
             </span>
             {renderSelect("7", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
-            {showResults && <Explain qa={qa} questionId="2-4" />}
+            <Explain qa={qa} questionId="2-4"  isShow={showResults} />
             {Kaisetsu(showResults, "25-2-9")}
           </div>
           <div className="pl-2 md:pl-8 space-y-2">

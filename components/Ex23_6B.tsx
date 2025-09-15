@@ -31,9 +31,9 @@ const Ex23_6B = () => {
           setAnswers={setAnswers}
         />
       </div>{" "}
-      <div className="space-y-6">
+      <div className="space-y-1">
         {/* Question Header */}
-        <div className="flex gap-4">
+        <div className="flex gap-4 mb-2">
           <p className="text-justify indent-7 md:text-xl mb-2">
             You are in a student group preparing for an international science
             presentation contest. You are using the following passage to create
@@ -43,7 +43,7 @@ const Ex23_6B = () => {
         </div>
 
         {/* Main Text */}
-        <div className="space-y-4">
+        <div className="space-y-1">
           <p className="text-justify indent-7">
             Ask someone to name the world&apos;s toughest animal, and they might
             say the Bactrian camel as it can survive in temperatures as high as
@@ -158,16 +158,17 @@ const Ex23_6B = () => {
       </div>
       {/* Question 1 */}
       <div className={cn("mb-8 mt-8 ", showResults && qaFormat(qa, "6B-1"))}>
-        <div className="flex flex-wrap items-center mb-4">
+        <div className="flex flex-wrap items-center mb-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>
             Which of the following should you{" "}
             <span className="underline">not</span> include for
           </span>
-          {renderSelect("44", 5, answers, setAnswers)}.<span>?</span>
-          {showResults && <Explain qa={qa} questionId="6B-1" />}
-          <span className="mr-2"></span>
-          {Kaisetsu(showResults, "23-6B-9")}
+          <div className="flex flex-row gap-2">
+          {renderSelect("44", 5, answers, setAnswers)}<span className="-ml-1 mr-2 text-lg">?</span>
+            <Explain qa={qa} questionId="6B-1"  isShow={showResults} />
+            {Kaisetsu(showResults, "23-6B-9")}
+          </div>
         </div>
         <div className="space-y-2 ml-2 md:ml-8">
           {[
@@ -196,11 +197,12 @@ const Ex23_6B = () => {
             survive. (The order does not matter.)
           </span>
           {renderSelect("45", 5, answers, setAnswers)}
-          <span>・</span>
+          <span className="-mx-2">・</span>
           {renderSelect("46", 5, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="6B-2" />}
-          <span className="mr-2"></span>
-          {Kaisetsu(showResults, "23-6B-10")}
+          <div className="flex flex-row gap-2">
+            <Explain qa={qa} questionId="6B-2"  isShow={showResults} />
+            {Kaisetsu(showResults, "23-6B-10")}
+          </div>
         </div>
         <div className="space-y-2 ml-2 md:ml-8">
           {[
@@ -214,7 +216,7 @@ const Ex23_6B = () => {
               <span className="w-6 h-6 flex items-center justify-center mr-2">
                 {"①②③④⑤⑥"[index]}
               </span>
-              <span>{text}</span>
+              <span className="font-sans">{text}</span>
             </div>
           ))}
         </div>
@@ -225,12 +227,16 @@ const Ex23_6B = () => {
           <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span>
             Complete the missing labels on the illustration of a tardigrade for
-            the <span className="font-bold">Digestive Systems</span> slide.
+            the{' '}
           </span>
-          {renderSelect("47", 5, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="6B-3" />}
-          <span className="mr-2"></span>
-          {Kaisetsu(showResults, "23-6B-11")}
+          <span>
+            <span className="font-bold">Digestive Systems</span> slide.
+          </span>
+          <div className="flex flex-row gap-2">
+            {renderSelect("47", 5, answers, setAnswers)}
+            <Explain qa={qa} questionId="6B-3"  isShow={showResults} />
+            {Kaisetsu(showResults, "23-6B-11")}
+          </div>
         </div>
         <div className="space-y-2 ml-2 md:ml-8">
           {[1, 2, 3, 4, 5].map((num, index) => (
@@ -291,12 +297,13 @@ const Ex23_6B = () => {
         <div className="flex flex-wrap items-center mb-4">
           <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>Which is the best statement for the final slide?</span>
-          {renderSelect("48", 5, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="6B-4" />}
-          <span className="mr-2"></span>
-          {Kaisetsu(showResults, "23-6B-12")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("48", 5, answers, setAnswers)}
+            <Explain qa={qa} questionId="6B-4"  isShow={showResults} />
+            {Kaisetsu(showResults, "23-6B-12")}
+          </div>
         </div>
-        <div className="space-y-4 ml-2 md:ml-8">
+        <div className="space-y-2 ml-2 md:ml-8">
           {[
             "For thousands of years, tardigrades have survived some of the harshest conditions on earth and in space. They will live longer than humankind.",
             "Tardigrades are from space and can live in temperatures exceeding the limits of the Arctic fox and Bactrian camel, so they are surely stronger than human beings.",
@@ -319,12 +326,13 @@ const Ex23_6B = () => {
           <span>
             What can be inferred about sending tardigrades into space?
           </span>
-          {renderSelect("49", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="6B-5" />}
-          <span className="mr-2"></span>
-          {Kaisetsu(showResults, "23-6B-13")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("49", 4, answers, setAnswers)}
+            <Explain qa={qa} questionId="6B-5"  isShow={showResults} />
+            {Kaisetsu(showResults, "23-6B-13")}
+          </div>
         </div>
-        <div className="space-y-4 ml-2 md:ml-8">
+        <div className="space-y-2 ml-2 md:ml-8">
           {[
             "Finding out whether the tardigrades can survive in space was never thought to be important.",
             "Tardigrades, along with other creatures that have been on earth for millions of years, can withstand X-rays and ultraviolet radiation.",

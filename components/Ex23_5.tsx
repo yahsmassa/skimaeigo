@@ -29,7 +29,7 @@ const Ex23_5 = () => {
         />
       </div>{" "}
       {/* Context */}
-      <div className="mb-8">
+      <div className="mb-2">
         <p className="text-gray-700 leading-relaxed md:text-xl mb-2">
           Your English teacher has told everyone in your class to find an
           inspirational story and present it to a discussion group, using notes.
@@ -46,7 +46,7 @@ const Ex23_5 = () => {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-6 leading-relaxed">
+        <div className="space-y-1 leading-relaxed">
           <p className="indent-7">
             The ball flew at lightning speed to my backhand. It was completely
             unexpected and I had no time to react. I lost the point and the
@@ -256,12 +256,14 @@ const Ex23_5 = () => {
         <div className="flex flex-wrap items-center gap-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>Choose the best option for</span>
-          {renderSelect("30", 4, answers, setAnswers)}.
-          {showResults && <Explain qa={qa} questionId="5-1" />}
-          {Kaisetsu(showResults, "23-5-10")}
+          {renderSelect("30", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+          <div className="flex flex-row gap-2">
+            <Explain qa={qa} questionId="5-1" isShow={showResults} />
+            {Kaisetsu(showResults, "23-5-10")}
+          </div>
         </div>
 
-        <div className="space-y-3 ml-2 md:ml-8">
+        <div className="space-y-2 ml-2 md:ml-8">
           {[
             "believed it would help him communicate",
             "hoped to become popular at school",
@@ -280,12 +282,14 @@ const Ex23_5 = () => {
         <div className="flex flex-wrap items-center gap-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
           <span>Choose the best option for</span>
-          {renderSelect("31", 4, answers, setAnswers)}.
-          {showResults && <Explain qa={qa} questionId="5-2" />}
-          {Kaisetsu(showResults, "23-5-11")}
+          {renderSelect("31", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+          <div className="flex flex-row gap-2">
+            <Explain qa={qa} questionId="5-2"  isShow={showResults} />
+            {Kaisetsu(showResults, "23-5-11")}
+          </div>
         </div>
 
-        <div className="space-y-3 ml-2 md:ml-8">
+        <div className="space-y-2 ml-2 md:ml-8">
           {[
             "asked him what he enjoyed about communication",
             "encouraged him to be more confident",
@@ -300,7 +304,7 @@ const Ex23_5 = () => {
         </div>
       </div>
       {/* Question 3 */}
-      <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-3"))}>
+      <div className={cn("space-y-2 mt-4", showResults && qaFormat(qa, "5-3"))}>
         <div className="flex flex-wrap items-center gap-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span> Choose </span>
@@ -319,8 +323,10 @@ const Ex23_5 = () => {
           {renderSelect("34", 5, answers, setAnswers)}
           <span>→</span>
           {renderSelect("35", 5, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="5-3" />}
-          {Kaisetsu(showResults, "23-5-12")}
+          <div className="flex flex-row gap-2">
+            <Explain qa={qa} questionId="5-3"  isShow={showResults} />
+            {Kaisetsu(showResults, "23-5-12")}
+          </div>
         </div>
 
         <div className="space-y-3 ml-2 md:ml-8">
@@ -341,11 +347,13 @@ const Ex23_5 = () => {
       {/* Question 4 */}
       <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-4"))}>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="whitespace-nowrap mr-2">問 4</span>
+          <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>Choose the best option for</span>
-          {renderSelect("36", 4, answers, setAnswers)}.
-          {showResults && <Explain qa={qa} questionId="5-4" />}
-          {Kaisetsu(showResults, "23-5-13")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("36", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+            <Explain qa={qa} questionId="5-4"  isShow={showResults} />
+            {Kaisetsu(showResults, "23-5-13")}
+          </div>
         </div>
 
         <div className="space-y-3 ml-2 md:ml-8">
@@ -363,16 +371,18 @@ const Ex23_5 = () => {
         </div>
       </div>
       {/* Question 5 */}
-      <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-5"))}>
+      <div className={cn("space-y-2 mt-4", showResults && qaFormat(qa, "5-5"))}>
         <div className="flex flex-wrap items-center gap-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
           <span> Choose the best two options for </span>
           {renderSelect("37", 5, answers, setAnswers)}
-          <span> and </span>
+          <span className="-mx-2"> and </span>
           {renderSelect("38", 5, answers, setAnswers)}
           <span>. (The order does not matter.)</span>
-          {showResults && <Explain qa={qa} questionId="5-5" />}
-          {Kaisetsu(showResults, "23-5-14")}
+          <div className="flex flex-row gap-2">
+            <Explain qa={qa} questionId="5-5"  isShow={showResults} />
+            {Kaisetsu(showResults, "23-5-14")}
+          </div>
         </div>
 
         <div className="space-y-3 ml-2 md:ml-8">

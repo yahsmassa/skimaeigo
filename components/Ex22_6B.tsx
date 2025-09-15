@@ -50,8 +50,8 @@ const Ex22_6B = () => {
         />
       </div>
       {/* Instructions */}
-      <div className="mb-8">
-        <p className="mb-4">
+      <div className="mb-2">
+        <p className="mb-2">
           <span className="font-bold">B</span> You are in a student group
           preparing a poster for a scientific presentation contest with the
           theme &quot;What we should know in order to protect the
@@ -70,7 +70,7 @@ const Ex22_6B = () => {
           —What You Need to Know—
         </h2>
 
-        <div className="space-y-6">
+        <div className="space-y-1">
           <p className="indent-7">
             The world is full of various types of plastic. Look around, and you
             will see dozens of plastic items. Look closer and you will notice a
@@ -281,7 +281,7 @@ const Ex22_6B = () => {
           Plastics with common properties
         </div>
 
-        <div className="border border-gray-300 p-4">
+        <div className="border border-gray-300 p-4 w-[100px] mx-auto">
           <div className="border border-gray-300 w-16 p-1 mb-2 text-center font-sans">
             47
           </div>
@@ -292,7 +292,7 @@ const Ex22_6B = () => {
       </div>
 
       {/* Questions Section - Outside the poster */}
-      <div className="space-y-8 p-6">
+      <div className="space-y-6 p-6">
         {/* Question 1 */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6B-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
@@ -300,13 +300,18 @@ const Ex22_6B = () => {
             <span>
               Under the first poster heading, your group wants to introduce the
               plastic recycling symbols as explained in the passage. Which of
-              the following is the most appropriate?
+              the following is{' '}
             </span>
-            {renderSelect("44", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="6B-1" isShow={showResults} />
-            {Kaisetsu(showResults, "22-6B-7")}
+            <span>
+              the most appropriate?
+            </span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("44", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="6B-1" isShow={showResults} />
+              {Kaisetsu(showResults, "22-6B-7")}
+            </div>
           </div>
-          <div className="">
+          <div className="space-y-2">
             {[
               "They are symbols that rank the recyclability of plastics and other related problems.",
               "They provide information on the chemical make-up and recycling options of the plastic.",
@@ -329,12 +334,19 @@ const Ex22_6B = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               You have been asked to write descriptions of Type 2 and Type 3
-              plastics. Choose the best options for
+              plastics.{' '}
             </span>
-            {renderSelect("45", 4, answers, setAnswers)} and{" "}
-            {renderSelect("46", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="6B-2" isShow={showResults} />
-            {Kaisetsu(showResults, "22-6B-8")}
+            <span>
+            Choose the best options for
+            </span>
+            {renderSelect("45", 4, answers, setAnswers)}
+            <span className="-mx-2">and</span>
+            {renderSelect("46", 4, answers, setAnswers)}
+            <span className="-ml-2 mr-1 mt-1">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6B-2" isShow={showResults} />
+              {Kaisetsu(showResults, "22-6B-8")}
+            </div>
           </div>
 
           {/* Type 2 Options */}
@@ -345,7 +357,7 @@ const Ex22_6B = () => {
                 45
               </span>
             </div>
-            <div>
+            <div className="space-y-2">
               {[
                 "and commonly known as a single-use plastic",
                 "and used at a wide range of temperatures",
@@ -370,7 +382,7 @@ const Ex22_6B = () => {
                 46
               </span>
             </div>
-            <div>
+            <div className="space-y-2">
               {[
                 "difficult to recycle and should not be burned in the yard",
                 "flammable; however, it is soft and cheap to produce",
@@ -397,12 +409,15 @@ const Ex22_6B = () => {
               properties. According to the article, which two of the following
               are appropriate? (The order does not matter.)
             </span>
-            {renderSelect("47", 6, answers, setAnswers)}・
+            {renderSelect("47", 6, answers, setAnswers)}
+            <span className="-mx-2">・</span>
             {renderSelect("48", 6, answers, setAnswers)}
-            <Explain qa={qa} questionId="6B-3" isShow={showResults} />
-            {Kaisetsu(showResults, "22-6B-9")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6B-3" isShow={showResults} />
+              {Kaisetsu(showResults, "22-6B-9")}
+            </div>
           </div>
-          <div className="">
+          <div className="space-y-2">
             {[
               "Boiling water (100℃) can be served in Type 1 and Type 6 plastic containers.",
               "It is easy to recycle products with Type 1, 2, and 3 logos.",

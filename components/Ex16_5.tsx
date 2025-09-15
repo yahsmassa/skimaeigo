@@ -145,7 +145,7 @@ const Ex16_5 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>At the beginning of the story, Uncle John was</span>
             {renderSelect("42", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-1" />}
+            <Explain qa={qa} questionId="5-1"  isShow={showResults} />
             {Kaisetsu(showResults, "16-5-10")}
           </div>
 
@@ -168,7 +168,7 @@ const Ex16_5 = () => {
               Uncle John&apos;s father began working in the city because
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-2" />}
+            <Explain qa={qa} questionId="5-2"  isShow={showResults} />
             {Kaisetsu(showResults, "16-5-11")}
           </div>
 
@@ -189,7 +189,7 @@ const Ex16_5 = () => {
               future?
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-3" />}
+            <Explain qa={qa} questionId="5-3"  isShow={showResults} />
             {Kaisetsu(showResults, "16-5-12")}
           </div>
           <div className="ml-8 mt-4 space-y-2">
@@ -205,7 +205,7 @@ const Ex16_5 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>What helped to change Uncle John&apos;s life the most?</span>
             {renderSelect("45", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-4" />}
+            <Explain qa={qa} questionId="5-4"  isShow={showResults} />
             {Kaisetsu(showResults, "16-5-13")}
           </div>
           <div className="ml-8 mt-4 space-y-2">
@@ -224,7 +224,7 @@ const Ex16_5 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>What does Uncle John find most rewarding?</span>
             {renderSelect("46", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-5" />}
+            <Explain qa={qa} questionId="5-5"  isShow={showResults} />
             {Kaisetsu(showResults, "16-5-14")}
           </div>
           <div className="ml-8 mt-4 space-y-2">

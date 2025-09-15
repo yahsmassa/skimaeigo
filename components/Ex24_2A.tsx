@@ -143,11 +143,11 @@ const Ex24_2A = () => {
           />
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-1">
           {questionData.passage.content.map((paragraph, index) => (
-            <div key={index}>
+            <div key={index} className="">
               {index > 2 ? (
-                <div>
+                <div className="">
                   <div className="flex flex-col md:flex-row gap-4">
                     <ul className="space-y-2 ">
                       {paragraph.split("\n").map((item, i) => (
@@ -200,12 +200,13 @@ const Ex24_2A = () => {
               <span className="whitespace-nowrap mr-2 font-sans">
                 問{question.number}
               </span>
-              <span>{question.prompt}</span>
-              {renderSelect(String(index + 6), 4, answers, setAnswers)}
-              {showResults && (
-                <Explain qa={qa} questionId={"2A-" + String(index + 1)} />
-              )}
-              {Kaisetsu(showResults, "24-2A-" + String(index + 4))}
+              <span className="-mr-2">{question.prompt}</span>
+              <div className="flex flex-row gap-2">
+               {renderSelect(String(index + 6), 4, answers, setAnswers)}
+                <Explain qa={qa} questionId={"2A-" + String(index + 1)} isShow={showResults} />
+                {Kaisetsu(showResults, "24-2A-" + String(index + 4))}
+              </div>
+
             </div>
             <ol className="list-none space-y-2 ml-6">
               {question.options.map((option, optIndex) => (

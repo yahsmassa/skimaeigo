@@ -179,7 +179,7 @@ const Ex18_6 = () => {
                 (2)?
               </p>
               {renderSelect("46", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="6-1" />}
+              <Explain qa={qa} questionId="6-1"  isShow={showResults} />
               {Kaisetsu(showResults, "18-6-7")}
             </div>
             <div className="ml-8 space-y-2">
@@ -199,7 +199,7 @@ const Ex18_6 = () => {
                 microscopes?
               </p>
               {renderSelect("47", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="6-2" />}
+              <Explain qa={qa} questionId="6-2"  isShow={showResults} />
               {Kaisetsu(showResults, "18-6-8")}
             </div>
             <div className="ml-8 space-y-2">
@@ -218,7 +218,7 @@ const Ex18_6 = () => {
                 According to paragraph (4), what do cameras enable us to do?
               </p>
               {renderSelect("48", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="6-3" />}
+              <Explain qa={qa} questionId="6-3"  isShow={showResults} />
               {Kaisetsu(showResults, "18-6-9")}
             </div>
             <div className="ml-8 space-y-2">
@@ -235,7 +235,7 @@ const Ex18_6 = () => {
               <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
               <p>According to paragraph (5), how are X-rays used?</p>
               {renderSelect("49", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="6-4" />}
+              <Explain qa={qa} questionId="6-4"  isShow={showResults} />
               {Kaisetsu(showResults, "18-6-10")}
             </div>
             <div className="ml-8 space-y-2">
@@ -252,7 +252,7 @@ const Ex18_6 = () => {
               <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
               <p>What is the main idea of this passage?</p>
               {renderSelect("50", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="6-5" />}
+              <Explain qa={qa} questionId="6-5"  isShow={showResults} />
               {Kaisetsu(showResults, "18-6-11")}
             </div>
             <div className="ml-8 space-y-2">
@@ -287,7 +287,7 @@ const Ex18_6 = () => {
                 {renderSelect("52", 4, answers, setAnswers)}
                 {renderSelect("53", 4, answers, setAnswers)}
                 {renderSelect("54", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="6-6" />}
+                <Explain qa={qa} questionId="6-6"  isShow={showResults} />
                 {Kaisetsu(showResults, "18-6-12")}
               </span>
             </p>

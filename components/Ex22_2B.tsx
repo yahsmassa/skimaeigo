@@ -32,9 +32,9 @@ const Ex22_2B = () => {
         />
       </div>
       {/* Header section */}
-      <div className="mb-6">
-        <p className="text-base mb-4">
-          <strong>B</strong> You are the editor of a school English paper.
+      <div className="mb-2">
+        <p className="text-base">
+          You are the editor of a school English paper.
           David, an exchange student from the UK, has written an article for the
           paper.
           {Kaisetsu(showResults, "22-2B-0")}
@@ -43,7 +43,7 @@ const Ex22_2B = () => {
 
       {/* Main article content */}
       <div className="border border-gray-300 p-6">
-        <p className="mb-4">
+        <p className="mb-0">
           Do you like animals? The UK is known as a nation of animal-lovers; two
           in five UK homes have pets. This is lower than in the US, where more
           than half of homes have pets. However, Australia has the highest
@@ -113,10 +113,10 @@ const Ex22_2B = () => {
       </div>
 
       {/* Questions section */}
-      <div className="mt-8 space-y-8">
+      <div className="mt-8 space-y-6">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-1"))}>
-          <div className="mb-4 flex flex-wrap items-center">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "2B-1"))}>
+          <div className="mb-2 flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>
               In terms of the ratios for homes with pets, which shows the&nbsp;
@@ -126,14 +126,15 @@ const Ex22_2B = () => {
             </span>
             <span className="underline">highest to lowest</span>
             <span>?</span>
-            {renderSelect("11", 6, answers, setAnswers)}.
-            <Explain qa={qa} questionId="2B-1" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-2B-4")}
+            <div className="flex flex-row gap-2">
+            {renderSelect("11", 6, answers, setAnswers)}
+            <span className="-ml-2 mt-1 mr-2">.</span>
+              <Explain qa={qa} questionId="2B-1" isShow={showResults} />
+              {Kaisetsu(showResults, "22-2B-4")}
+            </div>
           </div>
 
           <div className="space-y-2 pl-2 md:pl-8">
-            <div>
               {[
                 "Australia — the UK — the US",
                 "Australia — the US — the UK",
@@ -149,26 +150,26 @@ const Ex22_2B = () => {
                   <span>{text}</span>
                 </div>
               ))}
-            </div>
           </div>
         </div>
 
         {/* Question 2 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-2"))}>
-          <div className="mb-4 flex flex-wrap items-center">
+          <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
               According to David&apos;s report, one advantage of having pets is
               that
             </span>
-            {renderSelect("12", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="2B-2" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-2B-5")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("12", 4, answers, setAnswers)}
+              <span className="-ml-2 mt-1 mr-2">.</span>
+              <Explain qa={qa} questionId="2B-2" isShow={showResults} />
+              {Kaisetsu(showResults, "22-2B-5")}
+            </div>
           </div>
 
           <div className="space-y-2 pl-2 md:pl-8">
-            <div>
               {[
                 "you can save money",
                 "you can sleep longer",
@@ -182,7 +183,6 @@ const Ex22_2B = () => {
                   <span>{text}</span>
                 </div>
               ))}
-            </div>
           </div>
         </div>
 
@@ -193,10 +193,12 @@ const Ex22_2B = () => {
             <span>
               The statement that best reflects one finding from the survey is
             </span>
-            {renderSelect("13", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="2B-3" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-2B-6")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("13", 4, answers, setAnswers)}
+              <span className="-ml-2 mt-1 mr-2">.</span>
+              <Explain qa={qa} questionId="2B-3" isShow={showResults} />
+              {Kaisetsu(showResults, "22-2B-6")}
+            </div>
           </div>
 
           <div className="space-y-2 pl-2 md:pl-8">
@@ -226,10 +228,12 @@ const Ex22_2B = () => {
               Which best summarises David&apos;s opinions about having pets in
               Japan?
             </span>
-            {renderSelect("14", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="2B-4" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-2B-7")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("14", 4, answers, setAnswers)}
+              <span className="-ml-2 mt-1 mr-2">.</span>
+              <Explain qa={qa} questionId="2B-4" isShow={showResults} />
+              {Kaisetsu(showResults, "22-2B-7")}
+            </div>
           </div>
 
           <div className="space-y-2 pl-2 md:pl-8">
@@ -256,10 +260,12 @@ const Ex22_2B = () => {
           <div className="mb-4 flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>Which is the most suitable title for the article?</span>
-            {renderSelect("15", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="2B-5" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "22-2B-8")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("15", 4, answers, setAnswers)}
+              <span className="-ml-2 mt-1 mr-2">.</span>
+              <Explain qa={qa} questionId="2B-5" isShow={showResults} />
+              {Kaisetsu(showResults, "22-2B-8")}
+            </div>
           </div>
 
           <div className="space-y-2 pl-2 md:pl-8">

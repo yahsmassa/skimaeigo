@@ -129,7 +129,7 @@ const Ex21_6B = () => {
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
             <span>.</span>
-            {showResults && <Explain qa={qa} questionId="6B-1" />}
+            <Explain qa={qa} questionId="6B-1"  isShow={showResults} />
             {Kaisetsu(showResults, "21-6B-7")}
           </div>
 
@@ -161,7 +161,7 @@ const Ex21_6B = () => {
               should the table be finished?
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6B-2" />}
+            <Explain qa={qa} questionId="6B-2"  isShow={showResults} />
             {Kaisetsu(showResults, "21-6B-8")}
           </div>
 
@@ -283,7 +283,7 @@ const Ex21_6B = () => {
             {renderSelect("45", 5, answers, setAnswers)}
             <span>・</span>
             {renderSelect("46", 5, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6B-3" />}
+            <Explain qa={qa} questionId="6B-3"  isShow={showResults} />
             {Kaisetsu(showResults, "21-6B-9")}
           </div>
 
@@ -328,7 +328,7 @@ const Ex21_6B = () => {
               most appropriate?
             </span>
             {renderSelect("47", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="6B-4" />}
+            <Explain qa={qa} questionId="6B-4"  isShow={showResults} />
             {Kaisetsu(showResults, "21-6B-10")}
           </div>
 

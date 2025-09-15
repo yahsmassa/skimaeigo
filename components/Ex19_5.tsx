@@ -151,7 +151,7 @@ const Ex19_5 = () => {
               Christine originally said she would do the gardening because she
             </span>
             {renderSelect("41", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-1" />}
+            <Explain qa={qa} questionId="5-1"  isShow={showResults} />
             {Kaisetsu(showResults, "19-5-10")}
           </div>
           <div className="space-y-2 ml-8">
@@ -168,7 +168,7 @@ const Ex19_5 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Which of the following was a problem in the garden?</span>
             {renderSelect("42", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-2" />}
+            <Explain qa={qa} questionId="5-2"  isShow={showResults} />
             {Kaisetsu(showResults, "19-5-11")}
           </div>
           <div className="space-y-2 ml-8">
@@ -188,7 +188,7 @@ const Ex19_5 = () => {
               vegetables because
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-3" />}
+            <Explain qa={qa} questionId="5-3"  isShow={showResults} />
             {Kaisetsu(showResults, "19-5-12")}
           </div>
           <div className="space-y-2 ml-8">
@@ -209,7 +209,7 @@ const Ex19_5 = () => {
               <span>?</span>
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-4" />}
+            <Explain qa={qa} questionId="5-4"  isShow={showResults} />
             {Kaisetsu(showResults, "19-5-13")}
           </div>
           <div className="space-y-2 ml-8">
@@ -228,7 +228,7 @@ const Ex19_5 = () => {
               What did Christine learn through her experience of gardening?
             </span>
             {renderSelect("45", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-5" />}
+            <Explain qa={qa} questionId="5-5"  isShow={showResults} />
             {Kaisetsu(showResults, "19-5-14")}
           </div>
           <div className="space-y-2 ml-8">

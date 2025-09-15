@@ -12,98 +12,6 @@ const Ex23_4 = () => {
   const [showResults, setShowResults] = useState(false);
   const [answers, setAnswers] = useState<Answers>({});
   const question: QandA[] = qanda.find(q => q.id === "23_4")?.qanda || [];
-  //   {
-  //     questionId: "4-1",
-  //     qa: [
-  //       {
-  //         questionNumber: "24",
-  //         answer: 0,
-  //       },
-  //     ],
-  //     rightAnswerString: "1",
-  //     answerString: "",
-  //     isCorrect: false,
-  //     points: 3,
-  //     explanation: [
-  //       "正解は①「継続的な練習は退屈だ」",
-  //       "Tim Oxford の第1段落6文目 &quot;Also, this sort ... dull and demotivating.&quot; （また，この種の反復的な学習は退屈でやる気をなくさせる）という内容から，",
-  //     ],
-  //   },
-  //   {
-  //     questionId: "4-2",
-  //     qa: [
-  //       {
-  //         questionNumber: "25",
-  //         answer: 0,
-  //       },
-  //     ],
-  //     rightAnswerString: "1",
-  //     answerString: "",
-  //     isCorrect: false,
-  //     points: 3,
-  //     explanation: [
-  //       "正解は①「4週間」",
-  //       "Cheng Lee の第3段落4文目 &quot;As the figure ... learning group.&quot;（右の図が示すように，最後の学習セッションの28日後，テストで思い出した名前の率は間隔をあけて学習したグループの方が高くなった）という内容から",
-  //     ],
-  //   },
-  //   {
-  //     questionId: "4-3",
-  //     qa: [
-  //       {
-  //         questionNumber: "26",
-  //         answer: 0,
-  //       },
-  //       {
-  //         questionNumber: "27",
-  //         answer: 0,
-  //       },
-  //     ],
-  //     rightAnswerString: "25",
-  //     answerString: "",
-  //     isCorrect: false,
-  //     isSeparate: true,
-  //     points: 4,
-  //     explanation: [
-  //       "正解：[26] ②・[27] ⑤",
-  //       "Cheng Lee の第1段落最終文 &quot;There is ... longer intervals.&quot;（「間隔をあけた学習」と呼ばれる，別の種類の反復学習があり，そこでは生徒たちは新しい情報を記憶してからより長い期間を開けてそれを復習する）という内容から，[26]には②「長期の」が入る。 ",
-  //       "また，Tim Oxford の方法について，Cheng Lee は第1段落 3文目 &quot;However, the repetitive ... is not effective.&quot;（しかし，彼が論じていた反復学習の戦略は，「集中的な学習」と呼ばれるものだが，効率的ではない）と述べているので，[27]には⑤「集中的な」が入る。",
-  //     ],
-  //   },
-  //   {
-  //     questionId: "4-4",
-  //     qa: [
-  //       {
-  //         questionNumber: "28",
-  //         answer: 0,
-  //       },
-  //     ],
-  //     rightAnswerString: "1",
-  //     answerString: "",
-  //     isCorrect: false,
-  //     points: 3,
-  //     explanation: [
-  //       "正解は①「経験に基づく学習」",
-  //       "Tim Oxford は第2段落1文目（To help them ...）・2文目（In this kind ...）で「彼らが学習するのを手助けするために，私は試しに「文脈的学習」を使ってみた。この種の学習では，新しい知識が生徒たち自身の経験を通じて構築される）と述べている。また，Cheng Lee は第1段落1文目（Mr. Oxford&apos;s thoughts ...）・2文目（I agree that ...）で「オックスフォード氏の文脈的学習に関する考え方は見識のあるものだった。私はそれが役に立つということに同意する」という内容から",
-  //     ],
-  //   },
-  //   {
-  //     questionId: "4-5",
-  //     qa: [
-  //       {
-  //         questionNumber: "29",
-  //         answer: 0,
-  //       },
-  //     ],
-  //     rightAnswerString: "2",
-  //     answerString: "",
-  //     isCorrect: false,
-  //     points: 3,
-  //     explanation: [
-  //       "正解は②「最も効率的な学習感覚の長さ」",
-  //       "Cheng Lee は「間隔をあけた学習」の方が効率的であるということを，第3段落で過去の研究を挙げて論じている。ここでは28日後のデータしか使われておらず，何日が最も効果的なのかは述べられていない",
-  //     ],
-  //   },
-  // ];
   const [qa, setQA] = useState<QandA[]>(question);
 
   return (
@@ -123,8 +31,8 @@ const Ex23_4 = () => {
         />
       </div>{" "}
       {/* Context */}
-      <div className="mb-8">
-        <p className="text-gray-700 leading-relaxed">
+      <div className="mb-2">
+        <p className="text-gray-700 leading-relaxed px-2">
           Your teacher has asked you to read two articles about effective ways
           to study. You will discuss what you learned in your next class.
           {Kaisetsu(showResults, "23-4-0")}
@@ -144,7 +52,7 @@ const Ex23_4 = () => {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-4">
+        <div className="space-y-1">
           <p className="indent-7">
             As a science teacher, I am always concerned about how to help
             students who struggle to learn. Recently, I found that their main
@@ -184,7 +92,7 @@ const Ex23_4 = () => {
               </p>
             </div>
             {/* Rock Properties Table as Image */}
-            <div className="w-full md:w-1/3 mt-4 md:mt-0">
+            <div className="w-[70%] mx-auto md:w-1/3 mt-4 md:mt-0">
               <Image
                 src="/images/Ex23-4-1.jpg"
                 alt="Rock properties table showing: Rock name: Obsidian, Rock type: igneous, Coloring: dark, Texture: glassy, and a picture of the rock"
@@ -208,7 +116,7 @@ const Ex23_4 = () => {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-4">
+        <div className="space-y-1">
           <p className="indent-7">
             Mr. Oxford&apos;s thoughts on contextual learning were insightful. I
             agree that it can be beneficial. Repetition, though, can also work
@@ -260,7 +168,7 @@ const Ex23_4 = () => {
             </div>
 
             {/* Graph */}
-            <div className="w-full md:w-1/3 mt-4 md:mt-0">
+            <div className="w-[60%] mx-auto md:w-1/3 md:ml-3">
               <Image
                 src="/images/Ex23-4-2.webp"
                 alt="Bar graph showing The Average Ratio of Recalled Names: Group A around 55%, Group B around 90%"
@@ -273,16 +181,17 @@ const Ex23_4 = () => {
         </div>
       </div>
       {/* Questions Section */}
-      <div className="mt-12 space-y-12">
+      <div className="mt-12 space-y-6">
         {/* Question 1 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-1"))}>
-          <div className="flex items-center mb-4 flex-wrap">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-1"))}>
+          <div className="flex items-center mb-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>Oxford believes that</span>
-            {renderSelect("24", 4, answers, setAnswers)}.
-            <Explain qa={qa} questionId="4-1" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-4-8")}
+            {renderSelect("24", 4, answers, setAnswers)}<span className="-ml-1 mr-2">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="4-1" isShow={showResults} />
+              {Kaisetsu(showResults, "23-4-8")}
+            </div>
           </div>
           {[
             "continuous drilling is boring",
@@ -300,15 +209,16 @@ const Ex23_4 = () => {
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-2"))}>
-          <div className="flex items-center mb-4 flex-wrap">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-2"))}>
+          <div className="flex items-center mb-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>In the study discussed by Lee, students took a test</span>
             {renderSelect("25", 4, answers, setAnswers)}
-            <span>after their final session.</span>
-            <Explain qa={qa} questionId="4-2" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-4-9")}
+            <span className="mr-2">after their final session.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="4-2" isShow={showResults} />
+              {Kaisetsu(showResults, "23-4-9")}
+            </div>
           </div>
           {["four weeks", "immediately", "one day", "one week"].map(
             (answer, index) => (
@@ -323,7 +233,7 @@ const Ex23_4 = () => {
         </div>
 
         {/* Question 3 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-3"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-3"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
@@ -333,12 +243,15 @@ const Ex23_4 = () => {
             <span>intervals, in order to overcome the disadvantages of</span>
             {renderSelect("27", 6, answers, setAnswers)}
             <span>
-              learning that Oxford discussed. (Choose the best one for each box
-              from options ①～⑥.)
+              learning that Oxford discussed. (Choose the best{' '}
             </span>
-            <Explain qa={qa} questionId="4-3" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-4-10")}
+            <span className="mr-2">
+              one for each box from options ①～⑥.)
+            </span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="4-3" isShow={showResults} />
+              {Kaisetsu(showResults, "23-4-10")}
+            </div>
           </div>
           {[
             "contextual",
@@ -358,15 +271,17 @@ const Ex23_4 = () => {
         </div>
 
         {/* Question 4 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-4"))}>
-          <div className="flex items-center mb-4 flex-wrap">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-4"))}>
+          <div className="flex items-center mb-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Both writers agree that</span>
             {renderSelect("28", 4, answers, setAnswers)}
-            <span>is helpful for remembering new information.</span>
-            <Explain qa={qa} questionId="4-4" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-4-11")}
+            <span className="">is helpful for{' '}</span>
+            <span className="mr-2">remembering new information.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="4-4" isShow={showResults} />
+              {Kaisetsu(showResults, "23-4-11")}
+            </div>
           </div>
           {[
             "experiential learning",
@@ -384,17 +299,21 @@ const Ex23_4 = () => {
         </div>
 
         {/* Question 5 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "4-5"))}>
-          <div className="flex items-center mb-4 flex-wrap">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "4-5"))}>
+          <div className="flex items-center mb-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>
               Which additional information would be the best to further support
-              Lee's argument for spaced learning?
+              Lee's{' '}
             </span>
-            {renderSelect("29", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="4-5" isShow={showResults} />
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-4-12")}
+            <span>
+              argument for spaced learning?
+            </span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("29", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="4-5" isShow={showResults} />
+              {Kaisetsu(showResults, "23-4-12")}
+            </div>
           </div>
           {[
             "The main factor that makes a science class attractive",

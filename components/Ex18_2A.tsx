@@ -212,7 +212,7 @@ const JapaneseExamQuestion = () => {
               <span className="mr-2">of the</span>
               {renderSelect("8", 4, answers, setAnswers)}
               <span className="mr-2">salary.</span>
-              {showResults && <Explain qa={qa} questionId="2A-1" />}
+              <Explain qa={qa} questionId="2A-1"  isShow={showResults} />
             </div>
           </div>
 
@@ -240,7 +240,7 @@ const JapaneseExamQuestion = () => {
               {renderSelect("9", 4, answers, setAnswers)}
               <span className="mr-2">to get</span>
               <span className="mr-2">something to drink.</span>
-              {showResults && <Explain qa={qa} questionId="2A-2" />}
+              <Explain qa={qa} questionId="2A-2"  isShow={showResults} />
             </div>
           </div>
 
@@ -275,7 +275,7 @@ const JapaneseExamQuestion = () => {
               {renderSelect("10", 4, answers, setAnswers)}
               <span className="mr-2">for my school's</span>
               <span className="mr-2">badminton team.</span>
-              {showResults && <Explain qa={qa} questionId="2A-3" />}
+              <Explain qa={qa} questionId="2A-3"  isShow={showResults} />
             </div>
           </div>
 
@@ -307,7 +307,7 @@ const JapaneseExamQuestion = () => {
               <span className="mr-2">
                 why he decided to buy such an old car.
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-4" />}
+              <Explain qa={qa} questionId="2A-4"  isShow={showResults} />
             </div>
           </div>
 
@@ -337,7 +337,7 @@ const JapaneseExamQuestion = () => {
               <span className="mr-2">seven years</span>
               <span className="mr-2">when she won the national</span>
               <span className="mr-2"> novel contest.</span>
-              {showResults && <Explain qa={qa} questionId="2A-5" />}
+              <Explain qa={qa} questionId="2A-5"  isShow={showResults} />
             </div>
           </div>
 
@@ -370,7 +370,7 @@ const JapaneseExamQuestion = () => {
               {renderSelect("13", 4, answers, setAnswers)}
               <span className="mr-2">we thought was needed</span>
               <span className="mr-2">to finish the project.</span>
-              {showResults && <Explain qa={qa} questionId="2A-6" />}
+              <Explain qa={qa} questionId="2A-6"  isShow={showResults} />
             </div>
           </div>
 
@@ -398,7 +398,7 @@ const JapaneseExamQuestion = () => {
               <span className="mr-2">
                 I didn't notice it, but there was a huge spider in the bathroom.
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-7" />}
+              <Explain qa={qa} questionId="2A-7"  isShow={showResults} />
             </div>
           </div>
 
@@ -431,7 +431,7 @@ const JapaneseExamQuestion = () => {
               <span className="mr-2">
                 {renderSelect("15", 4, answers, setAnswers)}
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-8" />}
+              <Explain qa={qa} questionId="2A-8"  isShow={showResults} />
             </div>
           </div>
 
@@ -468,7 +468,7 @@ const JapaneseExamQuestion = () => {
               <span className="mr-2">
                 {renderSelect("16", 4, answers, setAnswers)}
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-9" />}
+              <Explain qa={qa} questionId="2A-9"  isShow={showResults} />
             </div>
           </div>
 
@@ -504,7 +504,7 @@ const JapaneseExamQuestion = () => {
               <span className="mr-2">
                 {renderSelect("17", 4, answers, setAnswers)}
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-10" />}
+              <Explain qa={qa} questionId="2A-10"  isShow={showResults} />
             </div>
           </div>
 

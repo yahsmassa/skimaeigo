@@ -31,7 +31,7 @@ const Ex23_2A = () => {
         />
       </div>{" "}
       {/* Context */}
-      <div className="mb-6">
+      <div className="mb-2">
         <p className="text-gray-700">
           You want to buy a good pair of shoes as you walk a long way to school
           and often get sore feet. You are searching on a UK website and find
@@ -46,7 +46,7 @@ const Ex23_2A = () => {
           shoe line
         </h1>
 
-        <div className="flex justify-between mb-6">
+        <div className="flex justify-between mb-2">
           <p className="w-2/3">
             <span className="italic">Smart Support</span> shoes are strong,
             long-lasting, and reasonably priced. They are available in three
@@ -65,7 +65,7 @@ const Ex23_2A = () => {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-2">
           <h2 className="font-bold text-lg text-center">Special Features</h2>
 
           <p className="leading-relaxed">
@@ -82,7 +82,7 @@ const Ex23_2A = () => {
 
           <h2 className="font-bold text-lg text-center">Advantages</h2>
 
-          <div className="space-y-4">
+          <div className="space-y-2">
             <div>
               <p className="font-bold">Better Balance:</p>
               <p className="ml-4">
@@ -107,15 +107,15 @@ const Ex23_2A = () => {
               </p>
             </div>
 
-            <div>
+            <div className="">
               <p className="font-bold">Route Options:</p>
               <p className="ml-4">
                 View your live location on your device, have the directions play
                 automatically in your earphones, or use your smartwatch to read
                 directions.
               </p>
-            </div>
             {Kaisetsu(showResults, "23-2A-3")}
+            </div>
           </div>
         </div>
       </div>
@@ -146,13 +146,15 @@ const Ex23_2A = () => {
       >
         <div className="flex items-center flex-wrap mb-4 gap-2">
           <span className="whitespace-nowrap mr-1 font-sans">問 1</span>
-          <span>
+          <span className="-mr-2">
             According to the maker&apos;s statements, which best describes the
             new shoes?
           </span>
-          {renderSelect("6", 4, answers, setAnswers)}
-          <Explain qa={qa} questionId="2A-1" isShow={showResults} />
-          {Kaisetsu(showResults, "23-2A-5")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("6", 4, answers, setAnswers)}
+            <Explain qa={qa} questionId="2A-1" isShow={showResults} />
+            {Kaisetsu(showResults, "23-2A-5")}
+          </div>
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -176,12 +178,14 @@ const Ex23_2A = () => {
       >
         <div className="flex items-center flex-wrap mb-4 gap-2">
           <span className="whitespace-nowrap mr-1">問 2</span>
-          <span>
+          <span className="-mr-2">
             Which benefit offered by the shoes is most likely to appeal to you?
           </span>
-          {renderSelect("7", 4, answers, setAnswers)}
-          <Explain qa={qa} questionId="2A-2" isShow={showResults} />
-          {Kaisetsu(showResults, "23-2A-6")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("7", 4, answers, setAnswers)}
+            <Explain qa={qa} questionId="2A-2" isShow={showResults} />
+            {Kaisetsu(showResults, "23-2A-6")}
+          </div>
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -205,12 +209,14 @@ const Ex23_2A = () => {
       >
         <div className="flex items-center flex-wrap mb-4 gap-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
-          <span>
+          <span className="-mr-2">
             One <u>opinion</u> stated by a customer is that
           </span>
-          {renderSelect("8", 4, answers, setAnswers)}
-          <Explain qa={qa} questionId="2A-3" isShow={showResults} />
-          {Kaisetsu(showResults, "23-2A-7")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("8", 4, answers, setAnswers)}
+            <Explain qa={qa} questionId="2A-3" isShow={showResults} />
+            {Kaisetsu(showResults, "23-2A-7")}
+          </div>
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -238,9 +244,11 @@ const Ex23_2A = () => {
             One customer&apos;s comment mentions using audio devices. Which
             benefit is this comment based on?
           </span>
-          {renderSelect("9", 4, answers, setAnswers)}
-          <Explain qa={qa} questionId="2A-4" isShow={showResults} />
-          {Kaisetsu(showResults, "23-2A-8")}
+          <div className="flex flex-row gap-2">
+            {renderSelect("9", 4, answers, setAnswers)}
+            <Explain qa={qa} questionId="2A-4" isShow={showResults} />
+            {Kaisetsu(showResults, "23-2A-8")}
+          </div>
         </div>
         <ol className="list-none space-y-2">
           {[
@@ -266,10 +274,11 @@ const Ex23_2A = () => {
           <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
           <span>According to one customer&apos;s opinion,</span>
           {renderSelect("10", 4, answers, setAnswers)}
-          <span>is recommended.</span>
-          <Explain qa={qa} questionId="2A-5" isShow={showResults} />
-          <span className="mr-2"></span>
-          {Kaisetsu(showResults, "23-2A-9")}
+          <span className="mr-2">is recommended.</span>
+          <div className="flex flex-row gap-2">
+            <Explain qa={qa} questionId="2A-5" isShow={showResults} />
+            {Kaisetsu(showResults, "23-2A-9")}
+          </div>
         </div>
         <ol className="list-none space-y-2">
           {[

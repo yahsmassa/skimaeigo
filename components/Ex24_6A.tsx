@@ -39,7 +39,7 @@ const Ex24_6A = () => {
       <div className="space-y-6">
         <h2 className="text-xl font-bold text-center">Perceptions of Time</h2>
 
-        <div className="space-y-4">
+        <div className="space-y-1">
           <p className="leading-relaxed indent-7">
             When you hear the word &quot;time,&quot; it is probably hours,
             minutes, and seconds that immediately come to mind. In the late 19th
@@ -221,10 +221,13 @@ const Ex24_6A = () => {
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2 font-sans">問 1</span>{" "}
             <span>Choose the best options for</span>
-            {renderSelect("39", 6, answers, setAnswers)} and
+            {renderSelect("39", 6, answers, setAnswers)}
+            <span className="-mx-2">and</span>
             {renderSelect("40", 6, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId={"6A-1"} />}
-            {Kaisetsu(showResults, "24-6A-8")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId={"6A-1"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-6A-8")}
+            </div>
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -248,10 +251,12 @@ const Ex24_6A = () => {
         <div className={cn(showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2 font-sans">問 2</span>
-            <span>Choose the best option for</span>
+            <span className="-mx-2">Choose the best option for</span>
             {renderSelect("41", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId={"6A-2"} />}
-            {Kaisetsu(showResults, "24-6A-9")}
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId={"6A-2"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-6A-9")}
+            </div>
           </div>
           {[
             "major lifestyle change at any age will likely make time slow down",
@@ -270,10 +275,12 @@ const Ex24_6A = () => {
         <div className={cn(showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2 font-sans">問 3</span>
-            <span>Choose the best option for</span>
-            {renderSelect("42", 6, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId={"6A-3"} />}
-            {Kaisetsu(showResults, "24-6A-10")}
+            <span className="-mx-2">Choose the best option for</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("42", 6, answers, setAnswers)}
+              <Explain qa={qa} questionId={"6A-3"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-6A-10")}
+            </div>
           </div>
           {[
             "anticipating a message from a classmate",
@@ -294,9 +301,11 @@ const Ex24_6A = () => {
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2 font-sans">問 4</span>
             <span>Choose the best option for</span>
-            {renderSelect("43", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId={"6A-4"} />}
-            {Kaisetsu(showResults, "24-6A-11")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("43", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId={"6A-4"} />
+              {Kaisetsu(showResults, "24-6A-11")}
+            </div>
           </div>
           {[
             "guessing how long you've been jogging so far",

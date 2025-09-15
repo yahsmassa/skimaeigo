@@ -50,7 +50,7 @@ const TestQuestion = () => {
             >
               <span className="font-bold mr-2 font-sans">問1</span>
               {renderSelect("27", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="3A-1" />}
+              <Explain qa={qa} questionId="3A-1"  isShow={showResults} />
               <span className="mr-2"></span>
               {Kaisetsu(showResults, "20-3A-1")}
             </div>
@@ -101,7 +101,7 @@ const TestQuestion = () => {
             >
               <span className="font-bold mr-2 font-sans">問2</span>
               {renderSelect("28", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="3A-2" />}
+              <Explain qa={qa} questionId="3A-2"  isShow={showResults} />
               <span className="mr-2"></span>
               {Kaisetsu(showResults, "20-3A-2")}
             </div>
@@ -152,7 +152,7 @@ const TestQuestion = () => {
             >
               <span className="font-bold mr-2 font-sans">問3</span>
               {renderSelect("29", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="3A-3" />}
+              <Explain qa={qa} questionId="3A-3"  isShow={showResults} />
               <span className="mr-2"></span>
               {Kaisetsu(showResults, "20-3A-3")}
             </div>

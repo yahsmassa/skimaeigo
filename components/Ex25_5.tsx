@@ -270,9 +270,11 @@ const Ex25_5 = () => {
               Based on your email, what is your overall worry about being on the
               volunteer program?
             </span>
-            {renderSelect("18", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-1" />}
-            {Kaisetsu(showResults, "25-5-11")}
+            <div className="flex flex-row items-center gap-2">
+              {renderSelect("18", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="5-1"  isShow={showResults} />
+              {Kaisetsu(showResults, "25-5-11")}
+            </div>
           </div>
           <div className="space-y-2 pl-8">
             <div className="flex gap-2">
@@ -314,7 +316,7 @@ const Ex25_5 = () => {
             {renderSelect("20", 6, answers, setAnswers)}
             <span>)</span>
             <span>based on the morning and afternoon themes?</span>
-            {showResults && <Explain qa={qa} questionId="5-2" />}
+            <Explain qa={qa} questionId="5-2"  isShow={showResults} />
             {Kaisetsu(showResults, "25-5-12")}
           </div>
           <div className="space-y-2 pl-8">
@@ -352,9 +354,11 @@ const Ex25_5 = () => {
               Referring to Professor Ryan&apos;s reply, which of the following
               needs to be reconsidered?
             </span>
-            {renderSelect("21", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-3" />}
-            {Kaisetsu(showResults, "25-5-13")}
+            <div className="flex flex-row items-center gap-2">
+              {renderSelect("21", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="5-3"  isShow={showResults} />
+              {Kaisetsu(showResults, "25-5-13")}
+            </div>
           </div>
           <div className="space-y-2 pl-8">
             <div className="flex gap-2">
@@ -383,9 +387,11 @@ const Ex25_5 = () => {
               Which diagram best represents Professor Ryan&apos;s seating plan
               for the debate?
             </span>
-            {renderSelect("22", 6, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-4" />}
-            {Kaisetsu(showResults, "25-5-14")}
+            <div className="flex flex-row items-center gap-2">
+              {renderSelect("22", 6, answers, setAnswers)}
+              <Explain qa={qa} questionId="5-4"  isShow={showResults} />
+              {Kaisetsu(showResults, "25-5-14")}
+            </div>
           </div>
           <div className="ml-3">
             <Image
@@ -406,7 +412,7 @@ const Ex25_5 = () => {
               pieces of information are you most likely to include?
             </span>
             {renderSelect("23", 6, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-5" />}
+            <Explain qa={qa} questionId="5-5"  isShow={showResults} />
             {Kaisetsu(showResults, "25-5-15")}
           </div>
           <div className="space-y-2 pl-8">

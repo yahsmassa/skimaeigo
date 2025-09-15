@@ -239,7 +239,7 @@ const JapaneseTestQuestion = () => {
               {renderSelect("8", 4, answers, setAnswers)}
               <span>from perfect.</span>
             </div>
-            {showResults && <Explain qa={qa} questionId="2A-1" />}
+            <Explain qa={qa} questionId="2A-1"  isShow={showResults} />
           </div>
 
           <div className="grid grid-cols-4 gap-2 md:gap-4  md:ml-8">
@@ -264,7 +264,7 @@ const JapaneseTestQuestion = () => {
               <span className="mr-2">Emergency doors can be found at</span>
               {renderSelect("9", 4, answers, setAnswers)}
               <span className="mr-2">ends of this hallway.</span>
-              {showResults && <Explain qa={qa} questionId="2A-2" />}
+              <Explain qa={qa} questionId="2A-2"  isShow={showResults} />
             </div>
           </div>
 
@@ -292,7 +292,7 @@ const JapaneseTestQuestion = () => {
               </span>
               {renderSelect("10", 4, answers, setAnswers)}
               <span className="mr-2">I can get a scholarship.</span>
-              {showResults && <Explain qa={qa} questionId="2A-3" />}
+              <Explain qa={qa} questionId="2A-3"  isShow={showResults} />
             </div>
           </div>
 
@@ -318,7 +318,7 @@ const JapaneseTestQuestion = () => {
               <span className="mr-2">Noriko can speak Swahili and</span>
               {renderSelect("11", 4, answers, setAnswers)}
               <span className="mr-2">can Marco.</span>
-              {showResults && <Explain qa={qa} questionId="2A-4" />}
+              <Explain qa={qa} questionId="2A-4"  isShow={showResults} />
             </div>
           </div>
 
@@ -347,7 +347,7 @@ const JapaneseTestQuestion = () => {
               <span className="mr-2">one thing, but to do it is</span>
               {renderSelect("12", 4, answers, setAnswers)}
               <span>.</span>
-              {showResults && <Explain qa={qa} questionId="2A-5" />}
+              <Explain qa={qa} questionId="2A-5"  isShow={showResults} />
             </div>
           </div>
 
@@ -378,7 +378,7 @@ const JapaneseTestQuestion = () => {
               <span>difficult to get</span>
               {renderSelect("13", 4, answers, setAnswers)}
               <span className="mr-2">.</span>
-              {showResults && <Explain qa={qa} questionId="2A-6" />}
+              <Explain qa={qa} questionId="2A-6"  isShow={showResults} />
             </div>
           </div>
 
@@ -406,7 +406,7 @@ const JapaneseTestQuestion = () => {
               <span>When Ayano came to my house,</span>
               {renderSelect("14", 4, answers, setAnswers)}
               <span className="mr-2">happened that nobody was at home.</span>
-              {showResults && <Explain qa={qa} questionId="2A-7" />}
+              <Explain qa={qa} questionId="2A-7"  isShow={showResults} />
             </div>
           </div>
 
@@ -433,7 +433,7 @@ const JapaneseTestQuestion = () => {
               <span className="mr-2">（ A ） as the roads are （ B ）.</span>
               <span className="flex flex-row">
                 {renderSelect("15", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="2A-8" />}
+                <Explain qa={qa} questionId="2A-8"  isShow={showResults} />
               </span>
             </div>
 
@@ -472,7 +472,7 @@ const JapaneseTestQuestion = () => {
               <span>so please （ A ） it a （ B ） thought.</span>
               <span className="flex flex-row">
                 {renderSelect("16", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="2A-9" />}
+                <Explain qa={qa} questionId="2A-9"  isShow={showResults} />
               </span>
             </div>
 
@@ -508,7 +508,7 @@ const JapaneseTestQuestion = () => {
               <span>the two sitting in the back row.</span>
               <span className="flex flex-row">
                 {renderSelect("17", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="2A-10" />}
+                <Explain qa={qa} questionId="2A-10"  isShow={showResults} />
               </span>
             </div>
 

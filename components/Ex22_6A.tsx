@@ -31,7 +31,7 @@ const Ex22_6A = () => {
         />
       </div>
       {/* Question Header */}
-      <div className="mb-8">
+      <div className="mb-2">
         <span className="font-bold">A</span>
         <span className="ml-4">
           Your study group is learning about &quot;how time of day affects
@@ -47,7 +47,7 @@ const Ex22_6A = () => {
           When Does the Day Begin for You?
         </h1>
 
-        <div className="space-y-6">
+        <div className="space-y-1">
           <p className="text-justify indent-7">
             When asked &quot;Are you a morning person?&quot; some reply
             &quot;No, I&apos;m a night owl.&quot; Such people can concentrate
@@ -176,7 +176,7 @@ const Ex22_6A = () => {
 
             <section className="mb-6">
               <h2 className="font-bold mb-2">The Main Points</h2>
-              <ul className="ml-4 space-y-2">
+              <ul className="ml-4 space-y-1">
                 <li className="flex">
                   <span className="mr-2">•</span>
                   <p>
@@ -216,7 +216,7 @@ const Ex22_6A = () => {
 
             <section>
               <h2 className="font-bold mb-2">Interesting Details</h2>
-              <ul className="ml-4 space-y-2">
+              <ul className="ml-4 space-y-1">
                 <li className="flex">
                   <span className="mr-2">•</span>
                   <p>
@@ -248,38 +248,47 @@ const Ex22_6A = () => {
           </div>
         </div>
       </div>
+      {/* Question 1 */}
       <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "6A-1"))}>
-        <div className="flex items-center flex-wrap gap-2 mb-4">
+        <div className="flex items-center flex-wrap gap-2 mb-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
-          <span>Choose the best option for</span>{" "}
-          {renderSelect("39", 4, answers, setAnswers)}.
-          {showResults && <Explain qa={qa} questionId="6A-1" />}
-          {Kaisetsu(showResults, "22-6A-12")}
-        </div>
-        {[
-          "achieves goals quickly",
-          "likes keeping pet birds",
-          "lively in the daytime",
-          "skillful in finding food",
-        ].map((text, index) => (
-          <div key={index} className="flex items-start ml-2 md:ml-8">
-            <span className="w-6 h-6 flex items-center justify-center mr-2">
-              {"①②③④⑤⑥"[index]}
-            </span>
-            <span>{text}</span>
+          <span>Choose the best option for</span>
+          <div className="flex flex-row gap-2">
+            {renderSelect("39", 4, answers, setAnswers)}
+            <span className="-ml-2 mr-1 mt-1">.</span>
+            <Explain qa={qa} questionId="6A-1"  isShow={showResults} />
+            {Kaisetsu(showResults, "22-6A-12")}
           </div>
-        ))}
+        </div>
+        <div className="space-y-2">
+          {[
+            "achieves goals quickly",
+            "likes keeping pet birds",
+            "lively in the daytime",
+            "skillful in finding food",
+          ].map((text, index) => (
+            <div key={index} className="flex items-start ml-2 md:ml-8">
+              <span className="w-6 h-6 flex items-center justify-center mr-2">
+                {"①②③④⑤⑥"[index]}
+              </span>
+              <span>{text}</span>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="mt-8 space-y-8">
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Choose the best option for</span>{" "}
-            {renderSelect("40", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="6A-2" />}
-            {Kaisetsu(showResults, "22-6A-13")}
+            {renderSelect("40", 4, answers, setAnswers)}
+            <span className="-ml-2 mr-1 mt-1">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6A-2"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-6A-13")}
+            </div>
           </div>
-          <div>
+          <div className="space-y-2">
             {[
               "a more flexible time and performance schedule will be developed in the future",
               "enjoying social activities in the morning becomes more important as we age",
@@ -306,14 +315,15 @@ const Ex22_6A = () => {
         </div>
 
         <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-3"))}>
-          <div className="flex items-center flex-wrap gap-2 mb-4">
+          <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>Choose the best option for</span>{" "}
-            {renderSelect("41", 4, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="6A-3" />}
+            {renderSelect("41", 4, answers, setAnswers)}
+            <span className="-ml-3 mr-1">.</span>
+            <Explain qa={qa} questionId="6A-3"  isShow={showResults} />
             {Kaisetsu(showResults, "22-6A-14")}
           </div>
-          <div>
+          <div className="space-y-2">
             {[
               "explain that certain societies have long believed that a day begins at night",
               "indicate that nocturnal people were more religious in the past",
@@ -330,16 +340,20 @@ const Ex22_6A = () => {
           </div>
         </div>
 
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "6A-4"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "6A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>Choose the best options for</span>{" "}
-            {renderSelect("42", 6, answers, setAnswers)} and{" "}
-            {renderSelect("43", 6, answers, setAnswers)}.
-            {showResults && <Explain qa={qa} questionId="6A-4" />}
-            {Kaisetsu(showResults, "22-6A-15")}
+            {renderSelect("42", 6, answers, setAnswers)}
+            <span className="-mx-2">and</span>
+            {renderSelect("43", 6, answers, setAnswers)}
+            <span className="-ml-2 mr-1">.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="6A-4"  isShow={showResults} />
+              {Kaisetsu(showResults, "22-6A-15")}
+            </div>
           </div>
-          <div>
+          <div className="space-y-2">
             {[
               "amount of sleep",
               "appearance",

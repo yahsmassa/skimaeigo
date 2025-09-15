@@ -31,7 +31,7 @@ const Ex23_1A = () => {
         />
       </div>
       <div className="border border-gray-800 p-6">
-        <div className="mb-4">
+        <div className="mb-1">
           <p className="text-gray-700">
             You are studying in the US, and as an afternoon activity you need to
             choose one of two performances to go and see. Your teacher gives you
@@ -90,7 +90,7 @@ const Ex23_1A = () => {
         </div>
 
         <div className="mb-6">
-          <p className="mb-4">
+          <p className="mb-1">
             Instructions: Which performance would you like to attend? Fill in
             the form below and hand it in to your teacher today.
             {Kaisetsu(showResults, "23-1A-4")}
@@ -148,10 +148,11 @@ const Ex23_1A = () => {
             <div className="flex items-center flex-wrap">
               <span className="mr-2 whitespace-nowrap font-sans">問 1</span>
               <span>What are you told to do after reading the handout?</span>
-              {renderSelect("1", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="1A-1" />}
-              <span className="mr-2"></span>
-              {Kaisetsu(showResults, "23-1A-5")}
+              <div className="flex flex-row gap-2">
+                {renderSelect("1", 4, answers, setAnswers)}
+                <Explain qa={qa} questionId="1A-1" isShow={showResults} />
+                {Kaisetsu(showResults, "23-1A-5")}
+              </div>
             </div>
           </div>
           <ol className="list-none space-y-2">
@@ -177,9 +178,11 @@ const Ex23_1A = () => {
               <span className="mr-2 whitespace-nowrap font-sans">問 2</span>
               <span>Which is true about both performances?</span>
             </div>
-            {renderSelect("2", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="1A-2" />}
-            {Kaisetsu(showResults, "23-1A-6")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("2", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="1A-2" isShow={showResults} />
+              {Kaisetsu(showResults, "23-1A-6")}
+            </div>
           </div>
           <ol className="list-none space-y-2">
             {[

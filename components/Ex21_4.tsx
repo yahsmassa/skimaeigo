@@ -262,7 +262,7 @@ export default function Ex21_4() {
             <span> train and catch the number</span>
             {renderSelect("25", 6, answers, setAnswers)}
             <span> train back to their hotel.</span>
-            {showResults && <Explain qa={qa} questionId="4-1" />}
+            <Explain qa={qa} questionId="4-1"  isShow={showResults} />
             {Kaisetsu(showResults, "21-4-12")}
           </div>
 
@@ -281,7 +281,7 @@ export default function Ex21_4() {
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Which best completes the draft schedule?</span>
             {renderSelect("26", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4-2" />}
+            <Explain qa={qa} questionId="4-2"  isShow={showResults} />
             {Kaisetsu(showResults, "21-4-13")}
           </div>
 
@@ -314,7 +314,7 @@ export default function Ex21_4() {
             <span>Unless it rains, the guests will eat lunch in the</span>
             {renderSelect("27", 4, answers, setAnswers)}
             <span>.</span>
-            {showResults && <Explain qa={qa} questionId="4-3" />}
+            <Explain qa={qa} questionId="4-3"  isShow={showResults} />
             {Kaisetsu(showResults, "21-4-14")}
           </div>
 
@@ -335,7 +335,7 @@ export default function Ex21_4() {
             </span>
             {renderSelect("28", 4, answers, setAnswers)}
             <span> on that day.</span>
-            {showResults && <Explain qa={qa} questionId="4-4" />}
+            <Explain qa={qa} questionId="4-4"  isShow={showResults} />
             {Kaisetsu(showResults, "21-4-15")}
           </div>
 
@@ -356,7 +356,7 @@ export default function Ex21_4() {
               program?
             </span>
             {renderSelect("29", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="4-5" />}
+            <Explain qa={qa} questionId="4-5"  isShow={showResults} />
             {Kaisetsu(showResults, "21-4-16")}
           </div>
 

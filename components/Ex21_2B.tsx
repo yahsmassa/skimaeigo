@@ -141,7 +141,7 @@ const Ex21_2B = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問1</span>
             <span>Ken thinks the new policy</span>{" "}
             {renderSelect("11", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-1" />}
+            <Explain qa={qa} questionId="2B-1"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2B-5")}
           </div>
           <div>
@@ -171,7 +171,7 @@ const Ex21_2B = () => {
               forum post is that{" "}
             </span>
             {renderSelect("12", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-2" />}
+            <Explain qa={qa} questionId="2B-2"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2B-6")}
           </div>
           <div>
@@ -198,7 +198,7 @@ const Ex21_2B = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問3</span>
             <span>Who thinks the aim of the policy is to save energy? </span>
             {renderSelect("13", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-3" />}
+            <Explain qa={qa} questionId="2B-3"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2B-7")}
           </div>
           <div>
@@ -224,7 +224,7 @@ const Ex21_2B = () => {
             <span className="underline">fact</span>
             <span> that</span>
             {renderSelect("14", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-4" />}
+            <Explain qa={qa} questionId="2B-4"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2B-8")}
           </div>
           <div className="pl-2 md:pl-6 space-y-1">
@@ -251,7 +251,7 @@ const Ex21_2B = () => {
               What would you research to help Ken oppose the new policy?{" "}
             </span>
             {renderSelect("15", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-5" />}
+            <Explain qa={qa} questionId="2B-5"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2B-9")}
           </div>
           <div className="pl-2 md:pl-6 space-y-1">

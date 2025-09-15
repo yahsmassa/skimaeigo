@@ -144,7 +144,7 @@ const JapaneseExam = () => {
             {renderSelect("19", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">quickly.</span>
-            {showResults && <Explain qa={qa} questionId="2B-1" />}
+            <Explain qa={qa} questionId="2B-1"  isShow={showResults} />
           </div>
         </div>
 
@@ -188,7 +188,7 @@ const JapaneseExam = () => {
             {renderSelect("21", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">was the highest scorer on the team.</span>
-            {showResults && <Explain qa={qa} questionId="2B-2" />}
+            <Explain qa={qa} questionId="2B-2"  isShow={showResults} />
           </div>
         </div>
 
@@ -238,7 +238,7 @@ const JapaneseExam = () => {
             {renderSelect("23", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">using computers.</span>
-            {showResults && <Explain qa={qa} questionId="2B-3" />}
+            <Explain qa={qa} questionId="2B-3"  isShow={showResults} />
           </div>
         </div>
 

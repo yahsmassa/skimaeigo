@@ -86,7 +86,7 @@ const JapaneseTestQuestion = () => {
             <span>Tom, are you saying that</span>
             {renderSelect("32", 4, answers, setAnswers)}
             <span className="mr-2">?</span>
-            {showResults && <Explain qa={qa} questionId="3C-1" />}
+            <Explain qa={qa} questionId="3C-1"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "17-3C-3")}
           </div>
@@ -166,7 +166,7 @@ const JapaneseTestQuestion = () => {
             <span className="mr-2">help</span>
             {renderSelect("33", 4, answers, setAnswers)}
             <span className="mr-2">.</span>
-            {showResults && <Explain qa={qa} questionId="3C-2" />}
+            <Explain qa={qa} questionId="3C-2"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "17-3C-7")}
           </div>
@@ -242,7 +242,7 @@ const JapaneseTestQuestion = () => {
               . Let's see if there are any other points we need to take into
               account.
             </span>
-            {showResults && <Explain qa={qa} questionId="3C-3" />}
+            <Explain qa={qa} questionId="3C-3"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "17-3C-12")}
           </div>

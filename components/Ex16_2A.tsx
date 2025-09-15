@@ -81,7 +81,7 @@ const JapaneseTestAlternate = () => {
                 the platform, so I didn't have to wait in
               </span>
               <span className="mr-2">the cold.</span>
-              {showResults && <Explain qa={qa} questionId="2A-1" />}
+              <Explain qa={qa} questionId="2A-1"  isShow={showResults} />
             </div>
           </div>
 
@@ -114,7 +114,7 @@ const JapaneseTestAlternate = () => {
               <span className="mr-2">
                 small land area, it has a huge population.
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-2" />}
+              <Explain qa={qa} questionId="2A-2"  isShow={showResults} />
             </div>
           </div>
 
@@ -143,7 +143,7 @@ const JapaneseTestAlternate = () => {
               <span className="mr-2">
                 parents may naturally learn two languages.
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-3" />}
+              <Explain qa={qa} questionId="2A-3"  isShow={showResults} />
             </div>
           </div>
 
@@ -177,7 +177,7 @@ const JapaneseTestAlternate = () => {
               <span className="mr-2">student, and</span>
               {renderSelect("11", 4, answers, setAnswers)}
               <span className="mr-2">.</span>
-              {showResults && <Explain qa={qa} questionId="2A-4" />}
+              <Explain qa={qa} questionId="2A-4"  isShow={showResults} />
             </div>
           </div>
 
@@ -208,7 +208,7 @@ const JapaneseTestAlternate = () => {
               <span className="mr-2">Before the movie begins, please</span>
               {renderSelect("12", 4, answers, setAnswers)}
               <span className="mr-2">your mobile phone is switched off.</span>
-              {showResults && <Explain qa={qa} questionId="2A-5" />}
+              <Explain qa={qa} questionId="2A-5"  isShow={showResults} />
             </div>
           </div>
 
@@ -239,7 +239,7 @@ const JapaneseTestAlternate = () => {
               <span className="mr-2">already</span>
               {renderSelect("13", 4, answers, setAnswers)}
               <span className="mr-2">schedule.</span>
-              {showResults && <Explain qa={qa} questionId="2A-6" />}
+              <Explain qa={qa} questionId="2A-6"  isShow={showResults} />
             </div>
           </div>
 
@@ -270,7 +270,7 @@ const JapaneseTestAlternate = () => {
               <span className="mr-2">
                 after my presentation, I felt very relieved.
               </span>
-              {showResults && <Explain qa={qa} questionId="2A-7" />}
+              <Explain qa={qa} questionId="2A-7"  isShow={showResults} />
             </div>
           </div>
 
@@ -300,7 +300,7 @@ const JapaneseTestAlternate = () => {
               </span>
               <span className="mr-2">you ( B ) be able to graduate.</span>
               {renderSelect("15", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="2A-8" />}
+              <Explain qa={qa} questionId="2A-8"  isShow={showResults} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">
@@ -336,7 +336,7 @@ const JapaneseTestAlternate = () => {
                 B ) widely.
               </span>
               {renderSelect("16", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="2A-9" />}
+              <Explain qa={qa} questionId="2A-9"  isShow={showResults} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">
@@ -372,7 +372,7 @@ const JapaneseTestAlternate = () => {
                 in the hospital every day.
               </span>
               {renderSelect("17", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="2A-10" />}
+              <Explain qa={qa} questionId="2A-10"  isShow={showResults} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-2 md:ml-8">

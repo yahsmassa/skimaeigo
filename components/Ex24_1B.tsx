@@ -91,7 +91,7 @@ const Ex24_1B = () => {
         <div className="space-y-2">
           <h3 className="font-smibold">The History Tour</h3>
           <div className="flex gap-4 flex-col md:flex-row">
-            <p className="flex-1">
+            <p className="flex-1 -mb-3">
               The day will begin with a visit to St. Patrick&apos;s Church,
               which was built when the city was established in the mid-1800s.
               Opposite the church is the early-20th-century Mayor&apos;s House.
@@ -117,7 +117,7 @@ const Ex24_1B = () => {
         <div className="space-y-2">
           <h3 className="font-smibold">The Arts Tour</h3>
           <div className="flex gap-4 flex-col md:flex-row">
-            <p className="flex-1">
+            <p className="flex-1 -mb-3">
               The morning will be spent in the Yentonville Arts District. We
               will begin in the Art Gallery where there are many paintings from
               Europe and the US. After lunch, enjoy a concert across the street
@@ -185,12 +185,12 @@ const Ex24_1B = () => {
               <span className="whitespace-nowrap mr-2 font-sans">
                 問{question.number}
               </span>
-              <span>{question.prompt}</span>
-              {renderSelect(String(index + 3), 4, answers, setAnswers)}
-              {showResults && (
-                <Explain qa={qa} questionId={"1B-" + String(index + 1)} />
-              )}
-              {Kaisetsu(showResults, "24-1B-" + String(index + 4))}
+              <span className="-mr-2">{question.prompt}</span>
+              <div className="flex flex-row gap-2">
+                {renderSelect(String(index + 3), 4, answers, setAnswers)}
+                <Explain qa={qa} questionId={"1B-" + String(index + 1)} isShow={showResults} />
+                {Kaisetsu(showResults, "24-1B-" + String(index + 4))}
+              </div>
             </div>
             <ol className="list-none space-y-2 ml-6">
               {question.options.map((option, optIndex) => (

@@ -133,7 +133,7 @@ export default function Ex24_1A() {
       </div>
 
       <div className="">
-        <p className="mb-4">
+        <p className="mb-2">
           {questionData.scenario?.context}
           {Kaisetsu(showResults, "24-1A-0")}
         </p>
@@ -153,20 +153,20 @@ export default function Ex24_1A() {
             Entrance Fee: {questionData.scenario?.eventDetails?.entranceFee}
           </p>
 
-          <p className="mb-4">
+          <p className="mb-0">
             {questionData.scenario?.eventDetails?.description}
             {Kaisetsu(showResults, "24-1A-1")}
           </p>
 
           {questionData.scenario?.activities.map((activity, index) => (
-            <div key={index} className="mb-4">
+            <div key={index} className="mb-0">
               <h4 className="font-bold mb-2">• {activity.title}</h4>
               <p className="ml-4">{activity.description}</p>
               {Kaisetsu(showResults, "24-1A-" + String(index + 2))}
             </div>
           ))}
 
-          <p className="mt-4">
+          <p className="mt-0">
             {questionData.scenario?.additionalInfo}
             {Kaisetsu(showResults, "24-1A-5")}
           </p>
@@ -193,10 +193,11 @@ export default function Ex24_1A() {
                 answers,
                 setAnswers
               )}
-              {showResults && (
-                <Explain qa={qa} questionId={"1A-" + String(index + 1)} />
-              )}
-              {Kaisetsu(showResults, "24-1A-" + String(index + 6))}
+
+              <div className="flex flex-row gap-2">
+                <Explain qa={qa} questionId={"1A-" + String(index + 1)} isShow={showResults} />
+                {Kaisetsu(showResults, "24-1A-" + String(index + 6))}
+              </div>
             </div>
             <ol className="list-none space-y-2 ml-6">
               {question.options.map((option: string, optIndex: number) => (

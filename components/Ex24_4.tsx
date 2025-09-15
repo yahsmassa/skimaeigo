@@ -324,7 +324,7 @@ const Ex24_4 = () => {
     return (
       <p className="pl-4">
         {content.text}
-        {content.numberBox && <NumberBox number={content.numberBox} />}
+        {content.numberBox && <NumberBox number={content.numberBox}  />}
         {content.note && <span className="text-gray-600">{content.note}</span>}
       </p>
     );
@@ -360,7 +360,7 @@ const Ex24_4 = () => {
 
         <div className="space-y-4">
           <p className="indent-7">
-            {articleData.introduction} {Kaisetsu(showResults, "24-4-2")}
+            {articleData.introduction} <div className="-mb-3">{Kaisetsu(showResults, "24-4-2")}</div>
           </p>
 
           {articleData.framework.components.map((component, idx) => (
@@ -370,7 +370,7 @@ const Ex24_4 = () => {
                 {component.guidelines && (
                   <span> For example, {component.guidelines.join(". ")}</span>
                 )}
-                {idx === 0 && Kaisetsu(showResults, "24-4-3")}
+                {idx === 0 && <div className="-mb-3">{Kaisetsu(showResults, "24-4-3")}</div>}
               </p>
 
               {component.details && (
@@ -385,7 +385,7 @@ const Ex24_4 = () => {
                             `. Examples of this include ${value.examples.join(
                               ", and "
                             )}`}
-                          . {index === 1 && Kaisetsu(showResults, "24-4-4")}
+                          . {index === 1 && <div className="-mb-3">{Kaisetsu(showResults, "24-4-4")}</div>}
                         </p>
                       </div>
                     )
@@ -418,7 +418,7 @@ const Ex24_4 = () => {
           <h3 className="font-medium mb-4 font-sans">
             {questionnaireData.questions.q1.question}
           </h3>
-          <div className="border border-gray-200 rounded-lg p-4">
+          <div className="">
             <Image
               src="/images/Ex24-4-2.webp"
               alt="Bar graph showing club room usage"
@@ -443,8 +443,8 @@ const Ex24_4 = () => {
                 <span className="font-medium font-sans">{comment.student}:</span>{" "}
                 <span>
                   {comment.text}{" "}
-                  {index === 2 && Kaisetsu(showResults, "24-4-7")}
-                  {index === 5 && Kaisetsu(showResults, "24-4-8")}
+                  {index === 2 && <div className="-mb-3">{Kaisetsu(showResults, "24-4-7")}</div>}
+                  {index === 5 && <div className="-mb-3">{Kaisetsu(showResults, "24-4-8")}</div>}
                 </span>
               </div>
             ))}

@@ -164,7 +164,7 @@ const JapaneseTestQuestion = () => {
             <span>So, Jenna, you're saying that</span>
             {renderSelect(String(30), 4, answers, setAnswers)}
             <span className="mr-3">?</span>
-            {showResults && <Explain qa={qa} questionId="3B-1" />}
+            <Explain qa={qa} questionId="3B-1"  isShow={showResults} />
             {Kaisetsu(showResults, "20-3B-5")}
           </div>
         </div>
@@ -265,7 +265,7 @@ const JapaneseTestQuestion = () => {
             <span className="mr-2">worried because</span>
             {renderSelect("31", 4, answers, setAnswers)}
             <span className="mr-3"></span>
-            {showResults && <Explain qa={qa} questionId="3B-2" />}
+            <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "20-3B-11")}
           </div>
@@ -350,7 +350,7 @@ const JapaneseTestQuestion = () => {
             <span>today, it looks like our next step is to</span>
             {renderSelect("32", 4, answers, setAnswers)}
             <span className="mr-2">. Right?</span>
-            {showResults && <Explain qa={qa} questionId="3B-3" />}
+            <Explain qa={qa} questionId="3B-3"  isShow={showResults} />
             <span className="mr-2"></span>
             {Kaisetsu(showResults, "20-3B-16")}
           </div>

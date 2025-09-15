@@ -238,7 +238,7 @@ const Ex17_5 = () => {
               When Yuji realized that he had turned into a cat, he first felt
             </span>
             {renderSelect("42", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-1" />}
+            <Explain qa={qa} questionId="5-1"  isShow={showResults} />
             {Kaisetsu(showResults, "17-5-14")}
           </div>
 
@@ -258,7 +258,7 @@ const Ex17_5 = () => {
               When Yuji&apos;s mother spoke to him, he was annoyed because
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-2" />}
+            <Explain qa={qa} questionId="5-2"  isShow={showResults} />
             {Kaisetsu(showResults, "17-5-15")}
           </div>
 
@@ -280,7 +280,7 @@ const Ex17_5 = () => {
               because Yuji
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-3" />}
+            <Explain qa={qa} questionId="5-3"  isShow={showResults} />
             {Kaisetsu(showResults, "17-5-16")}
           </div>
 
@@ -305,7 +305,7 @@ const Ex17_5 = () => {
               because he
             </span>
             {renderSelect("45", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-4" />}
+            <Explain qa={qa} questionId="5-4"  isShow={showResults} />
             {Kaisetsu(showResults, "17-5-17")}
           </div>
 
@@ -323,7 +323,7 @@ const Ex17_5 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>What is the theme of this story?</span>
             {renderSelect("46", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-5" />}
+            <Explain qa={qa} questionId="5-5"  isShow={showResults} />
             {Kaisetsu(showResults, "17-5-18")}
           </div>
 

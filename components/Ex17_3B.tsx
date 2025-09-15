@@ -49,7 +49,7 @@ const JapaneseExamQuestions = () => {
         >
           <p className="font-bold mr-4 font-sans">問１</p>
           {renderSelect("29", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="3B-1" />}
+          <Explain qa={qa} questionId="3B-1"  isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "17-3B-1")}
         </div>
@@ -97,7 +97,7 @@ const JapaneseExamQuestions = () => {
         >
           <p className="font-bold mr-4 font-sans">問２</p>
           {renderSelect("30", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="3B-2" />}
+          <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "17-3B-2")}
         </div>
@@ -146,7 +146,7 @@ const JapaneseExamQuestions = () => {
         >
           <p className="font-bold mr-4 font-sans">問３</p>
           {renderSelect("31", 4, answers, setAnswers)}
-          {showResults && <Explain qa={qa} questionId="3B-3" />}
+          <Explain qa={qa} questionId="3B-3"  isShow={showResults} />
           <span className="mr-2"></span>
           {Kaisetsu(showResults, "17-3B-3")}
         </div>

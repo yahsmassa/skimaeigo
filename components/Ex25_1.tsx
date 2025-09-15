@@ -139,9 +139,11 @@ export default function Ex25_1() {
               <span>
                 The customers most likely to benefit from this pamphlet are{" "}
               </span>
-              {renderSelect("1", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
-              <Explain qa={qa} questionId="1-1" isShow={showResults} />
-              {Kaisetsu(showResults, "25-1-4")}
+              <div className="flex flex-row items-center gap-2">
+                {renderSelect("1", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+                <Explain qa={qa} questionId="1-1" isShow={showResults} />
+                {Kaisetsu(showResults, "25-1-4")}
+              </div>
 
             </div>
             <div className="pl-2 md:pl-8 space-y-2">

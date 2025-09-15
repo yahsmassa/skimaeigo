@@ -55,7 +55,7 @@ const Ex16_4B = () => {
                 museum activity but is only free on weekday evenings. Which
                 activity will she most likely choose?
                 {renderSelect("39", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4B-1" />}
+                <Explain qa={qa} questionId="4B-1"  isShow={showResults} />
                 {Kaisetsu(showResults, "16-4B-1")}
               </div>
             </div>
@@ -77,7 +77,7 @@ const Ex16_4B = () => {
                 activity will they most likely choose and how much will they pay
                 in total?
                 {renderSelect("40", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="4B-2" />}
+                <Explain qa={qa} questionId="4B-2"  isShow={showResults} />
                 {Kaisetsu(showResults, "16-4B-2")}
               </div>
             </div>
@@ -97,7 +97,7 @@ const Ex16_4B = () => {
                 Which of the following is true according to the website?
               </span>
               {renderSelect("41", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="4B-3" />}
+              <Explain qa={qa} questionId="4B-3"  isShow={showResults} />
               {Kaisetsu(showResults, "16-4B-3")}
             </div>
             <div className="pl-8 space-y-2">

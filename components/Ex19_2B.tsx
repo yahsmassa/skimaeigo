@@ -72,7 +72,7 @@ const EnglishTestQuestions = () => {
             {renderSelect("19", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">to replace the current system.</span>
-            {showResults && <Explain qa={qa} questionId="2B-1" />}
+            <Explain qa={qa} questionId="2B-1"  isShow={showResults} />
           </div>
         </div>
 
@@ -122,7 +122,7 @@ const EnglishTestQuestions = () => {
               <span className="mr-2">
                 for a few days. I'll also visit some friends in Oxford.
               </span>
-              {showResults && <Explain qa={qa} questionId="2B-2" />}
+              <Explain qa={qa} questionId="2B-2"  isShow={showResults} />
             </span>
           </div>
         </div>
@@ -167,7 +167,7 @@ const EnglishTestQuestions = () => {
             {renderSelect("23", 6, answers, setAnswers)}
             <span className="inline-block border-b-2 border-black w-16 mx-2"></span>
             <span className="mr-2">in such a crowded place.</span>
-            {showResults && <Explain qa={qa} questionId="2B-3" />}
+            <Explain qa={qa} questionId="2B-3"  isShow={showResults} />
           </div>
         </div>
 

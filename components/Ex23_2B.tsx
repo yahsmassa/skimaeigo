@@ -31,9 +31,9 @@ const Ex23_2B = () => {
         />
       </div>{" "}
       {/* Context Section */}
-      <div className="mb-8">
+      <div className="mb-2">
         <p className="text-gray-700 leading-relaxed">
-          <span className="font-bold">B</span> You are a member of the student
+          You are a member of the student
           council. The members have been discussing a student project helping
           students to use their time efficiently. To get ideas, you are reading
           a report about a school challenge. It was written by an exchange
@@ -46,8 +46,8 @@ const Ex23_2B = () => {
         <h1 className="text-center text-xl mb-6">Commuting Challenge</h1>
 
         {/* Main Content */}
-        <div className="mb-8 leading-relaxed">
-          <p className="mb-4 indent-7">
+        <div className="mb-2 leading-relaxed">
+          <p className="mb-2 indent-7">
             Most students come to my school by bus or train. I often see a lot
             of students playing games on their phones or chatting. However, they
             could also use this time for reading or doing homework. We started
@@ -69,7 +69,7 @@ const Ex23_2B = () => {
           <h2 className="font-bold underline mb-4">
             Feedback from participants
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-1">
             <p>
               <span className="font-bold">HS:</span> Thanks to this project, I
               got the highest score ever in an English vocabulary test. It was
@@ -114,10 +114,11 @@ const Ex23_2B = () => {
             <span>
               The aim of the Commuting Challenge was to help students to
             </span>
-            {renderSelect("11", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-1" />}
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-2B-8")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("11", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2B-1" isShow={showResults} />
+              {Kaisetsu(showResults, "23-2B-8")}
+            </div>
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -143,10 +144,11 @@ const Ex23_2B = () => {
             <span>
               One <u>fact</u> about the Commuting Challenge is that
             </span>
-            {renderSelect("12", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-2" />}
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-2B-9")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("12", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2B-2" isShow={showResults} />
+              {Kaisetsu(showResults, "23-2B-9")}
+            </div>
           </div>
           <ol className="list-none space-y-2">
             {[
@@ -171,10 +173,11 @@ const Ex23_2B = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>From the feedback,</span>
             {renderSelect("13", 4, answers, setAnswers)}
-            <span>were activities reported by participants.</span>
-            {showResults && <Explain qa={qa} questionId="2B-3" />}
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-2B-10")}
+            <span className="mr-2">were activities reported by participants.</span>
+            <div className="flex flex-row gap-2">
+              <Explain qa={qa} questionId="2B-3" isShow={showResults} />
+              {Kaisetsu(showResults, "23-2B-10")}
+            </div>
           </div>
           <div className="mb-4 ml-4 space-y-1">
             <p>A : keeping study records</p>
@@ -209,10 +212,11 @@ const Ex23_2B = () => {
               One of the participants&apos; opinions about the Commuting
               Challenge is that
             </span>
-            {renderSelect("14", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-4" />}
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-2B-11")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("14", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2B-4" isShow={showResults} />
+              {Kaisetsu(showResults, "23-2B-11")}
+            </div>
           </div>
           {[
             "it could have included students who walk to school",
@@ -232,12 +236,13 @@ const Ex23_2B = () => {
         {/* Question 5 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-5"))}>
           <div className="flex items-center mb-4 flex-wrap">
-            <span className="whitespace-nowrap mr-2">問 5</span>
+            <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>The author&apos;s question is answered by</span>
-            {renderSelect("15", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2B-5" />}
-            <span className="mr-2"></span>
-            {Kaisetsu(showResults, "23-2B-12")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("15", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="2B-5" isShow={showResults} />
+              {Kaisetsu(showResults, "23-2B-12")}
+            </div>
           </div>
           {["HS", "JH", "KF", "MN", "SS"].map((answer, index) => (
             <div key={index} className="flex items-start">

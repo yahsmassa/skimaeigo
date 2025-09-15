@@ -32,8 +32,7 @@ const Ex22_3B = () => {
         />
       </div>
       {/* Section B indicator */}
-      <div className="mb-4">
-        <span className="font-bold">B</span>
+      <div className="mb-2">
         <span className="ml-4">
           You enjoy outdoor sports and have found an interesting story in a
           mountain climbing magazine.
@@ -48,7 +47,7 @@ const Ex22_3B = () => {
 
       {/* Main content with map float */}
       <div className="relative">
-        <div className="mb-4 indent-7">
+        <div className="mb-0 indent-7">
           Last September, a team of 12 of us, 10 climbers and two minibus
           drivers, participated in the Three Peaks Challenge, which is well
           known for its difficulty among climbers in Britain.
@@ -66,7 +65,7 @@ const Ex22_3B = () => {
           />
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-1">
           <p className="">
             The goal is to climb the highest mountain in Scotland (Ben Nevis),
             in England (Scafell Pike), and in Wales (Snowdon) within 24 hours,
@@ -119,24 +118,30 @@ const Ex22_3B = () => {
 
       {/* Questions section */}
       <div className="mt-8 space-y-8">
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-1"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-1"))}>
           <div className="mb-4">
-            <div className="flex flex-wrap items-center gap-2 mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-2">
               <span className="whitespace-nowrap mr-2 font-sans">問 1 </span>
               <span>
                 Put the following events (①～④) into the order they happened.
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-1 mb-4">
-              {renderSelect("18", 4, answers, setAnswers)}
+              <div className="flex flex-row items-center">
+                {renderSelect("18", 4, answers, setAnswers)}
+                <span>→</span>
+                {renderSelect("19", 4, answers, setAnswers)}
               <span>→</span>
-              {renderSelect("19", 4, answers, setAnswers)}
-              <span>→</span>
-              {renderSelect("20", 4, answers, setAnswers)}
-              <span>→</span>
-              {renderSelect("21", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="3B-1" />}
-              {Kaisetsu(showResults, "22-3B-7")}
+              </div>
+              <div className="flex flex-row items-center">
+                {renderSelect("20", 4, answers, setAnswers)}
+                <span>→</span>
+                {renderSelect("21", 4, answers, setAnswers)}
+              </div>
+              <div className="flex flex-row gap-2">
+                <Explain qa={qa} questionId="3B-1"  isShow={showResults} />
+                {Kaisetsu(showResults, "22-3B-7")}
+              </div>
             </div>
           </div>
           {[
@@ -154,17 +159,19 @@ const Ex22_3B = () => {
           ))}
         </div>
 
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-2"))}>
-          <div className="mb-4">
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-2"))}>
+          <div className="mb-2">
             <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="whitespace-nowrap mr-2 font-sans">問 2 </span>
               <span>
                 What was the reason for being behind schedule when they
                 completed Scafell Pike?
               </span>
-              {renderSelect("22", 4, answers, setAnswers)}
-              {showResults && <Explain qa={qa} questionId="3B-2" />}
-              {Kaisetsu(showResults, "22-3B-8")}
+              <div className="flex flex-row gap-2">
+                {renderSelect("22", 4, answers, setAnswers)}
+                <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
+                {Kaisetsu(showResults, "22-3B-8")}
+              </div>
             </div>
           </div>
           {[
@@ -182,14 +189,17 @@ const Ex22_3B = () => {
           ))}
         </div>
 
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3B-3"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-3"))}>
           <div className="mb-4">
-            <div className="flex flex-wrap items-center gap-2 mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-2">
               <span className="whitespace-nowrap mr-2 font-sans">問 3 </span>
               <span>From this story, you learnt that the writer </span>
-              {renderSelect("23", 4, answers, setAnswers)}.
-              {showResults && <Explain qa={qa} questionId="3B-3" />}
-              {Kaisetsu(showResults, "22-3B-9")}
+              <div className="flex flex-row gap-2">
+                {renderSelect("23", 4, answers, setAnswers)}
+                <span className="-ml-3 mt-1 mr-1">.</span>
+                <Explain qa={qa} questionId="3B-3"  isShow={showResults} />
+                {Kaisetsu(showResults, "22-3B-9")}
+              </div>
             </div>
           </div>
           {[

@@ -81,7 +81,7 @@ const JapaneseExamQuestion = () => {
                 {renderSelect("27", 4, answers, setAnswers)}
                 <span className="mr-2">He might walk</span>
                 <span className="mr-2">in at any moment.</span>
-                {showResults && <Explain qa={qa} questionId="3A-1" />}
+                <Explain qa={qa} questionId="3A-1"  isShow={showResults} />
                 <span className="mr-2"></span>
                 {Kaisetsu(showResults, "16-3A-1")}
               </span>
@@ -128,7 +128,7 @@ const JapaneseExamQuestion = () => {
               <span className="flex flex-wrap items-center">
                 <span>There's little point in even trying.</span>
                 {renderSelect("28", 4, answers, setAnswers)}
-                {showResults && <Explain qa={qa} questionId="3A-2" />}
+                <Explain qa={qa} questionId="3A-2"  isShow={showResults} />
                 <span className="mr-2"></span>
                 {Kaisetsu(showResults, "16-3A-2")}
               </span>

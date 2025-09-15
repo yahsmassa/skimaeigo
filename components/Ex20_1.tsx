@@ -96,7 +96,7 @@ const JapaneseTestQuestion = () => {
       <div className="flex items-center mb-4">
         <span className="font-bold mr-4 font-sans">問 {index + 1}</span>
         {renderSelect(String(questionNumber), 4, answers, setAnswers)}
-        {showResults && <Explain qa={qa} questionId={`1-${questionNumber}`} />}
+        <Explain qa={qa} questionId={`1-${questionNumber}`}  isShow={showResults} />
       </div>
       <QuestionOptions options={options} />
     </div>

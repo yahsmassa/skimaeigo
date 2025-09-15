@@ -257,7 +257,7 @@ const Ex18_5 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>What was the purpose of the explorers&apos; journey?</span>
             {renderSelect("41", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-1" />}
+            <Explain qa={qa} questionId="5-1"  isShow={showResults} />
             {Kaisetsu(showResults, "18-5-9")}
           </div>
 
@@ -298,7 +298,7 @@ const Ex18_5 = () => {
               imagined that the intelligent creatures on it would
             </span>
             {renderSelect("42", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-2" />}
+            <Explain qa={qa} questionId="5-2"  isShow={showResults} />
             {Kaisetsu(showResults, "18-5-10")}
           </div>
 
@@ -340,7 +340,7 @@ const Ex18_5 = () => {
               used in DAY 9 is closest in meaning to
             </span>
             {renderSelect("43", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-3" />}
+            <Explain qa={qa} questionId="5-3"  isShow={showResults} />
             {Kaisetsu(showResults, "18-5-11")}
           </div>
 
@@ -380,7 +380,7 @@ const Ex18_5 = () => {
               Which of the following best describes the author of the journal?
             </span>
             {renderSelect("44", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-4" />}
+            <Explain qa={qa} questionId="5-4"  isShow={showResults} />
             {Kaisetsu(showResults, "18-5-12")}
           </div>
 
@@ -421,7 +421,7 @@ const Ex18_5 = () => {
               would
             </span>
             {renderSelect("45", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="5-5" />}
+            <Explain qa={qa} questionId="5-5"  isShow={showResults} />
             {Kaisetsu(showResults, "18-5-13")}
           </div>
 

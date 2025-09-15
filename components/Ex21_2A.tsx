@@ -208,7 +208,7 @@ const Ex21_2A = () => {
               the best?
             </span>
             {renderSelect("6", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2A-1" />}
+            <Explain qa={qa} questionId="2A-1"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2A-6")}
           </div>
           <div>
@@ -233,7 +233,7 @@ const Ex21_2A = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>Which judge gave both positive and critical comments?</span>
             {renderSelect("7", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2A-2" />}
+            <Explain qa={qa} questionId="2A-2"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2A-7")}
           </div>
           <div className="pl-2 md:pl-8 space-y-1">
@@ -258,7 +258,7 @@ const Ex21_2A = () => {
               individual comments is that
             </span>
             {renderSelect("8", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2A-3" />}
+            <Explain qa={qa} questionId="2A-3"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2A-8")}
           </div>
           <div className="pl-2 md:pl-8 space-y-1">
@@ -286,7 +286,7 @@ const Ex21_2A = () => {
               judges&apos; comments and shared evaluation is that
             </span>
             {renderSelect("9", 4, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2A-4" />}
+            <Explain qa={qa} questionId="2A-4"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2A-9")}
           </div>
           <div className="pl-2 md:pl-8 space-y-1">
@@ -314,7 +314,7 @@ const Ex21_2A = () => {
               judges&apos; shared evaluation?
             </span>
             {renderSelect("10", 6, answers, setAnswers)}
-            {showResults && <Explain qa={qa} questionId="2A-5" />}
+            <Explain qa={qa} questionId="2A-5"  isShow={showResults} />
             {Kaisetsu(showResults, "21-2A-10")}
           </div>
           <div className="pl-8">

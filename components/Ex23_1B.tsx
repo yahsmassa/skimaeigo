@@ -31,7 +31,7 @@ const Ex23_1B = () => {
           setAnswers={setAnswers}
         />
       </div>{" "}
-      <div className="mb-6">
+      <div className="mb-2">
         <p className="text-gray-700 leading-relaxed">
           You are a senior high school student interested in improving your
           English during the summer vacation. You find a website for an
@@ -67,7 +67,7 @@ const Ex23_1B = () => {
         </div>
 
         {/* Basic Information */}
-        <div className="space-y-2 mb-6">
+        <div className="space-y-2 mb-0">
           <p>
             <span className="font-bold">Dates:</span> August 1-14, 2023
           </p>
@@ -89,7 +89,7 @@ const Ex23_1B = () => {
             Courses Offered
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-1">
             <div>
               <p className="font-bold">◆FOREST:</p>
               <p className="ml-4">
@@ -129,7 +129,7 @@ const Ex23_1B = () => {
         </div>
 
         {/* Application Section */}
-        <div className="mt-8">
+        <div className="mt-2">
           <h3 className="font-bold mb-2">▲Application</h3>
           <div className="space-y-2">
             <p>
@@ -150,17 +150,19 @@ const Ex23_1B = () => {
           </div>
         </div>
       </div>
-      <div className="text-center text-gray-500 mt-4 mb-8">— 6 —</div>
+
       {/* Questions Section */}
-      <div className="space-y-8">
+      <div className="space-y-6 mt-4">
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-1"))}>
           <div className="flex items-center flex-wrap mb-4 gap-2">
             <span className="whitespace-nowrap mr-1 font-sans">問 1</span>
-            <span>All GIS instructors have</span>
-            {renderSelect("3", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="1B-1" isShow={showResults} />
-            {Kaisetsu(showResults, "23-1B-7")}
+            <span className="-mr-2">All GIS instructors have</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("3", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="1B-1" isShow={showResults} />
+              {Kaisetsu(showResults, "23-1B-7")}
+            </div>
           </div>
           {[
             "been in Japan since 1989",
@@ -181,10 +183,12 @@ const Ex23_1B = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-2"))}>
           <div className="flex items-center flex-wrap mb-4 gap-2">
             <span className="whitespace-nowrap mr-1 font-sans">問 2</span>
-            <span>On the last day of the camp, campers will</span>
-            {renderSelect("4", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="1B-2" isShow={showResults} />
-            {Kaisetsu(showResults, "23-1B-8")}
+            <span className="-mr-2">On the last day of the camp, campers will</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("4", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="1B-2" isShow={showResults} />
+              {Kaisetsu(showResults, "23-1B-8")}
+            </div>
           </div>
           {[
             "assess each other's performances",
@@ -205,12 +209,14 @@ const Ex23_1B = () => {
         <div className={cn("space-y-4", showResults && qaFormat(qa, "1B-3"))}>
           <div className="flex items-center flex-wrap mb-4 gap-2">
             <span className="whitespace-nowrap mr-1 font-sans">問 3</span>
-            <span>
+            <span className="-mr-2">
               What will happen after submitting your camp application?
             </span>
-            {renderSelect("5", 4, answers, setAnswers)}
-            <Explain qa={qa} questionId="1B-3" isShow={showResults} />
-            {Kaisetsu(showResults, "23-1B-9")}
+            <div className="flex flex-row gap-2">
+              {renderSelect("5", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId="1B-3" isShow={showResults} />
+              {Kaisetsu(showResults, "23-1B-9")}
+            </div>
           </div>
           {[
             "You will call the English instructors.",
