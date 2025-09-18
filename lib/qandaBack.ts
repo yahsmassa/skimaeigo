@@ -1,4 +1,4 @@
-import {QA} from '@/lib/types';
+import { QA } from "@/lib/types";
 
 export const qanda: QA[] = [
   {
@@ -5252,7 +5252,7 @@ export const qanda: QA[] = [
         rightAnswerString: '2',
         answerString: '',
         isCorrect: false,
-        points: 3,
+        points: 4,
         explanation: ['正解は② できるだけ早く家電製品を買いなさい', '翻訳参照'],
       },
       {
@@ -6245,7 +6245,7 @@ export const qanda: QA[] = [
         rightAnswerString: '4',
         answerString: '',
         isCorrect: false,
-        points: 2,
+        points: 3,
         explanation: [
           '解答は④、本文に言及がない。',
           '①は第4段落2文目（They have ... their bodies.），②は第4段落5文目（All tardigrades ... have eyes.）と6文目（Their eyes ... light sensitive.）',
@@ -6287,7 +6287,7 @@ export const qanda: QA[] = [
         rightAnswerString: '3',
         answerString: '',
         isCorrect: false,
-        points: 2,
+        points: 3,
         explanation: [
           '[47] 正解は③',
           '第5段落4文目（The mouths ... have teeth.）、5文目（They do, ... sucked out.）、第6段落2文目（The mouth leads to ... salivary gland.）、4文目（After the pharynx, ... the gut.）、5文目（This tube is called the esophagus.）',
@@ -6305,7 +6305,7 @@ export const qanda: QA[] = [
         rightAnswerString: '4',
         answerString: '',
         isCorrect: false,
-        points: 2,
+        points: 3,
         explanation: [
           '正解は④：全体の内容を要約する問題。④「クマムシは地球上の最も過酷な環境でも生き延び，少なくとも一度は宇宙へも旅したことがある。 この驚くべき生物は人類よりも長生きするかもしれない」。地球上の最も過酷な環境で生き延びる能力については第2段落に，宇宙については第3段落に，それぞれ言及されている。',
           '①「何千年もの間，クマムシは地球と宇宙の最も過酷な環境の一部を生き延びてきた。彼らは人類より長く生きるであろう」 ',
@@ -6977,7 +6977,10 @@ export const qanda: QA[] = [
         answerString: '',
         isCorrect: false,
         points: 3,
-        explanation: ['正解は ③「今日，何時間働いたかを振り返る」'],
+        explanation: [
+          '正解は ③「今日，何時間働いたかを振り返る」',
+          "① anticipating a message from a classmate<br/><br/>クラスメイトからのメッセージを待っている<br/><br/><br/>② memorizing your mother's cellphone number<br/><br/>お母さんの携帯電話番号を暗記する<br/><br/><br/>④ remembering that you have a meeting tomorrow<br/><br/>明日会議があることを覚えている",
+        ],
       },
       {
         questionId: '6A-4',
@@ -6992,7 +6995,8 @@ export const qanda: QA[] = [
         isCorrect: false,
         points: 3,
         explanation: [
-          '正解は ①「これまでどのくらいの時間ジョギングし続けてきたかを推測する」',
+          "正解は ①「これまでどのくらいの時間ジョギングし続けてきたかを推測する」 you've been jogging という現在完了進行形が用いられており、「何かをしながら積極的に時間を記録しているとき」に相当",
+          '② making a schedule for the basketball team summer camp<br/><br/>バスケットボールチームのサマーキャンプのスケジュールを作成すること<br/><br/><br/>③running into your tennis coach at the railway station<br/><br/>駅でテニスコーチにばったり会うこと<br/><br/><br/>④thinking about your last family vacation to a hot spring<br/><br/>最後の家族旅行で温泉に行ったことを考えていること<br/><br/><br/>熟語・慣用句はありませんでした。<br/>',
         ],
       },
     ],
@@ -7011,7 +7015,7 @@ export const qanda: QA[] = [
         rightAnswerString: '4',
         answerString: '',
         isCorrect: false,
-        points: 2,
+        points: 3,
         explanation: [
           '正解は ④「軽い化合物」',
           '（唐辛子のスパイスには耐えられないが，ワサビ味の食品なら食べられるという人がいる理由は，ワサビに含まれるスパイス化合物の濃度が低いからである。ワサビに含まれる化合物は気化しやすく，食べたときに鼻に抜けるような辛さをもたらす）の内容から',
@@ -7028,7 +7032,7 @@ export const qanda: QA[] = [
         rightAnswerString: '4',
         answerString: '',
         isCorrect: false,
-        points: 2,
+        points: 3,
         explanation: [
           '正解は④ Dの「ストレスを感じさせなくなる」という内容は利点には述べられていない。',
           'Aの「痛みを減らす」については（不思議なことに，カプサイシンは痛みを消すこともできる）に一致している。',
@@ -7088,7 +7092,7 @@ export const qanda: QA[] = [
         rightAnswerString: '5',
         answerString: '',
         isCorrect: false,
-        points: 2,
+        points: 3,
         explanation: [
           '⑤「誰かがあなたに辛い食べ物を勧めた時，それには何らかの利点があるということを思い出そう」が正解 ',
           '① Don&apos;t be afraid. Eating spicy foods will boost your confidence. 「恐れてはいけない。辛い食べ物を食べると自信が増す」 →このような内容は本文に含まれていない。 ',
@@ -7785,7 +7789,7 @@ export const qanda: QA[] = [
         rightAnswerString: '1',
         answerString: '',
         isCorrect: false,
-        points: 4,
+        points: 3,
         explanation: [
           '正解は①「世界中の政府が宇宙探査に費やすお金は，飢餓を減らすだけでなく，途上国で初等教育を利用可能にすることもできる」で，グラフによると宇宙探査に費やす金額は $103 billionだが，飢餓を減らす（relieving hunger）には$40 billion，途上国で初等教育を利用可能にする（supplying basic education）には$54 billionが必要なので，$103 billion > $94 billion（$40 billion + $50 billion）となり，この選択肢だけがグラフの数値に合致していることになる。他の選択肢については以下の通り。',
           '②「データによれば，途上国の人々に清潔な水を確保する費用は，世界中の政府が宇宙探査を行う費用よりも少ない」 →150 < 103なので誤り。',
