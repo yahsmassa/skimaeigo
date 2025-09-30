@@ -18,7 +18,7 @@ const cohere = new CohereClientV2({
 
 export async function translateTextGemini(prompt: string) {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     return response.text();
