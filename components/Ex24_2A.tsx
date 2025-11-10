@@ -191,36 +191,199 @@ const Ex24_2A = () => {
       {/* 設問 */}
       {/* Questions */}
       <div className={cn(exQuestionFormat, "mt-6")}>
-        {questionData.questions.map((question, index) => (
-          <div
-            key={index}
-            className={cn(
-              "mb-4",
-              showResults && qaFormat(qa, "2A-" + (index + 1))
-            )}
-          >
-            <div className="flex items-center flex-wrap gap-2 mb-2">
-              <span className="whitespace-nowrap mr-2 font-sans">
-                問{question.number}
-              </span>
-              <span className="-mr-2">{question.prompt}</span>
-              <div className="flex flex-row gap-2">
-               {renderSelect(String(index + 6), 4, answers, setAnswers)}
-                <Explain qa={qa} questionId={"2A-" + String(index + 1)} isShow={showResults} />
-                {Kaisetsu(showResults, "24-2A-" + String(index + 4))}
-              </div>
-
+        <div
+          className={cn(
+            "mb-4",
+            showResults && qaFormat(qa, "2A-1")
+          )}
+        >
+          {/* 問１ */}
+          <div className="flex items-center flex-wrap gap-2 mb-2">
+            <span className="whitespace-nowrap mr-2 font-sans">
+              問{questionData.questions[0].number}
+            </span>
+            <span className="-mr-2">{questionData.questions[0].prompt}</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("6", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId={"2A-1"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-2A-4")}
             </div>
-            <ol className="list-none space-y-2 ml-6">
-              {question.options.map((option, optIndex) => (
-                <li key={optIndex} className="flex items-start space-x-2">
-                  <span className="w-6 ">{"①②③④"[optIndex]}</span>
-                  <span>{option}</span>
-                </li>
-              ))}
-            </ol>
           </div>
-        ))}
+          <ol className="list-none space-y-2 ml-6">
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[0]}</span>
+              <span>{questionData.questions[0].options[0]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[1]}</span>
+              <span>{questionData.questions[0].options[1]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[2]}</span>
+              <span>{questionData.questions[0].options[2]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[3]}</span>
+              <span>{questionData.questions[0].options[3]}</span>
+            </li>
+          </ol>
+        </div>
+        {/* 問２ */}
+        <div
+          className={cn(
+            "mb-4",
+            showResults && qaFormat(qa, "2A-2")
+          )}
+        >
+          <div className="flex items-center flex-wrap gap-2 mb-2">
+            <span className="whitespace-nowrap mr-2 font-sans">
+              問{questionData.questions[1].number}
+            </span>
+            {/* <span className="-mr-2">{questionData.questions[1].prompt}</span> */}
+            <span className="-mr-2">Which of the following is <span className="underline font-semibold">not</span> mentioned as a club activity?</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("7", 4, answers, setAnswers)}
+              <Explain qa={qa} questionId={"2A-2"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-2A-5")}
+            </div>
+          </div>
+          <ol className="list-none space-y-2 ml-6">
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[0]}</span>
+              <span>{questionData.questions[1].options[0]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[1]}</span>
+              <span>{questionData.questions[1].options[1]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[2]}</span>
+              <span>{questionData.questions[1].options[2]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[3]}</span>
+              <span>{questionData.questions[1].options[3]}</span>
+            </li>
+          </ol>
+        </div>
+
+        {/* 問３ */}
+        <div
+          className={cn(
+            "mb-4",
+            showResults && qaFormat(qa, "2A-3")
+          )}
+        >
+          <div className="flex items-center flex-wrap gap-2 mb-2">
+            <span className="whitespace-nowrap mr-2 font-sans">
+              問{questionData.questions[2].number}
+            </span>
+            {/* <span className="-mr-2">{questionData.questions[2].prompt}</span> */}
+            <span className="-mr-2">One <span className="underline font-semibold">opinion</span> stated by a member is that</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("8", 4, answers, setAnswers)}
+              <span className="-ml-3 mr-2">.</span>
+              <Explain qa={qa} questionId={"2A-3"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-2A-6")}
+            </div>
+          </div>
+          <ol className="list-none space-y-2 ml-6">
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[0]}</span>
+              <span>{questionData.questions[2].options[0]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[1]}</span>
+              <span>{questionData.questions[2].options[1]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[2]}</span>
+              <span>{questionData.questions[2].options[2]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[3]}</span>
+              <span>{questionData.questions[2].options[3]}</span>
+            </li>
+          </ol>
+        </div>
+
+        {/* 問４ */}
+        <div
+          className={cn(
+            "mb-4",
+            showResults && qaFormat(qa, "2A-4")
+          )}
+        >
+          <div className="flex items-center flex-wrap gap-2 mb-2">
+            <span className="whitespace-nowrap mr-2 font-sans">
+              問{questionData.questions[3].number}
+            </span>
+            <span className="-mr-2">{questionData.questions[3].prompt}</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("9", 4, answers, setAnswers)}
+              <span className="-ml-3 mr-2">.</span>
+              <Explain qa={qa} questionId={"2A-4"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-2A-7")}
+            </div>
+          </div>
+          <ol className="list-none space-y-2 ml-6">
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[0]}</span>
+              <span>{questionData.questions[3].options[0]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[1]}</span>
+              <span>{questionData.questions[3].options[1]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[2]}</span>
+              <span>{questionData.questions[3].options[2]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[3]}</span>
+              <span>{questionData.questions[3].options[3]}</span>
+            </li>
+          </ol>
+        </div>
+
+        {/* 問５ */}
+        <div
+          className={cn(
+            "mb-4",
+            showResults && qaFormat(qa, "2A-5")
+          )}
+        >
+          <div className="flex items-center flex-wrap gap-2 mb-2">
+            <span className="whitespace-nowrap mr-2 font-sans">
+              問{questionData.questions[4].number}
+            </span>
+            <span className="-mr-2">{questionData.questions[4].prompt}</span>
+            <div className="flex flex-row gap-2">
+              {renderSelect("10", 4, answers, setAnswers)}
+              <span className="-ml-3 mr-2">.</span>
+              <Explain qa={qa} questionId={"2A-5"} isShow={showResults} />
+              {Kaisetsu(showResults, "24-2A-8")}
+            </div>
+          </div>
+          <ol className="list-none space-y-2 ml-6">
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[0]}</span>
+              <span>{questionData.questions[4].options[0]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[1]}</span>
+              <span>{questionData.questions[4].options[1]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[2]}</span>
+              <span>{questionData.questions[4].options[2]}</span>
+            </li>
+            <li className="flex items-start space-x-2">
+              <span className="w-6 ">{"①②③④"[3]}</span>
+              <span>{questionData.questions[4].options[3]}</span>
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
   );
