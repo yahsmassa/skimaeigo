@@ -33,8 +33,7 @@ export default function Ex25_1() {
           answers={answers}
           setAnswers={setAnswers}
         />
-      </div
-      >
+      </div >
       <div className="p-3 md:p-6">
           <div className="mb-4 leading-6 md:leading-8 md:text-[20px]">
             Your host family in the US is planning to buy a small aquarium. You
@@ -43,8 +42,8 @@ export default function Ex25_1() {
           </div>
         </div>
 
-      <h1 className="text-center text-2xl mb-2">Beginners!</h1>
-      <h2 className="text-center text-xl mb-4">
+      <h1 className="text-center text-2xl mb-2 md:font-semibold">Beginners!</h1>
+      <h2 className="text-center text-xl mb-4 md:font-semibold">
         Decorate Your Freshwater Aquarium
       </h2>
 

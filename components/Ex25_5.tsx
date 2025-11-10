@@ -75,8 +75,12 @@ const Ex25_5 = () => {
         <div className="border border-gray-300 mb-6">
           <table className="w-full">
             <tbody>
+              <tr className="border-b border-gray-300 text-center font-semibold">
+                <td className="border-r border-gray-300 p-2 w-32">Time</td>
+                <td className="p-2">Speaker & Title</td>
+              </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2 w-32">9:45 a.m.</td>
+                <td className="border-r border-gray-300 p-2 w-32 text-center">9:45 a.m.</td>
                 <td className="p-2">Opening address: Professor Henry Ryan</td>
               </tr>
               <tr className="border-b border-gray-300 bg-gray-100">
@@ -85,26 +89,26 @@ const Ex25_5 = () => {
                 </td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">10:00 a.m.</td>
+                <td className="border-r border-gray-300 p-2 text-center">10:00 a.m.</td>
                 <td className="p-2">
                   <div>Presentation 1: Martin Faulkner</div>
                   <div>Title: Starting an online business</div>
                 </td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">11:00 a.m.</td>
-                <td className="p-2">Break</td>
+                <td className="border-r border-gray-300 p-2 text-center">11:00 a.m.</td>
+                <td className="p-2 text-center">Break</td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">11:15 a.m.</td>
+                <td className="border-r border-gray-300 p-2 text-center">11:15 a.m.</td>
                 <td className="p-2">
                   <div>Presentation 2: Jane Brown</div>
                   <div>Title: (undecided)</div>
                 </td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">12:15 p.m.</td>
-                <td className="p-2">Lunch</td>
+                <td className="border-r border-gray-300 p-2 text-center">12:15 p.m.</td>
+                <td className="p-2 text-center">Lunch</td>
               </tr>
               <tr className="border-b border-gray-300 bg-gray-100">
                 <td colSpan={2} className="p-2 text-center">
@@ -112,7 +116,7 @@ const Ex25_5 = () => {
                 </td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">1:00 p.m.</td>
+                <td className="border-r border-gray-300 p-2 text-center">1:00 p.m.</td>
                 <td className="p-2">
                   <div>Presentation 3: Sarine Schmidt</div>
                   <div>
@@ -121,37 +125,37 @@ const Ex25_5 = () => {
                 </td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">2:00 p.m.</td>
-                <td className="p-2">Break</td>
+                <td className="border-r border-gray-300 p-2 text-center">2:00 p.m.</td>
+                <td className="p-2 text-center">Break</td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">2:15 p.m.</td>
+                <td className="border-r border-gray-300 p-2 text-center">2:15 p.m.</td>
                 <td className="p-2">
                   <div>Presentation 4: Dianne Moran</div>
                   <div>Title: (undecided)</div>
                 </td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">3:15 p.m.</td>
-                <td className="p-2">Break</td>
+                <td className="border-r border-gray-300 p-2 text-center">3:15 p.m.</td>
+                <td className="p-2 text-center">Break</td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">3:30 p.m.</td>
+                <td className="border-r border-gray-300 p-2 text-center">3:30 p.m.</td>
                 <td className="p-2">
                   <div>Debate moderator: Tim McGregor</div>
                   <div>Title: Change vs. conservation</div>
                 </td>
               </tr>
               <tr className="border-b border-gray-300">
-                <td className="border-r border-gray-300 p-2">4:30 p.m.</td>
+                <td className="border-r border-gray-300 p-2 text-center">4:30 p.m.</td>
                 <td className="p-2">
                   <div>Closing address: Mayor Lesley Baker</div>
                   <div>Title: (undecided)</div>
                 </td>
               </tr>
               <tr>
-                <td className="border-r border-gray-300 p-2">4:45 p.m.</td>
-                <td className="p-2">End</td>
+                <td className="border-r border-gray-300 p-2 text-center">4:45 p.m.</td>
+                <td className="p-2 text-center">End</td>
               </tr>
             </tbody>
           </table>

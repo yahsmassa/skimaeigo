@@ -471,8 +471,8 @@ const Ex25_8 = () => {
           <div className="flex items-start gap-2">
             <div className="whitespace-nowrap font-sans">問 5</div>
             <div className="flex-1">
-              <div>
-                For REASON 3, you have decided to write{" "}
+              <div >
+                For REASON <span className="font-sans">3</span>, you have decided to write{" "}
                 <i>
                   The cost of space exploration is high and the money could be
                   used instead to solve major world problems

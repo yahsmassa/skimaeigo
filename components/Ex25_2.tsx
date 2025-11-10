@@ -68,7 +68,7 @@ export default function Ex25_2() {
         </div>
 
         {/* Article content */}
-        <div className="space-y-2">
+        <div className="space-y-2 text-justify">
           <p>
             Yesterday, I attended a forum in northern Japan called{" "}
             <span className="italic">Flying Vehicles: Today and Tomorrow</span>.
@@ -77,7 +77,7 @@ export default function Ex25_2() {
             {Kaisetsu(showResults, "25-2-2")}
           </p>
 
-          <p>
+          <p className="">
             All the speakers agreed on three points. First, flying vehicles
             should be electrically powered in general. Air pollution can be
             reduced by increasing the use of zero-emission technologies. Second,

@@ -35,7 +35,7 @@ const Ex25_7 = () => {
         />
       </div>
       {/* Introduction text */}
-      <p className="mb-2 md:text-lg">
+      <p className="mb-2 md:text-[16px]">
         You are preparing a presentation for a science project on animal habits.
         You found some interesting information in the article below and are now
         making your outline.
@@ -44,7 +44,7 @@ const Ex25_7 = () => {
 
       {/* Article content */}
       <div className="border border-gray-300 p-8">
-        <h2 className="text-center font-medium text-lg mb-6">
+        <h2 className="text-center font-medium text-lg mb-6 md:font-semibold">
           Animal Sleep Patterns
         </h2>
 
@@ -148,12 +148,12 @@ const Ex25_7 = () => {
         <p className="font-medium">Your presentation outline</p>
 
         <div className="border border-gray-300 p-8">
-          <h2 className="text-center text-xl italic mb-8">How Animals Sleep</h2>
+          <h2 className="text-center text-xl italic mb-8 md:font-semibold">How Animals Sleep</h2>
 
           <div className="space-y-1">
             <div>
               <div className="flex gap-2 items-center mb-2">
-                <h3 className="text-lg italic">Importance of Sleep</h3>
+                <h3 className="text-lg italic md:font-semibold">Importance of Sleep</h3>
                 <div className="border border-gray-400 px-3 py-1 font-sans">
                   32
                 </div>
@@ -169,7 +169,7 @@ const Ex25_7 = () => {
 
             <div>
               <div className="flex gap-2 items-start">
-                <h3 className="text-lg italic">
+                <h3 className="text-lg italic md:font-semibold">
                   Biphasic Sleep Pattern (in each 24-hour cycle)
                 </h3>
                 <div className="border border-gray-400 px-3 py-1 font-sans">
@@ -179,7 +179,7 @@ const Ex25_7 = () => {
             </div>
 
             <div>
-              <h3 className="text-lg italic mb-2">
+              <h3 className="text-lg italic mb-2 md:font-semibold">
                 Some Conditions Affecting Sleep Patterns
               </h3>
               <div className="space-y-2 ml-4">
@@ -201,7 +201,7 @@ const Ex25_7 = () => {
             </div>
 
             <div>
-              <h3 className="text-lg italic mb-2">Unihemispheric Sleep</h3>
+              <h3 className="text-lg italic mb-2 md:font-semibold">Unihemispheric Sleep</h3>
               <div className="space-y-2 ml-4">
                 <div className="flex gap-2 items-center">
                   <span>- Some birds</span>
@@ -240,7 +240,7 @@ const Ex25_7 = () => {
               error in your presentation outline.{' '}
             </span>
             <span>
-              Which of the following should you <span className="underline">remove</span>?
+              Which of the following should you <span className="underline font-semibold">remove</span>?
             </span>
             <div className="flex flex-row gap-2">
               {renderSelect("32", 4, answers, setAnswers)}

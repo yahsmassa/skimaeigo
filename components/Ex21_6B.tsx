@@ -57,8 +57,7 @@ const Ex21_6B = () => {
           inexpensive, and easy to process. High fructose corn syrup (HFCS) is
           about 1.2 times sweeter than regular sugar, but quite high in
           calories. Taking science one step further, over the past 70 years
-          scientists have one step further, over the past 70 years scientists
-          have developed a wide variety of artificial sweeteners.
+          scientists have developed a wide variety of artificial sweeteners.
           {Kaisetsu(showResults, "21-6B-1")}
         </p>
         <p className="indent-7">

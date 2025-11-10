@@ -48,7 +48,7 @@ const TheContest = () => {
           &quot;One more time, with feeling!&quot; I encouraged my band.
         </p>
 
-        <p className="mb-2">
+        <p className="mb-2 text-justify">
           We are capable musicians. In fact, our keyboardist, Yuki, is a
           classically-trained pianist who regularly performs in front of
           audiences. Kei, our bassist, has a huge number of followers because of
@@ -64,7 +64,7 @@ const TheContest = () => {
           {Kaisetsu(showResults, "25-3-2")}
         </p>
 
-        <p className="mb-2">
+        <p className="mb-2 text-justify">
           Back at home, I watched the video I had taken of our rehearsal. As I
           listened to <i>Sayonara, and Thanks for Everything</i>, I thought my
           ears were playing tricks on me. I carefully listened a few more times.
@@ -87,7 +87,7 @@ const TheContest = () => {
           {Kaisetsu(showResults, "25-3-4")}
         </p>
 
-        <p className="mb-0">
+        <p className="mb-0 text-justify">
           They didn&apos;t understand the problem, so I explained my discovery,
           &quot;Each of us is showing off. We&apos;re playing for ourselves, not
           for the band!&quot; From that day on, our focus shifted and the band
@@ -124,13 +124,13 @@ const TheContest = () => {
               options (①～⑤) and put them in the order they happened.
             </span>
           </div>
-          <div className="flex items-center gap-2 flex-wrap mb-4">
+          <div className="flex items-center gap-2 md:gap-1 flex-wrap mb-4">
             {renderSelect("9", 5, answers, setAnswers)}
-            <span className="mx-2">→</span>
+            <span className="">→</span>
             {renderSelect("10", 5, answers, setAnswers)}
-            <span className="mx-2">→</span>
+            <span className="">→</span>
             {renderSelect("11", 5, answers, setAnswers)}
-            <span className="mx-2">→</span>
+            <span className="">→</span>
             {renderSelect("12", 5, answers, setAnswers)}
             <div className="flex flex-row gap-2">
               <Explain qa={qa} questionId="3-2" isShow={showResults} />

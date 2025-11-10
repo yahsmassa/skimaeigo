@@ -44,10 +44,10 @@ const Ex25_6 = () => {
       {/* Story content in a bordered box */}
       <div className="border border-gray-300 p-8">
         <div className="mb-8">
-          <p className="text-center mb-2 text-lg font-medium">
+          <p className="text-center mb-2 text-lg font-semibold">
             Bluebird & Melody: Real Heroes
           </p>
-          <p className="text-center text-base">By Harry Okazaki</p>
+          <p className="text-right text-base font-semibold">By Harry Okazaki</p>
         </div>
 
         <div className="space-y-1">
@@ -148,11 +148,11 @@ const Ex25_6 = () => {
           {Kaisetsu(showResults, "25-6-9")}
 
           <div className="mx-16 my-4 p-4 border border-gray-300">
-            <p className="font-medium">Bluebird,</p>
-            <p className="italic">
+            <p className="md:font-semibold">Bluebird,</p>
+            <p className="italic md:font-semibold">
               Let&apos;s start a family business. Join me
             </p>
-            <p className="italic">as a co-founder of REAL HEROES.</p>
+            <p className="italic md:font-semibold">as a co-founder of REAL HEROES.</p>
           </div>
 
           <p className="indent-8">
@@ -243,7 +243,7 @@ const Ex25_6 = () => {
             <div className="flex flex-row gap-2">
               <span className="whitespace-nowrap font-sans">問 1</span>
               <div>
-                Choose <span className="underline">four</span> out of the five
+                Choose <span className="underline font-semibold">four</span> out of the five
                 descriptions (①〜⑤) and put them in the order they occurred.
               </div>
               <div className="flex flex-row gap-2">
@@ -253,7 +253,7 @@ const Ex25_6 = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-1 md:gap-2 my-4 ml-8 flex-wrap">
+          <div className="flex items-center gap-1 md:gap-0 my-4 ml-8 md:ml-4 flex-wrap">
             {renderSelect("24", 5, answers, setAnswers)}
             <span>→</span>
             {renderSelect("25", 5, answers, setAnswers)}

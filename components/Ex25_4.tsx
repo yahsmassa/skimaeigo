@@ -55,9 +55,9 @@ const Ex25_4 = () => {
           </thead>
           <tbody>
             <tr>
-              <td className="w-2/3 p-6 align-top border-r border-gray-300">
+              <td className="w-2/3 md:w-4/5  p-6 align-top border-r border-gray-300">
                 <div className="space-y-1">
-                  <p className="indent-7">
+                  <p className="indent-7 text-justify">
                     In modern society, people are always busy and this fast pace
                     of living can be stressful. The movement toward a slow life
                     has shown us that you don&apos;t have to be busy all the
@@ -69,20 +69,20 @@ const Ex25_4 = () => {
                     {Kaisetsu(showResults, "25-4-2")}
                   </p>
 
-                  <p className="indent-7">
+                  <p className="indent-7 text-justify">
                     One key point of the slow life is to own fewer belongings.
                     This makes it easier to concentrate on everyday activities.
                     <sup className="text-base">
                       (1)
                     </sup>
-                    Many people today tend to buy more than they can consume. Do
+                    <span className="text-2xl font-semibold">^</span>Many people today tend to buy more than they can consume. Do
                     you <i>really</i> need five pairs of the latest sneakers?
                     Slow-lifers would recommend reducing possessions and buying
                     only necessary items.
                     {Kaisetsu(showResults, "25-4-3")}
                   </p>
 
-                  <p className="indent-7">
+                  <p className="indent-7 text-justify">
                     Another recommendation is to think about your communication
                     style and manner in your public and private life. Sadly, one
                     study has found that around 90% of people check smartphones
@@ -90,11 +90,11 @@ const Ex25_4 = () => {
                     and affect relationships negatively.<sup className="text-base">
                       (2)
                     </sup>
-                    ^
+                    <span className="text-2xl font-semibold">^</span>
                     {Kaisetsu(showResults, "25-4-4")}
                   </p>
 
-                  <p className="indent-7">
+                  <p className="indent-7 text-justify">
                     The final aspect of slow living is to take 10 to 15 minutes
                     to reflect on your day. Try to recollect people and events
                     that were significant. By mentally highlighting them, you
@@ -102,7 +102,7 @@ const Ex25_4 = () => {
                     {Kaisetsu(showResults, "25-4-5")}
                   </p>
 
-                  <p className="indent-7">
+                  <p className="indent-7 text-justify">
                     In summary, through a slow life,{" "}<sup className="text-base">(3)</sup>
                     <u>
                       you can relax
@@ -120,9 +120,9 @@ const Ex25_4 = () => {
                   </p>
                 </div>
               </td>
-              <td className="w-1/3 p-6 align-top">
-                <div className="space-y-4 italic ">
-                  <p>
+              <td className="w-1/3 md:w-1/5 p-6 align-top">
+                <div className="space-y-4 md:space-y-0 italic ">
+                  <p className="md:mt-[230px]">
                     (1) Add an appropriate connecting word.
                     {Kaisetsu(showResults, "25-4-1B")}
                   </p>
