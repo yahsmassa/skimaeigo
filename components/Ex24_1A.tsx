@@ -142,11 +142,11 @@ export default function Ex24_1A() {
           {Kaisetsu(showResults, "24-1A-0")}
         </p>
 
-        <div className="border p-4 mb-4">
-          <h2 className="text-center text-lg font-bold mb-2">
+        <div className="border p-4 mb-4 text-justify">
+          <h2 className="text-center text-lg  mb-2">
             {questionData.scenario?.eventDetails?.schoolName}
           </h2>
-          <h3 className="text-center text-base font-bold mb-4">
+          <h3 className="text-center text-base md:text-lg font-bold mb-4">
             {questionData.scenario?.eventDetails?.eventName}
           </h3>
           <p className="text-center mb-2">
@@ -164,7 +164,7 @@ export default function Ex24_1A() {
 
           {questionData.scenario?.activities.map((activity, index) => (
             <div key={index} className="mb-0">
-              <h4 className="font-bold mb-2">• {activity.title}</h4>
+              <h4 className="font-bold mb-2">⚫︎ {activity.title}</h4>
               <p className="ml-4">{activity.description}</p>
               {Kaisetsu(showResults, "24-1A-" + String(index + 2))}
             </div>
@@ -197,6 +197,7 @@ export default function Ex24_1A() {
                 answers,
                 setAnswers
               )}
+              <span className="-ml-3 mr-2">.</span>
 
               <div className="flex flex-row gap-2">
                 <Explain qa={qa} questionId={"1A-" + String(index + 1)} isShow={showResults} />

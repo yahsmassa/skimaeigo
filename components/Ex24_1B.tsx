@@ -83,7 +83,7 @@ const Ex24_1B = () => {
       </div>
 
       {/* Tours Information Box */}
-      <div className="border border-gray-300 p-4 space-y-4">
+      <div className="border border-gray-300 p-4 space-y-4 text-justify">
         <h2 className="text-center text-xl font-semibold">
           Tours of Yentonville
         </h2>
@@ -93,7 +93,7 @@ const Ex24_1B = () => {
 
         {/* History Tour */}
         <div className="space-y-2">
-          <h3 className="font-smibold">The History Tour</h3>
+          <h3 className="font-semibold text-center">The History Tour</h3>
           <div className="flex gap-4 flex-col md:flex-row">
             <p className="flex-1 -mb-3">
               The day will begin with a visit to St. Patrick&apos;s Church,
@@ -119,7 +119,7 @@ const Ex24_1B = () => {
 
         {/* Arts Tour */}
         <div className="space-y-2">
-          <h3 className="font-smibold">The Arts Tour</h3>
+          <h3 className="font-semibold text-center">The Arts Tour</h3>
           <div className="flex gap-4 flex-col md:flex-row">
             <p className="flex-1 -mb-3">
               The morning will be spent in the Yentonville Arts District. We
@@ -147,7 +147,7 @@ const Ex24_1B = () => {
 
         {/* Sports Tour */}
         <div className="space-y-2">
-          <h3 className="font-smibold">The Sports Tour</h3>
+          <h3 className="font-semibold text-center">The Sports Tour</h3>
           <div className="flex gap-4 flex-col md:flex-row">
             <p className="flex-1">
               First thing in the morning, you can watch the Yentonville Lions
@@ -192,6 +192,7 @@ const Ex24_1B = () => {
               <span className="-mr-2">{question.prompt}</span>
               <div className="flex flex-row gap-2">
                 {renderSelect(String(index + 3), 4, answers, setAnswers)}
+                {index < 2 && <span className="-ml-3 mr-2">.</span>}
                 <Explain qa={qa} questionId={"1B-" + String(index + 1)} isShow={showResults} />
                 {Kaisetsu(showResults, "24-1B-" + String(index + 4))}
               </div>

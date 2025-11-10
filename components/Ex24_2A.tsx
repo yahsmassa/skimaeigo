@@ -24,8 +24,7 @@ const Ex24_2A = () => {
     passage: {
       title: "Invitation to the Strategy Game Club",
       content: [
-        "Have you ever wanted to learn strategy games like chess, shogi, or go? They are actually more than just games. You can learn skills such as thinking logically and deeply without distractions. Plus, these games are really fun!",
-        "This club is open to all students of our school. Regardless of skill level, you are welcome to join.",
+        "Have you ever wanted to learn strategy games like chess, shogi, or go? They are actually more than just games. You can learn skills such as thinking logically and deeply without distractions. Plus, these games are really fun! This club is open to all students of our school. Regardless of skill level, you are welcome to join.",
         "We play strategy games together and...",
         "● learn basic moves from demonstrations by club members",
         "● play online against club friends",
@@ -147,10 +146,10 @@ const Ex24_2A = () => {
           />
         </div>
 
-        <div className="space-y-1">
+        <div className="space-y-1 text-justify">
           {questionData.passage.content.map((paragraph, index) => (
             <div key={index} className="">
-              {index > 2 ? (
+              {index > 1 ? (
                 <div className="">
                   <div className="flex flex-col md:flex-row gap-4">
                     <ul className="space-y-2 ">
@@ -159,7 +158,7 @@ const Ex24_2A = () => {
                           key={i}
                           className={cn(
                             "flex items-start",
-                            index === 10 && "text-xl font-bold underline"
+                            index === 9 && "text-xl font-bold underline md:ml-[150px]"
                           )}
                         >
                           {item}
