@@ -50,7 +50,7 @@ const Ex25_6 = () => {
           <p className="text-right text-base font-semibold">By Harry Okazaki</p>
         </div>
 
-        <div className="space-y-1">
+        <div className="space-y-1 text-justify">
           <p className="indent-8">
             Everyone knows me as Bluebird, the world-famous superhero. Before, I
             was only a superhero in name, but now, I deserve my title. Let me

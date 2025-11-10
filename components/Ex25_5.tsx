@@ -226,7 +226,7 @@ const Ex25_5 = () => {
           Thank you for making the draft. You&apos;ve done a really good job.
         </p>
 
-        <p className="mb-2">
+        <p className="mb-2 text-justify">
           The time schedule and order of events look good to me. The Main Hall
           worked really well as a venue last time. It has a good capacity for
           this type of event. As a university staff member, I can reserve it for
@@ -237,7 +237,7 @@ const Ex25_5 = () => {
           a permit.
           {Kaisetsu(showResults, "25-5-3")}
         </p>
-        <p className="mb-2">
+        <p className="mb-2 text-justify">
           With regard to the information you requested, I have received the
           remaining two presentation titles. One presenter is a local
           businessperson, who will talk about changes she has made in her
@@ -250,7 +250,7 @@ const Ex25_5 = () => {
           {Kaisetsu(showResults, "25-5-4")}
         </p>
 
-        <p className="mb-2">
+        <p className="mb-2 text-justify">
           I have attached a diagram for the debate seating arrangements. You
           will notice that there needs to be a small desk for the moderator in
           the center. There should be one table on each side of the moderator,

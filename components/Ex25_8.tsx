@@ -38,20 +38,20 @@ const Ex25_8 = () => {
       <div className="space-y-4 mb-4">
         <p>
           You are working on an essay about{" "}
-          <span className="font-medium">space exploration</span>. You will
+          <span className="font-semibold">space exploration</span>. You will
           follow the steps below:
         </p>
         <div className="space-y-2">
           <p>
-            <span className="font-medium">Step 1</span>: Read a range of
+            <span className="font-semibold">Step 1</span>: Read a range of
             opinions gathered from the Internet about exploring outer space.
           </p>
           <p>
-            <span className="font-medium">Step 2</span>: Take a position on
+            <span className="font-semibold">Step 2</span>: Take a position on
             space exploration.
           </p>
           <p>
-            <span className="font-medium">Step 3</span>: Create an outline of
+            <span className="font-semibold">Step 3</span>: Create an outline of
             your essay using additional sources.
           </p>
           <p className="">{Kaisetsu(showResults, "25-8-0")}</p>
@@ -59,14 +59,14 @@ const Ex25_8 = () => {
       </div>
 
       {/* Step 1 Section */}
-      <div className="space-y-2">
-        <p className="font-medium">▶ [Step 1] Read a range of opinions</p>
+      <div className="space-y-2 text-justify">
+        <p className="font-semibold">▶ [Step 1] Read a range of opinions</p>
 
         {/* Opinion Cards */}
         <div className="space-y-4">
           {/* Apu's Opinion */}
           <div className="border border-gray-300 p-4">
-            <p className="font-medium mb-2">Apu (university professor)</p>
+            <p className="font-semibold mb-2">Apu (university professor)</p>
             <p>
               The exploration of space requires a lot of research time and
               money. All this research has led to many new inventions and
@@ -82,7 +82,7 @@ const Ex25_8 = () => {
 
           {/* Christine's Opinion */}
           <div className="border border-gray-300 p-4">
-            <p className="font-medium mb-2">Christine (company CEO)</p>
+            <p className="font-semibold mb-2">Christine (company CEO)</p>
             <p>
               Much space exploration relies on international cooperation, a good
               example being the International Space Station, launched in 1998.
@@ -99,7 +99,7 @@ const Ex25_8 = () => {
 
           {/* Meilin's Opinion */}
           <div className="border border-gray-300 p-4">
-            <p className="font-medium mb-2">Meilin (journalist)</p>
+            <p className="font-semibold mb-2">Meilin (journalist)</p>
             <p>
               As the famous physicist, Stephen Hawking, once said, it is
               probably dangerous to broadcast into deep space evidence of the
@@ -115,7 +115,7 @@ const Ex25_8 = () => {
 
           {/* Naomi's Opinion */}
           <div className="border border-gray-300 p-4">
-            <p className="font-medium mb-2">Naomi (lawyer)</p>
+            <p className="font-semibold mb-2">Naomi (lawyer)</p>
             <p>
               Historically, jobs working at sea were likely the least safe, with
               the highest rates of death in the workplace. In modern times,
@@ -132,7 +132,7 @@ const Ex25_8 = () => {
 
           {/* Victor's Opinion */}
           <div className="border border-gray-300 p-4">
-            <p className="font-medium mb-2">Victor (financial analyst)</p>
+            <p className="font-semibold mb-2">Victor (financial analyst)</p>
             <p>
               Space exploration has contributed hugely to economic growth. In
               the USA, NASA provided work for nearly 340,000 people in 2021,
@@ -336,19 +336,19 @@ const Ex25_8 = () => {
 
       {/* Step 3 Section */}
       <div className="mt-8 space-y-6">
-        <p className="font-medium">
+        <p className="font-semibold">
           ▶ [Step 3] Create an outline of your essay
         </p>
 
         {/* Essay Outline Box */}
         <p>Essay outline</p>
         <div className="border border-gray-300 p-4 space-y-4">
-          <h2 className="text-center font-medium">
+          <h2 className="text-center font-semibold">
             A Reconsideration of Space Exploration
           </h2>
 
           <div>
-            <h3 className="font-medium">Introduction</h3>
+            <h3 className="font-semibold">Introduction</h3>
             <p>
               Space exploration is without doubt on the frontline of science,
               but it should not be a priority for the following three reasons.
@@ -357,7 +357,7 @@ const Ex25_8 = () => {
           </div>
 
           <div>
-            <h3 className="font-medium">Body</h3>
+            <h3 className="font-semibold">Body</h3>
             <div className="space-y-1">
               <p>
                 REASON 1 from Step 2, based on evidence from the opinions in
@@ -381,7 +381,7 @@ const Ex25_8 = () => {
           </div>
 
           <div>
-            <h3 className="font-medium">Conclusion</h3>
+            <h3 className="font-semibold">Conclusion</h3>
             <p>
               Upon consideration of all its aspects, we should perhaps
               prioritize other things over exploring space.
@@ -391,8 +391,8 @@ const Ex25_8 = () => {
         </div>
 
         {/* Source A Box */}
-        <div className="border border-gray-300 p-4 space-y-2">
-          <h3 className="font-medium">Source A</h3>
+        <div className="border border-gray-300 p-4 space-y-2 text-justify">
+          <h3 className="font-semibold">Source A</h3>
           <p>
             Although you may not make a direct connection between space
             exploration and environmental problems, a connection does exist.
@@ -416,7 +416,7 @@ const Ex25_8 = () => {
 
         {/* Source B Box */}
         <div className="border border-gray-300 p-4 space-y-4">
-          <h3 className="font-medium">Source B</h3>
+          <h3 className="font-semibold">Source B</h3>
           <p>
             Space exploration is getting more and more costly; in 2022 it was
             reported that the total amount of money spent by all the governments

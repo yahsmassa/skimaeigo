@@ -35,7 +35,7 @@ const Ex25_7 = () => {
         />
       </div>
       {/* Introduction text */}
-      <p className="mb-2 md:text-[16px]">
+      <p className="mb-2  text-justify">
         You are preparing a presentation for a science project on animal habits.
         You found some interesting information in the article below and are now
         making your outline.
@@ -48,7 +48,7 @@ const Ex25_7 = () => {
           Animal Sleep Patterns
         </h2>
 
-        <div className="space-y-1">
+        <div className="space-y-1 text-justify">
           <p className="indent-8">
             If you ever spend all day at home, you might notice that your pet
             cat sleeps a lot during the day and is quite active in the evening
