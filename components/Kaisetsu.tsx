@@ -17,7 +17,7 @@ export const Kaisetsu = (isShow: boolean, id: string) => {
         });
       }}
       className={cn(
-        "px-2 py-1 text-sm   bg-blue-500 text-white rounded hover:bg-blue-600 block",
+        "px-2 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 inline-block align-middle",
         isShow ? "visible" : "invisible"
       )}
     >

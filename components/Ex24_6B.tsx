@@ -37,7 +37,7 @@ const Ex24_6B = () => {
       </div>
       <div className="mb-4">
         You are preparing a presentation for your science club, using the
-        following passage from a science website.
+        following passage from a science website.{' '}
         {Kaisetsu(showResults, "24-6B-0")}
       </div>
 
@@ -45,7 +45,7 @@ const Ex24_6B = () => {
         Chili Peppers: The Spice of Life
       </div>
 
-      <div className="space-y-1">
+      <div className="space-y-1 text-justify">
         <p className="indent-7">
           Tiny pieces of red spice in chili chicken add a nice touch of color,
           but biting into even a small piece can make a person&apos;s mouth burn
@@ -53,7 +53,7 @@ const Ex24_6B = () => {
           avoid the painful sensation. At the same time, though, they can eat
           sashimi with wasabi. This might lead one to wonder what spiciness
           actually is and to ask where the difference between chili and wasabi
-          comes from.
+          comes from.{' '}
           {Kaisetsu(showResults, "24-6B-1")}
         </p>
 
@@ -71,7 +71,7 @@ const Ex24_6B = () => {
           measured using the Scoville Scale, which is also called Scoville Heat
           Units (SHU). SHUs range from the sweet and mild shishito pepper at
           50-200 SHUs to the Carolina Reaper pepper, which can reach up to 2.2
-          million.
+          million.{' '}
           {Kaisetsu(showResults, "24-6B-2")}
         </p>
 
@@ -83,7 +83,7 @@ const Ex24_6B = () => {
           people cannot tolerate chili spice but can eat foods flavored with
           wasabi is that the spice compounds in it are low in density. The
           compounds in wasabi vaporize easily, delivering a blast of spiciness
-          to our nose when we eat it.
+          to our nose when we eat it.{' '}
           {Kaisetsu(showResults, "24-6B-3")}
         </p>
 
@@ -96,7 +96,7 @@ const Ex24_6B = () => {
           found that TRPV1 ceases to be turned on after long-term exposure to
           chili peppers, temporarily easing painful sensations. Thus, skin
           creams containing capsaicin might be useful for people who experience
-          muscle aches.
+          muscle aches.{' '}
           {Kaisetsu(showResults, "24-6B-4")}
         </p>
 
@@ -107,7 +107,7 @@ const Ex24_6B = () => {
           ate spicy foods. This is because spicy foods increase the heart rate,
           send more energy to the muscles, and convert fat into energy.
           Recently, scientists at the University of Wyoming have created a
-          weight-loss drug with capsaicin as a main ingredient.
+          weight-loss drug with capsaicin as a main ingredient.{' '}
           {Kaisetsu(showResults, "24-6B-5")}
         </p>
 
@@ -123,7 +123,7 @@ const Ex24_6B = () => {
           peppers, and therefore, be more tolerant of spicier foods due to
           repeated exposure. Also, in the past, before there were refrigerators,
           they were less likely to have food poisoning than people in cooler
-          climates.
+          climates.{' '}
           {Kaisetsu(showResults, "24-6B-6")}
         </p>
 
@@ -134,7 +134,7 @@ const Ex24_6B = () => {
           eaten several of the world&apos;s hottest chilis in a short time have
           reported experiencing upset stomachs, diarrhea, numb hands, and
           symptoms similar to a heart attack. Ghost peppers, which contain one
-          million SHUs, can even burn a person&apos;s skin if they are touched.
+          million SHUs, can even burn a person&apos;s skin if they are touched.{' '}
           {Kaisetsu(showResults, "24-6B-7")}
         </p>
 
@@ -144,7 +144,7 @@ const Ex24_6B = () => {
           effects, spicy foods remain popular around the world and add a
           flavorful touch to the table. Remember, it is safe to consume spicy
           foods, but you might want to be careful about the amount of peppers
-          you put in your dishes.
+          you put in your dishes.{' '}
           {Kaisetsu(showResults, "24-6B-8")}
         </p>
       </div>

@@ -126,27 +126,26 @@ const Ex24_3B = () => {
 
         <div className="space-y-1">
           {questionData.passage.content.map((paragraph, index) => (
-            <div key={index}>
+            <div key={index} className="text-justify">
               {index === 3 ? (
-                <div className="flex flex-col md:flex-row gap-4 my-1">
-                  <div className="flex-grow">
-                    <p>
-                      {paragraph}{" "}
-                      {Kaisetsu(showResults, "24-3B-" + (index + 1))}
-                    </p>
-                  </div>
-                  <div className="w-full">
-                    <Image
-                      src="/images/Ex24-3B-1.jpg"
-                      alt="Starry night sky with shooting stars"
-                      width={800}
-                      height={600}
-                      className="w-full rounded-lg"
-                    />
-                  </div>
+                <div className="my-1">
+                  <p>
+                    <span className="block w-full md:float-right md:w-[200px] md:ml-4 md:mb-2">
+                      <Image
+                        src="/images/Ex24-3B-1.jpg"
+                        alt="Starry night sky with shooting stars"
+                        width={800}
+                        height={600}
+                        className="w-full rounded-lg"
+                      />
+                    </span>
+                    {paragraph}{" "}
+                    {Kaisetsu(showResults, "24-3B-" + (index + 1))}
+                  </p>
+                  <div className="hidden md:block clear-both"></div>
                 </div>
               ) : (
-                <p>
+                <p className="mb-2">
                   {paragraph} {Kaisetsu(showResults, "24-3B-" + (index + 1))}
                 </p>
               )}
@@ -156,7 +155,7 @@ const Ex24_3B = () => {
       </div>
 
       {/* 設問部分 */}
-      <div className="w-full max-w-2xl mx-auto px-2 sm:px-4">
+      <div className="w-full max-w-2xl mx-auto px-2 md:px-0 sm:px-4">
         <div className={cn("mb-6", showResults && qaFormat(qa, "3B-1"))}>
           <div className="flex items-center flex-wrap mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問1</span>
@@ -165,16 +164,18 @@ const Ex24_3B = () => {
               describing the events in the virtual tour. Put the comments in the
               order in which the events happened.
             </span>
-            <div className="flex flex-row mb-2">
-              {renderSelect("18", 4, answers, setAnswers)}
-              <div className="mx-1">→</div>
-              {renderSelect("19", 4, answers, setAnswers)}
-              <div className="mx-1">→</div>
-            </div>
-            <div className="flex flex-row  mb-2">
-              {renderSelect("20", 4, answers, setAnswers)}
-              <div className="mx-1">→</div>
-              {renderSelect("21", 4, answers, setAnswers)}
+            <div className="flex flex-row flex-wrap">
+              <div className="flex flex-row mb-2">
+                {renderSelect("18", 4, answers, setAnswers)}
+                <div className="mx-1 md:mx-0">→</div>
+                {renderSelect("19", 4, answers, setAnswers)}
+                <div className="mx-1 md:mx-0">→</div>
+              </div>
+              <div className="flex flex-row  mb-2">
+                {renderSelect("20", 4, answers, setAnswers)}
+                <div className="mx-1 md:mx-0">→</div>
+                {renderSelect("21", 4, answers, setAnswers)}
+              </div>
             </div>
             <div className="flex flex-row gap-2">
               <Explain qa={qa} questionId={"3B-1"} isShow={showResults} />
@@ -187,8 +188,7 @@ const Ex24_3B = () => {
           {Object.entries(comments).map(([key, text], index) => (
             <div key={key} className="p-3 border rounded-lg bg-white">
               <div className="text-sm mb-1">{"①②③④"[index]}</div>
-              <div className="text-sm">{text}</div>
-              {Kaisetsu(showResults, "24-3B-" + (index + 8))}
+              <div className="text-sm md:text-base">{text}{' '}{Kaisetsu(showResults, "24-3B-" + (index + 8))}</div>
             </div>
           ))}
         </div>
@@ -198,7 +198,7 @@ const Ex24_3B = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問2</span>
             <span>
               From the tour, Yuzu did&nbsp;{" "}
-              <span className="underline">not</span>&nbsp; learn about the
+              <span className="underline font-semibold">not</span>&nbsp; learn about the
             </span>
             {renderSelect("22", 4, answers, setAnswers)}
             <span>of the south sea island.</span>

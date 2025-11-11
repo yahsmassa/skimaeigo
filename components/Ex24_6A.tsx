@@ -34,8 +34,8 @@ const Ex24_6A = () => {
         />
       </div>
       <div className="mb-6">
-        <h1 className="text-lg font-semibold">
-          A. Your English teacher has assigned this article to you. You need to
+        <h1 className="text-lg">
+          Your English teacher has assigned this article to you. You need to
           prepare notes to give a short talk.
         </h1>
       </div>
@@ -48,8 +48,9 @@ const Ex24_6A = () => {
             When you hear the word &quot;time,&quot; it is probably hours,
             minutes, and seconds that immediately come to mind. In the late 19th
             century, however, philosopher Henri Bergson described how people
-            usually do not experience time as it is measured by clocks (clock
-            time). Humans do not have a known biological mechanism to measure
+            usually do not experience time as it is measured by clocks (<span>
+              <span className="font-semibold">clock time</span>
+            </span>). Humans do not have a known biological mechanism to measure
             clock time, so they use mental processes instead. This is called{" "}
             <span className="font-semibold">psychological time</span>, which
             everyone perceives differently.
@@ -132,14 +133,14 @@ const Ex24_6A = () => {
         </div>
       </div>
       {/* Notes Section */}
-      <div>
-        <p className="mb-4">Your notes:</p>
+      <div className="mt-3">
+        <p className="mb-2">Your notes:</p>
         <div className="border border-gray-800 p-6">
-          <h3 className="text-center italic mb-6">Perceptions of Time</h3>
+          <h3 className="text-center italic mb-6 font-semibold">Perceptions of Time</h3>
 
           <div className="space-y-6">
             <div>
-              <p className="italic">Outline by paragraph</p>
+              <p className="italic font-semibold">Outline by paragraph</p>
               <ol className="ml-4 space-y-1">
                 <li className="flex items-start">
                   <span>1.</span>
@@ -162,16 +163,16 @@ const Ex24_6A = () => {
                   </div>
                 </li>
                 <li className="flex items-start ml-4">
-                  <span>→</span>
-                  <span className="ml-1">Skydiving</span>
+                  <span>▶︎</span>
+                  <span className="ml-2">Skydiving</span>
                 </li>
                 <li className="flex items-start">
                   <span>5.</span>
                   <span className="ml-1">Effects of age</span>
                 </li>
                 <li className="flex items-start ml-4">
-                  <span>→</span>
-                  <span className="ml-1">
+                  <span>▶︎</span>
+                  <span className="ml-2">
                     Time speeds up as we mature, but a
                   </span>
                   <div className="ml-1 border border-gray-800 px-2 w-12 text-center font-sans">
@@ -186,7 +187,7 @@ const Ex24_6A = () => {
             </div>
 
             <div>
-              <p className="italic">
+              <p className="italic font-semibold">
                 My original examples to help the audience
               </p>
               <div className="ml-4 space-y-2">
@@ -221,6 +222,7 @@ const Ex24_6A = () => {
       </div>
       {/* 回答 */}
       <div className="space-y-8 mt-8">
+        {/* 問１ */}
         <div className={cn(showResults && qaFormat(qa, "6A-1"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2 font-sans">問 1</span>{" "}
@@ -228,6 +230,7 @@ const Ex24_6A = () => {
             {renderSelect("39", 6, answers, setAnswers)}
             <span className="-mx-2">and</span>
             {renderSelect("40", 6, answers, setAnswers)}
+            <span className="-ml-2 mr-2">.</span>
             <div className="flex flex-row gap-2">
               <Explain qa={qa} questionId={"6A-1"} isShow={showResults} />
               {Kaisetsu(showResults, "24-6A-8")}
@@ -252,11 +255,13 @@ const Ex24_6A = () => {
           </ol>
         </div>
 
+        {/* 問２ */}
         <div className={cn(showResults && qaFormat(qa, "6A-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2 font-sans">問 2</span>
             <span className="-mx-2">Choose the best option for</span>
             {renderSelect("41", 4, answers, setAnswers)}
+            <span className="-ml-2 mr-2">.</span>
             <div className="flex flex-row gap-2">
               <Explain qa={qa} questionId={"6A-2"} isShow={showResults} />
               {Kaisetsu(showResults, "24-6A-9")}
@@ -276,12 +281,14 @@ const Ex24_6A = () => {
             </div>
           ))}
         </div>
+        {/* 問３ */}
         <div className={cn(showResults && qaFormat(qa, "6A-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2 font-sans">問 3</span>
             <span className="-mx-2">Choose the best option for</span>
             <div className="flex flex-row gap-2">
               {renderSelect("42", 6, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId={"6A-3"} isShow={showResults} />
               {Kaisetsu(showResults, "24-6A-10")}
             </div>
@@ -301,13 +308,15 @@ const Ex24_6A = () => {
           ))}
         </div>
 
+        {/* 問４ */}
         <div className={cn(showResults && qaFormat(qa, "6A-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-4">
             <span className="flex-none mr-2 font-sans">問 4</span>
             <span>Choose the best option for</span>
             <div className="flex flex-row gap-2">
               {renderSelect("43", 4, answers, setAnswers)}
-              <Explain qa={qa} questionId={"6A-4"} />
+              <span className="-ml-2 mr-2">.</span>
+              <Explain qa={qa} questionId={"6A-4"} isShow={showResults} />
               {Kaisetsu(showResults, "24-6A-11")}
             </div>
           </div>

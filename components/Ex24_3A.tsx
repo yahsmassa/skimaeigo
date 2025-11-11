@@ -43,7 +43,7 @@ const Ex24_3A: React.FC = () => {
   const [answers, setAnswers] = useState<Answers>({});
 
   const headerText: HeaderText = {
-    title: "A",
+    title: "",
     description:
       "Susan, your English ALT's sister, visited your class last month. Now back in the UK, she wrote on her blog about an event she took part in.",
   };
@@ -111,44 +111,8 @@ const Ex24_3A: React.FC = () => {
     ],
   };
 
-  const Ex24_3A = (item: BlogContentItem, index: number): JSX.Element => {
-    if (item.type === "greeting") {
-      return (
-        <p key={index} className="mb-4">
-          {item.content}
-        </p>
-      );
-    }
+  // ブログ本文レンダリングは個別に展開
 
-    if (item.link) {
-      return (
-        <p key={index} className="mb-4">
-          {item.content}
-          <span className="underline">{item.link}</span>
-          {item.endContent}
-          <div className="">{Kaisetsu(showResults, "24-3A-" + (index + 1))}</div>
-        </p>
-      );
-    }
-
-    return (
-      <p key={index} className="mb-4">
-        {item.content}
-        <div className="-mb-3">{Kaisetsu(showResults, "24-3A-" + (index + 1))}</div>
-      </p>
-    );
-  };
-
-  const renderRuleItem = (rule: RuleItem, index: number): JSX.Element => (
-    <li key={index} className="flex items-start">
-      <span className="mr-2">•</span>
-      <span>
-        {rule.text && <span>{rule.text} </span>}
-        <span className="font-medium">{rule.emphasis}</span>
-        {rule.afterEmphasis && <span>{rule.afterEmphasis}</span>}
-      </span>
-    </li>
-  );
   const questions = [
     {
       number: "1",
@@ -207,19 +171,91 @@ const Ex24_3A: React.FC = () => {
       </div>
 
       <Card>
-        <CardContent className="flex flex-col md:flex-row gap-6">
-          <div className="flex-1">
-            {blogContent.map((item, index) => Ex24_3A(item, index))}
-          </div>
-
-          <div className="w-full md:w-72">
-            <div className="border border-gray-200 p-4 rounded">
-              <h2 className="font-bold mb-4">{rules.title}</h2>
-              <ul className="space-y-3">
-                {rules.items.map((rule, index) => renderRuleItem(rule, index))}
-              </ul>
-              {Kaisetsu(showResults, "24-3A-5")}
+        <CardContent className="text-justify">
+          <div className="">
+            <div className="w-full md:w-[280px] md:float-right md:ml-6 md:mb-2">
+              <div className="border border-gray-200 p-4 rounded">
+                <h2 className="font-bold mb-4">{rules.title}</h2>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <span>Each group can only use the </span>
+                      <span className="font-semibold">camera</span>
+                      <span > and </span>
+                      <span className="font-semibold">paper map</span>
+                      <span>, both provided by us</span>
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <span>Take as many photos of </span>
+                      <span className="font-semibold">25 checkpoints</span>
+                      <span>(designated sightseeing spots) as possible</span>
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <span className="font-semibold">3-hour</span>
+                      <span> time limit</span>
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <span>Photos must include </span>
+                      <span className="font-semibold">all 3 team members</span>
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <span>All members must move </span>
+                      <span className="font-semibold">together</span>
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <span className="font-semibold">No</span>
+                      <span> mobile phones</span>
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <span className="font-semibold">No</span>
+                      <span> transport</span>
+                    </span>
+                  </li>
+                </ul>
+                {Kaisetsu(showResults, "24-3A-5")}
+              </div>
             </div>
+            <p className="mb-4">
+              Hi!
+            </p>
+            <p className="">
+              I participated in a photo rally for foreign tourists with my friends: See the rules on the right. As photo rally beginners, we decided to aim for only five of the checkpoints. In three minutes, we arrived at our first target, the city museum. In quick succession, we made the second, third, and fourth targets. Things were going smoothly!
+              <span className="[&>button]:inline-block align-middle ml-1">
+                {Kaisetsu(showResults, "24-3A-2")}
+              </span>
+            </p>
+            <p className="">
+              But, on the way to the last target, the statue of a famous samurai from the city, we got lost. Time was running out and my feet were hurting from walking for over two hours. We stopped a man with a pet monkey for help, but neither our Japanese nor his English were good enough. After he'd explained the way using gestures, we realised we wouldn't have enough time to get there and would have to give up.
+              <span className="[&>button]:inline-block align-middle ml-1">
+                {Kaisetsu(showResults, "24-3A-3")}
+              </span>
+            </p>
+            <p className="">
+              We took a photo with him and said goodbye. When we got back to Sakura City Hall, we were surprised to hear that the winning team had completed 19 checkpoints. One of our photos was selected to be on the event website (click <span className="underline">here</span>). It reminds me of the man's warmth and kindness: our own "gold medal."
+              <span className="[&>button]:inline-block align-middle ml-1">
+                {Kaisetsu(showResults, "24-3A-4")}
+              </span>
+            </p>
+            <div className="hidden md:block clear-both"></div>
           </div>
         </CardContent>
       </Card>

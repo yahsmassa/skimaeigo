@@ -51,7 +51,7 @@ const Ex24_2B = () => {
         </h2>
       </div>
       <div className="bg-white rounded-lg border-2 border-black mb-8 p-6">
-        <div className="space-y-1">
+        <div className="space-y-1 text-justify">
           <div>
             <div className="space-y-6">
               <div>
@@ -106,6 +106,7 @@ const Ex24_2B = () => {
       {/* 設問 */}
       <div className={cn(exQuestionFormat, "mt-6")}>
         <div className={cn("mb-4", showResults && qaFormat(qa, "2B-1"))}>
+          {/* 問１ */}
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問1</span>
             <span>According to the review, which of the following is true?</span>
@@ -135,10 +136,11 @@ const Ex24_2B = () => {
           </ol>
         </div>
 
+        {/* 問２ */}
         <div className={cn("mb-4", showResults && qaFormat(qa, "2B-2"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問2</span>
-            <span>Which is not included in the cheapest option?</span>
+            <span>Which is <span className="underline font-semibold">not</span> included in the cheapest option?</span>
             <div className="flex flex-row gap-2">
               {renderSelect("12", 4, answers, setAnswers)}
               <Explain qa={qa} questionId="2B-2" isShow={showResults} />
@@ -165,6 +167,7 @@ const Ex24_2B = () => {
           </ol>
         </div>
 
+        {/* 問３ */}
         <div className={cn("mb-4", showResults && qaFormat(qa, "2B-3"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問3</span>
@@ -221,12 +224,14 @@ const Ex24_2B = () => {
           </ol>
         </div>
 
+        {/* 問４ */}
         <div className={cn("mb-4", showResults && qaFormat(qa, "2B-4"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問4</span>
-            <span>The writer's opinion of her chosen plan is that</span>
+            <span>The writer's <span className="underline font-semibold">opinion</span> of her chosen plan is that</span>
             <div className="flex flex-row gap-2">
               {renderSelect("14", 4, answers, setAnswers)}
+              <span className="-ml-3 mr-2">.</span>
               <Explain qa={qa} questionId="2B-4" isShow={showResults} />
               {Kaisetsu(showResults, "24-2B-10")}
             </div>
@@ -251,6 +256,7 @@ const Ex24_2B = () => {
           </ol>
         </div>
 
+        {/* 問５ */}
         <div className={cn("mb-4", showResults && qaFormat(qa, "2B-5"))}>
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">問5</span>
