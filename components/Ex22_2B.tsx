@@ -37,10 +37,10 @@ const Ex22_2B = () => {
       </div>
       {/* Header section */}
       <div className="mb-2">
-        <p className="text-base">
+        <p className="text-base px-2">
           You are the editor of a school English paper.
           David, an exchange student from the UK, has written an article for the
-          paper.
+          paper.{' '}
           {Kaisetsu(showResults, "22-2B-0")}
         </p>
       </div>
@@ -51,33 +51,33 @@ const Ex22_2B = () => {
           Do you like animals? The UK is known as a nation of animal-lovers; two
           in five UK homes have pets. This is lower than in the US, where more
           than half of homes have pets. However, Australia has the highest
-          percentage of homes with pets!
+          percentage of homes with pets!{' '}
           {Kaisetsu(showResults, "22-2B-1")}
         </p>
 
-        <p className="mb-4">
+        <p className="my-2">
           Why is this so? Results of a survey done in Australia give us some
           answers.
         </p>
 
         {/* Survey results box */}
-        <div className="border border-gray-200 border-dashed p-4 mb-4 relative">
+        <div className="border border-gray-700 border-dashed p-4 mb-4 relative">
           <p className="mb-2">
             Pet owners mention the following advantages of living with pets:
           </p>
 
           <ul className="list-none space-y-3 mb-4">
             <li className="flex items-start">
-              <span className="mr-2">▶</span>
+              <span className="mr-2 text-sm mt-1">▶</span>
               The love, happiness, and friendship pets give (90%);
             </li>
             <li className="flex items-start">
-              <span className="mr-2">▶</span>
+              <span className="mr-2 text-sm mt-1">▶</span>
               The feeling of having another family member (over 60% of dog and
               cat owners);
             </li>
             <li className="flex items-start">
-              <span className="mr-2">▶</span>
+              <span className="mr-2 text-sm mt-1">▶</span>
               The happy times pets bring. Most owners spend 3-4 hours with their
               &apos;fur babies&apos; every day and around half of all dog and
               cat owners let their pets sleep with them!
@@ -89,6 +89,7 @@ const Ex22_2B = () => {
               One disadvantage is that pets have to be cared for when owners go
               away. It may be difficult to organise care for them; 25% of owners
               take their pets on holidays or road trips.
+              {' '}
               {Kaisetsu(showResults, "22-2B-2")}
             </p>
             <div className="w-24 h-24 flex-shrink-0">
@@ -111,7 +112,7 @@ const Ex22_2B = () => {
           small flats with pets. Recently, I heard that little pigs are becoming
           popular as pets in Japan. Some people take their pig(s) for a walk,
           which must be fun, but I wonder how easy it is to keep pigs inside
-          homes.
+          homes.{' '}
           {Kaisetsu(showResults, "22-2B-3")}
         </p>
       </div>
@@ -128,7 +129,7 @@ const Ex22_2B = () => {
             <span>
               countries&apos; ranking from&nbsp;
             </span>
-            <span className="underline">highest to lowest</span>
+            <span className="underline font-semibold">highest to lowest</span>
             <span>?</span>
             <div className="flex flex-row gap-2">
             {renderSelect("11", 6, answers, setAnswers)}
@@ -234,7 +235,6 @@ const Ex22_2B = () => {
             </span>
             <div className="flex flex-row gap-2">
               {renderSelect("14", 4, answers, setAnswers)}
-              <span className="-ml-2 mt-1 mr-2">.</span>
               <Explain qa={qa} questionId="2B-4" isShow={showResults} />
               {Kaisetsu(showResults, "22-2B-7")}
             </div>
@@ -266,7 +266,6 @@ const Ex22_2B = () => {
             <span>Which is the most suitable title for the article?</span>
             <div className="flex flex-row gap-2">
               {renderSelect("15", 4, answers, setAnswers)}
-              <span className="-ml-2 mt-1 mr-2">.</span>
               <Explain qa={qa} questionId="2B-5" isShow={showResults} />
               {Kaisetsu(showResults, "22-2B-8")}
             </div>

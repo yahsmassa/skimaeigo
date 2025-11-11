@@ -54,19 +54,19 @@ const Ex22_6B = () => {
         />
       </div>
       {/* Instructions */}
-      <div className="mb-2">
+      <div className="mb-2 px-3">
         <p className="mb-2">
           You are in a student group
           preparing a poster for a scientific presentation contest with the
           theme &quot;What we should know in order to protect the
           environment.&quot; You have been using the following passage to create
-          the poster.
+          the poster.{' '}
           {Kaisetsu(showResults, "22-6B-0")}
         </p>
       </div>
 
       {/* Article content */}
-      <div className="border border-gray-800 p-8">
+      <div className="border border-gray-800 p-8 text-justify">
         <h1 className="text-2xl font-serif text-center mb-2">
           Recycling Plastic
         </h1>
@@ -90,7 +90,7 @@ const Ex22_6B = () => {
             composition of plastic used and its recyclability. However, a
             plastic recycling symbol on an object does not always mean that the
             item can be recycled. It only shows what type of plastic it is made
-            from and that it might be recyclable.
+            from and that it might be recyclable.{' '}
             {Kaisetsu(showResults, "22-6B-1")}
           </p>
 
@@ -122,7 +122,7 @@ const Ex22_6B = () => {
             So, what do these numbers mean? One group (numbers 2, 4, and 5) is
             considered to be safe for the human body, while the other group
             (numbers 1, 3, 6, and 7) could be problematic in certain
-            circumstances. Let us look at the safer group first.
+            circumstances. Let us look at the safer group first.{' '}
             {Kaisetsu(showResults, "22-6B-2")}
           </p>
 
@@ -142,7 +142,7 @@ const Ex22_6B = () => {
             non-stretching, and has a high resistance to impact, heat, and
             freezing. It is suitable for furniture, food containers, and polymer
             banknotes such as the Australian dollar. Only 3% of Type 5 is
-            recycled.
+            recycled.{' '}
             {Kaisetsu(showResults, "22-6B-4")}
           </p>
 
@@ -167,7 +167,7 @@ const Ex22_6B = () => {
             drinking cups, instant noodle containers, and other food packaging.
             Type 7 plastics (acrylics, nylons, and polycarbonates) are difficult
             to recycle. Type 7 plastics are often used in the manufacture of
-            vehicle parts such as seats, dashboards, and bumpers.
+            vehicle parts such as seats, dashboards, and bumpers.{' '}
             {Kaisetsu(showResults, "22-6B-5")}
           </p>
 
@@ -175,7 +175,7 @@ const Ex22_6B = () => {
             Currently, only about 20% of plastic is recycled, and approximately
             55% ends up in a landfill. Therefore, knowledge about different
             types of plastic could help reduce waste and contribute to an
-            increased awareness of the environment.
+            increased awareness of the environment.{' '}
             {Kaisetsu(showResults, "22-6B-6")}
           </p>
         </div>
@@ -193,103 +193,34 @@ const Ex22_6B = () => {
         </div>
 
         {/* Number box */}
-        <div className="border border-gray-300 w-16 p-1 mb-4 text-center font-sans">
-          44
+        <div className="border border-gray-800 p-2 w-[85%] ml-3 mb-3">
+            <div className="border border-gray-300 w-16 p-1 text-center font-sans">
+              44
+            </div>
         </div>
 
         {/* Table section title */}
         <div className="rounded-lg border border-gray-300 p-2 mb-4">
           Types of plastic and recycling information
         </div>
-
-        {/* Table */}
-        <div className="mb-4 overflow-hidden border border-gray-300">
-          <table className="w-full">
-            <thead>
-              <tr className="border-b">
-                <th className="p-2 text-left border-r">Type</th>
-                <th className="p-2 text-left border-r">Symbol</th>
-                <th className="p-2 text-left border-r">Description</th>
-                <th className="p-2 text-left">Products</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b">
-                <td className="p-2 border-r text-center">1</td>
-                <td className="p-2 border-r">
-                  <Image
-                    src="/images/recycle1.webp"
-                    alt="Recycling symbols PETE"
+        <Image
+                    src="/images/Ex22-6B-3.webp"
+                    alt="Recycling symbols table"
                     width={300}
                     height={359}
-                    className="h-auto w-10"
+                    className="h-auto w-full"
                   />
-
-                  {/* <RecyclingSymbol number="1" />
-                  <div className="text-xs text-center">PETE (PET)</div> */}
-                </td>
-                <td className="p-2 border-r">
-                  This type of plastic is common and generally easy to recycle.
-                </td>
-                <td className="p-2">drink bottles, food containers, etc.</td>
-              </tr>
-              <tr className="border-b">
-                <td className="p-2 border-r text-center">2</td>
-                <td className="p-2 border-r">
-                  <Image
-                      src="/images/recycle2.webp"
-                      alt="Recycling symbols HDPE"
-                      width={300}
-                      height={359}
-                      className="h-auto w-10"
-                    />
-                </td>
-                <td className="p-2 border-r">
-                  This type of plastic is easily recycled
-                  <span className="inline-block border border-gray-300 px-2 mx-1 font-sans">
-                    45
-                  </span>
-                  .
-                </td>
-                <td className="p-2">
-                  heart valves, artificial joints, chairs, toys, etc.
-                </td>
-              </tr>
-              <tr>
-                <td className="p-2 border-r text-center">3</td>
-                <td className="p-2 border-r">
-                <Image
-                    src="/images/recycle3.webp"
-                    alt="Recycling symbols PVC"
-                    width={300}
-                    height={359}
-                    className="h-auto w-10"
-                  />
-
-                </td>
-                <td className="p-2 border-r">
-                  This type of plastic is
-                  <span className="inline-block border border-gray-300 px-2 mx-1 font-sans">
-                    46
-                  </span>
-                  .
-                </td>
-                <td className="p-2">shower curtains, pipes, flooring, etc.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
 
         {/* Bottom section */}
-        <div className="rounded-lg border border-gray-300 p-2 mb-4">
+        <div className="mt-3 rounded-lg border border-gray-300 p-2 mb-4">
           Plastics with common properties
         </div>
 
-        <div className="border border-gray-300 p-4 w-[100px] mx-auto">
-          <div className="border border-gray-300 w-16 p-1 mb-2 text-center font-sans">
+        <div className="border border-gray-800 p-4 w-[85%] mx-auto">
+          <div className="border border-gray-800 w-16 p-1 mb-2 text-center font-sans">
             47
           </div>
-          <div className="border border-gray-300 w-16 p-1 text-center font-sans">
+          <div className="border border-gray-800 w-16 p-1 text-center font-sans">
             48
           </div>
         </div>

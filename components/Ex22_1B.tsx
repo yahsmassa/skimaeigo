@@ -37,15 +37,16 @@ const Ex22_1B = () => {
       </div>
       {/* Contest Announcement */}
       <div className="mb-6 md:px-8">
-          <div className="leading-6 md:leading-8 md:text-[20px] md:mb-2">
+          <div className="leading-6  md:text-[18px] md:mb-2">
             You are looking at the website for the City Zoo in Toronto, Canada
             and you find an interesting contest announcement. You are thinking
             about entering the contest.
+            {' '}
+            {Kaisetsu(showResults, "22-1B-0")}
           </div>
-          {Kaisetsu(showResults, "22-1B-0")}
         </div>
 
-      <div className="max-w-3xl mx-auto border border-gray-800 p-6 space-y-4">
+      <div className="max-w-3xl mx-auto border border-gray-800 p-6 md:p-2 space-y-4">
         {/* Header Section */}
         <div className="flex items-center space-x-4 border-b border-gray-800 pb-4">
           <Image
@@ -79,50 +80,49 @@ const Ex22_1B = () => {
 
         {/* How to Enter Section */}
         <div className="border-b border-gray-800 pb-4">
-          <h3 className="font-bold mb-2">How to Enter</h3>
+          <h3 className="font-bold mb-2 border-b border-gray-800">How to Enter{' '}{Kaisetsu(showResults, "22-1B-2")}</h3>
           <ul className="space-y-2 mb-2">
             <li className="flex items-start">
-              <span className="inline-block w-4 h-4 bg-gray-800 transform rotate-45 mt-1 mr-2"></span>
+              <span className="mr-2">◆</span>
               <span>
                 Click on the link here to submit your idea for his name and
                 follow the directions.
-                <span className="ml-2">
-                  → <span className="underline">Enter Here</span>
+                <span className="md:ml-10">
+                  → <span className="underline font-semibold">Enter Here</span>
                 </span>
               </span>
             </li>
             <li className="flex items-start">
-              <span className="inline-block w-4 h-4 bg-gray-800 transform rotate-45 mt-1 mr-2"></span>
-              <span>
+            <span className="mr-2">◆</span>
+            <span>
                 Names are accepted starting at 12:00 a.m. on June 1 until 11:59
                 p.m. on June 7.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="inline-block w-4 h-4 bg-gray-800 transform rotate-45 mt-1 mr-2"></span>
-              <span>
+            <span className="mr-2">◆</span>
+            <span>
                 Watch the baby giraffe on the live web camera to help you get
                 ideas.
-                <span className="ml-2">
-                  → <span className="underline">Live Web Camera</span>
+                <span className="ml-2 md:ml-10">
+                  → <span className="underline font-semibold">Live Web Camera</span>
                 </span>
               </span>
             </li>
             <li className="flex items-start">
-              <span className="inline-block w-4 h-4 bg-gray-800 transform rotate-45 mt-1 mr-2"></span>
-              <span>
+            <span className="mr-2">◆</span>
+            <span>
                 Each submission is $5. All money will go towards feeding the
                 growing baby giraffe.
               </span>
             </li>
           </ul>
-          {Kaisetsu(showResults, "22-1B-2")}
         </div>
 
         {/* Contest Schedule Section */}
         <div className="border-b border-gray-800 pb-4">
-          <h3 className="font-bold mb-2">Contest Schedule</h3>
-          <div className="grid grid-cols-[60px_1fr] md:grid-cols-[100px_1fr] gap-4">
+          <h3 className="font-bold mb-2 border-b border-gray-800">Contest Schedule{' '}{Kaisetsu(showResults, "22-1B-3")}</h3>
+          <div className="grid grid-cols-[60px_1fr] md:grid-cols-[100px_1fr] gap-0 [&>div]:border [&>div]:border-gray-300 [&>div]:p-2">
             <div className="font-bold">June 8</div>
             <div>
               <p>
@@ -140,18 +140,17 @@ const Ex22_1B = () => {
                 Click on the live stream link between 11:00 a.m. and 12:00 p.m.
                 to find out!
                 <span className="ml-2">
-                  → <span className="underline">Live Stream</span>
+                  → <span className="underline font-semibold">Live Stream</span>
                 </span>
               </p>
               <p>Check our website for the winning name after 12:00 p.m.</p>
             </div>
           </div>
-          {Kaisetsu(showResults, "22-1B-3")}
         </div>
 
         {/* Prizes Section */}
         <div>
-          <h3 className="font-bold mb-2">Prizes</h3>
+          <h3 className="font-bold mb-2 border-b border-gray-800">Prizes {' '}{Kaisetsu(showResults, "22-1B-4")}</h3>
           <p className="mb-2">
             All five contest finalists will receive free one-day zoo passes
             valid until the end of July.
@@ -162,13 +161,13 @@ const Ex22_1B = () => {
             Safari Tour!
           </p>
         </div>
-        {Kaisetsu(showResults, "22-1B-4")}
+
       </div>
 
       {/* Quiz Section */}
       <div className="max-w-3xl mx-auto mt-4 space-y-8">
         {/* Question 1 */}
-        <div className={cn("space-y-2", showResults && qaFormat(qa, "1B-1"))}>
+        <div className={cn("space-y-1", showResults && qaFormat(qa, "1B-1"))}>
           <div className="flex items-start space-x-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
             <span>You can enter this contest between </span>
@@ -195,7 +194,7 @@ const Ex22_1B = () => {
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-2", showResults && qaFormat(qa, "1B-2"))}>
+        <div className={cn("space-y-1", showResults && qaFormat(qa, "1B-2"))}>
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>
@@ -226,7 +225,7 @@ const Ex22_1B = () => {
         </div>
 
         {/* Question 3 */}
-        <div className={cn("space-y-2", showResults && qaFormat(qa, "1B-3"))}>
+        <div className={cn("space-y-1", showResults && qaFormat(qa, "1B-3"))}>
           <div className="flex flex-wrap items-center">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>

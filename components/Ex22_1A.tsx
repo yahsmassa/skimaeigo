@@ -37,7 +37,7 @@ const Ex22_1A = () => {
       </div>
       {/* Introduction Text */}
       <div className="mb-2">
-        <p className="text-lg leading-relaxed">
+        <p className="text-lg ">
           You are studying about Brazil in the international club at your senior
           high school. Your teacher asked you to do research on food in Brazil.
           You find a Brazilian cookbook and read about fruits used to make
@@ -50,7 +50,7 @@ const Ex22_1A = () => {
       <div className="border border-gray-800 mb-8">
         {/* Title */}
         <div className="text-center border-b border-gray-800 p-2">
-          <h2 className="text-lg font-medium">Popular Brazilian Fruits</h2>
+          <h2 className="text-lg font-semibold">Popular Brazilian Fruits</h2>
         </div>
 
         {/* Grid for fruits */}
@@ -65,16 +65,15 @@ const Ex22_1A = () => {
                 height={160}
                 className="mb-2"
               />
-              <h3 className="font-medium mb-2">Cupuaçu</h3>
+              <h3 className="font-semibold mb-2">Cupuaçu{' '}{Kaisetsu(showResults, "22-1A-1")}</h3>
             </div>
-            <ul className="list-disc pl-6 space-y-1 mb-2">
+            <ul className="list-disc pl-1 space-y-1 text-base">
               <li>Smells and tastes like chocolate</li>
               <li>Great for desserts, such as cakes, and with yogurt</li>
               <li>
                 Brazilians love the chocolate-flavored juice of this fruit.
               </li>
             </ul>
-            {Kaisetsu(showResults, "22-1A-1")}
           </div>
 
           {/* Jabuticaba */}
@@ -87,9 +86,10 @@ const Ex22_1A = () => {
                 height={160}
                 className="mb-2"
               />
-              <h3 className="font-medium mb-2">Jabuticaba</h3>
+              <h3 className="font-semibold mb-2">Jabuticaba{' '}{Kaisetsu(showResults, "22-1A-2")}
+              </h3>
             </div>
-            <ul className="list-disc pl-6 space-y-1 mb-2">
+            <ul className="list-disc pl-1 space-y-1 text-base">
               <li>Looks like a grape</li>
               <li>Eat them within three days of picking for a sweet flavor.</li>
               <li>
@@ -97,7 +97,6 @@ const Ex22_1A = () => {
                 cakes.
               </li>
             </ul>
-            {Kaisetsu(showResults, "22-1A-2")}
           </div>
 
           {/* Pitanga */}
@@ -110,14 +109,14 @@ const Ex22_1A = () => {
                 height={160}
                 className="mb-2"
               />
-              <h3 className="font-medium mb-2">Pitanga</h3>
+              <h3 className="font-semibold mb-2">Pitanga{' '}{Kaisetsu(showResults, "22-1A-3")}</h3>
             </div>
-            <ul className="list-disc pl-6 space-y-1 mb-2">
+            <ul className="list-disc pl-1 space-y-1 text-base">
               <li>Comes in two varieties, red and green</li>
               <li>Use the sweet red one for making cakes.</li>
               <li>The sour green one is only for jams and jellies.</li>
             </ul>
-            {Kaisetsu(showResults, "22-1A-3")}
+
           </div>
 
           {/* Buriti */}
@@ -130,14 +129,13 @@ const Ex22_1A = () => {
                 height={160}
                 className="mb-2"
               />
-              <h3 className="font-medium mb-2">Buriti</h3>
+              <h3 className="font-semibold mb-2">Buriti{' '}{Kaisetsu(showResults, "22-1A-4")}</h3>
             </div>
-            <ul className="list-disc pl-6 space-y-1 mb-2">
+            <ul className="list-disc pl-1 space-y-1 text-base">
               <li>Orange inside, similar to a peach or a mango</li>
               <li>Tastes very sweet, melts in your mouth</li>
               <li>Best for ice cream, cakes, and jams</li>
             </ul>
-            {Kaisetsu(showResults, "22-1A-4")}
           </div>
         </div>
       </div>
@@ -156,7 +154,7 @@ const Ex22_1A = () => {
               {Kaisetsu(showResults, "22-1A-5")}
             </div>
           </div>
-          <ol className="space-y-2 pl-2 md:pl-8">
+          <ol className="space-y-1 pl-2 md:pl-8">
             {["a cake", "chocolate", "ice cream", "yogurt"].map(
               (text, index) => (
                 <div key={index} className="flex items-start">
@@ -183,7 +181,7 @@ const Ex22_1A = () => {
               {Kaisetsu(showResults, "22-1A-6")}
             </div>
           </div>
-          <ol className="space-y-2 pl-2 md:pl-8">
+          <ol className="space-y-1 pl-2 md:pl-8">
             {["buriti", "cupuaçu", "jabuticaba", "pitanga"].map(
               (text, index) => (
                 <div key={index} className="flex items-start">

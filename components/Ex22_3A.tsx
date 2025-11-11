@@ -36,12 +36,11 @@ const Ex22_3A = () => {
         />
       </div>
       <div className="mb-2 font-serif">
-        <p>
-          A You are interested in how Japanese culture is represented in other
-          countries.
+        <p className=" px-2">
+          You are interested in how Japanese culture is represented in other
+          countries. You are reading a young UK blogger&apos;s post.{' '}{Kaisetsu(showResults, "22-3A-0")}
         </p>
-        <p className="mt-2">You are reading a young UK blogger&apos;s post.</p>
-        {Kaisetsu(showResults, "22-3A-0")}
+
       </div>
 
       <div className="border border-gray-400 p-6 bg-white mb-6">
@@ -59,7 +58,7 @@ const Ex22_3A = () => {
           </div>
         </div>
 
-        <div className="space-y-1 text-gray-700 font-serif leading-relaxed">
+        <div className="space-y-3 text-gray-700 font-serif">
           <p>
             On the first two Sundays in July every year, there is an
             intercultural event in Winsfield called &quot;A Slice of
@@ -69,7 +68,7 @@ const Ex22_3A = () => {
             <i>yatai</i>
             served green-tea ice cream, <i>takoyaki</i>, and <i>yakitori</i>. I
             tried green-tea ice cream and <i>takoyaki</i>. The <i>takoyaki</i>{" "}
-            was especially delicious. You should try some!
+            was especially delicious. You should try some!{' '}
             {Kaisetsu(showResults, "22-3A-1")}
           </p>
 
@@ -79,7 +78,7 @@ const Ex22_3A = () => {
             didn&apos;t find it funny. It may be because I don&apos;t know much
             about Japanese culture. For me, the other two, the <i>taiko</i> and
             the <i>koto</i>, were the highlights. The <i>taiko</i> were
-            powerful, and the <i>koto</i> was relaxing.
+            powerful, and the <i>koto</i> was relaxing.{' '}
             {Kaisetsu(showResults, "22-3A-2")}
           </p>
 
@@ -89,13 +88,13 @@ const Ex22_3A = () => {
             shape of the one I made was a little odd, it tasted good. The{" "}
             <i>nagashi-somen</i> experience was really interesting! It involved
             trying to catch cooked noodles with chopsticks as they slid down a
-            bamboo water slide. It was very difficult to catch them.
+            bamboo water slide. It was very difficult to catch them.{' '}
             {Kaisetsu(showResults, "22-3A-3")}
           </p>
 
           <p>
             If you want to experience a slice of Japan, this festival is for
-            you! I took a picture of the flyer. Check it out.
+            you! I took a picture of the flyer. Check it out.{' '}
             {Kaisetsu(showResults, "22-3A-4")}
           </p>
         </div>

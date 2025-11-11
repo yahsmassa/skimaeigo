@@ -33,10 +33,10 @@ const Ex22_4 = () => {
         />
       </div>
       {/* Context text */}
-      <p className="text-base mb-2 md:text-xl">
+      <p className="text-base mb-2 md:text-[18px] px-3">
         You are a new student at Robinson University in the US. You are reading
         the blogs of two students, Len and Cindy, to find out where you can buy
-        things for your apartment.
+        things for your apartment.{' '}
         {Kaisetsu(showResults, "22-4-0")}
       </p>
 
@@ -60,7 +60,7 @@ const Ex22_4 = () => {
             microwaves. A lot of students like to buy and sell their things at
             the store. Here are some items that are on sale now. Most of them
             are priced very reasonably, but stock is limited, so hurry!
-            {Kaisetsu(showResults, "22-4-1")}
+            {' '}{Kaisetsu(showResults, "22-4-1")}
           </p>
 
           {/* Sale advertisement as a single image */}
@@ -74,12 +74,12 @@ const Ex22_4 = () => {
             />
           </div>
 
-          <p className="text-sm">https://secondhand.web</p>
+          <p className="text-sm underline">https://secondhand.web</p>
 
           <p className="text-base indent-7">
             Purchasing used goods is eco-friendly. Plus, by buying from Second
             Hand you&apos;ll be supporting a local business. The owner is
-            actually a graduate of Robinson University!
+            actually a graduate of Robinson University!{' '}
             {Kaisetsu(showResults, "22-4-2")}
           </p>
         </div>
@@ -102,7 +102,7 @@ const Ex22_4 = () => {
           <p className="text-base indent-7">
             Are you starting at Robinson University soon? You may be preparing
             to buy some household appliances or electronics for your new life.
-            {Kaisetsu(showResults, "22-4-3")}
+            {' '}{Kaisetsu(showResults, "22-4-3")}
           </p>
 
           <p className="text-base indent-7">
@@ -114,7 +114,7 @@ const Ex22_4 = () => {
             quickly and could not shop around, so I just bought everything from
             one big chain store. I wish I had been able to compare the prices at
             two or more shops beforehand.
-            {Kaisetsu(showResults, "22-4-4")}
+            {' '}{Kaisetsu(showResults, "22-4-4")}
           </p>
 
           <p className="text-base indent-7">
@@ -122,7 +122,7 @@ const Ex22_4 = () => {
             prices of items from different stores before you go shopping. The
             following table compares current prices for the most popular new
             items from three big stores.
-            {Kaisetsu(showResults, "22-4-5")}
+            {' '}{Kaisetsu(showResults, "22-4-5")}
           </p>
 
           {/* Price comparison table as an image */}
@@ -136,7 +136,7 @@ const Ex22_4 = () => {
             />
           </div>
 
-          <p className="text-sm">https://save4unistu.com</p>
+          <p className="ml-[80px] text-sm underline">https://save4unistu.com</p>
 
           <p className="text-base indent-7">
             Note that warranties are available for all items. So, if anything
@@ -147,12 +147,12 @@ const Ex22_4 = () => {
             with proof of enrollment at a school get 10% off the prices listed
             on the table above. Warranties at Cut Price are not provided for
             free. You have to pay $10 per item for a five-year warranty.
-            {Kaisetsu(showResults, "22-4-6")}
+            {' '}{Kaisetsu(showResults, "22-4-6")}
           </p>
 
           <p className="text-base">
             Things go fast! Don&apos;t wait or you&apos;ll miss out!
-            {Kaisetsu(showResults, "22-4-7")}
+            {' '}{Kaisetsu(showResults, "22-4-7")}
           </p>
         </div>
       </div>

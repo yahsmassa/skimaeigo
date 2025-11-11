@@ -39,7 +39,7 @@ const Ex22_3B = () => {
       <div className="mb-2">
         <span className="ml-4">
           You enjoy outdoor sports and have found an interesting story in a
-          mountain climbing magazine.
+          mountain climbing magazine.{' '}
           {Kaisetsu(showResults, "22-3B-0")}
         </span>
       </div>
@@ -51,34 +51,33 @@ const Ex22_3B = () => {
 
       {/* Main content with map float */}
       <div className="relative">
-        <div className="mb-0 indent-7">
-          Last September, a team of 12 of us, 10 climbers and two minibus
-          drivers, participated in the Three Peaks Challenge, which is well
-          known for its difficulty among climbers in Britain.
-          {Kaisetsu(showResults, "22-3B-1")}
-        </div>
+        <div className="mb-0 indent-7 text-justify space-y-1">
+          <div>
+            <p>
+              <span className="float-right ml-4 mb-2 w-60 md:w-[200px]">
+                <Image
+                  src="/images/Ex22-3B-1.webp"
+                  alt="Map of UK showing Ben Nevis (1344m), Scafell Pike (977m), and Snowdon (1085m)"
+                  width={320}
+                  height={320}
+                  className="w-full h-auto"
+                />
+              </span>
+              Last September, a team of 12 of us, 10 climbers and two minibus
+              drivers, participated in the Three Peaks Challenge, which is well
+              known for its difficulty among climbers in Britain.
+              The goal is to climb the highest mountain in Scotland (Ben Nevis),
+                in England (Scafell Pike), and in Wales (Snowdon) within 24 hours,
+                including approximately 10 hours of driving between the mountains.
+                To prepare for this, we trained on and off for several months and
+                planned the route carefully. Our challenge would start at the foot
+                of Ben Nevis and finish at the foot of Snowdon.
+                {' '}{Kaisetsu(showResults, "22-3B-2")}
+            </p>
+            <div className="hidden md:block clear-both"></div>
+          </div>
 
-        {/* UK Map with peaks */}
-        <div className="float-right ml-4 mb-4 w-48">
-          <Image
-            src="/images/Ex22-3B-1.webp"
-            alt="Map of UK showing Ben Nevis (1344m), Scafell Pike (977m), and Snowdon (1085m)"
-            width={200}
-            height={200}
-            className="w-full"
-          />
-        </div>
-
-        <div className="space-y-1">
-          <p className="">
-            The goal is to climb the highest mountain in Scotland (Ben Nevis),
-            in England (Scafell Pike), and in Wales (Snowdon) within 24 hours,
-            including approximately 10 hours of driving between the mountains.
-            To prepare for this, we trained on and off for several months and
-            planned the route carefully. Our challenge would start at the foot
-            of Ben Nevis and finish at the foot of Snowdon.
-            {Kaisetsu(showResults, "22-3B-2")}
-          </p>
+        {/* <div className="space-y-1"> */}
 
           <p className="indent-7">
             We began our first climb at six o&apos;clock on a beautiful autumn
@@ -86,7 +85,7 @@ const Ex22_3B = () => {
             three hours. On the way down, however, I realised I had dropped my
             phone. Fortunately, I found it with the help of the team, but we
             lost 15 minutes.
-            {Kaisetsu(showResults, "22-3B-3")}
+            {' '}{Kaisetsu(showResults, "22-3B-3")}
           </p>
 
           <p className="indent-7">
@@ -98,7 +97,7 @@ const Ex22_3B = () => {
             traffic was light, we were right on schedule when we started our
             final climb. Now we felt more confident we could complete the
             challenge within the time limit.
-            {Kaisetsu(showResults, "22-3B-4")}
+            {' '}{Kaisetsu(showResults, "22-3B-4")}
           </p>
 
           <p className="indent-7">
@@ -106,7 +105,6 @@ const Ex22_3B = () => {
             rain heavily and we had to slow down again. It was slippery and very
             difficult to see ahead. At 4:30 am, we realised that we could no
             longer finish in 24 hours.
-            {Kaisetsu(showResults, "22-3B-5")}
             Nevertheless, we were still determined to climb the final mountain.
             The rain got heavier and heavier, and two members of the team
             decided to return to the minibus. Exhausted and miserable, the rest
@@ -115,7 +113,7 @@ const Ex22_3B = () => {
             Suddenly, we were no longer tired. Even though we weren&apos;t
             successful with the time challenge, we were successful with the
             climb challenge. We had done it. What a feeling that was!
-            {Kaisetsu(showResults, "22-3B-6")}
+            {' '}{Kaisetsu(showResults, "22-3B-6")}
           </p>
         </div>
       </div>

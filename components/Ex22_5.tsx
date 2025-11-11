@@ -36,46 +36,43 @@ const Ex22_5 = () => {
         />
       </div>
       {/* Introduction text */}
-      <p className="mb-2 text-lg">
+      <p className="mb-2 md:text-[18px] px-3">
         In your English class, you will give a presentation about a great
         inventor. You found the following article and prepared notes for your
-        presentation.
+        presentation.{' '}
         {Kaisetsu(showResults, "22-5-0")}
       </p>
 
       {/* Main article container */}
-      <div className="border border-gray-300 p-3 text-base">
+      <div className="border border-gray-300 p-3 text-base text-justify">
         {/* First paragraph - full width */}
-        <p className="mb-0 indent-7">
-          Who invented television? It is not an easy question to answer. In the
-          early years of the 20th century, there was something called a
-          mechanical television system, but it was not a success. Inventors were
-          also competing to develop an electronic television system, which later
-          became the basis of what we have today. In the US, there was a battle
-          over the patent for the electronic television system, which attracted
-          people&apos;s attention because it was between a young man and a giant
-          corporation. This patent would give the inventor the official right to
-          be the only person to develop, use, or sell the system.
-          {Kaisetsu(showResults, "22-5-1")}
-        </p>
-
         {/* Text and image wrapped section */}
         <div className="relative">
-          {/* Image floating right */}
-          <div className="float-right ml-4 mb-2">
-            <figure className="w-48 text-center">
+          <p className="mb-0 indent-7">
+            <span className="float-right ml-2 mr-1 mb-1 w-[120px] text-center">
               <Image
                 src="/images/Ex22-5-1.webp"
                 alt="Farnsworth in 1939"
-                width={180}
-                height={220}
-                className="mb-2 border border-gray-300"
+                width={150}
+                height={180}
+                className="mb-1 border border-gray-300 block"
               />
-              <figcaption className="text-sm">Farnsworth in 1939</figcaption>
-            </figure>
-          </div>
-
-          {/* Text that wraps around the image */}
+              <span className="block text-xs -ml-8">Farnsworth in 1939</span>
+            </span>
+            Who invented television? It is not an easy question to answer. In the
+            early years of the 20th century, there was something called a
+            mechanical television system, but it was not a success. Inventors were
+            also competing to develop an electronic television system, which later
+            became the basis of what we have today. In the US, there was a battle
+            over the patent for the electronic television system, which attracted
+            people&apos;s attention because it was between a young man and a giant
+            corporation. This patent would give the inventor the official right to
+            be the only person to develop, use, or sell the system.{' '}
+            {Kaisetsu(showResults, "22-5-1")}
+          </p>
+          <div className="clear-both"></div>
+        </div>
+          {/* Text that wraps around the image (subsequent paragraphs) */}
           <p className="mb-0 indent-7">
             Philo Taylor Farnsworth was born in a log cabin in Utah in 1906. His
             family did not have electricity until he was 12 years old, and he
@@ -84,7 +81,7 @@ const Ex22_5 = () => {
             in mechanical and electrical technology, reading any information he
             could find on the subject. He would often repair the old generator
             and even changed his mother&apos;s hand-powered washing machine into
-            an electricity-powered one.
+            an electricity-powered one.{' '}
             {Kaisetsu(showResults, "22-5-2")}
           </p>
 
@@ -98,7 +95,7 @@ const Ex22_5 = () => {
             chemistry teacher, Justin Tolman, and asked for advice about his
             concept of an electronic television system. With sketches and
             diagrams on blackboards, he showed the teacher how it might be
-            accomplished, and Tolman encouraged him to develop his ideas.
+            accomplished, and Tolman encouraged him to develop his ideas.{' '}
             {Kaisetsu(showResults, "22-5-3")}
           </p>
 
@@ -106,7 +103,7 @@ const Ex22_5 = () => {
             On September 7, 1927, Farnsworth succeeded in sending his first
             electronic image. In the following years, he further improved the
             system so that it could successfully broadcast live images. The US
-            government gave him a patent for this system in 1930.
+            government gave him a patent for this system in 1930.{' '}
             {Kaisetsu(showResults, "22-5-4")}
           </p>
 
@@ -121,7 +118,7 @@ const Ex22_5 = () => {
               as early as 1923. Yet, in 1931, they offered Farnsworth a large
               sum of money to sell them his patent as his system was superior to
               that of Zworykin&apos;s. He refused this offer, which started a
-              patent war between Farnsworth and RCA.
+              patent war between Farnsworth and RCA.{' '}
               {Kaisetsu(showResults, "22-5-5")}
             </p>
 
@@ -135,7 +132,7 @@ const Ex22_5 = () => {
               television system at least a year before Zworykin&apos;s patent
               was issued. In 1934, a judge approved Farnsworth&apos;s patent
               claim on the strength of handwritten notes made by his old high
-              school teacher, Tolman.
+              school teacher, Tolman.{' '}
               {Kaisetsu(showResults, "22-5-6")}
             </p>
 
@@ -149,11 +146,11 @@ const Ex22_5 = () => {
               Farnsworth had said, &quot;Pem, this has made it all
               worthwhile.&quot; His story will always be tied to his teenage
               dream of sending moving pictures through the air and those
-              blackboard drawings at his high school.
+              blackboard drawings at his high school.{' '}
               {Kaisetsu(showResults, "22-5-7")}
             </p>
           </div>
-        </div>
+
       </div>
       {/* Presentation notes section */}
       <div>
@@ -240,21 +237,29 @@ const Ex22_5 = () => {
             {/* Outcome section */}
             <div className="mb-6">
               <h4 className="text-lg underline mb-2">Outcome</h4>
-              <p className="ml-4 flex items-center">
-                - Farnsworth won the patent battle against RCA thanks to
-                <div className="border border-gray-400 px-3 py-1 mx-2 font-sans">
-                  37
-                </div>
-                .
-              </p>
+              <div className="ml-4 grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                <span className="select-none">-</span>
+                <span>
+                  Farnsworth won the patent battle against RCA thanks{" "}
+                  <span className="whitespace-nowrap">
+                    to{" "}
+                    <span className="inline-block align-baseline border border-gray-400 px-2 py-0.5 font-sans">
+                      37
+                    </span>
+                    .
+                  </span>
+                </span>
+              </div>
             </div>
 
             {/* Achievements and Recognition section */}
             <div>
-              <h4 className="text-lg underline">
-                Achievements and Recognition
-              </h4>
-              {Kaisetsu(showResults, "22-5-8")}
+              <div className="flex flex-row">
+                <h4 className="text-lg underline mr-2">
+                  Achievements and Recognition
+                </h4>
+                {' '}{Kaisetsu(showResults, "22-5-8")}
+              </div>
               <ul className="list-none ml-4">
                 <li className="mb-2">- Farnsworth had about 300 patents.</li>
                 <li className="mb-4">
@@ -266,7 +271,9 @@ const Ex22_5 = () => {
                   -{" "}
                   <div className="border border-gray-400 px-3 py-1 mx-2 font-sans">
                     38
+
                   </div>
+
                 </li>
               </ul>
             </div>
@@ -315,8 +322,8 @@ const Ex22_5 = () => {
               {renderSelect("32", 5, answers, setAnswers)}
             </div>
             <span>to complete</span>
-            <span className="underline">Early Days</span>
-            <span className="ml-2">(The order does not matter)</span>
+            <span className="underline font-semibold">Early Days</span>
+            <span className="ml-2">. (The order does not matter)</span>
             <div className="flex flex-row gap-2">
               <Explain qa={qa} questionId="5-2"  isShow={showResults} />
               {Kaisetsu(showResults, "22-5-10")}
@@ -346,13 +353,13 @@ const Ex22_5 = () => {
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>
               <span className="ml-2">Choose </span>
-              <span className="underline">four</span>{' '}
+              <span className="underline font-semibold">four</span>{' '}
               out of the five events (1～5) in the order they happened to
               complete <span className="underline">Sequence of Key Events</span>
               .
             </span>
           </div>
-          <div className="flex flex-row  flex-wrap ">
+          <div className="flex flex-row flex-wrap ">
             <div className="flex flex-row">
               {renderSelect("33", 5, answers, setAnswers)}
               <span className="-mx-1">→</span>

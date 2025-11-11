@@ -36,10 +36,10 @@ const Ex22_2A = () => {
       {/* Context Header */}
       <div className="mb-2">
         <p className="text-base">
-          A You are on a <span className="italic">Future Leader</span> summer
+          You are on a <span className="italic">Future Leader</span> summer
           programme, which is taking place on a university campus in the UK. You
           are reading the information about the library so that you can do your
-          coursework.
+          coursework.{' '}
           {Kaisetsu(showResults, "22-2A-0")}
         </p>
       </div>
@@ -56,14 +56,14 @@ const Ex22_2A = () => {
         </div>
 
         {/* Library Card Section */}
-        <div className="mb-6">
-          <h2 className="text-lg font-bold mb-2">Library Card:</h2>
+        <div className="mb-0 border-t border-gray-800 md:grid md:grid-cols-[auto,1fr] md:gap-4 md:items-start">
+          <h2 className="text-lg font-bold mb-2 md:mb-0">Library Card:</h2>
           <p className="mb-4">
             Your student ID card is also your library card and photocopy card.
             It is in your welcome pack.
           </p>
-          <div className="border-b-2 border-gray-300 w-full mb-4"></div>
         </div>
+        <div className="border-b-2 border-gray-300 w-full mb-4"></div>
 
         {/* Two Column Layout */}
         <div className="grid grid-cols-2 gap-6">
@@ -77,7 +77,7 @@ const Ex22_2A = () => {
                 days. To check books out, go to the Information Desk, which is
                 on the first floor. If books are not returned by the due date,
                 you will not be allowed to borrow library books again for three
-                days from the day the books are returned.
+                days from the day the books are returned.{' '}
                 {Kaisetsu(showResults, "22-2A-1")}
               </p>
             </div>
@@ -91,7 +91,7 @@ const Ex22_2A = () => {
                 may bring their own laptop computers and tablets into the
                 library, but may use them only in the Study Area on the second
                 floor. Students are asked to work quietly, and also not to
-                reserve seats for friends.
+                reserve seats for friends.{' '}
                 {Kaisetsu(showResults, "22-2A-2")}
               </p>
             </div>
@@ -102,7 +102,7 @@ const Ex22_2A = () => {
               <p className="text-base">
                 On Tuesdays at 10 am, 20-minute library orientations are held in
                 the Reading Room on the third floor. Talk to the Information
-                Desk staff for details.
+                Desk staff for details.{' '}
                 {Kaisetsu(showResults, "22-2A-3")}
               </p>
             </div>
@@ -118,7 +118,7 @@ const Ex22_2A = () => {
                 <span className="mr-2">•</span>
                 <p>
                   The library orientation was really good. The materials were
-                  great, too!
+                  great, too!{' '}
                   {Kaisetsu(showResults, "22-2A-4")}
                 </p>
               </li>
@@ -126,7 +126,7 @@ const Ex22_2A = () => {
                 <span className="mr-2">•</span>
                 <p>
                   The Study Area can get really crowded. Get there as early as
-                  possible to get a seat!
+                  possible to get a seat!{' '}
                   {Kaisetsu(showResults, "22-2A-5")}
                 </p>
               </li>
@@ -135,7 +135,7 @@ const Ex22_2A = () => {
                 <p>
                   The Wi-Fi inside the library is quite slow, but the one at the
                   coffee shop next door is good. By the way, you cannot bring
-                  any drinks into the library.
+                  any drinks into the library.{' '}
                   {Kaisetsu(showResults, "22-2A-6")}
                 </p>
               </li>
@@ -143,7 +143,7 @@ const Ex22_2A = () => {
                 <span className="mr-2">•</span>
                 <p>
                   The staff at the Information Desk answered all my questions.
-                  Go there if you need any help!
+                  Go there if you need any help!{' '}
                   {Kaisetsu(showResults, "22-2A-7")}
                 </p>
               </li>
@@ -153,7 +153,7 @@ const Ex22_2A = () => {
                   On the ground floor there are some TVs for watching the
                   library&apos;s videos. When watching videos, you need to use
                   your own earphones or headphones. Next to the TVs there are
-                  photocopiers.
+                  photocopiers.{' '}
                   {Kaisetsu(showResults, "22-2A-8")}
                 </p>
               </li>

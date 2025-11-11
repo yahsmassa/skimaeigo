@@ -35,18 +35,17 @@ const Ex22_6A = () => {
         />
       </div>
       {/* Question Header */}
-      <div className="mb-2">
-        <span className="font-bold">A</span>
+      <div className="mb-2 px-3">
         <span className="ml-4">
           Your study group is learning about &quot;how time of day affects
           people.&quot; You have found an article you want to share. Complete
-          the summary notes for your next meeting.
+          the summary notes for your next meeting.{' '}
           {Kaisetsu(showResults, "22-6A-0")}
         </span>
       </div>
 
       {/* Article Content */}
-      <div className="border border-gray-300 p-8">
+      <div className="border border-gray-300 p-8 text-justify">
         <h1 className="text-xl font-bold text-center mb-8">
           When Does the Day Begin for You?
         </h1>
@@ -61,7 +60,7 @@ const Ex22_6A = () => {
             reach goals. The lark is a morning singer, so early birds, the
             opposite of <em>owls</em>, are <em>larks</em>. Creatures active
             during the day are &quot;diurnal&quot; and those emerging at night
-            are &quot;nocturnal.&quot;
+            are &quot;nocturnal.&quot;{' '}
             {Kaisetsu(showResults, "22-6A-1")}
           </p>
 
@@ -76,7 +75,7 @@ const Ex22_6A = () => {
             must work or learn on the <em>lark</em> schedule. Most schooling
             occurs before 4:00 p.m., so young <em>larks</em> may perform certain
             tasks better. Business deals made early in the day may make some{" "}
-            <em>larks</em> wealthier.
+            <em>larks</em> wealthier.{' '}
             {Kaisetsu(showResults, "22-6A-2")}
           </p>
 
@@ -90,7 +89,7 @@ const Ex22_6A = () => {
             world experience begins with darkness. Since traditional study time
             and office work happen in daylight, we assume that day begins in the
             morning. People asleep are not first in line, and might miss
-            chances.
+            chances.{' '}
             {Kaisetsu(showResults, "22-6A-3")}
           </p>
 
@@ -104,6 +103,7 @@ const Ex22_6A = () => {
             hour of the rat, the first period, is from 11:00 p.m. to 1:00 a.m.
             Chinese culture also begins the day at night. In other words,
             ancient customs support how <em>owls</em> view time.
+            {' '}
             {Kaisetsu(showResults, "22-6A-4")}
           </p>
 
@@ -124,6 +124,7 @@ const Ex22_6A = () => {
             seek perfection, and feel little stress. <em>Owls</em> seek new
             adventures and exciting leisure activities, yet they often have
             trouble relaxing.
+            {' '}
             {Kaisetsu(showResults, "22-6A-5")}
           </p>
 
@@ -140,6 +141,7 @@ const Ex22_6A = () => {
             appears all the time. A study of university students in Russia
             suggests that there are six types, so <em>owls</em> and{" "}
             <em>larks</em> may not be the only birds around!
+            {' '}
             {Kaisetsu(showResults, "22-6A-6")}
           </p>
         </div>
@@ -160,7 +162,7 @@ const Ex22_6A = () => {
 
           {/* Content */}
           <div className="flex-1">
-            <h1 className="text-xl mb-6 text-center">
+            <h1 className="text-xl mb-6 text-center font-semibold">
               When Does the Day Begin for You?
             </h1>
 
@@ -186,7 +188,7 @@ const Ex22_6A = () => {
                   <p>
                     Not all of us fit easily into the common daytime schedule,
                     but we are forced to follow it, especially when we are
-                    children.
+                    children.{' '}
                     {Kaisetsu(showResults, "22-6A-7")}
                   </p>
                 </li>
@@ -194,7 +196,7 @@ const Ex22_6A = () => {
                   <span className="mr-2">•</span>
                   <p>
                     Some studies indicate that the most active time for each of
-                    us is part of our nature.
+                    us is part of our nature.{' '}
                     {Kaisetsu(showResults, "22-6A-8")}
                   </p>
                 </li>
@@ -211,7 +213,7 @@ const Ex22_6A = () => {
                 <li className="flex">
                   <span className="mr-2">•</span>
                   <p>
-                    Perspectives keep changing with new research.
+                    Perspectives keep changing with new research.{' '}
                     {Kaisetsu(showResults, "22-6A-9")}
                   </p>
                 </li>
@@ -229,7 +231,7 @@ const Ex22_6A = () => {
                     <span className="inline-block border border-gray-800 px-2 font-sans">
                       41
                     </span>
-                    .{Kaisetsu(showResults, "22-6A-10")}
+                    .{' '}{Kaisetsu(showResults, "22-6A-10")}
                   </p>
                 </li>
                 <li className="flex">
@@ -244,7 +246,7 @@ const Ex22_6A = () => {
                     <span className="inline-block border border-gray-800 px-2 font-sans ">
                       43
                     </span>
-                    .{Kaisetsu(showResults, "22-6A-11")}
+                    .{' '}{Kaisetsu(showResults, "22-6A-11")}
                   </p>
                 </li>
               </ul>
