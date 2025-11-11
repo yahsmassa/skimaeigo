@@ -37,7 +37,7 @@ const Ex21_3B = () => {
       <div>
         <div className="mb-2 text-gray-700 px-2">
           Your classmate showed you the following message in your school&apos;s
-          newsletter, written by an exchange student from the UK.
+          newsletter, written by an exchange student from the UK.{' '}
           {Kaisetsu(showResults, "21-3B-0")}
         </div>
 
@@ -46,36 +46,36 @@ const Ex21_3B = () => {
             Volunteers Wanted!
           </h2>
 
-          <div className="space-y-1">
-            <p className="indent-7">
+          <div className="space-y-1 md:columns-2 md:gap-8 [column-fill:balance]">
+            <p className="indent-7 break-inside-avoid">
               Hello, everyone. I&apos;m Sarah King, an exchange student from
-              London. I&apos;d like to share something important with you today.
+              London. I&apos;d like to share something important with you today.{' '}
               {Kaisetsu(showResults, "21-3B-1")}
             </p>
 
-            <p className="indent-7">
+            <p className="indent-7 break-inside-avoid">
               You may have heard of the Sakura International Centre. It provides
               valuable opportunities for Japanese and foreign residents to get
               to know each other. Popular events such as cooking classes and
               karaoke contests are held every month. However, there is a serious
               problem. The building is getting old, and requires expensive
               repairs. To help raise funds to maintain the centre, many
-              volunteers are needed.
+              volunteers are needed.{' '}
               {Kaisetsu(showResults, "21-3B-2")}
             </p>
 
-            <p className="indent-7">
+            <p className="indent-7 break-inside-avoid">
               I learnt about the problem a few months ago. While shopping in
               town, I saw some people taking part in a fund-raising campaign. I
               spoke to the leader of the campaign, Katy, who explained the
               situation. She thanked me when I donated some money. She told me
               that they had asked the town mayor for financial assistance, but
               their request had been rejected. They had no choice but to start
-              fund-raising.
+              fund-raising.{' '}
               {Kaisetsu(showResults, "21-3B-3")}
             </p>
 
-            <p className="indent-7">
+            <p className="indent-7 break-inside-avoid">
               Last month, I attended a lecture on art at the centre. Again, I
               saw people trying to raise money, and I decided to help. They were
               happy when I joined them in asking passers-by for donations. We
@@ -83,20 +83,20 @@ const Ex21_3B = () => {
               With a tearful face, Katy told me that they wouldn&apos;t be able
               to use the building much longer. I felt the need to do something
               more. Then, the idea came to me that other students might be
-              willing to help. Katy was delighted to hear this.
+              willing to help. Katy was delighted to hear this.{' '}
               {Kaisetsu(showResults, "21-3B-4")}
             </p>
 
-            <p className="indent-7">
+            <p className="indent-7 break-inside-avoid">
               Now, I&apos;m asking you to join me in the fund-raising campaign
               to help the Sakura International Centre. Please email me today! As
               an exchange student, my time in Japan is limited, but I want to
               make the most of it. By working together, we can really make a
-              difference.
+              difference.{' '}
               {Kaisetsu(showResults, "21-3B-5")}
             </p>
 
-            <div className="mt-6">
+            <div className="mt-6 break-inside-avoid">
               <p>Class 3A</p>
               <p className="flex items-center justify-between">
                 <span className="italic">Sarah King</span>
@@ -159,6 +159,7 @@ const Ex21_3B = () => {
             </span>
             <div className="flex flex-row gap-2">
               {renderSelect("22", 4, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId="3B-2"  isShow={showResults} />
               {Kaisetsu(showResults, "21-3B-7")}
             </div>

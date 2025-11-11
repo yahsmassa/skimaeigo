@@ -34,10 +34,10 @@ export default function Ex21_3A() {
         />
       </div>
       {/* Section A Header */}
-      <div className="flex gap-2 mb-2 px-2">
+      <div className="flex gap-2 mb-2 px-3">
         <p className="text-gray-800">
           You are planning to stay at a hotel in the UK. You found useful
-          information in the Q&A section of a travel advice website.
+          information in the Q&A section of a travel advice website.{' '}
           {Kaisetsu(showResults, "21-3A-0")}
         </p>
       </div>
@@ -46,29 +46,29 @@ export default function Ex21_3A() {
       <div className="border border-gray-300 p-6 space-y-4">
         {/* Question */}
         <div className="space-y-1">
-          <p className="text-gray-800">
+          <p className="text-gray-800 font-semibold">
             I&apos;m considering staying at the Hollytree Hotel in Castleton in
             March 2021. Would you recommend this hotel, and is it easy to get
-            there from Buxton Airport?
+            there from Buxton Airport?{' '}
             {Kaisetsu(showResults, "21-3A-1")}
           </p>
           <p className="text-right text-gray-600">(Liz)</p>
         </div>
 
         {/* Answer */}
-        <div className="border-t border-gray-200 pt-4 space-y-1">
-          <p className="font-medium mb-2">Answer</p>
+        <div className="border-t border-gray-200 pt-4 space-y-2">
+          <p className="font-semibold mb-2">Answer</p>
 
           <p className="text-gray-800">
             Yes, I strongly recommend the Hollytree. I&apos;ve stayed there
             twice. It&apos;s inexpensive, and the service is brilliant!
             There&apos;s also a wonderful free breakfast. (Click{" "}
-            <span className="underline">here</span> for access information.)
+            <span className="underline">here</span> for access information.){' '}
             {Kaisetsu(showResults, "21-3A-2")}
           </p>
 
           <p className="text-gray-800">
-            Let me tell you my own experience of getting there.
+            Let me tell you my own experience of getting there.{' '}
             {Kaisetsu(showResults, "21-3A-3")}
           </p>
 
@@ -78,7 +78,7 @@ export default function Ex21_3A() {
             the Red Line to Mossfield. Transferring to the Orange Line for
             Victoria should normally take about seven minutes, but the
             directions weren&apos;t clear and I needed an extra five minutes.
-            From Victoria, it was a ten-minute bus ride to the hotel.
+            From Victoria, it was a ten-minute bus ride to the hotel.{' '}
             {Kaisetsu(showResults, "21-3A-4")}
           </p>
 
@@ -88,7 +88,7 @@ export default function Ex21_3A() {
             notice saying there would be roadworks until summer 2021. Now it
             takes three times as long as usual to get to the hotel by city bus,
             although buses run every ten minutes. It&apos;s possible to walk,
-            but I took the bus as the weather was bad.
+            but I took the bus as the weather was bad.{' '}
             {Kaisetsu(showResults, "21-3A-5")}
           </p>
 
@@ -120,6 +120,7 @@ export default function Ex21_3A() {
             <span>From Alex&apos;s answer, you learn that Alex</span>
             <div className="flex flex-row gap-2">
               {renderSelect("16", 4, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId="3A-1"  isShow={showResults} />
               {Kaisetsu(showResults, "21-3A-6")}
             </div>

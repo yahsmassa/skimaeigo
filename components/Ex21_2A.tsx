@@ -82,10 +82,10 @@ const Ex21_2A = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="text-sm md:text-base mb-2 px2">
+      <div className="text-sm md:text-base mb-2 px-2">
         As the student in charge of a UK school festival band competition, you
         are examining all of the scores and the comments from three judges to
-        understand and explain the rankings.
+        understand and explain the rankings.{' '}
         {Kaisetsu(showResults, "21-2A-0")}
       </div>
 
@@ -190,19 +190,20 @@ const Ex21_2A = () => {
             Each band&apos;s total score is the same, but each band is very
             different. Ms Leigh and I agreed that performance is the most
             important quality for a band. Ms Wells also agreed. Therefore, first
-            place is easily determined.
+            place is easily determined.{' '}
             {Kaisetsu(showResults, "21-2A-4")}
           </p>
           <p className="indent-7">
             To decide between second and third places, Ms Wells suggested that
             song originality should be more important than good singing. Ms
-            Leigh and I agreed on this opinion.
+            Leigh and I agreed on this opinion.{' '}
             {Kaisetsu(showResults, "21-2A-5")}
           </p>
         </div>
       </Card>
 
       <div className="space-y-6">
+        {/* 問１ */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-1"))}>
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
@@ -233,6 +234,7 @@ const Ex21_2A = () => {
           </div>
         </div>
 
+        {/* 問２ */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-2"))}>
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
@@ -257,6 +259,7 @@ const Ex21_2A = () => {
           </div>
         </div>
 
+        {/* 問３ */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-3"))}>
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
@@ -266,6 +269,7 @@ const Ex21_2A = () => {
             </span>
             <div className="flex flex-row gap-2">
               {renderSelect("8", 4, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId="2A-3"  isShow={showResults} />
               {Kaisetsu(showResults, "21-2A-8")}
             </div>
@@ -287,6 +291,7 @@ const Ex21_2A = () => {
           </div>
         </div>
 
+        {/* 問４ */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2A-4"))}>
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
@@ -296,6 +301,7 @@ const Ex21_2A = () => {
             </span>
             <div className="flex flex-row gap-2">
               {renderSelect("9", 4, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId="2A-4"  isShow={showResults} />
               {Kaisetsu(showResults, "21-2A-9")}
             </div>

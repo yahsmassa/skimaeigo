@@ -34,11 +34,11 @@ const Ex21_1B = () => {
         />
       </div>
       {/* Header section "B" */}
-      <div className="mb-2">
+      <div className="mb-2 px-3">
         <p className="text-lg px-2">
           Your favorite musician will have
           a concert tour in Japan, and you are thinking of joining the fan club.
-          You visit the official fan club website.
+          You visit the official fan club website.{' '}
           {Kaisetsu(showResults, "21-1B-0")}
         </p>
       </div>
@@ -56,29 +56,31 @@ const Ex21_1B = () => {
           poster, and a copy of <span className="font-bold">TQ</span>&apos;s
           third album <span className="font-bold italic">Speeding Up</span>. The
           New Member&apos;s Pack will be delivered to your home, and will arrive
-          a week or so after you join the fan club.
+          a week or so after you join the fan club.{' '}
           {Kaisetsu(showResults, "21-1B-1")}
         </p>
 
         <p className="indent-7">
           <span className="font-bold">TQ</span> is loved all around the world.
           You can join from any country, and you can use the membership card for
-          one year. The <span className="font-bold">TQ</span> fan club has three
-          types of membership: Pacer, Speeder, and Zoomer.
+          one year. The <span className="font-semibold">TQ</span> fan club has three
+          types of membership: Pacer, Speeder, and Zoomer.{' '}
           {Kaisetsu(showResults, "21-1B-2")}
         </p>
 
-        <p className="mb-4">Please choose from the membership options below.</p>
+        <p className="ml-5 my-4">Please choose from the membership options below.</p>
 
         {/* Membership table as image */}
-        <Image
-          src="/images/Ex21-1B-1.webp"
-          alt="Membership options table showing different tiers: Pacer ($20), Speeder ($40), and Zoomer ($60) with their respective benefits"
-          className="w-full max-w-2xl mx-auto"
-          width={800}
-          height={400}
-          priority
-        />
+        <div className="!mt-4">
+          <Image
+            src="/images/Ex21-1B-1.webp"
+            alt="Membership options table showing different tiers: Pacer ($20), Speeder ($40), and Zoomer ($60) with their respective benefits"
+            className="w-[95%] max-w-2xl"
+            width={800}
+            height={400}
+            priority
+          />
+        </div>
       </div>
       {/* Header Box */}
       <div className="border border-gray-400 p-4 relative">
@@ -125,7 +127,7 @@ const Ex21_1B = () => {
         <p className="mt-4">
           Whether you are a Pacer, a Speeder, or a Zoomer, you will love being a
           member of the TQ fan club. For more information, or to join, click{" "}
-          <span className="underline">here</span>.
+          <span className="underline">here</span>.{' '}
           {Kaisetsu(showResults, "21-1B-3")}
         </p>
       </div>
@@ -139,6 +141,7 @@ const Ex21_1B = () => {
             <span className="-mr-2">A New Member&apos;s Pack</span>
             <div className="flex flex-row gap-2">
               {renderSelect("3", 4, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId="1B-1"  isShow={showResults} />
               {Kaisetsu(showResults, "21-1B-4")}
             </div>
@@ -195,6 +198,7 @@ const Ex21_1B = () => {
             <span className="-mr-2">After being a fan club member for one year, you can</span>
             <div className="flex flex-row gap-2">
               {renderSelect("5", 4, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId="1B-3"  isShow={showResults} />
               {Kaisetsu(showResults, "21-1B-6")}
             </div>

@@ -35,10 +35,10 @@ const Ex21_5 = () => {
         />
       </div>
       {/* Instructions paragraph */}
-      <p className="text-base leading-relaxed mb-2 md:text-xl">
+      <p className="text-base mb-2 md:text-xl px-3">
         Using an international news report, you are going to take part in an
         English oral presentation contest. Read the following news story from
-        France in preparation for your talk.
+        France in preparation for your talk.{' '}
         {Kaisetsu(showResults, "21-5-0")}
       </p>
 
@@ -49,7 +49,7 @@ const Ex21_5 = () => {
           years with the horse before he died of old age. At that time, she felt
           that she could never own another horse. Out of loneliness, she spent
           hours watching cows on a nearby milk farm. Then, one day, she asked
-          the farmer if she could help look after them.
+          the farmer if she could help look after them.{' '}
           {Kaisetsu(showResults, "21-5-1")}
         </p>
 
@@ -65,7 +65,7 @@ const Ex21_5 = () => {
           and his mother. The farmer agreed, and she bought them. Sabine then
           started taking 309 for walks to town. About nine months later, when at
           last she had permission to move the animals, they moved to
-          Sabine&apos;s farm.
+          Sabine&apos;s farm.{' '}
           {Kaisetsu(showResults, "21-5-2")}
         </p>
 
@@ -86,7 +86,7 @@ const Ex21_5 = () => {
           without having watched Leon. Moreover, Aston understood distance and
           could adjust his steps before a jump. He also noticed his faults and
           corrected them without any help from Sabine. That&apos;s something
-          only the very best Olympic-standard horses can do.
+          only the very best Olympic-standard horses can do.{' '}
           {Kaisetsu(showResults, "21-5-3")}
         </p>
 
@@ -97,7 +97,7 @@ const Ex21_5 = () => {
           scared because he&apos;s big—much bigger than a horse. Most people
           don&apos;t like to get too close to bulls with horns. But once they
           see his real nature, and see him performing, they often say, &apos;Oh
-          he&apos;s really quite beautiful.&apos;&quot;
+          he&apos;s really quite beautiful.&apos;&quot;{' '}
           {Kaisetsu(showResults, "21-5-4")}
         </p>
 
@@ -107,7 +107,7 @@ const Ex21_5 = () => {
           him out for walks on a lead, like a dog, so that he would get used to
           humans. Maybe that&apos;s why he doesn&apos;t mind people. Because he
           is so calm, children, in particular, really like watching him and
-          getting a chance to be close to him.&quot;
+          getting a chance to be close to him.&quot;{' '}
           {Kaisetsu(showResults, "21-5-5")}
         </p>
 
@@ -117,7 +117,7 @@ const Ex21_5 = () => {
           of online followers. Aston and Sabine sometimes need to travel 200 or
           300 kilometers away from home, which means they have to stay
           overnight. Aston has to sleep in a horse box, which isn&apos;t really
-          big enough for him.
+          big enough for him.{' '}
           {Kaisetsu(showResults, "21-5-6")}
         </p>
 
@@ -127,11 +127,12 @@ const Ex21_5 = () => {
           changes position, he is very careful not to crush me. He really is
           very gentle. He sometimes gets lonely, and he doesn&apos;t like being
           away from Leon for too long; but other than that, he&apos;s very
-          happy.&quot;
+          happy.&quot;{' '}
           {Kaisetsu(showResults, "21-5-7")}
         </p>
       </div>
       <div className="mt-8">
+        <p className="text-center font-semibold">Your Presentation Slides</p>
         <Image
           src="/images/Ex21-5-1.webp"
           alt="Graph showing Number of Visitors to Westside Aquarium by time of day"
@@ -237,10 +238,7 @@ const Ex21_5 = () => {
               {renderSelect("32", 5, answers, setAnswers)}
               {renderSelect("33", 5, answers, setAnswers)}
               {renderSelect("34", 5, answers, setAnswers)}
-            </div>
-            <div className="flex flex-row ">
               {renderSelect("35", 5, answers, setAnswers)}
-            {renderSelect("35", 5, answers, setAnswers)}
             </div>
           <div className="flex flex-row gap-2">
             <Explain qa={qa} questionId="5-3" isShow={showResults} />
@@ -287,6 +285,7 @@ const Ex21_5 = () => {
           </span>
           <div className="flex flex-row flex-wrap mt-2">
             {renderSelect("36", 5, answers, setAnswers)}
+            <span>.</span>
             {renderSelect("37", 5, answers, setAnswers)}
             <div className="flex flex-row gap-2">
               <Explain qa={qa} questionId="5-4" isShow={showResults} />

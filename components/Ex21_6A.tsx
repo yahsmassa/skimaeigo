@@ -36,16 +36,16 @@ const Ex21_6A = () => {
       </div>
       {/* Original Article Section */}
       <div>
-        <div className="mb-2 md:text-xl px-2">
+        <div className="mb-2 md:text-[17px] px-3">
           <span className="ml-4">
             You are working on a class project about safety in sports and found
             the following article. You are reading it and making a poster to
-            present your findings to your classmates.
+            present your findings to your classmates.{' '}
             {Kaisetsu(showResults, "21-6A-0")}
           </span>
         </div>
 
-        <div className="border border-gray-300 p-6">
+        <div className="border border-gray-300 p-6 text-justify">
           <h1 className="text-center text-xl mb-6 font-bold">
             Making Ice Hockey Safer
           </h1>
@@ -59,7 +59,7 @@ const Ex21_6A = () => {
               this fast-paced sport on a hard and slippery ice rink. Players may
               reach a speed of 30 kilometers per hour sending the puck into the
               air. At this pace, both the players and the puck can be a cause of
-              serious danger.
+              serious danger.{' '}
               {Kaisetsu(showResults, "21-6A-1")}
             </p>
 
@@ -70,7 +70,7 @@ const Ex21_6A = () => {
               players, equipment such as helmets, gloves, and pads for the
               shoulders, elbows, and legs, has been introduced over the years.
               Despite these efforts, ice hockey has a high rate of concussions.
-              {Kaisetsu(showResults, "21-6A-2")}
+              {' '}{Kaisetsu(showResults, "21-6A-2")}
             </p>
 
             <p className="indent-7">
@@ -81,7 +81,7 @@ const Ex21_6A = () => {
               players may be unable to walk straight or see clearly, or they may
               experience ringing in the ears. Some believe they just have a
               slight headache and do not realize they have injured their brains.
-              {Kaisetsu(showResults, "21-6A-3")}
+              {' '}{Kaisetsu(showResults, "21-6A-3")}
             </p>
             <p className="indent-7">
               In addition to not realizing the seriousness of the injury,
@@ -94,7 +94,7 @@ const Ex21_6A = () => {
               may have trouble concentrating or sleeping. Moreover, they may
               suffer from psychological problems such as depression and mood
               changes. In some cases, players may develop smell and taste
-              disorders.
+              disorders.{' '}
               {Kaisetsu(showResults, "21-6A-4")}
             </p>
             <p className="indent-7">
@@ -107,6 +107,7 @@ const Ex21_6A = () => {
               been required. In addition, in 2004, the NHL began to give more
               severe penalties, such as suspensions and fines, to players who
               hit another player in the head deliberately.
+              {' '}
               {Kaisetsu(showResults, "21-6A-5")}
             </p>
 
@@ -122,6 +123,7 @@ const Ex21_6A = () => {
               player is removed from the game and is taken to a "quiet room" for
               an examination by a medical doctor. The player is not allowed to
               return to the game until the doctor gives permission.
+              {' '}
               {Kaisetsu(showResults, "21-6A-6")}
             </p>
 
@@ -131,6 +133,7 @@ const Ex21_6A = () => {
               the NHL will surely take further measures to ensure player safety.
               Better safety might lead to an increase in the number of ice
               hockey players and fans.
+              {' '}
               {Kaisetsu(showResults, "21-6A-7")}
             </p>
           </div>
@@ -145,7 +148,7 @@ const Ex21_6A = () => {
 
         {/* What is ice hockey? section */}
         <div className="border border-gray-300 p-4 mb-6 relative">
-          <h2 className="text-lg mb-3">What is ice hockey?</h2>
+          <h2 className="text-lg mb-3 font-semibold">What is ice hockey? {' '}{Kaisetsu(showResults, "21-6A-8")}</h2>
           <ul className="list-disc pl-6 ">
             <li>
               Players score by putting a &quot;puck&quot; in the other
@@ -154,7 +157,7 @@ const Ex21_6A = () => {
             <li>Six players on each team</li>
             <li>Sport played on ice at a high speed</li>
           </ul>
-          {Kaisetsu(showResults, "21-6A-8")}
+
           <Image
             src="/images/Ex21-6A-1.webp"
             alt="Hockey player silhouette"
@@ -168,6 +171,7 @@ const Ex21_6A = () => {
         <div className="mb-6">
           <h2 className="text-lg font-bold mb-3">
             Main Problem: A High Rate of Concussions
+            {' '}{Kaisetsu(showResults, "21-6A-9")}
           </h2>
 
           <div className="border border-gray-300 p-4 mb-4">
@@ -175,13 +179,12 @@ const Ex21_6A = () => {
             <p className="">
               An injury to the brain that affects the way it functions
             </p>
-            {Kaisetsu(showResults, "21-6A-9")}
           </div>
         </div>
 
         {/* Effects section */}
         <div className="border border-gray-300 p-4 mb-6">
-          <h2 className="text-center text-lg mb-4">Effects</h2>
+          <h2 className="text-center text-lg mb-4 font-semibold">Effects</h2>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <h3 className="font-bold mb-2">Short-term</h3>

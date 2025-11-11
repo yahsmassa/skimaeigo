@@ -34,11 +34,11 @@ const Ex21_2B = () => {
         />
       </div>
       {/* Main content box */}
-      <div className="mb-2">
+      <div className="mb-2 px-3">
         <p className="text-lg">
           You&apos;ve heard about a change in school policy at the school in the
           UK where you are now studying as an exchange student. You are reading
-          the discussions about the policy in an online forum.
+          the discussions about the policy in an online forum.{' '}
           {Kaisetsu(showResults, "21-2B-0")}
         </p>
       </div>
@@ -66,7 +66,7 @@ const Ex21_2B = () => {
                 <p className="indent-8">
                   On behalf of all students, welcome to St Mark&apos;s School.
                   We heard that you are the first Head Teacher with a business
-                  background, so we hope your experience will help our school.
+                  background, so we hope your experience will help our school.{' '}
                   {Kaisetsu(showResults, "21-2B-1")}
                 </p>
 
@@ -80,7 +80,7 @@ const Ex21_2B = () => {
                   seriously. A number of students have told me that they want to
                   stay at school until 6:00 pm as they have always done.
                   Therefore, I would like to ask you to think again about this
-                  sudden change in policy.
+                  sudden change in policy.{' '}
                   {Kaisetsu(showResults, "21-2B-2")}
                 </p>
 
@@ -112,7 +112,7 @@ const Ex21_2B = () => {
                 <p className="indent-8">
                   Many thanks for your kind post. You&apos;ve expressed some
                   important concerns, especially about the energy costs and
-                  student opinions on school activities.
+                  student opinions on school activities.{' '}
                   {Kaisetsu(showResults, "21-2B-3")}
                 </p>
 
@@ -121,7 +121,7 @@ const Ex21_2B = () => {
                   decision was made based on a 2019 police report. The report
                   showed that our city has become less safe due to a 5% increase
                   in serious crimes. I would like to protect our students, so I
-                  would like them to return home before it gets dark.
+                  would like them to return home before it gets dark.{' '}
                   {Kaisetsu(showResults, "21-2B-4")}
                 </p>
 
@@ -139,12 +139,14 @@ const Ex21_2B = () => {
       {/* Questions Section */}
 
       <div className="space-y-4 mt-5">
+        {/* 問１ */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2B-1"))}>
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問1</span>
             <span className="-mr-2">Ken thinks the new policy</span>
             <div className="flex flex-row gap-2">
               {renderSelect("11", 4, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId="2B-1"  isShow={showResults} />
               {Kaisetsu(showResults, "21-2B-5")}
             </div>
@@ -168,6 +170,7 @@ const Ex21_2B = () => {
           </div>
         </div>
 
+        {/* 問２ */}
         <div className={cn("mt-5 mb-8", showResults && qaFormat(qa, "2B-2"))}>
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問2</span>
@@ -177,6 +180,7 @@ const Ex21_2B = () => {
             </span>
             <div className="flex flex-row gap-2">
               {renderSelect("12", 4, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId="2B-2"  isShow={showResults} />
               {Kaisetsu(showResults, "21-2B-6")}
             </div>
@@ -230,10 +234,11 @@ const Ex21_2B = () => {
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問4</span>
             <span> Dr Berger is basing his new policy on the </span>
-            <span className="underline">fact</span>
+            <span className="underline font-semibold">fact</span>
             <span className="-mr-2"> that</span>
             <div className="flex flex-row gap-2">
               {renderSelect("14", 4, answers, setAnswers)}
+              <span className="-ml-2 mr-2">.</span>
               <Explain qa={qa} questionId="2B-4"  isShow={showResults} />
               {Kaisetsu(showResults, "21-2B-8")}
             </div>
