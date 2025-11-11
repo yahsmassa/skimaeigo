@@ -41,10 +41,10 @@ const Ex23_6A = () => {
       </div>{" "}
       {/* Question Label */}
       <div className="flex gap-2 mb-2">
-        <p className="text-justify indent-7 md:text-xl mb-2">
+        <p className="text-justify indent-7 md:text-[17px] mb-2">
           You are in a discussion group in school. You have been asked to
           summarize the following article. You will speak about it, using only
-          notes.
+          notes.{' '}
           {Kaisetsu(showResults, "23-6A-0")}
         </p>
       </div>
@@ -65,7 +65,7 @@ const Ex23_6A = () => {
           collection of artwork, some of which may be worth more than she paid.
           one person&apos;s trash can be another person&apos;s treasure.
           Regardless of how someone&apos;s collection was started, it is human
-          nature to collect things.
+          nature to collect things.{' '}
           {Kaisetsu(showResults, "23-6A-1")}
         </p>
         <p className="indent-7">
@@ -81,11 +81,10 @@ const Ex23_6A = () => {
           their collection is a connection to their youth. They may have
           baseball cards, comic books, dolls, or miniature cars that they have
           kept since they were small.
-          {Kaisetsu(showResults, "23-6A-2")}
           {' '}Others have an attachment to history; they seek and hold onto
           historical documents, signed letters and autographs from famous
-          people, and so forth.
-          {Kaisetsu(showResults, "23-6A-3")}
+          people, and so forth.{' '}
+          {Kaisetsu(showResults, "23-6A-2")}
         </p>
         <p className="indent-7">
           For some individuals there is a social reason. People collect things
@@ -99,7 +98,7 @@ const Ex23_6A = () => {
           world, with 3,724 items; from T-shirts to pillows to dog toys,
           Sperl&apos;s room is filled with all things &quot;hamburger.&quot;
           Similarly, Liu Fuchang, of China, is a collector of playing cards. He
-          has 11,087 different sets.
+          has 11,087 different sets.{' '}
           {Kaisetsu(showResults, "23-6A-4")}
         </p>
         <p className="indent-7">
@@ -114,7 +113,7 @@ const Ex23_6A = () => {
           game unopened in its original packaging, in &quot;mint
           condition,&quot; can make the game worth a lot. Owning various
           valuable &quot;collector&apos;s items&quot; could ensure some
-          financial security.
+          financial security.{' '}
           {Kaisetsu(showResults, "23-6A-5")}
         </p>
         <p className="indent-7">
@@ -126,7 +125,7 @@ const Ex23_6A = () => {
           and art that would have been unimaginable 30 years ago. It is unclear,
           though, what other impacts technology will have on collections. Can
           you even imagine the form and scale that the next generation&apos;s
-          collections will take?
+          collections will take?{' '}
           {Kaisetsu(showResults, "23-6A-6")}
         </p>
       </div>

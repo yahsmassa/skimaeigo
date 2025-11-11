@@ -44,48 +44,61 @@ const Ex23_1A = () => {
           </p>
         </div>
 
-        <div className="border border-gray-300 p-4 mb-6">
+        <div className="border border-gray-300 p-2 mb-2">
           <h1 className="text-center text-xl mb-4">Performances for Friday</h1>
 
           <div className="grid grid-cols-2 gap-4">
             {/* Palace Theater */}
             <div className="border-r border-gray-300 pr-4">
-              <h2 className="font-bold underline mb-2">Palace Theater</h2>
-              <h3 className="italic mb-2">Together Wherever</h3>
+              <h2 className="font-bold underline mb-2 text-center">Palace Theater</h2>
+              <h3 className="italic mb-2 text-center font-semibold">Together Wherever</h3>
               <p className="mb-4">
                 A romantic play that will make you laugh and cry
               </p>
-              <ul className="space-y-2">
-                <li>
-                  ▶ From 2:00 p.m. (no breaks and a running time of one hour and
-                  45 minutes)
+              <ul className="space-y-2 text-base">
+                <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                  <span className="select-none">▶</span>
+                  <span>
+                    From 2:00 p.m. (no breaks and a running time of one hour and 45 minutes)
+                  </span>
                 </li>
-                <li>
-                  ▶ Actors available to talk in the lobby after the performance
+                <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                  <span className="select-none">▶</span>
+                  <span>Actors available to talk in the lobby after the performance</span>
                 </li>
-                <li>▶ No food or drinks available</li>
-                <li>▶ Free T-shirts for five lucky people</li>
+                <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                  <span className="select-none">▶</span>
+                  <span>No food or drinks available</span>
+                </li>
+                <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                  <span className="select-none">▶</span>
+                  <span>Free T-shirts for five lucky people</span>
+                </li>
               </ul>
               {Kaisetsu(showResults, "23-1A-2")}
             </div>
 
             {/* Grand Theater */}
-            <div className="pl-4">
-              <h2 className="font-bold underline mb-2">Grand Theater</h2>
-              <h3 className="italic mb-2">The Guitar Queen</h3>
+            <div className="pl-4 md:pl-0">
+              <h2 className="font-bold underline mb-2 text-center">Grand Theater</h2>
+              <h3 className="italic mb-2 text-center font-semibold">The Guitar Queen</h3>
               <p className="mb-4">A rock musical featuring colorful costumes</p>
-              <ul className="space-y-2">
-                <li>
-                  ▶ Starts at 1:00 p.m. (three hours long including two
-                  15-minute breaks)
+              <ul className="space-y-2 text-base">
+                <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                  <span className="select-none">▶</span>
+                  <span>
+                    Starts at 1:00 p.m. (three hours long including two 15-minute breaks)
+                  </span>
                 </li>
-                <li>
-                  ▶ Opportunity to greet the cast in their costumes before the
-                  show starts
+                <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                  <span className="select-none">▶</span>
+                  <span>Opportunity to greet the cast in their costumes before the show starts</span>
                 </li>
-                <li>
-                  ▶ Light refreshments (snacks & drinks), original T-shirts, and
-                  other goods sold in the lobby
+                <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                  <span className="select-none">▶</span>
+                  <span>
+                    Light refreshments (snacks &amp; drinks), original T-shirts, and other goods sold in the lobby
+                  </span>
                 </li>
               </ul>
               {Kaisetsu(showResults, "23-1A-3")}
@@ -105,30 +118,26 @@ const Ex23_1A = () => {
           </div>
         </div>
 
-        <div>
+        <div className="flex flex-row gap-2 flex-wrap">
           <p className="mb-4">Choose (✓) one:</p>
           <div className="flex space-x-8 mb-4">
             <label className="flex items-center space-x-2">
+              <span className="italic">Together Wherever</span>
               <input
-                type="radio"
+                type="checkbox"
                 name="performance"
                 value="Together Wherever"
-                // checked={selectedShow === "Together Wherever"}
-                // onChange={(e) => setSelectedShow(e.target.value)}
                 className="form-radio"
               />
-              <span className="italic">Together Wherever</span>
             </label>
             <label className="flex items-center space-x-2">
+              <span className="italic">The Guitar Queen</span>
               <input
-                type="radio"
+                type="checkbox"
                 name="performance"
                 value="The Guitar Queen"
-                // checked={selectedShow === "The Guitar Queen"}
-                // onChange={(e) => setSelectedShow(e.target.value)}
                 className="form-radio"
               />
-              <span className="italic">The Guitar Queen</span>
             </label>
           </div>
           <div className="mb-4">
@@ -136,8 +145,6 @@ const Ex23_1A = () => {
               Name:
               <input
                 type="text"
-                // value={name}
-                // onChange={(e) => setName(e.target.value)}
                 className="border-b border-gray-400 ml-2 focus:outline-none focus:border-gray-600"
               />
             </label>

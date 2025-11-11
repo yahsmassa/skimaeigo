@@ -44,7 +44,7 @@ const Ex23_3A = () => {
         </p>
       </div>
       {/* Newsletter */}
-      <div className="border border-gray-800 p-8">
+      <div className="border border-gray-800 p-8 text-justify">
         <h1 className="text-xl text-center mb-6">Going camping? Read me!!!</h1>
 
         <div className="space-y-1">
@@ -123,7 +123,7 @@ const Ex23_3A = () => {
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "3A-2"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "3A-2"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span>According to Kaitlyn,</span>

@@ -44,8 +44,8 @@ const Ex23_2A = () => {
         </p>
       </div>
       {/* Main Advertisement */}
-      <div className="border border-gray-800 p-6 mb-8">
-        <h1 className="text-xl mb-4">
+      <div className="border border-gray-800 p-6 mb-8 text-justify">
+        <h1 className="text-xl mb-4 text-center font-semibold">
           Navi 55 presents the new <span className="italic">Smart Support</span>{" "}
           shoe line
         </h1>
@@ -65,12 +65,12 @@ const Ex23_2A = () => {
               height={80}
               className="mx-auto"
             />
-            <p className="text-sm mt-1">nano-chip</p>
+            {/* <p className="text-sm mt-1">nano-chip</p> */}
           </div>
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-bold text-lg text-center">Special Features</h2>
+          <h2 className="font-bold text-lg text-center">Special Features {' '} {Kaisetsu(showResults, "23-2A-2")}</h2>
 
           <p className="leading-relaxed">
             <span className="italic">Smart Support</span> shoes have a nano-chip
@@ -81,10 +81,9 @@ const Ex23_2A = () => {
             The inside of the shoe will automatically adjust to give correct,
             personalised foot support. As with other Navi 55 products, the shoes
             have our popular Route Memory function.
-            {Kaisetsu(showResults, "23-2A-2")}
           </p>
 
-          <h2 className="font-bold text-lg text-center">Advantages</h2>
+          <h2 className="font-bold text-lg text-center">Advantages {' '} {Kaisetsu(showResults, "23-2A-3")}</h2>
 
           <div className="space-y-2">
             <div>
@@ -118,14 +117,13 @@ const Ex23_2A = () => {
                 automatically in your earphones, or use your smartwatch to read
                 directions.
               </p>
-            {Kaisetsu(showResults, "23-2A-3")}
             </div>
           </div>
         </div>
       </div>
       {/* Customer Comments */}
       <div className="border border-gray-800 p-6">
-        <h2 className="font-bold mb-4">Customers&apos; Comments</h2>
+        <h2 className="font-bold mb-4">Customers&apos; Comments {' '} {Kaisetsu(showResults, "23-2A-4")}</h2>
         <ul className="space-y-2">
           {[
             "I like the choices for getting directions, and prefer using audio guidance to visual guidance.",
@@ -137,12 +135,11 @@ const Ex23_2A = () => {
             "They look great. The app's basic features are easy to use, but I wouldn't pay for the optional advanced ones.",
           ].map((comment, index) => (
             <li key={index} className="flex items-start">
-              <span className="mr-2 text-lg">•</span>
+              <span className="mr-2 text-lg">⚫︎</span>
               <span>{comment}</span>
             </li>
           ))}
         </ul>
-        {Kaisetsu(showResults, "23-2A-4")}
       </div>
       {/* Question 1 */}
       <div
@@ -214,7 +211,7 @@ const Ex23_2A = () => {
         <div className="flex items-center flex-wrap mb-4 gap-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span className="-mr-2">
-            One <u>opinion</u> stated by a customer is that
+            One <u className="underline font-semibold">opinion</u> stated by a customer is that
           </span>
           <div className="flex flex-row gap-2">
             {renderSelect("8", 4, answers, setAnswers)}

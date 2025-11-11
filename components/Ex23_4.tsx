@@ -35,7 +35,7 @@ const Ex23_4 = () => {
         />
       </div>{" "}
       {/* Context */}
-      <div className="mb-2">
+      <div className="mb-4">
         <p className="text-gray-700 leading-relaxed px-2">
           Your teacher has asked you to read two articles about effective ways
           to study. You will discuss what you learned in your next class.
@@ -46,7 +46,7 @@ const Ex23_4 = () => {
       <div className="space-y-6">
         {/* Title and Author */}
         <div className="text-center mb-8">
-          <h1 className="text-xl mb-2">
+          <h1 className="text-xl mb-2 font-semibold">
             How to Study Effectively: Contextual Learning
           </h1>
           <p className="mb-2">Tim Oxford</p>
@@ -56,7 +56,7 @@ const Ex23_4 = () => {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-1">
+        <div className="space-y-1 text-justify">
           <p className="indent-7">
             As a science teacher, I am always concerned about how to help
             students who struggle to learn. Recently, I found that their main
@@ -67,7 +67,7 @@ const Ex23_4 = () => {
             glassy. Obsidian is igneous, dark, and glassy....&quot; These
             students would feel as if they had learned the information, but
             would quickly forget it and get low scores on the test. Also, this
-            sort of repetitive learning is dull and demotivating.
+            sort of repetitive learning is dull and demotivating.{' '}
             {Kaisetsu(showResults, "23-4-1")}
           </p>
 
@@ -79,7 +79,7 @@ const Ex23_4 = () => {
             Rather than having them memorize the terms from a workbook, I
             brought a big box of various rocks to the class. Students examined
             the rocks and identified their names based on the characteristics
-            they observed.
+            they observed.{' '}
             {Kaisetsu(showResults, "23-4-2")}
           </p>
 
@@ -91,7 +91,7 @@ const Ex23_4 = () => {
                 issue, however, is that we don&apos;t always have the time to do
                 contextual learning, so students will still study by doing
                 drills. I don&apos;t think this is the best way. I&apos;m still
-                searching for ways to improve their learning.
+                searching for ways to improve their learning.{' '}
                 {Kaisetsu(showResults, "23-4-3")}
               </p>
             </div>
@@ -109,10 +109,10 @@ const Ex23_4 = () => {
         </div>
       </div>
       {/* Second Article */}
-      <div className="mt-12 space-y-6">
+      <div className="mt-[40px] md:mt-[60px] space-y-6">
         {/* Title and Author */}
         <div className="text-center mb-8">
-          <h1 className="text-xl mb-2">
+          <h1 className="text-xl mb-2 font-semibold">
             How to Make Repetitive Learning Effective
           </h1>
           <p className="mb-2">Cheng Lee</p>
@@ -120,7 +120,7 @@ const Ex23_4 = () => {
         </div>
 
         {/* Main Content */}
-        <div className="space-y-1">
+        <div className="space-y-1 text-justify">
           <p className="indent-7">
             Mr. Oxford&apos;s thoughts on contextual learning were insightful. I
             agree that it can be beneficial. Repetition, though, can also work
@@ -128,7 +128,7 @@ const Ex23_4 = () => {
             is called &quot;massed learning,&quot; is not effective. There is
             another kind of repetitive learning called &quot;spaced
             learning,&quot; in which students memorize new information and then
-            review it over longer intervals.
+            review it over longer intervals.{' '}
             {Kaisetsu(showResults, "23-4-4")}
           </p>
 
@@ -143,7 +143,7 @@ const Ex23_4 = () => {
             more attention because they have to make a greater effort to recall
             what they had learned before. For example, if students study with
             their workbooks, wait three days, and then study again, they are
-            likely to learn the material better.
+            likely to learn the material better.{' '}
             {Kaisetsu(showResults, "23-4-5")}
           </p>
 
@@ -157,7 +157,7 @@ const Ex23_4 = () => {
                 B studied at one-week intervals. As the figure to the right
                 shows, 28 days after the last learning session, the average
                 ratio of recalled names on a test was higher for the spaced
-                learning group.
+                learning group.{' '}
                 {Kaisetsu(showResults, "23-4-6")}
               </p>
 
@@ -166,7 +166,7 @@ const Ex23_4 = () => {
                 information in a short period of time, and long intervals
                 between studying might not be practical. You should understand,
                 though, that massed learning might not be good for long-term
-                recall.
+                recall.{' '}
                 {Kaisetsu(showResults, "23-4-7")}
               </p>
             </div>

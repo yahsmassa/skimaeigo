@@ -41,13 +41,13 @@ const Ex23_2B = () => {
           council. The members have been discussing a student project helping
           students to use their time efficiently. To get ideas, you are reading
           a report about a school challenge. It was written by an exchange
-          student who studied in another school in Japan.
+          student who studied in another school in Japan.{' '}
           {Kaisetsu(showResults, "23-2B-0")}
         </p>
       </div>
       {/* Main Report */}
-      <div className="border border-gray-800 p-8">
-        <h1 className="text-center text-xl mb-6">Commuting Challenge</h1>
+      <div className="border border-gray-800 p-8 text-justify">
+        <h1 className="text-center text-xl mb-6 font-semibold">Commuting Challenge</h1>
 
         {/* Main Content */}
         <div className="mb-2 leading-relaxed">
@@ -63,54 +63,54 @@ const Ex23_2B = () => {
             than two thirds of them were second-years; about a quarter were
             third-years; only 15 first-years participated. How come so few
             first-years participated? Based on the feedback (given below), there
-            seems to be an answer to this question:
+            seems to be an answer to this question:{' '}
             {Kaisetsu(showResults, "23-2B-2")}
           </p>
         </div>
 
         {/* Feedback Section */}
-        <div>
-          <h2 className="font-bold underline mb-4">
+        <div className="mt-4">
+          <h2 className="font-bold underline mb-1">
             Feedback from participants
           </h2>
           <div className="space-y-1">
-            <p>
+            <p className="pl-[1ch] -indent-[1ch]">
               <span className="font-bold">HS:</span> Thanks to this project, I
               got the highest score ever in an English vocabulary test. It was
-              easy to set small goals to complete on my way.
+              easy to set small goals to complete on my way.{' '}
               {Kaisetsu(showResults, "23-2B-3")}
             </p>
-            <p>
+            <p className="pl-[1ch] -indent-[1ch]">
               <span className="font-bold">KF:</span> My friend was sad because
               she couldn&apos;t participate. She lives nearby and walks to
-              school. There should have been other ways to take part.
+              school. There should have been other ways to take part.{' '}
               {Kaisetsu(showResults, "23-2B-4")}
             </p>
-            <p>
+            <p className="pl-[1ch] -indent-[1ch]">
               <span className="font-bold">SS:</span> My train is always crowded
               and I have to stand, so there is no space to open a book or a
               tablet. I only used audio materials, but there were not nearly
-              enough.
+              enough.{' '}
               {Kaisetsu(showResults, "23-2B-5")}
             </p>
-            <p>
+            <p className="pl-[1ch] -indent-[1ch]">
               <span className="font-bold">JH:</span> I kept a study log, which
               made me realise how I used my time. For some reason most of my
               first-year classmates didn&apos;t seem to know about this
               challenge.
               {Kaisetsu(showResults, "23-2B-6")}
             </p>
-            <p>
+            <p className="pl-[1ch] -indent-[1ch]">
               <span className="font-bold">MN:</span> I spent most of the time on
               the bus watching videos, and it helped me to understand classes
-              better. I felt the time went very fast.
+              better. I felt the time went very fast.{' '}
               {Kaisetsu(showResults, "23-2B-7")}
             </p>
           </div>
         </div>
       </div>
       {/* Questions Section */}
-      <div className="mt-12 space-y-12">
+      <div className="mt-12 space-y-4">
         {/* Question 1 */}
         <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-1"))}>
           <div className="flex items-center mb-4 mt-3 flex-wrap">
@@ -124,7 +124,7 @@ const Ex23_2B = () => {
               {Kaisetsu(showResults, "23-2B-8")}
             </div>
           </div>
-          <ol className="list-none space-y-2">
+          <ol className="list-none space-y-1">
             {[
               "commute more quickly",
               "improve their test scores",
@@ -154,7 +154,7 @@ const Ex23_2B = () => {
               {Kaisetsu(showResults, "23-2B-9")}
             </div>
           </div>
-          <ol className="list-none space-y-2">
+          <ol className="list-none space-y-1">
             {[
               "fewer than 10% of the participants were first-years",
               "it was held for two months during the winter",
@@ -189,7 +189,7 @@ const Ex23_2B = () => {
             <p>C : making notes on tablets</p>
             <p>D : reading lesson notes on mobile phones</p>
           </div>
-          <ol className="list-none space-y-2">
+          <ol className="list-none space-y-1 ml-4">
             {[
               "A and B",
               "A and C",
@@ -209,7 +209,7 @@ const Ex23_2B = () => {
         </div>
 
         {/* Question 4 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-4"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "2B-4"))}>
           <div className="flex items-center mb-4  flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span>
@@ -238,7 +238,7 @@ const Ex23_2B = () => {
         </div>
 
         {/* Question 5 */}
-        <div className={cn("space-y-4", showResults && qaFormat(qa, "2B-5"))}>
+        <div className={cn("space-y-2", showResults && qaFormat(qa, "2B-5"))}>
           <div className="flex items-center mb-4 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 5</span>
             <span>The author&apos;s question is answered by</span>

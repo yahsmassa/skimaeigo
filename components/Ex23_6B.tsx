@@ -38,10 +38,10 @@ const Ex23_6B = () => {
       <div className="space-y-1">
         {/* Question Header */}
         <div className="flex gap-4 mb-2">
-          <p className="text-justify indent-7 md:text-xl mb-2">
+          <p className="text-justify indent-7 md:text-[17px] mb-2">
             You are in a student group preparing for an international science
             presentation contest. You are using the following passage to create
-            your part of the presentation on extraordinary creatures.
+            your part of the presentation on extraordinary creatures.{' '}
             {Kaisetsu(showResults, "23-6B-0")}
           </p>
         </div>
@@ -53,7 +53,7 @@ const Ex23_6B = () => {
             say the Bactrian camel as it can survive in temperatures as high as
             50°C, or the Arctic fox which can survive in temperatures lower than
             −58°C. However, both answers would be wrong as it is widely believed
-            that the tardigrade is the toughest creature on earth.
+            that the tardigrade is the toughest creature on earth.{' '}
             {Kaisetsu(showResults, "23-6B-1")}
           </p>
 
@@ -65,7 +65,7 @@ const Ex23_6B = () => {
             in hot springs. Most live in water, but some tardigrades can be
             found in some of the driest places on earth. One researcher reported
             finding tardigrades living under rocks in a desert without any
-            recorded rainfall for 25 years.
+            recorded rainfall for 25 years.{' '}
             {Kaisetsu(showResults, "23-6B-2")}
           </p>
 
@@ -77,7 +77,7 @@ const Ex23_6B = () => {
             called &quot;tun,&quot; a kind of deep sleep. It will continue in
             this state until it is once again soaked in water. Then, like a
             sponge, it absorbs the water and springs back to life again as if
-            nothing had happened.
+            nothing had happened.{' '}
             {Kaisetsu(showResults, "23-6B-3")}
           </p>
 
@@ -87,7 +87,7 @@ const Ex23_6B = () => {
             again. When tardigrades are in a state of tun, they are so tough
             that they can survive in temperatures as low as −272°C and as high
             as 151°C. Exactly how they achieve this is still not fully
-            understood.
+            understood.{' '}
             {Kaisetsu(showResults, "23-6B-4")}
           </p>
 
@@ -103,7 +103,7 @@ const Ex23_6B = () => {
             Israeli spacecraft crashed onto the moon and thousands of
             tardigrades in a state of tun were spilled onto its surface. Whether
             these are still alive or not is unknown as no one has gone to
-            collect them — which is a pity.
+            collect them — which is a pity.{' '}
             {Kaisetsu(showResults, "23-6B-5")}
           </p>
 
@@ -114,7 +114,7 @@ const Ex23_6B = () => {
             claw variations, which help identify those species with claws. All
             tardigrades have a place for eyes, but not all species have eyes.
             Their eyes are primitive, only having five cells in total — just one
-            of which is light sensitive.
+            of which is light sensitive.{' '}
             {Kaisetsu(showResults, "23-6B-6")}
           </p>
 
@@ -127,7 +127,7 @@ const Ex23_6B = () => {
             head, like a tuna. The mouths of tardigrades do not have teeth. They
             do, however, have two sharp needles, called stylets, that they use
             to pierce plant cells or the bodies of smaller creatures so the
-            contents can be sucked out.
+            contents can be sucked out.{' '}
             {Kaisetsu(showResults, "23-6B-7")}
           </p>
 
@@ -140,7 +140,7 @@ const Ex23_6B = () => {
             toward the gut. This tube is called the esophagus. The middle gut, a
             simple stomach/intestine type of organ, digests the food and absorbs
             the nutrients. The leftovers then eventually move through to the
-            anus.
+            anus.{' '}
             {Kaisetsu(showResults, "23-6B-8")}
           </p>
         </div>
@@ -166,7 +166,7 @@ const Ex23_6B = () => {
           <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>
             Which of the following should you{" "}
-            <span className="underline">not</span> include for
+            <span className="underline font-semibold">not</span> include for
           </span>
           <div className="flex flex-row gap-2">
           {renderSelect("44", 5, answers, setAnswers)}<span className="-ml-1 mr-2 text-lg">?</span>

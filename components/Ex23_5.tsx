@@ -34,7 +34,7 @@ const Ex23_5 = () => {
       </div>{" "}
       {/* Context */}
       <div className="mb-2">
-        <p className="text-gray-700 leading-relaxed md:text-xl mb-2">
+        <p className="text-gray-700 leading-relaxed md:text-[17px] px-1 mb-2">
           Your English teacher has told everyone in your class to find an
           inspirational story and present it to a discussion group, using notes.
           You have found a story written by a high school student in the UK.
@@ -44,20 +44,18 @@ const Ex23_5 = () => {
       {/* Story Content */}
       <div className="border border-gray-800 p-8">
         {/* Title and Author */}
-        <div className="flex justify-between items-start mb-8">
-          <h1 className="text-xl">Lessons from Table Tennis</h1>
-          <p>Ben Carter</p>
-        </div>
+          <h1 className="text-xl text-center font-semibold">Lessons from Table Tennis</h1>
+          <p className="text-right">Ben Carter</p>
 
         {/* Main Content */}
-        <div className="space-y-1 leading-relaxed">
+        <div className="mt-2 space-y-1 leading-relaxed text-justify">
           <p className="indent-7">
             The ball flew at lightning speed to my backhand. It was completely
             unexpected and I had no time to react. I lost the point and the
             match. Defeat... Again! This is how it was in the first few months
             when I started playing table tennis. It was frustrating, but I now
             know that the sport taught me more than simply how to be a better
-            athlete.
+            athlete.{' '}
             {Kaisetsu(showResults, "23-5-1")}
           </p>
 
@@ -65,7 +63,7 @@ const Ex23_5 = () => {
             In middle school, I loved football. I was one of the top scorers,
             but I didn&apos;t get along with my teammates. The coach often said
             that I should be more of a team player. I knew I should work on the
-            problem, but communication was just not my strong point.
+            problem, but communication was just not my strong point.{' '}
             {Kaisetsu(showResults, "23-5-2")}
           </p>
 
@@ -75,7 +73,7 @@ const Ex23_5 = () => {
             anyway. My new school had a table tennis club, coached by the PE
             teacher, Mr Trent, and I joined that. To be honest, I chose table
             tennis because I thought it would be easier for me to play
-            individually.
+            individually.{' '}
             {Kaisetsu(showResults, "23-5-3")}
           </p>
 
@@ -88,7 +86,7 @@ const Ex23_5 = () => {
             &quot;focus on the ball more?&quot; &quot;Yes,&quot; Mr Trent
             continued, &quot;but you also need to study your opponent&apos;s
             moves and adjust your play accordingly. Remember, your opponent is a
-            person, not a ball.&quot; This made a deep impression on me.
+            person, not a ball.&quot; This made a deep impression on me.{' '}
             {Kaisetsu(showResults, "23-5-4")}
           </p>
 
@@ -101,7 +99,7 @@ const Ex23_5 = () => {
             me more than before. I thought that I was becoming popular, but our
             conversations seemed to end before they really got started. Although
             my play might have improved, my communication skills obviously
-            hadn&apos;t.
+            hadn&apos;t.{' '}
             {Kaisetsu(showResults, "23-5-5")}
           </p>
 
@@ -114,6 +112,7 @@ const Ex23_5 = () => {
             analysing my opponent&apos;s movements and making instant decisions
             about the next move. Patrick looked thoughtful. &quot;That sounds
             like the kind of skill we use when we communicate,&quot; he said.
+            {' '}
             {Kaisetsu(showResults, "23-5-6")}
           </p>
 
@@ -124,7 +123,7 @@ const Ex23_5 = () => {
             over. &quot;Hey, Ben!&quot; he said, &quot;Let&apos;s have a party
             to celebrate!&quot; Without thinking, I replied, &quot;I can&apos;t.
             I&apos;ve got practice.&quot; He looked a bit hurt and walked off
-            without saying anything else.
+            without saying anything else.{' '}
             {Kaisetsu(showResults, "23-5-7")}
           </p>
 
@@ -137,6 +136,7 @@ const Ex23_5 = () => {
             practice,&quot; then maybe the outcome would have been better. At
             that moment Patrick&apos;s words made sense. Without attempting to
             grasp someone&apos;s intention, I wouldn&apos;t know how to respond.
+            {' '}
             {Kaisetsu(showResults, "23-5-8")}
           </p>
 
@@ -312,14 +312,14 @@ const Ex23_5 = () => {
         <div className="flex flex-wrap items-center gap-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
           <span> Choose </span>
-          <span className="underline">four</span>
+          <span className="underline font-semibold">four</span>
           <span>
             out of the five options (①～⑤) and rearrange them in the order they
             happened.
           </span>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 ml-8">
+        <div className="flex flex-wrap items-center  ml-8 md:ml-0">
           {renderSelect("32", 5, answers, setAnswers)}
           <span>→</span>
           {renderSelect("33", 5, answers, setAnswers)}
@@ -327,13 +327,13 @@ const Ex23_5 = () => {
           {renderSelect("34", 5, answers, setAnswers)}
           <span>→</span>
           {renderSelect("35", 5, answers, setAnswers)}
+        </div>
           <div className="flex flex-row gap-2">
             <Explain qa={qa} questionId="5-3"  isShow={showResults} />
             {Kaisetsu(showResults, "23-5-12")}
           </div>
-        </div>
 
-        <div className="space-y-3 ml-2 md:ml-8">
+        <div className="space-y-1 ml-2 md:ml-8">
           {[
             "Became a table tennis champion",
             "Discussed with his teacher how to play well",
@@ -349,7 +349,7 @@ const Ex23_5 = () => {
         </div>
       </div>
       {/* Question 4 */}
-      <div className={cn("space-y-4 mt-4", showResults && qaFormat(qa, "5-4"))}>
+      <div className={cn("space-y-1 mt-4", showResults && qaFormat(qa, "5-4"))}>
         <div className="flex flex-wrap items-center gap-2">
           <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
           <span>Choose the best option for</span>
@@ -360,7 +360,7 @@ const Ex23_5 = () => {
           </div>
         </div>
 
-        <div className="space-y-3 ml-2 md:ml-8">
+        <div className="space-y-1 ml-2 md:ml-8">
           {[
             "asked his friend questions to find out more about his motivation",
             "invited Mr Trent and other classmates to the party to show appreciation",
@@ -389,7 +389,7 @@ const Ex23_5 = () => {
           </div>
         </div>
 
-        <div className="space-y-3 ml-2 md:ml-8">
+        <div className="space-y-1 ml-2 md:ml-8">
           {[
             "Advice from people around us can help us change.",
             "Confidence is important for being a good communicator.",

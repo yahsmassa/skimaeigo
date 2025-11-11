@@ -95,30 +95,29 @@ const Ex23_1B = () => {
 
           <div className="space-y-1">
             <div>
-              <p className="font-bold">◆FOREST:</p>
+              <p className="font-bold">◆FOREST:{' '} {Kaisetsu(showResults, "23-1B-3")} </p>
               <p className="ml-4">
                 You&apos;ll master basic grammar structures, make short speeches
                 on simple topics, and get pronunciation tips. Your instructors
                 have taught English for over 20 years in several countries. On
                 the final day of the camp, you&apos;ll take part in a speech
                 contest while all the other campers listen.
-                {Kaisetsu(showResults, "23-1B-3")}
               </p>
             </div>
 
             <div>
-              <p className="font-bold">◆MOUNTAIN:</p>
+              <p className="font-bold">◆MOUNTAIN:{' '} {Kaisetsu(showResults, "23-1B-4")} </p>
               <p className="ml-4">
                 You&apos;ll work in a group to write and perform a skit in
                 English. Instructors for this course have worked at theater
                 schools in New York City, London, and Sydney. You&apos;ll
                 perform your skit for all the campers to enjoy on August 14.
-                {Kaisetsu(showResults, "23-1B-4")}
+
               </p>
             </div>
 
             <div>
-              <p className="font-bold">◆SKY:</p>
+              <p className="font-bold">◆SKY:{' '} {Kaisetsu(showResults, "23-1B-5")} </p>
               <p className="ml-4">
                 You&apos;ll learn debating skills and critical thinking in this
                 course. Your instructors have been to many countries to coach
@@ -126,7 +125,6 @@ const Ex23_1B = () => {
                 the subject. You&apos;ll do a short debate in front of all the
                 other campers on the last day. (Note: Only those with an
                 advanced level of English will be accepted.)
-                {Kaisetsu(showResults, "23-1B-5")}
               </p>
             </div>
           </div>
@@ -134,23 +132,23 @@ const Ex23_1B = () => {
 
         {/* Application Section */}
         <div className="mt-2">
-          <h3 className="font-bold mb-2">▲Application</h3>
+          <h3 className="font-bold mb-2">▲Application {' '} {Kaisetsu(showResults, "23-1B-6")}</h3>
           <div className="space-y-2">
             <p>
               <span className="font-bold">Step 1:</span> Fill in the online
-              application <span className="underline">HERE</span> by May 20,
+              application <span className="underline font-semibold">HERE</span> by May 20,
               2023.
             </p>
-            <p>
-              <span className="font-bold">Step 2:</span> We&apos;ll contact you
-              to set up an interview to assess your English ability and ask
-              about your course preference.
+            <p className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+              <span className="font-bold">Step 2:</span>
+              <span>
+                We&apos;ll contact you to set up an interview to assess your English ability and ask about your course preference.
+              </span>
             </p>
             <p>
               <span className="font-bold">Step 3:</span> You&apos;ll be assigned
               to a course.
             </p>
-            {Kaisetsu(showResults, "23-1B-6")}
           </div>
         </div>
       </div>

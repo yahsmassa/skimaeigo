@@ -46,7 +46,7 @@ const Ex23_3B = () => {
       </div>
       {/* Blog Content */}
       <div className="border border-gray-800 p-8">
-        <h1 className="text-xl text-center mb-6">
+        <h1 className="text-xl text-center mb-6 font-semibold">
           Create Your Own &quot;Home Adventure&quot;
         </h1>
 
@@ -60,7 +60,7 @@ const Ex23_3B = () => {
 
           {/* Key Steps Diagram */}
           <div className="my-8">
-            <div className="border border-gray-300 p-4 bg-gray-50">
+            <div className="border-2 border-gray-900 p-4">
               <h2 className="text-center font-bold mb-4">
                 Key Steps in Creating an Adventure
               </h2>
@@ -82,7 +82,7 @@ const Ex23_3B = () => {
               the scene.
               {Kaisetsu(showResults, "23-3B-2")}
             </p>
-
+            <br />
             <p>
               Next, create a storyline. Ours was{" "}
               <span className="italic">The Case of the Missing Chocolates</span>
@@ -90,7 +90,7 @@ const Ex23_3B = () => {
               to locate the missing sweets.
               {Kaisetsu(showResults, "23-3B-3")}
             </p>
-
+            <br />
             <p>
               The third step is to design puzzles and challenges. A useful idea
               is to work backwards from the solution. If the task is to open a
@@ -124,7 +124,7 @@ const Ex23_3B = () => {
       {/* Questions Section */}
       <div className="mt-8 space-y-7">
         {/* Question 1 */}
-        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-1"))}>
+        <div className={cn("space-y-1", showResults && qaFormat(qa, "3B-1"))}>
           <span className="whitespace-nowrap mr-2 font-sans">問 1</span>
           <span>
             Put the following events (①～④) into the order in which they
@@ -133,13 +133,13 @@ const Ex23_3B = () => {
           <div className="flex flex-row flex-wrap">
             <div className="flex flex-row mb-2">
               {renderSelect("18", 4, answers, setAnswers)}
-              <span className="md:mx-1">→</span>
+              <span className="">→</span>
               {renderSelect("19", 4, answers, setAnswers)}
-              <span className="md:mx-1">→</span>
+              <span className="">→</span>
             </div>
             <div className="flex flex-row mb-2">
               {renderSelect("20", 4, answers, setAnswers)}
-              <span className="md:mx-1">→</span>
+              <span className="">→</span>
               {renderSelect("21", 4, answers, setAnswers)}
             </div>
             <div className="flex flex-row gap-2 h-7">
@@ -163,7 +163,7 @@ const Ex23_3B = () => {
         </div>
 
         {/* Question 2 */}
-        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-2"))}>
+        <div className={cn("space-y-1", showResults && qaFormat(qa, "3B-2"))}>
           <div className="flex items-start gap-2 mb-2 flex-wrap">
             <span className="whitespace-nowrap mr-2 font-sans">問 2</span>
             <span className="-mr-2">
@@ -192,7 +192,7 @@ const Ex23_3B = () => {
         </div>
 
         {/* Question 3 */}
-        <div className={cn("space-y-2", showResults && qaFormat(qa, "3B-3"))}>
+        <div className={cn("space-y-1", showResults && qaFormat(qa, "3B-3"))}>
           <div className="flex items-center mb-2 flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span>From this story, you understand that the father</span>
