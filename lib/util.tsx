@@ -16,7 +16,7 @@ export function cn(...inputs: ClassValue[]) {
 
 // export const exPageFormat = "w-full md:w-3/4 lg:w-2/3 mx-auto p-4";
 // export const exPageFormat = "font-times text-[18px] w-full md:max-w-[650px]  p-4";
-export const exPageFormat = "font-serif md:font-times md:text-[18px] w-full md:max-w-[650px]  p-4";
+export const exPageFormat = "font-serif md:font-times md:text-[18px] w-full md:max-w-[650px] mx-auto p-4";
 export const exQuestionFormat = "space-y-4 mt-6";
 
 export const exPageHeader = "sticky top-0 bg-white z-10 pt-4 mb-4 min-h-[50px]";
