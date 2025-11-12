@@ -353,16 +353,15 @@ const Ex25_8 = () => {
           </h2>
 
           <div>
-            <h3 className="font-semibold">Introduction</h3>
+            <h3 className="font-semibold">Introduction{' '}{Kaisetsu(showResults, "25-8-8")}</h3>
             <p>
               Space exploration is without doubt on the frontline of science,
               but it should not be a priority for the following three reasons.
-              {Kaisetsu(showResults, "25-8-8")}
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold">Body</h3>
+            <h3 className="font-semibold">Body{' '}{Kaisetsu(showResults, "25-8-9")}</h3>
             <div className="space-y-1">
               <p>
                 REASON 1 from Step 2, based on evidence from the opinions in
@@ -380,17 +379,17 @@ const Ex25_8 = () => {
                 <span className="border border-gray-400 px-2 font-sans">
                   44
                 </span>
-                ) from Source B{Kaisetsu(showResults, "25-8-9")}
+                ) from Source B
               </p>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold">Conclusion</h3>
+            <h3 className="font-semibold">Conclusion {' '}{Kaisetsu(showResults, "25-8-10")}</h3>
             <p>
               Upon consideration of all its aspects, we should perhaps
               prioritize other things over exploring space.
-              {Kaisetsu(showResults, "25-8-10")}
+
             </p>
           </div>
         </div>

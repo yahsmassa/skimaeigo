@@ -128,39 +128,39 @@ const Ex24_4 = () => {
             <div className="text-sm md:text-base grid grid-cols-1 md:grid-cols-[auto,1fr] gap-x-2 items-start">
               <span className="font-medium font-sans">Student 1 (S 1):</span>
               <span>
-                I can't see the projector screen and whiteboard well on a sunny day. Also, there's no way to control the temperature.
+                I can't see the projector screen and whiteboard well on a sunny day. Also, there's no way to control the temperature.{' '}{Kaisetsu(showResults, "24-4-7A")}
               </span>
             </div>
             <div className="text-sm md:text-base grid grid-cols-1 md:grid-cols-[auto,1fr] gap-x-2 items-start">
               <span className="font-medium font-sans">S 2:</span>
               <span>
-                By the windows, the sunlight makes it hard to read. The other side of the room doesn't get enough light. Also, the books are disorganized and the walls are covered with posters. It makes me feel uncomfortable.
+                By the windows, the sunlight makes it hard to read. The other side of the room doesn't get enough light. Also, the books are disorganized and the walls are covered with posters. It makes me feel uncomfortable.{' '}{Kaisetsu(showResults, "24-4-7B")}
               </span>
             </div>
             <div className="text-sm md:text-base grid grid-cols-1 md:grid-cols-[auto,1fr] gap-x-2 items-start">
               <span className="font-medium font-sans">S 3:</span>
               <span>
-                The chairs don't really fit me and the desks are hard to move when we work in small groups. Also, lots of members speak Japanese, even though it's an English club.{" "}
-                <div className="-mb-3">{Kaisetsu(showResults, "24-4-7")}</div>
+                The chairs don't really fit me and the desks are hard to move when we work in small groups. Also, lots of members speak Japanese, even though it's an English club.{' '}{Kaisetsu(showResults, "24-4-7C")}
+                {/* <div className="-mb-3">{Kaisetsu(showResults, "24-4-7")}</div> */}
               </span>
             </div>
             <div className="text-sm md:text-base grid grid-cols-1 md:grid-cols-[auto,1fr] gap-x-2 items-start">
               <span className="font-medium font-sans">S 4:</span>
               <span>
-                The pictures of foreign countries on the walls make me want to speak English. Everyone likes the sofas — they are so comfortable that we often use the room for sleeping!
+                The pictures of foreign countries on the walls make me want to speak English. Everyone likes the sofas — they are so comfortable that we often use the room for sleeping!{' '}{Kaisetsu(showResults, "24-4-7D")}
               </span>
             </div>
             <div className="text-sm md:text-base grid grid-cols-1 md:grid-cols-[auto,1fr] gap-x-2 items-start">
               <span className="font-medium font-sans">S 5:</span>
               <span>
-                The room is so far away, so I hardly ever go there! Aren't there other rooms available?
+                The room is so far away, so I hardly ever go there! Aren't there other rooms available?{' '}{Kaisetsu(showResults, "24-4-7E")}
               </span>
             </div>
             <div className="text-sm md:text-base grid grid-cols-1 md:grid-cols-[auto,1fr] gap-x-2 items-start">
               <span className="font-medium font-sans">S 6:</span>
               <span>
-                There's so much gray in the room. I don't like it. But it's good that there are plenty of everyday English phrases on the walls!{" "}
-                <div className="-mb-3">{Kaisetsu(showResults, "24-4-8")}</div>
+                There's so much gray in the room. I don't like it. But it's good that there are plenty of everyday English phrases on the walls!{' '}{Kaisetsu(showResults, "24-4-7F")}
+                {/* <div className="-mb-3">{Kaisetsu(showResults, "24-4-8")}</div> */}
               </span>
             </div>
           </div>

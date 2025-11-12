@@ -436,6 +436,17 @@ export default function Home() {
             selectedText={selection}
             onButtonClick={handleButtonClick}
           />
+        {/* ここに、publicフォルダにあるtiktok.webpを表示 */}
+        <div className="">
+          <a href="https://www.tiktok.com/@kuotore/video/7563514461500214536" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/images/tiktok.webp"
+              alt="TikTok"
+              className="w-8 h-8 ml-4"
+              style={{ display: "inline-block" }}
+            />
+          </a>
+        </div>
         </div>
       </div>
       <main className="gap-8 row-start-2 items-center sm:items-start">
