@@ -35,16 +35,16 @@ export default function Ex25_2() {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="mb-2">
+      <div className="mb-2 px-3">
         <p className="text-gray-600 mb-4">
           Your teacher asks you to write a report about the future of
           transportation. To prepare, you read a blog written by a British
-          author about the topic.
+          author about the topic.{' '}
           {Kaisetsu(showResults, "25-2-1")}
         </p>
       </div>
 
-      <article className="relative">
+      <article className="relative border-2 border-black p-2 md:p-4">
         <h1 className="text-2xl font-bold text-center italic mb-6">
           Flying Vehicles
         </h1>
@@ -123,7 +123,7 @@ export default function Ex25_2() {
               Which of the following did all the guest speakers agree on?{" "}
             </span>
             <div className="flex flex-row items-center gap-2">
-              {renderSelect("4", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+              {renderSelect("4", 4, answers, setAnswers)}
               <Explain qa={qa} questionId="2-1"  isShow={showResults} />
               {Kaisetsu(showResults, "25-2-6")}
             </div>
@@ -179,7 +179,7 @@ export default function Ex25_2() {
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span className="flex gap-1">
               One guest speaker&apos;s{" "}
-              <span className="border-b border-black">opinion</span> is that{" "}
+              <span className="border-b border-black font-semibold">opinion</span> is that{" "}
             </span>
             {renderSelect("6", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
             <Explain qa={qa} questionId="2-3"  isShow={showResults} />
@@ -209,7 +209,7 @@ export default function Ex25_2() {
             <span className="flex gap-1">
               Which of the following is mentioned in the blog?{" "}
             </span>
-            {renderSelect("7", 4, answers, setAnswers)}<span className="-ml-3 mr-1">.</span>
+            {renderSelect("7", 4, answers, setAnswers)}
             <Explain qa={qa} questionId="2-4"  isShow={showResults} />
             {Kaisetsu(showResults, "25-2-9")}
           </div>

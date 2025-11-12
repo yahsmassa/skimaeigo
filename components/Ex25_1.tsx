@@ -37,104 +37,100 @@ export default function Ex25_1() {
       <div className="p-3 md:p-6">
           <div className="mb-4 leading-6 md:leading-8 md:text-[20px]">
             Your host family in the US is planning to buy a small aquarium. You
-            found this helpful pamphlet.
+            found this helpful pamphlet.{' '}
           {Kaisetsu(showResults, "25-1-0")}
           </div>
         </div>
 
-      <h1 className="text-center text-2xl mb-2 md:font-semibold">Beginners!</h1>
-      <h2 className="text-center text-xl mb-4 md:font-semibold">
-        Decorate Your Freshwater Aquarium
-      </h2>
-
-      <p className="text-center mb-6 italic">
-        Start your wonderful hobby of keeping fish by following these three easy
-        steps!
-      </p>
-
-      <div className="">
-        {/* Section 1 */}
-        <div>
-          <h3 className="text-lg font-bold mb-3">
-            1. Consider what kind of fish you want
-          </h3>
-          <div className="flex gap-4">
-            <div className="flex-1">
+      <div className="border-2 border-black p-4">
+        <h1 className="text-center text-2xl mb-2 md:font-semibold">Beginners!</h1>
+        <h2 className="text-center text-xl mb-4 md:font-semibold">
+          Decorate Your Freshwater Aquarium
+        </h2>
+        <p className="text-center mb-6 italic">
+          Start your wonderful hobby of keeping fish by following these three easy
+          steps!
+        </p>
+        <hr className="my-2 border-black border-1" />
+        <div className="">
+          {/* Section 1 */}
+          <div>
+            <h3 className="text-lg font-bold mb-3">
+              1. Consider what kind of fish you want
+            </h3>
+            <div>
               <p className="mb-4">
+                <span className="float-right ml-3 mb-1 md:w-32 w-24">
+                  <Image
+                    src="/images/Ex25-1-1.jpg"
+                    alt="Fish and bottom material illustration"
+                    width={128}
+                    height={128}
+                    className="w-full h-auto"
+                  />
+                </span>
                 Some fish need open spaces for swimming, while others want
                 places to hide. Also, some fish need sand to cover themselves
-                in. For other non-hiding fish, small stones can be used.
+                in. For other non-hiding fish, small stones can be used.{' '}
                 {Kaisetsu(showResults, "25-1-1")}
               </p>
-            </div>
-            {/* Fish and bottom material illustration will be added as img */}
-            <div className="w-32">
-              <Image
-                src="/images/Ex25-1-1.jpg"
-                alt="Fish and bottom material illustration"
-                width={128}
-                height={128}
-                className="w-full h-auto"
-              />
+              <div className="hidden md:block clear-both"></div>
             </div>
           </div>
-        </div>
-
-        {/* Section 2 */}
-        <div>
-          <h3 className="text-lg font-bold mb-3">2. Select decorations</h3>
-          <div className="flex gap-2 flex-col md:flex-row">
-            <div className="flex-1">
+          <hr className="my-2 border-black border-1" />
+          {/* Section 2 */}
+          <div>
+            <h3 className="text-lg font-bold mb-3">2. Select decorations</h3>
+            <div>
               <p className="mb-4">
+                <span className="float-right ml-3 mb-1 w-36 md:w-44">
+                  <Image
+                    src="/images/Ex25-1-2.jpg"
+                    alt="Natural and artificial decorations"
+                    width={192}
+                    height={192}
+                    className="w-full h-auto"
+                  />
+                </span>
                 Natural and artificial decorations are necessary to keep fish in
                 good health and should cover 50-70% of the area. Fish from
                 fast-moving or deep water need solid objects such as small rocks
                 and logs. Those from slow-moving or shallow water prefer soft
                 objects like plants. Avoid any plastic or rubber items not
                 intended for aquariums. Clean all decorations carefully to make
-                sure there is nothing harmful on them.
+                sure there is nothing harmful on them.{' '}
                 {Kaisetsu(showResults, "25-1-2")}
               </p>
-            </div>
-            <div className="w-[70%] md:w-48 mx-auto">
-              <Image
-                src="/images/Ex25-1-2.jpg"
-                alt="Natural and artificial decorations"
-                width={192}
-                height={192}
-                className="w-full h-auto"
-              />
+              <div className="hidden md:block clear-both"></div>
             </div>
           </div>
-        </div>
-
-        {/* Section 3 */}
-        <div>
-          <h3 className="text-lg font-bold mb-3">3. Position decorations</h3>
-          <div className="flex gap-2 flex-col md:flex-row">
-            <div className="flex-1">
+          <hr className="my-2 border-black border-1" />
+          {/* Section 3 */}
+          <div>
+            <h3 className="text-lg font-bold mb-3">3. Position decorations</h3>
+            <div>
               <p className="mb-4">
+                <span className="float-right ml-3 mb-1 w-36 md:w-44">
+                  <Image
+                    src="/images/Ex25-1-3.jpg"
+                    alt="Tank decoration positions"
+                    width={192}
+                    height={192}
+                    className="w-full h-auto"
+                  />
+                </span>
                 Fish need room to move. Leave space around the edges of the
                 tank. Place tall decorations and plants at the back, and put
-                short ones at the front.
+                short ones at the front.{' '}
                 {Kaisetsu(showResults, "25-1-3")}
               </p>
-            </div>
-            {/* Tank decoration position illustration will be added as img */}
-            <div className="w-[70%] md:w-48 mx-auto">
-              <Image
-                src="/images/Ex25-1-3.jpg"
-                alt="Tank decoration positions"
-                width={192}
-                height={192}
-                className="w-full h-auto"
-              />
+              <div className="hidden md:block clear-both"></div>
             </div>
           </div>
-        </div>
-
-        {/* Questions Section */}
-        <div className="mt-8 space-y-3">
+      </div>
+      </div>
+      {/* Questions Section */}
+      <div className="mt-8 space-y-3">
           {/* Question 1 */}
           <div className={cn("space-y-4", showResults && qaFormat(qa, "1-1"))}>
             <div className="flex items-center flex-wrap gap-2 mb-0">
@@ -224,7 +220,6 @@ export default function Ex25_1() {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }

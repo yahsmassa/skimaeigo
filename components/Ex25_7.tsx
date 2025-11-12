@@ -43,7 +43,7 @@ const Ex25_7 = () => {
       </p>
 
       {/* Article content */}
-      <div className="border border-gray-300 p-8">
+      <div className="border-[1.5px] border-black p-2 md:p-4">
         <h2 className="text-center font-medium text-lg mb-6 md:font-semibold">
           Animal Sleep Patterns
         </h2>
@@ -54,6 +54,7 @@ const Ex25_7 = () => {
             cat sleeps a lot during the day and is quite active in the evening
             and early morning. Humans, on the other hand, are awake during most
             of the daylight hours and then sleep for a long time at night.
+            {' '}
             {Kaisetsu(showResults, "25-7-1")}
           </p>
           <p className="indent-8">
@@ -66,6 +67,7 @@ const Ex25_7 = () => {
             to reset, and the body becomes energized. Most creatures experience
             states of sleep, but the types and patterns differ from species to
             species.
+            {' '}
             {Kaisetsu(showResults, "25-7-2")}
           </p>
           <p className="indent-8">
@@ -81,6 +83,7 @@ const Ex25_7 = () => {
             sleep being long and the other like a nap. Dogs and cats are
             polyphasic, meaning they have four to six sleeping and waking
             periods throughout the day.
+            {' '}
             {Kaisetsu(showResults, "25-7-3")}
           </p>
           <p className="indent-8">
@@ -94,6 +97,7 @@ const Ex25_7 = () => {
             other hand, sleep less than meat-eating animals because their
             plant-based diet has relatively few calories, resulting in the need
             to spend most of their time searching for food.
+            {' '}
             {Kaisetsu(showResults, "25-7-4")}
           </p>
           <p className="indent-8">
@@ -107,6 +111,7 @@ const Ex25_7 = () => {
             often travel long distances and may feel exposed to danger from
             hunters or other animals, contributing to their short sleeping
             times.
+            {' '}
             {Kaisetsu(showResults, "25-7-5")}
           </p>
           <p className="indent-8">
@@ -121,6 +126,7 @@ const Ex25_7 = () => {
             they are flying long distances in groups. Birds flying at the outer
             edge of the group use this type of sleep to help protect the other
             members that sleep with both eyes closed.
+            {' '}
             {Kaisetsu(showResults, "25-7-6")}
           </p>
           <p className="indent-8">
@@ -133,11 +139,13 @@ const Ex25_7 = () => {
             may appear dead. Creatures such as jellyfish that have no central
             nervous system also experience times of extreme relaxation where
             they remain in a less responsive state.
+            {' '}
             {Kaisetsu(showResults, "25-7-7")}
           </p>
           <p className="indent-8">
             As shown above, sleep plays an important role in the lives of
             animals and it is much more complex than simply closing the eyes.
+            {' '}
             {Kaisetsu(showResults, "25-7-8")}
           </p>
         </div>
@@ -147,7 +155,7 @@ const Ex25_7 = () => {
       <div className="mt-8 space-y-4">
         <p className="font-medium">Your presentation outline</p>
 
-        <div className="border border-gray-300 p-8">
+        <div className="border-[1.5px] border-black p-2 md:p-4">
           <h2 className="text-center text-xl italic mb-8 md:font-semibold">How Animals Sleep</h2>
 
           <div className="space-y-1">

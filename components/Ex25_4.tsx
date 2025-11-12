@@ -37,27 +37,27 @@ const Ex25_4 = () => {
       <div className="mb-4 text-gray-800 md:text-lg">
         In English class, you are writing an essay on a topic related to
         lifestyle in modern society. This is your most recent draft. You are now
-        working on improvements based on comments from your teacher.
+        working on improvements based on comments from your teacher.{' '}
         {Kaisetsu(showResults, "25-4-1")}
       </div>
 
-      <div className="border border-gray-300">
+      <div className="border-2 border-black">
         <table className="w-full">
           <thead>
             <tr>
-              <th className="w-2/3 p-6 text-center font-medium text-lg border-b border-r border-gray-300">
+              <th className="w-2/3 p-6 text-center font-medium text-lg border-b border-r border-black">
                 Try a Slow Life
               </th>
-              <th className="w-1/3 p-6 text-center font-medium text-lg border-b border-gray-300">
+              <th className="w-1/3 p-6 text-center font-medium text-lg border-b border-black">
                 Comments
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="w-2/3 md:w-4/5  p-6 align-top border-r border-gray-300">
+              <td className="w-2/3 md:w-[75%]  p-6 align-top border-r border-black md:text-justify">
                 <div className="space-y-1">
-                  <p className="indent-7 text-justify">
+                  <p className="indent-7 ">
                     In modern society, people are always busy and this fast pace
                     of living can be stressful. The movement toward a slow life
                     has shown us that you don&apos;t have to be busy all the
@@ -65,11 +65,11 @@ const Ex25_4 = () => {
                     truly meaningful to you. By taking your time and being
                     completely focused on these things, you can improve the
                     quality of your work and life. This essay will describe some
-                    ways to do this.
+                    ways to do this.{' '}
                     {Kaisetsu(showResults, "25-4-2")}
                   </p>
 
-                  <p className="indent-7 text-justify">
+                  <p className="indent-7 ">
                     One key point of the slow life is to own fewer belongings.
                     This makes it easier to concentrate on everyday activities.
                     <sup className="text-base">
@@ -78,11 +78,11 @@ const Ex25_4 = () => {
                     <span className="text-2xl font-semibold">^</span>Many people today tend to buy more than they can consume. Do
                     you <i>really</i> need five pairs of the latest sneakers?
                     Slow-lifers would recommend reducing possessions and buying
-                    only necessary items.
+                    only necessary items.{' '}
                     {Kaisetsu(showResults, "25-4-3")}
                   </p>
 
-                  <p className="indent-7 text-justify">
+                  <p className="indent-7 ">
                     Another recommendation is to think about your communication
                     style and manner in your public and private life. Sadly, one
                     study has found that around 90% of people check smartphones
@@ -91,18 +91,20 @@ const Ex25_4 = () => {
                       (2)
                     </sup>
                     <span className="text-2xl font-semibold">^</span>
+                    {' '}
                     {Kaisetsu(showResults, "25-4-4")}
                   </p>
 
-                  <p className="indent-7 text-justify">
+                  <p className="indent-7 ">
                     The final aspect of slow living is to take 10 to 15 minutes
                     to reflect on your day. Try to recollect people and events
                     that were significant. By mentally highlighting them, you
                     can find fulfillment in daily tasks.
+                    {' '}
                     {Kaisetsu(showResults, "25-4-5")}
                   </p>
 
-                  <p className="indent-7 text-justify">
+                  <p className="indent-7 ">
                     In summary, through a slow life,{" "}<sup className="text-base">(3)</sup>
                     <u>
                       you can relax
@@ -116,44 +118,47 @@ const Ex25_4 = () => {
                     </u>
                     . By doing these things, you will have a chance to live a
                     better and more rewarding life.
+                    {' '}
                     {Kaisetsu(showResults, "25-4-6")}
                   </p>
                 </div>
               </td>
-              <td className="w-1/3 md:w-1/5 p-6 align-top">
-                <div className="space-y-4 md:space-y-0 italic ">
-                  <p className="md:mt-[230px]">
-                    (1) Add an appropriate connecting word.
+              <td className="w-1/3 md:w-[25%] p-2 align-top font-semibold">
+                <div className="space-y-2 md:space-y-0 italic ">
+                  <p className="mt-[630px] md:mt-[270px]">
+                    (1) Add an appropriate connecting word.{' '}
                     {Kaisetsu(showResults, "25-4-1B")}
                   </p>
 
-                  <p>
+                  <p className="!mt-[500px] md:!mt-[110px]">
                     (2) Add a concluding sentence to improve this paragraph.
+                    {' '}
                     {Kaisetsu(showResults, "25-4-2B")}
                   </p>
 
-                  <p>
+                  <p className="!mt-[120px] md:!mt-0">
                     (3) The underlined part isn&apos;t your main argument.
-                    Rewrite it.
+                    Rewrite it.{' '}
                     {Kaisetsu(showResults, "25-4-3B")}
                   </p>
 
                   <p>
                     (4) The underlined part doesn&apos;t describe your essay
                     content well. Change it.
+                    {' '}
                     {Kaisetsu(showResults, "25-4-4B")}
                   </p>
                 </div>
               </td>
             </tr>
             <tr>
-              <td colSpan={2} className="border-t border-gray-300 p-6">
-                <div className="font-medium mb-2">Overall Comments:</div>
+              <td colSpan={2} className="border-t  border-black p-6">
+                <div className="font-medium mb-2">Overall Comments: {' '}
+                {Kaisetsu(showResults, "25-4-7")}</div>
                 <div className="italic">
                   You have really improved your essay. Keep working on it.
                   I&apos;m going to follow your suggestions to slow down and
                   hopefully improve the quality of my life.☺
-                  {Kaisetsu(showResults, "25-4-7")}
                 </div>
               </td>
             </tr>

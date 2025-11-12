@@ -42,18 +42,23 @@ const Ex25_8 = () => {
           follow the steps below:
         </p>
         <div className="space-y-2">
-          <p>
-            <span className="font-semibold">Step 1</span>: Read a range of
-            opinions gathered from the Internet about exploring outer space.
-          </p>
-          <p>
-            <span className="font-semibold">Step 2</span>: Take a position on
-            space exploration.
-          </p>
-          <p>
-            <span className="font-semibold">Step 3</span>: Create an outline of
-            your essay using additional sources.
-          </p>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-2">
+            <div className="flex items-start">
+              <span className="font-semibold md:w-16 shrink-0">Step 1:</span>
+              <span>
+                Read a range of opinions gathered from the Internet about
+                exploring outer space.
+              </span>
+            </div>
+            <div className="flex items-start">
+              <span className="font-semibold w-16 shrink-0">Step 2:</span>
+              <span>Take a position on space exploration.</span>
+            </div>
+            <div className="flex items-start">
+              <span className="font-semibold w-16 shrink-0">Step 3:</span>
+              <span>Create an outline of your essay using additional sources.</span>
+            </div>
+          </div>
           <p className="">{Kaisetsu(showResults, "25-8-0")}</p>
         </div>
       </div>
@@ -62,10 +67,10 @@ const Ex25_8 = () => {
       <div className="space-y-2 text-justify">
         <p className="font-semibold">▶ [Step 1] Read a range of opinions</p>
 
-        {/* Opinion Cards */}
-        <div className="space-y-4">
+          {/* Opinion Cards */}
+         <div className="space-y-0">
           {/* Apu's Opinion */}
-          <div className="border border-gray-300 p-4">
+           <div className="border-[1.5px]  border-black border-b-0 p-4">
             <p className="font-semibold mb-2">Apu (university professor)</p>
             <p>
               The exploration of space requires a lot of research time and
@@ -76,12 +81,12 @@ const Ex25_8 = () => {
               research, perhaps the invention that has proven the most useful in
               modern life is the computer mouse. This was developed in the 1960s
               on a NASA research project.
+            {' '}{Kaisetsu(showResults, "25-8-1")}
             </p>
-            {Kaisetsu(showResults, "25-8-1")}
           </div>
 
           {/* Christine's Opinion */}
-          <div className="border border-gray-300 p-4">
+          <div className="border-[1.5px] border-b-0 border-black p-4">
             <p className="font-semibold mb-2">Christine (company CEO)</p>
             <p>
               Much space exploration relies on international cooperation, a good
@@ -93,12 +98,12 @@ const Ex25_8 = () => {
               corporations will try to colonize parts of the moon or Mars. While
               financial cooperation and raising prestige are welcome, improper
               commercial or military use of outer space is not.
+            {' '}{Kaisetsu(showResults, "25-8-2")}
             </p>
-            {Kaisetsu(showResults, "25-8-2")}
           </div>
 
           {/* Meilin's Opinion */}
-          <div className="border border-gray-300 p-4">
+          <div className="border-[1.5px] border-b-0 border-black p-4">
             <p className="font-semibold mb-2">Meilin (journalist)</p>
             <p>
               As the famous physicist, Stephen Hawking, once said, it is
@@ -109,12 +114,12 @@ const Ex25_8 = () => {
               space exploration. The deeper into space we travel, the greater
               the likelihood Earth will be discovered by an aggressive alien
               civilization.
+            {' '}{Kaisetsu(showResults, "25-8-3")}
             </p>
-            {Kaisetsu(showResults, "25-8-3")}
           </div>
 
           {/* Naomi's Opinion */}
-          <div className="border border-gray-300 p-4">
+          <div className="border-[1.5px] border-b-0 border-black p-4">
             <p className="font-semibold mb-2">Naomi (lawyer)</p>
             <p>
               Historically, jobs working at sea were likely the least safe, with
@@ -126,12 +131,12 @@ const Ex25_8 = () => {
               have died on the job: a fatality rate of 2.9%. No other business
               or industry would tolerate such a high level of danger. Why should
               the space industry?
+            {' '}{Kaisetsu(showResults, "25-8-4")}
             </p>
-            {Kaisetsu(showResults, "25-8-4")}
           </div>
 
           {/* Victor's Opinion */}
-          <div className="border border-gray-300 p-4">
+          <div className="border-[1.5px]  border-black p-4">
             <p className="font-semibold mb-2">Victor (financial analyst)</p>
             <p>
               Space exploration has contributed hugely to economic growth. In
@@ -143,8 +148,8 @@ const Ex25_8 = () => {
               ensured by more private firms entering the space race and by the
               rise of space tourism, space mining, space colonization, and space
               militarization.
+            {' '}{Kaisetsu(showResults, "25-8-5")}
             </p>
-            {Kaisetsu(showResults, "25-8-5")}
           </div>
         </div>
       </div>
@@ -335,14 +340,14 @@ const Ex25_8 = () => {
       </div>
 
       {/* Step 3 Section */}
-      <div className="mt-8 space-y-6">
-        <p className="font-semibold">
-          ▶ [Step 3] Create an outline of your essay
-        </p>
+      <p className="mt-8 font-semibold">
+        ▶ [Step 3] Create an outline of your essay
+      </p>
+      <p className="my-2">Essay outline</p>
 
-        {/* Essay Outline Box */}
-        <p>Essay outline</p>
-        <div className="border border-gray-300 p-4 space-y-4">
+      {/* Essay Outline Box */}
+      <div className="mt-2 space-y-5">
+        <div className="border-[1.5px] border-black p-4 space-y-4">
           <h2 className="text-center font-semibold">
             A Reconsideration of Space Exploration
           </h2>
@@ -391,7 +396,7 @@ const Ex25_8 = () => {
         </div>
 
         {/* Source A Box */}
-        <div className="border border-gray-300 p-4 space-y-2 text-justify">
+        <div className="border-[1.5px] border-black p-4 space-y-4 text-justify">
           <h3 className="font-semibold">Source A</h3>
           <p>
             Although you may not make a direct connection between space
@@ -410,12 +415,12 @@ const Ex25_8 = () => {
             softball and travel at speeds of up to 28,000 km/h. This poses a
             risk to future spaceflight, and may even be a potential obstacle to
             astronomical observation.
+            {' '}{Kaisetsu(showResults, "25-8-6")}
           </p>
-          {Kaisetsu(showResults, "25-8-6")}
         </div>
 
         {/* Source B Box */}
-        <div className="border border-gray-300 p-4 space-y-4">
+        <div className="border-[1.5px] border-black p-4 space-y-4 text-justify">
           <h3 className="font-semibold">Source B</h3>
           <p>
             Space exploration is getting more and more costly; in 2022 it was
@@ -424,8 +429,8 @@ const Ex25_8 = () => {
             compares this cost with the annual budgets, estimated by
             international institutions, that would be required to address some
             of the world&apos;s most important issues.
+            {' '}{Kaisetsu(showResults, "25-8-7")}
           </p>
-          {Kaisetsu(showResults, "25-8-7")}
           <Image
             src="/images/Ex25-8-1.webp"
             alt="Bar graph comparing government investment in space exploration with potential annual budgets needed for providing clean water, supplying basic education, and relieving hunger in developing countries"

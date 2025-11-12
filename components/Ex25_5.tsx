@@ -41,7 +41,7 @@ const Ex25_5 = () => {
           You are an exchange student in the US. As part of your
           university&apos;s community volunteer program, you will help organize
           a special conference for local businesses. You wrote this email to the
-          professor in charge and received a reply.
+          professor in charge and received a reply.{'  '}
           {Kaisetsu(showResults, "25-5-1")}
         </p>
       </div>
@@ -54,8 +54,8 @@ const Ex25_5 = () => {
         </div>
 
         <div className="mb-2">
-          <h2 className="font-bold mb-4">Event Plan</h2>
-
+          <h2 className="md:text-xl mb-4">Event Plan</h2>
+          <hr className="my-2 border-black border-[1px]" />
           <p className="mb-4">Dear Professor Ryan,</p>
 
           <p className="mb-4">
@@ -63,7 +63,7 @@ const Ex25_5 = () => {
             You mentioned that this event is to promote the local economy. I
             hope to work as a civil servant in the local development division
             after graduation, so this experience is very valuable for me. The
-            conference schedule you requested is below.
+            conference schedule you requested is below.{' '}
             {Kaisetsu(showResults, "25-5-2")}
           </p>
         </div>
@@ -163,7 +163,7 @@ const Ex25_5 = () => {
 
         {/* Confirmation Points */}
         <p className="mb-1">
-          I would like you to confirm the following points:
+          I would like you to confirm the following points:{' '}
           {Kaisetsu(showResults, "25-5-6")}
         </p>
         <ul className="list-disc pl-6 mb-4">
@@ -175,7 +175,7 @@ const Ex25_5 = () => {
 
         {/* To Be Decided List */}
         <p className="mb-1">
-          Below is a list of things that still need to be decided:
+          Below is a list of things that still need to be decided:{' '}
           {Kaisetsu(showResults, "25-5-7")}
         </p>
         <ul className="list-disc pl-6 mb-4">
@@ -190,18 +190,18 @@ const Ex25_5 = () => {
         {/* Closing Paragraphs */}
         <p className="mb-1">
           The number of volunteers that can help with the conference isn&apos;t
-          set yet. I&apos;ll send you the list as soon as possible.
+          set yet. I&apos;ll send you the list as soon as possible.{' '}
           {Kaisetsu(showResults, "25-5-8")}
         </p>
 
         <p className="mb-1">
           This is my first time being on a committee like this, and I am rather
-          anxious, so I would appreciate any advice you have.
+          anxious, so I would appreciate any advice you have.{' '}
           {Kaisetsu(showResults, "25-5-9")}
         </p>
 
         <p className="mb-1">
-          I&apos;m looking forward to assisting and attending the presentations.
+          I&apos;m looking forward to assisting and attending the presentations.{' '}
           {Kaisetsu(showResults, "25-5-10")}
         </p>
 
@@ -213,13 +213,13 @@ const Ex25_5 = () => {
         </div>
       </div>
       {/* Professor's Reply Email */}
-      <div className="border border-gray-400 p-6 bg-white">
+      <div className="mt-6 border border-black brder-[1px] p-2 md:p-4 bg-white">
         <div className="text-right mb-4">
           <p>October 17, 2024</p>
         </div>
 
         <h2 className="font-bold mb-4">Re: Event Plan</h2>
-
+        <hr className="my-2 border-black border-[1px]" />
         <p className="mb-4">Dear representative and group members,</p>
 
         <p className="mb-4">
@@ -234,7 +234,7 @@ const Ex25_5 = () => {
           short. It doesn&apos;t give us time to prepare materials and send out
           information. You also mentioned parking. The university parking lot
           will be open for the event, so participants can use it without having
-          a permit.
+          a permit.{' '}
           {Kaisetsu(showResults, "25-5-3")}
         </p>
         <p className="mb-2 text-justify">
@@ -247,6 +247,7 @@ const Ex25_5 = () => {
           the mayor has provided a title for his closing speech, &quot;Our town,
           our future.&quot; As for lunch, the cafeteria staff don&apos;t work on
           weekends, so we need to rethink it. Do you have any suggestions?
+          {' '}
           {Kaisetsu(showResults, "25-5-4")}
         </p>
 
@@ -257,7 +258,7 @@ const Ex25_5 = () => {
           and these tables should face slightly inward. As we have two debaters
           on each team, use the long tables. There isn&apos;t a lot of time to
           set up the stage for the debate, so you will need a few people to help
-          carry the tables and chairs.
+          carry the tables and chairs.{' '}
           {Kaisetsu(showResults, "25-5-5")}
         </p>
 

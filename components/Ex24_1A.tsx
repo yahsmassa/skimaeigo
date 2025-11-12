@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { Saiten } from "@/components/Saiten";
 import {
   exQuestionFormat,
@@ -82,9 +83,19 @@ export default function Ex24_1A() {
           <div className="mb-0">
             <h4 className="font-bold mb-2">⚫︎ Watch dance performances</h4>
             <p className="ml-4">
+            <span className="float-right  mb-1 w-24 h-24">
+                <Image
+                  src="/images/Ex24-1A-1.webp"
+                  alt="Hockey player illustration"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-contain"
+                />
+            </span>
               From 7 p.m. watch flamenco, hula, and samba dance shows on the stage! After each dance, performers will teach some basic steps. Please join in.
             {' '}{Kaisetsu(showResults, "24-1A-4")}
             </p>
+
           </div>
 
           <p className="mt-4">

@@ -34,14 +34,14 @@ const TheContest = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <p className="mb-2 text-gray-800">
+      <p className="mb-6 text-gray-800">
         You are an exchange student at a UK high school, and your teacher asked
         you to find an interesting story. You found this story to share in class
-        next week.
+        next week.{' '}
         {Kaisetsu(showResults, "25-3-1")}
       </p>
 
-      <div className="border border-gray-300 p-8 mb-8">
+      <div className="border-2 border-black p-2 md:p-4 mb-8">
         <h1 className="text-center text-xl mb-6">THE CONTEST</h1>
 
         <p className="mb-4">
@@ -60,7 +60,7 @@ const TheContest = () => {
           up. As band leader, I felt additional pressure about the contest.
           &quot;Tomo, you&apos;re too worried. Everything will be OK,&quot; Ren,
           our drummer, said as she smiled at me and waved goodbye. &quot;I hope
-          so,&quot; I thought to myself.
+          so,&quot; I thought to myself.{' '}
           {Kaisetsu(showResults, "25-3-2")}
         </p>
 
@@ -71,7 +71,7 @@ const TheContest = () => {
           Although it was hard to notice, we were slightly out of rhythm.
           &quot;How could that be?&quot; I wondered. As I continued to listen, I
           paid extra attention to each instrument. &quot;I&apos;ve got it!&quot;
-          I thought excitedly.
+          I thought excitedly.{' '}
           {Kaisetsu(showResults, "25-3-3")}
         </p>
 
@@ -84,6 +84,7 @@ const TheContest = () => {
           &quot;These songs aren&apos;t even difficult...&quot;
           <br />
           &quot;What&apos;s the matter?&quot;
+          {' '}
           {Kaisetsu(showResults, "25-3-4")}
         </p>
 
@@ -95,6 +96,7 @@ const TheContest = () => {
           &quot;The whole is greater than the sum of the parts.&quot; Although{" "}
           <i>Cat&apos;s Curry</i> did not win the contest, we all felt it was
           the best performance of our lives.
+          {' '}
           {Kaisetsu(showResults, "25-3-5")}
         </p>
       </div>

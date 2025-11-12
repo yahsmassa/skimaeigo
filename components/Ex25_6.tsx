@@ -34,15 +34,15 @@ const Ex25_6 = () => {
         />
       </div>
       {/* Introduction text */}
-      <p className="mb-2">
+      <p className="mb-6">
         Your friend, Harry, wants to be a professional writer. He has written a
         story about two new heroes for a writing contest. You read it and then
-        give him feedback.
+        give him feedback.{' '}
         {Kaisetsu(showResults, "25-6-0")}
       </p>
 
       {/* Story content in a bordered box */}
-      <div className="border border-gray-300 p-8">
+      <div className="border-[1px] border-black p-2 md:p-5">
         <div className="mb-8">
           <p className="text-center mb-2 text-lg font-semibold">
             Bluebird & Melody: Real Heroes
@@ -55,17 +55,17 @@ const Ex25_6 = () => {
             Everyone knows me as Bluebird, the world-famous superhero. Before, I
             was only a superhero in name, but now, I deserve my title. Let me
             tell you my story.
+            {' '}{Kaisetsu(showResults, "25-6-1")}
           </p>
-          {Kaisetsu(showResults, "25-6-1")}
           <p className="indent-8">
             I served as one of six members of the incredibly popular superhero
             group, Team Hero. Our slogan was &quot;Heroes for Humanity!&quot;
             Rather than serving humanity, though, we starred in silly television
             shows. Being so caught up in my own fame, I was unaware that I was a
             fake superhero.
+            {' '}{Kaisetsu(showResults, "25-6-2")}
           </p>
-          {Kaisetsu(showResults, "25-6-2")}
-          <p className="text-center">♦♦♦♦♦</p>
+          <p className="text-center md:text-3xl">♦♦♦♦♦</p>
 
           <p className="indent-8">
             One day, we were filming{" "}
@@ -78,16 +78,16 @@ const Ex25_6 = () => {
             that her cat, Whiskers, had gotten into the drain. The truth was, a
             member of the television crew was waiting in the underground drain
             with the cat.
+            {' '}{Kaisetsu(showResults, "25-6-3")}
           </p>
-          {Kaisetsu(showResults, "25-6-3")}
           <p className="indent-8">
             &quot;Have no fear! I&apos;ll save Whiskers!&quot; I said, as I
             threw open the cover of the drain and went underground. To my
             surprise, the crew member told me that she had lost Whiskers and
             asked me to find the cat. I walked around calling for Whiskers but
             he did not come.
+            {' '}{Kaisetsu(showResults, "25-6-4")}
           </p>
-          {Kaisetsu(showResults, "25-6-4")}
           <p className="indent-8">
             Suddenly, the newest Team Hero member, Melody, appeared out of
             nowhere. Melody was mysterious; she wore a mask around her eyes and
@@ -97,8 +97,8 @@ const Ex25_6 = () => {
             can&apos;t be trusted. I&apos;ll try to convince him to come
             out.&quot; Melody, who could recreate any sound, produced a
             cat&apos;s meow and Whiskers appeared.
+            {' '}{Kaisetsu(showResults, "25-6-5")}
           </p>
-          {Kaisetsu(showResults, "25-6-5")}
           <p className="indent-8">
             After picking up the cat, I returned to the street and was cheered
             by onlookers. When I was posing for a photo with Whiskers and the
@@ -108,9 +108,9 @@ const Ex25_6 = () => {
               You do look foolish trying to be a celebrity.
             </span>
             &quot; I realized it was Melody, who had already vanished.
+            {' '}{Kaisetsu(showResults, "25-6-6")}
           </p>
-          {Kaisetsu(showResults, "25-6-6")}
-          <p className="text-center">♦♦♦♦♦</p>
+          <p className="text-center md:text-3xl">♦♦♦♦♦</p>
 
           <p className="indent-8">
             I grew up in Allegany State Park in New York State. My parents were
@@ -125,8 +125,8 @@ const Ex25_6 = () => {
             when the time is right, you&apos;ll meet her. I know now that we
             should never have let her go. We won&apos;t let that happen to
             you,&quot; said my mother.
+            {' '}{Kaisetsu(showResults, "25-6-7")}
           </p>
-          {Kaisetsu(showResults, "25-6-7")}
           <p className="indent-8">
             I decided to put my powers to use by rescuing hikers. I could fly
             and see for miles; I could locate or aid a troubled hiker faster
@@ -134,9 +134,9 @@ const Ex25_6 = () => {
             Because of my achievements, Team Hero eventually recruited me. Upon
             joining, I was given the name Bluebird and told that I would be
             doing bigger and better things.
+            {' '}{Kaisetsu(showResults, "25-6-8")}
           </p>
-          {Kaisetsu(showResults, "25-6-8")}
-          <p className="text-center">♦♦♦♦♦</p>
+          <p className="text-center md:text-3xl">♦♦♦♦♦</p>
 
           <p className="indent-8">
             After the Whiskers incident, I flew back home. My phone buzzed with
@@ -144,8 +144,8 @@ const Ex25_6 = () => {
             Hero.&quot; In my home office, I heard someone moving around. When I
             opened the door, I briefly saw a person&apos;s shape before it
             disappeared. On my desk was a note:
+            {' '}{Kaisetsu(showResults, "25-6-9")}
           </p>
-          {Kaisetsu(showResults, "25-6-9")}
 
           <div className="mx-16 my-4 p-4 border border-gray-300">
             <p className="md:font-semibold">Bluebird,</p>
@@ -158,6 +158,7 @@ const Ex25_6 = () => {
           <p className="indent-8">
             After reading the note, I understood who Melody was. Since then,
             working together, Melody and I have made our parents proud.
+            {' '}{Kaisetsu(showResults, "25-6-10")}{' '}
             {Kaisetsu(showResults, "25-6-10")}
           </p>
         </div>
@@ -173,7 +174,7 @@ const Ex25_6 = () => {
             <p>
               I loved your story! I really liked how Bluebird passes through
               various stages in his personal growth (see below).
-              {Kaisetsu(showResults, "25-6-11")}
+              {' '}{Kaisetsu(showResults, "25-6-11")}
             </p>
 
             <div className="flex items-center gap-2 my-4">
@@ -196,12 +197,14 @@ const Ex25_6 = () => {
 
             <p>
               I found Melody really fascinating with her unique superpowers.
-              {Kaisetsu(showResults, "25-6-12")}
-              She can{" "}
-              <span className="border border-gray-400 px-3 py-1 font-sans inline-block">
-                28
-              </span>
-              .
+              {' '}{Kaisetsu(showResults, "25-6-12")}
+              <p>
+                She can{" "}
+                <span className="border border-gray-400 px-3 py-1 font-sans inline-block">
+                  28
+                </span>
+                .
+              </p>
             </p>
 
             <p>
@@ -212,7 +215,7 @@ const Ex25_6 = () => {
                 29
               </span>
               .&quot;
-              {Kaisetsu(showResults, "25-6-13")}
+              {' '}{Kaisetsu(showResults, "25-6-13")}
             </p>
 
             <p>
@@ -227,7 +230,7 @@ const Ex25_6 = () => {
               </span>
               , which are not mentioned or suggested. These details would give
               your characters depth and make your story more interesting.
-              {Kaisetsu(showResults, "25-6-14")}
+              {' '}{Kaisetsu(showResults, "25-6-14")}
             </p>
 
             <p>Good luck!</p>
@@ -246,21 +249,22 @@ const Ex25_6 = () => {
                 Choose <span className="underline font-semibold">four</span> out of the five
                 descriptions (①〜⑤) and put them in the order they occurred.
               </div>
-              <div className="flex flex-row gap-2">
-                <Explain qa={qa} questionId="6-1" isShow={showResults} />
-                {Kaisetsu(showResults, "25-6-15")}
-              </div>
             </div>
           </div>
 
           <div className="flex items-center gap-1 md:gap-0 my-4 ml-8 md:ml-4 flex-wrap">
             {renderSelect("24", 5, answers, setAnswers)}
-            <span>→</span>
+            <span className="md:hidden">→</span>
             {renderSelect("25", 5, answers, setAnswers)}
-            <span>→</span>
+            <span className="md:hidden">→</span>
             {renderSelect("26", 5, answers, setAnswers)}
-            <span>→</span>
+            <span className="md:hidden">→</span>
             {renderSelect("27", 5, answers, setAnswers)}
+          </div>
+          <div className="flex flex-row gap-2 md:ml-6">
+                  <Explain qa={qa} questionId="6-1" isShow={showResults} />
+                  {' '}
+                  {Kaisetsu(showResults, "25-6-15")}
           </div>
 
           <div className="space-y-2 ml-8">
