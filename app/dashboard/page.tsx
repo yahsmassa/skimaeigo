@@ -14,6 +14,7 @@ import { signOut, getCurrentUser, User } from "@/lib/auth";
 import { useAuth } from "@/components/AuthProvider";
 import { isMobile } from "react-device-detect";
 import { components, groupedComponents, Year } from "@/lib/utilExam";
+import TikTokLink from "@/components/TikTokLink";
 import { cn } from "@/lib/util";
 // import { getPaymentUrl } from "@/lib/paypay";
 
@@ -438,14 +439,7 @@ export default function Home() {
           />
         {/* ここに、publicフォルダにあるtiktok.webpを表示 */}
         <div className="">
-          <a href="https://www.tiktok.com/@kuotore/video/7563514461500214536" target="_blank" rel="noopener noreferrer">
-            <img
-              src="/images/tiktok.webp"
-              alt="TikTok"
-              className="w-8 h-8 ml-4"
-              style={{ display: "inline-block" }}
-            />
-          </a>
+          <TikTokLink componentName={selectedComponent} />
         </div>
         </div>
       </div>

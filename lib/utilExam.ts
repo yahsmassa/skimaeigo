@@ -213,7 +213,7 @@ export type Year =
   | "2023"
   | "2024"
   | "2025";
-export type Problem = { id: string; label: string };
+export type Problem = { id: string; label: string; tiktok?: string };
 export type GroupedComponents = Record<Year, Problem[]>;
 export interface ExComponent {
   id: string;
@@ -292,9 +292,9 @@ export const groupedComponents: GroupedComponents = {
     { id: "Ex21_3A", label: "第3問A" },
     { id: "Ex21_3B", label: "第3問B" },
     { id: "Ex21_4", label: "第4問" },
-    { id: "Ex21_5", label: "第5問" },
-    { id: "Ex21_6A", label: "第6問A" },
-    { id: "Ex21_6B", label: "第6問B" },
+    { id: "Ex21_5", label: "第5問" , tiktok: "https://www.tiktok.com/@kuotore/video/7570919721315355924"},
+    { id: "Ex21_6A", label: "第6問A" , tiktok: "https://www.tiktok.com/@kuotore/video/"},
+    { id: "Ex21_6B", label: "第6問B" , tiktok: "https://www.tiktok.com/@kuotore/video/"},
   ],
   "2022": [
     { id: "Ex22_1A", label: "第1問A" },
@@ -304,9 +304,9 @@ export const groupedComponents: GroupedComponents = {
     { id: "Ex22_3A", label: "第3問A" },
     { id: "Ex22_3B", label: "第3問B" },
     { id: "Ex22_4", label: "第4問" },
-    { id: "Ex22_5", label: "第5問" },
-    { id: "Ex22_6A", label: "第6問A" },
-    { id: "Ex22_6B", label: "第6問B" },
+    { id: "Ex22_5", label: "第5問" , tiktok: "https://www.tiktok.com/@kuotore/video/7569791226036210965"},
+    { id: "Ex22_6A", label: "第6問A" , tiktok: "https://www.tiktok.com/@kuotore/video/7570208200230784277"},
+    { id: "Ex22_6B", label: "第6問B" , tiktok: "https://www.tiktok.com/@kuotore/video/7570476007770295573"},
   ],
   "2023": [
     { id: "Ex23_1A", label: "第1問A" },
@@ -316,9 +316,9 @@ export const groupedComponents: GroupedComponents = {
     { id: "Ex23_3A", label: "第3問A" },
     { id: "Ex23_3B", label: "第3問B" },
     { id: "Ex23_4", label: "第4問" },
-    { id: "Ex23_5", label: "第5問" },
-    { id: "Ex23_6A", label: "第6問A" },
-    { id: "Ex23_6B", label: "第6問B" },
+    { id: "Ex23_5", label: "第5問" , tiktok: "https://www.tiktok.com/@kuotore/video/7566889120056757525"},
+    { id: "Ex23_6A", label: "第6問A" , tiktok: "https://www.tiktok.com/@kuotore/video/7567927672697867528"},
+    { id: "Ex23_6B", label: "第6問B" , tiktok: "https://www.tiktok.com/@kuotore/video/7568749673461337351"},
   ],
   "2024": [
     { id: "Ex24_1A", label: "第1問A" },
@@ -328,18 +328,18 @@ export const groupedComponents: GroupedComponents = {
     { id: "Ex24_3A", label: "第3問A" },
     { id: "Ex24_3B", label: "第3問B" },
     { id: "Ex24_4", label: "第4問" },
-    { id: "Ex24_5", label: "第5問" },
-    { id: "Ex24_6A", label: "第6問A" },
-    { id: "Ex24_6B", label: "第6問B" },
+    { id: "Ex24_5", label: "第5問", tiktok: "https://www.tiktok.com/@kuotore/video/7563514461500214536" },
+    { id: "Ex24_6A", label: "第6問A", tiktok: "https://www.tiktok.com/@kuotore/video/7564366480838659349" },
+    { id: "Ex24_6B", label: "第6問B", tiktok: "https://www.tiktok.com/@kuotore/video/7565254183914392853" },
   ],
   "2025": [
-    { id: "Ex25_1", label: "第1問" },
-    { id: "Ex25_2", label: "第2問" },
-    { id: "Ex25_3", label: "第3問" },
-    { id: "Ex25_4", label: "第4問" },
-    { id: "Ex25_5", label: "第5問" },
-    { id: "Ex25_6", label: "第6問" },
-    { id: "Ex25_7", label: "第7問" },
-    { id: "Ex25_8", label: "第8問" },
+    { id: "Ex25_1", label: "第1問" ,tiktok: "https://www.tiktok.com/@kuotore/video/7556048602569673991"},
+    { id: "Ex25_2", label: "第2問" ,tiktok: "https://www.tiktok.com/@kuotore/video/7556509782740307218"},
+    { id: "Ex25_3", label: "第3問" ,tiktok: "https://www.tiktok.com/@kuotore/video/7556796510265036039"},
+    { id: "Ex25_4", label: "第4問" ,tiktok: "https://www.tiktok.com/@kuotore/video/7557149411646688519"},
+    { id: "Ex25_5", label: "第5問" ,tiktok: "https://www.tiktok.com/@kuotore/video/7557995959016492295"},
+    { id: "Ex25_6", label: "第6問" ,tiktok: "https://www.tiktok.com/@kuotore/video/7559032172783389960"},
+    { id: "Ex25_7", label: "第7問" ,tiktok: "https://www.tiktok.com/@kuotore/video/7560100388498607367"},
+    { id: "Ex25_8", label: "第8問" ,tiktok: "https://www.tiktok.com/@kuotore/video/7560850848318803207"},
   ],
 };
