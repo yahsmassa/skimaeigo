@@ -45,58 +45,54 @@ const Ex24_2B = () => {
 
       {/* 本文 */}
       <div>
-        <h2 className="text-base px-5 mb-2">
+        <h2 className="text-base px-3 mb-2 indent-5">
           You are a college student going to study in the US and need travel insurance. You find this review of an insurance plan written by a female international student who studied in the US for six months.
-          {Kaisetsu(showResults, "24-2B-0")}
+          {' '}{Kaisetsu(showResults, "24-2B-0")}
         </h2>
       </div>
-      <div className="bg-white rounded-lg border-2 border-black mb-8 p-6">
-        <div className="space-y-1 text-justify">
+      <div className="bg-white  border-2 border-black mb-8 p-6">
+        <div className="space-y-4 text-justify">
           <div>
             <div className="space-y-6">
               <div>
-                <p>There are many things to consider before traveling abroad: pack appropriate clothes, prepare your travel expenses, and don't forget medication (if necessary). Also, you should purchase travel insurance.</p>
-                {Kaisetsu(showResults, "24-2B-1")}
+                <p>There are many things to consider before traveling abroad: pack appropriate clothes, prepare your travel expenses, and don't forget medication (if necessary). Also, you should purchase travel insurance. {' '}{Kaisetsu(showResults, "24-2B-1")}</p>
+
               </div>
             </div>
           </div>
           <div>
             <div className="space-y-6">
               <div>
-                <p>When I studied at Fairville University in California, I bought travel insurance from TravSafer International. I signed up online in less than 15 minutes and was immediately covered. They accept any form of payment, usually on a monthly basis. There were three plans. All plans include a one-time health check-up.</p>
-                {Kaisetsu(showResults, "24-2B-2")}
+                <p>When I studied at Fairville University in California, I bought travel insurance from TravSafer International. I signed up online in less than 15 minutes and was immediately covered. They accept any form of payment, usually on a monthly basis. There were three plans. All plans include a one-time health check-up.{' '}{Kaisetsu(showResults, "24-2B-2")}</p>
               </div>
             </div>
           </div>
           <div>
             <div className="space-y-6">
               <div>
-                <p>The Premium Plan is $100/month. The plan provides 24-hour medical support through a smartphone app and telephone service. Immediate financial support will be authorized if you need to stay in a hospital.</p>
-                {Kaisetsu(showResults, "24-2B-3")}
+                <p>The Premium Plan is $100/month. The plan provides 24-hour medical support through a smartphone app and telephone service. Immediate financial support will be authorized if you need to stay in a hospital.{' '}{Kaisetsu(showResults, "24-2B-3")}</p>
               </div>
             </div>
           </div>
           <div>
             <div className="space-y-6">
               <div>
-                <p>The Standard Plan worked best for me. It had the 24-hour telephone assistance and included a weekly email with tips for staying healthy in a foreign country. It wasn't cheap: $75/month. However, it was nice to get the optional 15% discount because I paid for six months of coverage in advance.</p>
-                {Kaisetsu(showResults, "24-2B-4")}
+                <p>The Standard Plan worked best for me. It had the 24-hour telephone assistance and included a weekly email with tips for staying healthy in a foreign country. It wasn't cheap: $75/month. However, it was nice to get the optional 15% discount because I paid for six months of coverage in advance. {' '}{Kaisetsu(showResults, "24-2B-4")}</p>
               </div>
             </div>
           </div>
           <div>
             <div className="space-y-6">
               <div>
-                <p>If your budget is limited, you can choose the Economy Plan, which is $25/month. It has the 24-hour telephone support like the other plans but only covers emergency care. Also, they can arrange a taxi to a hospital at a reduced cost if considered necessary by the support center.</p>
-                {Kaisetsu(showResults, "24-2B-5")}
+                <p>If your budget is limited, you can choose the Economy Plan, which is $25/month. It has the 24-hour telephone support like the other plans but only covers emergency care. Also, they can arrange a taxi to a hospital at a reduced cost if considered necessary by the support center.{' '}{Kaisetsu(showResults, "24-2B-5")}</p>
+
               </div>
             </div>
           </div>
           <div>
             <div className="space-y-6">
               <div>
-                <p>I never got sick or hurt, so I thought it was a waste of money to get insurance. Then my friend from Brazil broke his leg while playing soccer and had to spend a few days in a hospital. He had chosen the Premium Plan and it covered everything! I realized how important insurance is—you know that you will be supported when you are in trouble.</p>
-                {Kaisetsu(showResults, "24-2B-6")}
+                <p>I never got sick or hurt, so I thought it was a waste of money to get insurance. Then my friend from Brazil broke his leg while playing soccer and had to spend a few days in a hospital. He had chosen the Premium Plan and it covered everything! I realized how important insurance is—you know that you will be supported when you are in trouble.{' '}{Kaisetsu(showResults, "24-2B-6")}</p>
               </div>
             </div>
           </div>

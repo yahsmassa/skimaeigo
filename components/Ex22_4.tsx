@@ -33,7 +33,7 @@ const Ex22_4 = () => {
         />
       </div>
       {/* Context text */}
-      <p className="text-base mb-2 md:text-[18px] px-3">
+      <p className="text-base mb-2 md:text-[18px] px-3 text-justify">
         You are a new student at Robinson University in the US. You are reading
         the blogs of two students, Len and Cindy, to find out where you can buy
         things for your apartment.{' '}
@@ -41,7 +41,7 @@ const Ex22_4 = () => {
       </p>
 
       {/* First blog post container */}
-      <div className="border border-gray-300 p-4 space-y-4">
+      <div className="border border-gray-300 p-4 space-y-4 text-justify">
         {/* Blog header */}
         <div className="border-b border-gray-300 pb-2">
           <h2 className="text-lg font-semibold">New to Robinson University?</h2>
@@ -98,7 +98,7 @@ const Ex22_4 = () => {
         </div>
 
         {/* Blog content */}
-        <div className="space-y-1">
+        <div className="space-y-1 text-justify">
           <p className="text-base indent-7">
             Are you starting at Robinson University soon? You may be preparing
             to buy some household appliances or electronics for your new life.

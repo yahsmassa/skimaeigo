@@ -38,7 +38,7 @@ const Ex24_5 = () => {
         />
       </div>
       {/* Introduction text - double spaced */}
-      <div className="mb-2  text-justify">
+      <div className="mb-2  text-justify px-3">
         <p>
           You are in an English discussion group, and it is your turn to
           introduce a story.
@@ -49,12 +49,12 @@ const Ex24_5 = () => {
       </div>
 
       {/* Story container */}
-      <div className="border border-gray-300 p-2 sm:p-8 text-justify">
+      <div className="border-2 border-black p-2 sm:p-8 text-justify">
         {/* Story title */}
-        <h1 className="text-center text-xl mb-6 font-semibold">Maki&apos;s Kitchen</h1>
+        <h1 className="text-center text-xl mb-2 font-semibold">Maki&apos;s Kitchen</h1>
 
         {/* First paragraph */}
-        <div className="mb-6">
+        <div className="mb-2">
           <p className="indent-7">
             <span className="italic">&quot;Irasshai-mase,&quot;</span> said Maki
             as two customers entered her restaurant, Maki&apos;s Kitchen. Maki
@@ -78,11 +78,11 @@ const Ex24_5 = () => {
 
         {/* Diamond separator */}
         <div className="flex justify-center my-2">
-          <div className="text-black">♦♦♦♦♦</div>
+          <div className="text-black md:text-2xl">♦♦♦♦♦</div>
         </div>
 
         {/* Phone conversation section */}
-        <div className="mb-6 ">
+        <div className="mb-2 ">
         <p className="mb-2 indent-7">
             Takuya&apos;s phone vibrated, and he saw a familiar name, Kasumi.
           </p>
@@ -104,7 +104,7 @@ const Ex24_5 = () => {
 
         {/* Diamond separator */}
         <div className="flex justify-center my-2">
-          <div className="text-black">♦♦♦♦♦</div>
+          <div className="text-black md:text-2xl">♦♦♦♦♦</div>
         </div>
 
         {/* Final paragraph */}
@@ -184,7 +184,7 @@ const Ex24_5 = () => {
 
         {/* Diamond separator */}
         <div className="flex justify-center my-2">
-          <div className="text-black">♦♦♦♦♦</div>
+          <div className="text-black md:text-2xl">♦♦♦♦♦</div>
         </div>
 
         <p className="mb-0 indent-7">
@@ -238,7 +238,7 @@ const Ex24_5 = () => {
 
         {/* Diamond separator */}
         <div className="flex justify-center my-2">
-          <div className="text-black">♦♦♦♦♦</div>
+          <div className="text-black md:text-2xl">♦♦♦♦♦</div>
         </div>
 
         <p className="mb-4 indent-7">
@@ -259,7 +259,7 @@ const Ex24_5 = () => {
 
         {/* Diamond separator */}
         <div className="flex justify-center my-2">
-          <div className="text-black">♦♦♦♦♦</div>
+          <div className="text-black md:text-2xl">♦♦♦♦♦</div>
         </div>
 
         <div className="mb-0">

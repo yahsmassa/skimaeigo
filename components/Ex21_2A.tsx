@@ -264,7 +264,7 @@ const Ex21_2A = () => {
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 3</span>
             <span className="-mr-2">
-              One <span className="underline">fact</span> from the judges&apos;
+              One <span className="underline font-semibold">fact</span> from the judges&apos;
               individual comments is that
             </span>
             <div className="flex flex-row gap-2">
@@ -296,7 +296,7 @@ const Ex21_2A = () => {
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問 4</span>
             <span className="-mr-2">
-              One <span className="underline">opinion</span> from the
+              One <span className="underline font-semibold">opinion</span> from the
               judges&apos; comments and shared evaluation is that
             </span>
             <div className="flex flex-row gap-2">

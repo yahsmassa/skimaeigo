@@ -33,8 +33,8 @@ const Ex24_6A = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="mb-6">
-        <h1 className="text-lg">
+      <div className="mb-6 text-justify px-3">
+        <h1 className="text-lg indent-5">
           Your English teacher has assigned this article to you. You need to
           prepare notes to give a short talk.
         </h1>
@@ -53,7 +53,7 @@ const Ex24_6A = () => {
             </span>). Humans do not have a known biological mechanism to measure
             clock time, so they use mental processes instead. This is called{" "}
             <span className="font-semibold">psychological time</span>, which
-            everyone perceives differently.
+            everyone perceives differently.{' '}
             {Kaisetsu(showResults, "24-6A-1")}
           </p>
 
@@ -68,7 +68,7 @@ const Ex24_6A = () => {
             is estimating time based on the information retrieved from memory.
             Participants who were shown the complex shapes felt the time was
             longer, while the people who saw the simple shapes experienced the
-            opposite.
+            opposite.{' '}
             {Kaisetsu(showResults, "24-6A-2")}
           </p>
 
@@ -82,10 +82,9 @@ const Ex24_6A = () => {
             estimating the time needed to complete them. Time seemed shorter for
             the people doing more challenging mental activities which required
             them to place more focus on the task than on time.
-            {Kaisetsu(showResults, "24-6A-3")}
             Time felt longer for the participants who did simpler tasks and the
-            longest for those who were waiting or doing nothing.
-            {Kaisetsu(showResults, "24-6A-4")}
+            longest for those who were waiting or doing nothing.{' '}
+            {Kaisetsu(showResults, "24-6A-3")}
           </p>
 
           <p className="leading-relaxed indent-7">
@@ -100,7 +99,7 @@ const Ex24_6A = () => {
             In a 2006 study, more than 60 people experienced skydiving for the
             first time. Participants with high levels of unpleasant emotions
             perceived the time spent skydiving to be much longer than it was in
-            reality.
+            reality.{' '}
             {Kaisetsu(showResults, "24-6A-5")}
           </p>
 
@@ -116,7 +115,7 @@ const Ex24_6A = () => {
             shaken up when drastic changes occur, such as changing jobs or
             relocating to a new city. In such cases, the passage of time for
             those people is similar to that for children. But generally
-            speaking, time seems to accelerate as we mature.
+            speaking, time seems to accelerate as we mature.{' '}
             {Kaisetsu(showResults, "24-6A-6")}
           </p>
 
@@ -127,7 +126,7 @@ const Ex24_6A = () => {
             more engaging activity, such as reading a book, will help ease our
             boredom and speed up the time. The next occasion that you hear
             &quot;Time flies when you&apos;re having fun,&quot;you will be
-            reminded of this.
+            reminded of this.{' '}
             {Kaisetsu(showResults, "24-6A-7")}
           </p>
         </div>

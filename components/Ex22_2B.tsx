@@ -46,7 +46,7 @@ const Ex22_2B = () => {
       </div>
 
       {/* Main article content */}
-      <div className="border border-gray-300 p-6">
+      <div className="border border-gray-300 p-6 text-justify">
         <p className="mb-0">
           Do you like animals? The UK is known as a nation of animal-lovers; two
           in five UK homes have pets. This is lower than in the US, where more

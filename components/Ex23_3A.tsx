@@ -35,8 +35,8 @@ const Ex23_3A = () => {
         />
       </div>{" "}
       {/* Context */}
-      <div className="mb-2">
-        <p className="text-gray-700">
+      <div className="mb-2 px-3">
+        <p className="text-gray-700 text-justify">
           You are studying at Camberford
           University, Sydney. You are going on a class camping trip and are
           reading the camping club&apos;s newsletter to prepare.
@@ -115,7 +115,7 @@ const Ex23_3A = () => {
             <Image
               src="/images/Ex23-3A-2.webp"
               alt="Four backpack diagrams showing different arrangements of items"
-              className="mx-auto"
+              className="mx-auto md:w-[70%]"
               width={500}
               height={400}
             />

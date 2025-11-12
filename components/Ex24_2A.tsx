@@ -16,90 +16,7 @@ const Ex24_2A = () => {
   const question: QandA[] = qanda.find(q => q.id === "24_2A")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
-  const questionData = {
-    id: "2024-2A",
-    title: "第2問 (配点 20)",
-    situation:
-      "You are an exchange student at a high school in the UK and find this flyer.",
-    passage: {
-      title: "Invitation to the Strategy Game Club",
-      content: [
-        "Have you ever wanted to learn strategy games like chess, shogi, or go? They are actually more than just games. You can learn skills such as thinking logically and deeply without distractions. Plus, these games are really fun! This club is open to all students of our school. Regardless of skill level, you are welcome to join.",
-        "We play strategy games together and...",
-        "● learn basic moves from demonstrations by club members",
-        "● play online against club friends",
-        "● share tips on our club webpage",
-        "● learn the history and etiquette of each game",
-        "● analyse games using computer software",
-        "● participate in local and national tournaments",
-        "Regular meetings: Wednesday afternoons in Room 301, Student Centre",
-        "Member Comments:",
-        "- My mind is clearer, calmer, and more focused in class.",
-        "- It's cool to learn how some games have certain similarities.",
-        "- At tournaments, I like discussing strategies with other participants.",
-        "- Members share Internet videos that explain practical strategies for chess.",
-        "- It's nice to have friends who give good advice about go.",
-        "- I was a complete beginner when I joined, and I had no problem!",
-      ],
-    },
-    questions: [
-      {
-        number: "1",
-        prompt: "According to the flyer, which is true about the club?",
-        options: [
-          "Absolute beginners are welcome",
-          "Members edit computer programs",
-          "Professional players give formal demonstrations",
-          "Students from other schools can join",
-        ],
-        answer: 1,
-      },
-      {
-        number: "2",
-        prompt: "Which of the following is not mentioned as a club activity?",
-        options: [
-          "Having games with non-club members",
-          "Playing matches against computers",
-          "Sharing game-playing ideas on the Internet",
-          "Studying the backgrounds of strategy games",
-        ],
-        answer: 1,
-      },
-      {
-        number: "3",
-        prompt: "One opinion stated by a member is that",
-        options: [
-          "comparing different games is interesting",
-          "many videos about go are useful",
-          "members learn tips at competitions",
-          "regular meetings are held off campus",
-        ],
-        answer: 1,
-      },
-      {
-        number: "4",
-        prompt: "The club invitation and a member's comment both mention that",
-        options: [
-          "new members must demonstrate experience",
-          "online support is necessary to be a good player",
-          "shogi is a logical and stimulating game",
-          "strategy games help improve one's concentration",
-        ],
-        answer: 1,
-      },
-      {
-        number: "5",
-        prompt: "This club is most likely suitable for students who want to",
-        options: [
-          "create their own computer strategy games",
-          "improve their skill level of playing strategy games",
-          "learn proper British etiquette through playing strategy games",
-          "spend weekends playing strategy games in the club room",
-        ],
-        answer: 1,
-      },
-    ],
-  };
+  // questionData は展開済みのため削除
 
   return (
     <div className={exPageFormat}>
@@ -124,8 +41,10 @@ const Ex24_2A = () => {
       </div>
 
       {/* フライヤー */}
-      <h3 className="text-gray-700 mb-2">{questionData.situation}</h3>
-      <div className="bg-white rounded-lg shadow-lg mb-8 p-6">
+      <h3 className="text-gray-700 mb-2 text-justify px-3">
+        You are an exchange student at a high school in the UK and find this flyer.
+      </h3>
+      <div className="bg-white  border border-gray-600 mb-8 p-4">
         <div className="flex items-center justify-between mb-4">
           <Image
             src="/images/Ex24-2A-1.jpg"
@@ -135,7 +54,7 @@ const Ex24_2A = () => {
             className="w-12 h-12 rounded"
           />
           <h3 className="text-xl font-bold underline text-center flex-grow">
-            {questionData.passage.title}
+            Invitation to the Strategy Game Club
           </h3>
           <Image
             src="/images/Ex24-2A-2.jpg"
@@ -147,44 +66,87 @@ const Ex24_2A = () => {
         </div>
 
         <div className="space-y-1 text-justify">
-          {questionData.passage.content.map((paragraph, index) => (
-            <div key={index} className="">
-              {index > 1 ? (
-                <div className="">
-                  <div className="flex flex-col md:flex-row gap-4">
-                    <ul className="space-y-2 ">
-                      {paragraph.split("\n").map((item, i) => (
-                        <li
-                          key={i}
-                          className={cn(
-                            "flex items-start",
-                            index === 9 && "text-xl font-bold underline md:ml-[150px]"
-                          )}
-                        >
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  {index === 8 && Kaisetsu(showResults, "24-2A-2")}
-                  {index === 16 && Kaisetsu(showResults, "24-2A-3")}
-                </div>
-              ) : (
-                <p>
-                  {paragraph}
-                  {index === 0 && Kaisetsu(showResults, "24-2A-1")}
-                  {index === 2 && Kaisetsu(showResults, "24-2A-1B")}
-                </p>
-              )}
-            </div>
-          ))}
-          <Image
-            src="/images/Ex24-2A-3.jpg"
-            alt="shogi plate"
-            width={160}
-            height={160}
-            className="w-40 h-40 rounded"
-          />
+          <p>
+            Have you ever wanted to learn strategy games like chess, shogi, or go? They are actually more than just games. You can learn skills such as thinking logically and deeply without distractions. Plus, these games are really fun! This club is open to all students of our school. Regardless of skill level, you are welcome to join.
+            {Kaisetsu(showResults, "24-2A-1")}
+          </p>
+          <p>
+            We play strategy games together and...{' '}
+            {Kaisetsu(showResults, "24-2A-1B")}
+          </p>
+          <div>
+            <span className="float-right mt-[70px] md:ml-2 w-16 md:w-32">
+              <Image
+                src="/images/Ex24-2A-3.jpg"
+                alt="shogi plate"
+                width={160}
+                height={160}
+                className="w-full h-auto rounded"
+              />
+            </span>
+            <ul className="space-y-1 md:ml-4">
+              <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                <span className="select-none">●</span>
+                <span>learn basic moves from demonstrations by club members</span>
+              </li>
+              <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                <span className="select-none">●</span>
+                <span>play online against club friends</span>
+              </li>
+              <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                <span className="select-none">●</span>
+                <span>share tips on our club webpage</span>
+              </li>
+              <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                <span className="select-none">●</span>
+                <span>learn the history and etiquette of each game</span>
+              </li>
+              <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                <span className="select-none">●</span>
+                <span>analyse games using computer software</span>
+              </li>
+              <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+                <span className="select-none">●</span>
+                <span>participate in local and national tournaments</span>
+              </li>
+            </ul>
+            <div className="clear-both"></div>
+          </div>
+          <p>
+            Regular meetings: Wednesday afternoons in Room 301, Student Centre{' '}
+            {Kaisetsu(showResults, "24-2A-2")}
+          </p>
+          <hr className="border-gray-700 !my-4" />
+          <p className="text-xl font-bold underline md:ml-[150px]">Member Comments:</p>
+          <ul className="space-y-2">
+            <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+              <span className="select-none">-</span>
+              <span>My mind is clearer, calmer, and more focused in class.</span>
+            </li>
+            <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+              <span className="select-none">-</span>
+              <span>It's cool to learn how some games have certain similarities.</span>
+            </li>
+            <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+              <span className="select-none">-</span>
+              <span>At tournaments, I like discussing strategies with other participants.</span>
+            </li>
+            <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+              <span className="select-none">-</span>
+              <span>Members share Internet videos that explain practical strategies for chess.</span>
+            </li>
+            <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+              <span className="select-none">-</span>
+              <span>It's nice to have friends who give good advice about go.</span>
+            </li>
+            <li className="grid grid-cols-[auto,1fr] gap-x-2 items-start">
+              <span className="select-none">-</span>
+              <span>
+                I was a complete beginner when I joined, and I had no problem!{' '}
+                {Kaisetsu(showResults, "24-2A-3")}
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -200,9 +162,9 @@ const Ex24_2A = () => {
           {/* 問１ */}
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">
-              問{questionData.questions[0].number}
+              問1
             </span>
-            <span className="-mr-2">{questionData.questions[0].prompt}</span>
+            <span className="-mr-2">According to the flyer, which is true about the club?</span>
             <div className="flex flex-row gap-2">
               {renderSelect("6", 4, answers, setAnswers)}
               <Explain qa={qa} questionId={"2A-1"} isShow={showResults} />
@@ -212,19 +174,19 @@ const Ex24_2A = () => {
           <ol className="list-none space-y-2 ml-6">
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[0]}</span>
-              <span>{questionData.questions[0].options[0]}</span>
+              <span>Absolute beginners are welcome</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[1]}</span>
-              <span>{questionData.questions[0].options[1]}</span>
+              <span>Members edit computer programs</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[2]}</span>
-              <span>{questionData.questions[0].options[2]}</span>
+              <span>Professional players give formal demonstrations</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[3]}</span>
-              <span>{questionData.questions[0].options[3]}</span>
+              <span>Students from other schools can join</span>
             </li>
           </ol>
         </div>
@@ -237,7 +199,7 @@ const Ex24_2A = () => {
         >
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">
-              問{questionData.questions[1].number}
+              問2
             </span>
             {/* <span className="-mr-2">{questionData.questions[1].prompt}</span> */}
             <span className="-mr-2">Which of the following is <span className="underline font-semibold">not</span> mentioned as a club activity?</span>
@@ -250,19 +212,19 @@ const Ex24_2A = () => {
           <ol className="list-none space-y-2 ml-6">
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[0]}</span>
-              <span>{questionData.questions[1].options[0]}</span>
+              <span>Having games with non-club members</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[1]}</span>
-              <span>{questionData.questions[1].options[1]}</span>
+              <span>Playing matches against computers</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[2]}</span>
-              <span>{questionData.questions[1].options[2]}</span>
+              <span>Sharing game-playing ideas on the Internet</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[3]}</span>
-              <span>{questionData.questions[1].options[3]}</span>
+              <span>Studying the backgrounds of strategy games</span>
             </li>
           </ol>
         </div>
@@ -276,7 +238,7 @@ const Ex24_2A = () => {
         >
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">
-              問{questionData.questions[2].number}
+              問3
             </span>
             {/* <span className="-mr-2">{questionData.questions[2].prompt}</span> */}
             <span className="-mr-2">One <span className="underline font-semibold">opinion</span> stated by a member is that</span>
@@ -290,19 +252,19 @@ const Ex24_2A = () => {
           <ol className="list-none space-y-2 ml-6">
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[0]}</span>
-              <span>{questionData.questions[2].options[0]}</span>
+              <span>comparing different games is interesting</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[1]}</span>
-              <span>{questionData.questions[2].options[1]}</span>
+              <span>many videos about go are useful</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[2]}</span>
-              <span>{questionData.questions[2].options[2]}</span>
+              <span>members learn tips at competitions</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[3]}</span>
-              <span>{questionData.questions[2].options[3]}</span>
+              <span>regular meetings are held off campus</span>
             </li>
           </ol>
         </div>
@@ -316,9 +278,9 @@ const Ex24_2A = () => {
         >
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">
-              問{questionData.questions[3].number}
+              問4
             </span>
-            <span className="-mr-2">{questionData.questions[3].prompt}</span>
+            <span className="-mr-2">The club invitation and a member&apos;s comment both mention that</span>
             <div className="flex flex-row gap-2">
               {renderSelect("9", 4, answers, setAnswers)}
               <span className="-ml-3 mr-2">.</span>
@@ -329,19 +291,19 @@ const Ex24_2A = () => {
           <ol className="list-none space-y-2 ml-6">
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[0]}</span>
-              <span>{questionData.questions[3].options[0]}</span>
+              <span>new members must demonstrate experience</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[1]}</span>
-              <span>{questionData.questions[3].options[1]}</span>
+              <span>online support is necessary to be a good player</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[2]}</span>
-              <span>{questionData.questions[3].options[2]}</span>
+              <span>shogi is a logical and stimulating game</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[3]}</span>
-              <span>{questionData.questions[3].options[3]}</span>
+              <span>strategy games help improve one&apos;s concentration</span>
             </li>
           </ol>
         </div>
@@ -355,9 +317,9 @@ const Ex24_2A = () => {
         >
           <div className="flex items-center flex-wrap gap-2 mb-2">
             <span className="whitespace-nowrap mr-2 font-sans">
-              問{questionData.questions[4].number}
+              問5
             </span>
-            <span className="-mr-2">{questionData.questions[4].prompt}</span>
+            <span className="-mr-2">This club is most likely suitable for students who want to</span>
             <div className="flex flex-row gap-2">
               {renderSelect("10", 4, answers, setAnswers)}
               <span className="-ml-3 mr-2">.</span>
@@ -368,19 +330,19 @@ const Ex24_2A = () => {
           <ol className="list-none space-y-2 ml-6">
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[0]}</span>
-              <span>{questionData.questions[4].options[0]}</span>
+              <span>create their own computer strategy games</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[1]}</span>
-              <span>{questionData.questions[4].options[1]}</span>
+              <span>improve their skill level of playing strategy games</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[2]}</span>
-              <span>{questionData.questions[4].options[2]}</span>
+              <span>learn proper British etiquette through playing strategy games</span>
             </li>
             <li className="flex items-start space-x-2">
               <span className="w-6 ">{"①②③④"[3]}</span>
-              <span>{questionData.questions[4].options[3]}</span>
+              <span>spend weekends playing strategy games in the club room</span>
             </li>
           </ol>
         </div>

@@ -42,7 +42,7 @@ const Ex21_2B = () => {
           {Kaisetsu(showResults, "21-2B-0")}
         </p>
       </div>
-      <div className="bg-gray-100 p-6 border border-gray-300">
+      <div className="bg-gray-100 p-6 border border-gray-300 text-justify">
         {/* Introduction text */}
 
         {/* Letters container */}
@@ -175,7 +175,7 @@ const Ex21_2B = () => {
           <div className="flex items-center flex-wrap gap-2">
             <span className="whitespace-nowrap mr-2 font-sans">問2</span>
             <span className="-mr-2">
-              One <span className="underline">fact</span> stated in Ken&apos;s
+              One <span className="underline font-semibold">fact</span> stated in Ken&apos;s
               forum post is that
             </span>
             <div className="flex flex-row gap-2">

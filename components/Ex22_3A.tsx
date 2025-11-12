@@ -58,7 +58,7 @@ const Ex22_3A = () => {
           </div>
         </div>
 
-        <div className="space-y-3 text-gray-700 font-serif">
+        <div className="space-y-3 text-gray-700 font-serif text-justify">
           <p>
             On the first two Sundays in July every year, there is an
             intercultural event in Winsfield called &quot;A Slice of

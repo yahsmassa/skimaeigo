@@ -36,7 +36,7 @@ const Ex22_1A = () => {
         />
       </div>
       {/* Introduction Text */}
-      <div className="mb-2">
+      <div className="mb-2 text-justify px-3">
         <p className="text-lg ">
           You are studying about Brazil in the international club at your senior
           high school. Your teacher asked you to do research on food in Brazil.
@@ -67,7 +67,7 @@ const Ex22_1A = () => {
               />
               <h3 className="font-semibold mb-2">Cupuaçu{' '}{Kaisetsu(showResults, "22-1A-1")}</h3>
             </div>
-            <ul className="list-disc pl-1 space-y-1 text-base">
+            <ul className="list-disc pl-2 text-base">
               <li>Smells and tastes like chocolate</li>
               <li>Great for desserts, such as cakes, and with yogurt</li>
               <li>
@@ -89,7 +89,7 @@ const Ex22_1A = () => {
               <h3 className="font-semibold mb-2">Jabuticaba{' '}{Kaisetsu(showResults, "22-1A-2")}
               </h3>
             </div>
-            <ul className="list-disc pl-1 space-y-1 text-base">
+            <ul className="list-disc pl-2  text-base">
               <li>Looks like a grape</li>
               <li>Eat them within three days of picking for a sweet flavor.</li>
               <li>
@@ -111,7 +111,7 @@ const Ex22_1A = () => {
               />
               <h3 className="font-semibold mb-2">Pitanga{' '}{Kaisetsu(showResults, "22-1A-3")}</h3>
             </div>
-            <ul className="list-disc pl-1 space-y-1 text-base">
+            <ul className="list-disc pl-2 text-base">
               <li>Comes in two varieties, red and green</li>
               <li>Use the sweet red one for making cakes.</li>
               <li>The sour green one is only for jams and jellies.</li>
@@ -131,7 +131,7 @@ const Ex22_1A = () => {
               />
               <h3 className="font-semibold mb-2">Buriti{' '}{Kaisetsu(showResults, "22-1A-4")}</h3>
             </div>
-            <ul className="list-disc pl-1 space-y-1 text-base">
+            <ul className="list-disc pl-2 text-base">
               <li>Orange inside, similar to a peach or a mango</li>
               <li>Tastes very sweet, melts in your mouth</li>
               <li>Best for ice cream, cakes, and jams</li>

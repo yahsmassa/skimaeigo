@@ -56,7 +56,7 @@ const Ex22_2A = () => {
         </div>
 
         {/* Library Card Section */}
-        <div className="mb-0 border-t border-gray-800 md:grid md:grid-cols-[auto,1fr] md:gap-4 md:items-start">
+        <div className="mb-0 border-t border-gray-800 md:grid md:grid-cols-[auto,1fr] md:gap-4 md:items-start ">
           <h2 className="text-lg font-bold mb-2 md:mb-0">Library Card:</h2>
           <p className="mb-4">
             Your student ID card is also your library card and photocopy card.
@@ -66,7 +66,7 @@ const Ex22_2A = () => {
         <div className="border-b-2 border-gray-300 w-full mb-4"></div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-6 text-justify">
           {/* Left Column */}
           <div className="space-y-1">
             {/* Borrowing Books Section */}

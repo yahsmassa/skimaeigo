@@ -15,52 +15,11 @@ const Ex24_4 = () => {
   const question: QandA[] = qanda.find(q => q.id === "24_4")?.qanda || [];
   const [qa, setQA] = useState<QandA[]>(question);
 
-  // articleData は展開済みのため削除
-  const questionData = {
-    questionNumber: "第4問",
-    points: "(配点 16)",
-    instruction:
-      "Your college English club's room has several problems and you want to redesign it. Based on the following article and the results of a questionnaire given to members, you make a handout for a group discussion.",
-  };
-  // questionnaireData は展開済みのため削除
-
   const NumberBox = ({ number }: { number: string }) => (
     <span className="font-sans text-center inline-block align-middle border-2 border-gray-400 w-12 h-8 mx-1">
       {number}
     </span>
   );
-
-  interface Content {
-    text?: string;
-    numberBox?: string;
-    note?: string;
-    list?: string[];
-  }
-
-  const renderContent = (content: Content) => {
-    if (content.list) {
-      return (
-        <div className="pl-4 space-y-1">
-          {content.list.map((item: string, index: number) => (
-            <p key={index}>
-              {String.fromCharCode(65 + index)}. {item}
-              {index === 0 && content.numberBox && (
-                <NumberBox number={content.numberBox} />
-              )}
-            </p>
-          ))}
-        </div>
-      );
-    }
-
-    return (
-      <p className="pl-4">
-        {content.text}
-        {content.numberBox && <NumberBox number={content.numberBox}  />}
-        {content.note && <span className="text-gray-600">{content.note}</span>}
-      </p>
-    );
-  };
 
   return (
     <div className={exPageFormat}>
@@ -83,10 +42,10 @@ const Ex24_4 = () => {
         />
       </div>
       {/* What Makes a Good Classroom? */}
-      <p className="mb-6">
-        {questionData.instruction} {Kaisetsu(showResults, "24-4-1")}
+      <p className="mb-6 px-3 indent-5 text-justify">
+        Your college English club&apos;s room has several problems and you want to redesign it. Based on the following article and the results of a questionnaire given to members, you make a handout for a group discussion. {Kaisetsu(showResults, "24-4-1")}
       </p>
-      <div className="p-6 border-2 border-gray-300 rounded-lg">
+      <div className="p-6 border-2 border-black ">
         <div className="text-center mb-6">
           <h2 className="text-xl font-bold mb-3">What Makes a Good Classroom?</h2>
           <p className="italic">
@@ -129,7 +88,7 @@ const Ex24_4 = () => {
         </div>
       </div>
       {/* Results of the Questionnaire */}
-      <div className="mt-8 border-2 border-gray-300 rounded-lg p-6">
+      <div className="mt-8 border-2 border-black p-6">
         <div className="flex justify-between items-start mb-6">
           <h2 className="text-xl font-bold md:mx-auto">Results of the Questionnaire</h2>
           <Image
@@ -146,7 +105,7 @@ const Ex24_4 = () => {
           <h3 className="font-semibold text-sm md:text-[16px] mb-4 font-sans">
             Q1: Choose any items that match your use of the English club's room.
           </h3>
-          <div className="border-2 border-gray-300 ">
+          <div className="border-2 border-black ">
             <Image
               src="/images/Ex24-4-2.webp"
               alt="Bar graph showing club room usage"
@@ -305,12 +264,8 @@ const Ex24_4 = () => {
             <span>
               Choose the best option for
             </span>
-            {renderSelect(
-              "24",
-              4,
-              answers,
-              setAnswers
-            )}
+            {renderSelect( "24", 4, answers, setAnswers )}
+            <span className="-ml-1 mt-1 mr-2">.</span>
             <>
               <Explain qa={qa} questionId={"4-1"} isShow={showResults} />
               <span className="mr-2"></span>
@@ -319,19 +274,19 @@ const Ex24_4 = () => {
           </div>
           <div className="space-y-1 pl-6">
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[0]}</span>
+              <span className="mr-4">①</span>
               <span className="text-gray-800">A guide to show which colors are appropriate to use in classrooms</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[1]}</span>
+              <span className="mr-4">②</span>
               <span className="text-gray-800">A method to prioritize the needs of students and teachers in classrooms</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[2]}</span>
+              <span className="mr-4">③</span>
               <span className="text-gray-800">A model to follow when planning classroom environments</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[3]}</span>
+              <span className="mr-4">④</span>
               <span className="text-gray-800">A system to understand how classrooms influence students' performance</span>
             </div>
           </div>
@@ -351,12 +306,8 @@ const Ex24_4 = () => {
             <span>
               Choose the best option for
             </span>
-            {renderSelect(
-              "25",
-              4,
-              answers,
-              setAnswers
-            )}
+            {renderSelect( "25", 4, answers, setAnswers )}
+            <span className="-ml-1 mt-1 mr-2">.</span>
             <>
               <Explain qa={qa} questionId={"4-2"} isShow={showResults} />
               <span className="mr-2"></span>
@@ -365,19 +316,19 @@ const Ex24_4 = () => {
           </div>
           <div className="space-y-1 pl-6">
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[0]}</span>
+              <span className="mr-4">①</span>
               <span className="text-gray-800">move the screen to a better place</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[1]}</span>
+              <span className="mr-4">②</span>
               <span className="text-gray-800">paint each wall a different color</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[2]}</span>
+              <span className="mr-4">③</span>
               <span className="text-gray-800">put books on shelves</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[3]}</span>
+              <span className="mr-4">④</span>
               <span className="text-gray-800">reduce displayed items</span>
             </div>
           </div>
@@ -398,12 +349,7 @@ const Ex24_4 = () => {
               You are checking the handout. You notice an error in the recommendations under Naturalness. Which of the following should you
               <strong className="ml-1 font-semibold underline">remove</strong> {' '}?
             </span>
-            {renderSelect(
-              "26",
-              5,
-              answers,
-              setAnswers
-            )}
+            {renderSelect( "26", 5, answers, setAnswers )}
             <>
               <Explain qa={qa} questionId={"4-3"} isShow={showResults} />
               <span className="mr-2"></span>
@@ -412,23 +358,23 @@ const Ex24_4 = () => {
           </div>
           <div className="space-y-1 pl-6">
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[0]}</span>
+              <span className="mr-4">①</span>
               <span className="text-gray-800">A</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[1]}</span>
+              <span className="mr-4">②</span>
               <span className="text-gray-800">B</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[2]}</span>
+              <span className="mr-4">③</span>
               <span className="text-gray-800">C</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[3]}</span>
+              <span className="mr-4">④</span>
               <span className="text-gray-800">D</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[4]}</span>
+              <span className="mr-4">⑤</span>
               <span className="text-gray-800">E</span>
             </div>
           </div>
@@ -463,23 +409,23 @@ const Ex24_4 = () => {
               <NumberBox number={"27"} />
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[0]}</span>
+              <span className="mr-4">①</span>
               <span className="text-gray-800">borrow books from</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[1]}</span>
+              <span className="mr-4">②</span>
               <span className="text-gray-800">can't easily get to</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[2]}</span>
+              <span className="mr-4">③</span>
               <span className="text-gray-800">don't use Japanese in</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[3]}</span>
+              <span className="mr-4">④</span>
               <span className="text-gray-800">feel anxious in</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[4]}</span>
+              <span className="mr-4">⑤</span>
               <span className="text-gray-800">take naps in</span>
             </div>
           </div>
@@ -488,27 +434,27 @@ const Ex24_4 = () => {
               <NumberBox number={"28"} />
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[0]}</span>
+              <span className="mr-4">①</span>
               <span className="text-gray-800">S 1</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[1]}</span>
+              <span className="mr-4">②</span>
               <span className="text-gray-800">S 2</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[2]}</span>
+              <span className="mr-4">③</span>
               <span className="text-gray-800">S 3</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[3]}</span>
+              <span className="mr-4">④</span>
               <span className="text-gray-800">S 4</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[4]}</span>
+              <span className="mr-4">⑤</span>
               <span className="text-gray-800">S 5</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[5]}</span>
+              <span className="mr-4">⑥</span>
               <span className="text-gray-800">S 6</span>
             </div>
           </div>
@@ -528,37 +474,33 @@ const Ex24_4 = () => {
             <span>
               Choose the best option for
             </span>
-            {renderSelect(
-              "29",
-              6,
-              answers,
-              setAnswers
-            )}
+            {renderSelect( "29", 6, answers, setAnswers )}
+            <span className="-ml-1 mt-1 mr-2">.</span>
               <Explain qa={qa} questionId={"4-5"} isShow={showResults} />
           </div>
           <div className="space-y-1 pl-6">
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[0]}</span>
+              <span className="mr-4">①</span>
               <span className="text-gray-800">S 1</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[1]}</span>
+              <span className="mr-4">②</span>
               <span className="text-gray-800">S 2</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[2]}</span>
+              <span className="mr-4">③</span>
               <span className="text-gray-800">S 3</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[3]}</span>
+              <span className="mr-4">④</span>
               <span className="text-gray-800">S 4</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[4]}</span>
+              <span className="mr-4">⑤</span>
               <span className="text-gray-800">S 5</span>
             </div>
             <div className="flex items-baseline">
-              <span className="mr-4">{"①②③④⑤⑥"[5]}</span>
+              <span className="mr-4">⑥</span>
               <span className="text-gray-800">S 6</span>
             </div>
           </div>

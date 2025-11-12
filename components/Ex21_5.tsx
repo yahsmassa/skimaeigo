@@ -43,7 +43,7 @@ const Ex21_5 = () => {
       </p>
 
       {/* Main content box */}
-      <div className="border border-gray-300 p-6 space-y-1">
+      <div className="border border-gray-300 p-6 space-y-1 text-justify">
         <p className="text-base leading-relaxed indent-7">
           Five years ago, Mrs. Sabine Rouas lost her horse. She had spent 20
           years with the horse before he died of old age. At that time, she felt

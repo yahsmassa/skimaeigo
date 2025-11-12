@@ -35,17 +35,17 @@ const Ex24_6B = () => {
           setAnswers={setAnswers}
         />
       </div>
-      <div className="mb-4">
+      <div className="mb-4 px-3 text-justify indent-5">
         You are preparing a presentation for your science club, using the
         following passage from a science website.{' '}
         {Kaisetsu(showResults, "24-6B-0")}
       </div>
 
-      <div className="text-center font-bold mb-4">
+      <div className="text-center font-bold mb-2">
         Chili Peppers: The Spice of Life
       </div>
 
-      <div className="space-y-1 text-justify">
+      <div className="space-y-1 text-justify px-3">
         <p className="indent-7">
           Tiny pieces of red spice in chili chicken add a nice touch of color,
           but biting into even a small piece can make a person&apos;s mouth burn

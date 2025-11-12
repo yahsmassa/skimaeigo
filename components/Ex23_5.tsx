@@ -144,7 +144,7 @@ const Ex23_5 = () => {
             I&apos;m still not the best communicator in the world, but I
             definitely feel more confident in my communication skills now than
             before. Next year, my friends and I are going to co-ordinate the
-            table tennis league with other schools.
+            table tennis league with other schools.{' '}
             {Kaisetsu(showResults, "23-5-9")}
           </p>
         </div>

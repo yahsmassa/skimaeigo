@@ -35,15 +35,15 @@ const Ex23_1B = () => {
           setAnswers={setAnswers}
         />
       </div>{" "}
-      <div className="mb-2">
-        <p className="text-gray-700 leading-relaxed">
+      <div className="mb-2 px-3">
+        <p className="text-gray-700 text-justify">
           You are a senior high school student interested in improving your
           English during the summer vacation. You find a website for an
           intensive English summer camp run by an international school.
           {Kaisetsu(showResults, "23-1B-0")}
         </p>
       </div>
-      <div className="border border-gray-800 p-6">
+      <div className="border border-gray-800 p-6 text-justify">
         {/* Header with Logo and Description */}
         <div className="flex mb-6">
           <div className="w-1/3">

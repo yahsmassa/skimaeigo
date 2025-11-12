@@ -43,7 +43,7 @@ export default function Ex21_3A() {
       </div>
 
       {/* Q&A Box */}
-      <div className="border border-gray-300 p-6 space-y-4">
+      <div className="border border-gray-300 p-6 space-y-4 text-justify">
         {/* Question */}
         <div className="space-y-1">
           <p className="text-gray-800 font-semibold">

@@ -35,8 +35,8 @@ const Ex23_2B = () => {
         />
       </div>{" "}
       {/* Context Section */}
-      <div className="mb-2">
-        <p className="text-gray-700 leading-relaxed">
+      <div className="mb-2 px-3">
+        <p className="text-gray-700 text-justify">
           You are a member of the student
           council. The members have been discussing a student project helping
           students to use their time efficiently. To get ideas, you are reading
@@ -57,7 +57,6 @@ const Ex23_2B = () => {
             could also use this time for reading or doing homework. We started
             this activity to help students use their commuting time more
             effectively.
-            {Kaisetsu(showResults, "23-2B-1")}
             Students had to complete a commuting activity chart from January
             17th to February 17th. A total of 300 students participated: More
             than two thirds of them were second-years; about a quarter were

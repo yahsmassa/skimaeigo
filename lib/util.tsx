@@ -32,7 +32,7 @@ export const Card: React.FC<CardProps> = ({
 }) => (
   <div
     className={
-      "rounded-lg border border-gray-200 bg-white text-gray-950 shadow-sm " +
+      "border-2 border-gray-900 bg-white text-gray-950 shadow-sm " +
       (className || "")
     }
     {...props}

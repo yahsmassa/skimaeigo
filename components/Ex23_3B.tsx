@@ -36,8 +36,8 @@ const Ex23_3B = () => {
         />
       </div>{" "}
       {/* Context */}
-      <div className="mb-2">
-        <p className="text-gray-700">
+      <div className="mb-2 px-3">
+        <p className="text-gray-700 text-justify">
           Your English club will make an
           &quot;adventure room&quot; for the school festival. To get some ideas,
           you are reading a blog about a room a British man created.
@@ -45,7 +45,7 @@ const Ex23_3B = () => {
         </p>
       </div>
       {/* Blog Content */}
-      <div className="border border-gray-800 p-8">
+      <div className="border border-gray-800 p-8 text-justify">
         <h1 className="text-xl text-center mb-6 font-semibold">
           Create Your Own &quot;Home Adventure&quot;
         </h1>

@@ -43,7 +43,7 @@ export default function Ex21_4() {
       </p>
 
       {/* Natsuki's Email */}
-      <div className="border border-gray-300 p-6 rounded mb-8 space-y-2">
+      <div className="border border-gray-300 p-6 rounded mb-8 space-y-2 text-justify">
         <p className="mb-4">Hi Emma,</p>
 
         <p className="leading-relaxed">
@@ -100,7 +100,7 @@ export default function Ex21_4() {
       </div>
 
       {/* Emma's Reply */}
-      <div className="border border-gray-300 p-6 rounded mb-8 space-y-2">
+      <div className="border border-gray-300 p-6 rounded mb-8 space-y-2 text-justify">
         <p className="mb-4">Hi Natsuki,</p>
 
         <p className="leading-relaxed">

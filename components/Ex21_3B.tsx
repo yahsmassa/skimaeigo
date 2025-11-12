@@ -34,7 +34,7 @@ const Ex21_3B = () => {
         />
       </div>
       {/* Part 1: Newsletter */}
-      <div>
+      <div className="text-justify">
         <div className="mb-2 text-gray-700 px-2">
           Your classmate showed you the following message in your school&apos;s
           newsletter, written by an exchange student from the UK.{' '}

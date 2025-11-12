@@ -40,7 +40,7 @@ const Ex23_6A = () => {
         />
       </div>{" "}
       {/* Question Label */}
-      <div className="flex gap-2 mb-2">
+      <div className="flex gap-2 mb-2 px-3">
         <p className="text-justify indent-7 md:text-[17px] mb-2">
           You are in a discussion group in school. You have been asked to
           summarize the following article. You will speak about it, using only
