@@ -18,7 +18,7 @@ function findProblemById(id: string): Problem | undefined {
 
 export const TikTokLink: React.FC<Props> = ({ componentName, className }) => {
   const problem = findProblemById(componentName);
-  const tiktokUrl = problem?.tiktok;
+  let tiktokUrl =  problem?.tiktok;
 //   console.log("name",componentName);
   const baseImg = (
     <img
@@ -34,7 +34,7 @@ export const TikTokLink: React.FC<Props> = ({ componentName, className }) => {
   if (!tiktokUrl) {
     return <>{baseImg}</>;
   }
-
+  tiktokUrl = "https://www.tiktok.com/@kuotore/video/" + problem?.tiktok;
   return (
     <a href={tiktokUrl} target="_blank" rel="noopener noreferrer">
       {baseImg}
