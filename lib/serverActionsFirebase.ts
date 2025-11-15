@@ -1,7 +1,6 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { WebhookResponse } from "./paypay";
 import { adminAuth, adminDb, FieldValue } from "./firebase-admin";
 
 export async function signOut() {
@@ -36,7 +35,7 @@ export const setPremiumStatus = async (uid: string, orderId: string) => {
   }
 };
 
-export const setTransaction = async (transaction: WebhookResponse) => {
+export const setTransaction = async (transaction: any) => {
   // 認証チェック
   if (!adminDb) return;
   if (!adminAuth) {
@@ -44,13 +43,18 @@ export const setTransaction = async (transaction: WebhookResponse) => {
   }
 
   try {
-    // ユーザーのトークンを更新するために、データベースに更新時間を記録
-    const uid = transaction.merchant_order_id.split("_")[0];
-    const _transaction = {...transaction, uid: uid}
+    const docId =
+      transaction?.order_id ||
+      transaction?.id ||
+      transaction?.payment_intent ||
+      transaction?.session_id;
+    if (!docId) {
+      throw new Error("取引IDが特定できません");
+    }
     await adminDb
       .collection("transaction")
-      .doc(_transaction.order_id)
-      .set(_transaction, { merge: true });
+      .doc(String(docId))
+      .set(transaction, { merge: true });
 
     return { success: true };
   } catch (error) {

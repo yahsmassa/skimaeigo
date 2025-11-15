@@ -18,12 +18,7 @@ import TikTokLink from "@/components/TikTokLink";
 import { cn } from "@/lib/util";
 // import { getPaymentUrl } from "@/lib/paypay";
 
-import {
-  qrCodeCreate,
-  paymentRefund,
-  getPaymentDetail,
-  getRefundDetail,
-} from "@/lib/paypay";
+
 
 export default function Home() {
   const router = useRouter();
@@ -297,20 +292,7 @@ export default function Home() {
     };
   }, [isMobile]);
 
-  const refund = async () => {
-    const result = await paymentRefund(
-      "QneWLYorhTQljQlwJf02amMAqub2_20250304194630",
-      "04655223243259265024"
-    );
-    console.log("result", result);
-  };
 
-  const getPaymentDetailInfo = async () => {
-    const result = await getRefundDetail(
-      "QneWLYorhTQljQlwJf02amMAqub2_20250304194630"
-    );
-    console.log("result", result);
-  };
 
   const handleSignOut = async () => {
     try {

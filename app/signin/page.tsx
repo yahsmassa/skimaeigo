@@ -9,13 +9,6 @@ import { userAtom } from "@/atoms/userAtom";
 import { store } from "@/lib/store";
 import { useAuth } from "@/components/AuthProvider";
 import {
-  qrCodeCreate,
-  qrCodeDelete,
-  paymentCancel,
-  paymentCapture,
-  paymentRevert,
-} from "@/lib/paypay";
-import {
   signInWithGoogle,
   signInWithApple,
   signInWithEmail,

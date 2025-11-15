@@ -1,29 +1,50 @@
 import { NextResponse } from "next/server";
+import { headers } from "next/headers";
+import { stripe } from "@/lib/stripe";
 import { setPremiumStatus, setTransaction } from "@/lib/serverActionsFirebase";
 
 export async function POST(req: Request) {
   try {
-    // 署名検証のため、生のリクエストボディを取得
     const rawBody = await req.text();
-    const body = JSON.parse(rawBody);
-    const uid = body.merchant_order_id.split("_")[0];
-    const orderId = body.order_id;
-    // 支払い完了 (`PAYMENT_COMPLETED`) の場合のみ処理
-    if (
-      body.state.toUpperCase() === "COMPLETED" &&
-      body.notification_type.toUpperCase() === "TRANSACTION"
-    ) {
-      await setPremiumStatus(uid, orderId);
-      await setTransaction(body);
-      // console.log("Received PayPay Webhook:", body);
-
+    const sig = headers().get("stripe-signature");
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+    if (!sig || !webhookSecret) {
       return NextResponse.json(
-        { message: "Webhook processed successfully" },
-        { status: 200 }
+        { error: "Missing webhook secret or signature" },
+        { status: 400 }
       );
-    } else {
-      return NextResponse.json({ message: "Ignored event" }, { status: 200 });
     }
+
+    let event;
+    try {
+      event = stripe.webhooks.constructEvent(rawBody, sig, webhookSecret);
+    } catch (err) {
+      console.error("Stripe signature verification failed:", err);
+      return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
+    }
+
+    if (event.type === "checkout.session.completed") {
+      const session = event.data.object as any;
+      const userId = session?.metadata?.userId;
+
+      if (userId) {
+        await setPremiumStatus(userId, session.id);
+      }
+
+      await setTransaction({
+        provider: "stripe",
+        id: session.id,
+        user_id: userId,
+        amount_total: session.amount_total,
+        currency: session.currency,
+        payment_status: session.payment_status,
+        customer: session.customer,
+        created: session.created * 1000,
+        source: "webhook",
+      });
+    }
+
+    return NextResponse.json({ received: true }, { status: 200 });
   } catch (error) {
     console.error("Error processing webhook:", error);
     return NextResponse.json(

@@ -1,5 +1,4 @@
 import { twMerge } from "tailwind-merge";
-import { qrCodeCreate, processPayment } from "@/lib/paypay";
 import { type ClassValue, clsx } from "clsx";
 import React from "react";
 import Swal from "sweetalert2";
@@ -369,24 +368,18 @@ export const cmpOrderId = (uid: string) => {
   return uid + "_" + formatDate();
 };
 
-export const getPaymentUrl = async (uid: string) => {
-  if (uid.length === 0) return;
+export const getPaymentUrl = async (_uid: string) => {
   try {
-    console.log("uid", uid);
-
-    const orderId = cmpOrderId(uid);
-    let result;
-    if (process.env.NEXT_PUBLIC_DEBUG === "true") {
-      result = await qrCodeCreate(orderId);
-    } else {
-      result = await processPayment(orderId);
-    }
-    // console.log("result", result);
-    // console.log("new result", result);
-    const url = result.data?.url;
-    return url;
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId: _uid }),
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data?.url ?? null;
   } catch (error) {
-    console.error("QRコード作成エラー", error);
+    console.error("Stripe Checkout セッション作成エラー", error);
     return null;
   }
 };
