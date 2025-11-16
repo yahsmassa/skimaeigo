@@ -19,7 +19,7 @@ const Ex21_5 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold font-sans">{"第５問"}</h1>
+          <h1 className="md:text-lg font-bold font-sans">{"第５問"}</h1>
           <span className="text-gray-600 font-sans">(配点 {15})</span>
           <span className="text-gray-600 font-sans">
           【目標時間 10分 約700単語】
@@ -136,9 +136,10 @@ const Ex21_5 = () => {
         <Image
           src="/images/Ex21-5-1.webp"
           alt="Graph showing Number of Visitors to Westside Aquarium by time of day"
-          className="mb-8 mx-auto"
+          className="mb-8 mx-auto w-full h-auto max-w-[800px]"
           width={800}
           height={400}
+          sizes="(max-width: 650px) 100vw, 650px"
         />
       </div>
       {/* 問セクション */}
@@ -189,10 +190,10 @@ const Ex21_5 = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 pl-0 md:pl-8  text-xs md:text-base">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 pl-0 md:pl-8 text-sm md:text-base">
           <div className="">
             <div className="underline mb-2 ml-5">Main figures</div>
-            <div className="space-y-2 w-[200px] md:w-auto">
+            <div className="space-y-2 w-full">
               <div className="flex gap-2 md:gap-4">
                 <span>①</span>
                 <span>309, Aston, the farmer</span>
@@ -212,9 +213,9 @@ const Ex21_5 = () => {
             </div>
           </div>
 
-          <div className="text-xs md:text-base">
+          <div className="text-sm md:text-base">
             <div className="underline mb-2">Minor figures</div>
-            <div className="space-y-2 w-[200px] md:w-auto">
+            <div className="space-y-2 w-full">
               <div>Sabine, the pony</div>
               <div>309, the farmer</div>
               <div>Aston&apos;s mother, Sabine</div>
@@ -234,7 +235,7 @@ const Ex21_5 = () => {
           <span className="italic font-bold">Pre-fame Storyline </span>
           <span>&nbsp;slide.</span>
           <div className="flex flex-row flex-wrap gap-2 mt-2">
-            <div className="flex flex-row ">
+            <div className="flex flex-row flex-wrap">
               {renderSelect("32", 5, answers, setAnswers)}
               {renderSelect("33", 5, answers, setAnswers)}
               {renderSelect("34", 5, answers, setAnswers)}

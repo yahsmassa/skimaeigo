@@ -18,10 +18,10 @@ export default function Ex21_3A() {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold font-sans">{"第３問 A"}</h1>
+          <h1 className="md:text-lg font-bold font-sans">{"第３問 A"}</h1>
           <span className="text-gray-600 font-sans">(配点 {6})</span>
           <span className="text-gray-600 font-sans">
-          【目標時間 5分 200単語強】
+          【目標時間 5分 200語強】
           </span>
         </div>
         <Saiten
