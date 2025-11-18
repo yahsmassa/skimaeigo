@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { NextPage } from "next";
+import BackHeader from "@/app/components/BackHeader";
 
 const PrivacyPolicy: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const PrivacyPolicy: NextPage = () => {
       </Head>
 
       <div className="min-h-screen bg-white">
+        <BackHeader />
         <div className="max-w-4xl mx-auto px-4 py-8 sm:px-6 md:py-12">
           <main className="prose prose-sm sm:prose max-w-none">
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">

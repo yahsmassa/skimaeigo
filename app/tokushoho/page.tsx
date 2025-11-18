@@ -1,8 +1,11 @@
 import React from "react";
 import Head from "next/head";
+import BackHeader from "@/app/components/BackHeader";
 
 export default function TransactionLawPage() {
   return (
+    <>
+    <BackHeader />
     <div className="container mx-auto px-4 py-8 max-w-3xl">
       <Head>
         <title>特定商取引法に基づく表記 | KUOTORE</title>
@@ -74,5 +77,6 @@ export default function TransactionLawPage() {
         </section>
       </main>
     </div>
+    </>
   );
 }
