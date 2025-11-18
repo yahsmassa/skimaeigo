@@ -58,6 +58,12 @@ const HowToUse: NextPage = () => {
 
             <section className="mb-8">
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
+                出典について
+              </h2>
+              <p className="text-gray-700 mb-4">
+              アプリは、大学入試センターが作成した共通テスト（英語）を、いろいろなデバイスで閲覧しやすいように、加工したものです。本文とは書体など微妙に違ったものになっていて、誤植などの可能性もあるので、ご注意ください。
+              </p>
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
                 このアプリはWEB版です
               </h2>
               <p className="text-gray-700 mb-4">
@@ -137,7 +143,7 @@ const HowToUse: NextPage = () => {
                   株式会社クオトレ
                 </a>
                 によって作成されています。
-                株式会社クオトレは、主に専門的な金融アプリの開発を行ってきました。今回、WebApliのインターフェースが教育にも適応しやすいと判断したことから、このアプリを作成しています。
+                株式会社クオトレは、主に専門的な金融アプリの開発を行ってきました。今回、知り合いの関係で、試作アプリを作ったところ、教育系アプリは社会的な意義もあり、かなり作り甲斐があると感じ、開発に至ってます。
               </p>
             </section>
           </main>

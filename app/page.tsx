@@ -176,23 +176,23 @@ export default function Home() {
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>参考書やノート、自習室など、勉強するための準備、場所の確保などの制約があります。</span>
+                    <span>家や自習室での学習するための、まとまった時間、<span className="text-orange-400 font-bold">時間・場所の制約</span>があります。</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>具体的な解法テクニックを学ぶには、塾や予備校、お金と時間が必要という悲しい問題！</span>
+                    <span>具体的な解法テクニックを学ぶには、塾や予備校、<span className="text-orange-400 font-bold">それなりのお金が必要</span>という悲しい問題！</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>試験には、音読しようとしても、発音がわからない単語が多くでています。音読するのが地味に手間。</span>
+                    <span>試験には、音読しようとしても、発音がわからない単語が多くでて、調べるのもかなり手間。<span className="text-orange-400 font-bold">音読が地味に手間</span>です。</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>参考書だけでも数千円</span>
+                    <span>参考書だけでも<span className="text-orange-400 font-bold">コストは数千円</span></span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>過去問で毎年同じパターンが出てると言われても、紙ベースだと比べるのが地味に大変、どんだけページめくるの？</span>
+                    <span>過去問で毎年同じパターンが出てると言われても、紙ベースだと<span className="text-orange-400 font-bold">過去問どうしを比べるのが大変</span>、どんだけページめくるの？</span>
                   </li>
                 </ul>
               </div>
@@ -291,7 +291,7 @@ export default function Home() {
             {/* Free Plan */}
             <div className="flex-1 bg-white rounded-lg p-8 shadow-md border-2 border-gray-200">
               <h3 className="text-2xl font-bold mb-4 text-center">
-                無料プラン
+                無料版
               </h3>
               <p className="text-center text-gray-600 mb-6">
                 ２０２５年の最新問題にアクセスできます
@@ -339,7 +339,7 @@ export default function Home() {
               </div>
 
               <h3 className="text-2xl font-bold mb-4 text-center">
-                有料プラン
+                有料版
               </h3>
               <p className="text-center text-blue-100 mb-6">
                 過去問題でガチに対策したい学生様向け
@@ -390,7 +390,7 @@ export default function Home() {
             <div className="ml-3">
               <h3 className="text-xl font-bold mb-4 text-orange-500">共通テスト英語対策アプリ</h3>
               <p className="text-gray-400">
-                共通テスト英語の過去問題を最高の英語教材にするアプリ
+                共通テスト英語に関する英語力をつけ、試験に臨むテクニックまで習得できるアプリ
               </p>
               <div className="flex gap-4 mt-3">
                 <div className="ml-2">
@@ -423,20 +423,6 @@ export default function Home() {
                 </div>
                 <div className="ml-2">
                   <a
-                    href="https://www.instagram.com/kuotore/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src="/icons/instagram_glyph_white.png"
-                      alt="Instagram"
-                      className="w-8 h-8 hover:opacity-80 transition-opacity"
-                    />
-                    <p className="text-xs -ml-3">Instagram</p>
-                  </a>
-                </div>
-                <div className="ml-2">
-                  <a
                     href="https://www.tiktok.com/@kuotore/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -447,6 +433,20 @@ export default function Home() {
                       className="w-8 h-8"
                     />
                     <p className="text-xs -ml-1">TicTok</p>
+                  </a>
+                </div>
+                <div className="ml-2">
+                  <a
+                    href="https://www.kuotore.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/icons/KUOTOE_LOGO.png"
+                      alt="kuotore"
+                      className="w-8 h-8 hover:opacity-80 transition-opacity"
+                    />
+                    <p className="text-xs -ml-2">クオトレ</p>
                   </a>
                 </div>
 
