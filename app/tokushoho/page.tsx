@@ -1,6 +1,13 @@
 import React from "react";
 import Head from "next/head";
 import BackHeader from "@/app/components/BackHeader";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "特定商取引法に基づく表記 | 共通テスト英語対策アプリ",
+  description: "共通テスト英語対策アプリの特定商取引法に基づく表記。",
+  alternates: { canonical: "/tokushoho" },
+};
 
 export default function TransactionLawPage() {
   return (

@@ -2,6 +2,13 @@ import React from "react";
 import Head from "next/head";
 import { NextPage } from "next";
 import BackHeader from "@/app/components/BackHeader";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "返金ポリシー | 共通テスト英語対策アプリ",
+  description: "共通テスト英語対策アプリの返金ポリシー。",
+  alternates: { canonical: "/refund" },
+};
 
 const PrivacyPolicy: NextPage = () => {
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import type { Metadata } from "next";
 import { NextPage } from "next";
 import BackHeader from "@/app/components/BackHeader";
 import {
@@ -38,6 +39,13 @@ const SquarePlusIcon = () => {
   );
 };
 
+export const metadata: Metadata = {
+  title: "アプリについて | 共通テスト英語対策アプリ",
+  description:
+    "Web版の特徴やインストール方法、ショートカット、課金ポリシー、開発会社についてのご案内。",
+  alternates: { canonical: "/about" },
+};
+
 const HowToUse: NextPage = () => {
   return (
     <>
@@ -47,6 +55,29 @@ const HowToUse: NextPage = () => {
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "ホーム",
+                  item: "https://kyoutuu.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "アプリについて",
+                  item: "https://kyoutuu.com/about",
+                },
+              ],
+            }),
+          }}
         />
       </Head>
 

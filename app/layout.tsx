@@ -25,6 +25,19 @@ export const metadata: Metadata = {
   title: "共通テスト英語対策アプリ",
   description:
     "共通テスト英語対策アプリ、ふだんタブレット、スキマ時間はスマホで学習！ 採点・翻訳ボタンで完全理解、読み上げ機能で音読学習、繰り返し学習で最強英語教材！、１０年分で完璧！",
+  metadataBase: new URL("https://kyoutuu.com"),
+  alternates: {
+    canonical: "/",
+  },
+  keywords: [
+    "共通テスト",
+    "英語",
+    "過去問",
+    "勉強アプリ",
+    "リスニング",
+    "シャドーイング",
+    "学習",
+  ],
   openGraph: {
     title: '共通テスト英語対策アプリ どこでもテスト、いつでも復習！',
     description:
@@ -37,6 +50,17 @@ export const metadata: Metadata = {
       height: 630,
     }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "共通テスト英語対策アプリ",
+    description:
+      "共通テスト英語対策アプリ、ふだんタブレット、スキマ時間はスマホで学習！ 採点・翻訳ボタンで完全理解、読み上げ機能で音読学習。",
+    images: ["https://kyoutuu.com/og-image.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -48,6 +72,23 @@ export default function RootLayout({
     <html lang="ja">
       <head>
         <link rel="manifest" href="/manifest.json" />
+        {/* Organization JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "共通テスト英語対策アプリ",
+              url: "https://kyoutuu.com",
+              logo: "https://kyoutuu.com/icons/icon-512x512.png",
+              sameAs: [
+                "https://www.tiktok.com/@kuotore/",
+                "https://www.kuotore.com/",
+              ],
+            }),
+          }}
+        />
       </head>
       <body
         suppressHydrationWarning={true} //サーバ、クライアント間のHTMLレンダリングチェック警告を非表示に

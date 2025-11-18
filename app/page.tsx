@@ -1,7 +1,15 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "@/app/components/Navigation";
 import AuthRedirect from "@/app/components/AuthRedirect";
+import Image from "next/image";
+export const metadata: Metadata = {
+  title: "共通テスト英語対策アプリ | どこでも学べる過去問トレーニング",
+  description:
+    "共通テスト英語の過去問をスマホ・タブレット・PCで学習。読み上げ・翻訳・採点・解説で効率学習。無料で2025年の最新問題を体験できます。",
+  alternates: { canonical: "/" },
+};
 import {
   Computer,
   BookOpenCheck,
@@ -28,6 +36,63 @@ export default function Home() {
       {/* Hero Section */}
       <header className="bg-blue-600 text-white">
         <div className="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
+          {/* FAQ JSON-LD for SEO */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "無料で何ができますか？",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text:
+                        "無料版では2025年の最新問題を体験できます。読み上げ・翻訳・採点など主要機能を試せます。",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "有料版の価格と内容は？",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text:
+                        "有料版は買い切り500円で、過去10年分の全問題にアクセスできます。",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "ログイン方法は？",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text:
+                        "GoogleまたはAppleアカウントでログインできます。メールアドレスでも登録可能です。",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "対応デバイスは？",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text:
+                        "スマートフォン、タブレット、PCに対応しています。学習体験は各デバイスに最適化されています。",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "決済後いつからプレミアム機能が使えますか？",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text:
+                        "決済確認後ただちにプレミアムが有効化されます。反映まで数秒かかる場合があります。",
+                    },
+                  },
+                ],
+              }),
+            }}
+          />
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               このアプリで得点力は<span className="text-orange-400 ">最低１０点</span>向上します！！
@@ -39,6 +104,7 @@ export default function Home() {
               <Link
                 href="/dashboard"
                 className="bg-white text-blue-600 font-bold px-6 py-3 rounded-lg text-center hover:bg-blue-50 transition-colors"
+                aria-label="ダッシュボードへ移動して学習を開始"
               >
                 今すぐ始める
               </Link>
@@ -52,17 +118,27 @@ export default function Home() {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <div className="bg-white rounded-lg shadow-xl p-2 max-w-xs">
-              <img
+              <Image
                 src="/images/smaho.webp"
-                alt="アプリ画面イメージ"
+                alt="アプリ画面イメージ（スマホ1）"
                 className="rounded"
+                width={300}
+                height={600}
+                priority
+                fetchPriority="high"
+                sizes="(min-width: 768px) 300px, 45vw"
               />
             </div>
             <div className="bg-white rounded-lg shadow-xl p-2 max-w-xs ml-2">
-              <img
+              <Image
                 src="/images/smaho2.webp"
-                alt="アプリ画面イメージ"
+                alt="アプリ画面イメージ（スマホ2）"
                 className="rounded"
+                width={300}
+                height={600}
+                priority
+                fetchPriority="high"
+                sizes="(min-width: 768px) 300px, 45vw"
               />
             </div>
           </div>
@@ -327,6 +403,7 @@ export default function Home() {
               <Link
                 href="/dashboard"
                 className="block w-[90%] mx-auto text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
+                aria-label="ダッシュボードへ移動して学習を開始"
               >
                 今すぐ始める
               </Link>
@@ -370,6 +447,7 @@ export default function Home() {
               <Link
                 href="/dashboard"
                 className="block w-[90%] mx-auto text-center bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-blue-50 transition-colors"
+                aria-label="ダッシュボードへ移動して学習を開始"
               >
                 今すぐ始める
               </Link>
