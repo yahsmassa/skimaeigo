@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import Navigation from "@/app/components/Navigation";
 import AuthRedirect from "@/app/components/AuthRedirect";
@@ -19,7 +20,9 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800 font-sans">
-      <AuthRedirect />
+      <Suspense fallback={null}>
+        <AuthRedirect />
+      </Suspense>
       <Navigation />
 
       {/* Hero Section */}
