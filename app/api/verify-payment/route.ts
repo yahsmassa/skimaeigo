@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { setPremiumStatus, setTransaction } from "@/lib/serverActionsFirebase";
 
+
 export async function POST(req: Request) {
   try {
     const { sessionId, userId } = await req.json();
