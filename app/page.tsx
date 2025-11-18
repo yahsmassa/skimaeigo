@@ -18,12 +18,16 @@ import {
   Check,
   Calculator,
   Languages,
-  Smartphone,
   Tablet,
-  Laptop,
+  Smartphone,
   Database,
   ArrowRight,
 } from "lucide-react";
+import {
+  DeviceLaptopIcon,
+  DeviceTabletIcon,
+  DevicePhoneIcon,
+} from "@/components/DeviceIcons";
 
 export default function Home() {
   return (
@@ -329,21 +333,21 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
           <div className="flex flex-col items-center">
-              <Laptop size={64} className="text-blue-600 mb-4" />
+              <DeviceLaptopIcon className="w-16 h-16 mb-4" />
               <h3 className="text-xl font-bold mb-2">パソコン</h3>
               <p className="text-center max-w-xs">
                 マウスで簡単に文書選択できるので、部分音読や、AIによる部分文章解説機能をフル活用できます。
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <Tablet size={64} className="text-blue-600 mb-4" />
+              <DeviceTabletIcon className="w-16 h-16 mb-4" />
               <h3 className="text-xl font-bold mb-2">タブレット</h3>
               <p className="text-center max-w-xs">
                 実際の試験と似た表示になり、本番の雰囲気が味わえます。文字も大きくなりストレスなく学習できます。
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <Smartphone size={64} className="text-blue-600 mb-4" />
+              <DevicePhoneIcon className="w-16 h-16 mb-4" />
               <h3 className="text-xl font-bold mb-2">スマートフォン</h3>
               <p className="text-center max-w-xs">
                 いつでもどこでも学習できるので、２回目以降の復習に最適です。常に英語に触れる環境が体験できます。
