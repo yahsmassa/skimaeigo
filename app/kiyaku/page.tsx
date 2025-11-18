@@ -83,7 +83,7 @@ const TermsOfService: NextPage = () => {
                 5. 支払いと返金
               </h2>
               <p className="text-gray-700 mb-2">
-                5.1 有料プランの支払いは、PayPay、Apple App Store、Google
+                5.1 有料プランの支払いは、カード決済、Apple App Store、Google
                 Playなどの指定された支払い方法で行われます。
               </p>
               <p className="text-gray-700 mb-2">

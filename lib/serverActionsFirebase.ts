@@ -22,8 +22,10 @@ export const setPremiumStatus = async (uid: string, orderId: string) => {
     // ユーザーのトークンを更新するために、データベースに更新時間を記録（ユーザーの最新の注文IDを記録）
     await adminDb.collection("users").doc(uid).set(
       {
-        orderId: orderId,
+        payment_intent: orderId,
         orderAt: FieldValue.serverTimestamp(),
+        premium: true,
+        source: "stripe"
       },
       { merge: true }
     );
@@ -44,9 +46,9 @@ export const setTransaction = async (transaction: any) => {
 
   try {
     const docId =
-      transaction?.order_id ||
-      transaction?.id ||
       transaction?.payment_intent ||
+      transaction?.id ||
+      transaction?.order_id ||
       transaction?.session_id;
     if (!docId) {
       throw new Error("取引IDが特定できません");

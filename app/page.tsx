@@ -27,29 +27,17 @@ export default function Home() {
         <div className="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              共通テストは、最高の英語教材です！
+              このアプリで得点力は<span className="text-orange-400 ">最低１０点</span>向上します！！
             </h1>
             <p className="text-xl md:text-2xl mb-8">
-              共通テストは総合的な英語力を試すために作られた問題です。高得点をとることは至難の業ですが、過去問を完全理解し、繰り返し学習することで、最高の英語教材になり、高得点を狙う実力がつきます。
+              共通テストには、独特のくせがあります、英語力以外テクニックを身につけることで、得点力がグンとアップします！このアプリで、テクニックを習得しましょう。
             </p>
-            {/* <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-orange-400">
-              緊急キャンペーン！７月末まで
-            </h1>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-orange-400">
-              有料機能が無料で使える！
-            </h1> */}
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
-                href="/signin"
+                href="/dashboard"
                 className="bg-white text-blue-600 font-bold px-6 py-3 rounded-lg text-center hover:bg-blue-50 transition-colors"
               >
                 今すぐ始める
-              </Link>
-              <Link
-                href="#features"
-                className="border-2 border-white text-white font-bold px-6 py-3 rounded-lg text-center hover:bg-white hover:text-blue-600 transition-colors"
-              >
-                詳細を見る
               </Link>
               {/* <button
                 className="border-2 border-white text-white font-bold px-6 py-3 rounded-lg text-center hover:bg-white hover:text-blue-600 transition-colors"
@@ -86,6 +74,21 @@ export default function Home() {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Feature 2 */}
+            <div className="bg-blue-50 rounded-lg p-6 shadow-md">
+              <div className="mb-4 w-8">
+                <img
+                  src="/images/tiktok.webp"
+                  alt="TikTok解説動画 by クオトレ"
+                  className="rounded"
+                />
+              </div>
+              <h3 className="text-xl font-bold mb-3">
+                TikTok解説動画
+              </h3>
+              <p>
+              その問題に対応した、時短テクニックや問題を解くときの順番など、クオトレ作成のショート動画で解説しています。アプリの問題とリンクしていて便利です </p>
+            </div>
             {/* Feature 1 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
               <div className="text-blue-600 mb-4 w-10 h-10">
@@ -98,27 +101,17 @@ export default function Home() {
                 選択部分の読み上げ
               </h3>
               <p>
-                記憶への定着や、文章構成の理解に、読み上げにかぶせるように発音すること（シャドーイング）は最高の学習方法です。選択した部分だけを読み上げ、選択を解除すると止めることができるのが嬉しい機能です。
+                「文章を選択＋読み上げボタン」で英語で読み上げします。長文問題は文章構造を理解するための音読学習が効果的です。リスニング力もアップ
               </p>
             </div>
 
-            {/* Feature 2 */}
-            <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-              <div className="text-blue-600 mb-4">
-                <BookOpenCheck size={32} />
-              </div>
-              <h3 className="text-xl font-bold mb-3">単語の詳細（Web版限定）</h3>
-              <p>
-                選択した単語に関する詳細な説明をAIを使って表示します。動詞や形容詞などの他の品詞や、同じ意味の類義語などが確認できます。共通テストのように類似表現が多い問題に最適な機能です。
-              </p>
-            </div>
 
             {/* Feature 3 */}
             <div className="bg-blue-50 rounded-lg p-6 shadow-md">
               <GraduationCap size={32} className="text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-3">文法解説（Web版限定）</h3>
+              <h3 className="text-xl font-bold mb-3">単語・文章解説</h3>
               <p>
-                選択した文章に関する文法をAIを使って解説します。文法書を探すことなく、ピンポイントで文法が理解できます。選択できる文章は３００文字までです。
+                「単語・文章を選択＋解説アイコンをクリック」でAIが解説します。関係代名詞、分子構文など、意味がわからないところはピンポイントで学習できます。
               </p>
             </div>
 
@@ -148,7 +141,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold mb-3">マルチデバイス対応</h3>
               <p>
-                最も心地よく学習できるのはPCですが、タブレットで十分です。じっくりやるのはタブレット、スキマ時間の反復学習はスマホというように、使い分けるのが最適です。
+                スマホ、タブレット、PCの順番でアプリの機能が生きてきます。試験に近い書式はタブレットとPCです。
               </p>
             </div>
 
@@ -157,9 +150,9 @@ export default function Home() {
               <div className="text-blue-600 mb-4">
                 <BookOpenText size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-3">過去問を英語教材にする</h3>
+              <h3 className="text-xl font-bold mb-3">過去問にランダムアクセス</h3>
               <p>
-                ２０２５年の試験は無料でお試しいただけます。有料会員（１,０００円）になると１０年分の過去問題で学習できます。過去問題を教材に英語学習したい学生様には強くオススメします。
+                最後の長文問題を年代ごとに解いたり、第３問だけ選んで解くことが可能です。時系列に問題を解くと、パターンが実感できます。
               </p>
             </div>
           </div>
@@ -170,40 +163,40 @@ export default function Home() {
       <section id="comparison" className="py-16 md:py-24 bg-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            アプリを使った学習が最強な５つの理由
+            いままでと比べて・・・
           </h2>
 
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="p-6 md:p-8 bg-blue-600 text-white">
-                <h3 className="text-2xl font-bold mb-6">従来の学習方法</h3>
+                <h3 className="text-2xl font-bold mb-6 text-center">いままで</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>参考書での学習や講義、模擬試験を経て、本番試験前になって実力確認のために過去問題を解きます。</span>
+                    <span>参考書やノート、自習室など、勉強するための準備、場所の確保などの制約があります。</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>家や図書館で紙ベースの勉強、時間・場所・物理的な制約が多い</span>
+                    <span>具体的な解法テクニックを学ぶには、塾や予備校、お金と時間が必要という悲しい問題！</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>手書きノートにはさまざまな詳細メモ、網羅的な内容になるのでボリュームが増えます、量をこなすたび肥大化します</span>
+                    <span>試験には、音読しようとしても、発音がわからない単語が多くでています。音読するのが地味に手間。</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>発音の確認やリスニングの練習は別に対応する必要があります</span>
+                    <span>参考書だけでも数千円</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 mt-1">•</span>
-                    <span>参考書や教科書での学習は順番に進み、その後には模擬試験を受けるなど、必然的に過程が長くなります、モチベーションの維持も大変です。</span>
+                    <span>過去問で毎年同じパターンが出てると言われても、紙ベースだと比べるのが地味に大変、どんだけページめくるの？</span>
                   </li>
                 </ul>
               </div>
 
               <div className="p-6 md:p-8">
-                <h3 className="text-2xl font-bold mb-6 text-blue-600">
-                  アプリを使った学習方法
+                <h3 className="text-2xl font-bold mb-6 text-blue-600 text-center">
+                  アプリを使うと
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
@@ -211,35 +204,35 @@ export default function Home() {
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>最初から過去問題に接します。講義・参考書・模擬試験はおのずと相互補完になります。<span className="text-blue-600 font-bold">最も実践的！</span></span>
+                    <span>スタバに公園のベンチ、もちろん自宅でも！スマホがあれば<span className="text-blue-600 font-bold">いつでもどこでも学習できます！</span></span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>アプリのランダムアクセス性や採点・翻訳機能を使い、<span className="text-blue-600 font-bold">時間と場所を問わない学習が可能に！</span></span>
+                    <span><span className="text-blue-600 font-bold">いいね！数千件のTikTokのショート解説動画（クオトレオリジナル）</span>で何度でもテクニックが確認できます</span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>手書きノートには、24-6-1の表現復讐！（2024年の問題６の設問１）みたいな記述が多くなり、<span className="text-blue-600 font-bold">従来のノートより機能的でコンパクト</span>になります</span>
+                    <span>「選択＋アイコンタップ」<span className="text-blue-600 font-bold">スマホの英語音読機能</span>で、発音を確認できます。シャドーイングにも最適</span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>読み上げ機能があるから、<span className="text-blue-600 font-bold">長文リスニングもピンポイント確認も簡単！</span>シャドーイングの練習にも最適です！</span>
+                    <span>今なら試験直前キャンペーンで<span className="text-blue-600 font-bold">５００円！</span></span>
                   </li>
                   <li className="flex items-start">
                     <Check
                       size={20}
                       className="text-green-500 mr-2 flex-shrink-0 mt-1"
                     />
-                    <span>全く英語力がない生徒でも、音読から始め、問題１だけを１０年分学習するなど、<span className="text-blue-600 font-bold">最初から本試験に近い学習</span>ができます</span>
+                    <span>２０２１年の第３問というように、自由に問題が選択できるので<span className="text-blue-600 font-bold">過去問比較も簡単!</span></span>
                   </li>
                 </ul>
               </div>
@@ -260,21 +253,21 @@ export default function Home() {
               <Laptop size={64} className="text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">パソコン</h3>
               <p className="text-center max-w-xs">
-                画面が大きく、文書の選択もマウスで簡単、集中学習に最適です
+                マウスで簡単に文書選択できるので、部分音読や、AIによる部分文章解説機能をフル活用できます。
               </p>
             </div>
             <div className="flex flex-col items-center">
               <Tablet size={64} className="text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">タブレット</h3>
               <p className="text-center max-w-xs">
-                実際の試験と似た表示になり、ストレスなく学習できます。リビングやカフェでも。
+                実際の試験と似た表示になり、本番の雰囲気が味わえます。文字も大きくなりストレスなく学習できます。
               </p>
             </div>
             <div className="flex flex-col items-center">
               <Smartphone size={64} className="text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">スマートフォン</h3>
               <p className="text-center max-w-xs">
-                いつでもどこでも学習できるので、スキマ時間の反復学習に向いてます。
+                いつでもどこでも学習できるので、２回目以降の復習に最適です。常に英語に触れる環境が体験できます。
               </p>
             </div>
 
@@ -283,160 +276,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-16 md:py-24 bg-blue-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            お客様の声
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="flex items-center mb-4">
-                <img
-                  src="/images/man1.webp"
-                  alt="ユーザーアイコン"
-                  className="w-10 h-10 rounded-full mr-3"
-                />
-                <div>
-                  <p className="font-bold">高校2年生</p>
-                  <div className="flex text-yellow-400">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                  </div>
-                </div>
-              </div>
-              <p className="italic">
-                "段落ごとに翻訳・解説、発音もピンポイントで読み上げできる、ホント、アプリなんですね。"
-              </p>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="flex items-center mb-4">
-                <img
-                  src="/images/man2.webp"
-                  alt="ユーザーアイコン"
-                  className="w-10 h-10 rounded-full mr-3"
-                />
-                <div>
-                  <p className="font-bold">高校２年生</p>
-                  <div className="flex text-yellow-400">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                  </div>
-                </div>
-              </div>
-              <p className="italic">
-                "この問題を１０分で解かなきゃいけないの？と早い段階で知れてよかった。時間配分の大事さを実感できた！"
-              </p>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="flex items-center mb-4">
-                <img
-                  src="/images/man3.webp"
-                  alt="ユーザーアイコン"
-                  className="w-10 h-10 rounded-full mr-3"
-                />
-                <div>
-                  <p className="font-bold">高校３年生</p>
-                  <div className="flex text-yellow-400">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                  </div>
-                </div>
-              </div>
-              <p className="italic">
-                "電車の中でも、しれっと目立たず勉強できるところが最高。毎日の通学時間が勉強時間に変わりました。"
-              </p>
-            </div>
-
-            {/* Testimonial 4 */}
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="flex items-center mb-4">
-                <img
-                  src="/images/girl2.webp"
-                  alt="ユーザーアイコン"
-                  className="w-10 h-10 rounded-full mr-3"
-                />
-                <div>
-                  <p className="font-bold">高校3年生</p>
-                  <div className="flex text-yellow-400">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                  </div>
-                </div>
-              </div>
-              <p className="italic">
-                "アプリで勉強できると思わなかったけど、タップで全部できて、とても便利。紙の問題集より使いやすい！"
-              </p>
-            </div>
-
-            {/* Testimonial 5 */}
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="flex items-center mb-4">
-                <img
-                  src="/images/girl1.webp"
-                  alt="ユーザーアイコン"
-                  className="w-10 h-10 rounded-full mr-3"
-                />
-                <div>
-                  <p className="font-bold">高校2年生</p>
-                  <div className="flex text-yellow-400">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                  </div>
-                </div>
-              </div>
-              <p className="italic">
-                "お風呂につかって、スマホで１問解いてます。毎日続けられるから、英語への抵抗感が薄れた。"
-              </p>
-            </div>
-
-            {/* Testimonial 6 */}
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="flex items-center mb-4">
-                <img
-                  src="/images/teacher1.webp"
-                  alt="ユーザーアイコン"
-                  className="w-10 h-10 rounded-full mr-3"
-                />
-                <div>
-                  <p className="font-bold">英語講師</p>
-                  <div className="flex text-yellow-400">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                  </div>
-                </div>
-              </div>
-              <p className="italic">
-                "１０年分の問題をランダムに取り出せるので、課題に応じて授業で使ったりします。タブレットを使うと便利。"
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Pricing Section */}
       <section id="pricing" className="py-16 md:py-24 bg-white">
@@ -452,7 +291,7 @@ export default function Home() {
                 無料プラン
               </h3>
               <p className="text-center text-gray-600 mb-6">
-                まずは共通テストを体験
+                ２０２５年の最新問題にアクセスできます
               </p>
               {/* <p className="text-center text-red-500 mb-6 text-bold text-2xl">
                 緊急キャンペーン！
@@ -471,36 +310,22 @@ export default function Home() {
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>2025年度の最新問題にアクセスできます</span>
+                  <span>AppleかGoogleでログインできます。メールでも登録できます。</span>
                 </li>
                 <li className="flex items-start">
                   <Check
                     size={20}
                     className="text-green-500 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>タイマー・読み上げ・採点・翻訳機能、全て利用可能</span>
-                </li>
-                <li className="flex items-start">
-                  <Check
-                    size={20}
-                    className="text-green-500 mr-2 flex-shrink-0 mt-1"
-                  />
-                  <span>自分の今の実力を試したい・共通テストの難しさを確認したい学生様</span>
-                </li>
-                <li className="flex items-start">
-                  <Check
-                    size={20}
-                    className="text-green-500 mr-2 flex-shrink-0 mt-1"
-                  />
-                  <span>アプリでどう学習できるのか試したい学生様</span>
+                  <span>アプリが自分にあってるか、試してみませんか？</span>
                 </li>
               </ul>
 
               <Link
-                href="/signin"
+                href="/dashboard"
                 className="block w-[90%] mx-auto text-center bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
               >
-                無料登録する
+                今すぐ始める
               </Link>
             </div>
 
@@ -514,12 +339,12 @@ export default function Home() {
                 有料プラン
               </h3>
               <p className="text-center text-blue-100 mb-6">
-                過去問題を本格教材として活用したい学生様向け
+                過去問題でガチに対策したい学生様向け
               </p>
 
               <div className="text-center mb-8">
-                <span className="text-4xl font-bold">¥1,000</span>
-                <span className="text-blue-200 ml-2">/ 年</span>
+                <span className="text-4xl font-bold">¥500</span>
+                <span className="text-blue-200 ml-2">/ 買い切り</span>
               </div>
 
               <ul className="space-y-4 mb-8">
@@ -528,38 +353,22 @@ export default function Home() {
                     size={20}
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
-                  <span>10年分の全過去問題</span>
+                  <span>10年分の全過去問題にアクセスできます</span>
                 </li>
                 <li className="flex items-start">
                   <Check
                     size={20}
                     className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
                   />
-                    環境・技術・友情・セミナーなど設問のテーマを意識して解くと、繰り返しでてくるテーマなどが確認できます。５年分とくだけで実感できます。
-                </li>
-                <li className="flex items-start">
-                  <Check
-                    size={20}
-                    className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
-                  />
-                  <span>
-                    単語にもパターンがあることがわかります。同じ意味なのに、フォーマル・カジュアルで違った表現になり、読解が難しくなっていることも確認できます。
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check
-                    size={20}
-                    className="text-yellow-400 mr-2 flex-shrink-0 mt-1"
-                  />
-                  <span>グラフ解釈型・プレゼン資料型の設問形式に慣れると問題を回答するスピードが早くなります</span>
+                    試験直前キャンペーン価格（通常は千円）
                 </li>
               </ul>
 
               <Link
-                href="/signin"
+                href="/dashboard"
                 className="block w-[90%] mx-auto text-center bg-white text-blue-600 font-bold py-3 px-6 rounded-lg hover:bg-blue-50 transition-colors"
               >
-                無料登録したのち有料プランに入る
+                今すぐ始める
               </Link>
             </div>
           </div>
@@ -570,33 +379,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 md:py-24 bg-blue-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            共通テスト英語対策は早く始めるほど有利
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            早い段階で過去問に多く接して、他の教材とも相互補完しながら
-            <br />
-            時間をかけて完璧にマスターするのって実戦的ですよね
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="/signin"
-              className="bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-center"
-            >
-              無料で始める <ArrowRight size={20} className="ml-2" />
-            </Link>
-            <Link
-              href="#features"
-              className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
-            >
-              詳細を見る
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-12 ">
@@ -684,17 +466,17 @@ export default function Home() {
                     href="#comparison"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    アプリが最強な理由
+                    アプリの利点
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="#testimonials"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     お客様の声
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
                     href="#pricing"

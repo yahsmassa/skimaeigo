@@ -61,7 +61,7 @@ const HowToUse: NextPage = () => {
                 このアプリはWEB版です
               </h2>
               <p className="text-gray-700 mb-4">
-              Web版はブラウザ上で動くので、もっとも汎用性が高く機能的です。ただネットには接続されている必要があります。AppleやGoogleによる審査が必要ないので、もっとも早く新しい機能を反映させることができます。プレミアム会員への決済方法はカード決済、Apple Pay・Google Playになります。
+              Web版はブラウザ上で動くので、もっとも汎用性が高く機能的です。ただネットには接続されている必要があります。AppleやGoogleによる審査が必要ないので、もっとも早く新しい機能を反映させることができます。プレミアム会員への課金方法はApple・Googleなどでなく、PayPayとなります。
               </p>
               <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
                 タブレットやスマホへのインストール
@@ -127,17 +127,8 @@ const HowToUse: NextPage = () => {
                 株式会社KUOTORE（クオトレ）が作成したアプリです
               </h2>
               <p className="text-gray-700 mb-2">
-                このアプリは
-                <a
-                  href="https://www.kuotore.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 underline"
-                >
-                  株式会社クオトレ
-                </a>
-                によって作成されています。
-                株式会社クオトレは、主に専門的な金融アプリの開発を行ってきました。今回、WebApliのインターフェースが教育にも適応しやすいと判断したことから、このアプリを作成しています。
+                このアプリは株式会社クオトレによって作成されています。
+                株式会社クオトレは、主に専門的な金融アプリの開発を行ってきました。今回、AIネーティブな開発に舵をきる流れのなかで、AIと教育の親和性が高いと判断したことから、このアプリを作成することとなりました。アプリ開発にはAIを多く活用しています。
               </p>
             </section>
           </main>

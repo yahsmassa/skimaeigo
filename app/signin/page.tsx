@@ -117,7 +117,7 @@ export default function SignIn() {
 
         <div className="flex items-center justify-center">
           <h2 className="text-center text-3xl font-bold">
-            {isSignUp ? "アカウント作成" : "ログイン"}
+            ログイン
           </h2>
         </div>
 
@@ -170,13 +170,6 @@ export default function SignIn() {
             >
               {isSignUp ? "アカウント作成" : "ログイン"}
             </button>
-            {/* <button
-              type="submit"
-              className="mt-3 w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
-              onClick={test}
-            >
-              PayPay
-            </button> */}
           </div>
         </form>
 
@@ -215,7 +208,7 @@ export default function SignIn() {
               onClick={handleGoogleSignIn}
               className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
-              <span className="hidden sm:inline">Googleでログイン</span>
+              <span className="hidden sm:inline">Google</span>
               <span className="sm:hidden">
                 Googleで
                 <br />
@@ -226,7 +219,7 @@ export default function SignIn() {
               onClick={handleAppleSignIn}
               className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
-              <span className="hidden sm:inline">Appleでログイン</span>
+              <span className="hidden sm:inline">Apple</span>
               <span className="sm:hidden">
                 Appleで
                 <br />

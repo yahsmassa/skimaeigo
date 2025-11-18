@@ -17,23 +17,42 @@ export async function POST(req: Request) {
     });
 
     if (session.payment_status === "paid") {
+
+      let tradeId =  typeof session.payment_intent === "string"
+                        ? session.payment_intent
+                        : session.payment_intent?.id;
+      if (!tradeId)  tradeId = session.id;
       // 購入反映（ユーザーをプレミアム化）
-      await setPremiumStatus(userId, session.id);
+      await setPremiumStatus(userId, tradeId);
+      // await setPremiumStatus(userId, session.id);
+
+      // JST (Asia/Tokyo) の yyyy-mm-dd hh:mm:ss 形式に変換
+      const createdDate = new Date(session.created * 1000);
+      const dtf = new Intl.DateTimeFormat("ja-JP", {
+        timeZone: "Asia/Tokyo",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      });
+      const parts = dtf.formatToParts(createdDate).reduce<Record<string, string>>((acc, p) => {
+        if (p.type !== "literal") acc[p.type] = p.value;
+        return acc;
+      }, {});
+      const createdJst = `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second}`;
 
       // 取引保存（最低限の情報を保存）
       await setTransaction({
         provider: "stripe",
         id: session.id,
-        payment_intent:
-          typeof session.payment_intent === "string"
-            ? session.payment_intent
-            : session.payment_intent?.id,
+        payment_intent: tradeId,
         amount_total: session.amount_total,
-        currency: session.currency,
-        customer: session.customer,
         user_id: userId,
         payment_status: session.payment_status,
-        created: session.created * 1000,
+        created: createdJst,
       });
 
       return NextResponse.json({ ok: true }, { status: 200 });
