@@ -11,7 +11,7 @@ export default function Navigation() {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
           <span className="text-orange-500 font-bold text-2xl">
-            共通テスト英語対策アプリ（Web版）
+            共通テスト英語対策アプリ
           </span>
           <img
             src="/icons/icon-192x192.png"
@@ -31,13 +31,7 @@ export default function Navigation() {
             href="#comparison"
             className="hover:text-blue-600 transition-colors"
           >
-            アプリが最強な理由
-          </a>
-          <a
-            href="#testimonials"
-            className="hover:text-blue-600 transition-colors"
-          >
-            お客様の声
+            アプリの利点
           </a>
           <a
             href="#pricing"
@@ -82,7 +76,7 @@ export default function Navigation() {
               href="#comparison"
               className="hover:text-blue-600 transition-colors py-2"
             >
-              アプリが最強な理由
+              アプリの利点
             </a>
             <a
               href="#testimonials"

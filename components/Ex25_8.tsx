@@ -18,10 +18,10 @@ const Ex25_8 = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold font-sans">{"第８問"}</h1>
+          <h1 className="md:text-lg font-bold font-sans">{"第８問"}</h1>
           <span className="text-gray-600 font-sans">(配点 {17})</span>
           <span className="text-gray-600 font-sans">
-          【目標時間 12分 約700単語】
+          【目標時間 12分 約700語】
           </span>
 
         </div>

@@ -19,10 +19,10 @@ export default function Ex25_2() {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold font-sans">{"第２問"}</h1>
+          <h1 className="md:text-lg font-bold font-sans">{"第２問"}</h1>
           <span className="text-gray-600 font-sans">(配点 {12})</span>
           <span className="text-gray-600 font-sans">
-          【目標時間 8分 300単語弱】
+          【目標時間 8分 300語弱】
           </span>
 
         </div>

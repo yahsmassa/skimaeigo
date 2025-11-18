@@ -19,10 +19,10 @@ const Ex22_3B = () => {
     <div className={exPageFormat}>
       <div className="mb-4 sticky top-0 bg-white z-10 pt-4">
         <div className="flex items-center space-x-4 mb-2">
-          <h1 className="text-lg font-bold font-sans">{"第３問 B"}</h1>
+          <h1 className="md:text-lg font-bold font-sans">{"第３問 B"}</h1>
           <span className="text-gray-600 font-sans">(配点 {9})</span>
           <span className="text-gray-600 font-sans">
-          【目標時間 6分 400単語弱】
+          【目標時間 6分 400語弱】
           </span>
 
         </div>

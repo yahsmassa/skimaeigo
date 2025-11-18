@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
-    "@paypayopa/paypayopa-sdk-node": "^2.1.0",
+    "@stripe/stripe-js": "^3.5.0",
     "browserify-zlib": "^0.2.0",
     "clsx": "^2.1.1",
     "cohere-ai": "^7.16.0",
@@ -32,6 +32,7 @@
     "react-dom": "^18",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
+    "stripe": "^16.12.0",
     "sweetalert2": "^11.15.10",
     "tailwind-merge": "^2.6.0"
   },

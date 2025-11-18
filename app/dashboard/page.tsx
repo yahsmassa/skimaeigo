@@ -3,6 +3,10 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Swal from "sweetalert2";
 import { translateSentence, readSentence, getPaymentUrl, stopReading,  explainGrammer } from "@/lib/util";
+import {
+  signInWithGoogle,
+  signInWithApple,
+} from "@/lib/auth";
 import { ReadTranslate } from "@/components/ReadTranslate";
 import { useRouter } from "next/navigation";
 import { useAtom } from "jotai";
@@ -16,14 +20,10 @@ import { isMobile } from "react-device-detect";
 import { components, groupedComponents, Year } from "@/lib/utilExam";
 import TikTokLink from "@/components/TikTokLink";
 import { cn } from "@/lib/util";
+import { Home as HomeIcon } from "lucide-react";
 // import { getPaymentUrl } from "@/lib/paypay";
 
-import {
-  qrCodeCreate,
-  paymentRefund,
-  getPaymentDetail,
-  getRefundDetail,
-} from "@/lib/paypay";
+
 
 export default function Home() {
   const router = useRouter();
@@ -33,6 +33,7 @@ export default function Home() {
   const [selection, setSelection] = useState("");
   const [user, setUser] = useAtom(userAtom, { store });
   const { loading } = useAuth();
+  const [error, setError] = useState("");
 
   // 選択されたテキストを一時的に保存するためのref
   const savedSelectionRef = useRef("");
@@ -83,12 +84,23 @@ export default function Home() {
     };
   }, [user?.uid, user?.isPremium]);
 
-  // ユーザーがログインしていない場合、サインインページにリダイレクト
+  // アクセス制御: 未ログイン→2025年第1問のみ、ログイン→2025年のみ、プレミアム→全期間
   useEffect(() => {
+    // 未ログインの場合は 2025 / Ex25_1 に固定
     if (!user) {
-      router.push("/signin");
+      if (selectedYear !== "2025") setSelectedYear("2025");
+      if (selectedComponent !== "Ex25_1") setSelectedComponent("Ex25_1");
+      return;
     }
-  }, [loading, user, router]);
+    // ログイン済み・非プレミアムは 2025年のみ
+    if (user && !user.isPremium) {
+      if (selectedYear !== "2025") setSelectedYear("2025");
+      // 2025年以外の問題が選択されていたら、2025年の先頭に寄せる
+      if (!selectedComponent.startsWith("Ex25_")) {
+        setSelectedComponent(groupedComponents["2025"][0].id);
+      }
+    }
+  }, [user, selectedYear, selectedComponent]);
 
   useEffect(() => {
     if ("serviceWorker" in navigator) {
@@ -297,26 +309,29 @@ export default function Home() {
     };
   }, [isMobile]);
 
-  const refund = async () => {
-    const result = await paymentRefund(
-      "QneWLYorhTQljQlwJf02amMAqub2_20250304194630",
-      "04655223243259265024"
-    );
-    console.log("result", result);
-  };
 
-  const getPaymentDetailInfo = async () => {
-    const result = await getRefundDetail(
-      "QneWLYorhTQljQlwJf02amMAqub2_20250304194630"
-    );
-    console.log("result", result);
-  };
 
   const handleSignOut = async () => {
     try {
       await signOut();
     } catch (error) {
       console.error("サインアウトエラー:", error);
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const user = await signInWithGoogle();
+    } catch (error: any) {
+      setError(error.message);
+    }
+  };
+
+  const handleAppleSignIn = async () => {
+    try {
+      const user = await signInWithApple();
+    } catch (error: any) {
+      setError(error.message);
     }
   };
 
@@ -328,12 +343,12 @@ export default function Home() {
       </div>
     );
   }
-  // ユーザーがログインしていない場合も何も表示しない（useEffectでリダイレクトされる）
-  if (!user) {
-    return null;
-  }
 
   const handlePayment = async () => {
+    if (!user) {
+      router.push("/signin");
+      return;
+    }
     const url = await getPaymentUrl(user.uid);
     if (url) window.location.href = url;
   };
@@ -371,23 +386,44 @@ export default function Home() {
     <div className="mt-5 items-center justify-items-center min-h-screen p-0  pb-20 gap-16 sm:p-10 font-[family-name:var(--font-geist-sans)]">
       {/* ヘッダー */}
       {/* <h1 className="text-blue-500 text-xl font-bold mb-2 bg-blue-100 p-2 rounded-md">７月末まで有料機能を無料開放！</h1> */}
-      <div className="flex justify-end gap-2 mb-5 w-full pr-5">
+      <div className="flex justify-end gap-2 mb-5 w-full pr-5 max-w-[700px] mx-auto">
+       { user?.isPremium &&  <img
+          src="/icons/192P.png"
+          alt="App Icon"
+          className="w-9 h-9 self-center"
+        /> }
         <button
-          onClick={handleSignOut}
-          className="bg-blue-500 text-white px-4 py-2 rounded font-bold text-sm"
+          onClick={() => router.push("/?from=dashboard")}
+          className="bg-blue-600 text-white px-3 py-2 rounded text-sm hover:bg-blue-700 flex items-center justify-center"
+          aria-label="ホームへ"
         >
-          ログアウト
+          <HomeIcon size={20} className="text-white" />
         </button>
-        <button
-          onClick={handlePayment}
-          className={cn(
-            "bg-blue-600 text-white px-4 py-2 rounded text-sm",
-            user?.isPremium && "hidden"
-          )}
-        >
-          {/* 有料会員登録 */}
-          {isMobile ? "有料会員登録" : "有料会員になって１０年分の問題を解く"}
-        </button>
+        {!user && (
+          <button
+            onClick={() => router.push("/signin")}
+            className="bg-blue-600 text-white px-4 py-2 rounded text-sm"
+          >
+            ログイン
+          </button>
+        )}
+        {user && (
+          <button
+            onClick={handleSignOut}
+            className="bg-blue-500 text-white px-4 py-2 rounded font-bold text-sm"
+          >
+            ログアウト
+          </button>
+        )}
+        {user && !user.isPremium && (
+          <button
+            onClick={handlePayment}
+            className={cn("bg-blue-600 text-white px-4 py-2 rounded text-sm")}
+          >
+            {/* 有料会員登録 */}
+            {isMobile ? "有料会員登録" : "５００円で１０年分フルアクセス"}
+          </button>
+        )}
         {/* <button
           onClick={test}
           // onClick={getPaymentDetailInfo}
@@ -426,7 +462,12 @@ export default function Home() {
             onChange={handleProblemChange}
             className="ml-2 p-2 border rounded"
           >
-            {groupedComponents[selectedYear].map((problem) => (
+            {(user
+              ? user.isPremium
+                ? groupedComponents[selectedYear]
+                : groupedComponents["2025"]
+              : groupedComponents["2025"].filter((p) => p.id === "Ex25_1")
+            ).map((problem) => (
               <option key={problem.id} value={problem.id}>
                 {problem.label}
               </option>
