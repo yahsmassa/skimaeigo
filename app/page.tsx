@@ -99,10 +99,10 @@ export default function Home() {
           />
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              このアプリで得点力は<span className="text-orange-400 ">最低１０点</span>向上します！！
+              このアプリで得点力は<span className="text-orange-400 ">最低１０点以上</span>向上！！
             </h1>
             <p className="text-xl md:text-2xl mb-8">
-              共通テストには、独特のくせがあります、英語力以外テクニックを身につけることで、得点力がグンとアップします！このアプリで、テクニックを習得しましょう。
+              共通テストには、独特のくせがあります、英語力以外のテクニックを身につけることで、得点力がグンとアップします！このアプリで、テクニックを習得しましょう。
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link

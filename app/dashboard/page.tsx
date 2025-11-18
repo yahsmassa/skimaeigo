@@ -421,7 +421,7 @@ export default function Home() {
             className={cn("bg-blue-600 text-white px-4 py-2 rounded text-sm")}
           >
             {/* 有料会員登録 */}
-            {isMobile ? "有料会員登録" : "５００円で１０年分フルアクセス"}
+            {isMobile ? "１０年分有料版" : "５００円で１０年分フルアクセス"}
           </button>
         )}
         {/* <button

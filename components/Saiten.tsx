@@ -107,7 +107,7 @@ export function Saiten({
         </button>
         <button
           onClick={handleClear}
-          className="bg-gray-500 hover:bg-gray-700 text-white  h-8 py-1 px-2 rounded text-base mb-3"
+          className="bg-gray-500 hover:bg-gray-700 text-white w-[60px] h-8 py-1 px-2 rounded text-base mb-3"
         >
           試験
         </button>
