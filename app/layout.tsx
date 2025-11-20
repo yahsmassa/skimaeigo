@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { AuthProvider } from "@/components/AuthProvider";
 import { EB_Garamond } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/next";
 
 const ebGaramond = EB_Garamond({
   subsets: ['latin'],
@@ -96,6 +97,7 @@ export default function RootLayout({
         className={`${ebGaramond.variable} ${geistSans.variable} ${geistMono.variable} antialiased max-w-[1150px] mx-auto`}
       >
         <AuthProvider>{children}</AuthProvider>
+        <Analytics />
       </body>
     </html>
   );
