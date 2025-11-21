@@ -533,6 +533,23 @@ export default function Home() {
                 </div>
 
               </div>
+              <div className="flex gap-4 mt-3">
+                <div className="ml-2">
+                  <a
+                    href="https://apps.apple.com/jp/app/atango/id6748890454"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/icons/atango-192x192.png"
+                      alt="Atango"
+                      className="mt-1 w-10"
+                    />
+                    <p className="text-xs mt-1">Atango</p>
+                  </a>
+                </div>
+
+              </div>
             </div>
 
             <div>

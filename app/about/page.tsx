@@ -91,12 +91,6 @@ const HowToUse: NextPage = () => {
 
             <section className="mb-8">
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
-                出典について
-              </h2>
-              <p className="text-gray-700 mb-4">
-              アプリは、大学入試センターが作成した共通テスト（英語）を、いろいろなデバイスで閲覧しやすいように、加工したものです。本文とは書体など微妙に違ったものになっていて、誤植などの可能性もあるので、ご注意ください。
-              </p>
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
                 このアプリはWEB版です
               </h2>
               <p className="text-gray-700 mb-4">
@@ -108,20 +102,57 @@ const HowToUse: NextPage = () => {
               <p className="text-gray-700 mb-4">
               AppStoreやPlayストアとは違った形でスマホやタブレットにインストールすることができます。ホーム画面のアイコンから起動できて便利です。
               </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li className="text-gray-700">
-                  まずChrome,Safariなどのブラウザで kyoutuu.com にアクセスします。
-                </li>
-                <li className="text-gray-700 ">
-                  iPhone、iPadでは、SafariかChromeブラウザで <ShareIcon />「共有アイコン」をタップ、でてきたメニューから「ホーム画面に追加 <SquarePlusIcon />」を選んでください
-                </li>
-                <li className="text-gray-700">
-                  Androidでは、Chromeブラウザの「ホーム画面に追加<HomeAddIcon />」をタップすると。インストールボタンが出てきます。
-                </li>
-                <li className="text-gray-700">
-                  ホーム画面にアイコンが追加されます
-                </li>
-              </ul>
+              <p className="ml-2 text-xl text-black font-bold mb-4">
+               Kyoutuu.comにアクセス
+              </p>
+            <h3 className="ml-4 text-sm sm:text-xl font-semibold text-gray-800 mb-2">【Chromeでのインストール】</h3>
+            <div className="flex flex-wrap gap-4 justify-center sm:flex-nowrap">
+              <div className="w-[25%] sm:w-auto">
+                <img
+                  src="/images/ch1.webp"
+                  alt="ch1"
+                  className="w-full h-auto rounded shadow"
+                />
+              </div>
+              <div className="w-[25%] sm:w-auto">
+                <img
+                  src="/images/ch2.webp"
+                  alt="ch2"
+                  className="w-full h-auto rounded shadow"
+                />
+              </div>
+              <div className="w-[25%] sm:w-auto">
+                <img
+                  src="/images/ch3.webp"
+                  alt="ch3"
+                  className="w-full h-auto rounded shadow"
+                />
+              </div>
+            </div>
+            <h3 className="mt-6 ml-4 text-sm sm:text-xl font-semibold text-gray-800 mb-2">【Safariでのインストール】</h3>
+            <div className="flex flex-wrap gap-4 justify-center sm:flex-nowrap">
+              <div className="w-[25%] sm:w-auto">
+                <img
+                  src="/images/sa1.webp"
+                  alt="sa1"
+                  className="w-full h-auto rounded shadow"
+                />
+              </div>
+              <div className="w-[25%] sm:w-auto">
+                <img
+                  src="/images/sa2.webp"
+                  alt="sa2"
+                  className="w-full h-auto rounded shadow"
+                />
+              </div>
+              <div className="w-[25%] sm:w-auto">
+                <img
+                  src="/images/sa3.webp"
+                  alt="sa3"
+                  className="w-full h-auto rounded shadow"
+                />
+              </div>
+            </div>
             </section>
 
             <section className="mb-8">
@@ -152,6 +183,31 @@ const HowToUse: NextPage = () => {
                 </li>
               </ul>
             </section>
+            <section>
+              <div className="flex flex-row items-center">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
+                    関連アプリ Atangoについて
+                  </h2>
+                  <div className="ml-4">
+                      <a
+                        href="https://apps.apple.com/jp/app/atango/id6748890454"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src="/icons/atango-192x192.png"
+                          alt="Atango"
+                          className="mt-1 w-10"
+                        />
+                        <p className="text-xs mt-1">Atango</p>
+                      </a>
+                    </div>
+                </div>
+                <p className="text-gray-700 mb-4">
+                 iOSアプリの<span className="text-orange-700 font-bold">Atango</span>は、単語帳が１０種類登録できる、単語帳アプリです。無料版でも８００単語、有料版は２０００単語収録しており、これ一つで難関大学レベルの単語に対応できます。
+                </p>
+            </section>
+
             <section className="mb-8">
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
                 課金について
@@ -159,6 +215,14 @@ const HowToUse: NextPage = () => {
               <p className="text-gray-700 mb-2">
                 申し訳ございませんが、Web版、iOS版、Android版、でユーザー管理・課金が別々となります。
                 なのでどれか一つを選択するようお願いします。いろいろなデバイスで同じように動く、このWeb版がおすすめです。
+              </p>
+            </section>
+            <section className="mb-8">
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
+                出典について
+              </h2>
+              <p className="text-gray-700 mb-4">
+              アプリは、大学入試センターが作成した共通テスト（英語）を、いろいろなデバイスで閲覧しやすいように、加工したものです。本文とは書体など微妙に違ったものになっていて、誤植などの可能性もあるので、ご注意ください。
               </p>
             </section>
             <section className="mb-8">
